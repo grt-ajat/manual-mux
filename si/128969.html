@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Maintenance precautions of brake null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Maintenance precautions of brake
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758716">1. Maintenance precautions of brake
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Precautions for general maintenance<br/>Make sure to follow the precautions below when maintaining or diagnosing the ABS or other vehicle control systems.<br/>When welding the vehicle using an electric arc welder, remove the EHCU connector before welding.<br/>Do not connect or disconnect the EHCU connector when the ignition switch is in the ON position.<br/>As the EHCU cannot be disassembled, never loosen the bolts or plugs of the EHCU.<br/>Take sufficient care so that foreign matter, dust, and metal dust etc. do not enter the oil pressure circuit when the brake inspection or maintenance is performed.<br/>As this inspection uses a drum tester and is performed with the vehicle jacked up, rotating only the rear wheels causes the EHCU to judge the sensor to be malfunctioning, resulting in the ABS warning light lighting up. In this case, as the system is normal, clear the DTC after the inspection. Turn the ignition switch ON again to confirm that the ABS warning light does not illuminate.</p>
+          <p class="explanation">Use of circuit testing tools<br/>Unless instructed in the diagnostic procedures, do not use a test light. When a probe connector is required in the diagnostic procedures, use the connector test adapter kit 5-8840-2835-0.</p>
+          <p class="explanation">Safety precautions<br/>When performing an inspection using the scan tool with the engine is running, in a closed location such as a garage, make sure to adequately ventilate the area to ensure you do not breathe in the exhaust gas. Take adequate care as the exhaust gas is highly poisonous, and inhaling of it can lead to fainting or death.<br/>Before performing a vehicle inspection test using the scan tool, firmly engage the parking brake, and steady the vehicle using chock blocks.</p>
+          <p class="explanation">Commercial electronic equipment<br/>Commercial electronic equipment refers to commercially available electronic equipment attached to the vehicle after it has been shipped from the factory. Take care, as such equipment is not taken into particular consideration at the vehicle design stage.<br/>Commercial electronic equipment may cause malfunctions in the electronic control system, even if the equipment is properly attached. Commercial electronic equipment includes devices not connected to the electronic system of the vehicle, such as mobile telephones or radios.<br/>Therefore when diagnosing electronic system problems, first confirm whether such commercial electronic equipment is attached, and remove it from the vehicle if it is.<br/>If the problem has not been resolved after removing the equipment, perform the diagnosis using the regular procedure.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Make sure that commercial electronic equipment is attached to a circuit that is not involved with the circuits for the power source, ground, and electronic control system.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Damage caused by electrostatic discharge<br/>As the electronic components used in the electronic control system are designed to operate at extremely low voltages, they can be easily damaged by electrostatic discharge, and some types of electronic components can be damaged by static electricity of 100 V or less, which cannot be felt by a person. Note that a voltage of 4000 V is required for a person to be able to detect electrostatic discharge.<br/>There are various ways a person can build up an electrostatic charge. The most common way to build up an electrostatic charge is through methods based on friction or induction.<br/>An example of when a person builds an electrostatic charge by friction is when they slide across the seat of the vehicle.<br/>A person wearing insulated shoes can build an electrostatic charge by induction if they momentarily touch the ground while standing near a highly charged object. A charge of the same polarity flows out, and with a highly opposing polarity, that person becomes electrostatically charged. As static electricity causes damage, be careful when handling or testing electronic components.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>To prevent damages caused by electrostatic discharge, do not touch the connector pins of the control unit, or the electronic components soldered onto the circuit board of the control unit.</li>
+                    <li>Do not open the packaging of a replacement part until the preparations for installation of the replacement part are completed to prevent damage by static electrical discharge.</li>
+                    <li>To prevent damage caused by electrostatic discharge, connect the packaging to a properly working ground connection of the vehicle before removing a part from the packaging.</li>
+                    <li>To prevent damage caused by electrostatic discharge, touch a properly working ground before attaching a part when handling the part while sliding across the seat, sitting down from a standing position, or walking a certain distance.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Control unit maintenance precaution<br/>The control unit has been designed to withstand the regular current load associated with vehicle operation. Make sure the circuit is not overload. When performing open circuit or short circuit tests, do not ground or apply voltage to the circuit of the control unit, unless otherwise instructed. When performing these circuit tests, make sure to use a DMM with a high input impedance.<br/>When it is clear that there is a failure in the control unit, make sure to confirm that there are no problems outside of the control unit before replacing it. If you neglect to do this, in cases where the control unit was damaged due to a short circuit in the output circuit, for example, the replaced control unit will also be damaged.</p>
+          <p class="explanation">Driving precautions<br/>The driving precautions are as follows.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>On steep inclines, the vehicle may move if the brake pedal is not applied enough. It is necessary to apply the brake pedal more firmly in this case.</li>
+                    <li>Make sure to use the parking brake when parking the vehicle at an inclination of 10 % or more.</li>
+                    <li>Make sure to apply the parking brake when leaving the driver seat.</li>
+                    <li>Apply the parking brake when parking the vehicle for an extended period.</li>
+                    <li>After adjusting the play in the clutch pedal, make sure to perform initial adjustment.</li>
+                    <li>In order to ensure safety should the electrical system and service brake system happen to fail, make sure to use chock blocks when on inclined roads, to ensure the vehicle can be parked with only the parking brake.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

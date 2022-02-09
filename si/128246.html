@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>ATF cooler pipe installation (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    ATF cooler pipe
+          installation
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757007">1. ATF cooler pipe
+                  cleaning
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Clean the ATF cooler pipe using cleaning fluid.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the ATF Cooler and pipes using a cleaning agent and compressed air.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Compressed air： 200 kPa { 2.0 kgf/cm2 / 29 psi } or less</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After air-drying the cleaning agent in the ATF Cooler and pipe, clean them with transmission fluid.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757438">2. ATF hose
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the ATF hose to the oil pipe.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Shove the ATF hoses securely.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH031801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shove the ATF hose completely over the hose fitting end.</li><li>Shove the ATF hose completely over the corner end of the hose fitting.</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757560">3. ATF cooler pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Temporarily tighten the ATF cooler pipe to the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily install the ATF cooler pipe and clips, determine the assembly direction of the ATF cooler pipe.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Securely tighten the ATF cooler pipe to the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the ATF cooler pipe and clips at the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 23 N・m { 2.3 kgf・m / 17 lb・ft } Bolt</p>
+          <p class="numeric">Tightening torque： 44 N・m { 4.5 kgf・m / 32 lb・ft } Flare nut</p>
+                <p class="instructions">3. Connect the ATF cooler pipe to the ATF hose.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the ATF cooler pipe to the ATF hoses and fix it with the clip.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756547">4. Drain plug
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Clean the drain plug using cleaning fluid.</p>
+          <p class="instructions">2. Install the drain plug to the oil pan.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new gasket and the drain plug to the oil pan.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be sure to install the gasket in the correct direction as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 20 N・m { 2.0 kgf・m / 15 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5BSH037901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Gasket</li><li>Drain Plug</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756546">5. ATF
+                  filling
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Replenish the transmission with the ATF.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When Replenishing ATF, always perform the oil level adjustment using the overflow hole.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="498" colspan="4" rowspan="1" align="center" valign="middle">Fluid capacity [Reference value]</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Engine</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">Specification</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Oil pan type</td><td width="285" colspan="1" rowspan="1" align="center" valign="middle">ATF</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">4JJ1</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">High ride</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Deep</td><td width="285" colspan="1" rowspan="1" align="left" valign="middle">： 10.55 to 10.85 L { 2.79 to 2.87 US gal / 2.32 to 2.39 Imp.gal }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">4JK1</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">High ride</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Deep</td><td width="285" colspan="1" rowspan="1" align="left" valign="middle">： 10.05 to 10.35 L { 2.65 to 2.73 US gal / 2.21 to 2.28 Imp.gal }</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

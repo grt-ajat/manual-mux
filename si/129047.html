@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Measurement of the power steering operating pressure null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Measurement of the power steering operating pressure
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758531">1. Measurement of the power steering operating pressure
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Power steering system test</p>
+                <p class="illust"><img src="image/RTWC3BMF000701.png" class="MF" /></p>
+                <div class="legend"><ol><li>Bolt</li><li>Hose</li><li>Power steering unit</li><li>Power steering pump</li></ol></div>
+                <p class="explanation">In the fluid pressure test for the power steering system, the oil pump and the power steering unit are checked to see whether they function properly.<br/>In the power steering system test, the continuity in the oil pressure circuit is tested. The following inspections and corrections should be performed as necessary before conducting this test.</p>
+          <p class="explanation">Inspect the pump reservoir to see whether the fluid level is adequate.<br/>Inspect the pump driver gear condition.</p>
+          <p class="explanation">When disconnecting or connecting the hose, place a container beneath the pump to prevent fluid from spilling.</p>
+          <p class="explanation">With the engine not running, disconnect the pressure hose of the power steering pump, and install the power steering tester: 5-8840-0135-0 and the adapter: 5-8840-2297-0 as shown in the diagram. The gauge must be positioned in between the shut off valve and the pump. Open the shut off valve.</p>
+          <p class="explanation">Check the fluid level. Fill the reservoir with the power steering fluid up to the "Full" mark. Start the engine, turn the steering wheel (right or left) as far as it will go and hold it momentarily when it stops. Turn the engine off and check the connection with the tester for fluid leakage.</p>
+          <p class="explanation">Bleed air from the system.</p>
+          <p class="explanation">Turn on the engine, and check the fluid level. Add power steering fluid if necessary. When the engine is at a normal operating temperature, increase the engine speed to 1,500 r/min.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The shut off valve should not be left fully closed for 5 seconds or longer, because it may break inside the pump.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Fully close the shut off valve. Record the highest pressure.<br/>When the recorded pressure falls within the range of 9,800 - 10,300 kPa (100 - 105 kg/cm2/1,422 - 1,493 psi), the pump is functioning within specifications.<br/>When the recorded pressure is above 10,300 kPa (105 kg/cm2/1,493 psi), the valve of the pump is defective.<br/>When the recorded pressure is below 9,800 kPa (100 kg/cm2/1,422 psi), the valve of the pump is defective.</p>
+          <p class="explanation">If the pump pressure is within specifications, turn (or ask another technician to turn) the steering wheel all the way in both directions with the valve left open. Record the highest pressure, and compare it to the maximum pump pressure recorded in the previous inspection. When the pump pressure is not built up on either side of the power steering unit, it indicates leakage inside the power steering, so perform a replacement.</p>
+          <p class="explanation">Turn off the engine and remove the test gauge.</p>
+          <p class="explanation">Connect the pressure hose again to check the fluid level, and make any necessary repairs.</p>
+          <p class="explanation">If the problem persists, thoroughly inspect the steering and the front suspension.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

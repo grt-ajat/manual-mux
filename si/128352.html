@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Diagnostic system check-transmission controls null (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Diagnostic system check-transmission controls
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757533">1. Diagnostic system check-transmission controls
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The diagnostic system check-transmission controls is a sequenced method for confirming problems caused by functional failures in the transmission control system, and is also the starting point for all diagnoses for drivability complaints. By correctly using these diagnostic steps, it is possible to reduce the time for diagnosis and prevent replacing parts that are not defective.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756686">2. Diagnostic system check-transmission controls
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If there are no complaints regarding drivability, do not perform these diagnostic steps unless otherwise instructed to do so.</li>
+                    <li>Check the service technical report before starting the diagnosis.</li>
+                    <li>Do not clear the DTCs unless it is instructed in a diagnostic step.</li>
+                    <li>The battery should be fully charged.</li>
+                    <li>The battery cable should be normal and securely connected.</li>
+                    <li>The TCM ground should be securely connected in the correct position.</li>
+                    <li>The TCM harness connector should be clean and correctly connected.</li>
+                    <li>The TCM terminal should be clean and matched correctly.</li>
+                    <li>If shifting failure-related DTCs P0747, P0751, P0752, P0756, P0757, P0771, P0772, P0777 or P0781 are detected, inspect the sensor or solenoid circuit DTC first.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Inspection of scan tool power up</p>
+                <p class="explanation">Install a scan tool.</p>
+          <p class="explanation">Verify whether the scan tool powers up.</p>
+          <p class="explanation">If the scan tool does not power up, refer to Scan tool does not power up, and repair as necessary.</p>
+                <p class="instructions">2. Inspection of scan tool communication</p>
+                <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify the vehicle specifications and the status of communication with the following control units with the scan tool.</p>
+          <p class="explanation">ECM<br/>TCM<br/>TCCM (4WD model)<br/>EHCU (if so equipped)<br/>ICU (if so equipped)<br/>SRS control unit (if so equipped)<br/>BCM (if so equipped)<br/>Instrument panel cluster</p>
+          <p class="explanation">When communication can be made with all the control units, go to Inspection of check trans warning light.</p>
+          <p class="explanation">If there are any control units with which communication has not been established, refer to Scan tool does not communicate with CAN device in the Description Engine section, and repair as necessary.</p>
+                <p class="instructions">3. Inspection of check trans warning light</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Check the check trans warning light.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The check trans warning light illuminates when the ignition switch is turned ON, and goes off after approx. 3 seconds.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If the check trans warning light does not illuminate, refer to Check transmission warning light inoperative, and repair as necessary.</p>
+          <p class="explanation">If the check trans warning light does not turn off, refer to Check transmission warning light always on, and repair as necessary.</p>
+          <p class="explanation">If the check trans warning light flashes, go to Checking DTCs.</p>
+                <p class="instructions">4. Inspection of automatic transmission fluid temperature warning light</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Check the automatic transmission fluid temperature warning light.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The automatic transmission fluid temperature warning light illuminates when the ignition switch is turned ON, and goes off after approx. 3 seconds.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If the automatic transmission fluid temperature warning light does not illuminate, refer to Automatic transmission fluid temperature warning light inoperative, and repair as necessary.</p>
+          <p class="explanation">If the automatic transmission fluid temperature warning light does not turn off, refer to Automatic transmission fluid temperature warning light always on, and repair as necessary.</p>
+                <p class="instructions">5. Checking DTCs</p>
+                <p class="explanation">Check the DTC on the following control module using a scan tool.</p>
+          <p class="explanation">TCM<br/>ECM<br/>TCCM (4WD model)</p>
+          <p class="explanation">If a DTC beginning with U or a DTC related to communication with other control modules has been detected, repair the applicable DTCs.</p>
+          <p class="explanation">If TCM DTC P0602, P0603, P1790, or P1791 has been detected, repair the applicable DTCs.</p>
+          <p class="explanation">If TCM DTC P0882 or P0883 has been detected, repair the applicable DTCs.</p>
+          <p class="explanation">If a DTC other than the above DTC has been detected, repair the applicable DTCs.</p>
+                <p class="instructions">6. Confirmation 1 of symptom</p>
+                <p class="explanation">Verify the customer's concern is related with the following systems.</p>
+          <p class="explanation">Engine<br/>Transfer</p>
+          <p class="explanation">If it is applicable, refer to Diagnostic system check for the relevant system, and inspect.</p>
+                <p class="instructions">7. Confirmation 2 of symptom</p>
+                <p class="explanation">Start the engine.</p>
+          <p class="explanation">Confirm if the selector lever can be operated from the P position.</p>
+          <p class="explanation">If it cannot be operated from the P position, refer to the Shift lock control circuit system check to perform the inspection.</p>
+          <p class="explanation">Drive the vehicle and check if any of the following conditions apply.</p>
+          <p class="explanation">Vehicle with automatic transmission does not move<br/>Harsh shocks during automatic transmission shifting<br/>Automatic transmission slips<br/>Shift time lag of automatic transmission Engine of the vehicle with automatic transmission stalls<br/>Acceleration failure of the vehicle with automatic transmission<br/>Automatic transmission cannot shift<br/>Kickdown does not occur<br/>Poor fuel efficiency of the vehicle with automatic transmission<br/>Erratic shifting of the automatic transmission<br/>Selector lever movement is stiff or loose<br/>Mode select does not work<br/>ATF leakage<br/>Vibrations of the vehicle with automatic transmission<br/>Abnormal sounds from power train or exhaust system with automatic transmission<br/>Engine cannot be started when shifted to N or P</p>
+          <p class="explanation">If a problem is found, repair the relevant symptoms.</p>
+          <p class="explanation">If it is not applicable to any symptom, refer to Intermittent conditions of automatic transmission, and inspect.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

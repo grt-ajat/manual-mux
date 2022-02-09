@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Fuel tank unit removal (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Fuel tank unit
+          removal
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie743496">1. Battery ground cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Open the engine hood assembly.</p>
+          <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Raise vehicle using the jack.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744893">2. Fuel filler cap
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fuel filler cap from the filler neck.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Gradually loosen the fuel filler cap.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful with fuel spouts due to a pressure change in the fuel tank.</li>
+                    <li>Cover the opening of the filler neck to prevent foreign material from getting inside.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744889">3. Fuel tube
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the fuel feed tube from the fuel hose.</p>
+          <p class="instructions">2. Disconnect the fuel return tube from the fuel hose.</p>
+                <p class="illust"><img src="image/RTWD1CSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel feed tube</li><li>Fuel return tube</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744888">4. Fuel tank
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the breather hose from the filler neck.</p>
+          <p class="instructions">2. Disconnect the fuel filler hose from the filler neck.</p>
+          <p class="instructions">3. Disconnect the evaporator hose from the filler neck.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the clip and disconnect the breather hose, filler hose, and evaporator hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1CSH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel filler hose</li><li>Evaporator hose</li><li>Breather hose</li></ol></div>
+                <p class="instructions">4. Hold the fuel tank using the lifter.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Support the bottom of the fuel tank using the lifter.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Remove the fuel tank band from the frame.</p>
+                <p class="illust"><img src="image/RTWD1CSH001601.png" class="SH" /></p>
+                <p class="instructions">6. Disconnect the connector from the fuel tank unit.</p>
+          <p class="instructions">7. Remove the fuel tank from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Lower the lifter and remove the fuel tank from the vehicle.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the hose and the tube through contact with other parts.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746937">5. Fuel tank unit
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fuel tube from the fuel tank unit.</p>
+          <p class="instructions">2. Remove the fuel return tube from the fuel tank unit.</p>
+          <p class="instructions">3. Remove the retainer ring from the fuel tank.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove it gradually paying attention not to distort the float arm.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029900.png" class="ST" /><br/>SST: 5-8840-2990-0 - wrench; fuel pump retainer</p>
+                <p class="illust"><img src="image/RTWD1CSH001001.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Cover the retainer ring with a shop cloth, etc.</li>
+                    <li>Take care as breakage may occur if the special tool is applied to the ribbed bottom portion of the retainer ring.</li>
+                    <li>Dispose of the fuel tank unit seal because it cannot be reused.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the fuel tank unit from the fuel tank.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove it gradually paying attention not to distort the float arm.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Cover the opening of the fuel tank unit to prevent foreign material from entering.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

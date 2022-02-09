@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Water pump assembly removal (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Water pump assembly
+          removal
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie743164">1. Battery ground cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Open the engine hood assembly.</p>
+          <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Raise vehicle using the jack.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745087">2. Underguard
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with an under air deflector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the under air deflector from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 5 bolts and clip.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9GSH002801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bolt</li><li>Clip</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with front and rear underguard.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the front underguard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Remove the rear underguard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9GSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front underguard</li><li>Rear underguard</li><li>Bolt</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with front and rear underguard and an oil pan guard.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the front underguard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Remove the oil pan guard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Remove the rear underguard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9GSH002401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front underguard</li><li>Oil pan guard</li><li>Bolt oil pan guard</li><li>Bolt</li><li>Rear underguard</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744703">3. Coolant
+                  drain
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Drain coolant from the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Open the drain plug at the bottom of the radiator.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56BSH000301.png" class="SH" /></p>
+                <p class="instructions">2. Remove the radiator cap from the radiator.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>In order to prevent burns, do not open the cap when the engine and radiator are hot.</li>
+                    <li>Heat liquid and steam may gush out by pressure.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742836">4. Engine cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the engine cover from the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745577">5. Intake air duct
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intake air duct from the turbocharger and the intercooler.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the part together with the intake hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH003501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743078">6. Radiator reserve tank
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the radiator reserve tank hose from the radiator.</p>
+          <p class="instructions">2. Remove the radiator reserve tank from the upper fan guide.</p>
+                <p class="illust"><img src="image/RTWC1BSH001401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743079">7. Radiator upper hose
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the radiator upper hose from the water outlet pipe and the radiator.</p>
+                <p class="illust"><img src="image/RTWD1BSH001701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Radiator upper hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743014">8. Air cleaner assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness connector from the MAF sensor.</p>
+          <p class="instructions">2. Disconnect the harness connector from the barometric pressure sensor.</p>
+          <p class="instructions">3. Disconnect the vacuum hose from the air cleaner assembly.</p>
+          <p class="instructions">4. Disconnect the intake pipe from the turbocharger assembly.</p>
+          <p class="instructions">5. Remove the air cleaner assembly from vehicle.</p>
+                <p class="illust"><img src="image/RTWC1BSH017101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Air cleaner assembly</li><li>MAF sensor</li><li>Vacuum hose</li><li>Blow-by hose</li><li>Intake pipe</li><li>Barometric pressure sensor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744701">9. Fan guide
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fan guide from the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the clips and bottom locks on both sides and remove the upper fan guide.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Upper fan guide</li><li>Clip</li><li>Lower fan guide</li><li>Fan shroud</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744238">10. A/C compressor drive belt
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the A/C compressor drive belt from the pulley.</p>
+                <p class="illust"><img src="image/RTWD1BSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor drive belt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746185">11. Cooling fan belt
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Loosen the adjust bolt using a wrench.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Loosen the idle pulley tension adjust bolt.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the cooling fan belt from the pulley.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745025">12. Cooling fan clutch
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the cooling fan clutch from the water pump assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the part together with the cooling fan.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH001101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747308">13. Fan pulley
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fan pulley from the water pump assembly.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747576">14. Water pump assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the water pump assembly from the timing gear case.</p>
+                <p class="illust"><img src="image/RTWC1DSH000401.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

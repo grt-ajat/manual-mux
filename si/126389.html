@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>DTC P0299 (Flash Code 65) Turbocharger Underboost null (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    DTC P0299 (Flash Code 65) Turbocharger Underboost
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie746870">1. DTC P0299
+                  diagnostics
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify that the boost pressure sensor signal is normal with a scan tool. Compare Boost Pressure with Desired Boost Pressure under all load conditions, and observe whether an excessively high value is displayed.</li>
+                    <li>If the piping of the vacuum hose is wrong, this DTC may be set.</li>
+                    <li>If there is loss of vacuum pressure or a vacuum pump problem, this DTC may be set.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="126567.html">202.Description Engine 15C.Functional Inspection(4JK1) diagnostic system check-engine controls</a>&quot;.</p>
+                    <p class="instructions">2. Prioritized DTC</p>
+                <p class="explanation">If DTCs P0045, P0237, P0238, P2227, P2228, or P2229 are set at the same time, go to the applicable DTC diagnosis.</p>
+                <p class="instructions">3. Inspection of mechanical parts</p>
+                <p class="explanation">Inspect for the following as the cause of low boost pressure, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Air leakage around the boost pressure sensor or foreign material covering the sensor hole. <br/>Air leakage around the air intake pipe between the turbocharger and the intake manifold. Damaged components and loosened clamps. <br/>Incorrect routing, disconnection, or bending of the vacuum hose of the turbocharger nozzle control actuator. <br/>Biting of the turbine shaft, which causes a decrease in the rotation speed of the turbocharger shaft. <br/>Sticking of the turbocharger nozzle control actuator or the solenoid valve.</p>
+                      <p class="reference">Refer to &quot;<a href="126575.html">202.Description Engine 15C.Functional Inspection(4JK1) Turbocharger control system check</a>&quot;.</p>
+                    <p class="explanation">Sticking of the intake throttle valve. Perform the Intake Throttle Solenoid Control with a scan tool. <br/>Clogging of the air cleaner element, collapsing of the air intake pipe between the air cleaner and boost pressure sensor, or a state where flow is restricted. <br/>Boost pressure sensor signal error caused by oil intrusion within the air intake pipe. If the oil is attached to inside the piping, intercooler, or turbocharger, it is necessary to wipe it off.</p>
+          <p class="explanation">If it is normal, go to Circuit diagnosis.</p>
+                <p class="instructions">4. Circuit diagnosis</p>
+                <p class="explanation">Verify that the Barometric Pressure (BARO) display is a value close to the surrounding barometric pressure.</p>
+                      <p class="reference">Refer to &quot;<a href="126282.html">1.Engine 1J.Electrical(4JK1) barometric pressure sensor inspection</a>&quot;.</p>
+                    <p class="explanation">If the display is normal, go to Inspection of boost pressure sensor circuit.</p>
+          <p class="explanation">If the display is abnormal, go to Inspection of barometric pressure sensor circuit.</p>
+                <p class="instructions">5. Inspection of boost pressure sensor circuit</p>
+                <p class="explanation">Inspect the connection status of the boost pressure sensor harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect the connection status of the boost pressure sensor circuit at the ECM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect for high resistance in the boost pressure sensor 5 V reference circuit and signal circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, replace the boost pressure sensor. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="126241.html">1.Engine 1F.Induction(4JK1) boost pressure sensor removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126242.html">1.Engine 1F.Induction(4JK1) boost pressure sensor installation</a>&quot;.</p>
+                    <p class="instructions">6. Inspection of barometric pressure sensor circuit</p>
+                <p class="explanation">Inspect the connection status of the barometric pressure sensor harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect the connection status of the barometric pressure sensor circuit at the ECM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect for high resistance in the barometric pressure sensor low reference circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, replace the barometric pressure sensor. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="126281.html">1.Engine 1J.Electrical(4JK1) barometric pressure sensor removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126283.html">1.Engine 1J.Electrical(4JK1) barometric pressure sensor installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747982">2. DTC P0299
+                  repair verification
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Clear the DTC with a scan tool.</p>
+          <p class="explanation">Turn OFF the ignition switch for at least 30 seconds.</p>
+          <p class="explanation">Start the engine.</p>
+          <p class="explanation">Drive the vehicle at 2000 rpm or more engine speed and at least 50% of the engine load for 10 seconds while comparing the Boost Pressure display with the Desired Boost Pressure display on the scan tool.</p>
+          <p class="explanation">Verify that the difference between the Boost Pressure display and the Desired Boost Pressure display is within the specified range.</p>
+                <p class="numeric">Standard： 20 kPa { 3 psi }</p>
+                <p class="explanation">If the reading is outside the specified range, go to Prioritized DTC.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

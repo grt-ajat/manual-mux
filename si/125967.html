@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Common rail (fuel rail) assembly installation (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Common rail (fuel rail) assembly
+          installation
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie744578">1. Common rail (fuel rail) assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the common rail (fuel rail) assembly to the cylinder block.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install together with the common rail (fuel rail) bracket.</li>
+                    <li>Tighten in the order shown in the diagram.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not grasp the pressure sensor during work.</li>
+                    <li>Be careful not to damage the connector unit of the pressure sensor.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWD1BSH005501.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTWD1ESH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Vacuum pipe</li><li>Common rail (fuel rail) bracket</li><li>Common rail (fuel rail) assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748166">2. Vacuum pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the vacuum pipe to the cylinder block.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744561">3. Swirl control solenoid valve
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the vacuum hose to swirl control solenoid valve.</p>
+          <p class="instructions">2. Install swirl control solenoid valve to the common rail (fuel rail) bracket.</p>
+                <p class="numeric">Tightening torque： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+                <p class="instructions">3. Connect the harness connector to swirl control solenoid valve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744526">4. Injection pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the engine oil to the injection pipe.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply engine oil to the injector side sleeve nut threaded portion and the O-ring of the injector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Temporarily tighten the injection pipe to the injector and the common rail (fuel rail) assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily tighten the sleeve nut by hand until the nut does not turn.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1CSH000201.png" class="SH" /></p>
+                <p class="instructions">3. Temporarily tighten the clip to the injection pipe.</p>
+          <p class="instructions">4. Securely tighten the injector clamp to the cylinder head.</p>
+                <p class="numeric">Tightening torque： 26 N・m { 2.7 kgf・m / 19 lb・ft }</p>
+                <p class="instructions">5. Securely tighten the injection pipe to the injector and the common rail (fuel rail) assembly.</p>
+                <p class="numeric">Tightening torque： 29.5 N・m { 3.0 kgf・m / 22 lb・ft } Injector side</p>
+          <p class="numeric">Tightening torque： 29.5 N・m { 3.0 kgf・m / 22 lb・ft } Common rail (fuel rail) side</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the injection pipe.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Securely tighten the clip to the injection pipe.</p>
+                <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748441">5. FRP sensor
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the connector to the FRP sensor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747478">6. Leak-off pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the leak-off pipe to the fuel supply pump and the common rail (fuel rail) assembly.</p>
+                <p class="numeric">Tightening torque： 10.3 N・m { 1.1 kgf・m / 91 lb・in }</p>
+                <p class="illust"><img src="image/RTWD1BSH005401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Leak-off pipe</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746612">7. Leak off pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the harness bracket to the inlet manifold and the common rail (fuel rail) bracket.</p>
+          <p class="instructions">2. Install the leak-off pipe to the inlet manifold.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWE1BSH001401.png" class="SH" /></p>
+                <p class="instructions">3. Connect the fuel leak-off hose to the leak-off pipe.</p>
+          <p class="instructions">4. Connect the vacuum hose to the vacuum pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745840">8. Vacuum hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the vacuum hose to the vacuum pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747213">9. Fuel hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the fuel hose to the fuel supply pump.</p>
+                <p class="illust"><img src="image/RTWD1BSH008901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel hose</li></ol></div>
+                <p class="instructions">2. Connect the fuel hose to the leak-off pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747586">10. Fuel feed pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the fuel feed pipe to the fuel supply pump and the common rail (fuel rail) assembly.</p>
+                <p class="numeric">Tightening torque： 29.5 N・m { 3.0 kgf・m / 22 lb・ft }</p>
+                <p class="illust"><img src="image/RTW76CSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel feed pipe</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the fuel feed pipe.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742687">11. Starter motor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the starter motor to the rear plate.</p>
+                <p class="numeric">Tightening torque： 94 N・m { 9.6 kgf・m / 69 lb・ft }</p>
+                <p class="instructions">2. Connect the earth cable to the starter motor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748165">12. Front propeller shaft assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="128759.html">3.Driveline, Axle 3C.Drive Shaft System(All models) front propeller shaft assembly installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745839">13. Battery ground cable
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the battery ground cable to the battery.</p>
+          <p class="instructions">2. Close the engine hood assembly.</p>
+          <p class="instructions">3. Lower vehicle.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

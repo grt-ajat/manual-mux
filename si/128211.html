@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission reassembly (MUX)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission
+          reassembly
+              (MUX)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757215">1. Snap ring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the snap ring to the intermediate plate using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hold the snap ring in an open condition with the snap ring pliers.</li>
+                    <li>After installing the input shaft, install the snap ring to the intermediate plate.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757048">2. 5th gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the needle bearing to the input shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the two-piece type needle bearings.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Apply the oil to the 5th gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the gear inner surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the 5th gear to the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756755">3. 5th synchronizer assembly
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Assemble the 5th synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Assemble the sleeve groove and clutch hub boss section so that they are on the 5th gear side.</li>
+                    <li>Confirm that the clutch hub and sleeve slide smoothly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD5CSH014301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sleeve groove</li><li>5th gear side</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the insert is installed to the groove of the clutch hub correctly.</li>
+                    <li>Confirm that the insert spring is installed to the insert correctly.</li>
+                    <li>Set the insert spring in such a way that the openings of the spring face the different directions.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH013101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Insert</li><li>Insert spring</li><li>Sleeve</li><li>Clutch hub</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756908">4. 5th synchronizer assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 5th synchronizer assembly to the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 5th synchronizer assembly and 5th block ring.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Select the snap ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select the thickest snap ring that can be assembled.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the snap ring to the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Snap ring thickness</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Identification color</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.95 mm { 0.077 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Colorless</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.10 mm { 0.083 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Yellow</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTW77BSH005101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756856">5. Counter shaft assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the counter middle roller bearing to the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the counter middle roller bearing outer race.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the counter shaft assembly to the intermediate plate.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756841">6. 5th counter gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the 5th counter gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the gear inner surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the 5th counter gear to the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After installing, verify that the counter middle roller bearing outer race moves only in the direction of the arrow.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW87BSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Counter middle roller bearing outer race</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757142">7. 3rd counter gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the 3rd counter gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the gear inner surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the 3rd counter gear to the counter shaft.</p>
+          <p class="instructions">3. Install the needle bearing to the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757063">8. 3rd - 4th synchronizer assembly
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Assemble the 3rd - 4th synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Assemble the sleeve groove and clutch hub boss section so that they are on the 3rd gear side.</li>
+                    <li>Confirm that the clutch hub and sleeve slide smoothly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD5CSH014301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sleeve groove</li><li>3rd gear side</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the insert is installed to the groove of the clutch hub correctly.</li>
+                    <li>Confirm that the insert spring is installed to the insert correctly.</li>
+                    <li>Set the insert spring in such a way that the openings of the spring face the different directions.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH013101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Insert</li><li>Insert spring</li><li>Sleeve</li><li>Clutch hub</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756900">9. 3rd gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the 3rd gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the gear inner surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the 3rd gear to the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756770">10. 3rd - 4th synchronizer assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 3rd - 4th block ring to the 3rd - 4th synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the block ring at the 3rd side.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the 3rd - 4th synchronizer assembly to the main shaft.</p>
+          <p class="instructions">3. Select the snap ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select the thickest snap ring that can be assembled.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the snap ring to the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Snap ring thickness</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Identification color</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.9 mm { 0.075 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Colorless</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.1 mm { 0.083 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Yellow</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.3 mm { 0.091 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Pink</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTW77BSH005001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757326">11. Plate spring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the plate spring to the 3rd - 4th synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Face the concaved side toward the transmission rear side.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE5CSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear side of transmission</li><li>Concaved tab</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756842">12. 3rd - 4th block ring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 3rd - 4th block ring to the 3rd - 4th synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the block ring at the output shaft side.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757537">13. Output counter gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the output counter gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the gear inner surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Select the snap ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select the thickest snap ring that can be assembled.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the snap ring to the counter shaft assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new snap ring to the counter shaft assembly.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Snap ring thickness</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Identification color</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.3 mm { 0.091 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Pink</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.5 mm { 0.098 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">White</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.7 mm { 0.106 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Green</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTW77BSH005201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757473">14. Pilot bearing spacer
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the pilot bearing spacer to the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757256">15. Pilot bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the grease to the pilot bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply BESCO L-2 grease or equivalent.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the pilot bearing to the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756611">16. Output shaft
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the output shaft to the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756750">17. 3rd - 4th shift arm
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 3rd - 4th shift arm to the 3rd - 4th and 5th shift rod.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757263">18. 5th - reverse shift block
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 5th reverse shift block to the 3rd - 4th and 5th shift rod.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757457">19. 5th shift arm
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 5th shift arm to the sleeve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757196">20. 3rd - 4th and 5th shift rod
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 3rd - 4th and 5th shift rod to the intermediate plate.</p>
+          <p class="instructions">2. Install the snap ring to the 3rd - 4th and 5th shift rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH014501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+                <p class="instructions">3. Install the spring pin to the 5th shift arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new spring pin to the 5th shift arm.</li>
+                    <li>Firmly insert the spring pin into the spring pin hole.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the spring pin.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the shift block lever to the 3rd - 4th and 5th shift rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the shift block lever to the groove of the 3rd - 4th and 5th shift rod.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH014401.png" class="SH" /></p>
+                <div class="legend"><ol><li>3rd - 4th and 5th shift rod</li><li>Shift rod groove</li><li>5th reverse shift block</li><li>Reverse shift rod</li><li>Shift block lever</li><li>123.5 mm {4.86 in}</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756616">21. Reverse shift arm
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the reverse shift arm to the sleeve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757257">22. Reverse shift rod
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the reverse shift rod to the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install in such a way that the reverse shift rod groove faces the outside.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH014601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Reverse shift rod groove</li></ol></div>
+                <p class="instructions">2. Install the snap ring to the reverse shift rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new reverse shift rod snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH014301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+                <p class="instructions">3. Install the spring pin to the reverse shift arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert a new spring pin into the reverse shift arm.</li>
+                    <li>Firmly insert the spring pin into the spring pin hole.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the spring pin.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756901">23. 1st - 2nd shift arm
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 1st - 2nd shift arm to the sleeve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757329">24. 1st - 2nd shift rod
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 1st - 2nd shift rod to the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 1st - 2nd shift block together with the 1st - 2nd shift rod.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH014201.png" class="SH" /></p>
+                <div class="legend"><ol><li>1st - 2nd shift arm</li><li>1st - 2nd shift rod</li><li>1st - 2nd shift block</li></ol></div>
+                <p class="instructions">2. Install the spring pin to the 1st - 2nd shift arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert a new spring pin into the 1st - 2nd shift arm.</li>
+                    <li>Firmly insert the spring pin into the spring pin hole.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the spring pin.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757128">25. Control rod assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the control rod assembly to the intermediate plate.</p>
+                <p class="illust"><img src="image/RTWC5CSH014101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Control rod assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756561">26. Shift and select rod assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Temporarily tighten the shift and select rod assembly to the intermediate plate.</p>
+                <p class="illust"><img src="image/RTWC5CSH014001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift and select rod assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757321">27. Shift rod bracket
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Temporarily tighten the shift rod bracket to the intermediate plate.</p>
+                <p class="illust"><img src="image/RTWC5CSH008301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift rod bracket</li></ol></div>
+                <p class="instructions">2. Securely tighten the shift and select rod to the intermediate plate.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="instructions">3. Securely tighten the shift rod block to the intermediate plate.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757633">28. Gutter
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the gutter to the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2nd and 5th counter gutters.</li>
+                    <li>Install a new front gutter and the rear gutter.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the front and rear gutters.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+                <p class="illust"><img src="image/RTWC5CSH040001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front gutter</li><li>5th counter gutter</li><li>Rear gutter</li><li>2nd counter gutter</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757067">29. Intermediate plate
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Wrap the input shaft end with adhesive tape so as not to damage the lip section of the oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Apply liquid gasket to the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply FMD127 or equivalent to the specified area marked in the diagram below.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 3 to 5 mm { 0.12 to 0.20 in }</p>
+                <p class="illust"><img src="image/RTW77BSH005801.png" class="SH" /></p>
+                <p class="instructions">2. Install the intermediate plate to the front case.</p>
+                <p class="illust"><img src="image/RTWC5CSH040401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Intermediate plate</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Peel off the adhesive tape from the spline section of the input shaft end.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the magnet to the intermediate plate.</p>
+                <p class="illust"><img src="image/RTWC5CSH040501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Magnet</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756986">30. Rear case
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the straight plug from the rear case.</p>
+                <p class="illust"><img src="image/RTW77BSH006301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Straight plug</li></ol></div>
+                <p class="instructions">2. Apply liquid gasket to the rear case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply FMD127 or equivalent to the specified area marked in the diagram below.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 3 to 5 mm { 0.12 to 0.20 in }</p>
+                <p class="illust"><img src="image/RTW77BSH005901.png" class="SH" /></p>
+                <p class="instructions">3. Temporarily tighten the rear case to the front case.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Take note of the insertion position of the rear gutter.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BSH008301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the rear gutter can be seen from the hole of the straight plug.</li>
+                    <li>If the rear gutter cannot be seen from the hole of the straight plug, install the rear case assembly again.</li>
+                    <li>If the rear gutter is not installed at the correct position, oil supplied to the gear runs short.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BSH003401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear gutter</li></ol></div>
+                <p class="instructions">4. Install the straight plug to the rear case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new straight plug.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse straight plugs.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 34 N・m { 3.5 kgf・m / 25 lb・ft }</p>
+                <p class="instructions">5. Securely tighten the rear case to the front case.</p>
+                <p class="numeric">Tightening torque： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757465">31. Output shaft rear bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the output shaft rear bearing to the output shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the output shaft rear bearing inner race.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Put special tool on the output shaft rear bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a snap ring selector.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884028490.png" class="ST" /><br/>SST: 5-8840-2849-0 - snap ring selector</p>
+                <p class="instructions">3. Install the bolt to the output shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the grips on the both ends so that they contact with the bottom of the output shaft spline, and tighten them evenly.</li>
+                    <li>Tighten the nut until the spring height reaches the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 29 mm { 1.142 in }</p>
+                <p class="illust"><img src="image/RTWC5CMH000601.png" class="MH" /></p>
+                <div class="legend"><ol><li>Nut</li><li>29 mm {1.142 in}</li><li>Bolt</li><li>Grip</li><li>Output shaft</li></ol></div>
+                <p class="instructions">4. Turn special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rotate the snap ring selector together with the output shaft rear bearing 16 times or more to settle the inner and outer races of the output shaft each other.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH013301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring selector</li><li>Output shaft rear bearing</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert 6 gauges, of which thickness are different, in the order to the snap ring installation groove.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH013401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Gauge</li></ol></div>
+                <p class="instructions">5. Select the gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select the thickest gauge that can be inserted.</li>
+                    <li>The thickness of the selected gauge is the thickness of the snap ring to be installed.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Snap ring thickness</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Identification color</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.1 mm { 0.083 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">White</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.2 mm { 0.087 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Blue</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.3 mm { 0.091 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Green</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.4 mm { 0.094 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Yellow</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.5 mm { 0.098 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Orange</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.6 mm { 0.102 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Black</td></tr></tbody></table>
+                <p class="instructions">6. Install the snap ring to the output shaft.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756696">32. End cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply liquid gasket to the end cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply FMD127 or equivalent to the specified area marked in the diagram below.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 3 to 5 mm { 0.12 to 0.20 in }</p>
+                <p class="illust"><img src="image/RTW77BSH005601.png" class="SH" /></p>
+                <p class="instructions">2. Install the end cover to the rear case.</p>
+                <p class="numeric">Tightening torque： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756743">33. Detent assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the detent assembly to the front case and the rear case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new control rod detent assembly, 5th detent assembly and reverse detent assembly.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the detent assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 30 N・m { 3.1 kgf・m / 22 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757162">34. Bracket
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the bracket to the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2 harness bracket.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 22 N・m { 2.2 kgf・m / 16 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757608">35. Neutral switch
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the neutral switch to the rear case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new gasket.</li>
+                    <li>The connector color of the neutral switch is brown.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756708">36. Reverse switch
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the reverse switch to the front case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new gasket.</li>
+                    <li>The connector color of the reverse switch is brown.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757451">37. Control unit block
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the control unit block to the control rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Slide the control unit block forward and install the taper bolt, and then install the control unit block.</li>
+                    <li>Install a new taper bolt.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the taper bolt.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 47 N・m { 4.8 kgf・m / 35 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756753">38. Quadrant box
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the taper bolt for damages or clogging due to foreign matter before assembly.</li>
+                    <li>After the assembly, check the taper bolt and the upper surface at the same position of the control unit block.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Apply liquid gasket to the quadrant box.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply FMD127 or equivalent to the specified area marked in the diagram below.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 3 to 5 mm { 0.12 to 0.20 in }</p>
+                <p class="illust"><img src="image/RTW77BSH005701.png" class="SH" /></p>
+                <p class="instructions">2. Install the dowel pin to the quadrant box.</p>
+          <p class="instructions">3. Install the quadrant box to the rear case.</p>
+                <p class="numeric">Tightening torque： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756773">39. Front cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the front cover to the front case.</p>
+                <p class="numeric">Tightening torque： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756633">40. Drain plug
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the drain plug to the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the new O-ring, and then install the drain plug and the O-ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the O-ring.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756776">41. Filler plug
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the filler plug from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the filler plug and O-ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756578">42. Transmission oil
+                  filling
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Replenish the transmission case with the transmission oil.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Besco transaxle oil 5W-30</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">Oil capacity [Reference value]</td></tr><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">： 3.0 L { 0.79 US gal / 0.66 Imp.gal }</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756632">43. Filler plug
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the filler plug to the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the new O-ring, and then install the filler plug and the O-ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the O-ring.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

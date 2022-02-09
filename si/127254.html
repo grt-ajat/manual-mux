@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Seat belt with pretensioner scrapping (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Seat belt with pretensioner
+          scrapping
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie752347">1. Undeployed seat belt with pretensioner
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Take extra care when handling and storing unopened seat belts with pretensioners or lap pretensioners.</li>
+                    <li>In the unlikely event that a seat belt with pretensioner or a lap pretensioner has deployed, the sudden expansion of gas may cause items in the vicinity of the seat belt with pretensioner to be blown about.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Seat belt with pretensioner</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH002501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Seat belt with pretensioner and lap pretensioner</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8BSH000201.png" class="SH" /></p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When transporting undeployed seat belts with pretensioners or lap pretensioners, make sure to face the gas generator section away from your body.</li>
+                    <li>This is to minimize the risk of injury in the event that a seat belt with pretensioner and lap pretensioner accidentally deploys.</li>
+                    <li>Never attempt to touch or move the wiring or connectors of seat belts with pretensioners or lap pretensioners.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFW88BSH002101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transport procedures for undeployed seat belts with pretensioners or lap pretensioners</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Service personnel should check the latest service bulletins for the appropriate seat belt with pretensioner or lap pretensioner transporting procedures.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752345">2. Deployed seat belt with pretensioner
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be sure to wear gloves and safety glasses when handling seat belts with pretensioners or lap pretensioners after activation.</li>
+                    <li>Safety precautions must be observed when handling seat belts with pretensioners or lap pretensioners.</li>
+                    <li>Activated seat belts with pretensioners or lap pretensioners may contain a small amount of sodium hydroxide.</li>
+                    <li>This is a byproduct of the deployment reaction, and may cause irritation if it comes in contact with the skin or eyes.</li>
+                    <li>Wash hands with soap after handling.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752336">3. Seat belt with pretensioner (deployment procedure for disposal)
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Failure to follow correct procedures may lead to a serious accident due to malfunction of seat belts with pretensioners or lap pretensioners during work.</li>
+                    <li>Never disassemble seat belts with pretensioners or lap pretensioners, because they are designed to deploy using backup power in the event of a collision, even when the battery power is cut off.</li>
+                    <li>Do not subject seat belts with pretensioners or lap pretensioners to impact or place them near a magnet.</li>
+                    <li>This may cause the pretensioner to malfunction.</li>
+                    <li>Place seat belts with pretensioners or lap pretensioners so that the gas generator section faces outward.</li>
+                    <li>Do not place any items on seat belts with pretensioners or lap pretensioners.</li>
+                    <li>In order to prevent malfunctions caused by static electricity, touch a metal part of the vehicle before beginning the procedure.</li>
+                    <li>Perform the procedure in a well-ventilated area.</li>
+                    <li>When deploying indoors, do not deploy near a fire alarm, smoke detector, or under a fluorescent light.</li>
+                    <li>Take care not to inhale the smoke emitted on deployment.</li>
+                    <li>Do not allow water or other fluids to come in contact with seat belts with pretensioners or lap pretensioners.</li>
+                    <li>Do not reuse removed seat belts with pretensioners or lap pretensioners in another vehicle.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752346">4. Seat belt with pretensioner (scrapping procedure)
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>During the course of a vehicle's service life, certain situations may arise which will necessitate the disposal of an unactivated seat belt with pretensioner.</li>
+                    <li>This information covers the proper procedures for disposing of an unactivated seat belt with pretensioner.</li>
+                    <li>An unactivated seat belt with pretensioner must not be disposed of through normal refuse channels.</li>
+                    <li>Before a seat belt with pretensioner can be disposed of, it must be activated.</li>
+                    <li>Failure to follow the proper disposal procedure can result in injury due to activation of the seat belt with pretensioner.</li>
+                    <li>The seat belt with pretensioner may be activated either inside or outside the vehicle.</li>
+                    <li>Failure to dispose of in accordance with the proper disposal procedure may be a violation of federal, state, or local laws.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752337">5. Undeployed seat belt with pretensioner (deployment outside vehicle)
+                  scrapping
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When activating an unactivated seat belt with pretensioner or lap pretensioner outside the vehicle, the deployment procedure must be strictly followed.</li>
+                    <li>Continue to wear safety glasses until the activated seat belt with pretensioner or lap pretensioner is disposed of.</li>
+                    <li>Before performing the disposal procedure, you should be fully familiar with SRS repairs and with proper handling of the seat belt with pretensioner or lap pretensioner.</li>
+                    <li>Go over the procedure carefully before beginning work.</li>
+                    <li>Use SRS deployment harnesses 1-8528-1002-0, 5-8840-2881-1 and 5-8840-3142-0, as well as SRS deployment fixture 5-8840-2420-0 for this procedure.</li>
+                    <li>The procedure must not be performed when SRS deployment harness 1-8528-1002-0,5-8840-2881-1, 5-8840-3142-0, and SRS deployment fixture 5-8840-2420-0 are not available.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Failure to follow the proper disposal procedure can result in injury.</li>
+                    <li>Never connect the SRS deployment harness to any power source before connecting it to the seat belt with pretensioner or the lap pretensioner.</li>
+                    <li>Keep the deployment harness shorted until the moment when the seat belt with pretensioner or the lap pretensioner is to be activated.</li>
+                    <li>The seat belt with pretensioner or the lap pretensioner will immediately activate when a power source is connected to it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The following is the procedure for activating the seat belt with pretensioner and the lap pretensioner.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the key.</li>
+                    <li>Wear safety glasses.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+          <p class="instructions">3. Remove the seat belt with pretensioner from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the seat belt with pretensioner or the lap pretensioner from vehicle.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When transporting an unactivated seat belt with pretensioner or lap pretensioner, make sure to face the gas generator section away from your body.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Inspect the SRS deployment harness.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect SRS deployment harnesses 1-8528-1002-0,5-8840-2881-1 and 5-8840-3142-0 for damage.</li>
+                    <li>If the harness is damaged, discard it and obtain a new one.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST1852810020.png" class="ST" /><br/>SST: 1-8528-1002-0 - SRS deployment harness</p>
+          <p class="sst"><img src="image/ST5884028811.png" class="ST" /><br/>SST: 5-8840-2881-1 - SRS Deployment harness</p>
+          <p class="sst"><img src="image/ST5884031420.png" class="ST" /><br/>SST: 5-8840-3142-0 - SRS deployment harness</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Short the 2 SRS deployment harnesses together by securely inserting one banana plug into the other.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The SRS deployment harness should remain shorted, and absolutely must not be connected to a power source until the moment when the seat belt with pretensioner is to be activated.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Connecting the deployment harness to the power source should always be the last step in the seat belt with pretensioner activation procedure.</li>
+                    <li>If this procedure is not followed correctly, there is a risk of injury.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW68BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When you are deploying a seat belt with pretensioner, connect SRS deployment harnesses 1-8528-1002-0 and 5-8840-2881-1.</li>
+                    <li>When you are deploying a lap pretensioner, connect SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFW88BSH001401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clear a space on the ground about 2 m (6.6 feet) in diameter where the seat belt with pretensioner or the lap pretensioner is to be activated.</li>
+                    <li>An outdoor location on a paved road where people do not pass is preferred.</li>
+                    <li>If an outdoor location is not available, select a space on the shop floor where people do not pass and where there is sufficient ventilation.</li>
+                    <li>Ensure that no loose or flammable objects are within the deployment area.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCA0Z0SH000901.png" class="SH" /></p>
+                <p class="instructions">5. Install the SRS deployment fixture to the bench vice.</p>
+                <p class="sst"><img src="image/ST5884024200.png" class="ST" /><br/>SST: 5-8840-2420-0 - SRS deployment fixture</p>
+                <p class="instructions">6. Install the seat belt with pretensioner to the SRS deployment fixture.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the seat belt with pretensioner or the lap pretensioner to the SRS deployment fixture.</li>
+                    <li>Seat belt with pretensioner</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH004001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Lap pretensioner</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8BSH000301.png" class="SH" /></p>
+                <p class="instructions">7. Connect the SRS deployment harness to the seat belt with pretensioner.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the SRS deployment harness to the seat belt with pretensioner or the lap pretensioner.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Ensure that the SRS deployment harness is securely installed to the connector of the seat belt with pretensioner or the lap pretensioner.</li>
+                    <li>Keep the deployment harness shorted until the moment when the seat belt with pretensioner or the lap pretensioner is to be activated.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The seat belt with pretensioner or the lap pretensioner will immediately activate when a power source is connected to it.</li>
+                    <li>Stretch the SRS deployment harness from the seat belt with pretensioner or the lap pretensioner to its maximum length.</li>
+                    <li>Place a power source near the shorted end of the SRS deployment harness.</li>
+                    <li>A vehicle battery of minimum 12 V and minimum 2 A is recommended as the power source.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Verify that the area around the seat belt with pretensioner or the lap pretensioner is clear of all people and loose or flammable objects.</li>
+                    <li>Notify all persons in the nearby area that a seat belt with pretensioner or the lap pretensioner will be deployed.</li>
+                    <li>The activation will be accompanied by an extremely loud noise which may startle persons who are not expecting it.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Separate the 2 banana plugs on the SRS deployment harness.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>The seat belt with pretensioner or the lap pretensioner will immediately activate when a power source is connected to it.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Connect the SRS deployment harness to power source.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Again notify all persons in the nearby area that a seat belt with pretensioner or the lap pretensioner will be deployed.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the SRS deployment harness to the power source to immediately activate the seat belt with pretensioner or the lap pretensioner.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Disconnect the SRS deployment harness from power source.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Short the 2 SRS deployment harnesses together by securely inserting one banana plug into the other.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW68BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the seat belt with pretensioner or the lap pretensioner does not activate after following this procedure, immediately proceed to step 11.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When handling the activated seat belt with pretensioner or lap pretensioner, wear a pair of work gloves and safety goggles to protect your hands and eyes from possible irritation and heat.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Safety precautions must be observed when handling an activated seat belt with pretensioner or lap pretensioner.</li>
+                    <li>After activation, the metal parts of the seat belt with pretensioner or the lap pretensioner will be very hot.</li>
+                    <li>Do not touch the metal portions of the seat belt with pretensioner or the lap pretensioner for about 30 minutes after activation.</li>
+                    <li>Wait for the gas generator to cool.</li>
+                    <li>Do not place an activated seat belt with pretensioner or lap pretensioner near any flammable objects.</li>
+                    <li>If this procedure is not followed correctly, there is a risk of injury.</li>
+                    <li>If the activated seat belt with pretensioner or lap pretensioner must be moved before it has cooled, be sure to wear gloves and avoid touching any metal surfaces.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">10. Disconnect the SRS deployment harness from the seat belt with pretensioner.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After activation, disconnect the SRS deployment harness from the seat belt with pretensioner or the lap pretensioner as quickly as possible to avoid damaging the SRS deployment harness.</li>
+                    <li>Inspect the SRS deployment harness for damage, and replace if necessary.</li>
+                    <li>Inspect the SRS deployment harness for damage, and replace if necessary.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW88BSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sturdy vinyl bag</li><li>Activated seat belt with pretensioner</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Wash hands with soap after handling.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The following is the procedure to be taken in case the seat belt with pretensioner or the lap pretensioner is not activated during the above procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Disconnect the SRS deployment harness from the seat belt with pretensioner.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the SRS deployment harness from the seat belt with pretensioner or the lap pretensioner.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When transporting an unactivated seat belt with pretensioner or lap pretensioner, make sure to face the gas generator section away from your body.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">12. Inspect the SRS deployment harness.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752338">6. Undeployed seat belt with pretensioner (deployment inside vehicle)
+                  scrapping
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Deploying inside the vehicle is effective when the vehicle is being scrapped or when recovering parts that can be reused.</li>
+                    <li>This includes, but is not limited to, the following situations.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="19" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="200" colspan="1" rowspan="1" align="left" valign="middle">The vehicle has completed its useful life.</td></tr><tr><td width="19" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="200" colspan="1" rowspan="1" align="left" valign="middle">The seat belt with pretensioner was not activated during an accident in which the vehicle suffered unrepairable damage.</td></tr><tr><td width="19" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="200" colspan="1" rowspan="1" align="left" valign="middle">The vehicle has been stripped or damaged beyond repair in a theft.</td></tr><tr><td width="19" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="200" colspan="1" rowspan="1" align="left" valign="middle">Collect reusable components.</td></tr></tbody></table>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Never use SRS components from one vehicle in another vehicle.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When activating an unactivated seat belt with pretensioner or lap pretensioner inside the vehicle, the deployment procedure must be strictly followed.</li>
+                    <li>Continue to wear safety glasses until the activated seat belt with pretensioner or the lap pretensioner is disposed of.</li>
+                    <li>Before performing the disposal procedure, you should be fully familiar with SRS repairs and with proper handling of the seat belt with pretensioner or lap pretensioner.</li>
+                    <li>Go over the procedure carefully before beginning work.</li>
+                    <li>Use SRS deployment harnesses 1-8528-1002-0, 5-8840-2881-1 and 5-8840-3142-0 for this procedure.</li>
+                    <li>The procedure must not be performed when SRS deployment harnesses 1-8528-1002-0, 5-8840-2881-1 and 5-8840-3142-0 are not available.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Failure to follow the proper disposal procedure can result in injury.</li>
+                    <li>Never connect the SRS deployment harness to any power source before connecting it to the seat belt with pretensioner or the lap pretensioner.</li>
+                    <li>Keep the deployment harness shorted until the moment when the seat belt with pretensioner or the lap pretensioner is to be activated.</li>
+                    <li>The seat belt with pretensioner or the lap pretensioner will immediately activate when a power source is connected to it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The following is the procedure for activating seat belts with pretensioners and lap pretensioners.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the key.</li>
+                    <li>Remove all loose objects from the front seats.</li>
+                    <li>To reduce the risk of personal injury from vehicle glass or pieces of the interior, cover the windshield area, and the door window opening completely with a drop cloth, blanket, or similar item.</li>
+                    <li>Wear safety glasses.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+          <p class="instructions">3. Inspect the SRS deployment harness.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect SRS deployment harnesses 1-8528-1002-0,5-8840-2881-1 and 5-8840-3142-0 for damage.</li>
+                    <li>If the harness is damaged, discard it and obtain a new one.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST1852810020.png" class="ST" /><br/>SST: 1-8528-1002-0 - SRS deployment harness</p>
+          <p class="sst"><img src="image/ST5884028811.png" class="ST" /><br/>SST: 5-8840-2881-1 - SRS Deployment harness</p>
+          <p class="sst"><img src="image/ST5884031420.png" class="ST" /><br/>SST: 5-8840-3142-0 - SRS deployment harness</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Short the 2 SRS deployment harnesses together by securely inserting one banana plug into the other.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The SRS deployment harness should remain shorted, and absolutely must not be connected to a power source until the moment when the seat belt with pretensioner or lap pretensioner is to be activated.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Connecting the deployment harness to the power source should always be the last step in the seat belt with pretensioner or lap pretensioner activation procedure.</li>
+                    <li>If this procedure is not followed correctly, there is a risk of injury.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW68BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When you are deploying a seat belt with pretensioner, connect SRS deployment harnesses 1-8528-1002-0 and 5-8840-2881-1.</li>
+                    <li>When you are deploying a lap pretensioner, connect SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFW88BSH001401.png" class="SH" /></p>
+                <p class="instructions">4. Connect the SRS deployment harness to the seat belt with pretensioner.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the SRS deployment harness to the seat belt with pretensioner or the lap pretensioner.</li>
+                    <li>Seat belt with pretensioner</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH004101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Lap pretensioner</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8BSH000101.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Ensure that the SRS deployment harness is securely installed to the connector of the seat belt with pretensioner or the lap pretensioner.</li>
+                    <li>The SRS deployment harness should remain shorted, and absolutely must not be connected to a power source until the moment when the seat belt with pretensioner or the lap pretensioner is to be activated.</li>
+                    <li>The seat belt with pretensioner or the lap pretensioner will immediately activate when a power source is connected to it.</li>
+                    <li>Verify that the inside of the vehicle and area around the vehicle are clear of all people and loose or flammable objects.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Stretch the SRS deployment harness from the seat belt with pretensioner or the lap pretensioner to its maximum length.</li>
+                    <li>Place a power source near the shorted end of the SRS deployment harness.</li>
+                    <li>A vehicle battery of minimum 12 V and minimum 2 A is recommended as the power source.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Notify all persons in the nearby area that a seat belt with pretensioner or the lap pretensioner will be deployed.</li>
+                    <li>The activation will be accompanied by an extremely loud noise which may startle persons who are not expecting it.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Separate the 2 banana plugs on the SRS deployment harness.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>The seat belt with pretensioner or the lap pretensioner will immediately activate when a power source is connected to it.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Connect the SRS deployment harness to power source.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Again notify all persons in the nearby area that a seat belt with pretensioner or the lap pretensioner will be deployed.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the SRS deployment harness to the power source to immediately activate the seat belt with pretensioner or the lap pretensioner.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Disconnect the SRS deployment harness from power source.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Short the 2 SRS deployment harnesses together by securely inserting one banana plug into the other.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW68BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the cover which was fitted to the windshield and the front door window.</li>
+                    <li>If the seat belt with pretensioner or the lap pretensioner does not activate after following this procedure, immediately proceed to step 9.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When handling the activated seat belt with pretensioner or lap pretensioner, wear a pair of work gloves and safety goggles to protect your hands and eyes from possible irritation and heat.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Safety precautions must be observed when handling an activated seat belt with pretensioner or lap pretensioner.</li>
+                    <li>After activation, the metal parts of the seat belt with pretensioner or the lap pretensioner will be very hot.</li>
+                    <li>Do not touch the metal portions of the seat belt with pretensioner or the lap pretensioner for about 30 minutes after activation.</li>
+                    <li>Wait for the gas generator to cool.</li>
+                    <li>If this procedure is not followed correctly, there is a risk of injury.</li>
+                    <li>If the activated seat belt with pretensioner or lap pretensioner must be moved before it has cooled, be sure to wear gloves and avoid touching any metal surfaces.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Disconnect the SRS deployment harness from the seat belt with pretensioner.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the SRS deployment harness from the seat belt with pretensioner or the lap pretensioner as soon as possible after activation in order to avoid damaging the SRS deployment harness.</li>
+                    <li>Inspect the SRS deployment harness for damage, and replace if necessary.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Remove the seat belt with pretensioner from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Dispose of the activated seat belt with pretensioner or lap pretensioner through normal refuse channels.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW88BSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sturdy vinyl bag</li><li>Activated seat belt with pretensioner</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Wash hands with soap after handling.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The following is the procedure to be taken in case the seat belt with pretensioner is not activated during the above procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Disconnect the SRS deployment harness from the seat belt with pretensioner.</p>
+          <p class="instructions">10. Remove the seat belt with pretensioner from vehicle.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When transporting an unactivated seat belt with pretensioner, make sure to face the gas generator section away from your body.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Inspect the SRS deployment harness.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

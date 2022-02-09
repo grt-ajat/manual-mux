@@ -1,0 +1,1444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission assembly disassembly (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission assembly
+          disassembly
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756568">1. Torque converter assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the torque converter assembly from the transmission.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the oil seal.</li>
+                    <li>Be careful not to drop the torque converter assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH038201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756741">2. Breather tube
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the breather tube from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 bolts in order to remove the breather tube and breather hose.</li>
+                    <li>Remove the O-ring from the breather tube.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Breather hose</li><li>Breather tube</li><li>M6×1.0×10mm</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757134">3. Turbine speed sensor
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the turbine speed sensor from the transmission case.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the turbine speed sensor.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH000701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756839">4. Output speed sensor
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the output speed sensor from the transmission case.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the output speed sensor.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH000801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757612">5. Elbow
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the elbow from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 elbows.</li>
+                    <li>Remove the 2 O-rings from the elbows.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH001001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757017">6. Inhibitor switch
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the inhibitor switch from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, pry off the washer.</li>
+                    <li>Remove the nut to remove the washer from the inhibitor switch.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH001301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the seal bolt to remove the inhibitor switch from the transmission case.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the inhibitor switch.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH001501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756737">7. Converter housing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the converter housing from the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH001701.png" class="SH" /></p>
+                <div class="legend"><ol><li>M10×1.5×35mm</li><li>M10×1.5×35mm, Seal bolt</li><li>M12×1.75×38mm, Seal bolt</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a plastic hammer, tap the converter housing to remove it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the fitting surface of the converter housing and the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH038301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756600">8. Deflector
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the deflector from the extension housing assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a plastic hammer, tap the deflector to remove it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the fitting surface of the deflector and the extension housing assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH002201.png" class="SH" /></p>
+                <p class="instructions">2. Remove the oil seal from the extension housing assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the oil seal from the extension housing using a pry bar, etc.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the extension housing assembly.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757579">9. Adapter housing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the adapter housing from the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH002501.png" class="SH" /></p>
+                <div class="legend"><ol><li>M8×1.25×45mm</li><li>M10×1.5×50mm, Seal bolt</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a plastic hammer, tap the adapter housing to remove it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the fitting surface of the adapter housing and the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH002901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757314">10. Rear cover oil seal
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the oil seal from the adapter housing.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757033">11. Extension housing assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the extension housing assembly from the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH003101.png" class="SH" /></p>
+                <div class="legend"><ol><li>M10×1.5×35mm, Seal bolt</li><li>M10×1.5×45mm, Seal bolt</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a plastic hammer, tap the extension housing assembly to remove it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the fitting surface of the extension housing assembly and the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH003201.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using snap ring pliers, remove the snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to expand the snap ring too much.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the bearing race, thrust needle roller bearing and the bearing race.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH003301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Bearing race</li><li>Thrust needle roller bearing</li><li>Bearing race</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757453">12. Oil pan
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil pan from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 20 bolts from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH003501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a plastic hammer, tap the oil pan to remove it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the fitting surface of the transmission case and the oil pan.</li>
+                    <li>Be careful not to deform the oil pan.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the oil pan gasket.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH003901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757315">13. Oil pan magnet
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil pan magnet from the oil pan.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Examine the chips and particles in the oil pan and on the oil pan magnet to determine what type of wear has occurred in the ATM.</li>
+                    <li>Steel, magnetic = bearing, gear and plate wear.</li>
+                    <li>Brass, non-magnetic = bushing wear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH004001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757188">14. Oil strainer
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil strainer from the valve body assembly.</p>
+          <p class="instructions">2. Remove the O-ring from the oil pan.</p>
+                <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 31.00 mm { 1.2205 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 2.72 mm { 0.1071 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Deep type oil pan</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH004401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Shallow type oil pan</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH004501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757566">15. Transmission internal harness
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the transmission internal harness from the valve body assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the 7 solenoid assembly connectors.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH004601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Valve body assembly wire harness clamp</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 bolts and 2 transmission fluid temperature sensor clamps, and then pull out the transmission fluid temperature sensor from the valve body assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH004801.png" class="SH" /></p>
+                <div class="legend"><ol><li>M6×1.0×12mm</li><li>M6×1.0×36mm</li></ol></div>
+                <p class="instructions">2. Remove the transmission internal harness from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the O-ring from the transmission internal harness.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 21.80 mm { 0.8583 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 2.40 mm { 0.0945 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH005101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757317">16. Manual detent spring sub-assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the Manual detent spring sub-assembly from the valve body assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the flange bolt to remove the manual detent spring sub-assembly and the manual detent spring cover from the valve body assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH005201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Manual detent spring cover</li><li>M6×1.0×14mm</li><li>Manual detent spring sub-assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757316">17. Valve body assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the valve body assembly from the transmission case.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to drop the valve body assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BMH000101.png" class="MH" /></p>
+                <div class="legend"><ol><li>M6×1.0×25mm</li><li>M6×1.0×36mm</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757189">18. Check valve sub-assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the check valve sub-assembly from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the check valve sub-assembly and the spring from the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Free</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Outer</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 38.55 mm { 1.5177 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 4.861 mm { 0.1914 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH005701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757578">19. Gasket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the gasket from the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH005901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Gasket</li><li>Gasket</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756882">20. C2 accumulator piston
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the C2 accumulator piston from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply compressed air into the oil passage as shown in the figure, and remove the C2 accumulator piston and the accumulator spring from the transmission case.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Take care as the C2 accumulator piston may eject.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="4" rowspan="1" align="left" valign="middle">Accumulator springs</td></tr><tr><td width="35" colspan="1" rowspan="1" align="left" valign="bottom">Piston</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Free</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Outer</td><td width="45" colspan="1" rowspan="1" align="center" valign="middle">Color</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">C2</td><td width="70" colspan="1" rowspan="1" align="left" valign="bottom">： 62.0 mm { 2.441 in }</td><td width="70" colspan="1" rowspan="1" align="left" valign="bottom">： 15.9 mm { 0.626 in }</td><td width="45" colspan="1" rowspan="1" align="center" valign="middle">White</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH006101.png" class="SH" /></p>
+                <div class="legend"><ol><li>C2 accumulator piston</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the snap ring from the C2 accumulator piston.</li>
+                    <li>Remove the spring from the C2 accumulator piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the C2 accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="4" rowspan="1" align="left" valign="middle">Spring</td></tr><tr><td width="35" colspan="1" rowspan="1" align="left" valign="bottom">Piston</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Free</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Outer</td><td width="45" colspan="1" rowspan="1" align="center" valign="middle">Color</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">C2</td><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 14.16 mm { 0.5575 in }</td><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 11.3 mm { 0.445 in }</td><td width="45" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH006301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Spring</li><li>C2 accumulator piston</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the 2 O-rings from the C2 accumulator piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the C2 accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="210" colspan="3" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">Piston</td><td width="90" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="90" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="30" colspan="1" rowspan="2" align="center" valign="middle">C2</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 20.0 mm { 0.787 in }</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 28.73 mm { 1.1311 in }</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH006401.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>C2 accumulator piston</li><li>O-ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757025">21. B3 accumulator piston
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the B3 accumulator piston from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply compressed air into the oil passage as shown in the figure, and remove the B3 accumulator piston and the accumulator spring from the transmission case.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Take care as the B3 accumulator piston may eject.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="4" rowspan="1" align="left" valign="bottom">Accumulator springs</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">Piston</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Free</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Outer</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Color</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B3</td><td width="70" colspan="1" rowspan="1" align="left" valign="bottom">： 70.5 mm { 2.776 in }</td><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 19.7 mm { 0.776 in }</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Purple</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH035101.png" class="SH" /></p>
+                <div class="legend"><ol><li>B3 accumulator piston</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the snap ring from the B3 accumulator piston.</li>
+                    <li>Remove the spring from the B3 accumulator piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the B3 accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="4" rowspan="1" align="left" valign="middle">Spring</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">Piston</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Free</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Outer</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Color</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B3</td><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 24.77 mm { 0.9752 in }</td><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 16.3 mm { 0.642 in }</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Purple</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH035201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Spring</li><li>B3 accumulator piston</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the 2 O-rings from the B3 accumulator piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the B3 accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="bottom">O-ring</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">Piston</td><td width="95" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="95" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="30" colspan="1" rowspan="2" align="center" valign="middle">B3</td><td width="95" colspan="1" rowspan="1" align="left" valign="middle">： 23.55 mm { 0.9272 in }</td><td width="95" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="95" colspan="1" rowspan="1" align="left" valign="bottom">： 34.29 mm { 1.350 in }</td><td width="95" colspan="1" rowspan="1" align="left" valign="bottom">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH035301.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>B3 accumulator piston</li><li>O-ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756593">22. C3 accumulator piston
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the C3 accumulator piston from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply compressed air into the oil passage as shown in the figure, and remove the C3 accumulator piston and the 2 accumulator springs from the transmission case.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Take care as the C3 accumulator piston may eject.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="4" rowspan="1" align="left" valign="bottom">Accumulator springs</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="bottom">Piston</td><td width="75" colspan="1" rowspan="1" align="center" valign="bottom">Free</td><td width="75" colspan="1" rowspan="1" align="center" valign="bottom">Outer</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">Color</td></tr><tr><td width="35" colspan="1" rowspan="2" align="center" valign="middle">C3</td><td width="75" colspan="1" rowspan="1" align="left" valign="middle">： 44.0 mm { 1.732 in }</td><td width="75" colspan="1" rowspan="1" align="left" valign="middle">： 14.0 mm { 0.551 in }</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">Yellow</td></tr><tr><td width="75" colspan="1" rowspan="1" align="left" valign="middle">： 73.35 mm { 2.8878 in }</td><td width="75" colspan="1" rowspan="1" align="left" valign="middle">： 19.9 mm { 0.783 in }</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">Red</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH006601.png" class="SH" /></p>
+                <div class="legend"><ol><li>C3 accumulator piston</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the 2 O-rings from the C3 accumulator piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the C3 accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="bottom">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">： 26.75 mm { 1.0531 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 34.29 mm { 1.350 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH006701.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>C3 accumulator piston</li><li>O-ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757190">23. Accumulator valve
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the accumulator valve from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the accumulator valve and the 2 springs from the transmission case.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="middle">Spring</td></tr><tr><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Free</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Outer</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Color</td></tr><tr><td width="70" colspan="1" rowspan="1" align="left" valign="bottom">： 48.76 mm { 1.9197 in }</td><td width="70" colspan="1" rowspan="1" align="left" valign="bottom">： 16.6 mm { 0.654 in }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Light green</td></tr><tr><td width="70" colspan="1" rowspan="1" align="left" valign="bottom">： 30.40 mm { 1.1968 in }</td><td width="70" colspan="1" rowspan="1" align="left" valign="bottom">： 11.4 mm { 0.449 in }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">pink</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH007101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Accumulator valve</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757291">24. Parking lock pawl bracket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the parking lock pawl bracket from the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH007301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757173">25. Parking lock rod
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the parking lock rod from the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH007401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757014">26. Parking lock pawl
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the parking lock pawl from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pull out the parking lock pawl shaft and the torsion spring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to apply too much force to the torsion spring.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the snap ring from the parking lock pawl shaft.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH007601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Parking lock pawl</li><li>Torsion spring</li><li>Parking lock pawl shaft</li><li>Snap ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757289">27. Manual valve lever shaft
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the manual valve lever shaft from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a hammer and a screwdriver, cut off the spacer to remove it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the manual valve lever sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH007901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a hammer and a pin punch, drive out the spring pin.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH008001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pull the manual valve lever shaft out through the transmission case, and remove the select control lever.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH008101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Manual valve lever shaft</li><li>Manual valve lever sub-assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757174">28. Oil seal
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil seal from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the 2 oil seals.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH008401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757034">29. Oil pump assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil pump assembly from the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH008601.png" class="SH" /></p>
+                <p class="instructions">2. Remove the oil pump assembly from the transmission case using a remover.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to drop the oil pump assembly from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH008801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the O-ring from the oil pump assembly.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="bottom">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 218.40 mm { 8.5984 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 3.50 mm { 0.1378 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the thrust needle roller bearing and the thrust bearing race No.1 from the oil pump assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH009001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Thrust needle roller bearing</li><li>Thrust bearing race No.1</li><li>O-ring</li><li>Oil pump assembly</li></ol></div>
+                <p class="instructions">3. Remove the oil seal from the oil pump assembly using the driver.</p>
+                <p class="illust"><img src="image/RTWC5BSH036101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757295">30. Forward clutch assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the forward clutch assembly from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the forward clutch assembly and direct clutch assembly with the 1way clutch assembly No.3.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to drop the forward clutch assembly and direct clutch assembly.</li>
+                    <li>Be careful not to drop the 1way clutch assembly No.3.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH009201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Forward clutch assembly and Direct clutch assembly</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the thrust bearing race and the thrust needle roller bearing from the forward clutch assembly and direct clutch assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH009501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Forward clutch assembly and Direct clutch assembly</li><li>Thrust needle roller bearing</li><li>Thrust bearing race</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the clutch hub thrust washer, 1way clutch assembly No.2 and the clutch drum thrust washer from the forward clutch assembly and direct clutch assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH009701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clutch hub thrust washer</li><li>1way clutch assembly No.2</li><li>Clutch drum thrust washer</li><li>Forward clutch assembly and Direct clutch assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756596">31. Brake disc No.3
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the brake disc No.3 from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the snap ring from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH009801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the flange, discs, plates and cushion plate.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Check the number of disc and plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH010001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cushion plate</li><li>Disc, 4 pcs.</li><li>Flange</li><li>Plate, 4 pcs.</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756878">32. 1way clutch inner race sub-assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 1way clutch inner race sub-assembly from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using snap ring pliers, remove the hole snap ring from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029610.png" class="ST" /><br/>SST: 5-8840-2961-0 - snap ring pliers </p>
+                <p class="illust"><img src="image/RTWC5BSH010401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring pliers</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the brake piston return spring sub-assembly No.3, brake piston No.2 and brake piston No.3 with the 1way clutch assembly No.1, planetary carrier thrust washer No.1 and the 1way clutch inner race sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH010601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 1way clutch inner race sub-assembly and the planetary carrier thrust washer No.1 from the 1way clutch assembly No.1.</li>
+                    <li>Remove the 1way clutch assembly No.1 from the brake piston return spring sub-assembly No.3, brake piston No.2 and brake piston No.3.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH010901.png" class="SH" /></p>
+                <div class="legend"><ol><li>1way clutch inner race sub-assembly</li><li>Planetary carrier thrust washer No.1</li><li>1way clutch assembly No.1</li><li>Brake piston return spring sub-assembly No.3, 2nd brake piston No.3 and brake piston No.3</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757304">33. Front planetary gear assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the front planetary gear assembly from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the front planetary gear assembly and the planetary carrier thrust washer No.2.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH011001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Planetary carrier thrust washer No.2</li><li>Front planetary gear assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756574">34. Front planetary ring gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the front planetary ring gear from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the front planetary ring gear, front planetary ring gear flange and middle planetary ring gear.</li>
+                    <li>Remove the thrust bearing race No.3 and the thrust needle roller bearing from the front planetary ring gear, front planetary ring gear flange and middle planetary ring gear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH011301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front planetary ring gear, front planetary ring gear flange and middle planetary ring gear</li><li>Thrust needle roller bearing</li><li>Thrust bearing race No.3</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756876">35. Brake disc No.1
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the brake disc No.1 from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JJ1</li>
+                    <li>Remove the flange, discs and plates.</li>
+                    <li>Check the number of disc and plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH011401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Plate, 4 pcs.</li><li>Disc, 4 pcs.</li><li>Flange</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JK1</li>
+                    <li>Remove the flange, discs and plates.</li>
+                    <li>Check the number of disc and plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH011601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Plate, 3 pcs.</li><li>Disc, 3 pcs.</li><li>Flange</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756879">36. Middle planetary gear assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the middle planetary gear assembly from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the middle planetary gear assembly and planetary sun gear.</li>
+                    <li>Remove the thrust needle roller bearing and the thrust bearing race No.4 from the middle planetary gear assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH012001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Planetary sun gear</li><li>Middle planetary gear assembly</li><li>Thrust bearing race No.4</li><li>Thrust needle roller bearing</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757181">37. Brake piston No.1
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the brake piston No.1 from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the hole snap ring from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH012101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the brake piston return spring sub-assembly and the brake piston No.1 and brake cylinder No.1.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH012201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Brake piston No.1 and Brake cylinder No.1</li><li>Brake piston return spring sub-assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756883">38. Brake disc No.2
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the brake disc No.2 from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, remove the hole snap ring from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH012401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the brake flange No.2.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH012501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JJ1</li>
+                    <li>Remove the discs, plates and flange.</li>
+                    <li>Check the number of disc and plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH012701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Plate, 3 pcs.</li><li>Flange</li><li>Disc, 4 pcs.</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JK1</li>
+                    <li>Remove the discs and plates.</li>
+                    <li>Check the number of disc and plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH012901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Plate, 3 pcs.</li><li>Disc, 3 pcs.</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the brake piston return spring sub-assembly No.2.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH013101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756742">39. Brake cylinder No.2
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the brake cylinder No.2 from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the brake piston No.2 and brake cylinder No.2 from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH013501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757187">40. Plate stopper spring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the plate stopper spring from the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH013701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756598">41. Intermediate shaft
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intermediate shaft from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using snap ring pliers, remove the hole snap ring from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029610.png" class="ST" /><br/>SST: 5-8840-2961-0 - snap ring pliers </p>
+                <p class="illust"><img src="image/RTWC5BSH014001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring pliers</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the intermediate shaft with the 1way clutch inner race sub-assembly, 1way clutch assembly No.3, rear planetary ring gear flange sub-assembly and rear planetary ring gear, thrust bearing race No.7, thrust needle roller bearing and thrust bearing race No.8 from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH014101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 1way clutch inner race sub-assembly, 1way clutch assembly No.3, rear planetary ring gear flange sub-assembly and rear planetary ring gear, thrust bearing race No.7, thrust needle roller bearing and the thrust bearing race No.8 from the intermediate shaft.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH014401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Intermediate shaft</li><li>Thrust bearing race No.8</li><li>Thrust needle roller bearing</li><li>Thrust bearing race No.7</li><li>Rear planetary ring gear flange sub-assembly and Rear planetary ring gear</li><li>1way clutch assembly No.3</li><li>1way clutch inner race sub-assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757397">42. Brake disc No.4
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the brake disc No.4 from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 flanges, discs and plates.</li>
+                    <li>Check the number of disc and plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH014601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange</li><li>Disc, 8 pcs.</li><li>Flange</li><li>Plate, 7 pcs.</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757305">43. Rear planetary gear assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the rear planetary gear assembly from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the rear planetary gear assembly with the thrust bearing race No.9, thrust needle roller with race bearing and thrust needle roller bearing.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH014801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Thrust needle roller with race bearing</li><li>Thrust bearing race No.9</li><li>Rear planetary gear assembly</li><li>Thrust needle roller bearing</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757303">44. 1st and reverse brake return spring sub-assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 1st and reverse brake return spring sub-assembly from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place spring compressor on the 1st and reverse brake return spring sub-assembly and compress the spring with a press.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029660.png" class="ST" /><br/>SST: 5-8840-2966-0 - spring compressor</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using snap ring pliers, remove the shaft snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to expand the shaft snap ring too much.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH032301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Spring compressor</li><li>Shaft snap ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 1st and reverse brake return spring sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH015201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757408">45. Inner brake piston
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the inner brake piston from the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>While pushing the inner brake piston by hand, apply compressed air into the oil passage as shown in the figure and remove the inner brake piston from the transmission case.</li>
+                    <li>When applying compressed air, shut an oil passage of the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Compressed air： 392 kPa { 4.0 kgf/cm2 / 57 psi }</p>
+                <p class="illust"><img src="image/RTWC5BSH015501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the inner brake piston.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH036901.png" class="SH" /></p>
+                <p class="instructions">2. Remove the brake reaction sleeve from the transmission case using special tool.</p>
+                <p class="sst"><img src="image/ST5884029670.png" class="ST" /><br/>SST: 5-8840-2967-0 - reaction sleeve puller</p>
+                <p class="illust"><img src="image/RTWC5BSH036701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Reaction sleeve puller</li></ol></div>
+                <p class="instructions">3. Remove the 1st and reverse brake piston from the transmission case using special tool.</p>
+                <p class="sst"><img src="image/ST5884029680.png" class="ST" /><br/>SST: 5-8840-2968-0 - piston puller</p>
+                <p class="illust"><img src="image/RTWC5BSH036801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Piston puller</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 O-rings from the inner brake piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="bottom">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 67.35 mm { 2.6516 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">： 116.40 mm { 4.5827 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH015801.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>Inner brake piston</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 O-rings from the brake reaction sleeve.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 79.10 mm { 3.1142 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 128.00 mm { 5.0394 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH015901.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>Brake reaction sleeve</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the O-ring from the 1st and reverse brake piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="bottom">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 131.60 mm { 5.1811 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH016001.png" class="SH" /></p>
+                <div class="legend"><ol><li>1st and reverse brake piston</li><li>O-ring</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

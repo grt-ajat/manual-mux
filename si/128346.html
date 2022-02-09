@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Primary specifications of transmission, transaxle null (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Primary specifications of transmission, transaxle
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757531">1. Primary specifications of transmission, transaxle
+                      </h2>
+      <div class="wi-contents">
+
+              <table cellspacing="0"><tbody><tr><td width="234" colspan="4" rowspan="1" align="left" valign="middle">Model</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">TB-50LS</td></tr><tr><td width="234" colspan="4" rowspan="1" align="left" valign="middle">Engine</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">4JJ1</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">4JK1</td></tr><tr><td width="234" colspan="4" rowspan="2" align="left" valign="middle">Type</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">3-element 1–stage 2–phase type</td></tr><tr><td width="264" colspan="2" rowspan="1" align="center" valign="middle">(with lock-up mechanism)</td></tr><tr><td width="89" colspan="2" rowspan="6" align="left" valign="top">Gear ratio</td><td width="145" colspan="2" rowspan="1" align="left" valign="middle">1st</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">3.520</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">2nd</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">2.042</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">3rd</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">1.400</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">4th</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">1.000</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">5th</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">0.716</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">Reverse</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">3.224</td></tr><tr><td width="89" colspan="2" rowspan="1" align="left" valign="middle">Oil used</td><td width="145" colspan="2" rowspan="1" align="left" valign="middle">Name</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">Exxon Mobil ATF-3309 or equivalent</td></tr><tr><td width="89" colspan="2" rowspan="2" align="left" valign="middle">Fluid capacity [Reference value]</td><td width="145" colspan="2" rowspan="1" align="left" valign="middle">High ride<br/>(Deep type oil pan)</td><td width="132" colspan="1" rowspan="1" align="left" valign="middle">： 10.55 to 10.85 L { 2.79 to 2.87 US gal / 2.32 to 2.39 Imp.gal }</td><td width="132" colspan="1" rowspan="1" align="left" valign="middle">： 10.05 to 10.35 L { 2.65 to 2.73 US gal / 2.21 to 2.28 Imp.gal }</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">Low ride<br/>(Shallow type oil pan)</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="132" colspan="1" rowspan="1" align="left" valign="middle">： 7.05 to 7.35 L { 1.86 to 1.94 US gal / 1.55 to 1.62 Imp.gal }</td></tr><tr><td width="234" colspan="4" rowspan="1" align="left" valign="middle">Number of planetary gear unit</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">3</td></tr><tr><td width="89" colspan="2" rowspan="2" align="left" valign="top">Solenoid</td><td width="145" colspan="2" rowspan="1" align="left" valign="middle">Shift solenoid</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">3 (S1, S2, SR)</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">Pressure control solenoid</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">4 (SLT, SLU, SL1, SL2)</td></tr><tr><td width="234" colspan="4" rowspan="1" align="left" valign="middle">Max torque capacity</td><td width="264" colspan="2" rowspan="1" align="left" valign="middle">： about 440 N・m { about 44.9 kgf・m / about 325 lb・ft }</td></tr><tr><td width="498" colspan="6" rowspan="1" align="left" valign="middle">Friction element</td></tr><tr><td width="89" colspan="2" rowspan="7" align="left" valign="top">Number of discs / plates / flanges / cushion plate</td><td width="145" colspan="2" rowspan="1" align="left" valign="middle">B1, Brake No.1</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">4/4/1/-</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">3/3/1/-</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">B2, Brake No.2</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">4/3/2/-</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">3/3/1/-</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">B3, Brake No.3</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">4/4/1/1</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">B4, Brake No.4</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">8/7/2/-</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="bottom">C1, Clutch No.1</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">7/6/2/-</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">6/5/2/-</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">C2, Clutch No.2</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">6/6/1/-</td><td width="132" colspan="1" rowspan="1" align="center" valign="bottom">5/5/1/-</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">C3, Clutch No.3</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">5/4/1/1</td></tr><tr><td width="498" colspan="6" rowspan="1" align="left" valign="middle">Clutch</td></tr><tr><td width="89" colspan="2" rowspan="3" align="left" valign="top">Number of sprag</td><td width="145" colspan="2" rowspan="1" align="left" valign="middle">1way clutch No.1</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">18</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">1way clutch No.2</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">25</td></tr><tr><td width="145" colspan="2" rowspan="1" align="left" valign="middle">1way clutch No.3</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">26</td></tr><tr><td width="498" colspan="6" rowspan="1" align="left" valign="middle">Planetary gear</td></tr><tr><td width="89" colspan="2" rowspan="10" align="left" valign="top">Number of teeth</td><td width="65" colspan="1" rowspan="4" align="left" valign="middle">Front planetary gear</td><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Sun gear</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">40</td></tr><tr><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Pinion gear (inner)</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">22</td></tr><tr><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Pinion gear (outer)</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">21</td></tr><tr><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Ring gear</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">91</td></tr><tr><td width="65" colspan="1" rowspan="3" align="left" valign="middle">Middle planetary gear</td><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Sun gear</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">31</td></tr><tr><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Pinion gear</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">23</td></tr><tr><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Ring gear</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">77</td></tr><tr><td width="65" colspan="1" rowspan="3" align="left" valign="middle">Rear planetary gear</td><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Sun gear</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">25</td></tr><tr><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Pinion gear</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">19</td></tr><tr><td width="80" colspan="1" rowspan="1" align="left" valign="bottom">Ring gear</td><td width="264" colspan="2" rowspan="1" align="center" valign="middle">63</td></tr><tr><td width="89" colspan="2" rowspan="4" align="left" valign="middle">Line pressure</td><td width="65" colspan="1" rowspan="2" align="left" valign="middle">： 700 r/min</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">D range</td><td width="264" colspan="2" rowspan="1" align="left" valign="middle">： 357 to 427 kPa { 3.6 to 4.4 kgf/cm2 / 52 to 62 psi }</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">R range</td><td width="264" colspan="2" rowspan="1" align="left" valign="middle">： 454 to 662 kPa { 4.6 to 6.8 kgf/cm2 / 66 to 96 psi }</td></tr><tr><td width="65" colspan="1" rowspan="2" align="left" valign="middle">： 2000 r/min</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">D range</td><td width="264" colspan="2" rowspan="1" align="left" valign="middle">： 1329 to 1543 kPa { 13.6 to 15.7 kgf/cm2 / 193 to 224 psi }</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">R range</td><td width="264" colspan="2" rowspan="1" align="left" valign="middle">： 1295 to 1513 kPa { 13.2 to 15.4 kgf/cm2 / 188 to 219 psi }</td></tr><tr><td width="59" colspan="1" rowspan="3" align="left" valign="middle">Weight (Reference)*</td><td width="175" colspan="3" rowspan="1" align="left" valign="middle">4WD</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">： 88.9 kg { 196.0 lb }</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">： 86.6 kg { 190.9 lb }</td></tr><tr><td width="30" colspan="1" rowspan="2" align="left" valign="middle">2WD</td><td width="65" colspan="1" rowspan="2" align="left" valign="middle">High ride</td><td width="80" colspan="1" rowspan="1" align="left" valign="middle">with ABS</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">： 86.7 kg { 191.1 lb }</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">： 85.0 kg { 187.4 lb }</td></tr><tr><td width="80" colspan="1" rowspan="1" align="left" valign="middle">without ABS</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">： 87.0 kg { 191.8 lb }</td><td width="132" colspan="1" rowspan="1" align="center" valign="middle">： 85.2 kg { 187.8 lb }</td></tr><tr><td width="498" colspan="6" rowspan="1" align="left" valign="middle">*: Weight shows the figure with the oil fully filled.</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

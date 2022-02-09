@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>No electronic key warning buzzer (external buzzer) does not work null (Passive Entry and Start System)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    No electronic key warning buzzer (external buzzer) does not work
+              (Passive Entry and Start System)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie733067">1. No electronic key warning buzzer (external buzzer) does not work
+                  diagnostics
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The buzzer will not sound if the power mode is OFF.</li>
+                    <li>The buzzer will not sound if the electronic key is taken outside the vehicle by being passed through an open window.</li>
+                    <li>The buzzer will not sound if the electronic key is within engine starting operation range in the vehicle.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Preliminary confirmation and visual inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Check the battery voltage. <br/>Charge or replace the battery if battery voltage is low.</p>
+          <p class="explanation">Check the fuses.<br/>If an abnormal condition such as a blowout is found in a fuse, inspect or repair the cause of the abnormal condition before replacing the fuse.</p>
+          <p class="explanation">Check the grounding point. <br/>Repair or clean any grounding points that are improperly installed or significantly dirty.</p>
+          <p class="explanation">Check the harness and connector. <br/>Inspect for poor connections at the connectors, worn or bent harnesses, or split wires inside the harness shorted to other circuits.</p>
+          <p class="explanation">Check for any interference from aftermarket electronic components such as two-way radios or lights, etc. <br/>Turn OFF or remove any aftermarket electronic components to ensure that there is no influence on inspections or operations.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Components inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Observe the PESS registration information with a scan tool.</p>
+          <p class="explanation">Verify that the Outer Buzzer Volume Setting is at a setting other than OFF with a scan tool.</p>
+          <p class="explanation">Check the PESS control unit. <br/>Observe the DTC with a scan tool and diagnose the applicable DTC.</p>
+          <p class="explanation">Check the external buzzer. <br/>Perform Outer Buzzer Test with a scan tool. <br/>Replace the external buzzer if an abnormal condition is found.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Circuits inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Verify that there are no open circuits, short circuits (to the power supply or ground), or high resistance in the following circuits. When there are abnormalities, repair the applicable circuit, and replace as necessary. <br/>Between the PESS control unit (CN2-28 pin) and the external buzzer<br/>Between the external buzzer and ground<br/>Between the BCM and the door switch</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

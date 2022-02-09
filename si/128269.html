@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission assembly installation (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission assembly
+          installation
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757100">1. Cushion rubber
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the cushion rubber to the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+                    <li>Install the rear engine mounting brackets to the transmission.</li>
+                    <li>Temporarily tighten the installation bolts for the rear engine mounting brackets.</li>
+                    <li>Securely tighten the installation bolts for the rear engine mounting brackets in the order of the numbers shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 51 N・m { 5.2 kgf・m / 38 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the cushion rubber to the rear engine mounting brackets.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 51 N・m { 5.2 kgf・m / 38 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5BSH039901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear engine mounting brackets</li><li>Cushion rubber</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+                    <li>Install the cushion rubber to the transmission.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 51 N・m { 5.2 kgf・m / 38 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5BSH033001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756887">2. Transmission assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the transmission to the engine.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Slowly operate the transmission jack so that the front of transmission aligns with the rear of the engine.</li>
+                    <li>Slowly operate the transmission jack so that the transmission becomes parallel to the engine.</li>
+                    <li>Tighten the transmission installation nut and bolt.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 76 N・m { 7.7 kgf・m / 56 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5BLF001701.png" class="LF" /></p>
+                <div class="legend"><ol><li>26 mm {1.02 in}</li><li>50 mm {1.97 in}</li><li>14.5 mm {0.57 in}</li><li>18 mm {0.71 in}</li><li>4.5 mm {0.18 in}</li><li>29 mm {1.14 in}</li><li>12.5 mm {0.49 in}</li><li>2 mm {0.08 in}</li><li>60 mm {2.36 in}</li><li>12 mm {0.47 in}</li><li>17 mm {0.67 in}</li><li>3.2 mm {0.13 in}</li><li>32 mm {1.26 in}</li><li>15 mm {0.59 in}</li><li>22 mm {0.87 in}</li><li>27 mm {1.06 in}</li><li>15.5 mm {0.61 in}</li><li>14 mm {0.55 in}</li><li>19 mm {0.75 in}</li><li>17.5 mm {0.69 in}</li><li>20 mm {0.79 in}</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756724">3. Transmission crossmember
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the transmission crossmember to the frame.</p>
+                <p class="numeric">Tightening torque： 67 N・m { 6.8 kgf・m / 49 lb・ft }</p>
+                <p class="instructions">2. Connect the cushion rubber to the transmission crossmember.</p>
+                <p class="numeric">Tightening torque： 140 N・m { 14.3 kgf・m / 103 lb・ft }</p>
+                <p class="instructions">3. Install the brace to the frame and the transmission crossmember.</p>
+                <p class="numeric">Tightening torque： 106 N・m { 10.8 kgf・m / 78 lb・ft }</p>
+                <p class="instructions">4. Remove the jack from the transmission.</p>
+          <p class="instructions">5. Remove the wire from the engine hanger and the hoist.</p>
+          <p class="instructions">6. Remove the rear engine hanger from the cylinder head.</p>
+          <p class="instructions">7. Remove the front engine hanger from the cylinder head.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757032">4. Flexible plate bolt
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the flexible plate bolt to the torque converter assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install 6 new flexible plate bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 54 N・m { 5.5 kgf・m / 40 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757206">5. Lower cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the lower cover to the transmission.</p>
+                <p class="illust"><img src="image/RTWC5BSH037301.png" class="SH" /></p>
+                <p class="numeric">Tightening torque： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757562">6. Automatic transmission control cable
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the auto mission control cable bracket to the transmission.</p>
+          <p class="instructions">2. Connect the automatic transmission control cable to the select lever.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756539">7. Automatic transmission control cable
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the automatic transmission control cable.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Adjust the automatic transmission control cable when replace the automatic transmission control cable.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the selector lever is in the N position.</li>
+                    <li>Check that the transmission is in the N position.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH038401.png" class="SH" /></p>
+                <div class="legend"><ol><li>P</li><li>R</li><li>N</li><li>D</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Slide the cover in the direction indicated by the arrow.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH033601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cover</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use an ordinary screwdriver to move the lock piece from the position indicated by the arrow.</li>
+                    <li>Continue to move the lock piece until the adjuster position begins to change.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH033701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Adjuster</li><li>Lock piece</li></ol></div>
+                <p class="instructions">2. Connect the automatic transmission control cable to the select control lever.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert the lock piece to the adjuster.</li>
+                    <li>Slide the cover on the adjuster and secure lock piece.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH033801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cover</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Press the select lever knob button 5 times, and then check that the select lever moves smoothly to each of its positions.</li>
+                    <li>Check that the shift position indicated by the selector lever and the actual shift position are the same.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757163">8. ATF cooler pipe
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the ATF cooler pipe to the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After temporally tighten the flare nut and the bolt of the clip, tighten them to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 44 N・m { 4.5 kgf・m / 32 lb・ft } Flare nut</p>
+          <p class="numeric">Tightening torque： 23 N・m { 2.3 kgf・m / 17 lb・ft } Bolt</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757413">9. Starter motor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="126076.html">1.Engine 1J.Electrical(4JJ1) starter motor installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126284.html">1.Engine 1J.Electrical(4JK1) starter motor installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756891">10. Transmission oil level gauge tube
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install transmission oil level gauge tube to the transmission.</p>
+                <p class="numeric">Tightening torque： 22 N・m { 2.2 kgf・m / 16 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757036">11. Oil level gauge
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the oil level gauge to transmission oil level gauge tube.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757553">12. Transfer assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Apply the grease to the input shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply BESCO L-2 grease or equivalent to the spline section.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH000601.png" class="SH" /></p>
+                <p class="instructions">2. Install the transfer assembly to the transmission.</p>
+                <p class="numeric">Tightening torque： 41 N・m { 4.2 kgf・m / 30 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC3DLF000201.png" class="LF" /></p>
+                <div class="legend"><ol><li>20 mm {0.79 in}</li><li>9 mm {0.35 in}</li><li>11 mm {0.43 in}</li><li>45 mm {1.77 in}</li><li>25 mm {0.98 in}</li><li>20 mm {0.79 in}</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756990">13. Engine harness
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the engine harness to the harness connector.</p>
+                <p class="illust"><img src="image/RTWC5BSH037201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Turbine speed sensor connector</li><li>Transmission internal harness connector</li></ol></div>
+                <p class="illust"><img src="image/RTWC5BSH032101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Output speed sensor connector and clip.</li><li>Inhibitor switch connector</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE5BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>2-4 switch connector</li><li>Neutral switch connector</li><li>Actuator connector</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the clips.</li>
+                    <li>2WD</li>
+                    <li>With ABS</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH039601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>2WD</li>
+                    <li>Without ABS</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH039701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4WD</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH039801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756580">14. Catalyst converter
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="126048.html">1.Engine 1G.Exhaust(4JJ1) catalyst converter installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756520">15. Front propeller shaft assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the front propeller shaft assembly to the flange.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the alignment marks of each joint that were made during removal to install.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Never install the shaft assembly in the reverse direction.</li>
+                    <li>Clean the installation surface of the flange yoke and coupling driver to keep the surface free of foreign matter such as black paint, grease, and oil.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the bolt, nut and washer on the transfer side.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the bolt, nut and washer on the front axle.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After installing the propeller shaft, be sure to apply black paint to the whole exposed area except for the flange coupling mating surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4ASH001001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange coupling exposed area</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the exhaust and the transfer protector.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757432">16. Rear propeller shaft assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="128756.html">3.Driveline, Axle 3C.Drive Shaft System(All models) rear propeller shaft assembly installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757424">17. Cowl panel
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the cowl panel to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install with the 8 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1BSH009901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756516">18. Wiper linkage
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the wiper linkage to vehicle.</p>
+                <p class="illust"><img src="image/RTWB9BSH000601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Nut</li><li>Bolt</li></ol></div>
+                <p class="numeric">Tightening torque： 5.3 N・m { 0.5 kgf・m / 46 lb・in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the connector to the wiper motor.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756515">19. Cowl cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the grommet to the cowl panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install with the top mark facing upward.</li>
+                    <li>After installing the grommet to the cowl panel, verify that it is installed securely.</li>
+                    <li>If the grommet drops off when it is pushed back into the cowl panel, install it again.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9BSH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Top mark</li></ol></div>
+                <p class="instructions">2. Install the cowl cover to the cowl panel.</p>
+          <p class="instructions">3. Connect the washer hose to the clip.</p>
+                <p class="illust"><img src="image/RTWC9BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Grommet</li><li>Connection of washer hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756517">20. Side cowl cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the side cowl cover to the body.</p>
+                <p class="illust"><img src="image/RTWC9TSH001301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Side cowl cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756519">21. Wiper arm
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the wiper arm to vehicle.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Confirm that the wiper motor is stopped at the auto stop position.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 31.0 N・m { 3.2 kgf・m / 22.9 lb・ft }</p>
+                <p class="illust"><img src="image/RTWB9BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>29 mm (1.14 in)</li><li>36.5 - 51.5 mm (1.44 - 2.03 in)</li><li>18 mm (0.71 in)</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756511">22. Wiper arm cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the wiper arm cover to the wiper arm.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757346">23. Engine cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the engine cover to the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756518">24. Engine hood assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Temporarily tighten the hinge bolt to the engine hood assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the hinge with the marking made during removal.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Inspect the clearance.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the engine hood assembly and the fender.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Adjust the clearance to the specified value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the installation of the engine hood hinge to adjust the clearance.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9GSH003001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clearance:  4.0 mm {0.16 in}</li><li>Height, level difference:  -1.5 mm {-0.06 in}</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn the hood rest to adjust its height, and adjust the level difference against the engine hood.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9GSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Hood rest</li></ol></div>
+                <p class="instructions">4. Apply the grease to the striker.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply a thin layer of grease to the striker.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Install the engine hood garnish to the engine hood.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 6 nuts to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 6 N・m { 0.6 kgf・m / 53 lb・in }</p>
+                <p class="instructions">6. Securely tighten the hinge bolt to the engine hood assembly.</p>
+                <p class="numeric">Tightening torque： 6.5 N・m { 0.66 kgf・m / 58 lb・in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756512">25. Battery ground cable
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the battery ground cable to the battery.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756603">26. Drain plug
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the transmission has been disassembled</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Clean the drain plug using cleaning fluid.</p>
+          <p class="instructions">2. Install the drain plug to the oil pan.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new gasket and the drain plug to the oil pan.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be sure to install the gasket in the correct direction as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 20 N・m { 2.0 kgf・m / 15 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5BSH037901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Gasket</li><li>Drain Plug</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756855">27. ATF
+                  filling
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Replenish the transmission with the ATF.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When Replenishing ATF, always perform the oil level adjustment using the overflow hole.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="498" colspan="4" rowspan="1" align="center" valign="middle">Fluid capacity [Reference value]</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Engine</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">Specification</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Oil pan type</td><td width="285" colspan="1" rowspan="1" align="center" valign="middle">ATF</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">4JJ1</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">High ride</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Deep</td><td width="285" colspan="1" rowspan="1" align="left" valign="middle">： 10.55 to 10.85 L { 2.79 to 2.87 US gal / 2.32 to 2.39 Imp.gal }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">4JK1</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">High ride</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Deep</td><td width="285" colspan="1" rowspan="1" align="left" valign="middle">： 10.05 to 10.35 L { 2.65 to 2.73 US gal / 2.21 to 2.28 Imp.gal }</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756991">28. TCM
+                  reset
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After replacing the following parts, it is necessary to clear the TCM self-learning data.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission assembly<br/>Valve body assembly<br/>Clutch No.1, No.2, and No.3 components<br/>Brake No.1, No.2, No.3, and No.4 components</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select Transmission.</p>
+          <p class="instructions">5. Select AT.</p>
+          <p class="instructions">6. Select Programming.</p>
+          <p class="instructions">7. Select Clear Learning Value and Diag Information.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clear the self-learning date following the instructions on the screen.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

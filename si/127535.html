@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Primary specifications of heating, ventilation air conditioning null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Primary specifications of heating, ventilation air conditioning
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751747">1. Primary specifications of heating, ventilation air conditioning
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Primary specifications of heater, ventilator, and A/C</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="268" colspan="2" rowspan="1" align="center" valign="middle">Item</td><td width="230" colspan="1" rowspan="1" align="center" valign="middle">Specifications</td></tr><tr><td width="100" colspan="1" rowspan="6" align="left" valign="middle">Heater unit</td><td width="168" colspan="1" rowspan="1" align="left" valign="middle">Temperature control system</td><td width="230" colspan="1" rowspan="1" align="left" valign="middle">Reheat air-mix system</td></tr><tr><td width="168" colspan="1" rowspan="1" align="left" valign="middle">Heat discharge</td><td width="230" colspan="1" rowspan="1" align="left" valign="middle">5.3 kW (4561 kcal/h)</td></tr><tr><td width="168" colspan="1" rowspan="1" align="left" valign="middle">Air supply</td><td width="230" colspan="1" rowspan="1" align="left" valign="middle">： 300 m3/h</td></tr><tr><td width="168" colspan="1" rowspan="1" align="left" valign="middle">Fan motor rated voltage</td><td width="230" colspan="1" rowspan="1" align="left" valign="middle">： 12 V</td></tr><tr><td width="168" colspan="1" rowspan="1" align="left" valign="middle">Model</td><td width="230" colspan="1" rowspan="1" align="left" valign="middle">Fin and tube type</td></tr><tr><td width="168" colspan="1" rowspan="1" align="left" valign="middle">Effective core dimensions</td><td width="230" colspan="1" rowspan="1" align="left" valign="bottom">230 x 170 x 28 mm (9.1 x 6.7 x 1.1 in)</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="278" colspan="3" rowspan="1" align="center" valign="middle">Item</td><td width="220" colspan="1" rowspan="1" align="center" valign="middle">Specifications</td></tr><tr><td width="178" colspan="2" rowspan="3" align="left" valign="middle">Evaporator assembly</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Cooling control system</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Vapor compression method</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Heat discharge</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 5.14 kW</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Air supply</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 500 m3/h</td></tr><tr><td width="178" colspan="2" rowspan="2" align="left" valign="middle">Evaporator core</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Model</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Laminate louver fin type</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Effective core dimensions</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">305 x 265 x 40mm (12.0 x 10.4 x 1.6in)</td></tr><tr><td width="178" colspan="2" rowspan="1" align="left" valign="middle">Expansion valve</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Model</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Uniform external pressure type</td></tr><tr><td width="178" colspan="2" rowspan="2" align="left" valign="middle">Thermo switch Applicable only to manual A/C The auto A/C controls via the control unit based on the signals from the fin sensor.</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Model</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Electric type, electronic thermostat</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Operating temperature</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">OFF, 2.7°C (36.9°F) ON, 6.2°C (43.2°F)</td></tr><tr><td width="178" colspan="2" rowspan="1" align="left" valign="middle">Rear cooler unit</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Model</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Fin and tube evaporator</td></tr><tr><td width="178" colspan="2" rowspan="3" align="left" valign="middle">Evaporator core</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Effective core dimensions</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">134 x 200 x 40 mm (5.3 x 7.9 x 1.6 in)</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Air supply</td><td width="220" colspan="1" rowspan="1" align="left" valign="bottom">： 250 m3/h</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Heat discharge</td><td width="220" colspan="1" rowspan="1" align="left" valign="bottom">： 2.95 kW</td></tr><tr><td width="178" colspan="2" rowspan="1" align="left" valign="middle">Expansion valve</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Model</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">External pressure equalizer type</td></tr><tr><td width="178" colspan="2" rowspan="2" align="left" valign="middle">Condenser</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Model</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">MF type sub-cooling type</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Heat discharge</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 18.4 kW</td></tr><tr><td width="178" colspan="2" rowspan="2" align="left" valign="middle">Receiver dryer</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Absorbent</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Synthetic zeolite 40 g (1.4 oz)</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Content</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">190cm3 (6.7 lmp fl oz)</td></tr><tr><td width="178" colspan="2" rowspan="1" align="left" valign="middle">Pressure switch</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Operating pressure</td><td width="220" colspan="1" rowspan="1" align="left" valign="bottom">Low pressure control ON, 176 - 216 kPa {1.8 - 2.2 kgf/cm2 / 26 - 31 psi} OFF, 195 - 255 kPa {2.0 - 2.6 kgf/cm2 / 28 - 37 psi} High pressure control ON, 2,840 - 3,040 kPa {29.0 - 31.0 kgf/cm2 / 412 - 441 psi} OFF, 100 - 200 kPa lower pressure than &#034;ON&#034; operation pressure</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Refrigerant filling amount</td><td width="58" colspan="1" rowspan="1" align="left" valign="middle">HFC-134a</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Models with rear cooler</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">800g {1.8 lb}</td></tr><tr><td width="178" colspan="2" rowspan="5" align="left" valign="middle">Compressor</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Model</td><td width="220" colspan="1" rowspan="1" align="left" valign="bottom">CR14</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Type</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Vane rotary type</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Discharge amount</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">144 cm3/rev (5.1 lmp fl oz)</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Maximum RPM</td><td width="220" colspan="1" rowspan="1" align="left" valign="bottom">： 7000 r/min</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Weight</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 3.2 kg { 7.1 lb }</td></tr><tr><td width="178" colspan="2" rowspan="4" align="left" valign="middle">Magnetic clutch</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Rated voltage</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 12 V</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Power consumption</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 50 W</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Static transfer torque</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 49 N・m { 5.0 kgf・m / 36 lb・ft }</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Weight</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 2.3 kg { 5.1 lb }</td></tr><tr><td width="178" colspan="2" rowspan="1" align="left" valign="middle">Specified compressor oil amount</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">DH-PR</td><td width="220" colspan="1" rowspan="1" align="left" valign="bottom">280 cm3 (9.9 lmp fl oz)</td></tr><tr><td width="120" colspan="1" rowspan="7" align="left" valign="middle">Temperature control, automatic A/C</td><td width="158" colspan="2" rowspan="1" align="left" valign="middle">Inside air temperature sensor</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Resistance： 2.2 kΩ</td></tr><tr><td width="158" colspan="2" rowspan="1" align="left" valign="middle">Outside air temperature sensor</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Resistance： 1.7 kΩ</td></tr><tr><td width="158" colspan="2" rowspan="1" align="left" valign="middle">Sun sensor</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Photodiode</td></tr><tr><td width="58" colspan="1" rowspan="4" align="left" valign="middle">Control device</td><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Auto A/C control unit</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Built-in microcomputer</td></tr><tr><td width="100" colspan="1" rowspan="3" align="left" valign="middle">Actuator</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Intake actuator</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Mode actuator</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Mix actuator</td></tr><tr><td width="278" colspan="3" rowspan="1" align="left" valign="middle">Cooling system</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Vapor compression type</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

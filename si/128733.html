@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Disc wheel inspection (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Disc wheel
+          inspection
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759351">1. Disc wheel
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the disc wheel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that all the disassembled parts are free from worn, damage and other abnormal conditions.</li>
+                    <li>Measure the wheel run-out.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="74" colspan="1" rowspan="1" align="center" valign="middle">Wheel type</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Radial</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Lateral</td></tr><tr><td width="74" colspan="1" rowspan="1" align="left" valign="middle">16 inch aluminum</td><td width="73" colspan="1" rowspan="2" align="left" valign="middle">： 0.4 mm or less { 0.016 in or less }</td><td width="73" colspan="1" rowspan="2" align="left" valign="middle">： 0.55 mm or less { 0.022 in or less }</td></tr><tr><td width="74" colspan="1" rowspan="1" align="left" valign="middle">17 inch aluminum</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC2DMH000101.png" class="MH" /></p>
+                <div class="legend"><ol><li>Radial</li><li>Lateral</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the measured value exceeds the limit, replace the wheel.</li>
+                    <li>Onboard balancing</li>
+                    <li>The onboard balancing method varies depending on the tool manufacturer.</li>
+                    <li>Follow the handling instructions provided by the equipment manufacturer to perform the balancing operations.</li>
+                    <li>Separate balancing</li>
+                    <li>An electric type separate balancer generally has higher precision than an onboard rotation balancer.</li>
+                    <li>It is also easier to use and can provide dynamic balancing.</li>
+                    <li>Unlike the onboard rotation balance, it cannot correct unbalance of the drum and the disc, but it can compensate for this with its higher precision.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC2DSH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759350">2. Disc wheel
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Adjustment of wheel balance should be performed from the outer side.</li>
+                    <li>Adjustment to the inner side should be performed after completing adjustment to the outer side.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following shows the outer side wheel balance adjustment procedure using stick-on balance weights.</li>
+                    <li>Applied only to the outer side of 17 inch aluminum wheel.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the balance weight from the disc wheel.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to scratch the wheel.</li>
+                    <li>Do not reuse the removed balance weight.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the double-sided tape remaining on the wheel, and clean the bonding surface of the balance weight.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the disc wheel to the wheel balancer.</p>
+          <p class="instructions">3. Start the wheel balancer.</p>
+          <p class="instructions">4. Check display of the wheel balancer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm the amount and position of unbalance.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Calculate the balance weight value from the imbalance value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Multiply the indicated unbalance amount by 5/3.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">Calculation example</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Indicated unbalance amount</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 23 g { 0.81 oz }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Coefficient</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">5/3</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Calculated value</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 38.3 g { 1.35 oz }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Weight of balance weight to be used</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">： 40 g { 1.41 oz }</td></tr></tbody></table>
+                <p class="instructions">6. Select the balance weight.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select a balance weight closest to the calculated value.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">Balance weight selection example</td></tr><tr><td width="110" colspan="1" rowspan="1" align="center" valign="bottom">Calculated value</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Weight of balance weight to be used</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 32.5 to 37.4 g { 1.146 to 1.319 oz }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 35 g { 1.23 oz }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 37.5 to 42.4 g { 1.323 to 1.496 oz }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 40 g { 1.41 oz }</td></tr></tbody></table>
+                <p class="instructions">7. Install the balance weight to the disc wheel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the center of the balance weight with the position indicated on the balancer, and stick the balance weight.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new balance weight.</li>
+                    <li>The balance weight bonding surface on the disc wheel side should be cleaned.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC2DSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Balance weight</li><li>Align to the groove.</li><li>Center of balance weight</li><li>Balancer indication position</li><li>Inner side</li><li>Outer side</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the weight of balance weight to be used is 60 g {2.12 oz} or more, the weight should be divided and stuck in 2 portions centering the balancer indication position.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The number of balance weight pieces to use should be 2 or less.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC2DSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Balance weight</li><li>Balancer indication position</li></ol></div>
+                <p class="instructions">8. Start the wheel balancer.</p>
+          <p class="instructions">9. Check display of the wheel balancer.</p>
+                <p class="numeric">Limit： 5 g { 0.18 oz } Unbalance amount</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the amount of unbalance is at or more than the limit value, repeat the wheel balance adjustment procedure again.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

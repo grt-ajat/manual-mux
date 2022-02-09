@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Rear axle assembly removal (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Rear axle assembly
+          removal
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758187">1. Rear axle
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Raise vehicle using the jack.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place the chassis stand on the frame near the rearmost cross member.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to stretch out the brake flexible hose or the parking brake cable.</li>
+                    <li>Set up the jack in the specified position.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Hold the rear axle using the jack.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758206">2. Disc wheel
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the disc wheel from vehicle.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758232">3. Rear axle differential oil
+                  drain
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Drain the rear axle differential oil from the rear axle case.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758254">4. Rear propeller shaft assembly
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The rear propeller shaft assembly is adjusted to have a precise balance, so before removing and disassembling, always place an alignment mark for each of the joints.</li>
+                    <li>Put the alignment marks on the flanges on both the front and rear sides of the rear propeller shaft.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4ASH000201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758253">5. Center bearing assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following is the 2WD model.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the center bearing assembly from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the center bearing fixing bolt.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758252">6. Rear propeller shaft assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the rear propeller shaft assembly from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the bolt, the nut, and the washer on the rear axle side.</li>
+                    <li>Plug the hole at the rear end of the transmission to prevent oil leakage.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758381">7. Brake hose
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the brake hose from the brake caliper assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the brake hose from the caliper by taking off the bolt and gasket.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After removing the brake hose, cover the opening with a plug or tape to prevent foreign material from entering.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW55CSH000901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758399">8. Brake caliper assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the lock bolt from the brake caliper assembly.</p>
+          <p class="instructions">2. Remove the brake caliper assembly from the brake support.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758395">9. Disc brake pad
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the disc brake pad from the brake support.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Make alignment marks at the position of the pad for use as a reference when installing.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the clip from the brake support.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the pad clip.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758396">10. Brake support
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the guide pin from the brake support.</p>
+          <p class="instructions">2. Remove the boot from the guide pin.</p>
+          <p class="instructions">3. Remove the brake support from the rear axle.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When removing the brake support, take care not to damage the brake hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW850SH000701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758398">11. Rear rotor
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the rear rotor from the axle shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758438">12. Rear wheel speed sensor
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the wheel speed sensor is damaged in the course of the maintenance works, that may cause the following symptoms.</li>
+                    <li>ABS abnormalities due to sensor damage</li>
+                    <li>In case of ABS failure or ABS malfunction due to improper sensor installation, installation/removal of the wheel speed sensor, or replacement of the wheel speed sensor, follow the precautions indicated in the procedure for the work.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758437">13. Rear wheel speed sensor
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness connector from the wheel speed sensor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758439">14. Rear wheel speed sensor
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness clip from the harness.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the harness fixing bolt.</li>
+                    <li>Disconnect the harness fixing clip.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the wheel speed sensor from the rear axle case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the sensor-fixing bolt and wheel speed sensor.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When the wheel speed sensor body does not come off easily due to the rust on the knuckle or support, use a rust penetrant, etc., and carefully remove the sensor body by shifting it little by little.</li>
+                    <li>Be careful not to bump or step on the removed sensor.</li>
+                    <li>Never perform following works.</li>
+                    <li>Remove the sensor body by hammering.</li>
+                    <li>Insert a flat-head screwdriver or the like into the gap to remove it forcibly.</li>
+                    <li>When removing the wheel speed sensor, do not pull the harness.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD4BSH000801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758405">15. Brake shoe assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the shoe holding cup from the brake shoe pin.</p>
+          <p class="instructions">2. Remove the shoe holding spring from the brake shoe pin.</p>
+          <p class="instructions">3. Remove the return spring from the brake shoe assembly.</p>
+          <p class="instructions">4. Remove the adjuster spring from the adjuster.</p>
+          <p class="instructions">5. Disconnect the parking brake cable from the lever.</p>
+          <p class="instructions">6. Remove the strut from the lever.</p>
+          <p class="instructions">7. Remove the brake shoe assembly from the support plate.</p>
+          <p class="instructions">8. Remove the lever from the brake shoe assembly.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758404">16. Parking brake cable
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the parking brake cable from the back plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the nut that fastens the parking brake cable to the back plate.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not twist or bend the cable.</li>
+                    <li>Be careful for damage to the cable, which will cause insufficient operation.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD4BSH000401.png" class="SH" /></p>
+                <p class="instructions">2. Remove the parking brake cable bracket from the lower link.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the nut that fastens the cable.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Remove the parking brake cable from the frame.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758184">17. Lower link
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the parking brake cable bracket from the lower link.</p>
+          <p class="instructions">2. Disconnect the lower link from the rear axle.</p>
+          <p class="instructions">3. Remove the lower link from the frame.</p>
+                <p class="illust"><img src="image/RUWD2CSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lower link</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758185">18. Upper link
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness from the upper link.</p>
+          <p class="instructions">2. Disconnect the upper link from the rear axle.</p>
+          <p class="instructions">3. Remove the upper link from the frame.</p>
+                <p class="illust"><img src="image/RUWD2CSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Upper link</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758180">19. Stabilizer bar
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the stabilizer link from the frame.</p>
+          <p class="instructions">2. Remove the stabilizer link from the stabilizer bar.</p>
+                <p class="illust"><img src="image/RUWD2CSH001001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Stabilizer link</li><li>Nut, stabilizer link - frame</li></ol></div>
+                <p class="instructions">3. Remove the stabilizer bar from the rear axle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the clamp, and then remove the stabilizer bar from the rear axle.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the bushing from the stabilizer bar.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758178">20. Lateral rod
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the lateral rod from the frame.</p>
+          <p class="instructions">2. Remove the lateral rod from the rear axle.</p>
+                <p class="illust"><img src="image/RUWD2CSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lateral rod</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758186">21. Coil spring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the brake hose from the rear axle.</p>
+          <p class="instructions">2. Disconnect the shock absorber from the frame.</p>
+                <p class="illust"><img src="image/RUWD2CSH000901.png" class="SH" /></p>
+                <p class="instructions">3. Lower the rear axle.</p>
+          <p class="instructions">4. Remove the coil spring from the rear axle.</p>
+          <p class="instructions">5. Remove the coil spring insulator from the frame.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759174">22. Rear axle assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the rear axle assembly from vehicle.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When pulling out the rear axle assembly, be very careful not to deform or damage the brake pipe, brake hose or back plate.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the shock absorber from the rear axle assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD2CSH000801.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

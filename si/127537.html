@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Air conditioning system check null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Air conditioning system check
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751737">1. Air conditioning system check
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Fully close the vehicle doors and operate the air conditioner with the inside/outside air switch at RECIRC position, and then sets the highest value to the fan switch with the temperature adjustment at MAX COOL.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Maintain this state for a few minutes to circulate the refrigerant in the air conditioning cycle.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Check the high and low pressure of the refrigerant with the manifold gauge.</p>
+                <p class="numeric">Heating temperature： 30 to 35 ℃ { 86 to 95 °F }</p>
+                <p class="explanation">Low pressure side： 127 to 245 kPa { 1.30 to 2.50 kgf/cm2 }</p>
+          <p class="explanation">High pressure side： 1373 to 1667 kPa { 14 to 17 kgf/cm2 }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the high and low pressures are largely different from the reference pressure values, refer to checking the air conditioning system using the manifold gauge to check the system.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Checking the air conditioning system using the manifold gauge</p>
+                <p class="instructions">3. In addition to refrigerant pressures, check also whether the refrigerant is properly filled using the sight glass.</p>
+                <p class="explanation">Check the sight glass under the following conditions.<br/>Outside temperature is 35ºC {95˚F} or lower<br/>Engine rpm is 1500 rpm<br/>Air conditioner switch ON<br/>Inside/outside air change is RECIRC<br/>Fan switch is HIGH<br/>Temperature adjustment is MAX COOL<br/>Pressure at high pressure side is 1667 kPa {17 kgf/cm2} or lower</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the outside air temperature or the high pressure side pressure is higher than the values indicated in the illustration, the HFC-134a refrigerant may appear cloudy when checking its status through the sight glass, which prevents correct judgement. When this occurs, move the vehicle to a shaded area or indoors, set the fan switch to "LO", and lower the load of the air conditioner so that the air temperature and the high pressure side pressure are below the values and then perform the check again.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW87BMF000101.png" class="MF" /></p>
+                <p class="instructions">4. Put your hand at the air outlet to check whether the temperature at which the air is blowing out corresponds with the temperature set.</p>
+          <p class="instructions">5. After completing the system inspection, remove the charging hose from the service charge valve.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

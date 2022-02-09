@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Turbocharger assembly inspection (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Turbocharger assembly
+          inspection
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie748224">1. Turbocharger assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure play using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the play of the wheel in the direction of the wheel axis when a load is applied on the both sides of the compressor wheel.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Load： 12 N { 1.2 kg / 2.7 lb }</p>
+          <p class="numeric">Standard： 0.03 to 0.08 mm { 0.0012 to 0.0031 in }</p>
+          <p class="numeric">Limit： 0.09 mm { 0.0035 in }</p>
+                <p class="illust"><img src="image/LNW21BSH022201.png" class="SH" /></p>
+                <p class="instructions">2. Measure the clearance using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the clearance between the wheel shaft and the bearing.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.08 to 0.13 mm { 0.0031 to 0.0051 in }</p>
+          <p class="numeric">Limit： 0.14 mm { 0.0055 in }</p>
+                <p class="illust"><img src="image/LNW21BSH022301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil outlet</li><li>Oil inlet</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspection of turbocharger actuator operation</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the vacuum pump to the actuator.</p>
+                <p class="illust"><img src="image/RTWE1FSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Actuator</li><li>Vacuum pump</li></ol></div>
+                <p class="instructions">4. Operate the vacuum pump.</p>
+          <p class="instructions">5. Add negative pressure to the actuator.</p>
+                <p class="numeric">Specified pressure： -50.0 kPa { -0.51 kgf/cm2 / -7 psi }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the lever hits the stopper when a vacuum is applied.</li>
+                    <li>Apply a negative pressure for 30 seconds and check whether the pressure decreases.</li>
+                    <li>Place the vernier caliper at the control rod end of the actuator.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Release negative pressure.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Gradually release the negative pressure and verify that the control rod moves smoothly.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Measure length using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the control rod has moved only as much as the standard value when the lever hits the stopper after the vacuum is released.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 11.4 mm { 0.449 in }</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

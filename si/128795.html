@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transfer assembly reassembly (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transfer assembly
+          reassembly
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759072">1. Oil pump
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Assemble the oil pump.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the clamp to fix the hose.</li>
+                    <li>Tighten the clamp to fix the screen.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Watch for the orientation of the clamp.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH002201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil pump assembly</li><li>Clamp</li><li>Hose</li><li>Screen assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759061">2. 2-4 shift assembly
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Assemble the 2-4 shift assembly.</p>
+          <p class="instructions">2. Install the shift block to the shift rod.</p>
+          <p class="instructions">3. Install the spring pin to the shift block.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new spring pin.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Head of the spring pin should not stick out of the surface of shift block.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift block surface</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the spring.</li>
+                    <li>Install the shift arm.</li>
+                    <li>Install the snap ring by compressing the spring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the guide roller.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH002101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift rod</li><li>Shift arm</li><li>Spring</li><li>Shift block</li><li>Spring pin</li><li>Guide roller</li><li>Snap ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759070">3. H-L shift assembly
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Assemble H-L shift assembly.</p>
+                <p class="illust"><img src="image/RTWC3DSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift arm</li><li>Shift block</li><li>Inner retaining ring</li><li>Front collar</li><li>Shift block spring</li><li>Rear collar</li><li>Shift rod</li><li>Outer snap ring</li><li>Guide roller</li><li>Spring pin</li></ol></div>
+                <p class="instructions">2. Install the shift arm to the shift rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the spring pin.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new spring pin.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Head of the spring pin should be at the same level as the rest of surface and should not stick out.</li>
+                    <li>Install the front collar, spring, and rear collar in this order to the shift block.</li>
+                    <li>Compress the shift block spring by using the socket and vise.</li>
+                    <li>Install the inner retaining ring.</li>
+                    <li>Clearance of the arm should be within the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH002401.png" class="SH" /></p>
+                <div class="legend"><ol><li>25.6°</li><li>14 mm {0.551 in}</li></ol></div>
+                <p class="instructions">3. Install the shift block to the shift rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Compress the H-L shift spring by using a socket and a vise.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH002001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the outer snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the guide roller.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH001901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759071">4. Front output shaft ball bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the front output shaft ball bearing to the front output shaft using a press.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Completely insert the front output shaft ball bearing, and install the snap ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759076">5. Front transfer case
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the oil seal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended oil or equivalent to the outside of the input shaft oil seal and front output shaft oil seal.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Apply the grease to the oil seal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply Besco L-2 grease or equivalent to the lip section of the input shaft oil seal and front output shaft oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the oil seal to the front transfer case using special tool.</p>
+                <p class="sst"><img src="image/ST5884027850.png" class="ST" /><br/>SST: 5-8840-2785-0 - oil seal installer</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Press-fit the input shaft oil seal and front output shaft oil seal to the specified position.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Clean the oil seal mounting section and the surrounding area.</li>
+                    <li>Ensure that there are no burrs, etc., around the oil seal mounting section.</li>
+                    <li>When press-fitting, take care not to damage the lip section of the oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH002501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li></ol></div>
+                <p class="illust"><img src="image/RTWB7DSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li></ol></div>
+                <p class="instructions">4. Install the internal gear to the transfer case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended oil or grease to the damper ring.</li>
+                    <li>Install the damper ring and the internal gear to the transfer case.</li>
+                    <li>The damper ring should be located between the internal gear and the case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH001601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Damper ring</li><li>Internal gear</li><li>Retaining ring, spiral-type</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Installation direction of the damper ring should be as shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWB7DSH000401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Push the internal gear against the damper ring by using a ring gear installer and a press.</li>
+                    <li>Install a spiral-type retaining ring.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884027840.png" class="ST" /><br/>SST: 5-8840-2784-0 - ring gear installer</p>
+                <p class="illust"><img src="image/RTWC3DSH002601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Ring gear installer</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the needle bearing to the carrier and gear assembly.</li>
+                    <li>Completely insert the needle bearing into the carrier and gear assembly using a bearing installer and press.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884027820.png" class="ST" /><br/>SST: 5-8840-2782-0 - bearing installer</p>
+                <p class="illust"><img src="image/RTWC3DSH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+                <p class="instructions">5. Install the input shaft bearing to the gear assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Completely insert the ball bearing into the carrier and gear assembly using the appropriate special tool and a press.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH002801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the carrier snap ring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE3DSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Carrier snap ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the thrust needle bearing, sun gear input shaft, needle bearing planetary dog teeth, and dog teeth snap ring in that order to the carrier and gear assembly.</li>
+                    <li>Install the outer retaining ring to the transfer case.</li>
+                    <li>Install the carrier and gear assembly using snap ring pliers.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Fit the outer retaining ring into the groove.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF3DMH000101.png" class="MH" /></p>
+                <div class="legend"><ol><li>Outer retaining ring</li><li>Carrier and gear assembly</li><li>Thrust needle bearing</li><li>Needle bearing</li><li>Sun gear input shaft</li><li>Planetary dog teeth</li><li>Dog teeth snap ring</li></ol></div>
+                <p class="instructions">6. Assemble the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2-4 hub using a press.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH001101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the hub snap ring.</li>
+                    <li>Install the synchronizer key spring, synchronizer key, and the 2-4 sleeve to the 2-4 hub.</li>
+                    <li>The key and the opening of spring end should face in the opposite directions.</li>
+                    <li>Insert the H-L sleeve into the main shaft.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE3DMH000101.png" class="MH" /></p>
+                <div class="legend"><ol><li>H-L sleeve</li><li>2-4 sleeve</li><li>Synchronizer key and key spring</li><li>Hub snap sing</li></ol></div>
+                <p class="instructions">7. Install the sleeve to H-L shift assembly.</p>
+          <p class="instructions">8. Install the sleeve to the 2-4 shift assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended oil to the periphery of each shift assembly insertion hole of the transfer case.</li>
+                    <li>Install the main shaft together with the H-L shift assembly and 2-4 shift assembly to the shift drum.</li>
+                    <li>Align the shift shaft spline with the shift drum, and install the shaft to the drum.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW320MF000201.png" class="MF" /></p>
+                <div class="legend"><ol><li>H-L sleeve and shift assembly</li><li>Main shaft and shift arm with 2-4 sleeve assembly</li><li>Shift drum shaft</li><li>Shift drum</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful with assembling direction.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH002901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended oil to the main shaft.</li>
+                    <li>Align the block ring, outside ring, and inside ring with the 2-4 hub assembly, and install them.</li>
+                    <li>Assemble the sprocket, the transfer chain, and the front output shaft.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Install the front output shaft to the main shaft and the transfer case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the sprocket, the transfer chain, and the front output shaft to the main shaft and the transfer case.</li>
+                    <li>Install the sprocket thrust washer as aligned in a straight line with the main shaft groove.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH003001.png" class="SH" /></p>
+                <p class="instructions">10. Select the snap ring.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select a snap ring that minimizes play of the shaft, and install it to installation groove of the main shaft.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Snap ring thickness</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Identification color</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">： 2.15 mm { 0.085 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Red</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">： 2.10 mm { 0.083 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">No identification color</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">： 2.05 mm { 0.081 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Blue</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">： 2.00 mm { 0.079 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">White</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC3DSH003101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Block ring</li><li>Outside ring</li><li>Inside ring</li><li>Sprocket</li><li>Chain</li><li>Front output shaft</li><li>Thrust washer</li><li>Snap ring</li></ol></div>
+                <p class="instructions">11. Measure the snap ring using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure outer diameter of the snap ring, and use the snap ring so that the measured value is at the standard value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 53 to 54 mm { 2.09 to 2.13 in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759074">6. Rear transfer cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the rear transfer cover to the transfer case.</p>
+          <p class="instructions">2. Install the shift rod hole plug to the rear transfer cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace with new parts as necessary.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Press-fit until it is the same as the rear cover surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWB7DSH000601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place a rear cover as its aligning surface faces upward.</li>
+                    <li>Install the front output shaft needle bearing by using a special tool and a press.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884027830.png" class="ST" /><br/>SST: 5-8840-2783-0 - bearing installer</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the bearing surface where the bearing manufacturer name is marked with the bearing installer.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH003201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the oil pump wire snap ring to the rear cover.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH003301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Wire snap ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily install the speedometer drive gear to the inside of the rear cover.</li>
+                    <li>Pay careful attention to the installation direction so that the side of the speedometer drive gear with the groove is on the oil pump side.</li>
+                    <li>Install the rear output shaft ball bearing by using a special tool and a press.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST9852212680.png" class="ST" /><br/>SST: 9-8522-1268-0 - bearing &amp; oil seal installer</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Do not tap to insert the ball bearing with a hammer.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH003401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing &amp; oil seal installer</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the rear output shaft retaining ring.</li>
+                    <li>Place the oil pump at an installation position.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the oil pump strainer to the rear cover.</p>
+                <p class="numeric">Tightening torque： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+                <p class="illust"><img src="image/RTWB7DMH000101.png" class="MH" /></p>
+                <div class="legend"><ol><li>Oil pump assembly</li><li>Wire snap ring</li><li>Retaining ring</li><li>Ball bearing</li><li>Speedometer drive gear</li><li>Rear cover</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply liquid gasket and Loctite FMD127 to the areas indicated with slanted lines in the following diagram.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>There should be no discontinuity or misalignment of the liquid gasket.</li>
+                    <li>Confirm that there is no debris or oil adhered to the liquid gasket.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH004901.png" class="SH" /></p>
+                <p class="instructions">4. Install the rear cover to the transfer case.</p>
+                <p class="numeric">Tightening torque： 22 N・m { 2.2 kgf・m / 16 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with ABS.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Install the plug to the rear transfer cover.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759062">7. Front companion flange
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the O-ring.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new companion flange O-ring.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended oil or equivalent to the companion flange O-ring and install it to the front output shaft.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the front companion flange to the output shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fix the flange by using a special tool.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884001330.png" class="ST" /><br/>SST: 5-8840-0133-0（J-8614-11） - flange holder</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new front companion flange end nut and tighten it to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 137 N・m { 14.0 kgf・m / 101 lb・ft }</p>
+                <p class="illust"><img src="image/RTWB7DSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange holder</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Crimp the front companion flange end nut using the special tool.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884022930.png" class="ST" /><br/>SST: 5-8840-2293-0 - end nut lock punch</p>
+                <p class="illust"><img src="image/RTWC3DSH003601.png" class="SH" /></p>
+                <div class="legend"><ol><li>End nut punch</li></ol></div>
+                <p class="illust"><img src="image/RUWD3DSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Maximum value: 26 mm {1.02 in}</li><li>Minimum value: 4 mm {0.16 in}</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759069">8. Detent plug
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Prepare the detent plug.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply LOCTITE 575 or equivalent to the threaded portion of the detent plug.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759063">9. Snap ring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the snap ring to the rear output shaft using special tool.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install it from behind the shaft to make sure that it fits to the groove securely.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884027870.png" class="ST" /><br/>SST: 5-8840-2787-0 - snap ring installer</p>
+                <p class="illust"><img src="image/RTWC3DSH003701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring installer</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758350">10. Rear output shaft oil seal
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Clean the installation section of the oil seal and its circumference.</li>
+                    <li>Make sure that there is no burr at the oil seal installation section.</li>
+                    <li>Use a new oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Apply the oil to the rear output shaft oil seal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended oil to the outside of the rear output shaft oil seal.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a new rear output shaft oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Apply the grease to the rear output shaft oil seal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply BESCO L2 grease or equivalent to the oil seal lip.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the rear output shaft oil seal to the transfer case using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a oil seal installer.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the lip area of the oil seal when firmly fitting.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884027860.png" class="ST" /><br/>SST: 5-8840-2786-0 - oil seal installer</p>
+                <p class="illust"><img src="image/RTWC3DSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li></ol></div>
+                <p class="illust"><img src="image/RTWC3DSH004801.png" class="SH" /></p>
+                <div class="legend"><ol><li>3.0 - 3.8 mm {0.118 - 0.150 in}</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759075">11. Detent plug
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the detent plug to the transfer case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the detent ball, detent spring and 2 detent plugs to the transfer case.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 19 N・m { 1.9 kgf・m / 14 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759067">12. Neutral switch
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the neutral switch to the transfer case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the neutral switch of the brown harness cover.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759068">13. 2-4 switch
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the transfer indicator switch to the transfer case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2-4 switch that has a gray-colored harness cover.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the switch bracket.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759077">14. 2WD-4WD actuator
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 2WD-4WD actuator to the transfer case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the actuator in the same direction as the shaft.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 22 N・m { 2.2 kgf・m / 16 lb・ft }</p>
+                <p class="instructions">2. Install the breather hose to the actuator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the breather hose between the transfer actuator and the transfer case.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie817412">15. Speedometer driven gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the speedometer driven gear to the transfer case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>For models without ABS</li>
+                    <li>Install the speedometer driven gear, speedometer bushing, and speedometer stay.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759078">16. Stone guard
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the stone guard to the transfer case.</p>
+                <p class="numeric">Tightening torque： 21 N・m { 2.1 kgf・m / 15 lb・ft }</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

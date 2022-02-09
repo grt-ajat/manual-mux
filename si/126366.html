@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>DTC P0089 (Flash Code 151) Fuel Pressure Regulator Performance null (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    DTC P0089 (Flash Code 151) Fuel Pressure Regulator Performance
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie744091">1. DTC P0089
+                  diagnostics
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>An intermittently sticking suction control valve may have allowed the fuel pressure to become high enough to set this DTC.</li>
+                    <li>When the engine is running at idle in neutral, the Fuel Rail Pressure (FRP) should always be within 27 to 33 MPa {3900 to 4800 psi} after warm up.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="126567.html">202.Description Engine 15C.Functional Inspection(4JK1) diagnostic system check-engine controls</a>&quot;.</p>
+                    <p class="instructions">2. Prioritized DTC</p>
+                <p class="explanation">If DTCs P0091, P0092, P0192, P0193, P0201 - P0204, P0219, P2146, or P2149 are set, go to the applicable DTC diagnosis.</p>
+                <p class="instructions">3. Circuit diagnosis</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Wait for 30 seconds to reduce the fuel pressure from the fuel rail.</p>
+          <p class="explanation">Observe the Fuel Rail Pressure (FRP) Sensor display on the scan tool.</p>
+                <p class="numeric">Standard： 0.9 to 1.0 V</p>
+                <p class="explanation">If the reading is within the specified range, go to Inspection of suction control valve circuit.</p>
+          <p class="explanation">If the reading is outside the specified range, go to Inspection of fuel rail pressure sensor circuit.</p>
+                <p class="instructions">4. Inspection of suction control valve circuit</p>
+                <p class="explanation">Inspect the connection status of the suction control valve harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect the connection status of the suction control valve circuit at the ECM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect for high resistance in the suction control valve circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to Inspection of fuel pressure.</p>
+                <p class="instructions">5. Inspection of fuel rail pressure sensor circuit</p>
+                <p class="explanation">Inspect the connection status of the fuel rail pressure sensor harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect the connection status of the fuel rail pressure sensor circuit at the ECM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect for high resistance in the fuel rail pressure sensor circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, replace the fuel rail pressure sensor. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="126160.html">1.Engine 1C.Fuel System(4JK1) FRP sensor removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126170.html">1.Engine 1C.Fuel System(4JK1) FRP sensor installation</a>&quot;.</p>
+                    <p class="instructions">6. Inspection of fuel pressure</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Place the shift lever in the neutral position, and pull the parking brake lever.</p>
+          <p class="explanation">Start the engine.</p>
+          <p class="explanation">While comparing the Fuel Rail Pressure (FRP) display　with the Desired Fuel Rail Pressure (FRP) display on the scan tool, depress the accelerator pedal from idle to full throttle for several times.</p>
+          <p class="explanation">Verify that the difference between the Fuel Rail Pressure (FRP) display and Desired Fuel Rail Pressure (FRP) display is within the specified range.</p>
+                <p class="numeric">Standard： 5 MPa { 725 psi }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If possible, compare with other vehicle equipped with the same model engine.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If the reading is within the specified range, go to Fuel filter element replacement.</p>
+          <p class="explanation">If the reading is outside the specified range, go to Fuel supply pump replacement.</p>
+                <p class="instructions">7. Fuel filter element replacement</p>
+                <p class="explanation">Replace the fuel filter element. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="126150.html">1.Engine 1C.Fuel System(4JK1) fuel filter element removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126151.html">1.Engine 1C.Fuel System(4JK1) fuel filter element installation</a>&quot;.</p>
+                    <p class="instructions">8. Fuel supply pump replacement</p>
+                <p class="explanation">Replace the fuel supply pump. Go to Repair verification.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the fuel supply pump is replaced, the fuel filter element is also required to be replaced at the same time.</li>
+                    <li>When the fuel supply pump is replaced, perform the learning of the fuel supply pumps for the ECM.</li>
+              <ul/>
+    </div>
+                        <p class="reference">Refer to &quot;<a href="126177.html">1.Engine 1C.Fuel System(4JK1) fuel supply pump removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126180.html">1.Engine 1C.Fuel System(4JK1) fuel supply pump installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126150.html">1.Engine 1C.Fuel System(4JK1) fuel filter element removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126151.html">1.Engine 1C.Fuel System(4JK1) fuel filter element installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743952">2. DTC P0089
+                  repair verification
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Clear the DTC with a scan tool.</p>
+          <p class="explanation">Turn OFF the ignition switch for at least 30 seconds.</p>
+          <p class="explanation">Operate the vehicle within the conditions for setting the DTC or within the parameters observed in the Freeze Frame.</p>
+          <p class="explanation">Observe the DTC information with a scan tool.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

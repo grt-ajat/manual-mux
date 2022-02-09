@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Intermittent conditions of engine null (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Intermittent conditions of engine
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747658">1. Intermittent conditions of engine
+                  description of symptom
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Important preliminary inspections before starting</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Before using the list of symptoms, perform the inspection for the engine control system and check all of the following items. The malfunction indicator light is functioning properly.<br/>The scan tool data is within the normal range of operation values.<br/>Confirm the customer's complaint, and locate the appropriate symptom in the table of contents. Inspect the items presented for the symptom.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Visual inspection and actual inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">A careful visual inspection and actual inspection are required for some symptom procedures. This procedure is extremely important. By conducting visual and actual inspections, it is possible to save valuable time by fixing problems without performing further inspections. Check for the following. <br/>The ground of the ECM should be clean and fixed securely in the correct position. <br/>There is no partitioning or twisting of the vacuum hose. It should also be appropriately connected. Conduct a thorough inspection to make sure that there are no leaks or clogging. <br/>The air intake duct should not be crushed or damaged. <br/>The exhaust pipe should not be crushed or damaged. <br/>The wiring and terminals for engine harnesses are appropriately connected, and they are not pinched or disconnected.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Intermittent</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If an intermittent condition exists, inspect for improper installation of electrical components. Inspect whether there is any electronic component, light, or mobile phone that was additionally installed. Verify that devices that were additionally installed are not connected to serial data circuits such as CAN. <br/>Depending on the problem, the MIL may illuminate and the DTC may be stored. An intermittent condition is often caused by an improper electrical connection or wiring. Conduct a careful visual inspection, or conduct an actual inspection to see whether the following conditions exist in the suspected connector.</p>
+          <p class="explanation">Incomplete connection between connectors.<br/>Seating failure of terminal.<br/>Deformation or damage of terminal.</p>
+          <p class="explanation">Repair or replace the connector terminal of the circuit with the problem, and appropriately connect. Remove the terminals from the connector body and inspect the wires of the terminals for poor connections. <br/>Connect the DMM to the suspected circuit and perform a vehicle road test. If an abnormal value is displayed when the malfunction occurs, it can be determined that there is a problem in the monitored circuit. The scan tool is useful in detecting intermittent conditions. The scan tool has the following convenient functions.</p>
+          <p class="explanation">It is possible to review the information and comprehend the particular operation condition that resulted in the malfunction.<br/>By using the plot function of the scan tool, it is possible to graph the selected data parameters.<br/>This recorded information can be reviewed, and the location of the intermittence condition can be confirmed.</p>
+          <p class="explanation">If an intermittent condition that may cause stalling after engine start exists, check for a DTC relating to the vehicle theft deterrent system. Check for an improper installation of optional electronic accessories such as a light or mobile phone. <br/>Under the following conditions, DTCs are not recorded, and the MIL may illuminate intermittently.</p>
+          <p class="explanation">The ground of the ECM is loose or dirty.<br/>An intermittent short circuit to the ground of the MIL circuit<br/>An interference in the electric system due to a failure in a relay, a driven solenoid in the ECM or a switch. There may be cases where the voltage increases sharply due to an electric component. Normally, a problem occurs when the component with a failure operates.<br/>The diode has an open circuit.</p>
+          <p class="explanation">In the following list of symptoms, causes for each symptom are organized. There is no significance to the order of this procedure. If the value on the scan tool is not indicating a failure, the next procedure to perform should be one that can be most easily inspected or is most likely to be the cause.<br/>Use the following list when diagnosing symptoms of complaints.</p>
+          <p class="explanation">Intermittent conditions of engine<br/>Hard start<br/>Rough, unstable<br/>High idle speed<br/>Cuts out<br/>Surges<br/>Lack of power, sluggishness or sponginess<br/>Hesitation, sag or stumble<br/>Abnormal combustion noise<br/>Poor fuel economy<br/>Black smoke<br/>White smoke<br/>Engine has overheated<br/>Engine has overcooled<br/>Maximum engine speed is too low<br/>Engine does not stop<br/>Starter overrun<br/>Defect of charging system<br/>Abnormal sound in generator<br/>Vibrations and rattling sounds from the exhaust system<br/>Exhaust gas leak, noise<br/>Defect of turbocharger<br/>Preheating does not operate<br/>Preheating time is too long<br/>Preheating time is too short<br/>Engine does not turn over<br/>Engine slow to warm up</p>
+          <p class="explanation">There is no current problem, but a past DTC exists. Or, there is a complaint from the customer not related to a DTC, and that symptom cannot be reproduced.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Preliminary inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the engine control system.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Harness and connector</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Intermittent open circuits or short circuits are often caused by the harness or connector moving due to vibrations, engine torque, or bumps in the road. <br/>Move the related connectors and wiring while observing the applicable scan tool data. <br/>Command the components ON or OFF using the scan tool, and move the related connectors and wiring. Check the operation of the components. <br/>With the engine operating, move the related connectors and wiring while checking the operation of the engine. <br/>If moving the harness or connector affects the data displayed, component or system operation, or operation of the engine, inspect the harness or connection, and repair as necessary.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Electrical connection of wiring</li>
+              <ul/>
+    </div>
+                  <p class="explanation">An intermittent condition is often caused by an improper electrical connection, terminal installation or wiring.<br/>Defective connections between connectors or improper terminal seating to the connector body.<br/>Terminal deformation or damage. Test the terminals for improper installation.<br/>Defective connections between the wires and terminals including pressure bonding terminals with insulation. This requires the terminal to be removed from the connector body.<br/>Corrosion or water intrusion. Moisture can enter the wiring when the insulation area is damaged or has holes. The conductor inside the insulation area corrodes, but this usually cannot be confirmed visually.<br/>Look for any swollen or stiff section of the wires in the circuit suspected for an abnormality.<br/>Wiring damaged inside the insulation area.<br/>Pinched or disconnected wiring, or friction between wires.<br/>Confirm that the wiring does not come in contact with a hot exhaust system component.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Power source and ground of the control module, and power source and ground of the components</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Various symptoms can occur due to poor connections with the power supply or ground. <br/>Test all control module power supply circuits. In many vehicles, there are multiple circuits that supply power source to the control module. Other components in the system have separate power supply circuits that also need to be tested. Inspect the connections and fuses of the module and the component connectors, as well as intermediate connections between the power supply, the module, and the components. A test light or a DMM may indicate that voltage is present, but neither of them tests the ability of the circuit to carry sufficient current. <br/>Check whether sufficient current necessary to operate the components is flowing in the circuit. <br/>Test all control module ground circuits and system ground circuits. Some control modules have multiple ground circuits. Other components in the system have a separate ground that also needs to be tested. Inspect whether the ground is clean and is securely connected to the ground point. Inspect the connections of the components and the splice pack. Check whether sufficient current necessary to operate the components is flowing in the circuit.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temperature sensitivity</li>
+              <ul/>
+    </div>
+                  <p class="explanation">An intermittent condition may occur when a component or connection reaches its operating temperature. For an intermittent condition that may occur only when the component or connection is cold, or only when it is hot, failure records or snapshot data can be helpful, where possible.<br/>If an intermittent condition is related to heat, review the data relating to the following items.<br/>High outside air temperature.<br/>Heat emitted under the cab or by the engine.<br/>Heat emitted from a circuit due to a defective connection or high load.<br/>Load conditions higher than normal, such as when towing.<br/>If an intermittent condition is related to low temperature, review the data relating to the following items.<br/>Low outside air temperature. In an extremely low temperature, ice may form in a connection or component. Test for water intrusion.<br/>This condition only occurs for a cold start.<br/>It does not occur after the vehicle has been warmed up.<br/>Based on the information from the customer, determine if the failure is caused by temperature.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>EMI and Electrical Noise</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Certain electronic components and circuits may respond sensitively to electrical noise from the EMI, etc. <br/>A harness too close to high voltage or high current devices such as the injection part, motor, or generator, due to incorrect wiring <br/>These components may induce electrical noise on a circuit that could interfere with normal circuit operation. <br/>Interference exists in the electric system due to a failure in a relay, in a solenoid driven by the ECM, or in a switch. There may be cases where the voltage increases sharply due to this condition. Normally, a problem occurs when the component with a failure operates. <br/>Improper installation of non-genuine or aftermarket add-on accessories such as lights, 2-way radios, amplifiers, electric motors, remote starters, alarm systems, mobile phones, etc. These accessory may lead to an emission related failure when they are in use, but do not cause interference when not in use. <br/>Test the diode for an open circuit. Certain relays include clamping diodes. <br/>Inspect the rectifier bridge of the generator for problems that may cause AC noise in the electrical system.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Reproducing failure conditions</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If none of the previous tests are successful, attempt to duplicate or record the failure conditions. <br/>An alternative method is to operate the vehicle with the DMM connected to the suspect circuit. If an abnormal value is displayed on the DMM when the problem occurs, this can be helpful in identifying the defective area.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Scan tool snapshot</li>
+              <ul/>
+    </div>
+                  <p class="explanation">By connecting a scan tool, it is possible to take parameter snapshots available via serial data. The snapshot function records actual data for a certain period of time. The recorded data can be replayed and analyzed. Also, the scan tool can display a single parameter or multiple parameters as a graph for comparison. The snapshot function can be set to start recording manually when the symptom occurs, or to start recording when the DTC is set. Abnormal values in the recorded data may indicate systems or components that require further inspection.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>DRM memory</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Use the data stored in the DRM memory, or use the manual trigger switch. The DRM has the ability to store the engine log data at the time of a DTC event. The manual trigger switch stores the log data by an arbitrary operation of the driver on the occurrence of a wrong vehicle performance event instead of a DTC event. If the driver presses and releases the manual trigger switch once, that time becomes a trigger, and the log data after the trigger is stored in the DRM memory. Refer to the DRM users guide for more information.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

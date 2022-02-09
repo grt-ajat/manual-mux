@@ -1,0 +1,2033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission assembly reassembly (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission assembly
+          reassembly
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757311">1. 1st and reverse brake piston
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 1st and reverse brake piston to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the new O-ring with ATF, and install it to the 1st and reverse brake piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the O-ring and the 1st and reverse brake piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 131.60 mm { 5.1811 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH016001.png" class="SH" /></p>
+                <div class="legend"><ol><li>1st and reverse brake piston</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the 2 new O-rings with ATF, and install them to the brake reaction sleeve.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the O-rings and the brake reaction sleeve.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 79.10 mm { 3.1142 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 128.00 mm { 5.0394 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH015901.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>Brake reaction sleeve</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the 2 new O-rings with ATF, and install them to the inner brake piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the O-rings and the Inner brake piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 67.35 mm { 2.6516 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 116.40 mm { 4.5827 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH015801.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>Inner brake piston</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the sliding surface of the transmission case with ATF.</li>
+                    <li>Install the inner brake piston, brake reaction sleeve and 1st and reverse brake piston to the transmission case.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the O-rings.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH011501.png" class="SH" /></p>
+                <div class="legend"><ol><li>1st and reverse brake piston</li><li>Brake reaction sleeve</li><li>Inner brake piston</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756734">2. 1st and reverse brake return spring sub-assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 1st and reverse brake return spring sub-assembly to the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH011701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place Spring compressor on the 1st and reverse brake return spring sub-assembly and compress the spring with a press.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029660.png" class="ST" /><br/>SST: 5-8840-2966-0 - spring compressor</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, install the shaft snap ring in the groove.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to expand the shaft snap ring too much.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH032301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Spring compressor</li><li>Shaft snap ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756689">3. Brake disc No.4
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the brake disc No.4.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Make sure that the 1st and reverse brake piston moves smoothly when pulling and releasing the compressed air gun lever while applying compressed air into the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH011901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the level difference between the upper surface of the 1st and reverse brake piston and the hitting surface of the flange at both ends across the 1st and reverse brake piston diameter, and calculate the average.</li>
+                    <li>The 1st and reverse brake piston must be securely installed to the end face of the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 36.35 to 37.09 mm { 1.4311 to 1.4602 in } Length A</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the thickness of the 2 flanges, 8 discs and the 7 plates altogether at both ends across the diameter, and calculate the average.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 33.94 to 35.04 mm { 1.3362 to 1.3795 in } Length B</p>
+                <p class="illust"><img src="image/RTWC5BSH012301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange</li><li>Length H</li><li>Length A</li><li>Length B</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the pack clearance is not within the specified range, select and a flange that brings the pack clearance to be within the specified range.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 0.8 to 1.1 mm { 0.031 to 0.043 in } Pack Clearance</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pack Clearance= Length A - Length B - 0.55 mm {0.0217 in} - Length H</li>
+                    <li>There are 11 types of flanges that can be used to adjust the pack clearance.</li>
+                    <li>Select the one with the most appropriate thickness.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="middle">Thickness H:</td></tr><tr><td width="50" colspan="1" rowspan="12" align="center" valign="middle">Flange</td><td width="35" colspan="1" rowspan="1" align="left" valign="middle">Mark</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">Difference</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">0</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 0 mm { 0 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 0.09 to 0.25 mm { 0.0035 to 0.0098 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 0.23 to 0.39 mm { 0.0091 to 0.0154 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 0.37 to 0.53 mm { 0.0146 to 0.0209 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 0.51 to 0.67 mm { 0.0201 to 0.0264 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 0.65 to 0.81 mm { 0.0256 to 0.0319 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">8</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 0.79 to 0.95 mm { 0.0311 to 0.0374 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">10</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 0.93 to 1.09 mm { 0.0366 to 0.0429 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">11</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 1.07 to 1.23 mm { 0.0421 to 0.0484 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">12</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 1.21 to 1.37 mm { 0.0476 to 0.0539 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">14</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 1.35 to 1.51 mm { 0.0531 to 0.0594 in }</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757175">4. Rear planetary gear assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the bearing to the rear planetary gear assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the thrust bearing race No.9, thrust needle roller with race bearing and thrust needle roller bearing and install them to the rear planetary gear assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH012601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Thrust needle roller bearing</li><li>Thrust bearing race No.9</li><li>Thrust needle roller with race bearing</li></ol></div>
+                <p class="instructions">2. Install the rear planetary gear assembly to the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH012801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757143">5. Brake disc No.4
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the intermediate shaft to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the thrust bearing race No.7, thrust needle roller bearing and the thrust bearing race No.8 and install them to the intermediate shaft.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH013401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Thrust bearing race No.7</li><li>Intermediate shaft</li><li>Thrust bearing race No.8</li><li>Thrust needle roller bearing</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 1way clutch inner race sub-assembly, 1way clutch assembly No.3, rear planetary ring gear flange and rear planetary ring gear sub-assembly to the intermediate shaft.</li>
+                    <li>Install the intermediate shaft, rear planetary ring gear flange and rear planetary ring gear sub-assembly, 1way clutch assembly No.3 and 1way clutch inner race sub-assembly to the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH013601.png" class="SH" /></p>
+                <div class="legend"><ol><li>1way clutch inner race sub-assembly</li><li>Intermediate shaft</li><li>Rear planetary ring gear flange and rear planetary ring gear sub-assembly</li><li>1way clutch assembly No.3</li></ol></div>
+                <p class="instructions">2. Install the brake disc No.4 to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2 flanges, 8 discs and 7 plates to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Check the number and order of the flanges, discs and plates.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH013001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the flanges, discs and plates following the order shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH013201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange</li><li>Plate, 7 pcs.</li><li>Flange</li><li>Disc, 8 pcs.</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the snap ring is installed in the correct direction.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the hole snap ring is not installed in the correct direction, the automatic transmission may not work properly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH013901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using snap ring pliers, install the hole snap ring in the groove.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029610.png" class="ST" /><br/>SST: 5-8840-2961-0 - snap ring pliers </p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Align the opening of the hole snap ring with the position shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH014201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring pliers</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757580">6. Plate stopper spring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the plate stopper spring to the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH014301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756885">7. Brake piston No.2
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake piston No.2 to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the brake piston No.2 and brake cylinder No.2 to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Align the hole of the brake piston No.2 and brake cylinder No.2 with the position shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH014501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757308">8. Brake piston return spring sub-assembly No.2
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake piston return spring sub-assembly No.2 to the transmission case.</p>
+                <p class="illust"><img src="image/RTWC5BSH014701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JJ1</li>
+                    <li>Install the 4 discs, 3 plates and flange to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Check the number and order of the discs, plates flange.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH014901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the discs, plates and flange following the order shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH015001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Disc, 4 pcs.</li><li>Plate, 3 pcs.</li><li>Flange</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JK1</li>
+                    <li>Install the 3 discs and 3 plates to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Check the number and order of the discs, plates flange.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH015301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the discs, plates and flange following the order shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH015401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Disc, 3 pcs.</li><li>Plate, 3 pcs.</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the brake flange No.2 to the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH015601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using oil seal installer, spring compressor kit and a screwdriver, install the hole snap ring in the groove.</li>
+                    <li>Use the hat type adapter in the spring compressor kit.</li>
+                    <li>Fix the spring compressor kit with a suitable bolt.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029730.png" class="ST" /><br/>SST: 5-8840-2973-0 - spring compressor kit</p>
+          <p class="sst"><img src="image/ST5884029620.png" class="ST" /><br/>SST: 5-8840-2962-0 - oil seal installer</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Align the opening of the hole snap ring with the position shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD5BSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Suitable bolt (M8x1.25, L=25 mm {0.98 in})</li><li>Oil seal installer</li><li>Spring compressor kit</li><li>Adapter</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757446">9. Brake piston No.1
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake piston No.1 to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the brake piston No.1 and brake cylinder No.1 to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Align the hole of the brake piston No.1 and brake cylinder No.1 with the position shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the brake piston return spring sub-assembly to the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH016701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using oil seal installer, spring compressor kit and a screwdriver, install the hole snap ring in the groove.</li>
+                    <li>Use the disk type adapter in the spring compressor kit.</li>
+                    <li>Fix the spring compressor kit with a suitable bolt.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029730.png" class="ST" /><br/>SST: 5-8840-2973-0 - spring compressor kit</p>
+          <p class="sst"><img src="image/ST5884029620.png" class="ST" /><br/>SST: 5-8840-2962-0 - oil seal installer</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Align the opening of the hole snap ring with the position shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD5BSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Suitable bolt (M8x1.25, L=25 mm {0.98 in})</li><li>Oil seal installer</li><li>Spring compressor kit</li><li>Adapter</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757186">10. Brake disc No.1
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the brake piston No.1.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Make sure that the brake piston No.1 moves smoothly when pulling and releasing the compressed air gun lever while applying compressed air into the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH017501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JJ1</li>
+                    <li>Using vernier calipers, measure the level difference between the upper surface of the brake piston No.1 and the hitting surface of the flange at both ends across the brake piston No.1 diameter, and calculate the average.</li>
+                    <li>The brake piston No.1 and brake cylinder No.1 must be securely installed to the end face of the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 19.74 to 20.22 mm { 0.7772 to 0.7961 in } Length A</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the thickness of the 4 discs and the 4 plates altogether at both ends across the diameter, and calculate the average.</li>
+                    <li>Length B is a value which includes the measured value and the correction value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 18.93 to 19.39 mm { 0.7453 to 0.7634 in } Length B</p>
+          <p class="numeric">correction value： 2.2 mm { 0.087 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH017601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Length H</li><li>Length A</li><li>Length B</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the piston stroke is not within the specified range, select and install a flange that brings the piston stroke to be within the specified range.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 0.56 to 0.86 mm { 0.0220 to 0.0339 in } Piston stroke</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Piston stroke= Length A - Length B + 2.20 mm {0.0866 in} - Length H</li>
+                    <li>There are 4 types of flanges that can be used to adjust the piston stroke.</li>
+                    <li>Select the one with the most appropriate thickness.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="middle">Thickness H</td></tr><tr><td width="50" colspan="1" rowspan="5" align="center" valign="middle">Flange</td><td width="35" colspan="1" rowspan="1" align="left" valign="middle">Mark</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">0</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 1.95 to 2.05 mm { 0.0768 to 0.0807 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 2.15 to 2.25 mm { 0.0846 to 0.0886 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 2.35 to 2.45 mm { 0.0925 to 0.0965 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 2.55 to 2.65 mm { 0.1004 to 0.1043 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JK1</li>
+                    <li>Using vernier calipers, measure the level difference between the upper surface of the brake piston No.1 and the hitting surface of the flange at both ends across the brake piston No.1 diameter, and calculate the average.</li>
+                    <li>The brake piston No.1 and brake cylinder No.1 must be securely installed to the end face of the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 15.29 to 15.77 mm { 0.6020 to 0.6209 in } Length A</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the thickness of the 3 discs and the 3 plates altogether at both ends across the diameter, and calculate the average.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 14.72 to 15.12 mm { 0.5795 to 0.5953 in } Length B</p>
+                <p class="illust"><img src="image/RTWC5BSH017801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Length H</li><li>Length A</li><li>Length B</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the piston stroke is not within the specified range, select and install a flange that brings the piston stroke to be within the specified range.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 0.56 to 0.86 mm { 0.0220 to 0.0339 in } Piston stroke</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Piston Stroke= Length A - Length B + 2.20 mm {0.0866 in} - Length H</li>
+                    <li>There are 4 types of flanges that can be used to adjust the piston stroke.</li>
+                    <li>Select the one with the most appropriate thickness.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="middle">Thickness H</td></tr><tr><td width="50" colspan="1" rowspan="5" align="center" valign="middle">Flange</td><td width="35" colspan="1" rowspan="1" align="left" valign="middle">Mark</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">0</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 1.95 to 2.05 mm { 0.0768 to 0.0807 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 2.15 to 2.25 mm { 0.0846 to 0.0886 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 2.35 to 2.45 mm { 0.0925 to 0.0965 in }</td></tr><tr><td width="35" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="135" colspan="1" rowspan="1" align="left" valign="middle">： 2.55 to 2.65 mm { 0.1004 to 0.1043 in }</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757176">11. Middle planetary gear assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the middle planetary gear assembly to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the thrust bearing race No.4 and the thrust needle roller bearing to the middle planetary gear assembly.</li>
+                    <li>Install the middle planetary gear assembly and planetary sun gear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH019101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Thrust needle roller bearing</li><li>Thrust bearing race No.4</li><li>Middle planetary gear assembly</li><li>Planetary sun gear</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756849">12. Front planetary ring gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the front planetary ring gear to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the thrust bearing race No.3 and the thrust needle roller bearing and install them to the front planetary ring gear.</li>
+                    <li>Install the front planetary ring gear and front planetary ring gear flange and middle planetary ring gear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH019201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Thrust bearing race No.3</li><li>Thrust needle roller bearing</li><li>Front planetary ring gear and front planetary ring gear flange and middle planetary ring gear</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756597">13. Front planetary gear assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the front planetary gear assembly to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the planetary carrier thrust washer No.2 and install it to the front planetary gear assembly.</li>
+                    <li>Install the front planetary gear assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH019401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front planetary gear assembly.</li><li>Planetary carrier thrust washer No.2</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757449">14. 1way clutch assembly No.1
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 1way clutch assembly No.1 to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the planetary carrier thrust washer No.1 and install it to the 1way clutch inner race sub-assembly.</li>
+                    <li>Install the 1way clutch assembly No.1 to the 1way clutch inner race sub-assembly.</li>
+                    <li>Install the 1way clutch inner race sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH019501.png" class="SH" /></p>
+                <div class="legend"><ol><li>1way clutch assembly No.1</li><li>Planetary carrier thrust washer No.1</li><li>1way clutch inner race sub-assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757184">15. Brake disc No.1
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake disc No.1 to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JJ1</li>
+                    <li>Install the 4 discs, 4 plates and flange to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Check the number and order of the discs, plates and flange.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH018301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the discs, plates and flange following the order shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH018501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange</li><li>Plate, 4 pcs.</li><li>Disc, 4 pcs.</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JK1</li>
+                    <li>Install the 3 discs, 3 plates and flange to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Check the number and order of the discs, plates and flange.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH018601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the discs, plates and flange following the order shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH018801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange</li><li>Plate, 3 pcs.</li><li>Disc, 3 pcs.</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757301">16. Brake piston No.3
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake piston No.3 to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the brake piston return spring sub-assembly No.3, 2nd brake piston No.3 and brake piston No.3 to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Align the hole of the brake piston return spring sub-assembly No.3, 2nd brake piston No.3 and brake piston No.3 with the position shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH019701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the hole snap ring is installed in the correct direction.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the hole snap ring is not installed in the correct direction, the automatic transmission may not work properly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH019801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using Snap ring pliers, install the hole snap ring in the groove.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029610.png" class="ST" /><br/>SST: 5-8840-2961-0 - snap ring pliers </p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Align the opening of the hole snap ring with the position shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH010401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring pliers</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757030">17. 1way clutch assembly No.2
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the clutch hub thrust washer and install it to the 1way clutch assembly No.2.</li>
+                    <li>Install the 1way clutch assembly No.2.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH039301.png" class="SH" /></p>
+                <div class="legend"><ol><li>1way clutch assembly No. 2</li><li>Clutch hub thrust washer</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756731">18. Brake disc No.3
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake disc No.3 to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the cushion plate and plates, discs and flange to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Check the number and order of the cushion plate and plates, discs and flange.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH020101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the cushion plate and plates, discs and flange following the order shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH020201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange</li><li>Plate, 4 pcs.</li><li>Cushion plate</li><li>Disc, 4 pcs.</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, install the hole snap ring in the groove.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Align the opening of the hole snap ring with the position shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH020301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756870">19. Forward clutch assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the forward clutch assembly to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the clutch drum thrust washer, and install it to the forward clutch assembly and direct clutch assembly.</li>
+                    <li>Install the 1way clutch assembly No.2.</li>
+                    <li>Apply ATF to the clutch hub thrust washer and install it to the 1way clutch assembly No.2.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH039401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clutch drum thrust washer</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the thrust bearing race and the thrust needle roller bearing and install them to the forward clutch assembly and direct clutch assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH020501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Thrust bearing race</li><li>Thrust needle roller bearing</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the forward clutch assembly and direct clutch assembly.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to drop the forward clutch assembly and direct clutch assembly.</li>
+                    <li>Be careful not to drop the 1way clutch assembly No.2.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH020601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757601">20. Oil pump assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the oil seal to the oil pump assembly using special tool.</p>
+                <p class="sst"><img src="image/ST5884029620.png" class="ST" /><br/>SST: 5-8840-2962-0 - oil seal installer</p>
+                <p class="illust"><img src="image/RTWC5BSH035901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li></ol></div>
+                <p class="instructions">2. Install the oil pump assembly to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the new O-ring with ATF, and install it to the oil pump assembly.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 218.40 mm { 8.5984 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 3.50 mm { 0.1378 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the thrust needle roller bearing and the thrust bearing race No.1 and install them to the oil pump assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH020701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Thrust bearing race No.1</li><li>Thrust needle roller bearing</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the oil pump assembly.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to drop the oil pump assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH020901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply DOW CORNING TORAY SH780 or equivalent to the 10 bolts and install them to the oil pump assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 21 N・m { 2.1 kgf・m / 15 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5BSH021001.png" class="SH" /></p>
+                <div class="legend"><ol><li>M8 x 1.25 x 40 mm</li><li>Sealant, DOW CORNING TORAY SH780 or equivalent</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757440">21. Thrust bearing race
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the thrust bearing race to the rear planetary gear assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ATF to the bearing race, thrust needle roller bearing and the bearing race install them to the rear planetary gear assembly.</li>
+                    <li>Using Snap ring pliers, install the snap ring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH003301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Bearing race</li><li>Thrust needle roller bearing</li><li>Bearing race</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756726">22. Rear planetary gear assembly
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Adjust the rear planetary gear assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a feeler gauge, measure the clearance between the snap ring and the bearing race.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 0.02 to 0.12 mm { 0.0008 to 0.0047 in } End play</p>
+                <p class="illust"><img src="image/RTWC5BSH035001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Mark</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the clearance is not within the specified range, select another bearing race that brings the clearance within the specified range.</li>
+                    <li>There are 12 different thicknesses for the bearing race.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BMH000801.png" class="MH" /></p>
+                <div class="legend"><ol><li>3.80 mm {0.1496 in}</li><li>3.85 mm {0.1516 in}</li><li>3.90 mm {0.1535 in}</li><li>3.95 mm {0.1555 in}</li><li>4.00 mm {0.1575 in}</li><li>4.05 mm {0.1594 in}</li><li>4.10 mm {0.1614 in}</li><li>4.15 mm {0.1634 in}</li><li>4.20 mm {0.1654 in}</li><li>4.25 mm {0.1673 in}</li><li>4.30 mm {0.1693 in}</li><li>4.35 mm {0.1713 in}</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756871">23. Forward clutch assembly
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the forward clutch assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the forward clutch assembly turns smoothly.</li>
+                    <li>Using a dial indicator, measure the forward clutch assembly end play.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">： 0.35 to 1.05 mm { 0.0138 to 0.0413 in } End play</p>
+                <p class="illust"><img src="image/RTWC5BSH021301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757437">24. Oil seal
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the oil seal to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using oil seal installer and a hammer, install the 2 new oil seals.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021690.png" class="ST" /><br/>SST: 5-8840-2169-0 - oil seal installer</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH035701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757435">25. Manual valve lever shaft
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the manual valve lever shaft to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the new spacer to the manual valve lever.</li>
+                    <li>Install the manual valve lever shaft to the transmission case through the manual valve lever.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH021701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a hammer, drive in the new spring pin.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH021901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Spring pin</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the manual valve lever shaft indentation with the spacer hole, and stake them together with the punch.</li>
+                    <li>Make sure that the manual valve lever shaft rotates smoothly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH022001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756582">26. Parking lock pawl
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the parking lock pawl to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the parking lock pawl.</li>
+                    <li>Install the snap ring to the parking lock pawl shaft.</li>
+                    <li>Install the parking lock pawl shaft and the torsion spring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to apply too much force to the torsion spring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH007601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Parking lock pawl</li><li>Torsion spring</li><li>Parking lock pawl shaft</li><li>Snap ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757290">27. Parking lock rod
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the parking lock rod to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the parking lock rod to the manual valve lever.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH022401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756866">28. Parking lock pawl bracket
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the parking lock pawl bracket to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the parking lock pawl bracket with the 3 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 7 N・m { 0.7 kgf・m / 62 lb・in }</p>
+                <p class="illust"><img src="image/RTWC5BSH022501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Shift the manual valve lever to the P position, and confirm the rear planetary gear assembly is correctly locked up by the parking lock pawl.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH022601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757318">29. Accumulator valve
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the accumulator valve to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the accumulator valve and the spring to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="middle">Spring</td></tr><tr><td width="70" colspan="1" rowspan="1" align="left" valign="middle">Free</td><td width="70" colspan="1" rowspan="1" align="left" valign="middle">Outer</td><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Color</td></tr><tr><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 48.76 mm { 1.9197 in }</td><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 16.60 mm { 0.6535 in }</td><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Light green</td></tr><tr><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 30.40 mm { 1.1968 in }</td><td width="70" colspan="1" rowspan="1" align="left" valign="middle">： 11.40 mm { 0.4488 in }</td><td width="80" colspan="1" rowspan="1" align="left" valign="middle">Pink</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH022901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757026">30. C3 accumulator piston
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the C3 accumulator piston to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the 2 new O-rings with ATF, and install them to the accumulator piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the O-rings and accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 26.75 mm { 1.0531 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 34.29 mm { 1.3500 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH006701.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>C3 accumulator piston</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the accumulator piston and the 2 accumulator springs to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="4" rowspan="1" align="left" valign="middle">Accumulator springs</td></tr><tr><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Piston</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Free</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Outer</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Color</td></tr><tr><td width="55" colspan="1" rowspan="2" align="center" valign="middle">C3</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">： 44.00 mm { 1.7323 in }</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">： 14.00 mm { 0.5512 in }</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Yellow</td></tr><tr><td width="55" colspan="1" rowspan="1" align="left" valign="middle">： 73.35 mm { 2.8878 in }</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">： 19.90 mm { 0.7835 in }</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Red</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH023101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757582">31. B3 accumulator piston
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the B3 accumulator piston to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the 2 new O-rings with ATF, and install them to the accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">Piston</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">Inner<br/>diameter</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="40" colspan="1" rowspan="2" align="center" valign="middle">B3</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 23.55 mm { 0.9272 in }</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 34.29 mm { 1.3500 in }</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the O-rings and accumulator piston.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH035301.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>B3 accumulator piston</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, install the spring and the snap ring to the accumulator piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="175" colspan="4" rowspan="1" align="left" valign="middle">Spring</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">Piston</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">Free</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">Outer</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">Color</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">B3</td><td width="45" colspan="1" rowspan="1" align="left" valign="bottom">： 24.77 mm { 0.9752 in }</td><td width="45" colspan="1" rowspan="1" align="left" valign="bottom">： 16.30 mm { 0.6417 in }</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">Purple</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH035201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Spring</li><li>B3 accumulator piston</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the accumulator piston and the accumulator spring to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="175" colspan="4" rowspan="1" align="left" valign="middle">Accumulator springs</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">Piston</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">Free</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">Outer</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">Color</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">B3</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">： 70.50 mm { 2.7756 in }</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">： 19.70 mm { 0.7756 in }</td><td width="45" colspan="1" rowspan="1" align="left" valign="middle">Purple</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH023301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756594">32. C2 accumulator piston
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the C2 accumulator piston to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the 2 new O-rings with ATF, and install them to the accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">Piston</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">Inner<br/>diameter</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="40" colspan="1" rowspan="2" align="center" valign="middle">C2</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 20.00 mm { 0.7874 in }</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 28.73 mm { 1.1311 in }</td><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 2.62 mm { 0.1031 in }</td></tr></tbody></table>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the O-rings and accumulator piston.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH006401.png" class="SH" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>C2 accumulator piston</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, install the spring and the snap ring to the accumulator piston.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the accumulator piston.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="4" rowspan="1" align="left" valign="middle">Spring</td></tr><tr><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Piston</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Free</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Outer</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Color</td></tr><tr><td width="55" colspan="1" rowspan="1" align="center" valign="middle">C2</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">： 14.16 mm { 0.5575 in }</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">： 11.30 mm { 0.4449 in }</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">-</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH006301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Spring</li><li>C2 accumulator piston</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the accumulator piston and the accumulator spring to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="4" rowspan="1" align="left" valign="middle">Accumulator springs</td></tr><tr><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Piston</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Free</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Outer</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Color</td></tr><tr><td width="55" colspan="1" rowspan="1" align="center" valign="middle">C2</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">： 62.00 mm { 2.4409 in }</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">： 15.90 mm { 0.6260 in }</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">White</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH035401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757198">33. Gasket
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the gasket to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the 3 new gaskets and the 3 new gaskets with ATF, and install them to the transmission.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the gasket.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH005901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Gasket</li><li>Gasket</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757445">34. Check valve sub-assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the check valve sub-assembly to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the check valve sub-assembly and the spring to the transmission case as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Free</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Outer</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 38.55 mm { 1.5177 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 4.861 mm { 0.19138 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH023601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756892">35. Valve body assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the valve body assembly to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the parking lock rod to the manual valve lever as shown in the figure.</li>
+                    <li>Aligning the bolt holes, temporarily install the valve body assembly.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing, be sure to put the transmission internal harness in the concave portion of the separator plate in the valve body assembly as shown in the figure.</li>
+                    <li>Do not pinch the transmission internal harness between the separator plate and the valve body assembly.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 19 bolts and temporarily tighten by hand.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BMH000401.png" class="MH" /></p>
+                <div class="legend"><ol><li>M6x1.0x25mm</li><li>M6x1.0x36mm</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 19 bolts.</li>
+                    <li>Be sure to tighten the inner bolts first.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 11 N・m { 1.1 kgf・m / 97 lb・in }</p>
+                <p class="illust"><img src="image/RTWC5BSH023801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757456">36. Manual detent spring sub-assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the Manual detent spring sub-assembly to the valve body assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the manual detent spring sub-assembly and the manual detent spring cover with the flange bolt to the valve body assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+                <p class="illust"><img src="image/RTWC5BSH005201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Manual detent spring cover</li><li>M6x1.0x14mm</li><li>Manual detent spring sub-assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757436">37. Transmission internal harness
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the transmission internal harness to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new O-ring to the transmission internal harness.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 21.80 mm { 0.8583 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.40 mm { 0.0945 in }</td></tr></tbody></table>
+                <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in } M6x1.0x16mm</p>
+                <p class="illust"><img src="image/RTWC5BSH005101.png" class="SH" /></p>
+                <p class="instructions">2. Install the transmission internal harness to the valve body assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the transmission fluid temperature sensor and the transmission fluid temperature sensor clamp to the valve body assembly with the bolt.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in } M6x1.0x12mm</p>
+          <p class="numeric">Tightening torque： 11 N・m { 1.1 kgf・m / 97 lb・in } M6x1.0x36mm</p>
+                <p class="illust"><img src="image/RTWC5BSH004801.png" class="SH" /></p>
+                <div class="legend"><ol><li>M6x1.0x12mm</li><li>M6x1.0x36mm</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the transmission internal harness to the valve body assembly wire harness clamp.</li>
+                    <li>Connect the 7 solenoid assembly connectors.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH004601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Valve body assembly wire harness clamp</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757455">38. Oil strainer
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the oil strainer to the valve body assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Deep type oil pan</li>
+                    <li>Coat a new O-ring with ATF and install it to the oil strainer.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 31.00 mm { 1.2205 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.72 mm { 0.1071 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the oil strainer to the valve body assembly with the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+                <p class="illust"><img src="image/RUWE5BSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>M6x1.0x12mm</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Shallow type oil pan</li>
+                    <li>Coat a new O-ring with ATF and install it to the oil strainer.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 31.00 mm { 1.2205 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.72 mm { 0.1071 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the oil strainer to the valve body assembly with the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+                <p class="illust"><img src="image/RTWE5BSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>M6x1.0x16mm</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757454">39. Oil pan magnet
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the oil pan magnet to the oil pan.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 4 oil pan magnets to the oil pan.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Clean the oil pan magnet before install it.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH024001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757581">40. Oil pan
+                  cleaning
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the contact surfaces of the oil pan and transmission case.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Make sure that no foreign matter is on the contact surfaces to ensure a secure fit between the oil pan and transmission case.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757035">41. Oil pan
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the oil pan to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new oil pan gasket and the oil pan to the transmission case.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the fitting surfaces of the transmission case and the oil pan.</li>
+                    <li>Be careful not to deform the oil pan.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 20 bolts to the transmission case.</li>
+                    <li>Be reminded that bolts might be damaged if tightened too much since the oil pan gasket is cork-made and there is little tightening sense.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 7 N・m { 0.7 kgf・m / 62 lb・in }</p>
+                <p class="illust"><img src="image/RTWC5BMH001201.png" class="MH" /></p>
+                <div class="legend"><ol><li>Oil pan gasket</li><li>M6 x 1.0 x 14.5 mm</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756740">42. Adapter housing
+                  cleaning
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+                    <li>Remove any sealant and be careful not to get oil on the contact surfaces of the transmission case and the adapter housing.</li>
+                    <li>Clean the contact surfaces of the transmission case and the adapter housing and the bolt holes.</li>
+                    <li>Completely remove sealant and oil with white gasoline or equivalent.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756601">43. Adapter housing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Apply liquid gasket to the adapter housing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ThreeBond 1281B or equivalent to the adapter housing as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Spread ThreeBond 1281B or equivalent over the contact surface.</li>
+                    <li>Do not apply liquid gasket to the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH024501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Liquid gasket, ThreeBond 1281B or equivalent</li></ol></div>
+                <p class="instructions">2. Install the adapter housing to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily tighten the 9 bolts by hand as shown in the figure.</li>
+                    <li>Tighten the 9 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 34 N・m { 3.5 kgf・m / 25 lb・ft } M8</p>
+          <p class="numeric">Tightening torque： 23 N・m { 2.3 kgf・m / 17 lb・ft } M10</p>
+                <p class="illust"><img src="image/RTWC5BSH002501.png" class="SH" /></p>
+                <div class="legend"><ol><li>M8x1.25x45mm</li><li>M10x1.5x50mm, Seal bolt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756738">44. Rear cover oil seal
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the rear cover oil seal to the adapter housing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using oil seal installer and a hammer, install the new rear cover oil seal to the adapter housing.</li>
+                    <li>Set the large stepped portion of the adapter toward the installer body.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the rear cover oil seal and the adapter housing.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029640.png" class="ST" /><br/>SST: 5-8840-2964-0 - oil seal installer</p>
+                <p class="numeric">Press fitting depth： 1.5 to 2.5 mm { 0.059 to 0.098 in } From the end of the adapter housing</p>
+                <p class="illust"><img src="image/RTWC5BSH036401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li><li>Installer body</li><li>Adapter</li><li>5.6 mm {0.220 in}</li></ol></div>
+                <p class="instructions">2. Apply the grease to the rear cover oil seal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply grease to the rear cover oil seal lip.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756599">45. Extension housing assembly
+                  cleaning
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+                    <li>Remove any sealant and be careful not to get oil on the contact surfaces of the transmission case and extension housing assembly.</li>
+                    <li>Clean the contact surfaces of the transmission case and the extension housing assembly and the bolt holes.</li>
+                    <li>Completely remove sealant and oil with white gasoline or equivalent.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756739">46. Extension housing assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Apply liquid gasket to the extension housing assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ThreeBond 1281B or equivalent to the extension housing assembly as shown in the figure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Spread liquid gasket over the contact surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH024601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Liquid gasket, ThreeBond 1281B or equivalent</li></ol></div>
+                <p class="instructions">2. Install the extension housing assembly to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily tighten the 6 bolts by hand.</li>
+                    <li>Do not apply liquid gasket to the transmission case.</li>
+                    <li>Tighten the 8 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 34 N・m { 3.5 kgf・m / 25 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5BSH003101.png" class="SH" /></p>
+                <div class="legend"><ol><li>M10x1.5x45mm, Seal bolt</li><li>M10x1.5x35mm, Seal bolt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756888">47. Deflector
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the oil seal to the extension housing assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using oil seal installer and a hammer, install the new rear cover oil seal to the extension housing assembly.</li>
+                    <li>Set the small stepped portion of the adapter toward the installer body.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the rear cover oil seal and the extension housing assembly.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029640.png" class="ST" /><br/>SST: 5-8840-2964-0 - oil seal installer</p>
+                <p class="numeric">Press fitting depth： 5.4 to 5.8 mm { 0.213 to 0.228 in } From the end of the extension housing assembly</p>
+                <p class="illust"><img src="image/RTWC5BSH036501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li><li>Installer body</li><li>Adapter</li><li>2 mm {0.08 in}</li></ol></div>
+                <p class="instructions">2. Apply the grease to the oil seal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply grease to the rear cover oil seal lip.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the deflector to the extension housing assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using deflector installer and a hammer, install the deflector to the extension housing assembly.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884029650.png" class="ST" /><br/>SST: 5-8840-2965-0 - deflector installer</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the extension housing assembly and the deflector.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH025001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757313">48. Converter housing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the converter housing to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily tighten the 10 bolts by hand as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH025301.png" class="SH" /></p>
+                <div class="legend"><ol><li>M10x1.5x35mm</li><li>M10x1.5x35mm, Seal bolt</li><li>M12x1.75x38mm, Seal bolt</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 10 bolts.</li>
+                    <li>The numbers shown in the figure indicate the order of bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">tightening torque： 34 N・m { 3.5 kgf・m / 25 lb・ft } M10x1.5</p>
+          <p class="numeric">tightening torque： 57 N・m { 5.8 kgf・m / 42 lb・ft } M12x1.75</p>
+                <p class="illust"><img src="image/RTWC5BSH025401.png" class="SH" /></p>
+                <div class="legend"><ol><li>M10x1.5</li><li>M12x1.75</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757567">49. Inhibitor switch
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the inhibitor switch to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily install the inhibitor switch with the new bolt.</li>
+                    <li>Tighten the bolt after adjusting the inhibitor switch to the N position.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH025501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the new washer with the nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 7 N・m { 0.7 kgf・m / 62 lb・in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, stake the washer.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH025601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the manual valve lever shaft to the N position.</li>
+                    <li>Align the groove and neutral basic line.</li>
+                    <li>Hold in position and tighten the bolt.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 13 N・m { 1.3 kgf・m / 115 lb・in }</p>
+                <p class="illust"><img src="image/RTWC5BSH036001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Neutral basic line</li><li>Groove</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757452">50. Elbow
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the elbow to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coat the new 2 O-rings with ATF, and then install it onto the elbows.</li>
+                    <li>Install the 2 elbows onto the transmission case in the specified direction.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 28 N・m { 2.9 kgf・m / 21 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5BSH039501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Elbow</li><li>0˚±2˚</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757253">51. Output speed sensor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the output speed sensor to the transmission case.</p>
+                <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the output speed sensor.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH000801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756977">52. Turbine speed sensor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the turbine speed sensor to the transmission case.</p>
+                <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the turbine speed sensor.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH000701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756602">53. Breather tube
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the breather tube to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the bolt in order to install the breather tube, and 2 bolts from the transmission case.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in }</p>
+                <p class="illust"><img src="image/RTWC5BSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Breather hose</li><li>Breather tube</li><li>M6x1.0x10mm</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757538">54. Torque converter assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the torque converter assembly to the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a screwdriver, position the drive gear on the oil pump assembly in the center.</li>
+                    <li>Then install the torque converter assembly on the transmission.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the oil seal.</li>
+                    <li>Be careful not to drop the torque converter assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH038201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757539">55. Torque converter assembly
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the torque converter assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the dimension from the end face of the converter housing to the torque converter assembly as shown in the figure, and check that the torque converter assembly is installed properly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 68 mm { 2.68 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH026601.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

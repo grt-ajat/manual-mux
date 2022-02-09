@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of driveline, axle null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of driveline, axle
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758782">1. Function, structure, operation of driveline, axle
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Propeller shaft</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear propeller shaft (2WD model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4ASF000101.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear propeller shaft (4WD model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4ASF000201.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Front propeller shaft</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWB4AMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Bolt, nut, washer, front axle side</li><li>Nut, washer, transfer side</li></ol></div>
+                <p class="explanation">The torque is transmitted from the transmission passing through the propeller shaft and universal joint assembled section to the axle. All propeller shafts have a balanced cylindrical shape. Some of the slip joints installed on the drive line are spline-shaped. The propeller shafts are precisely made to be entirely balanced, and welding and other modifications are inhibited. Make alignment marks on individual propeller shafts before removing them.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>To avoid injuries, confirm that the engine is stopped, the vehicle is still, and the brake is engaged to maintain the vehicle in the secured and safe condition.</li>
+                    <li>Be aware that applying too much force with a vise results in deformation of the propeller shaft.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Phasing<br/>The propeller shaft is designed to be assembled with the yoke rug (ears). Due to this design, the smooth shaft movement called phasing is achieved. Vibrations are caused by asynchronous movements of the propeller shaft. The propeller shaft lowers every time the universal joint rotates. This vibration is likened to the example of looking at the "waves" created by a person whipping a rope vertically moves to the end of the rope. The propeller shaft in the synchronous movements is likened to the example of looking at the "waves" created with two people by holding each end of a rope and whipping it vertically at the same time crash and offset each other. This phenomenon is the same as the universal joint on the propeller shaft. Completely canceling out the vibrations produces a smooth flow of power in the drive line. To assure the correct installation position, it is important to make alignment marks when removing the propeller shaft.</p>
+          <p class="explanation">Universal joint<br/>A universal joint consists of 2 Y-shaped yokes that are connected by a spider.<br/>This spider is cross-shaped. The universal joint is designed to handle various loads and effects of the front or rear axle windup during acceleration. Within the designed angle range, the universal joint operates effectively and safely. <br/>The bearing used in the universal joint is a needle roller type. The needle roller is retained on the trunnion by a round bearing cup. The bearing cup is retained in the yoke by a snap ring.</p>
+                <p class="illust"><img src="image/RTWC4ASH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Spider</li><li>Y-shape yoke</li></ol></div>
+                <p class="explanation">Rear axle<br/>The rear axle assembly is a semi-floating type, so the vehicle weight is applied to the axle housing. <br/>The center line of the pinion gear is located lower than the center line of the ring gear (hypoid gear). <br/>All components required to transmit the power from the propeller shaft to the rear wheels are stored in the BANJO-shaped axle housing. <br/>The φ220 mm (8.66 in) ring gear rear axle uses a conventional set of a ring gear and a pinion gear to transmit the engine driving force to the rear wheels. This gear set transmits the driving force from the propeller shaft to the drive shaft at a 90 degree angle. <br/>The axle shaft is supported with the wheel end of the shaft by a double taper roller bearing. This pinion gear is supported by 2 taper roller bearings. The depth of the pinion is determined by the end of the pinion gear and the shim pack located between the roller bearings pressed on the pinion. The pinion bearing preload is set by compressing a collapsible type spacer between the bearings in the axle housing. <br/>The ring gear is held on the differential cage with 12 bolts. <br/>The differential cage is supported by 2 taper roller bearings in the axle housing. The differential gear and the ring gear are installed in relation to the pinion with the selected shim and the spacer between the bearing and the differential cage. To move the ring gear, remove the shims from one side, and add the same amount to the other side. These shims are used to preload the bearing, and they are compressed on the differential cage. 2 bearing caps are used to retain the differential in the rear axle housing. <br/>This differential is used to rotate the wheel at different speed while the rear axle continues transmitting the driving force. This prevents tire abrasion when cornering and premature wear on the internal axle parts.<br/>This rear axle is sealed by pinion seals located at the end of each axle shaft with liquid gasket between the differential carrier and the axle housing.</p>
+                <p class="illust"><img src="image/RUWD3CMF000101.png" class="MF" /></p>
+                <p class="explanation">Front drive axle</p>
+                <p class="illust"><img src="image/RTWC4CMF000201.png" class="MF" /></p>
+                <p class="explanation">Transfer<br/>The transfer case is used to transmit the power flow to the front axle. The transfer case also provides means to cut off transmission of the power to the front axle, and achieves improvement in fuel economy and quieter driving when the vehicle is running on a reformed road that does not require 4-wheel drive. Furthermore, the transfer case provides additional gear reduction when the gear is placed in the low range. This is useful in an encounter with a difficult off-road situation. <br/>To select a drive range, use the 4WD switch on the center cluster panel or center console. When 4WD is selected, the 4WD indicator light illuminates.</p>
+                <p class="illust"><img src="image/RTWC3DLF000501.png" class="LF" /></p>
+                <p class="explanation">Transfer case control system<br/>The transfer case control system switches between 2-wheel drive and 4-wheel drive. Furthermore, there are 2 modes of high and low prepared for 4-wheel drive, and either of the modes can be chosen depending on the driving conditions. It is equipped with a shift-on-the-fly system, and switching between 2-wheel drive and 4-wheel drive can be performed even while driving.</p>
+                <p class="illust"><img src="image/RTWC3BLF000601.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transfer case</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>Transfer case</li><li>Transfer shift actuator</li><li>2-4 switch</li><li>Neutral switch</li></ol></div>
+                <p class="explanation">Shift-on-the-fly system<br/>The shift-on-the-fly system activates the axle actuator with electric signals from the TCCM when the driver switches the 4WD switch between 2-wheel and 4-wheel drive modes. The axle actuator connects and blocks the power to the front axle.</p>
+                <p class="illust"><img src="image/RTWC4CMF001001.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Axle actuator</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH000301.png" class="SH" /></p>
+                <p class="explanation">TCCM<br/>The TCCM is installed in the position of the following diagram, and controls the transfer case control system. The TCCM detects the 2H-4H-4L position of the 4WD switch operated by the driver, and activates the transfer shift actuator, the axle motor, and the indicator in the instrument panel cluster. On the other hand, the failsafe function is activated when an abnormality occurs in the system.</p>
+                <p class="illust"><img src="image/RTWC3DSH000101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Circuit diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BLF001001.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pin alignment</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSF000201.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">Signal name</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-1</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Battery power source</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-2</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Ground</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-3</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-4</td><td width="170" colspan="1" rowspan="1" align="center" valign="bottom">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-5</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-6</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-7</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-8</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-9</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Transfer shift actuator drive B signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-10</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Axle actuator drive B signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-11</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Ignition power source</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-12</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Ground</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-13</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-14</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-15</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-16</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-17</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-18</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-19</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Transfer shift actuator drive A signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">A-20</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Axle actuator drive A signal</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">Signal name</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-1</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-2</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-3</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">4WD switch - 4H signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-4</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">CAN high</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-5</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">4WD switch - 2H signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-6</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">CAN low</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-7</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Limit switch 1 signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-8</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-9</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Axle switch signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-10</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">2-4 switch signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-11</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Transfer neutral switch signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-12</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Limit switch 3 signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-13</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Limit switch 4 signal</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-14</td><td width="170" colspan="1" rowspan="1" align="left" valign="bottom">Limit switch 2 signal</td></tr></tbody></table>
+                <p class="explanation">Check 4WD warning light<br/>The check 4WD warning light informs the driver of an abnormality in the transfer control system. The check 4WD warning light normally illuminates when the ignition switch is turned ON, and goes off after approx. 3 seconds. If the TCCM detects a DTC, it illuminates the check 4WD warning light.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model without multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model with multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH001701.png" class="SH" /></p>
+                <p class="explanation">4WD indicator light<br/>The 4WD indicator light illuminates when the 4WD switch is selected to the 4H or 4L position. <br/>It flashes while the transfer shift actuator shifts from the 2H position to the 4H position. After the 4H position is selected, it changes to illuminated. It continues to illuminate during the transfer process from the 4H position to the 4L position. <br/>If the desired position cannot be selected, the indicator light flashes rapidly and the warning buzzer sounds to inform the driver.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model without multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH001801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model with multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH001901.png" class="SH" /></p>
+                <p class="explanation">4WD low indicator light<br/>The 4WD low indicator light illuminates when the 4WD switch is selected to the 4L position. <br/>It flashes while the transfer shift actuator shifts from the 4H position to the 4L position. After the 4L position is selected, it changes to illuminated. <br/>If the desired position cannot be selected, the indicator light flashes rapidly and the warning buzzer sounds to inform the driver.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model without multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH002001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model with multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH002101.png" class="SH" /></p>
+                <p class="explanation">4WD switch<br/>The 4WD switch is used by the driver for switching between 2H, 4H, and 4L.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Automatic transmission models</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE3ASH000101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Manual transmission models</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE3ASH000201.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pin alignment and circuit diagram</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The 2H signal circuit turns ON when the 4WD switch is at the 2H position, and the TCCM recognizes that the 4WD switch is at the 2H position. The 4H signal circuit turns ON when the 4WD switch is at the 4H position, and the TCCM recognizes that the 4WD switch is at the 4H position. Both the 2H signal circuit and 4H signal circuit turn ON when the 4WD switch is at the 4L position, and the TCCM recognizes that the 4WD switch is at the 4L position.</p>
+                <p class="illust"><img src="image/RTWC3BSF000401.png" class="SF" /></p>
+                <div class="legend"><ol><li>Ground</li><li>Illumination (Power supply)</li><li>2H signal</li><li>Illumination (Ground)</li><li>4H signal</li></ol></div>
+                <p class="explanation">Transfer shift actuator<br/>The transfer shift actuator is installed in the transfer case, and changeovers between 2-wheel and 4-wheel drives and between high and low are conducted by a single actuator. The actuator is connected with the shift drum. When the shift drum rotates, the guide roller fixed on each shift rod moves along the groove on the shift drum. Therefore, each shift rod moves to the predetermined position when the shift drum rotates, and the transfer state is changed.</p>
+                <p class="illust"><img src="image/RTWC3ASF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>Transfer shift actuator</li><li>Shift drum</li><li>Guide roller</li><li>2WD - 4WD arm and shift rod assembly</li><li>High - low arm and shift rod assembly</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pin alignment</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH001301.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">Signal name</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-1</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Limit switch 2</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-2</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Motor 2</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-3</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Motor 1</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="bottom">B-4</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Ground</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-5</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Limit switch 3</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-6</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Limit switch 4</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">B-7</td><td width="170" colspan="1" rowspan="1" align="left" valign="bottom">Limit switch 1</td></tr></tbody></table>
+                <p class="explanation">There are limit switches 1 to 4 installed in the transfer shift actuator, and the "ON/OFF" operations are performed when they are in contact/non-contact with the metal surface attached to the gear. The current transfer switching status is recognized by the TCCM based on the combinations of the limit switches 1 to 4.</p>
+                <table cellspacing="0"><tbody><tr><td width="55" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">2H</td><td width="160" colspan="4" rowspan="1" align="center" valign="middle">2H - 4H</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">4H</td><td width="80" colspan="2" rowspan="1" align="center" valign="middle">4H - Neutral</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Neutral</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Neutral - 4L</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">4L</td></tr><tr><td width="55" colspan="1" rowspan="1" align="center" valign="middle">Limit<br/>switch 1</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="55" colspan="1" rowspan="1" align="center" valign="middle">Limit<br/>switch 2</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="55" colspan="1" rowspan="1" align="center" valign="middle">Limit<br/>switch 3</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td></tr><tr><td width="55" colspan="1" rowspan="1" align="center" valign="middle">Limit<br/>switch 4</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>For example, 2WD recognition range</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Limit switch 1</li><li>Limit switch 4</li><li>Limit switch 3</li><li>Limit switch 2</li><li>Ground</li></ol></div>
+                <p class="explanation">Transfer components<br/>A transfer consists of the following components.</p>
+                <p class="illust"><img src="image/RTWC3BMF000801.png" class="MF" /></p>
+                <div class="legend"><ol><li>Transfer chain</li><li>Front output shaft</li><li>2WD - 4WD arm and shift rod assembly</li><li>High - low arm and shift rod assembly</li><li>Sun gear input shaft</li><li>Carrier and gear assembly</li><li>Planetary dogteeth</li><li>High - low sleeve</li><li>2WD - 4WD sleeve</li><li>Oil pump assembly</li><li>Transfer main shaft</li><li>Shift drum</li><li>Transfer shift actuator</li></ol></div>
+                <p class="explanation">Power transmission<br/>Depending on the position of the 4WD switch, the power is transmitted as follows at the transfer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4WD switch - 2H</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BMF000901.png" class="MF" /></p>
+                <div class="legend"><ol><li>Sun gear input shaft</li><li>High - low sleeve</li><li>Constant velocity</li><li>Transfer main shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4WD switch - 4H</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BMF001001.png" class="MF" /></p>
+                <div class="legend"><ol><li>Sun gear input shaft</li><li>High - low sleeve</li><li>Constant velocity</li><li>Transfer main shaft</li><li>2WD-4WD clutch hub</li><li>2WD - 4WD sleeve</li><li>Drive sprocket</li><li>Transfer chain</li><li>Front output shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4WD switch - 4L</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BMF001101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Sun gear input shaft</li><li>Speed deceleration</li><li>Carrier and gear assembly</li><li>Planetary dogteeth</li><li>High - low sleeve</li><li>Transfer main shaft</li><li>2WD-4WD clutch hub</li><li>2WD - 4WD sleeve</li><li>Drive sprocket</li><li>Transfer chain</li><li>Front output shaft</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

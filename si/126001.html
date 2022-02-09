@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Radiator installation (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Radiator
+          installation
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747466">1. Radiator
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the radiator to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Be careful not to damage the radiator core with the fan blades. Install the radiator together with the hose as a unit.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the bracket to the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Support the radiator upper tank with the bracket to fix the radiator.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH000701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747575">2. ATF hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the ATF hose to the radiator.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745492">3. Radiator lower hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the radiator lower hose to the water intake pipe.</p>
+                <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in }</p>
+                <p class="illust"><img src="image/RTWC1BSH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Radiator lower hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747128">4. Fan shroud
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the fan guide to the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the lower fan guide together with the fan shroud.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747201">5. Cooling fan
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the cooling fan to the fan clutch assembly.</p>
+                <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+                <p class="illust"><img src="image/RTWD1BSH001901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fan clutch assembly</li><li>Cooling fan</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747306">6. Fan guide
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the fan guide to the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the upper fan guide.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Upper fan guide</li><li>Clip</li><li>Lower fan guide</li><li>Fan shroud</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745860">7. Radiator upper hose
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the radiator upper hose to the water outlet pipe and the radiator.</p>
+                <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in }</p>
+                <p class="illust"><img src="image/RTWD1BSH001701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Radiator upper hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745909">8. Radiator reserve tank
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the radiator reserve tank to the upper fan guide.</p>
+                <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+                <p class="illust"><img src="image/RTWC1BSH001401.png" class="SH" /></p>
+                <p class="instructions">2. Connect the radiator reserve tank hose to the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the radiator reserve tank is dirty, clean it before installation.</li>
+                    <li>Clean the radiator reserve tank using detergent.</li>
+                    <li>Scrub inside with detergent and water.</li>
+                    <li>Wash with clean water, and drain the water.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745391">9. Intake air duct
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the intake air duct to the turbocharger and the intercooler.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Referring to the diagram, face the threaded portion of the clamp toward the engine front.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft } Nut, bolt</p>
+          <p class="numeric">Tightening torque： 4 N・m { 0.4 kgf・m / 35 lb・in } Clamp (Turbocharger side)</p>
+          <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in } Clamp (Intercooler side)</p>
+                <p class="illust"><img src="image/RTWF1BSH003601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744462">10. Engine cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the engine cover to the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746087">11. Underguard
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with an under air deflector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the under air deflector to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the clip and the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC9GSH002801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bolt</li><li>Clip</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with front and rear underguard.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the rear underguard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="instructions">3. Install the front underguard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="illust"><img src="image/RUWE9GSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front underguard</li><li>Rear underguard</li><li>Bolt</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with front and rear underguard and an oil pan guard.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the rear underguard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="instructions">5. Install the oil pan guard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 90 N・m { 9.2 kgf・m / 66.4 lb・ft }</p>
+                <p class="instructions">6. Install the front underguard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="illust"><img src="image/RUWE9GSH002401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front underguard</li><li>Oil pan guard</li><li>Bolt oil pan guard</li><li>Bolt</li><li>Rear underguard</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747916">12. Coolant
+                  filling
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Replenish the radiator with coolant.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use the coolant contains 50 % anti-freeze solution.</li>
+                    <li>Pour coolant up to the filler neck.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Replenish the radiator reserve tank with coolant.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pour coolant up to the MAX line.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the radiator cap to the radiator.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747305">13. Coolant
+                  air bleed
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Start the engine.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Idle the engine for 2 to 3 minutes.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Stop the engine.</p>
+          <p class="instructions">3. Remove the radiator cap from the radiator.</p>
+          <p class="instructions">4. Inspect water level.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the water level is low, refill the water.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Do not loosen or remove the radiator cap when the coolant is heated to a high temperature.</li>
+                    <li>Otherwise, you might be burnt with hot vapor or boiling water.</li>
+                    <li>To opening the radiator cap, place a folded thick cloth over the cap when the coolant is cooled, and turn it gradually to release the pressure before opening it.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Install the radiator cap to the radiator.</p>
+          <p class="instructions">6. Start the engine.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Warm up the engine at approximately 2000 rpm.</li>
+                    <li>Set the temperature adjustment of the heater to the maximum temperature and circulate the coolant in the heater water system.</li>
+                    <li>Confirm that the thermostat has opened according to the position of the engine coolant temperature gauge indicator, and then idle the engine for about 5 minutes.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Stop the engine.</p>
+          <p class="instructions">8. Remove the radiator cap from the radiator.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Remove the engine after it gets cold.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Inspect water level.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the water level at the filler neck and add more if necessary.</li>
+                    <li>If the coolant is excessively low, inspect the coolant path and reserve tank hose for leaks.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">10. Replenish the radiator reserve tank with coolant.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pour coolant up to the MAX line.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745499">14. Battery ground cable
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the battery ground cable to the battery.</p>
+          <p class="instructions">2. Close the engine hood assembly.</p>
+          <p class="instructions">3. Lower vehicle.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

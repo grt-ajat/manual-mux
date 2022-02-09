@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Scan tool does not communicate with CAN device null (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Scan tool does not communicate with CAN device
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie746516">1. Scan tool does not communicate with CAN device
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The scan tool uses the DLC to communicate with the CAN circuit that has a communication speed of 500 kbps. The twist pair wire is terminated at the two 120 Ω resistances, with one installed inside the ECM and the other inside the instrument panel cluster. The ECM, TCM, TCCM, EHCU, ICU, SRS control unit, BCM, instrument panel cluster, and PESS control unit communicate with the scan tool via the CAN communication bus. The EGR valve, DRM, and auto A/C control unit use the same CAN communication bus circuit when the vehicle is running, but do not use it for communicating with the scan tool.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746619">2. Scan tool does not communicate with CAN device
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following conditions cause a loss of CAN serial data communication.</li>
+                    <li>Open circuit in the CAN serial data circuit.</li>
+                    <li>Short circuit between the CAN Low circuit and the CAN High circuit.</li>
+                    <li>Short to ground in the CAN serial data circuit or the power supply circuit.</li>
+                    <li>Failure inside the module, which causes a short to ground or a short to the power supply circuit in the CAN serial data circuit.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Inspect the engine control system.</p>
+                      <p class="reference">Refer to &quot;<a href="126567.html">202.Description Engine 15C.Functional Inspection(4JK1) diagnostic system check-engine controls</a>&quot;.</p>
+                    <p class="instructions">2. Communication status verification</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the IDSS is in use, check for a malfunction in the IDSS interface equipment. If the IDSS interface equipment LED does not illuminate, refer to the scan tool startup failure chart and inspect the power supply.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Verify the vehicle specifications and the status of communication with the ECM, TCM, TCCM, EHCU, ICU, SRS control unit, BCM, instrument panel cluster, and PESS control unit using a scan tool.</p>
+          <p class="explanation">If communication cannot be established with specific control modules, go to Inspection of scan tool communication of each control module.</p>
+          <p class="explanation">If communication cannot be established with all control modules, go to Inspection of DLC.</p>
+                <p class="instructions">3. Inspection of DLC</p>
+                <p class="explanation">Inspect the connection status of the DLC, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, go to Inspection of ECM.</p>
+                <p class="instructions">4. Inspection of ECM</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the ECM harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with the control units other than the TCM using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the ECM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="126277.html">1.Engine 1J.Electrical(4JK1) ECM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126278.html">1.Engine 1J.Electrical(4JK1) ECM installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126280.html">1.Engine 1J.Electrical(4JK1) ECM setting</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126279.html">1.Engine 1J.Electrical(4JK1) ECM writing</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of EGR valve.</p>
+                <p class="instructions">5. Inspection of EGR valve</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the ECM harness connector.</p>
+          <p class="explanation">Disconnect the EGR valve harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with all control units using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the EGR valve. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="126258.html">1.Engine 1H.Aux. Emission Control Devices(4JK1) EGR valve removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126262.html">1.Engine 1H.Aux. Emission Control Devices(4JK1) EGR valve installation</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of TCM.</p>
+                <p class="instructions">6. Inspection of TCM</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the EGR valve harness connector.</p>
+          <p class="explanation">Disconnect the TCM harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with the control units other than the TCM using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the TCM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="128248.html">5.Transmission, Transaxle 5B.Automatic(TB-50LS) TCM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128240.html">5.Transmission, Transaxle 5B.Automatic(TB-50LS) TCM installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128249.html">5.Transmission, Transaxle 5B.Automatic(TB-50LS) TCM setting</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of DRM.</p>
+                <p class="instructions">7. Inspection of DRM</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the TCM harness connector.</p>
+          <p class="explanation">Disconnect the DRM harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with all control units using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the DRM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127506.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) DRM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127507.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) DRM installation</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of TCCM.</p>
+                <p class="instructions">8. Inspection of TCCM</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the DRM harness connector.</p>
+          <p class="explanation">Disconnect the TCCM harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with the control units other than the TCCM using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the TCCM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="128787.html">3.Driveline, Axle 3D.Transfer Case(All models) TCCM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128788.html">3.Driveline, Axle 3D.Transfer Case(All models) TCCM installation</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of EHCU.</p>
+                <p class="instructions">9. Inspection of EHCU</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the TCCM harness connector.</p>
+          <p class="explanation">Disconnect the EHCU harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with the control units other than the EHCU using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the EHCU. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="128837.html">4.Brakes 4D.ABS(All models) EHCU removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128831.html">4.Brakes 4D.ABS(All models) EHCU installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128838.html">4.Brakes 4D.ABS(All models) EHCU setting</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of ICU.</p>
+                <p class="instructions">10. Inspection of ICU</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>For models with PESS, go to SRS control unit inspection.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the EHCU harness connector.</p>
+          <p class="explanation">Disconnect the ICU harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with the control units other than the ICU using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the ICU. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127332.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) ICU （Immobilizer with Keyless Entry） removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127333.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) ICU （Immobilizer with Keyless Entry） installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127334.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) ICU （Immobilizer with Keyless Entry） setting</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of SRS control unit.</p>
+                <p class="instructions">11. Inspection of SRS control unit</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the ICU harness connector or EHCU harness connector.</p>
+          <p class="explanation">Disconnect the SRS control unit harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with the control modules other than the SRS control unit using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the SRS control unit. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127240.html">8.Restraints 8B.Air Bag Systems(All models) SRS control unit removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127241.html">8.Restraints 8B.Air Bag Systems(All models) SRS control unit installation</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of BCM.</p>
+                <p class="instructions">12. Inspection of BCM</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the SRS control unit harness connector.</p>
+          <p class="explanation">Disconnect the BCM harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with the control units other than the BCM using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the BCM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127509.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127508.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127510.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM setting</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of auto A/C control unit.</p>
+                <p class="instructions">13. Inspection of auto A/C control unit</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the BCM harness connector.</p>
+          <p class="explanation">Disconnect the auto A/C control unit harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with all control units using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the auto A/C control unit. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127148.html">7.HVAC 7B.Heater, Ventilator, Airconditioner(All models) control panel assembly removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127149.html">7.HVAC 7B.Heater, Ventilator, Airconditioner(All models) control panel assembly installation</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection of instrument panel cluster.</p>
+                <p class="instructions">14. Inspection of instrument panel cluster</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the auto A/C control unit harness connector.</p>
+          <p class="explanation">Disconnect the instrument panel cluster harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with the control units other than the instrument panel cluster using a scan tool.</p>
+          <p class="explanation">If communication can be established, replace the instrument panel cluster. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127511.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127512.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127513.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster setting</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to PESS control unit inspection.</p>
+                <p class="instructions">15. PESS control unit inspection</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>For models with Remote Keyless Entry, go to Inspection for open circuit and short circuit in CAN communication circuit.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the instrument panel cluster harness connector.</p>
+          <p class="explanation">Disconnect the PESS control unit harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify that communication can be established with control modules other than the PESS control unit using the scan tool.</p>
+          <p class="explanation">If communication can be established, replace the PESS control unit. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="129757.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) PESS control unit removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="129758.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) PESS control unit installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="129759.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) PESS control unit setting</a>&quot;.</p>
+                    <p class="explanation">If communication cannot be established, go to Inspection for open circuit and short circuit in the CAN communication circuit.</p>
+                <p class="instructions">16. Inspection for open circuit or short circuit in CAN communication circuit</p>
+                <p class="explanation">Connect the PESS control unit harness connector or instrument panel cluster harness connector.</p>
+          <p class="explanation">Inspect for an open circuit in the CAN serial data circuit between each module, a short circuit between the CAN Low circuit and the CAN High circuit, and a short to ground or the power supply circuit, and repair as necessary. Go to Repair verification.</p>
+                <p class="instructions">17. Repair verification</p>
+                <p class="explanation">Reconnect all of the disconnected harness connectors.</p>
+          <p class="explanation">Verify the vehicle specifications and the status of communication with the ECM, TCM, TCCM, EHCU, ICU, SRS control unit, BCM, instrument panel cluster, and PESS control unit using a scan tool.</p>
+          <p class="explanation">If communication cannot be established, go to Communication status verification.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

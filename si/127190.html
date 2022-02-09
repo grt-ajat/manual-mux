@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Blower assembly removal (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Blower assembly
+          removal
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie750721">1. Battery ground cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the battery ground cable from the battery.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751173">2. Console box
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the manual transmission.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the shift lever knob from the shift lever.</p>
+          <p class="instructions">2. Remove the shift console cover from the console box.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the manual transmission.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH003601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift lever knob</li><li>Shift console cover</li><li>Cover (2WD models)</li><li>4WD switch (4WD models)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the automatic transmission.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH003701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift console cover</li><li>Cover (2WD models)</li><li>4WD switch (4WD models)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the cigarette lighter connector.</li>
+                    <li>The following applies to the 2WD model.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Remove the cover from the console box.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the 4WD model.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the 4WD switch from the console box.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the 4WD switch connector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Remove the console box from the floor.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the parking brake cover from the console box.</li>
+                    <li>Remove the 2 clips and the 1 screw.</li>
+                    <li>Open the console box cover and remove 2 screws.</li>
+                    <li>Remove the control box backward.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9JSH000901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cover (2WD models)</li><li>4WD switch (4WD models)</li><li>Screw</li><li>Parking brake cover</li><li>Console box</li><li>Clip</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751339">3. Glove box
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the glove box from the instrument panel.</p>
+                <p class="illust"><img src="image/RTWC9LSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Glove box</li><li>Instrument panel assist side lower cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751331">4. Instrument panel assist-side lower cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the instrument panel assist-side lower cover from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE7BSH000901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751330">5. Meter cluster
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the meter cluster from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pull out 4 clips from the instrument panel.</li>
+                    <li>Disconnect the switch connector.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clip</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751329">6. Instrument panel driver-side lower cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the hood lock control lever from the instrument panel driver-side lower cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 fixing screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9GSH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Hood lock control lever</li><li>Control cable</li><li>Screw</li></ol></div>
+                <p class="instructions">2. Remove the fuel filler lid opener lever from the instrument panel driver-side lower cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 fixing screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9GSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel filler rid opener lever</li><li>Fuel filler rid cable</li><li>Screw</li></ol></div>
+                <p class="instructions">3. Remove the instrument panel driver-side lower cover from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pull out the instrument panel driver side lower cover.</li>
+                    <li>Disconnect the switch connector.</li>
+                    <li>Remove the DLC.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH002401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Instrument panel driver side lower cover</li><li>DLC</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751464">7. Air bag assembly
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Handling of a deployed airbag assembly</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When handling the airbag, the safety precautions must be observed.</li>
+                    <li>A small amount of sodium hydroxide may be contained on the surface of a deployed airbag.</li>
+                    <li>This is a by-product of the deployment reaction and may cause irritation if contact is made with skin or eyes.</li>
+                    <li>To handle activated airbag, wear gloves and safety glasses.</li>
+                    <li>After handling, wash your hands with soap.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Handling of an undeployed airbag assembly</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When carrying an undeployed airbag, make sure that the trim cover faces the opposite direction of your body.</li>
+                    <li>When carrying the airbag, never hang the connector or harness on your hand.</li>
+                    <li>When putting down an undeployed airbag, make sure to face the trim cover upward.</li>
+                    <li>Do not place any other item on the steering wheel with the airbag surface facing downward.</li>
+                    <li>Not following this procedure will result in a fire or injuries. </li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After the airbag is deployed, inspect for burning due to overheating, melting or other problems.</li>
+                    <li>If the SRS coil assembly is damaged, replace it.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750724">8. Driver air bag assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify the holes located on the both sides of the steering cover.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH000101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify the lever position in the hole with the illustration below.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert a bar of diameter 6 mm {0.24 in} to remove the driver airbag assembly from the lever.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001101.png" class="SH" /></p>
+                <p class="instructions">1. Remove the driver air bag assembly from the steering wheel.</p>
+          <p class="instructions">2. Disconnect the connector from the driver air bag assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the airbag connector.</li>
+                    <li>Disconnect the horn connector.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Airbag connector</li><li>Horn connector</li></ol></div>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Keep the airbag assembly away from your body when carrying it.</li>
+                    <li>When putting down an undeployed airbag assembly, make sure to face the trim cover upward.</li>
+                    <li>Place the trim cover upward on a flat surface.</li>
+                    <li>Failure to follow this procedure may result in personal injury.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH000501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750723">9. Steering wheel
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Reconfirm that the steering wheel is set to the position for advancing straight forward.</li>
+                    <li>Make setting marks on the steering wheel and shaft.</li>
+                    <li>They are used for reassembly of parts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001501.png" class="SH" /></p>
+                <p class="instructions">1. Remove the nut from the steering shaft.</p>
+          <p class="instructions">2. Remove the steering wheel from the steering shaft using special tool.</p>
+                <p class="sst"><img src="image/ST5852100160.png" class="ST" /><br/>SST: 5-8521-0016-0 - steering wheel remover</p>
+                <p class="illust"><img src="image/RUWE9CSH001601.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Never apply an impact to the steering wheel with a hammer, etc. to remove it.</li>
+                    <li>The steering shaft is designed to absorb shocks.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751328">10. Steering cowl
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the steering cowl from the steering column.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the steering cowl lower mounting screw from the steering cowl lower.</li>
+                    <li>Remove the steering cowl lower from the steering column.</li>
+                    <li>Remove the steering cowl upper mounting screws from the steering cowl upper.</li>
+                    <li>Remove the steering cowl upper from the steering column.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH004101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Steering cowl upper</li><li>Steering cowl lower mounting screw</li><li>Steering cowl lower</li><li>Steering cowl upper mounting screw</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751338">11. Assist side lid cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the assist side lid cover from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH004501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Screw</li><li>Assist side lid cover</li><li>Instrument panel</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750722">12. Passenger air bag assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the passenger air bag assembly from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH001001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Passenger airbag mounting bolts</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Remove carefully as claws are attached.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH001101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751064">13. Front door finisher
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the front door finisher from the body.</p>
+                <p class="illust"><img src="image/RUWE9LSH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front door finisher</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751062">14. Front pillar trim cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the front pillar trim cover from the front pillar.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the assist grip.</li>
+                    <li>Open the cover and remove the screw.</li>
+                    <li>Remove the front pillar trim cover by pulling its lower part upward.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9LSH001701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751063">15. Sill plate
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the sill plate from the floor.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the front sill plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9LSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front sill plate</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the rear sill plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9LSH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear sill plate</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751061">16. Dash side trim pad
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the dash side trim pad from the body.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the nut.</li>
+                    <li>Remove the trim cover clip from the body panel.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH000101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751337">17. Front cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following does not apply to auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the front cover from the instrument panel.</p>
+                <p class="illust"><img src="image/RTWC9LSH004301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front cover</li><li>Instrument panel</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750565">18. Sun sensor
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the sun sensor from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove it from the instrument panel together with the front cover.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Disconnect the harness connector from the sun sensor.</p>
+          <p class="instructions">3. Remove the sun sensor from the front cover.</p>
+                <p class="illust"><img src="image/RTWC7BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sun sensor</li><li>Front cover</li><li>Instrument panel</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750615">19. Control cable
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the control cable from the blower assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the control cable from the link section of the blower assembly.</li>
+                    <li>Disconnect the control cable from the lock clamp section.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH004601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clamp</li><li>Link</li><li>Blower assembly</li><li>Control cable</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750616">20. Control lever assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following does not apply to auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the control lever assembly from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the clips at 4 corners, and pull the control lever assembly towards you.</li>
+                    <li>Disconnect the 1 harness connector and the mode adjust cable.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE7BSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Instrument panel</li><li>Control lever assembly</li><li>Glove box</li><li>Instrument panel assist-side lower cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750585">21. Control panel assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the control panel assembly from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pull the clips at 4 corners towards you.</li>
+                    <li>Disconnect 1 of the harness connector connections.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH003601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Instrument panel</li><li>Control panel assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751332">22. Instrument panel
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the speaker grille from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the left and right speaker grilles.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the side cover from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the left and right side covers.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH004701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Right side cover</li><li>Instrument panel</li></ol></div>
+                <p class="instructions">3. Remove the instrument panel assembly and reinforcement from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 bolts that fix the steering column to the reinforcement.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH002601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the dash harness connector.</li>
+                    <li>Remove the bolt and nut that secure the instrument panel and reinforcement assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSF000101.png" class="SF" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752521">23. Blower assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the blower assembly from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 screws and 1 nut.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Nut</li><li>Blower assembly</li><li>Screw</li><li>Heater evaporator unit assembly</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

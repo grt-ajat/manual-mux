@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Standard bolts null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Standard bolts
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751758">1. List of standard bolt and nut tightening torques
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The tightening torque values in the following table apply to locations where special tightening torques are not specified.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">Strength category</td><td width="200" colspan="2" rowspan="1" align="center" valign="middle">4.8<br/>4T</td><td width="200" colspan="2" rowspan="1" align="center" valign="middle">7T</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="bottom">Bolt head shape</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Hex bolt</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Flange bolt</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Hex bolt</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Flange bolt</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M6x1</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 3.9 to 7.8 N・m { 0.4 to 0.8 kgf・m / 2.9 to 5.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 4.6 to 8.5 N・m { 0.5 to 0.9 kgf・m / 3.4 to 6.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 4.9 to 9.8 N・m { 0.5 to 1.0 kgf・m / 3.6 to 7.2 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 5.7 to 10.6 N・m { 0.6 to 1.1 kgf・m / 4.2 to 7.8 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M8x1.25</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 9.1 to 17.7 N・m { 0.9 to 1.8 kgf・m / 6.7 to 13.1 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 10.5 to 19.6 N・m { 1.1 to 2.0 kgf・m / 7.7 to 14.5 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 11.8 to 22.6 N・m { 1.2 to 2.3 kgf・m / 8.7 to 16.7 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 13.5 to 25.0 N・m { 1.4 to 2.5 kgf・m / 10.0 to 18.4 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M10x1.25</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 20.6 to 34.3 N・m { 2.1 to 3.5 kgf・m / 15.2 to 25.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="bottom">： 23.1 to 38.5 N・m { 2.4 to 3.9 kgf・m / 17.0 to 28.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 27.5 to 46.1 N・m { 2.8 to 4.7 kgf・m / 20.3 to 34.0 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 31.0 to 51.7 N・m { 3.2 to 5.3 kgf・m / 22.9 to 38.1 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M10x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 19.6 to 33.3 N・m { 2.0 to 3.4 kgf・m / 14.5 to 24.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 22.3 to 37.2 N・m { 2.3 to 3.8 kgf・m / 16.4 to 27.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="bottom">： 27.5 to 45.1 N・m { 2.8 to 4.6 kgf・m / 20.3 to 33.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 30.3 to 50.4 N・m { 3.1 to 5.1 kgf・m / 22.3 to 37.2 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M12x1.25</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 49.0 to 73.5 N・m { 5.0 to 7.5 kgf・m / 36.1 to 54.2 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 54.9 to 82.3 N・m { 5.6 to 8.4 kgf・m / 40.5 to 60.7 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 60.8 to 91.2 N・m { 6.2 to 9.3 kgf・m / 44.8 to 67.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 68.1 to 102.1 N・m { 6.9 to 10.4 kgf・m / 50.2 to 75.3 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M12x1.75</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 45.1 to 68.6 N・m { 4.6 to 7.0 kgf・m / 33.3 to 50.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 51.0 to 76.5 N・m { 5.2 to 7.8 kgf・m / 37.6 to 56.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 56.9 to 84.3 N・m { 5.8 to 8.6 kgf・m / 42.0 to 62.2 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 62.7 to 94.0 N・m { 6.4 to 9.6 kgf・m / 46.2 to 69.3 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M14x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 76.5 to 114.7 N・m { 7.8 to 11.7 kgf・m / 56.4 to 84.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 83.0 to 124.5 N・m { 8.5 to 12.7 kgf・m / 61.2 to 91.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 93.2 to 139.3 N・m { 9.5 to 14.2 kgf・m / 68.7 to 102.7 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 100.8 to 151.1 N・m { 10.3 to 15.4 kgf・m / 74.3 to 111.4 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M14x2</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 71.6 to 106.9 N・m { 7.3 to 10.9 kgf・m / 52.8 to 78.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 77.2 to 115.8 N・m { 7.9 to 11.8 kgf・m / 56.9 to 85.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 88.3 to 131.4 N・m { 9.0 to 13.4 kgf・m / 65.1 to 96.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 94.9 to 142.3 N・m { 9.7 to 14.5 kgf・m / 70.0 to 105.0 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M16x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 104.0 to 157.0 N・m { 10.6 to 16.0 kgf・m / 76.7 to 115.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 115.6 to 173.3 N・m { 11.8 to 17.7 kgf・m / 85.3 to 127.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 135.3 to 204.0 N・m { 13.8 to 20.8 kgf・m / 99.8 to 150.5 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 150.1 to 225.2 N・m { 15.3 to 23.0 kgf・m / 110.7 to 166.1 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M16x2</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 100.0 to 149.1 N・m { 10.2 to 15.2 kgf・m / 73.8 to 110.0 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 109.4 to 164.2 N・m { 11.2 to 16.7 kgf・m / 80.7 to 121.1 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 129.4 to 194.2 N・m { 13.2 to 19.8 kgf・m / 95.4 to 143.2 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 142.5 to 213.8 N・m { 14.5 to 21.8 kgf・m / 105.1 to 157.7 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M18x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 159.0 to 239.0 N・m { 16.2 to 24.4 kgf・m / 117.3 to 176.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 216.0 to 324.0 N・m { 22.0 to 33.0 kgf・m / 159.3 to 239.0 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M18x2.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 151.0 to 225.6 N・m { 15.4 to 23.0 kgf・m / 111.4 to 166.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 196.1 to 294.2 N・m { 20.0 to 30.0 kgf・m / 144.6 to 217.0 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M20x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 206.0 to 310.0 N・m { 21.0 to 31.6 kgf・m / 151.9 to 228.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 269.7 to 405.0 N・m { 27.5 to 41.3 kgf・m / 198.9 to 298.7 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M20x2.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 190.2 to 286.4 N・m { 19.4 to 29.2 kgf・m / 140.3 to 211.2 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 249.1 to 374.6 N・m { 25.4 to 38.2 kgf・m / 183.7 to 276.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M22x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 251.1 to 413.8 N・m { 25.6 to 42.2 kgf・m / 185.2 to 305.2 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 362.8 to 544.3 N・m { 37.0 to 55.5 kgf・m / 267.6 to 401.5 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M22x2.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 217.7 to 327.5 N・m { 22.2 to 33.4 kgf・m / 160.6 to 241.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 338.3 to 507.0 N・m { 34.5 to 51.7 kgf・m / 249.5 to 373.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M24x2</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 358.9 to 539.4 N・m { 36.6 to 55.0 kgf・m / 264.7 to 397.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 430.5 to 711.0 N・m { 43.9 to 72.5 kgf・m / 317.5 to 524.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M24x3</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 338.3 to 507.0 N・m { 34.5 to 51.7 kgf・m / 249.5 to 373.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 406.0 to 608.0 N・m { 41.4 to 62.0 kgf・m / 299.4 to 448.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">Strength category</td><td width="200" colspan="2" rowspan="1" align="center" valign="middle">8.8</td><td width="200" colspan="2" rowspan="1" align="center" valign="middle">9.8<br/>9T</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="bottom">Bolt head shape</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Hex bolt</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Flange bolt</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Hex bolt</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Flange bolt</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M6x1</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 5.6 to 11.2 N・m { 0.6 to 1.1 kgf・m / 4.1 to 8.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 6.6 to 12.2 N・m { 0.7 to 1.2 kgf・m / 4.9 to 9.0 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M8x1.25</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 13.4 to 26.8 N・m { 1.4 to 2.7 kgf・m / 9.9 to 19.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 15.3 to 28.4 N・m { 1.6 to 2.9 kgf・m / 11.3 to 20.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 16.7 to 30.4 N・m { 1.7 to 3.1 kgf・m / 12.3 to 22.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 18.1 to 33.6 N・m { 1.8 to 3.4 kgf・m / 13.3 to 24.8 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M10x1.25</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 31.3 to 52.5 N・m { 3.2 to 5.4 kgf・m / 23.1 to 38.7 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 35.4 to 58.9 N・m { 3.6 to 6.0 kgf・m / 26.1 to 43.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 37.3 to 62.8 N・m { 3.8 to 6.4 kgf・m / 27.5 to 46.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 42.3 to 70.5 N・m { 4.3 to 7.2 kgf・m / 31.2 to 52.0 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M10x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 31.3 to 51.4 N・m { 3.2 to 5.2 kgf・m / 23.1 to 37.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 34.5 to 57.5 N・m { 3.5 to 5.9 kgf・m / 25.4 to 42.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 36.3 to 59.8 N・m { 3.7 to 6.1 kgf・m / 26.8 to 44.1 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 40.1 to 66.9 N・m { 4.1 to 6.8 kgf・m / 29.6 to 49.3 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M12x1.25</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 69.3 to 104.0 N・m { 7.1 to 10.6 kgf・m / 51.1 to 76.7 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 77.7 to 116.5 N・m { 7.9 to 11.9 kgf・m / 57.3 to 85.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 75.5 to 113.8 N・m { 7.7 to 11.6 kgf・m / 55.7 to 83.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 85.0 to 127.5 N・m { 8.7 to 13.0 kgf・m / 62.7 to 94.0 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M12x1.75</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 64.8 to 96.1 N・m { 6.6 to 9.8 kgf・m / 47.8 to 70.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 71.4 to 107.2 N・m { 7.3 to 10.9 kgf・m / 52.7 to 79.1 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 71.6 to 106.9 N・m { 7.3 to 10.9 kgf・m / 52.8 to 78.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 79.5 to 119.2 N・m { 8.1 to 12.2 kgf・m / 58.6 to 87.9 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M14x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 106.2 to 158.8 N・m { 10.8 to 16.2 kgf・m / 78.3 to 117.1 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 114.9 to 172.3 N・m { 11.7 to 17.6 kgf・m / 84.7 to 127.1 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 113.8 to 170.6 N・m { 11.6 to 17.4 kgf・m / 83.9 to 125.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 123.4 to 185.1 N・m { 12.6 to 18.9 kgf・m / 91.0 to 136.5 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M14x2</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 100.6 to 149.8 N・m { 10.3 to 15.3 kgf・m / 74.2 to 110.5 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 108.2 to 162.2 N・m { 11.0 to 16.5 kgf・m / 79.8 to 119.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 106.9 to 160.0 N・m { 10.9 to 16.3 kgf・m / 78.8 to 118.0 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 115.5 to 173.3 N・m { 11.8 to 17.7 kgf・m / 85.2 to 127.8 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M16x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 154.3 to 232.5 N・m { 15.7 to 23.7 kgf・m / 113.8 to 171.5 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 171.1 to 256.7 N・m { 17.4 to 26.2 kgf・m / 126.2 to 189.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 160.0 to 240.3 N・m { 16.3 to 24.5 kgf・m / 118.0 to 177.2 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 176.9 to 265.3 N・m { 18.0 to 27.1 kgf・m / 130.5 to 195.7 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M16x2</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 147.6 to 221.4 N・m { 15.1 to 22.6 kgf・m / 108.9 to 163.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 162.5 to 243.8 N・m { 16.6 to 24.9 kgf・m / 119.9 to 179.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 153.0 to 229.5 N・m { 15.6 to 23.4 kgf・m / 112.8 to 169.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 168.5 to 252.7 N・m { 17.2 to 25.8 kgf・m / 124.3 to 186.4 lb・ft }</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M18x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 246.0 to 368.0 N・m { 25.1 to 37.5 kgf・m / 181.4 to 271.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 229.5 to 345.2 N・m { 23.4 to 35.2 kgf・m / 169.3 to 254.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M18x2.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 223.6 to 335.4 N・m { 22.8 to 34.2 kgf・m / 164.9 to 247.4 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 230.5 to 346.2 N・m { 23.5 to 35.3 kgf・m / 170.0 to 255.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M20x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 307.4 to 461.7 N・m { 31.3 to 47.1 kgf・m / 226.7 to 340.5 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 317.0 to 476.0 N・m { 32.3 to 48.5 kgf・m / 233.8 to 351.1 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M20x2.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 284.0 to 427.0 N・m { 29.0 to 43.5 kgf・m / 209.5 to 314.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 293.2 to 440.3 N・m { 29.9 to 44.9 kgf・m / 216.3 to 324.7 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M22x1.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 413.6 to 620.5 N・m { 42.2 to 63.3 kgf・m / 305.1 to 457.7 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 424.6 to 636.5 N・m { 43.3 to 64.9 kgf・m / 313.2 to 469.5 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M22x2.5</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 385.7 to 578.0 N・m { 39.3 to 58.9 kgf・m / 284.5 to 426.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 394.2 to 592.3 N・m { 40.2 to 60.4 kgf・m / 290.7 to 436.9 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">M24x2</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 490.8 to 810.5 N・m { 50.0 to 82.6 kgf・m / 362.0 to 597.8 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 554.1 to 830.6 N・m { 56.5 to 84.7 kgf・m / 408.7 to 612.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">*M24x3</td><td width="100" colspan="1" rowspan="1" align="center" valign="bottom">： 462.8 to 693.1 N・m { 47.2 to 70.7 kgf・m / 341.3 to 511.2 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 520.7 to 781.6 N・m { 53.1 to 79.7 kgf・m / 384.0 to 576.5 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Values indicated with an asterisk ( * ) are used for internal threaded portions of soft materials such as castings.</li>
+                    <li>Refer to the diagram below for the indication on the top of the standard bolt.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW20AMF000401.png" class="MF" /></p>
+                <div class="legend"><ol><li>Hex bolt, 4.8, 4T</li><li>Hex bolt, 4.8, 4T</li><li>Flange bolt, 4.8, 4T</li><li>Flange bolt, 4.8, 4T</li><li>Hex bolt, 7T</li><li>Flange bolt, 7T</li><li>Hex bolt, refined 8.8</li><li>Hex bolt, refined 8.8</li><li>Hex bolt, not refined 8.8</li><li>Hex bolt, not refined 8.8</li><li>Flange bolt, 8.8</li><li>Flange bolt, 8.8</li><li>Hex bolt, 9.8, 9T</li><li>Hex bolt, 9.8, 9T</li><li>Flange bolt, 9.8, 9T</li><li>Flange bolt, 9.8, 9T</li></ol></div>
+                <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="2" align="left" valign="middle"><br/></td><td width="90" colspan="1" rowspan="2" align="center" valign="middle">Pipe diameter</td><td width="140" colspan="1" rowspan="2" align="center" valign="middle">Tightening torque for medium and heavy duty vehicles</td><td width="160" colspan="2" rowspan="1" align="center" valign="middle">Flare nut width across flats</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Old</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">New</td></tr><tr><td width="100" colspan="1" rowspan="6" align="center" valign="middle">Tightening torque for the flare nut<br/>Service standard value</td><td width="90" colspan="1" rowspan="1" align="center" valign="middle">： 4.76 mm { 0.19 in }</td><td width="140" colspan="1" rowspan="1" align="center" valign="middle">： 12.8 to 18.6 N・m { 1.3 to 1.9 kgf・m / 9.4 to 13.7 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 14 mm { 0.55 in }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 14 mm { 0.55 in }</td></tr><tr><td width="90" colspan="1" rowspan="1" align="center" valign="middle">： 6.35 mm { 0.25 in }</td><td width="140" colspan="1" rowspan="1" align="center" valign="middle">： 23.5 to 49.0 N・m { 2.4 to 5.0 kgf・m / 17.3 to 36.1 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 17 mm { 0.67 in }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 17 mm { 0.67 in }</td></tr><tr><td width="90" colspan="1" rowspan="1" align="center" valign="middle">： 8.0 mm { 0.31 in }</td><td width="140" colspan="1" rowspan="1" align="center" valign="middle">： 23.5 to 49.0 N・m { 2.4 to 5.0 kgf・m / 17.3 to 36.1 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 19 mm { 0.75 in }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 17 mm { 0.67 in }</td></tr><tr><td width="90" colspan="1" rowspan="1" align="center" valign="middle">： 10.0 mm { 0.39 in }</td><td width="140" colspan="1" rowspan="1" align="center" valign="middle">： 44.1 to 93.2 N・m { 4.5 to 9.5 kgf・m / 32.5 to 68.7 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 22 mm { 0.87 in }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 19 mm { 0.75 in }</td></tr><tr><td width="90" colspan="1" rowspan="1" align="center" valign="middle">： 12.0 mm { 0.47 in }</td><td width="140" colspan="1" rowspan="1" align="center" valign="middle">： 58.8 to 137.3 N・m { 6.0 to 14.0 kgf・m / 43.4 to 101.3 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 27 mm { 1.06 in }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 24 mm { 0.94 in }</td></tr><tr><td width="90" colspan="1" rowspan="1" align="center" valign="middle">： 15.0 mm { 0.59 in }</td><td width="140" colspan="1" rowspan="1" align="center" valign="middle">： 78.5 to 156.9 N・m { 8.0 to 16.0 kgf・m / 57.9 to 115.7 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 30 mm { 1.18 in }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 30 mm { 1.18 in }</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="478" colspan="5" rowspan="1" align="left" valign="middle">Connector (Tapered thread for brass products)</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Thread size</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 1/8</td><td width="98" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 1/4</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 3/8</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 1/2</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Tightening torque<br/>Service standard value</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 2.0 to 14.7 N・m { 0.2 to 1.5 kgf・m / 1.5 to 10.8 lb・ft }</td><td width="98" colspan="1" rowspan="1" align="center" valign="middle">： 4.9 to 15.7 N・m { 0.5 to 1.6 kgf・m / 3.6 to 11.6 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 9.8 to 16.7 N・m { 1.0 to 1.7 kgf・m / 7.2 to 12.3 lb・ft }</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 9.8 to 17.7 N・m { 1.0 to 1.8 kgf・m / 7.2 to 13.1 lb・ft }</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="480" colspan="6" rowspan="1" align="left" valign="middle">Connector (Tapered thread excluding for brass products)</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Thread size</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 1/8</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 1/4</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 3/8</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 1/2</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">PT(R) 3/4</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Tightening torque<br/>Service standard value</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 5.9 to 11.8 N・m { 0.6 to 1.2 kgf・m / 4.4 to 8.7 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 14.7 to 29.4 N・m { 1.5 to 3.0 kgf・m / 10.8 to 21.7 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 29.4 to 39.2 N・m { 3.0 to 4.0 kgf・m / 21.7 to 28.9 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 29.4 to 58.8 N・m { 3.0 to 6.0 kgf・m / 21.7 to 43.4 lb・ft }</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">： 58.8 to 98.0 N・m { 6.0 to 10.0 kgf・m / 43.4 to 72.3 lb・ft }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The tightening torque for the connector, taper screw for materials other than brass should be applied when the other side is made of a material other than aluminum.</li>
+                    <li>However, it is applied for the aluminum air tank, etc.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNWA0ASH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Specified minimum torque position</li><li>True position</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>For the elbow-type connector, tighten it with the minimum torque shown above and then further tighten it to adjust the angle.</li>
+                    <li>Apply LOCTITE 575 to the screw portion of the set bolt and tighten it. After tightening the screw, supply the air after it is dried completely.</li>
+                    <li>Do not use a seal tape, etc.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

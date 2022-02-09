@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Introduction to the trouble diagnosis of engine null (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Introduction to the trouble diagnosis of engine
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747271">1. Introduction to the trouble diagnosis of engine
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Begin the system diagnosis with Diagnostic System Check - Engine Controls. The Diagnostic System Check - Engine Controls will provide the following information.<br/>The identification of the control modules which command the system.<br/>The ability of the control modules to communicate through the serial data circuit.<br/>Identification of stored DTCs and their statuses.<br/>The use of the Diagnostic System Check - Engine Controls will identify the correct procedure for diagnosing the system and where the procedure is located.</p>
+          <p class="explanation">Engine Control System Check Sheet must be used to verify the customer complaint. You need to know the correct operating behavior of the system and verify that the customer complaint is a valid failure of the system.</p>
+                <p class="illust"><img src="image/RTWCZ0XF000501.png" class="XF" /></p>
+                <p class="explanation">Reading flash DTCs<br/>The system for communicating with the ECM is the DLC. The DTCs stored in the ECM memory can be read either by connecting a hand-held diagnostic scanner such as a scan tool with the DLC or by counting the number of flashes of the MIL light when the diagnostic test terminal of the DLC is grounded.<br/>The DLC terminal 12 is pulled ground by shorting to DLC terminal 4 which is a ground wire. Once terminals 12 and 4 have been connected, turn the ignition switch ON, without starting the engine. If the MIL blinks DTC three times, it indicates that there is a current DTC or DTC in the failure history. If 2 or more DTCs have been stored in the ECM's memory, the DTCs will be output numerical order with each DTC being displayed three times. The blinking DTC display will continue as long as the DLC is shorted.</p>
+                <p class="illust"><img src="image/RTW76ESF000301.png" class="SF" /></p>
+                <p class="explanation">DTC type definition<br/>There are 4 DTC types: Type A, B, C, and D. Among these DTCs, type A and B DTCs are related to emission whereas type C and D DTCs are related to items other than emission.</p>
+          <p class="explanation">Action Taken When the DTC Sets, Type A<br/>The ECM illuminates the MIL when the diagnostic runs and fails.<br/>The ECM records the operating conditions at the time the diagnostic fails. The ECM stores this information in the Freeze Frame/Failure Records.</p>
+          <p class="explanation">Actions taken when the DTC sets, Type B<br/>When the diagnostic runs and detects an abnormality, the ECM illuminates the MIL on the second consecutive driving cycle.<br/>The ECM records the operating conditions at the time the diagnostic fails. The first time the diagnostic fails, the ECM stores this information in the Failure Records. If the diagnostic reports a failure on the second consecutive driving cycle, the ECM records the operating conditions at the time of failure and stores this information in the Freeze Frame, and updates the Failure Records.</p>
+          <p class="explanation">Conditions for clearing the MIL/DTC<br/>The ECM turns OFF the MIL after 3 consecutive driving cycles that the diagnostic runs and does not fail. <br/>A current DTC clears after one driving cycle that the diagnostic runs and passes. <br/>A history DTC clears after 40 consecutive warm-up cycles if no failures are reported. <br/>Clear the MIL and the DTC with a scan tool.</p>
+          <p class="explanation">Actions taken when the DTC sets, Type C<br/>When the diagnostic runs and fails, the ECM illuminates the SVS lamp. <br/>The ECM records the operating conditions at the time the diagnostic fails. <br/>The ECM stores this information in the Failure Records.</p>
+          <p class="explanation">Conditions for clearing the SVS lamp and the DTC, Type C<br/>The ECM turns OFF the SVS lamp after one driving cycle that the diagnostic runs and does not fail. <br/>A current DTC clears after one driving cycle that the diagnostic runs and passes. <br/>A history DTC clears after 40 consecutive warm-up cycles if no failures are reported. <br/>Clear the SVS lamp and the DTC with a scan tool.</p>
+          <p class="explanation">Actions taken when the DTC sets, Type D<br/>The ECM will not illuminate the MIL or SVS lamp. <br/>The ECM records the operating conditions at the time the diagnostic fails. The ECM stores this information in the Failure Records.</p>
+          <p class="explanation">Condition for clearing the DTC, Type D<br/>A current DTC clears after one driving cycle that the diagnostic runs and passes. <br/>A history DTC clears after 40 consecutive warm-up cycles if no failures are reported. <br/>Clear the DTC with a scan tool.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

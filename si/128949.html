@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Intermittent conditions of transfer case control system null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Intermittent conditions of transfer case control system
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758753">1. Intermittent conditions of transfer case control system
+                  description of symptom
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Required preliminary inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Before starting the intermittent inspection, perform the diagnostic system check-transfer case controls to confirm that all the following conditions are satisfied.</p>
+          <p class="explanation">The check 4WD warning light operates properly.<br/>A DTC has not been detected.<br/>The scan tool data is in the normal range of operation values.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Visual inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Some of the symptom repair procedures require a careful visual inspection and physical inspection. This step is extremely important. Problems may be corrected just by carrying out the visual and physical inspections without performing any further inspection, which leads to saving of valuable time. Check the following points.</p>
+          <p class="explanation">The TCCM ground is clean and tightened properly in its correct location.<br/>The TCCM harness wiring and terminals are properly connected and are not pinched or disconnected.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Intermittent</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If an intermittent condition exists, inspect for improper installation of electrical components. Inspect aftermarket add-on electrical equipment devices, lights, and cell phones. Confirm that no commercial equipment is connected to the serial data circuit. If an intermittent condition cannot be located, communication signal of a cell phone may be causing the condition.<br/>Even when the check 4WD warning light is turned ON because a problem occurred, a DTC may not always be stored. In most cases, a faulty electrical connection or wiring is causing an intermittent failure. Perform a careful visual inspection and physical inspection on the connector that may have an abnormality for the following conditions.</p>
+          <p class="explanation">Improper connection of connector<br/>Loosening of terminal<br/>Damaged or improperly formed terminal</p>
+          <p class="explanation">Reform or replace the connector terminal in the problem circuit in order to ensure the proper contact tension. Remove the terminal from the connector body in order to inspect for a poor terminal-to-wire connection. Connect the DMM to the circuit suspected for an abnormality, and perform a road test for the vehicle. An abnormal reading that occurs when a malfunction happens indicates that there is an abnormality in the circuit being monitored. When any of the following is the cause, a DTC is not stored, but the check 4WD warning light comes on intermittently.</p>
+          <p class="explanation">The TCCM ground is not properly tightened or is dirty.<br/>Electrical system interference caused by a malfunctioning motor or switch.</p>
+          <p class="explanation">These electrical components may cause a large electrical surge. Normally, the problem occurs when the malfunctioning component operates.</p>
+          <p class="explanation">If no failure is seen in the scan tool readings, proceed in a logical order, starting with items that are easiest to check, or those that are most likely.<br/>The problem is not currently present but is stored in the DTC History. Or, there is a customer complaint, but the symptom cannot currently be reproduced because the problem is not DTC related.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Preliminary inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Before starting the inspection, perform the required preliminary inspections and visual inspection.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Harness and connector</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Many of the circuits that are intermittently having an open circuit or short circuit are often affected by the movements of harnesses/connectors due to vibrations, engine torque, bumps on a road, rough pavements, etc. It is recommended to test for this type of condition by performing the applicable procedure from the following list.</p>
+          <p class="explanation">Move the related connectors and wiring while monitoring the relevant scan tool data.<br/>Move the related connectors and wiring, and observe the operation of the component while commanding ON and OFF to the component with the scan tool.<br/>With the engine running, move the related connectors and wiring while monitoring the engine operation.</p>
+          <p class="explanation">If moving the harness or connector affects the data display, component/system operation or engine operation, inspect and repair the harness or connectors as necessary.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Electrical connection or wiring</li>
+              <ul/>
+    </div>
+                  <p class="explanation">In most of cases, a poor electrical connection, loosened terminal or wiring problem causes an intermittent condition. Perform the following inspections.</p>
+          <p class="explanation">Inspect for poor mating of the connector halves, or terminals improperly seated in the connector body.<br/>Inspect for improperly formed or damaged terminals.<br/>Test for a loosened terminal.<br/>Inspect for poor terminal to wire connections including terminals bent by insulation. This requires removing the terminals from the connector body.<br/>Inspect for corrosion and water intrusion. Worn or damage on the insulation can allow moisture to enter the wiring. The conductor may corrode inside the insulation even if it cannot be checked visually.<br/>Check for any swollen or stiff section of the wire in the circuit suspected for an abnormality.<br/>Inspect for wires that are broken inside the insulation.<br/>Inspect the harness for a pinching caused by wiring, disconnection and friction.<br/>Confirm that the wiring does not come in contact with a hot exhaust component.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Power source and GND of the control unit, and power source and GND of the parts</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Poor power source or ground connections can cause widely varying symptoms.<br/>Test all control module power supply circuits. Many vehicles have multiple circuits supplying power to the control module. Other components in the system have separate power supply circuits that may also need to be tested. Inspect connections of the modules, component connectors or fuses, and other intermediate connections between the power source and the modules, and between components. A test light or the DMM is capable of displaying whether or not any voltage is present, but neither of them has the ability to test whether sufficient current is flowing in the circuit. Check whether the circuit can secure the current necessary to operate the components.<br/>Test all the ground circuits of the control module and system. The control module may have multiple ground circuits. Other components in the system have separate grounds that may also need to be tested. Inspect the ground connections for contamination and improper tightening. Inspect the connections of the components, and the connections in splice packs, where applicable. Check whether the circuit can secure the current necessary to operate the components.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temperature sensitivity</li>
+              <ul/>
+    </div>
+                  <p class="explanation">An intermittent condition may occur when a component/connection reaches the normal operating temperature. The condition may occur only when the temperature of component/connection is low, or only when the temperature of component/connection is high. If the intermittent condition is related to heat, check the data relating to the following items.</p>
+          <p class="explanation">High ambient temperature<br/>Heat generated by the underhood or the engine<br/>Heat generated in a circuit due to a poor connections or a high electrical load<br/>Conditions of loads, towing, etc. are higher than normal</p>
+          <p class="explanation">If the intermittent failure is attributed to low temperature, check the data related to the following items.</p>
+          <p class="explanation">Low ambient temperature. If the temperature is extremely low, a connection or component may freeze. Test for water intrusion.<br/>The symptom occurs only on a cold start.<br/>The condition goes away when the vehicle warms up.<br/>Based on the information from the customer, determine if the failure is caused by temperature.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>EMI and electrical noise</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Some electrical components/circuits are sensitive to EMI or other types of electrical noises. Inspect for the following conditions.<br/>Whether the harnesses are placed too close to the high-voltage or high-current devices such as injection components, motors, generators, etc. These components may generate electrical noises which interfere with normal circuit operations.<br/>Electrical system interference caused by a malfunctioning actuator or switch. This may cause a large electrical surge to be generated. Normally, the problem occurs when the malfunctioning component operates.<br/>Improper installation of non-factory or commercial electronic equipment such as lights, 2-way radios, amplifiers, electric motors, remote starters, alarm systems, mobile phones, etc. Electromagnetic disturbance may occur while these electronic equipment are in use, but not while they are not in use.<br/>Test the generator for a malfunctioning rectifier bridge that may be drawing A/C noises into the electrical system.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Duplicating failure conditions</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If none of the above tests is successful, try to duplicate and record the failure condition.<br/>As for the method, it is recommended to drive the vehicle with the DMM connected to the circuit suspected for a failure. If a failure is seen in the reading on the DMM when the problem occurs, the problem may possibly be identified.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Snapshot of the scan tool</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The scan tool can obtain snapshots of the parameters available via the serial data.<br/>The snapshot function records live data over a period of time. The recorded data can be replayed and analyzed. The scan tool also has the graphing function, and can graph a parameter alone or in combination with other parameters for comparison. The snapshot can be triggered manually at the time the symptom is noticed, or set up in advance to be triggered when a DTC sets. An abnormal value captured in the recorded data may point a system or component that needs to be investigated further.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of body, cab, accessories null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of body, cab, accessories
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751700">1. Function, structure, operation of body, cab, accessories
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Headlight system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the headlights, the ignition switch, the lighting switch and the passing switch on the combination switch, the high beam indicator light, and relays. <br/>When the lighting switch is turned ON in the headlight position, the headlight relay will be activated and the headlights will be illuminated. When the headlights are illuminated, the optical axis of the headlight can be faced upward and downward alternately using the lighting switch. The passing switch is not related to the position of the headlight switch. The optical axis will face upward only when the switch lever is being pulled up.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clearance light system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the clearance lights, the ignition switch, the lighting switch on the combination switch, and relays. When the lighting switch is turned ON in the headlight or the taillight position, the taillight relay will be activated and the clearance lights will be illuminated.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fog light system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the fog lights, the ignition switch, the lighting switch and the fog light switch on the combination switch, and relays. When the lighting switch is turned ON in the headlight or taillight position, the taillight relay will be activated. While keeping this state, when the fog light switch is turned ON, the fog light relay will be activated and the fog lights will be illuminated.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn signal light and hazard light system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the turn signal lights, the ignition switch, the turn signal switch on the combination switch, the flasher unit, the hazard warning flasher switch, etc. When the turn signal switch or the hazard warning flasher switch is turned ON, the flasher unit will be activated and the turn signal lights will be illuminated. The turn signal lights are also illuminated by the answer-back function of the keyless entry system, etc.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Dome light system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the dome light, the door switches, the BCM, etc. When the door switch is ON, the BCM will illuminate the dome light.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Taillight and stoplight system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the taillights, the stoplights, the ignition switch, the lighting switch on the combination switch, the stoplight switch, and relays. When the lighting switch is turned ON in the headlight or taillight position, the taillight relay will be activated and the taillights will be illuminated. The stoplights illuminate according to the operation of the stoplight switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>License plate light system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the license plate light(s), the ignition switch, the lighting switch on the combination switch, and relays. When the lighting switch is turned ON in the headlight or taillight position, the taillight relay will be activated and the license plate light(s) will be illuminated.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Illumination light system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the illumination lights, the ignition switch, the lighting switch on the combination switch, and relays. When the lighting switch is turned ON in the headlight or the taillight position, the taillight relay will be activated and the illumination lights will be illuminated.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Backup light system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit comprises the backup lights and the backup light switch. When the backup light switch installed to the transmission is turned ON, the backup lights will illuminate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Power window system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">This circuit is comprised of the ignition switch as well as the power window switch and the power window motor for each window. When the ignition switch is turned ON, battery voltage is applied to each power window switch through the fuse and the power window relay in the circuit. This enables the up or down selection of each switch to toggle the rotational direction of the power window motor, which opens or closes the window. The switch on the driver side has a built-in one touch circuit, which automatically moves the window up or down when operating the switch to the auto position. <br/>When the battery or the power window switch harness connector has been reconnected, perform the following initialization settings in order to operate the driver's power window properly.<br/>Open the driver's window halfway. Pull up the driver's window switch to fully close the driver's window and then keep the switch in this position for 2 seconds.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Windshield wiper and washer system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The wiper and washer system comprise the following units. The system is activated when the vehicle is running or the ignition switch is in the ON position. <br/>･ Wiper/Washer switch<br/>･ Intermittent relay<br/>･ Wiper motor<br/>･ Washer motor<br/>･ Washer nozzle<br/>･ Washer tank<br/>･ Wiper arm and blade</p>
+          <p class="explanation">The intermittent relay controls the low speed operation of the wiper motor. The washer motor and the high speed operation are controlled directly by the wiper and washer switch. The intermittent relay detects the operation signal of the wiper and washer switch. <br/>Windshield washer<br/>When the windshield washer switch is turned ON, voltage will be supplied to the washer motor. The intermittent relay monitors this circuit voltage in order to detect the wiper interlinking request signal. Shortly after it detects the signal, it activates the wiper main relay and drives the wiper motor at low speed. <br/>Wiper intermittent drive<br/>This drives the wiper intermittently at low speed. When the wiper switch is in the "INT" position, the intermittent relay activates the wiper main relay only for a fixed time with a fixed interval and drives the wiper motor at low speed. <br/>Wiper low speed drive<br/>When the wiper switch is in the "LO" position, the wiper main relay is activated to drive the wiper motor at low speed. <br/>The low speed drive can be tested with the wiper output of the actuator test in a scan tool. <br/>Wiper high speed drive<br/>When the wiper switch is in the "HI" position, the wiper main relay and the wiper high low relay are activated to drive the wiper motor at high speed.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Windshield wiper and washer system components</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWB9BMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Wiper arm RH</li><li>Washer nozzle RH</li><li>Washer nozzle LH</li><li>Wiper arm LH</li><li>Washer hose</li><li>Washer tank</li><li>Washer motor</li><li>Link rod LH</li><li>Wiper motor</li><li>Link rod RH</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Layout of switches</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Models without PESS</p>
+                <p class="illust"><img src="image/RFWF9BMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Hazard warning flasher switch</li><li>Wiper and washer switch</li><li>Volume control switch (Volume switch, Seek switch, Mode switch, Phone switch)</li><li>Combination light control</li><li>Remote control mirror switch (Angle adjustment switch)</li><li>Remote control mirror switch (Left/right selector switch)</li><li>Horn switch</li><li>Retractable power mirror switch</li><li>Illumination control switch</li><li>ESC OFF switch</li></ol></div>
+                <p class="explanation">Models with PESS</p>
+                <p class="illust"><img src="image/RFWF9BMF000201.png" class="MF" /></p>
+                <div class="legend"><ol><li>Hazard warning flasher switch</li><li>MID illumination control switch</li><li>Wiper and washer switch</li><li>Volume control switch (Volume switch, Seek switch, Mode switch, Phone switch)</li><li>Combination light control</li><li>MID switch</li><li>Remote control mirror switch (Angle adjustment switch)</li><li>Remote control mirror switch (Left/right selector switch)</li><li>Horn switch</li><li>Engine start/stop button</li><li>ESC OFF switch</li><li>Cruise control switch</li><li>Rear cooler switch</li><li>Retractable power mirror switch</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Instrument panel cluster system</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The following meters, gauges, warning lights, and indicator lights are assembled to the instrument panel cluster. <br/>･ Speedometer<br/>･ Tachometer<br/>･ Fuel gauge<br/>･ Engine coolant temperature gauge<br/>･ Odometer, trip meter<br/>･ Shift indicator<br/>･ Multi-information display<br/>These components cannot be replaced separately because they are integrated with the instrument panel cluster. <br/>They communicate with control units such as the ECM, the TCM, the BCM, and the EHCU via CAN.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Speedometer</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The speedometer indicates vehicle speed based on signals output from the ECM. The ECM corrects vehicle speed signals from the EHCU and sends them to the meter by way of CAN communication.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tachometer</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The tachometer displays the engine speed based on the engine speed signal outputted from the ECM. The ECM detects the signal from the CKP sensor, and the engine speed signal is inputted to the instrument panel cluster via CAN communication.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fuel gauge</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The fuel gauge displays the remaining fuel level based on the signal outputted from the fuel tank unit. The fuel gauge displays the remaining fuel level as low when the resistance detected by the fuel tank unit is high. <br/>The fuel gauge displays the remaining fuel level as high when the resistance detected by the fuel tank unit is low.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Engine coolant temperature gauge</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The engine coolant temperature gauge displays the engine coolant temperature based on the engine coolant temperature signal outputted from the ECM. The ECM detects the engine coolant temperature signal from the engine coolant temperature sensor, and the signal is inputted to the engine coolant temperature gauge through CAN communication.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Odometer, trip meter (Model without MID)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTUC40SH023201.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Odometer, trip meter (Model with MID)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTUC40SH009901.png" class="SH" /></p>
+                <p class="explanation">The odometer and trip meter calculate and display the mileage based on the vehicle speed signal output from the ECM. Switch the display using the select/reset knob operation.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Warning light, indicator light (Model without MID)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE90SF000501.png" class="SF" /></p>
+                <div class="legend"><ol><li>Generator warning light</li><li>Fuel filter warning light</li><li>Turn signal indicator light - left</li><li>Turn signal indicator light - right</li><li>SRS airbag warning light</li><li>Door open warning light</li><li>High beam indicator light</li><li>Check 4WD warning light</li><li>Check trans warning light</li><li>Check engine warning light</li><li>Water separator warning light</li><li>Front fog light indicator light</li><li>Cruise control set indicator light</li><li>Cruise control main indicator light</li><li>Shift indicator</li><li>4WD low indicator light</li><li>4WD indicator light</li><li>Engine oil pressure warning light</li><li>Low fuel warning light</li><li>Automatic transmission fluid temperature warning light</li><li>Glow plug indicator light</li><li>Brake system/parking brake warning light</li><li>Engine overheat warning light</li><li>Seat belt warning light - driver seat</li><li>ABS warning light</li><li>Light position indicator light</li><li>ESC OFF indicator light</li><li>TCS OFF indicator light</li><li>TCS/ESC warning light</li><li>SVS indicator light</li><li>Seat belt warning light - passenger seat</li></ol></div>
+                <p class="illust"><img src="image/RTWB9AXF000101.png" class="XF" /></p>
+          <p class="illust"><img src="image/RTWB9AXF000201.png" class="XF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Warning light, indicator light (Model with MID)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RFWF9ESF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>Generator warning light</li><li>Fuel filter warning light</li><li>Turn signal indicator light – left</li><li>Turn signal indicator light – right</li><li>SRS airbag warning light</li><li>Door open warning light</li><li>High beam indicator light</li><li>Check 4WD warning light</li><li>Check trans warning light</li><li>Check engine warning light</li><li>Water separator warning light</li><li>Front fog light indicator light</li><li>Cruise control set indicator light</li><li>Cruise control main indicator light</li><li>Shift indicator</li><li>4WD low indicator light</li><li>4WD indicator light</li><li>Engine oil pressure warning light</li><li>Low fuel warning light</li><li>Automatic transmission fluid temperature warning</li><li>Glow plug indicator light</li><li>Brake system/parking brake warning light</li><li>Engine overheat warning light</li><li>Seat belt warning light - driver seat</li><li>ABS warning light</li><li>Light position indicator light</li><li>ESC OFF indicator light</li><li>TCS OFF indicator light</li><li>TCS/ESC warning light</li><li>SVS indicator light</li><li>Seat belt warning light - passenger seat</li><li>Multi-information display (MID)</li><li>Icy road warning light</li><li>PESS warning light</li></ol></div>
+                <p class="illust"><img src="image/RTWD9EXF000101.png" class="XF" /></p>
+          <p class="illust"><img src="image/RUWF9EXF000101.png" class="XF" /></p>
+          <p class="illust"><img src="image/RUWF9EXF000201.png" class="XF" /></p>
+          <p class="illust"><img src="image/RUWF9EXF000301.png" class="XF" /></p>
+          <p class="illust"><img src="image/RTWD9EXF000301.png" class="XF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Multi information display</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The multi-information display has the ability to display information, warning lights, indicator lights, and maintenance information.</p>
+                <p class="illust"><img src="image/RUWE90SH000301.png" class="SH" /></p>
+                <p class="explanation">Information display</p>
+          <p class="explanation">Odometer<br/>Trip meter<br/>Shift indicator<br/>Out side temperature<br/>4WD indicator (4H)<br/>4WD indicator (4L)<br/>Fuel gauge<br/>Coolant temperature gauge<br/>INST.<br/>Instantaneous fuel economy numerical display<br/>INST.<br/>Instantaneous fuel economy graphical display<br/>AVG.<br/>Average fuel economy DISTANCE Section distance<br/>AVG. SPEED<br/>Driving Distance and Average Vehicle Speed<br/>RANGE<br/>Distance where it can run<br/>ELAPSE TIME<br/>Parking brake release warning light<br/>Light control off warning light<br/>Key remain warning light<br/>Select mode</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Multi-information display operation procedures</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD9ELF000101.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Service reminder display items and setting</li>
+              <ul/>
+    </div>
+                  <p class="explanation">1. Engine oil<br/>The setting distance can be set between 5,000 km - 10,000 km (3,107 miles - 6,214 miles) in increments of 1,000 km (621 miles).<br/>When the driving distance is subtracted from the set distance and the remaining distance is 1,000 km (621 miles), the reminder screen is displayed.</p>
+                <p class="illust"><img src="image/RTWB9ESH001701.png" class="SH" /></p>
+                <p class="explanation">2. Air cleaner element<br/>The setting distance can be set between 20,000 km - 40,000 km (12,428 miles - 24,856 miles) in increments of 5,000 km (3,107 miles).<br/>When the driving distance is subtracted from the set distance and the remaining distance is 1,000 km (621 miles), the reminder screen is displayed.</p>
+                <p class="illust"><img src="image/RTWB9ESH001901.png" class="SH" /></p>
+                <p class="explanation">3. User preference settings<br/>The setting distance can be set between 5,000 km - 20,000 km (3,107 miles - 12,428 miles) in increments of 1,000 km (621 miles).<br/>When the driving distance is subtracted from the set distance and the remaining distance is 1,000 km (621 miles), the reminder screen is displayed.</p>
+                <p class="illust"><img src="image/RTWB9ESH002001.png" class="SH" /></p>
+                <p class="explanation">After selecting a distance by pressing the MID switch once, press and hold the MID switch to set the distance.<br/>After the distance is set, a reduction depending on the distance traveled is displayed.<br/>When an arrow is displayed at the bottom of the setting screen, it indicates that there is a next setting screen.</p>
+                <p class="illust"><img src="image/RTWB9ESH002101.png" class="SH" /></p>
+                <p class="explanation">The reminder screen is displayed only for 3 seconds whenever the ignition switch is turned ON.<br/>The reminder screen is displayed every 200 km (124 miles) between 1000 km (621 miles) and 0 km (0 miles) remaining.<br/>If the MID switch is pressed once while the reminder screen is being displayed, the reminder screen "OFF" screen is displayed and the reminder screen is not displayed after that.</p>
+                <p class="illust"><img src="image/RTWB9ESH001801.png" class="SH" /></p>
+                <p class="explanation">With "RESET MODE", the resetting method can be changed for "fuel economy (average fuel economy)", "driving distance and average vehicle speed", and "elapse time".<br/>Select "LINK" and then in one of the fuel economy (average fuel economy), driving distance and average vehicle speed, and elapse time screens, press and hold the MID switch. The fuel economy (average fuel economy), driving distance and average vehicle speed, and elapse time will all be reset simultaneously.<br/>To reset a value only for the screen that is currently displayed, select "SEPARATE" and then in one of the fuel economy (average fuel economy), driving distance and average vehicle speed, and elapse time screens, press and hold the MID switch.</p>
+                <p class="illust"><img src="image/RUWE90SF000401.png" class="SF" /></p>
+                <p class="explanation">To return to the maintenance display, reset the distance on the maintenance setting screen.<br/>Even when the battery is removed, the set value is retained and continues. <br/>The factory default is for this function to be disabled.<br/>The reduction distance from the set distance is displayed up to the set distance as a negative value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Bulb location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE90SH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Turn signal light (outside rearview mirror type)</li><li>Turn signal light</li><li>Front fog lamp</li><li>Headlight/clearance light</li><li>Turn signal light (front door type)</li></ol></div>
+                <p class="illust"><img src="image/RUWE90SH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>High mounted stoplight</li><li>Taillight and stoplight</li><li>Rear turn signal light</li><li>License plate light</li><li>Backup light</li><li>Taillight</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Position to install the reverse switch</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWB9ASH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Reverse switch</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Instrument panel cluster system circuit diagram</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Without MID</p>
+                <p class="illust"><img src="image/RUWE90XF000701.png" class="XF" /></p>
+                <p class="explanation">With MID</p>
+                <p class="illust"><img src="image/RFWF9EXF000101.png" class="XF" /></p>
+                <p class="explanation">Connector Face</p>
+                <p class="illust"><img src="image/RFWF9EXF000201.png" class="XF" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Power steering oil pump (with variable capacity pump) installation (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Power steering oil pump (with variable capacity pump)
+          installation
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758922">1. Power steering oil pump assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the power steering oil pump to the oil pump bracket.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="instructions">2. Connect the flexible hose to the power steering oil pump.</p>
+                <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758911">2. Suction hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the suction hose to the power steering oil pump.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758479">3. Power steering fluid
+                  air bleed
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Drain air from the power steering fluid.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When removing the air from the system, power steering fluid can be added to the power steering system at any time, but only a type of power steering fluid specified in the general information should be used.</li>
+                    <li>Fill the pump fluid reservoir with the power steering fluid up to the appropriate level, and let the power steering fluid settle for at least 2 minutes.</li>
+                    <li>Start the engine and keep it running for at least 2 seconds.</li>
+                    <li>Then, stop the engine without turning the steering wheel.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Replenish the reservoir tank with the power steering fluid.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If necessary, add more power steering fluid.</li>
+                    <li>Repeat the procedure above until the engine starts and the fluid level is stabilized.</li>
+                    <li>Lift up and support the front of the vehicle to keep the wheel away from the ground.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Start the engine.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Slowly turn the steering wheel to the left and the right, and let it lightly contact with the wheel stop.</li>
+                    <li>If necessary, add the power steering fluid.</li>
+                    <li>After turning the steering wheel to the full steering state 2 - 3 times, lower the vehicle, and set the steering wheel to the position for advancing straight forward.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Stop the engine.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the fluid level, and add it as necessary.</li>
+                    <li>When the power steering fluid is extremely bubbled, stabilize the vehicle for a few minutes.</li>
+                    <li>Then, repeat the procedure above.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

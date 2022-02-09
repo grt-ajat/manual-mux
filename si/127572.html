@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Introduction to the trouble diagnosis of restraint null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Introduction to the trouble diagnosis of restraint
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751701">1. Introduction to the trouble diagnosis of restraint
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">DTC<br/>Perform Diagnostic system check-SRS controls first. The Diagnostic system check-SRS controls is performed to verify that the operation of the SRS airbag warning light is proper, and to observe the DTC information with a scan tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The DTC display of the scan tool shows a digit structure (alphabet + 4 digits + 2 digits) like DTC B00120D.</li>
+                    <li>The final 2 digits of FTB show additional information on problems.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Active code<br/>Functional failure that is currently detected<br/>Active codes are recorded in the RAM.</p>
+          <p class="explanation">History code<br/>Functional failure that was detected after the history memory was last cleared.<br/>History codes are recorded in the EEPROM.</p>
+          <p class="explanation">System diagnosis method<br/>The system diagnosis method is a standardized method to repair all electronic control systems. The diagnostic procedure is always used to solve problems with the electronic control systems, and is the starting point in the event of a repair is required. The following steps indicate how to proceed through the diagnosis.</p>
+          <p class="explanation">Confirm the customer complaint.<br/>In order to confirm the customer complaint, the person performing the diagnosis for the vehicle must know how the system normally operates.</p>
+          <p class="explanation">Perform a preliminary inspection.<br/>Perform overall visual inspection, and review the maintenance history, and detect problems such as abnormal sounds and odors, collect DTC information.</p>
+          <p class="explanation">Check for a related Service Bulletin.</p>
+          <p class="explanation">When a DTC has been recorded<br/>Accurately perform the repair according to the specified DTC chart.</p>
+          <p class="explanation">If no DTC is stored<br/>Select the symptom from the Symptom. Complete the repair according to the diagnostic procedure. It is also possible to perform the inspection by referring to the Functional Inspection.</p>
+          <p class="explanation">When a relevant symptom is not found<br/>Examine the complaint in detail.<br/>Create a diagnosis plan.<br/>Utilize the wiring diagram and operation principles.<br/>If you can obtain repair history for similar cases, request technical assistance. Combine technical knowledge and effective utilization of available service information.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When performing maintenance of the SRS, do not use electrical testers other than those specified in this manual in order to prevent injury due to unnecessary deployment.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Diagnosis procedure<br/>The diagnosis procedure used in this section aims to detect SRS problems and repair them. The procedure for quickly detecting SRS problems and effectively repairing is as follows. Not following this procedure with thorough caution may result in a longer diagnostic time, incorrect diagnosis, or replacement of incorrect parts. <br/>Perform a preliminary inspection. <br/>The following inspections must be always performed as the start of a diagnosis. <br/>Overall visual inspection Inspection for poor connections in terminals and wires and for evidence of contact with water on the SRS control unitReviewing the maintenance historyDetection of abnormal noises or abnormal odor</p>
+          <p class="explanation">Perform Diagnostic system check-SRS controls. <br/>The Diagnostic system check-SRS controls inspection is performed to check whether the SRS airbag warning light works properly, to confirm the code display by the blinking of the SRS airbag warning light, and to check for DTCs using a scan tool. <br/>Refer to an appropriate diagnosis chart according to instructions given by the Diagnostic system check-SRS controls. <br/>After the Diagnostic system check-SRS controls, go to the appropriate chart for the diagnosis of the problem. Skipping these procedures may result in a longer diagnostic time, incorrect diagnosis, or replacement of incorrect parts. <br/>Repeat the Diagnostic system check-SRS controls after conducting repairs or carrying out the diagnosis procedure. <br/>It is possible to confirm whether repairs have been performed properly and whether there are any other problems by performing the Diagnostic system check-SRS controls after conducting any repairs or diagnosis procedures.</p>
+          <p class="explanation">DTC<br/>The SRS control unit records the DTC detected after past DTC were last cleared.</p>
+          <p class="explanation">Required basic knowledge<br/>A certain level of the basic knowledge is required before using the workshop manual. Without this basic knowledge, there may be difficulties in using the diagnosis procedure in this section. Be careful not to perform harmful operations and prevent unnecessary deployment. Read and understand all of the precautions in the workshop manual as well as on the warning labels attached to SRS parts.</p>
+          <p class="explanation">Basic electrical circuits<br/>It is necessary to understand basic theories on electricity, including serial and parallel circuits, and a voltage drop in a series resistor. It is also necessary to understand the meanings of voltage, current, and resistance, and what happens in the circuit if an open wire or short circuit occurs. Make sure to read and understand the wiring diagram.</p>
+          <p class="explanation">Procedure to read DTCs<br/>All codes can be read, or all codes excluding some codes can be cleared by using a scan tool.</p>
+          <p class="explanation">Method for clearing the DTC<br/>Repair the SRS circuit if there is any failure. <br/>DTCs can be cleared with a scan tool when the problem in the SRS circuit is removed and the SRS returns to a normal condition. <br/>If DTC B0052, B0053, B0055, B0056, B1005, B1008, B1009, B1101 or B101D is set, the SRS control unit must be replaced because the memory cannot be cleared.</p>
+          <p class="explanation">Inspection standards in repairing the SRS airbag system<br/>When a collision occurs<br/>When any type of collisions has occurred regardless of whether the SRS airbag has been deployed.<br/>When trouble occurs<br/>When the SRS airbag warning light does not turn on, or a DTC is detected in the diagnosis with the scan tool when the warning light remains turned on.</p>
+                <table cellspacing="0"><tbody><tr><td width="120" colspan="1" rowspan="1" align="center" valign="bottom">SRS part name</td><td width="138" colspan="1" rowspan="1" align="center" valign="middle">Inspection standards</td><td width="238" colspan="1" rowspan="1" align="center" valign="middle">Standards for replacing parts</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Driver airbag<br/>Passenger airbag</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The driver airbag and passenger airbag were deployed due to a collision. <br/>Damage or cracks are found on the pad surface. <br/>Flaws or cracks are found in the connector. <br/>A cut or coating breakage is found in the harness.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Side airbag</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The side airbag was deployed due to a collision. <br/>Seat breakage or cracks were found and the side airbag is exposed. <br/>Flaws or cracks are found in the connector under the seat. <br/>A cut or coating breakage is found in the harness.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The curtain airbag was deployed due to a collision. <br/>Breakage or cracks are found in the head lining and the curtain airbag is exposed. <br/>Flaws or cracks are found in the connector. <br/>A cut or coating breakage is found in the harness.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">SRS control unit</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The airbag was deployed due to a collision. <br/>Flaws, cracking, or deformation is found in the SRS control unit body. <br/>Flaws or cracks are found in the connector. <br/>As a result of the trouble diagnosis described in the repair manual, instructions to replace the SRS control unit were given. <br/>Water was splashed in the vicinity of the connector.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">SRS coil</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The driver airbag was deployed. <br/>Flaws, cracks, or deformation is found on the case body or bracket. <br/>As a result of the trouble diagnosis described in the repair manual, instructions to replace the part were given.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Seat belt with pretensioner</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The seat belt with pretensioner was deployed. <br/>Flaws, cracks, or deformation is found on the case body or bracket. <br/>As a result of the trouble diagnosis described in the repair manual, instructions to replace the part were given.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Lap pretensioner</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The lap pretensioner was deployed. <br/>Flaws, cracks, or deformation is found on the case body or bracket. <br/>As a result of the trouble diagnosis described in the repair manual, instructions to replace the part were given.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">SRS harness</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">A cut or coating breakage is found in the wire harness for the airbag circuit. <br/>Flaws or cracks are found in the connector. <br/>As a result of the trouble diagnosis described in the repair manual, instructions to replace the part were given.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Airbag sensor</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs<br/>When trouble occurs<br/>When conducting a periodic inspection</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The sensor is broken. <br/>Damage or cracks are found in the sensor. <br/>Flaws or cracks are found in the connector. <br/>A cut or coating breakage is found in the harness.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Steering wheel</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The wheel section is not perfectly round. <br/>The bracket is deformed. <br/>The new driver airbag cannot be installed without difficulty. <br/>When the new driver airbag was installed, there was interference from the pad and steering wheel, resulting in the clearance not being even.</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="120" colspan="1" rowspan="1" align="center" valign="middle">SRS related part name</td><td width="138" colspan="1" rowspan="1" align="center" valign="middle">Inspection standards</td><td width="238" colspan="1" rowspan="1" align="center" valign="middle">Standards for replacing parts</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Steering column</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">The shaft and bracket supporting the shaft are deformed. <br/>Tilting operations are not smooth.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Instrument panel<br/>Cross beams<br/>Cover<br/>Glove box<br/>Seat<br/>Seat belt<br/>Windshield glass,<br/>etc.</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">A dent, bend, flaw, crack, or deformation is found. <br/>Replace the seat belt that was used during the collision.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Installation section of the mating portion</td><td width="138" colspan="1" rowspan="1" align="left" valign="middle">When a collision occurs</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">When a dent, bend, flaw, crack, or deformation is found, repair the part or replace it with a new one. <br/>If there is looseness in the installation section, tighten it to the specified torque.</td></tr></tbody></table>
+                <p class="explanation">Flash code diagnosis<br/>The flash code diagnosis of the SRS airbag warning light can be performed by short-circuiting pin 13 and pin 4 or pin 5 of the DLC and turning the ignition switch ON. The SRS control unit displays flush codes by making the SRS airbag warning light blink.<br/>The light is always turned off initially for the first 1.2 seconds of the blinking mode, and then the code 12 is displayed by blinking. The intermission time between the lighting time and the light-off time, the tens place digit and ones place digit, and faults are 0.4 seconds, 1.2 seconds, and 3.2 seconds, respectively. If there are multiple DTCs, each code is displayed 3 times.<br/>If all codes are displayed, all lamps keep blinking continuously until the short circuit between pin 13 and pin 4 or pin 5 of the DLC is removed. There are two special codes (code 12 and code 13) used to read the flash code. Code 12 indicates that the warning light is in the blinking mode. If there is no present code or past code, the SRS control unit displays code 12 until the short circuit between pin 13 and pin 4 or pin 5 of the DLC is removed. Code 13 is displayed if there is a history code, or if a history code other than the current code exists. The scan tool is required to read a history code. In this case, leave the circuit between pin 13 and pin 4 or pin 5 of the DLC open.</p>
+          <p class="explanation">When DTCs have been stored<br/>After flash code 12 is displayed once, the stored DTCs are displayed 3 times.<br/>When more than one DTC have been stored, the DTCs are displayed 3 times each in ascending order of DTC number.<br/>After displaying all codes, the codes will be displayed again starting with flash code No.12. This display continues while the DLC is shorted.</p>
+                <p class="illust"><img src="image/RTWC8BSF001501.png" class="SF" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

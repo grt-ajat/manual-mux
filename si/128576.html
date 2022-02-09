@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Antitheft system check null (BCM with Keyless Entry)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Antitheft system check
+              (BCM with Keyless Entry)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758087">1. Antitheft system check
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The anti-theft system consists of a BCM, anti-theft horn, anti-theft indicator light, receiver unit, and remote controller key. This system operates when the engine hood and all doors are closed and the doors are locked using a correctly programmed remote controller key. The system turns off when the doors are unlocked with the remote controller key, or the ignition switch is turned ON.<br/>The anti-theft system is designed to protect the vehicle and valuables from theft when the door and the engine hood of the vehicle are locked. <br/>If anyone tries to open the door or the engine hood forcibly without using the remote controller key, the hazard lights flash and the horn sounds intermittently. The horn sounds for 30 seconds until the system stops automatically, and the hazard lights flash for 5 minutes.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758076">2. Antitheft system check
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="128574.html">223.Description Body Control 36C.Functional Inspection(BCM with Keyless Entry) diagnostic system check-body controls</a>&quot;.</p>
+                    <p class="instructions">2. DTC verification</p>
+                <p class="explanation">If DTCs B3095, B3100, B3130, or B3135 are set, diagnose the applicable DTCs.</p>
+                <p class="instructions">3. Inspection of anti-theft system operation</p>
+                <p class="explanation">Set the anti-theft system.</p>
+          <p class="explanation">If the anti-theft indication light does not illuminate, refer to Antitheft indicator light inoperative, and inspect as necessary.</p>
+                      <p class="reference">Refer to &quot;<a href="128573.html">223.Description Body Control 36C.Functional Inspection(BCM with Keyless Entry) antitheft indicator light inoperative</a>&quot;.</p>
+                    <p class="explanation">If the anti-theft system does not power up, go to Inspection of engine hood switch.</p>
+          <p class="explanation">If the anti-theft horn does not operate, refer to Circuit diagnosis 3.</p>
+                <p class="instructions">4. Inspection of engine hood switch</p>
+                <p class="explanation">Close the engine hood.</p>
+          <p class="explanation">Observe the Engine Hood Switch display on the scan tool.</p>
+          <p class="explanation">If OPEN is displayed, go to Circuit diagnosis 1.</p>
+          <p class="explanation">If CLOSE is displayed, go to Inspection of door lock switch.</p>
+                <p class="instructions">5. Circuit diagnosis 1</p>
+                <p class="explanation">Disconnect the harness connector from the engine hood lock assembly.</p>
+          <p class="explanation">Observe the Engine Hood Switch display on the scan tool.</p>
+          <p class="explanation">If OPEN is displayed, go to Inspection for short circuit in engine hood switch signal circuit.</p>
+          <p class="explanation">If CLOSE is displayed, replace the engine hood lock assembly. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127281.html">9.Body, Cab, Accessories 9G.Hood, Fenders, Doors(All models) engine hood lock removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127282.html">9.Body, Cab, Accessories 9G.Hood, Fenders, Doors(All models) engine hood lock installation</a>&quot;.</p>
+                    <p class="instructions">6. Inspection for short circuit in engine hood switch signal circuit</p>
+                <p class="explanation">Inspect for a short to ground in the engine hood switch circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to BCM replacement.</p>
+                <p class="instructions">7. Inspection of door lock switch</p>
+                <p class="explanation">Inspect the door lock switch of the door lock assembly, and replace as necessary. Go to Repair verification.</p>
+          <p class="explanation">There is no continuity in the lock position. <br/>There is continuity in the unlock position.</p>
+                      <p class="reference">Refer to &quot;<a href="127290.html">9.Body, Cab, Accessories 9G.Hood, Fenders, Doors(All models) front door assembly disassembly</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127291.html">9.Body, Cab, Accessories 9G.Hood, Fenders, Doors(All models) front door assembly reassembly</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127301.html">9.Body, Cab, Accessories 9G.Hood, Fenders, Doors(All models) rear door assembly disassembly</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127302.html">9.Body, Cab, Accessories 9G.Hood, Fenders, Doors(All models) rear door assembly reassembly</a>&quot;.</p>
+                    <p class="explanation">If it is normal, go to Circuit diagnosis 2.</p>
+                <p class="instructions">8. Circuit diagnosis 2</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Install the door lock assembly.</p>
+          <p class="explanation">Disconnect the BCM harness connector.</p>
+          <p class="explanation">Connect a test lamp between the door lock switch signal circuit and the power supply circuit.</p>
+          <p class="explanation">If the test lamp does not illuminate, go to BCM replacement.</p>
+          <p class="explanation">If the test lamp illuminates, repair a short to ground in the door lock switch signal circuit. Go to Repair verification.</p>
+                <p class="instructions">9. Circuit diagnosis 3</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the BCM harness connector.</p>
+          <p class="explanation">Connect a fused jumper wire between the anti-theft horn control circuit and the power supply circuit.</p>
+          <p class="explanation">If the anti-theft horn does not operate, go to Inspection for open circuit in anti-theft horn control circuit.</p>
+          <p class="explanation">If the anti-theft horn operates, go to Inspection of anti-theft horn harness connector.</p>
+                <p class="instructions">10. Inspection for open circuit in anti-theft horn control circuit</p>
+                <p class="explanation">Inspect for an open circuit or high resistance in the anti-theft horn control circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to Inspection of anti-theft horn harness connector.</p>
+                <p class="instructions">11. Inspection of anti-theft horn harness connector</p>
+                <p class="explanation">Inspect the connection status of the anti-theft horn harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, replace the anti-theft horn. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127325.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) anti theft horn removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127326.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) anti theft horn installation</a>&quot;.</p>
+                    <p class="instructions">12. BCM replacement</p>
+                <p class="explanation">Replace the BCM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127509.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127508.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127510.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM setting</a>&quot;.</p>
+                    <p class="instructions">13. Repair verification</p>
+                <p class="explanation">Reconnect all of the disconnected fuses and harness connectors.</p>
+          <p class="explanation">Set the anti-theft system.</p>
+          <p class="explanation">If it does not operate properly, go to Inspection of anti-theft system operation.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

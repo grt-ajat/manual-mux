@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Fuel temperature sensor installation (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Fuel temperature sensor
+          installation
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747206">1. Fuel temperature sensor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the O-ring to the fuel temperature sensor.</p>
+          <p class="instructions">2. Install the fuel temperature sensor to the fuel supply pump.</p>
+                <p class="numeric">Tightening torque： 22 N・m { 2.2 kgf・m / 16 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC1CSH002801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744618">2. Fuel supply pump
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply soapy water  to the O-ring.</p>
+          <p class="instructions">2. Install the O-ring to the fuel supply pump.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to twist it.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the fuel supply pump to the timing gear case.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWB6CSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel supply pump</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the supply pump camshaft key is at a horizontal position on the right side. </li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56CSH004301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744663">3. Supply pump gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the supply pump gear to the fuel supply pump.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the alignment mark of the supply pump gear and the mark on idle gear A.</li>
+                    <li>Verify that the supply pump gear and the main gear of idle gear A are engaged.</li>
+                    <li>Push in the supply pump gear while the supply pump gear is engaged with the sub gear of idle gear A.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56CSH005101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Alignment mark of the supply pump gear</li><li>Idle gear marking</li><li>Main gear</li><li>Sub gear</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744625">4. Sprocket
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the timing chain to the sprocket.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install it to each sprocket.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Align the timing chain to the alignment mark.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the timing mark of the crankshaft sprocket and the timing chain link of the dark plate.</li>
+                    <li>Align the timing mark of the fuel supply sprocket and the timing chain link of the yellow plate.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Temporarily tighten the sprocket to the supply pump gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the dowel pin attached to the gear, and install the fuel supply pump sprocket to the fuel pump shaft.</li>
+                    <li>Tighten the fuel supply pump shaft nut by hand.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH002101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Timing mark</li><li>Dark plate</li><li>Timing mark</li><li>Yellow plate</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744616">5. Timing chain lever pivot
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Temporarily tighten the timing chain lever pivot to the timing chain tension lever.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the pivot bolt by hand.</li>
+                    <li>Confirm that the tension lever moves smoothly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56ASH019401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744647">6. Timing chain tensioner
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the hook to the pin.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Keep the state where the latch is being pushed.</li>
+                    <li>Insert the plunger.</li>
+                    <li>Install the hook to the pin, and fasten the plunger.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56CSH004401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Pin</li><li>Plunger</li><li>Latch</li><li>Timing chain tensioner</li><li>Hook</li></ol></div>
+                <p class="instructions">2. Install the timing chain tensioner to the cylinder head.</p>
+                <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the gasket.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the oil pipe to the timing chain tensioner.</p>
+                <p class="numeric">Tightening torque： 14.7 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+                <p class="illust"><img src="image/LNWC1BSH019001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil pipe</li><li>Timing chain tensioner</li><li>Gasket</li></ol></div>
+                <p class="instructions">4. Disconnect the hook from the pin.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Lightly push the area indicated with an arrow in the diagram.</li>
+                    <li>The hook of the tensioner opens and the plunger pushes the tension lever to pull the chain.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56ASH020401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744626">7. Supply pump gear nut
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Securely tighten the sprocket to the supply pump gear.</p>
+                <p class="numeric">Tightening torque： 130 N・m { 13.3 kgf・m / 96 lb・ft }</p>
+                <p class="illust"><img src="image/RTW56CSH001601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Nut</li></ol></div>
+                <p class="instructions">2. Securely tighten the timing chain lever pivot to the timing chain tension lever.</p>
+                <p class="numeric">Tightening torque： 27 N・m { 2.8 kgf・m / 20 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744488">8. Timing chain lower cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply liquid gasket to the timing chain lower cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ThreeBond 1207C or equivalent.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Bead height： 2.0 to 2.5 mm { 0.079 to 0.098 in }</p>
+          <p class="numeric">Bead width： 2.0 to 2.5 mm { 0.079 to 0.098 in }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Within 5 minutes of applying the liquid gasket, install the cover.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Liquid gasket</li><li>Bead height</li><li>Bead width</li></ol></div>
+                <p class="instructions">2. Install the timing chain lower cover to the gear case cover.</p>
+                <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744451">9. Timing chain upper cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply liquid gasket to the timing chain upper cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ThreeBond 1217H or equivalent.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Bead height： 1.0 to 1.5 mm { 0.039 to 0.059 in }</p>
+          <p class="numeric">Bead width： 2.0 to 2.5 mm { 0.079 to 0.098 in }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Within 5 minutes of applying the liquid gasket, install the cover.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNWC1BSH019201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Liquid gasket</li><li>Bead height</li><li>Bead width</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Wipe off any excess liquid gasket.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the timing chain upper cover to the cylinder head.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748536">10. Water pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the water pipe to the cylinder head assembly.</p>
+                <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in } Bolt, nut</p>
+                <p class="illust"><img src="image/RTWD1BSH002501.png" class="SH" /></p>
+                <p class="instructions">2. Connect the turbocharger water feed hose to the outlet pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744619">11. Noise cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the noise cover to the timing chain lower cover.</p>
+                <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+                <p class="illust"><img src="image/RTWF1BSH001901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744617">12. CMP sensor
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the connector to the CMP sensor.</p>
+                <p class="illust"><img src="image/RTWD1BSH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>CMP sensor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747804">13. Cylinder head cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply liquid gasket to the cylinder head.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ThreeBond 1217H or 1207C to the mating surface with the cylinder head.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Within 5 minutes of applying the liquid gasket, install the cover.</li>
+                    <li>Remove the dust flange from the oil seal section on the injector connector side.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Bead width： 2.0 to 2.5 mm { 0.079 to 0.098 in }</p>
+          <p class="numeric">Bead height： 1.0 to 1.5 mm { 0.039 to 0.059 in }</p>
+                <p class="illust"><img src="image/LNWC1BSH022301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Liquid gasket</li><li>Bead width</li><li>Bead height</li></ol></div>
+                <p class="instructions">2. Install the cylinder head cover to the cylinder head.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the cylinder head cover gasket.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily tighten in the order shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in }</p>
+                <p class="illust"><img src="image/RTWD1BSH010201.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Firmly tighten in the order shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+                <p class="illust"><img src="image/RTWD1BSH010201.png" class="SH" /></p>
+                <p class="instructions">3. Connect the harness clip to the cylinder head cover.</p>
+                <p class="illust"><img src="image/RTWD1BMH000101.png" class="MH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745418">14. Blow-by hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the blow-by hose to the cylinder head cover.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745419">15. Fuel leak-off hose
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the leak-off pipe to the injector.</p>
+                <p class="illust"><img src="image/RTW86ASH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Leak-off pipe</li><li>Clip</li></ol></div>
+                <p class="instructions">2. Install the fuel leak-off hose to the leak-off pipe.</p>
+                <p class="illust"><img src="image/RTW76ASH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel leak-off hose</li><li>Connector</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the leak-off pipe and the clip.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745405">16. Vacuum pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the vacuum pipe to the cylinder head cover.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743453">17. Bracket
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the bracket to the cylinder head cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install as a set with the turbocharger control solenoid.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWE1BSH001001.png" class="SH" /></p>
+                <p class="instructions">2. Connect the connector to the turbocharger control solenoid.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747921">18. Common rail (fuel rail) assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the common rail (fuel rail) assembly to the cylinder block.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install together with the common rail (fuel rail) bracket.</li>
+                    <li>Tighten in the order shown in the diagram.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not grasp the pressure sensor during work.</li>
+                    <li>Be careful not to damage the connector unit of the pressure sensor.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWD1BSH005501.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTWD1ESH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Vacuum pipe</li><li>Common rail (fuel rail) bracket</li><li>Common rail (fuel rail) assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745708">19. Vacuum pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the vacuum pipe to the cylinder block.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747310">20. Swirl control solenoid valve
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the vacuum hose to swirl control solenoid valve.</p>
+          <p class="instructions">2. Install swirl control solenoid valve to the common rail (fuel rail) bracket.</p>
+                <p class="numeric">Tightening torque： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+                <p class="instructions">3. Connect the harness connector to swirl control solenoid valve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744445">21. Injection pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the engine oil to the injection pipe.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply engine oil to the injector side sleeve nut threaded portion and the O-ring of the injector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Temporarily tighten the injection pipe to the injector and the common rail (fuel rail) assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temporarily tighten the sleeve nut by hand until the nut does not turn.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1CSH000201.png" class="SH" /></p>
+                <p class="instructions">3. Temporarily tighten the clip to the injection pipe.</p>
+          <p class="instructions">4. Securely tighten the injector clamp to the cylinder head.</p>
+                <p class="numeric">Tightening torque： 26 N・m { 2.7 kgf・m / 19 lb・ft }</p>
+                <p class="instructions">5. Securely tighten the injection pipe to the injector and the common rail (fuel rail) assembly.</p>
+                <p class="numeric">Tightening torque： 29.5 N・m { 3.0 kgf・m / 22 lb・ft } Injector side</p>
+          <p class="numeric">Tightening torque： 29.5 N・m { 3.0 kgf・m / 22 lb・ft } Common rail (fuel rail) side</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the injection pipe.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Securely tighten the clip to the injection pipe.</p>
+                <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748440">22. FRP sensor
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the connector to the FRP sensor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745694">23. Leak-off pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the leak-off pipe to the fuel supply pump and the common rail (fuel rail) assembly.</p>
+                <p class="numeric">Tightening torque： 10.3 N・m { 1.1 kgf・m / 91 lb・in }</p>
+                <p class="illust"><img src="image/RTWD1BSH005401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Leak-off pipe</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745701">24. Leak off pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the harness bracket to the inlet manifold and the common rail (fuel rail) bracket.</p>
+          <p class="instructions">2. Install the leak-off pipe to the inlet manifold.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWE1BSH001401.png" class="SH" /></p>
+                <p class="instructions">3. Connect the fuel leak-off hose to the leak-off pipe.</p>
+          <p class="instructions">4. Connect the vacuum hose to the vacuum pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745476">25. Vacuum hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the vacuum hose to the vacuum pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745703">26. Fuel hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the fuel hose to the fuel supply pump.</p>
+                <p class="illust"><img src="image/RTWD1BSH008901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel hose</li></ol></div>
+                <p class="instructions">2. Connect the fuel hose to the leak-off pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745700">27. Fuel feed pipe
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the fuel feed pipe to the fuel supply pump and the common rail (fuel rail) assembly.</p>
+                <p class="numeric">Tightening torque： 29.5 N・m { 3.0 kgf・m / 22 lb・ft }</p>
+                <p class="illust"><img src="image/RTW76CSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel feed pipe</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the fuel feed pipe.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742696">28. Starter motor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the starter motor to the rear plate.</p>
+                <p class="numeric">Tightening torque： 94 N・m { 9.6 kgf・m / 69 lb・ft }</p>
+                <p class="instructions">2. Connect the earth cable to the starter motor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744489">29. A/C compressor bracket
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the A/C compressor bracket to the cylinder head.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten in the order shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWD1BSH006301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745933">30. A/C compressor assembly
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the A/C compressor assembly to the A/C compressor bracket.</p>
+                <p class="numeric">Tightening torque： 51 N・m { 5.2 kgf・m / 38 lb・ft }</p>
+                <p class="illust"><img src="image/RTW76ASH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor bracket</li><li>A/C compressor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744505">31. Oil level gauge guide tube
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the engine oil to the O-ring.</p>
+          <p class="instructions">2. Install the oil level gauge guide tube to the crankcase.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747703">32. Tension pulley
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the tension pulley to the cylinder head.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWD1BSH002601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744249">33. A/C compressor drive belt
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the A/C compressor drive belt to the pulley.</p>
+                <p class="illust"><img src="image/RTWD1BSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor drive belt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744258">34. A/C compressor drive belt
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust tension to the specified value using a tension meter.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When adjusting the amount of flex to the original value</li>
+                    <li>Apply a load to measurement points 2, 3, and 4 of the A/C compressor drive belt and adjust the amount of flex.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Load： 98 N { 10 kg / 22 lb }</p>
+                <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 2</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Amount of flex</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 12.4 to 16.4 mm { 0.488 to 0.646 in }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 16.5 to 19.1 mm { 0.650 to 0.752 in }</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 3</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Amount of flex</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 12.5 to 16.5 mm { 0.492 to 0.650 in }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 16.5 to 19.1 mm { 0.650 to 0.752 in }</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 4</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Amount of flex</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 15.9 to 20.7 mm { 0.626 to 0.815 in }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 20.7 to 23.7 mm { 0.815 to 0.933 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When adjusting the tension by using a sonic tension meter</li>
+                    <li>Measure the frequency at measurement points 2, 3, and 4 with a sonic tension meter.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 2</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Frequency</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 92 to 112 Hz</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 80 to 92 Hz</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 3</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Frequency</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 92 to 112 Hz</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 79 to 91 Hz</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 4</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Frequency</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 70 to 86 Hz</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 62 to 70 Hz</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWD1DSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Measurement point 1</li><li>Measurement point 2</li><li>Measurement point 3</li><li>Measurement point 4</li><li>Adjust bolt (A/C compressor drive belt)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After adjusting the tension, tighten the tensioner fixing nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 41 N・m { 4.2 kgf・m / 30 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743734">35. Fan shroud
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the fan guide to the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the lower fan guide together with the fan shroud.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743711">36. Cooling fan
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the cooling fan to the fan clutch assembly.</p>
+                <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+                <p class="illust"><img src="image/RTWD1BSH001901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fan clutch assembly</li><li>Cooling fan</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743741">37. Fan guide
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the fan guide to the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the upper fan guide.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Upper fan guide</li><li>Clip</li><li>Lower fan guide</li><li>Fan shroud</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745911">38. Radiator reserve tank
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the radiator reserve tank to the upper fan guide.</p>
+                <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+                <p class="illust"><img src="image/RTWC1BSH001401.png" class="SH" /></p>
+                <p class="instructions">2. Connect the radiator reserve tank hose to the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the radiator reserve tank is dirty, clean it before installation.</li>
+                    <li>Clean the radiator reserve tank using detergent.</li>
+                    <li>Scrub inside with detergent and water.</li>
+                    <li>Wash with clean water, and drain the water.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745887">39. Battery
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the battery to vehicle.</p>
+                <p class="illust"><img src="image/RTWC1BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Battery cable</li><li>Battery bracket</li><li>Earth</li></ol></div>
+                <p class="instructions">2. Install the battery bracket to the frame.</p>
+                <p class="numeric">Tightening torque： 4 N・m { 0.4 kgf・m / 35 lb・in } Battery side</p>
+          <p class="numeric">Tightening torque： 20 N・m { 2.0 kgf・m / 15 lb・ft } Frame side</p>
+                <p class="instructions">3. Connect the battery cable to the battery.</p>
+          <p class="instructions">4. Connect the battery ground cable to the frame.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745885">40. Radiator upper hose
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the radiator upper hose to the water outlet pipe and the radiator.</p>
+                <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in }</p>
+                <p class="illust"><img src="image/RTWD1BSH001701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Radiator upper hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743452">41. Intake air duct
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the intake air duct to the intake throttle valve and the intercooler.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the marks on the pipe side and hose side.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in } Bolt</p>
+          <p class="numeric">Tightening torque： 4 N・m { 0.4 kgf・m / 35 lb・in } Clamp (Intake throttle side)</p>
+          <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in } Clamp (Intercooler side)</p>
+                <p class="illust"><img src="image/RTWD1BSH005701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748515">42. Boost pressure sensor
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the connector to the boost pressure sensor.</p>
+                <p class="illust"><img src="image/RTWD1BSH006001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745361">43. Intake air duct
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the intake air duct to the turbocharger and the intercooler.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Referring to the diagram, face the threaded portion of the clamp toward the engine front.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft } Nut, bolt</p>
+          <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in } Clamp (Intercooler side)</p>
+                <p class="illust"><img src="image/RTWF1BSH003601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744430">44. Engine cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the engine cover to the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741852">45. Fuel
+                  air bleed
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Press the priming pump.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Press the priming pump until it gets stiff.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Priming pump</li><li>Fuel filter with the sedimenter</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Insufficient air removal work may lead to malfunction of the engine.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743738">46. Coolant
+                  filling
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Replenish the radiator with coolant.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use the coolant contains 50 % anti-freeze solution.</li>
+                    <li>Pour coolant up to the filler neck.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Replenish the radiator reserve tank with coolant.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pour coolant up to the MAX line.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the radiator cap to the radiator.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747205">47. Front propeller shaft assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="128759.html">3.Driveline, Axle 3C.Drive Shaft System(All models) front propeller shaft assembly installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746075">48. Underguard
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with an under air deflector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the under air deflector to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the clip and the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC9GSH002801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bolt</li><li>Clip</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with front and rear underguard.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the rear underguard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="instructions">3. Install the front underguard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="illust"><img src="image/RUWE9GSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front underguard</li><li>Rear underguard</li><li>Bolt</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with front and rear underguard and an oil pan guard.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the rear underguard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="instructions">5. Install the oil pan guard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 90 N・m { 9.2 kgf・m / 66.4 lb・ft }</p>
+                <p class="instructions">6. Install the front underguard to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 42 N・m { 4.3 kgf・m / 31 lb・ft }</p>
+                <p class="illust"><img src="image/RUWE9GSH002401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front underguard</li><li>Oil pan guard</li><li>Bolt oil pan guard</li><li>Bolt</li><li>Rear underguard</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745477">49. Battery ground cable
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the battery ground cable to the battery.</p>
+          <p class="instructions">2. Close the engine hood assembly.</p>
+          <p class="instructions">3. Lower vehicle.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

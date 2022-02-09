@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Measurement of the automatic transmission operating pressure null (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Measurement of the automatic transmission operating pressure
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757379">1. Measurement of the automatic transmission operating pressure
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm whether below condition before function check.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The ATF temperature is high. (50 to 80°C [122 to 176°F])</p>
+          <p class="explanation">Switch of A/C and light etc are off.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hydraulic test</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the operating condition of the automatic transmission components by measuring the line pressure at D range and R range, or each engine speed.</p>
+          <p class="explanation">Chock 4 wheels and apply parking brake fully, lock vehicle perfectly.</p>
+          <p class="explanation">Install oil pressure gage to test hole for line pressure.</p>
+          <p class="explanation">While depressing the brake pedal, move the select lever to D range and R range, and measure the line pressure at each engine speed.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The test with the engine speed at 2000 rpm should not be performed for more than 5 seconds.</li>
+                    <li>The interval of tests with the engine speed at 2000 rpm should be at least 1 minute.</li>
+                    <li>Make sure to check no oil leak after installing oil pressure gage.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH034001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Test hole for line pressure.</li></ol></div>
+                <table cellspacing="0"><tbody><tr><td width="158" colspan="1" rowspan="2" align="center" valign="middle">Engine speed</td><td width="340" colspan="2" rowspan="1" align="center" valign="bottom">Line pressure</td></tr><tr><td width="170" colspan="1" rowspan="1" align="center" valign="middle">D range</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">R range</td></tr><tr><td width="158" colspan="1" rowspan="1" align="center" valign="middle">： 700 r/min</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">： 357 to 427 kPa { 3.6 to 4.4 kgf/cm2 / 52 to 62 psi }</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">： 454 to 662 kPa { 4.6 to 6.8 kgf/cm2 / 66 to 96 psi }</td></tr><tr><td width="158" colspan="1" rowspan="1" align="center" valign="middle">： 2000 r/min</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">： 1329 to 1543 kPa { 13.6 to 15.7 kgf/cm2 / 193 to 224 psi }</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">： 1295 to 1513 kPa { 13.2 to 15.4 kgf/cm2 / 188 to 219 psi }</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="248" colspan="1" rowspan="1" align="center" valign="middle">Result of time lag test</td><td width="250" colspan="1" rowspan="1" align="center" valign="middle">Cause of failure</td></tr><tr><td width="248" colspan="1" rowspan="1" align="left" valign="middle">High than standards both D and R range</td><td width="250" colspan="1" rowspan="1" align="left" valign="middle">Pressure control solenoid C (SLT) failure<br/>Primary regulator valve failure</td></tr><tr><td width="248" colspan="1" rowspan="1" align="left" valign="middle">Lower than standards both D and R range</td><td width="250" colspan="1" rowspan="1" align="left" valign="middle">Pressure control solenoid C (SLT) failure<br/>Primary regulator valve failure<br/>Oil pump failure</td></tr><tr><td width="248" colspan="1" rowspan="1" align="left" valign="middle">Lower than standards only D range</td><td width="250" colspan="1" rowspan="1" align="left" valign="middle">D hydraulic circuit failure<br/>C1 failure</td></tr><tr><td width="248" colspan="1" rowspan="1" align="left" valign="middle">Lower than standards only R range</td><td width="250" colspan="1" rowspan="1" align="left" valign="middle">R hydraulic circuit failure<br/>C3 failure<br/>B4 failure</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Fuel supply pump removal (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Fuel supply pump
+          removal
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie748327">1. Injector
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The holes and gaps constituting the fuel paths for the fuel system, including the inside of the injector, have an extremely precise finish. Therefore, entry of any foreign material may cause trouble.</li>
+                    <li>Be very careful to prevent entry of foreign material after removing parts, etc.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742603">2. Battery ground cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Open the engine hood assembly.</p>
+          <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Raise vehicle using the jack.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745092">3. Underguard
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with an under air deflector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the under air deflector from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 5 bolts and clip.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9GSH002801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bolt</li><li>Clip</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with front and rear underguard.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the front underguard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Remove the rear underguard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9GSH002301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with front and rear underguard and an oil pan guard.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the front underguard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 5 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Remove the oil pan guard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Remove the rear underguard from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9GSH002401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front underguard</li><li>Oil pan guard</li><li>Bolt oil pan guard</li><li>Bolt</li><li>Rear underguard</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742576">4. Air cleaner assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness connector from the MAF sensor.</p>
+          <p class="instructions">2. Disconnect the harness connector from the barometric pressure sensor.</p>
+          <p class="instructions">3. Disconnect the vacuum hose from the air cleaner assembly.</p>
+          <p class="instructions">4. Disconnect the intake pipe from the turbocharger assembly.</p>
+          <p class="instructions">5. Remove the air cleaner assembly from vehicle.</p>
+                <p class="illust"><img src="image/RTWC1BSH017101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Air cleaner assembly</li><li>MAF sensor</li><li>Vacuum hose</li><li>Blow-by hose</li><li>Intake pipe</li><li>Barometric pressure sensor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747380">5. Front propeller shaft assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="128758.html">3.Driveline, Axle 3C.Drive Shaft System(All models) front propeller shaft assembly removal</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745222">6. Coolant
+                  drain
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Drain coolant from the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Open the drain plug at the bottom of the radiator.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56BSH000301.png" class="SH" /></p>
+                <p class="instructions">2. Remove the radiator cap from the radiator.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>In order to prevent burns, do not open the cap when the engine and radiator are hot.</li>
+                    <li>Heat liquid and steam may gush out by pressure.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743870">7. Engine cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the engine cover from the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741959">8. Intake air duct
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intake air duct from the turbocharger and the intercooler.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the part together with the intake hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH003501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742510">9. Boost pressure sensor
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the connector from the boost pressure sensor.</p>
+                <p class="illust"><img src="image/RTWD1BSH006001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741971">10. Intake air duct
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intake air duct from the intake throttle valve and the intercooler.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the part together with the intake hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742527">11. Radiator upper hose
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the radiator upper hose from the water outlet pipe and the radiator.</p>
+                <p class="illust"><img src="image/RTWD1BSH001701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Radiator upper hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743521">12. Battery
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the battery ground cable from the frame.</p>
+          <p class="instructions">2. Disconnect the battery cable from the battery.</p>
+          <p class="instructions">3. Remove the battery bracket from the frame.</p>
+          <p class="instructions">4. Remove the battery from vehicle.</p>
+                <p class="illust"><img src="image/RTWC1BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Battery cable</li><li>Battery bracket</li><li>Earth</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742614">13. Radiator reserve tank
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the radiator reserve tank hose from the radiator.</p>
+          <p class="instructions">2. Remove the radiator reserve tank from the upper fan guide.</p>
+                <p class="illust"><img src="image/RTWC1BSH001401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745268">14. Fan guide
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fan guide from the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the clips and bottom locks on both sides and remove the upper fan guide.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Upper fan guide</li><li>Clip</li><li>Lower fan guide</li><li>Fan shroud</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745264">15. Cooling fan
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the cooling fan from the fan clutch assembly.</p>
+                <p class="illust"><img src="image/RTWD1BSH001901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fan clutch assembly</li><li>Cooling fan</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745233">16. Fan shroud
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fan guide from the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the lower fan guide together with the fan shroud.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744314">17. A/C compressor drive belt
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the A/C compressor drive belt from the pulley.</p>
+                <p class="illust"><img src="image/RTWD1BSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor drive belt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744791">18. Tension pulley
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the tension pulley from the cylinder head.</p>
+                <p class="illust"><img src="image/RTWD1BSH002601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744739">19. Oil level gauge guide tube
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil level gauge from the oil level gauge guide tube.</p>
+          <p class="instructions">2. Remove the oil level gauge guide tube from the crankcase.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742569">20. A/C compressor assembly
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the A/C compressor assembly from the A/C compressor bracket.</p>
+                <p class="illust"><img src="image/RTW76ASH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor bracket</li><li>A/C compressor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743869">21. A/C compressor bracket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the A/C compressor bracket from the cylinder head.</p>
+                <p class="illust"><img src="image/RTWD1BSH006101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741800">22. Starter motor
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the earth cable from the starter motor.</p>
+          <p class="instructions">2. Remove the starter motor from the rear plate.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742105">23. Fuel feed pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fuel feed pipe from the fuel supply pump and the common rail (fuel rail) assembly.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Cover the exposed portion to prevent foreign material from getting into the fuel system.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW76CSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel feed pipe</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742098">24. Fuel hose
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the fuel hose from the fuel supply pump.</p>
+          <p class="instructions">2. Disconnect the fuel hose from the fuel leak-off pipe.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Cover the exposed portion to prevent foreign material from getting into the fuel system.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1BSH008901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743509">25. Vacuum hose
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the vacuum hose from the vacuum pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742490">26. Leak off pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the vacuum hose from the vacuum pipe.</p>
+          <p class="instructions">2. Disconnect the fuel leak-off hose from the leak-off pipe.</p>
+          <p class="instructions">3. Remove the harness bracket from the inlet manifold and the common rail (fuel rail) bracket.</p>
+          <p class="instructions">4. Remove the leak-off pipe from the inlet manifold.</p>
+                <p class="illust"><img src="image/RTWC1CSH002001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742099">27. Leak-off pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the leak-off pipe from the fuel supply pump and the common rail (fuel rail) assembly.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Cover the exposed portion to prevent foreign material from getting into the fuel system.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1BSH005401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Leak-off pipe</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744283">28. FRP sensor
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the connector from the FRP sensor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743824">29. Injection pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the clip from the injection pipe.</p>
+          <p class="instructions">2. Remove the injection pipe from the injector and the common rail (fuel rail) assembly.</p>
+                <p class="illust"><img src="image/RTWD1CSH000201.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the injection pipe.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744777">30. Swirl control solenoid valve
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness connector from swirl control solenoid valve.</p>
+          <p class="instructions">2. Remove swirl control solenoid valve from the bracket.</p>
+          <p class="instructions">3. Disconnect the vacuum hose from swirl control solenoid valve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742102">31. Vacuum pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the vacuum pipe from the cylinder block.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744802">32. Common rail (fuel rail) assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the common rail (fuel rail) assembly from the common rail (fuel rail) bracket.</p>
+          <p class="instructions">2. Remove the bracket from the cylinder block.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not grasp the pressure sensor during work.</li>
+                    <li>Be careful not to damage the connector unit of the pressure sensor.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1ESH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Vacuum pipe</li><li>Common rail (fuel rail) bracket</li><li>Common rail (fuel rail) assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745284">33. Turbocharger water feed pipe
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the turbocharger water feed hose from the water feed and return pipe.</p>
+                <p class="illust"><img src="image/RTWF1BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Turbocharger water feed hose</li><li>Turbocharger water return hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743891">34. Exhaust manifold heat protector
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the exhaust manifold heat protector from the exhaust manifold.</p>
+                <p class="illust"><img src="image/RTWE1HSH000101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746050">35. EGR pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with an EGR.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the EGR pipe from the inlet manifold and the exhaust manifold.</p>
+                <p class="illust"><img src="image/RTWE1HSH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741958">36. Bracket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the vacuum hose from the turbocharger control solenoid.</p>
+          <p class="instructions">2. Disconnect the connector from the turbocharger control solenoid.</p>
+          <p class="instructions">3. Remove the bracket from the cylinder head cover.</p>
+                <p class="illust"><img src="image/RTWD1BSH001601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741874">37. Vacuum pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the vacuum pipe from the cylinder head cover.</p>
+                <p class="illust"><img src="image/RTWD1BSH004901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove it as a set with the harness bracket. (for LHD models)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Harness bracket</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741957">38. Fuel leak-off hose
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fuel leak-off hose from the leak-off pipe.</p>
+                <p class="illust"><img src="image/RTW76ASH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel leak-off hose</li><li>Injector connector</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the clip of the fuel leak-off hose.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the leak-off pipe from the injector.</p>
+                <p class="illust"><img src="image/RTW86ASH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Injector leak-off pipe</li><li>Clip</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the leak-off pipe and the clip.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741970">39. Blow-by hose
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the blow-by hose from the cylinder head cover.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744801">40. Cylinder head cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness clip from the cylinder head cover.</p>
+                <p class="illust"><img src="image/RTWD1BMH000101.png" class="MH" /></p>
+                <p class="instructions">2. Remove the cylinder head cover from the cylinder head.</p>
+                <p class="illust"><img src="image/RTWD1BSH007801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746462">41. CMP sensor
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the connector from the CMP sensor.</p>
+                <p class="illust"><img src="image/RTWD1BSH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>CMP sensor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748206">42. Noise cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the noise cover from the timing chain lower cover.</p>
+                <p class="illust"><img src="image/RTWF1BSH001901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742700">43. Water pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the turbocharger water feed hose from the outlet pipe.</p>
+          <p class="instructions">2. Remove the water pipe from the cylinder head assembly.</p>
+                <p class="illust"><img src="image/RTWF1BSH001201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743929">44. Timing chain upper cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the timing chain upper cover from the cylinder head.</p>
+                <p class="illust"><img src="image/LNWC1BSH019101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Timing chain upper cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743868">45. Timing chain lower cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the timing chain lower cover from the gear case cover.</p>
+                <p class="illust"><img src="image/RTWF1BSH002001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744773">46. Fuel supply pump
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Turn the crankshaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rotate the crankshaft in the forward direction (clockwise), and align the No. 1 cylinder piston to compression top dead center.</li>
+                    <li>Check the TDC alignment position using a mirror, etc.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1JSH001601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Top dead center alignment mark on the gear case cover</li><li>Top dead center alignment mark on the crank pulley</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the alignment marks of the camshaft bearing cap and the camshaft are aligned.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE1BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Alignment mark</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746591">47. Supply pump gear nut
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Turn the nut.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Loosen the nut of the supply pump gear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56CSH001601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Supply pump gear nut</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746941">48. Timing chain tensioner
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil pipe from the timing chain tensioner.</p>
+          <p class="instructions">2. Remove the timing chain tensioner from the cylinder head.</p>
+                <p class="illust"><img src="image/LNWC1BSH019001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil pipe</li><li>Timing chain tensioner</li><li>Gasket</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743880">49. Timing chain lever pivot
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the timing chain lever pivot from the timing chain tension lever.</p>
+                <p class="illust"><img src="image/RTW56ASH019401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746461">50. Sprocket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the nut from the sprocket.</p>
+          <p class="instructions">2. Remove the sprocket from the supply pump gear.</p>
+                <p class="illust"><img src="image/RTW56CSH004101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Timing chain lever pivot</li><li>Sprocket</li><li>Nut</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Lift up the timing chain.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56CSH003301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746463">51. Supply pump gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Mark the alignment position of the idle gear A and supply pump gear. </li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56AMH000401.png" class="MH" /></p>
+                <p class="instructions">1. Remove the supply pump gear from the fuel supply pump using the gear puller.</p>
+                <p class="illust"><img src="image/RTW56CSH002901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747379">52. Fuel supply pump
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness connector from the fuel temperature sensor.</p>
+          <p class="instructions">2. Disconnect the harness connector from the FRP regulator.</p>
+                <p class="illust"><img src="image/RTW56ESH002901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel temperature sensor</li><li>FRP regulator</li></ol></div>
+                <p class="instructions">3. Remove the fuel supply pump from the timing gear case.</p>
+                <p class="illust"><img src="image/RTWB6CSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel supply pump</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not hold the high-pressure pipe when removing the supply pump.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the O-ring from the fuel supply pump.</p>
+                <p class="illust"><img src="image/RTW56CSH002501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Supply pump</li><li>O-ring</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not hold the high-pressure pipe when carrying the supply pump.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

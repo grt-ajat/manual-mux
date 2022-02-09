@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>ECM setting (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    ECM
+          setting
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747451">1. ECM
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When replacing the ECM, the vehicle data must be written into the new ECM.</li>
+                    <li>When replacing the ECM, after removal download the old ECM data to the new ECM, referring to the following.</li>
+                    <li>Use the same scan tool for the replacement procedure from beginning until end. If the scan tool is changed during the procedure, the correct information cannot be written.</li>
+                    <li>If the scan tool is changed during the procedure, the correct information cannot be written.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747621">2. ECM
+                  writing
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">ECM writing (PESS control unit)</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If equipped with a PESS, this procedure is required.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select the PESS.</p>
+          <p class="instructions">6. Select the Programming.</p>
+          <p class="instructions">7. Select Program PESS Function.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Write the immobilizer security information into the BCM by following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If an incorrect security code is input, the security wait time begins.</li>
+                    <li>When turning the ignition switch to ON or OFF, wait at least 5 seconds.</li>
+                    <li>Keep the transponder keys to be programmed away from other keys, other transponder keys, key number plates, or other metal objects.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the programming is completed, turn the ignition switch OFF for 1 minute.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Turn ON the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify that the engine starts with all transponder keys.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">ECM writing (ICU)</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If an immobilizer is equipped, this procedure is required.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">10. Connect a scan tool to the DLC.</p>
+          <p class="instructions">11. Turn ON the ignition switch.</p>
+          <p class="instructions">12. Select the Diagnostics.</p>
+          <p class="instructions">13. Select the Body.</p>
+          <p class="instructions">14. Select Immobilizer.</p>
+          <p class="instructions">15. Select Programming.</p>
+          <p class="instructions">16. Select Program Immobilizer Function.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Follow the directions on the screen and write the immobilizer security information into the ECM.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If an incorrect security code is input, the security wait time begins.</li>
+                    <li>When turning the ignition switch to ON or OFF, wait at least 5 seconds.</li>
+                    <li>Keep transponder keys to be programmed away from other keys, other transponder keys, key number plates, and other metal parts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">17. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the programming is completed, turn OFF the ignition switch for 1 minute.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">18. Turn ON the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify that the engine does not start with all transponder keys.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747785">3. ECM
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Select the Diagnostics.</p>
+          <p class="instructions">3. Select the Engine.</p>
+          <p class="instructions">4. Select the engine model.</p>
+          <p class="instructions">5. Select Programming.</p>
+          <p class="instructions">6. Select the Program VIN (Vehicle Identification Number).</p>
+          <p class="instructions">7. Select the Program VIN (Vehicle Identification Number).</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the VIN does not display or  is not correct, input the correct VIN.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Select the Program VIN (Vehicle Identification Number).</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Follow the directions on the screen and write the VIN into the ECM.</li>
+                    <li>When the ECM to be replaced can communicate with a scan tool, do not perform the following procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Select the Injector ID Code.</p>
+          <p class="instructions">10. Select the Injector Flow.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Follow the directions on the screen and write the injector ID codes into the ECM.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Select Vehicle Speed Correction Data.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Write the Vehicle Speed Correction Data to the ECM by following the instructions on the screen.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">12. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the programming is completed, turn OFF the ignition switch for 1 minute.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747450">4. ECM
+                  download
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the ECM to be replaced can communicate with a scan tool, download the injector ID codes.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Confirm the vehicle specifications before downloading.</li>
+                    <li>Perform the download after installing the new ECM in the vehicle.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Engine.</p>
+          <p class="instructions">5. Select the engine model.</p>
+          <p class="instructions">6. Select Programming.</p>
+          <p class="instructions">7. Select the Injector ID Code.</p>
+          <p class="instructions">8. Select the Injector ID Download.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Follow the directions on the screen and download the injector ID codes to the ECM.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Select the Injector ID Code.</p>
+          <p class="instructions">10. Select the Injector Flow.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Confirm that the injector ID codes displayed on the screen match the injector ID codes recorded before removing the ECM.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the injector ID codes do not display or are not correct, input the correct injector ID codes.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the downloading is completed, turn OFF the ignition switch for 1 minute.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

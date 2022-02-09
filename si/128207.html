@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Counter shaft reassembly (MUX)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Counter shaft
+          reassembly
+              (MUX)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757135">1. 2nd counter gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the 2nd needle bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the needle bearing and gear inner surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the 2nd needle bearing to the counter shaft.</p>
+          <p class="instructions">3. Install the 2nd counter gear to the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 1st - 2nd inside ring, 1st - 2nd outside ring, and the 1st - 2nd block ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757210">2. 1st - 2nd synchronizer assembly
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Assemble the 1st - 2nd clutch hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the clutch hub and sleeve slide smoothly.</li>
+                    <li>Confirm that the insert is installed to the groove of the clutch hub correctly.</li>
+                    <li>Confirm that the insert spring is installed to the insert correctly.</li>
+                    <li>Set the insert spring in such a way that the openings of the spring face the different directions.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW45CSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Insert</li><li>Insert spring</li><li>Sleeve</li><li>Clutch hub</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757065">3. 1st - 2nd synchronizer assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 1st - 2nd synchronizer assembly to the counter shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Firmly fit the 1st - 2nd inside ring, 1st - 2nd outside ring and 1st - 2nd block ring using a press and bearing installer.</li>
+                    <li>When installing, apply the recommended lubricating oil to the inner surface of the 1st - 2nd block ring.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST9852211820.png" class="ST" /><br/>SST: 9-8522-1182-0 - bearing installer</p>
+                <p class="illust"><img src="image/RTW75CSH000901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756979">4. 1st counter gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 1st needle bearing to the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the needle bearing and gear inner surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the 1st gear to the counter shaft.</p>
+          <p class="instructions">3. Install the snap ring to the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new snap ring.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756692">5. 1st counter gear collar
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 1st counter gear collar to the counter shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Firmly fit the 1st counter gear collar until it contacts with the 1st - 2nd synchronizer assembly using a press and bearing installer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST9852211820.png" class="ST" /><br/>SST: 9-8522-1182-0 - bearing installer</p>
+                <p class="illust"><img src="image/RTW75CSH001001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+                <p class="instructions">2. Install the snap ring to the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new snap ring.</li>
+                    <li>Check the installation position of the snap ring for out of alignment.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757543">6. Counter reverse gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the counter reverse gear to the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the needle bearing and the reverse block ring.</li>
+                    <li>Apply the recommended lubricating oil to the needle bearing and gear inner surface.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757615">7. Reverse synchronizer assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the reverse synchronizer assembly to the counter shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Firmly fit using a press and bearing installer.</li>
+                    <li>When installing, apply the recommended lubricating oil to the inner surface of the reverse synchronizer assembly.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884022440.png" class="ST" /><br/>SST: 5-8840-2244-0 - bearing installer</p>
+                <p class="illust"><img src="image/RTW75CSH001101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756762">8. Counter shaft front bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the counter shaft front bearing to the counter shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Press the counter shaft front bearing inner race using a press and gear collar installer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884023460.png" class="ST" /><br/>SST: 5-8840-2346-0 - gear collar installer</p>
+                <p class="illust"><img src="image/RTW75CSH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the counter shaft front bearing outer race.</li>
+                    <li>After installation, confirm that the counter shaft front bearing outer race  moves only in the direction indicated by the arrow.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW87BSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Counter shaft front baring outer race</li></ol></div>
+                <p class="instructions">2. Install the snap ring to the counter shaft using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new snap ring.</li>
+                    <li>Check the installation position of the snap ring for out of alignment.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the snap ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757540">9. Counter middle roller bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the counter middle roller bearing to the counter shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Firmly fit the counter middle roller bearing inner race using the press and bearing installer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884028470.png" class="ST" /><br/>SST: 5-8840-2847-0 - bearing installer</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The flange section of the counter middle roller bearing inner race should be installed facing the shaft section.</li>
+                    <li>The counter shaft inner race should be fitted until it hits the counter shaft.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BSH002501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the counter shaft rear bearing outer race.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Inlet manifold removal (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Inlet manifold
+          removal
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie743528">1. Battery ground cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Open the engine hood assembly.</p>
+          <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745221">2. Coolant
+                  drain
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Drain coolant from the radiator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Open the drain plug at the bottom of the radiator.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56BSH000301.png" class="SH" /></p>
+                <p class="instructions">2. Remove the radiator cap from the radiator.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>In order to prevent burns, do not open the cap when the engine and radiator are hot.</li>
+                    <li>Heat liquid and steam may gush out by pressure.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742575">3. Air cleaner assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness connector from the MAF sensor.</p>
+          <p class="instructions">2. Disconnect the harness connector from the barometric pressure sensor.</p>
+          <p class="instructions">3. Disconnect the vacuum hose from the air cleaner assembly.</p>
+          <p class="instructions">4. Disconnect the intake pipe from the turbocharger assembly.</p>
+          <p class="instructions">5. Remove the air cleaner assembly from vehicle.</p>
+                <p class="illust"><img src="image/RTWC1BSH017101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Air cleaner assembly</li><li>MAF sensor</li><li>Vacuum hose</li><li>Blow-by hose</li><li>Intake pipe</li><li>Barometric pressure sensor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743862">4. Engine cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the engine cover from the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746581">5. Boost pressure sensor
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the connector from the boost pressure sensor.</p>
+                <p class="illust"><img src="image/RTWD1BSH006001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741890">6. Intake air duct
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intake air duct from the intake throttle valve and the intercooler.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the part together with the intake hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741961">7. Intake air duct
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intake air duct from the turbocharger and the intercooler.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the part together with the intake hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH003501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745305">8. Turbocharger water feed pipe
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the turbocharger water feed hose from the water feed and return pipe.</p>
+                <p class="illust"><img src="image/RTWF1BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Turbocharger water feed hose</li><li>Turbocharger water return hose</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743843">9. Exhaust manifold heat protector
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the exhaust manifold heat protector from the exhaust manifold.</p>
+                <p class="illust"><img src="image/RTWE1HSH000101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746053">10. EGR pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with an EGR.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the EGR pipe from the inlet manifold and the exhaust manifold.</p>
+                <p class="illust"><img src="image/RTWE1HSH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743908">11. Oil level gauge guide tube
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil level gauge from the oil level gauge guide tube.</p>
+          <p class="instructions">2. Remove the oil level gauge guide tube from the crankcase.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744329">12. A/C compressor drive belt
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the A/C compressor drive belt from the pulley.</p>
+                <p class="illust"><img src="image/RTWD1BSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor drive belt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742582">13. A/C compressor assembly
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the A/C compressor assembly from the A/C compressor bracket.</p>
+                <p class="illust"><img src="image/RTW76ASH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor bracket</li><li>A/C compressor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743938">14. A/C compressor bracket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the A/C compressor bracket from the cylinder head.</p>
+                <p class="illust"><img src="image/RTWD1BSH006101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742175">15. Intake throttle valve
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the connector from the intake throttle valve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742180">16. Intake throttle valve
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intake throttle valve from the inlet manifold.</p>
+          <p class="instructions">2. Remove the gasket from the intake throttle valve.</p>
+                <p class="illust"><img src="image/RTWD1BSH009401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741910">17. Fuel leak-off hose
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fuel leak-off hose from the leak-off pipe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747110">18. Leak off pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the vacuum hose from the vacuum pipe.</p>
+          <p class="instructions">2. Disconnect the fuel leak-off hose from the leak-off pipe.</p>
+          <p class="instructions">3. Remove the harness bracket from the inlet manifold and the common rail (fuel rail) bracket.</p>
+          <p class="instructions">4. Remove the leak-off pipe from the inlet manifold.</p>
+                <p class="illust"><img src="image/RTWC1CSH002001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744794">19. Vacuum hose
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the vacuum hose from the inlet manifold.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743901">20. Injection pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the clip from the injection pipe.</p>
+          <p class="instructions">2. Remove the injection pipe from the injector and the common rail (fuel rail) assembly.</p>
+                <p class="illust"><img src="image/RTWD1CSH000201.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the injection pipe.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742140">21. EGR valve
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with EGR.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Disconnect the connector from the EGR valve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746445">22. EGR valve
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with EGR.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the EGR valve from the EGR duct.</p>
+                <p class="illust"><img src="image/RTWF1BSH001101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741977">23. Inlet manifold
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with an EGR.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the inlet manifold from the cylinder head.</p>
+          <p class="instructions">2. Remove the gasket from the inlet manifold.</p>
+                <p class="illust"><img src="image/RTWF1BSH000801.png" class="SH" /></p>
+                <p class="instructions">3. Remove the EGR pipe adapter from the inlet manifold.</p>
+                <p class="illust"><img src="image/RTWD1BSH003701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models without EGR.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the inlet manifold from the cylinder head.</p>
+          <p class="instructions">5. Remove the gasket from the inlet manifold.</p>
+                <p class="illust"><img src="image/RTWC1BSH018201.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

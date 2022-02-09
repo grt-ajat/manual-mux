@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission assembly inspection (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission assembly
+          inspection
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757029">1. 1way clutch assembly No.1
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 1way clutch assembly No.1.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hold the 1way clutch inner race sub-assembly place.</li>
+                    <li>Check that the 1way clutch assembly No.1 rotates when turned counterclockwise and does not rotate when turned clockwise.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Free</li><li>Lock</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757019">2. 1way clutch assembly No.2
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 1way clutch assembly No.2.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hold the reverse clutch hub sub-assembly in place.</li>
+                    <li>Check that the 1way clutch assembly No.2 rotates when turned clockwise and does not rotate when turned counterclockwise.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH002801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lock</li><li>Free</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757439">3. 1way clutch assembly No.3
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 1way clutch assembly No.3.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hold the 1way clutch assembly No.3 in place.</li>
+                    <li>Check that the 1way clutch inner race sub-assembly rotates when turned clockwise and does not rotate when turned counterclockwise.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH008701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lock</li><li>Free</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756877">4. Front planetary gear assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the front planetary gear assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a dial indicator, measure the inside diameter of the front planetary gear assembly bush.</li>
+                    <li>Measure the inside diameter at different places and take an average.</li>
+                    <li>If the measurement is greater than the maximum, replace the front planetary gear assembly with a new one.</li>
+                    <li>When the front planetary gear assembly is replaced, inspect the contact surface opposed to the reverse clutch hub sub-assembly.</li>
+                    <li>If the surface is scratched or discolored, replace the reverse clutch hub sub-assembly with a new one.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 57.405 to 57.430 mm { 2.2600 to 2.2610 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH005501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756725">5. Rear planetary gear assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the rear planetary gear assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using a dial indicator, measure the inside diameter of the rear planetary gear assembly bush.</li>
+                    <li>Measure the inside diameter at different places and take an average.</li>
+                    <li>If the measurement is greater than the maximum, replace the rear planetary gear assembly with a new one.</li>
+                    <li>If the surface is scratched or discolored, replace the intermediate shaft with a new one.</li>
+                    <li>When the rear planetary gear assembly is replaced, inspect the contact surface opposed to the intermediate shaft.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 20.000 to 20.025 mm { 0.7874 to 0.7884 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH005601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757185">6. Brake disc No.1
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the brake disc No.1.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the lining of all discs.</li>
+                    <li>If the lining is flaking or has discolored, or if it is worn or the print mark is wearing away, replace with a new discs.</li>
+                    <li>When replacing, check the contact surfaces between the flange, plate and disc.</li>
+                    <li>If they are scratched or have discolored, replace with new parts.</li>
+                    <li>Before replacing with new discs, soak them at least 2 hours in ATF.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH011801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Print</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757307">7. Brake disc No.2
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the brake disc No.2.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the lining of all discs.</li>
+                    <li>If the lining is flaking or discolored, or if it is worn or the print mark is wearing away, replace the discs with a new one.</li>
+                    <li>When replacing, check the contact surfaces between the disc, plate and flange.</li>
+                    <li>If they are scratched or discolored, replace the discs and plates and flanges with new ones.</li>
+                    <li>Before replacing with new discs, soak them in ATF at least 2 hours.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH008201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Print</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756732">8. Brake disc No.3
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the brake disc No.3.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the lining of all discs.</li>
+                    <li>If the lining is flaking or discolored, or if it is worn or the print mark is wearing away, replace the discs with a new one.</li>
+                    <li>When replacing, check the contact surfaces between the disc, plate, flange and cushion plate.</li>
+                    <li>If they are scratched or discolored, replace the discs, plates, flange and cushion plate with new ones.</li>
+                    <li>Before replacing with new discs, soak them in ATF at least 2 hours.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH010201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Print</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757144">9. Brake disc No.4
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the brake disc No.4.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the lining of all discs.</li>
+                    <li>If the lining is flaking or discolored, or if it is worn or the print mark is wearing away, replace the discs with a new one.</li>
+                    <li>When replacing, check the contact surfaces between the disc, plate and flange.</li>
+                    <li>If they are scratched or  discolored, replace the discs, plates and flanges with new parts.</li>
+                    <li>Before replacing with new discs, soak them in ATF at least 2 hours.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH008501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Print</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756735">10. 1st and reverse brake return spring sub-assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 1st and reverse brake return spring sub-assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the free length of the 1st and reverse brake return spring sub-assembly.</li>
+                    <li>If the free length is smaller than the minimum, replace the 1st and reverse brake return spring sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 23.74 mm { 0.9346 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH008301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756595">11. Brake piston return spring sub-assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the brake piston return spring sub-assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the free length of the brake piston return spring sub-assembly.</li>
+                    <li>If the free length is smaller than the minimum, replace the brake piston return spring sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 17.05 mm { 0.67 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH002101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757309">12. Brake piston return spring sub-assembly No.2
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the brake piston return spring sub-assembly No.2.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the free length of the brake piston return spring sub-assembly No.2.</li>
+                    <li>If the free length is smaller than the minimum, replace the brake piston return spring sub-assembly No.2.</li>
+                    <li>4JJ1</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 22.66 mm { 0.8921 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4JK1</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 17.45 mm { 0.6870 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH007801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757277">13. Engine harness
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the engine harness from the TCM.</p>
+          <p class="instructions">2. Measure a resistance using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between each connector terminal combinations listed in the table.</li>
+                    <li>Check that resistances are as specified in the table.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">ATF temperature</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Resistance</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： -40 ℃ { -40 °F }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 161 kΩ</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： -30 ℃ { -22 °F }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 36.3 to 52.1 kΩ</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 10 ℃ { 50 °F }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">5.626 - 7.303 kΩ</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 25 ℃ { 77 °F }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 3.5 kΩ</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 110 ℃ { 230 °F }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">0.224 - 0.271 kΩ</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 145 ℃ { 293 °F }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">0.102 - 0.121 kΩ</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 150 ℃ { 302 °F }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">0.087 kΩ MIN</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH029201.png" class="SH" /></p>
+                <div class="legend"><ol><li>OT1G</li><li>OT1</li><li>OT2G</li><li>OT2</li></ol></div>
+                <p class="instructions">3. Inspect continuity using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check for continuity between each connector terminal combinations listed in the table.</li>
+                    <li>Check that continuity is as specified in the table.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Terminal name</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Continuity</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">OT1G - Body earth</td><td width="110" colspan="1" rowspan="4" align="center" valign="middle">No</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">OT1 - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">OT2G - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">OT2 - Body earth</td></tr><tr><td width="220" colspan="2" rowspan="1" align="right" valign="middle">at 20 ℃ {68 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH029301.png" class="SH" /></p>
+                <div class="legend"><ol><li>OT1G</li><li>OT1</li><li>OT2G</li><li>OT2</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757016">14. Transmission internal harness
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the TFT sensor.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Warm up ATF and insert the transmission fluid temperature sensor.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH031201.png" class="SH" /></p>
+                <div class="legend"><ol><li>ATF</li></ol></div>
+                <p class="instructions">2. Measure a resistance using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>At each ATF temperature measure the resistance between terminal OT1 and OT1G, OT2 and OT2G of the transmission internal harness connector.</li>
+                    <li>Check that continuity is as specified in the table.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="90" colspan="1" rowspan="1" align="center" valign="middle">ATF temperature</td><td width="130" colspan="1" rowspan="1" align="center" valign="middle">Resistance</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： -40 ℃ { -40 °F }</td><td width="130" colspan="1" rowspan="1" align="left" valign="middle">： 161 kΩ</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： -30 ℃ { -22 °F }</td><td width="130" colspan="1" rowspan="1" align="left" valign="middle">： 36.3 to 52.1 kΩ</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 10 ℃ { 50 °F }</td><td width="130" colspan="1" rowspan="1" align="left" valign="middle">： 5.626 to 7.303 kΩ</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 25 ℃ { 77 °F }</td><td width="130" colspan="1" rowspan="1" align="left" valign="middle">： 3.5 kΩ</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 110 ℃ { 230 °F }</td><td width="130" colspan="1" rowspan="1" align="left" valign="middle">： 0.224 to 0.271 kΩ</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 145 ℃ { 293 °F }</td><td width="130" colspan="1" rowspan="1" align="left" valign="middle">： 0.102 to 0.121 kΩ</td></tr><tr><td width="90" colspan="1" rowspan="1" align="left" valign="middle">： 150 ℃ { 302 °F }</td><td width="130" colspan="1" rowspan="1" align="left" valign="middle">： 0.087 kΩ</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030201.png" class="SH" /></p>
+                <div class="legend"><ol><li>OT1G</li><li>OT1</li><li>OT2G</li><li>OT2</li></ol></div>
+                <p class="instructions">3. Inspect continuity using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check for continuity between each connector terminal combinations listed in the table.</li>
+                    <li>Check that continuity is as specified in the table.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Terminal name</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Continuity</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">OT1G - Body earth</td><td width="110" colspan="1" rowspan="4" align="center" valign="middle">No</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">OT1 - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">OT2G - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">OT2 - Body earth</td></tr><tr><td width="220" colspan="2" rowspan="1" align="right" valign="middle">at 20 ℃ {68 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030301.png" class="SH" /></p>
+                <div class="legend"><ol><li>OT1G</li><li>OT1</li><li>OT2G</li><li>OT2</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

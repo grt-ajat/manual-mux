@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Reverse gear and 5th gear reassembly (MUA)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Reverse gear and 5th gear
+          reassembly
+              (MUA)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756846">1. Intermediate plate
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the intermediate plate to the gear assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the counter gear with the main shaft.</li>
+                    <li>Install the main shaft assembly and the counter gear to the holding fixture.</li>
+                    <li>Install the holding fixture to the base.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021600.png" class="ST" /><br/>SST: 5-8840-2160-0 - holding fixture</p>
+          <p class="sst"><img src="image/ST5884000030.png" class="ST" /><br/>SST: 5-8840-0003-0 - base</p>
+                <p class="illust"><img src="image/RTWC5CSH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Holding fixture</li><li>Base</li></ol></div>
+                <p class="instructions">2. Install the snap ring to the main shaft using a snap ring pliers.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757632">2. Bearing plate
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the bearing plate to the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new bolt.</li>
+                    <li>Tighten it to the specified torque using TORX bit wrench, T-45.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+                <p class="sst"><img src="image/ST5884000470.png" class="ST" /><br/>SST: 5-8840-0047-0 - torx bit wrench</p>
+                <p class="illust"><img src="image/RTWC5CSH003101.png" class="SH" /></p>
+                <div class="legend"><ol><li>TORX bit wrench, T-45</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756907">3. Reverse needle bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the reverse needle bearing to the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757055">4. Reverse gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the reverse gear to the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the reverse gear and reverse block ring together to the main shaft.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756617">5. Revers - 5th synchronizer assembly
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Assemble the reverse - 5th synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the clutch hub face toward the sleeve groove (rear side) on the outer circumference.</li>
+                    <li>Confirm that the clutch hub and sleeve slide smoothly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW25CSH025601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sleeve groove</li><li>Clutch hub face</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the insert is installed to the groove of the clutch hub correctly.</li>
+                    <li>Confirm that the insert spring is installed to the insert correctly.</li>
+                    <li>Set the insert spring in such a way that the openings of the spring face the different directions.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH013101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Insert</li><li>Insert spring</li><li>Sleeve</li><li>Clutch hub</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757056">6. Revers - 5th synchronizer assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the reverse - 5th synchronizer assembly to the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install in such a way that the one with the wider boss width faces the reverse gear.</li>
+                    <li>Engage the 1st - 2nd and 3rd - 4th synchronizers with the 1st and 3rd gears respectively to prevent the main shaft from rotating.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH003301.png" class="SH" /></p>
+                <p class="instructions">2. Install the mainshaft hub nut to the main shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten a new main shaft nut to the specified torque using the main shaft nut wrench.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 137 N・m { 14 kgf・m / 101 lb・ft }</p>
+                <p class="sst"><img src="image/ST5884021560.png" class="ST" /><br/>SST: 5-8840-2156-0 - main shaft nut wrench</p>
+                <p class="illust"><img src="image/RTWC5CSH003401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Main shaft nut wrench</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After installation, crimp the main shaft hub nut using a punch.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH003501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757207">7. Needle bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the needle bearing to the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757624">8. 5th block ring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 5th block ring to the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757342">9. 5th gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the 5th gear to the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757544">10. Counter reverse gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the counter reverse gear to the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the reverse gear and the counter reverse gear.</li>
+                    <li>Install the reverse gear in such a way that the projection of the reverse gear faces the intermediate plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH003601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756848">11. Counter 5th gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the counter 5th gear to the counter shaft.</p>
+                <p class="illust"><img src="image/RTWC5CSH003701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757059">12. Counter bearing snap ring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the bearing to the counter shaft.</p>
+          <p class="instructions">2. Install the counter bearing snap ring to the counter shaft using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select the snap ring that creates the minimum clearance between the bearing and the snap ring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH003801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>6 types of snap rings are selectable.</li>
+                    <li>The snap ring can be identified with a color code and dash code.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH003901.png" class="SH" /></p>
+                <p class="numeric">Standard： 0.00 to 0.15 mm { 0.0000 to 0.0059 in }</p>
+                <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Snap ring thickness</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Identification color</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.1 mm { 0.043 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">White</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.2 mm { 0.047 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Yellow</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.3 mm { 0.051 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Blue</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.4 mm { 0.055 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Pink</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.5 mm { 0.059 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Green</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.6 mm { 0.063 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Brown</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Completely insert the counter bearing snap ring into the snap ring groove of the counter shaft using snap ring pliers.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757627">13. Reverse idle gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the reverse idle gear to the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the reverse idle shaft, reverse idle gear, thrust washer, and idle shaft pin to the reverse idle gear assembly.</li>
+                    <li>Install the thrust washer so that the oil groove faces the gear.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the snap ring to the idle shaft using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select a snap ring that creates the minimum clearance between the intermediate plate and the snap ring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH004001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>3 types of snap rings are selectable.</li>
+                    <li>A snap ring can be identified with a color code.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH003901.png" class="SH" /></p>
+                <p class="numeric">Standard： 0.00 to 0.15 mm { 0.0000 to 0.0059 in }</p>
+                <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Snap ring thickness</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Identification color</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.2 mm { 0.047 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">White</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.3 mm { 0.051 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Yellow</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 1.4 mm { 0.055 in }</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Blue</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Completely insert the counter bearing snap ring into the snap ring groove of the counter shaft using snap ring pliers.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756619">14. Thrust washer
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the thrust washer to the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the clearance between the 5th gear and the thrust washer with a feeler gauge.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.10 to 0.25 mm { 0.004 to 0.010 in }</p>
+                <p class="illust"><img src="image/RTWC5CSH004101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clearance</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select an appropriate thrust washer from the table.</li>
+                    <li>4 types of thrust washer sizes are selectable.</li>
+                    <li>A thrust washer can be identified with a color code.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH004201.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Thrust washer thickness</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Identification color</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Width A</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Clearance</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">： 7.9 mm { 0.311 in }</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">White</td><td width="60" colspan="1" rowspan="1" align="left" valign="middle">： 8.05 to 8.10 mm { 0.317 to 0.319 in }</td><td width="60" colspan="1" rowspan="1" align="left" valign="middle">： 0.15 to 0.25 mm { 0.006 to 0.010 in }</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">： 8.0 mm { 0.315 in }</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Yellow</td><td width="60" colspan="1" rowspan="1" align="left" valign="bottom">： 8.1 to 8.2 mm { 0.319 to 0.323 in }</td><td width="60" colspan="1" rowspan="1" align="left" valign="middle">： 0.10 to 0.25 mm { 0.004 to 0.010 in }</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">： 8.1 mm { 0.319 in }</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Green</td><td width="60" colspan="1" rowspan="1" align="left" valign="bottom">： 8.2 to 8.3 mm { 0.323 to 0.327 in }</td><td width="60" colspan="1" rowspan="1" align="left" valign="middle">： 0.10 to 0.25 mm { 0.004 to 0.010 in }</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">： 8.2 mm { 0.323 in }</td><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Blue</td><td width="60" colspan="1" rowspan="1" align="left" valign="middle">： 8.30 to 8.36 mm { 0.327 to 0.329 in }</td><td width="60" colspan="1" rowspan="1" align="left" valign="middle">： 0.10 to 0.21 mm { 0.004 to 0.008 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply BESCO L-2 grease to the thrust washer and lock ball and install them to the main shaft.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757044">15. Thrust plate
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the thrust plate to the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756764">16. Retainer
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the retainer to the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+                    <li>Install the retainer snap ring to the main shaft.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757472">17. Speedometer drive gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the speedometer drive gear to the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the clip.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the snap ring to the main shaft using a snap ring pliers.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757060">18. Main shaft rear bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the main shaft rear bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the outer and inner surfaces of the main shaft rear bearing.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the main shaft rear bearing to the main shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a bearing installer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021590.png" class="ST" /><br/>SST: 5-8840-2159-0 - bearing installer</p>
+                <p class="illust"><img src="image/RTWC5CSH004301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Apply the oil to the oil seal collar.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the inner circumference oil seal collar.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the oil seal color to the main shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a bearing installer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021590.png" class="ST" /><br/>SST: 5-8840-2159-0 - bearing installer</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756906">19. Main shaft snap ring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the main shaft snap ring to the main shaft using a snap ring pliers.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

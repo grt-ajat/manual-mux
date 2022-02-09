@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Front disc brake installation (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Front disc brake
+          installation
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759052">1. Front hub rotor assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Fill the grease in the front hub rotor assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fill the front hub and hub cap with grease.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Amount of filling： 35 g { 1.23 oz } Hub</p>
+          <p class="numeric">Application quantity： 15 g { 0.53 oz } Inner bearing</p>
+          <p class="numeric">Application quantity： 10 g { 0.35 oz } Outer bearing</p>
+                <p class="instructions">2. Install the front hub rotor assembly to the knuckle.</p>
+                <p class="illust"><img src="image/RTWC4BSH005801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Outer bearing</li><li>Inner bearing</li><li>Hub</li><li>Hub cap</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758316">2. Bearing lock nut
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the bearing lock nut to the knuckle using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>By using a hub nut wrench, install so that the truncated section in the screw hole faces the outside.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021170.png" class="ST" /><br/>SST: 5-8840-2117-0 - hub nut wrench</p>
+                <p class="illust"><img src="image/RTWC4CSH003201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758317">3. Front hub rotor assembly
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the preload to a standard value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the preload for the front hub bearing.</li>
+                    <li>After tightening the bearing lock nut to the specified torque of the nut, fully loosen the nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 29 N・m { 3.0 kgf・m / 21 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hook a spring scale to the wheel pin, and gently pull it in a tangent direction. Make adjustments by tightening the bearing lock nut until the preload reaches the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Preload： 20.0 to 25.0 N { 2.0 to 2.5 kg / 4.5 to 5.6 lb } New bearing, new oil seal</p>
+          <p class="numeric">Preload： 12.0 to 18.0 N { 1.2 to 1.8 kg / 2.7 to 4.0 lb } Reused bearing, new oil seal</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the preload of the front hub bearing is different from the specified value, adjust it by tightening or loosening the bearing lock nut.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH003301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758307">4. Lock washer
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the lock washer to the bearing lock nut.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install it in such a way that the side with the larger taper hole diameter faces the outside of the vehicle.</li>
+                    <li>If the lock washer screw hole does not align with the corresponding hole of the bearing lock nut, turn the lock washer over.</li>
+                    <li>If the hole positions still do not align, turn the bearing lock nut in the tightening direction to adjust the hole positions to best alignment.</li>
+                    <li>Tighten the lock washer installation screw securely so that the screw head is lower than the washer surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH003401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758315">5. Flange
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the 4WD vehicles.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the flange to the front hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply liquid gasket to the flange installation surface and install the flange to the hub.</li>
+                    <li>Liquid gasket: LOCTITE 515 or equivalent</li>
+                    <li>Install the snap ring and shim.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Adjust the shim.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the clearance between the flange and snap ring with the shim.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.0 to 0.2 mm { 0.000 to 0.008 in }</p>
+                <table cellspacing="0"><tbody><tr><td width="220" colspan="1" rowspan="1" align="center" valign="middle">Types of adjust shims</td></tr><tr><td width="220" colspan="1" rowspan="1" align="center" valign="middle">： 0.2 mm { 0.008 in }</td></tr><tr><td width="220" colspan="1" rowspan="1" align="center" valign="bottom">： 0.3 mm { 0.012 in }</td></tr><tr><td width="220" colspan="1" rowspan="1" align="center" valign="bottom">： 0.5 mm { 0.020 in }</td></tr><tr><td width="220" colspan="1" rowspan="1" align="center" valign="bottom">： 1.0 mm { 0.039 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC4CSH003501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758306">6. Hub cap
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the hub cap to the front hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the hub cap to the front hub with bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5CSH012201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759053">7. Guide pin
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply rubber grease NIGLUBE RX-2 or equivalent to the portions of the boot and guide pin as shown in the diagram.</li>
+                    <li>Apply rubber grease NIGLUBE RX-2 or equivalent to the inside of the boot.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not use mineral grease.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW850SH000601.png" class="SH" /></p>
+                <p class="instructions">1. Install the boot to the brake support.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install it firmly to the brake support groove.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW85CSH001001.png" class="SH" /></p>
+                <p class="instructions">2. Install the guide pin to the brake caliper assembly.</p>
+                <p class="illust"><img src="image/RUW85CSH001101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the guide pin boot securely to the guide pin groove.</li>
+                    <li>Pull out the guide pin slightly and confirm that the boot is securely installed to the cylinder body groove.</li>
+                    <li>Move the guide pin to spread rubber grease over the brake support groove.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not mix up the upper and lower sides of the guide pin.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW85CSH001901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759059">8. Brake support
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake support to the knuckle.</p>
+                <p class="numeric">Tightening torque： 205 to 245 N・m { 20.9 to 25.0 kgf・m / 151 to 181 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After installing the brake support, install the clip and pad.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW850SH000701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759049">9. Disc brake pad
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the disc brake pad to the brake support.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After installing the clip, install the pad assembly attached with the shim.</li>
+                    <li>Install a new one as necessary.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759060">10. Brake caliper assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake caliper assembly to the brake support.</p>
+          <p class="instructions">2. Install the lock bolt to the brake caliper assembly.</p>
+                <p class="numeric">Tightening torque： 32 to 42 N・m { 3.3 to 4.3 kgf・m / 24 to 31 lb・ft }</p>
+                <p class="illust"><img src="image/RUW85CSH000201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759051">11. Brake hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake hose to the brake caliper assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the bolt and a new gasket.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 29 to 39 N・m { 3.0 to 4.0 kgf・m / 21 to 29 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5CSH013501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Gasket</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the installation, conduct air removal.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Make sure to use a new gasket.</li>
+                    <li>Insert the brake hose end into the stopper hole.</li>
+                    <li>Before the installation, completely remove dust and foreign material from the bolt, screw on the brake side surface, and sealing surface.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759050">12. Brake fluid
+                  air bleed
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Filling up the reservoir tank</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use only the specified brake fluid.</li>
+                    <li>Do not use any brake fluid that contains petroleum components.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Doing so may cause expansion or distortion of the rubber parts in the hydraulic brake system.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not use any brake fluid container that contains petroleum components or that is wet with water.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If water mixes in the brake fluid, its boiling point decreases.</li>
+                    <li>Put a cover on every container to prevent contaminations.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Refill the fluid in the reservoir tank when the engine is cold.</li>
+                    <li>Be careful never to spill the brake fluid on painted surfaces because the fluid will damage the paint.</li>
+                    <li>Refill the fluid in the reservoir tank to the MAX mark to prevent air from mixing in.</li>
+                    <li>Be careful for the fluid not to overflow.</li>
+                    <li>Clean the reservoir tank before removing the cap to prevent dirt, etc. from entering the tank.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Refill the brake fluid to the MAX mark of the reservoir tank as necessary.</li>
+                    <li>Use the brake fluid DOT3.</li>
+                    <li>Brake fluid leakage</li>
+                    <li>With the engine idling, set the shift lever to neutral, and continue depressing the brake pedal with a constant amount of pressure.</li>
+                    <li>If the pedal stroke gradually increases, there may be fluid leakage in the oil pressure system.</li>
+                    <li>Visually check for oil leakage.</li>
+                    <li>Air removal from the oil pressure system</li>
+                    <li>Air entering the brake pipe will cause an insufficient brake operation.</li>
+                    <li>In the case of using the brake in a condition where the fluid level in the reservoir tank is extremely low, or removing the brake pipe, conduct air removal.</li>
+                    <li>The air removal work requires cooperation between 2 operators.</li>
+                    <li>Be sure to engage the parking brake during the air removal work.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Conduct the air removal work with the engine started to protect damage to the push rod seal, and secure adequate ventilation.</li>
+                    <li>Maintain the fluid in the reservoir tank at the specified level before starting the air removal work.</li>
+                    <li>When bleeding air, start with the rear wheel cylinder or rear caliper furthest from the master cylinder.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The air removal work is necessary to remove the air when the air enters the oil pressure system.</li>
+                    <li>In a condition where the brake fluid level has dropped or when the air entered the fluid after removing the brake pipe from the master cylinder, air removal may be needed for all brakes at 4 locations.</li>
+                    <li>When brake pipes have been removed from any one brake, air bleeding must be performed for that wheel cylinder or caliper.</li>
+                    <li>When the piping between the master cylinder and one of the brakes is removed, air removal is needed for the brake system operating with the removed pipe.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Apply the parking brake.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pull the parking brake lever to a full extent.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Start the engine.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to conduct the air removal work with the engine stopped. Doing so will damage the vacuum booster.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Remove the cap from the reservoir tank.</p>
+          <p class="instructions">4. Replenish the reservoir tank with the brake fluid.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The brake fluid tank is shared with the clutch fluid tank.</li>
+                    <li>As the amount of the fluid is different between the brake compartment and clutch compartment depending on the partition inside the tank, check the amount of brake fluid in the brake compartment.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>During the air removal work, keep filling the reservoir tank at least half full with the fluid.</li>
+                    <li>Be sure to refill new brake fluid.</li>
+                    <li>When refilling the fluid, be careful for the air not to enter the fluid.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4BSH004801.png" class="SH" /></p>
+                <div class="legend"><ol><li>MAX level</li><li>MIN level</li><li>Brake fluid compartment</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When removing, installing, or replacing the master cylinder, first drain the air from the master cylinder and then from each wheel cylinder and caliper in accordance with the following procedures.</li>
+                    <li>Air removal from the brake master cylinder</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Disconnect the brake pipe from the brake master cylinder.</p>
+                <p class="illust"><img src="image/RTWC5CSH009201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear brake pipe</li><li>Front brake pipe</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the rear brake pipe.</li>
+                    <li>Inspect the fluid level and refill the fluid as necessary.</li>
+                    <li>If the fluid is refilled, leave the system as it is for at least 1 minute.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Operate the brake pedal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Slowly depress the brake pedal once and hold it down.</li>
+                    <li>Use a finger to completely plug the outlet of the master cylinder that is removed from the brake pipe, and slowly release the brake pedal.</li>
+                    <li>Remove the finger from the outlet after the brake pedal has been completely returned.</li>
+                    <li>Repeat the process mentioned above until the brake fluid comes out overflowing from the outlet.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful that the fluid level in the reservoir tank does not drop below the intermediate level indication.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Connect the brake pipe to the brake master cylinder.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the rear brake pipe.</li>
+                    <li>Slowly depress the brake pedal once and hold it down.</li>
+                    <li>Loosen the rear brake pipe.</li>
+                    <li>Tighten the brake pipe again and slowly return the brake pedal.</li>
+                    <li>Repeat steps 5 to 7 mentioned above until air does not come out form the outlet when the brake pipe is loosened.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful never to spill the brake fluid on painted surfaces because the fluid will damage the paint.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Repeat steps 5 to 7 to remove air from the front brake pipe.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH009201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear brake pipe</li><li>Front brake pipe</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Air removal from the wheel cylinder or caliper</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Drain air from the brake caliper assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove air from each wheel in the following order.</li>
+                    <li>Right rear caliper or right rear wheel cylinder</li>
+                    <li>Left rear caliper or left rear wheel cylinder</li>
+                    <li>Left front caliper</li>
+                    <li>Right front caliper</li>
+                    <li>If the brake fluid does not come out, it shows that air has entered the master cylinder.</li>
+                    <li>In this case, follow steps 5 to 7 to remove air from the master cylinder.</li>
+                    <li>Apply an appropriate wrench to the bleeder screw.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Connect the tube to the bleeder screw.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect a transparent tube to the bleeder screw and put the other end of the tube into a transparent container containing the brake fluid.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW85CSH000101.png" class="SH" /></p>
+                <p class="instructions">10. Operate the brake pedal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Slowly depress the brake pedal 3 times with a speed of once per second and hold it down.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH010301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Brake pedal</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Loosen the bleeder screw until the brake fluid flows in the tube.</li>
+                    <li>Tighten the bleeder screw.</li>
+                    <li>Slowly return the brake pedal.</li>
+                    <li>Repeat steps 9 and 10 until air is completely removed.</li>
+                    <li>Repeat the air removal procedures at least 10 times for the front wheel and at least 15 times for the rear wheel.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After air removal of each wheel, be sure to confirm the fluid level in the reservoir tank.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When air removal of all wheels is completed, depress the brake pedal and check for a feeling of stepping on a sponge.</li>
+                    <li>If the feeling of stepping on a sponge exists, the air removal procedures need to be repeated.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Replenish the reservoir tank with the brake fluid.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Refill the fluid to the MAX mark as necessary.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">12. Install the cap to the reservoir tank.</p>
+          <p class="instructions">13. Stop the engine.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Brake pipe and brake hose</li>
+                    <li>Inspect all pipes and hoses for worn, bent, damage, cracks, or dents.</li>
+                    <li>If any abnormality is found, conduct a necessary repair or replacement.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Pay attention to all joint sections of pipes and hoses, which are vulnerable to damage.</li>
+                    <li>Be careful not to extremely twist or bend the hose during work, and not to damage the brake pipe when repairing or replacing the axles, suspensions, etc.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Conduct leakage inspections with the brake pedal fully depressed.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If leakage is found around the joint section, conduct re-tightening or replacement.</li>
+                    <li>Be sure to implement these procedures when installing the brake pipe.</li>
+                    <li>After removing the pipe and hose, cover the opening with a plug or tape to prevent foreign objects from entering.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758215">13. Disc wheel
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the disc wheel to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the wheel nuts in the numbered order.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Tightening torque: 120 N⋅m {12.0 kgf⋅m/87 lb⋅ft}</p>
+                <p class="illust"><img src="image/RTWC2DSH000401.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

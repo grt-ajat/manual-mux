@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of security and locks control null (Passive Entry and Start System)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of security and locks control
+              (Passive Entry and Start System)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie733055">1. Function, structure, operation of security and locks control
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Outline of Passive Entry and Start System (PESS)<br/>PESS is a system that enables doors to be locked/unlocked and for the engine to be started by carrying the electronic key without the need for the mechanical key to be inserted. This system consists of the following components and controls PESS functions, keyless entry functions and immobilizer functions.</p>
+                <p class="illust"><img src="image/RTWFA0XF000101.png" class="XF" /></p>
+                <p class="explanation">PESS function<br/>With the electronic key within 80 cm (32 in) of the outside handle or tailgate, the doors will unlock when the outside handle is gripped or when the tailgate opener switch is pressed. Under the same conditions, the doors will lock when the outside handle or the tail gate lock button is pressed. Locking and unlocking the doors using the PESS function is only possible with the power mode (ignition switch) OFF. <br/>If the outside handle is gripped, the tailgate opener switch is pressed, the outside handle lock button is pressed, or the tailgate lock button is pressed, the PESS control unit will send radio signals from the external antenna to the electronic key. After receiving these radio signals, the electronic key will send radio signals to the PESS receiver. When the PESS receiver receives the radio signals, the PESS control unit will output unlocking/locking commands to the BCM. The BCM forces the door lock actuator to operate, unlocking/locking the door.</p>
+          <p class="explanation">Schematic drawing of unlocking/locking using the PESS function</p>
+                <p class="illust"><img src="image/RTWFASMF000101.png" class="MF" /></p>
+                <p class="explanation">Range in which unlocking/locking using the PESS function is possible</p>
+                <p class="illust"><img src="image/RTWFASSF000301.png" class="SF" /></p>
+                <div class="legend"><ol><li>Operating range for locking and unlocking the driver side door handle (RHD)</li><li>Operating range for locking and unlocking the tail gate</li><li>Operating range for locking and unlocking the driver side door handle (LHD)</li></ol></div>
+                <p class="explanation">Keyless entry function<br/>Locking/unlocking of the doors is possible using the lock button/unlock button on the electronic key within 10 m (approximately 33 ft) of the center of the vehicle. <br/>If the unlock button or lock button of the electronic key is pressed, the electronic key sends radio signals to the PESS receiver. When the PESS receiver receives radio signals, the PESS control unit will output unlocking/locking commands to the BCM. The BCM forces the door lock actuator to operate, carrying out unlocking/locking operations.</p>
+          <p class="explanation">Schematic drawing of unlocking/locking using the keyless entry function</p>
+                <p class="illust"><img src="image/RTWFASMF000601.png" class="MF" /></p>
+                <p class="explanation">Range in which unlocking/locking using the keyless entry function is possible</p>
+                <p class="illust"><img src="image/RTWEZ0SF000201.png" class="SF" /></p>
+                <div class="legend"><ol><li>Operating range for locking and unlocking</li></ol></div>
+                <p class="explanation">Immobilizer function<br/>The engine is started by operating the engine start/stop button when the electronic key is in the vehicle. If the electronic key is not authenticated by the PESS control unit and ECM, the engine cannot be started. <br/>When the engine start/stop button is pressed, the PESS control unit sends radio signals from the center in-vehicle antenna, rear right in-vehicle antenna, and rear left in-vehicle antenna to the electronic key. After receiving these radio signals, the electronic key will send radio signals to the PESS receiver. When the PESS receiver receives the radio signals, the PESS control unit will start to authenticate with the electronic key. When authentication is completed, the PESS control unit starts to authenticate with the steering lock assembly. When authentication is completed, the steering lock assembly is released. <br/>When the power mode turned "ON", the PESS control unit will start authentication with the ECM. When authentication is completed, the PESS control unit sends the starter ON signal and starts the engine.</p>
+          <p class="explanation">Engine startup condition<br/>The engine can be started by operating the engine start/stop button for the following.</p>
+          <p class="explanation">M/T models<br/>Set the shift lever to the "N" position.<br/>Depress the clutch pedal.<br/>Press the engine start/stop button.</p>
+          <p class="explanation">A/T models<br/>Set the selector lever to the "P" or "N" position.<br/>Depress the brake pedal.<br/>Press the engine start/stop button.</p>
+                <p class="illust"><img src="image/RTWFASSH000201.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the steering lock is not released, the engine cannot be started.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Schematic drawing of immobilizer functions (PESS)</p>
+                <p class="illust"><img src="image/RTWFASLF000101.png" class="LF" /></p>
+                <p class="explanation">Range in which the engine can be started using immobilizer functions (PESS) is possible</p>
+                <p class="illust"><img src="image/RTWEZ0SF000301.png" class="SF" /></p>
+                <div class="legend"><ol><li>Operating range for starting the engine</li></ol></div>
+                <p class="explanation">PESS authentication by transponder (electronic key)<br/>If starting the engine becomes impossible for some reason (drained electronic key battery, etc.), place the electronic key built into the transponder near the engine start/stop button and authenticate with the PESS control unit, then the engine can be started by pressing the engine start/stop button. When using the transponder to start the engine, authentication is performed between the transponder and the PESS control unit, as well as between the PESS control unit and the ECM.</p>
+                <p class="illust"><img src="image/RTWFASMF000201.png" class="MF" /></p>
+                <p class="explanation">Emergency function</p>
+          <p class="explanation">Emergency stop<br/>Press and hold the engine start/stop button for 3 seconds or more.<br/>Press the engine start/stop button three times within 2 seconds.<br/>The engine can be stopped during start-up by performing either of the above operations.</p>
+          <p class="explanation">Emergency starting<br/>The engine may be started by operating the engine start/stop button for the following.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Ensure the safety of the surrounding area in case unexpected vehicle behavior occurs when starting the engine.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">M/T models<br/>The power mode is ACC.<br/>Set the shift lever to the "N" position.<br/>Depress the clutch pedal.<br/>Press and hold the engine start/stop button for 15 seconds or more.</p>
+          <p class="explanation">A/T models<br/>The power mode is ACC.<br/>Set the selector lever to the "P" or "N" position.<br/>Depress the brake pedal.<br/>Press and hold the engine start/stop button for 15 seconds or more.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After switching to ACC, operate within 5 minutes.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Power mode switching function<br/>The mode is switched as shown in the following diagram by operating the engine start/stop button on each operation.</p>
+                <p class="illust"><img src="image/RTWFASMF000501.png" class="MF" /></p>
+                <p class="explanation">Battery protection function<br/>If 60 minutes or more have passed in ACC, turn the power mode OFF in order to protect the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>For A/T models, do not turn OFF if the selector lever is in a position other than "P".</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Parts layout diagram<br/>The Passive Entry and Start System (PESS) consists of the following parts:</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>RHD</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWFA0MF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>External buzzer</li><li>Passive entry and start system (PESS) control unit</li><li>PESS receiver</li><li>Engine start/stop button</li><li>Steering lock assembly</li><li>Unlock request sensor</li><li>Lock button (Lock request switch)</li><li>External antenna (Outside handle)</li><li>Rear right in-vehicle antenna</li><li>Tailgate lock button (Lock request switch)</li><li>Tailgate opener switch (Unlock request switch)</li><li>External antenna (Tailgate)</li><li>Rear left in-vehicle antenna</li><li>Center in-vehicle antenna</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>LHD</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWFASMF000301.png" class="MF" /></p>
+                <div class="legend"><ol><li>External antenna (Tailgate)</li><li>Tailgate opener switch (Unlock request switch)</li><li>Tailgate lock button (Lock request switch)</li><li>Rear left in-vehicle antenna</li><li>External antenna (Outside handle)</li><li>Lock button (Lock request switch)</li><li>Unlock request sensor</li><li>Steering lock assembly</li><li>Engine start/stop button</li><li>PESS receiver</li><li>Passive entry and start system (PESS) control unit</li><li>External buzzer</li><li>Center in-vehicle antenna</li><li>Rear right in-vehicle antenna</li></ol></div>
+                <p class="explanation">Passive Entry and Start System (PESS ECU) control unit circuit diagram</p>
+                <p class="illust"><img src="image/RTWFASXF000101.png" class="XF" /></p>
+          <p class="illust"><img src="image/RTWFASXF000201.png" class="XF" /></p>
+                <p class="explanation">Passive Entry &amp; Start System (PESS) control unit</p>
+                <p class="illust"><img src="image/RTWFASSF000101.png" class="SF" /></p>
+                <p class="explanation">Passive Entry &amp; Start System (PESS) control unit connector pin layout</p>
+                <p class="illust"><img src="image/RTWFASSF000201.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="498" colspan="4" rowspan="1" align="left" valign="middle">CN1 (B-62) connector</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Battery power supply</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">17</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">IG1 relay control</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">18</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">IG2 feedback signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">19</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">IG2 relay control</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">IG1 feedback signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">20</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">ACC relay control</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="190" colspan="1" rowspan="1" align="left" valign="bottom">ACC feedback signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">21</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Clutch output signal (M/T)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">22</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Starter relay control</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">23</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Stop light switch signal</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">8</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Engine start/stop button LED indicator (green)</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">24</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Engine start/stop button LED indicator (amber)</td></tr><tr><td width="59" colspan="1" rowspan="2" align="center" valign="middle">9</td><td width="190" colspan="1" rowspan="2" align="left" valign="middle">Engine start/stop button illumination</td><td width="59" colspan="1" rowspan="2" align="center" valign="middle">25</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">P/N position switch signal (A/T)</td></tr><tr><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Neutral switch signal (M/T)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">10</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Parking signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">26</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Clutch input signal (M/T)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">11</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">27</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">12</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Steering lock position</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">28</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">LIN communication</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">13</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Vehicle speed signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">29</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Engine start/stop switch 2 signal</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">14</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Engine start/stop switch 1 signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">30</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">15</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Steering lock operating permission switch</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">31</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Immobilizer coil (-)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">16</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Immobilizer coil (+)</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">32</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Signal ground</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="498" colspan="4" rowspan="1" align="left" valign="middle">CN2 (B-61) connector</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">External antenna (+)<br/>(Outside handle)</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">21</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">External antenna (-)<br/>(Outside handle)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">22</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">External antenna (+)<br/>(Tail gate)</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">23</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">External antenna (-)<br/>(Tail gate)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Center in-vehicle antenna (+)</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">24</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Center in-vehicle antenna (-)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Rear RH in-vehicle antenna (+)</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">25</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Rear RH in-vehicle antenna (-)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Rear LH in-vehicle antenna (+)</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">26</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Rear LH in-vehicle antenna (-)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">27</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">8</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">PESS receiver 5 V power supply</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">28</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">External buzzer control</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">9</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">PESS receiver CHARGE signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">29</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">10</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">30</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">11</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Door switch signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">31</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">12</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">PESS receiver DATA signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">32</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">BCM input signal</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">13</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">PESS receiver RATE signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">33</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">BCM output signal</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">14</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Driver door side lock button signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">34</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">PESS warning light control</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">15</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Tail gate lock request switch signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">35</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Unlock request sensor signal</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">16</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">36</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">17</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">PESS receiver GND</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">37</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Tail gate unlock request switch signal</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">18</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Power ground</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">38</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">19</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">39</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">20</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">CAN high signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">40</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">CAN low signal</td></tr></tbody></table>
+                <p class="explanation">Unlock request sensor<br/>The unlock request sensor is built into the outside handle. All the doors will unlock when the outside handle is gripped and it has been verified that the electronic key is within range. The doors will relock if one of the doors is not opened within 30 seconds of unlocking. When unlocking the doors, the answerback buzzer (external buzzer) will sound twice and the hazard warning lights will flash twice.</p>
+          <p class="explanation">Lock button (Lock request switch)<br/>The lock button is on the outside handle. Locking the doors using the lock button is only possible with the power mode OFF. All the doors will lock when the lock button is pressed and it has been verified that the electronic key is within range. When locking the doors, the answerback buzzer (external buzzer) will sound once and the hazard warning lights will flash once.</p>
+          <p class="explanation">External antenna (Outside handle)<br/>The external antenna is built into the outside handle. If the outside handle is gripped or the outside handle lock button is pressed, the external antenna will send radio signals to the electronic key.</p>
+          <p class="explanation">Outside handle (Unlock request sensor, external antenna, lock request switch)</p>
+                <p class="illust"><img src="image/RTWCABSF000301.png" class="SF" /></p>
+                <div class="legend"><ol><li>Lock button</li><li>External antenna</li><li>Unlock request sensor</li></ol></div>
+                <p class="explanation">Outside handle (Unlock request sensor, External antenna, Lock request switch) connector pin layout</p>
+                <p class="illust"><img src="image/RTWCABSF001101.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">External antenna (-)<br/>(Outside handle)</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">External antenna (+)<br/>(Outside handle)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Unlock request sensor signal output</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Unlock request sensor GND</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Unlock request sensor power supply</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Lock request switch signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">8</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Lock request switch GND</td></tr></tbody></table>
+                <p class="explanation">Tail gate opener switch (Unlock request switch)<br/>The unlock request switch is built into the tail gate opener switch. All the doors and the tail gate will unlock when the tail gate opener switch is pressed and it has been verified that the electronic key is within range. The doors will relock if one of the doors is not opened within 30 seconds of unlocking. When unlocking the doors, the answerback buzzer (external buzzer) will sound twice and the hazard warning lights will flash twice.</p>
+                <p class="illust"><img src="image/RTWEZ0MF000901.png" class="MF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">Tail gate unlock request switch signal</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="160" colspan="1" rowspan="1" align="left" valign="bottom">Tail gate unlock request switch GND</td></tr></tbody></table>
+                <p class="explanation">Tail gate lock button (Lock request switch)<br/>The tail gate lock button is on the tail gate. Locking the doors using the tail gate lock button is only possible with the power mode OFF. All the doors will lock when the tail gate lock button is pressed and it has been verified that the electronic key is within range. When locking the doors, the answerback buzzer (external buzzer) will sound once and the hazard warning lights will flash once.</p>
+                <p class="illust"><img src="image/RTWEZ0MF001001.png" class="MF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">Tail gate lock request switch signal</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="160" colspan="1" rowspan="1" align="left" valign="bottom">Tail gate Lock request switch GND</td></tr></tbody></table>
+                <p class="explanation">External antenna (Tail gate)<br/>The external antenna is installed to the rear bumper support. If the tail gate opener switch or tail gate lock button is pressed, the external antenna will send radio signals to the electronic key.</p>
+                <p class="illust"><img src="image/RTWEZ0MF000201.png" class="MF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">External antenna (+)<br/>(Tail gate)</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="160" colspan="1" rowspan="1" align="left" valign="bottom">External antenna (-)<br/>(Tail gate)</td></tr></tbody></table>
+                <p class="explanation">In-vehicle antenna<br/>The center in-vehicle antenna is installed to the back side of the center console, and the rear in-vehicle antennas are installed to the back side of the rear right and left trim covers. When the engine start/stop button is pressed, the PESS control unit sends radio signals from the rear in-vehicle antenna and center in-vehicle antenna to the electronic key.</p>
+          <p class="explanation">Center in-vehicle antenna</p>
+                <p class="illust"><img src="image/RTWCABSF000401.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">Center in-vehicle antenna (-)</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">Center in-vehicle antenna (+)</td></tr></tbody></table>
+                <p class="explanation">Rear in-vehicle antenna</p>
+                <p class="illust"><img src="image/RTWEZ0MF000101.png" class="MF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">Rear in-vehicle antenna (+)</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">Rear in-vehicle antenna (-)</td></tr></tbody></table>
+                <p class="explanation">PESS receiver<br/>The PESS receiver is installed within the instrument panel. The PESS receiver receives radio signals sent from the electronic key. Received signals are then sent to the PESS control unit.</p>
+                <p class="illust"><img src="image/RTWCABMF000701.png" class="MF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">5 V power supply</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">DATA signal</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">CHARGE signal</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">RATE signal</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">GND</td></tr></tbody></table>
+                <p class="explanation">Electronic key<br/>By carrying the electronic key, it is possible to lock/unlock doors and start the engine without inserting a mechanical key. It is also possible to lock/unlock doors using the lock button and unlock button on the electronic key. <br/>If starting the engine becomes impossible for some reason (drained electronic key battery, etc.), place the electronic key built into the transponder near the engine start/stop button and press the engine start/stop button to start the engine. If the engine start/stop button is pressed, the engine start/stop button LED indicator will begin to flash. Place the electronic key near the engine start/stop button when the LED indicator is flashing to authenticate with the PESS, and then the buzzer will sound. The engine is started by pressing the engine start/stop button within 10 seconds after the LED indicator starts to slowly flash after authentication. If authentication is not performed or the engine start/stop button is not pressed within 10 seconds after authentication, the engine start/stop button LED indicator will turn OFF. It is possible to register a maximum of 5 electronic keys. The battery life of the electronic key is approximately 1 to 2 years, though it varies depending on usage conditions.</p>
+                <p class="illust"><img src="image/RTWFASSH000101.png" class="SH" /></p>
+                <p class="explanation">Mechanical key<br/>The mechanical key can lock/unlock doors only. The engine is started via electronic key.</p>
+                <p class="illust"><img src="image/RTWCABSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Electronic key</li><li>Mechanical key</li></ol></div>
+                <p class="explanation">Engine start/stop button, steering lock assembly<br/>The engine start/stop button is used to switch the power mode to "ACC" or "ON" and to start the engine. When the engine start/stop button is pressed, the PESS control unit starts authentication with the electronic key. When authentication is completed normally, the PESS control unit starts authentication with the steering lock assembly. When authentication is completed normally, the steering lock assembly is released. <br/>When the power mode turned "ON", the PESS control unit will start authentication with the ECM. When authentication is completed, the PESS control unit sends the starter ON signal and starts the engine. <br/>If starting the engine becomes impossible for some reason (drained electronic key battery, etc.), place the electronic key built into the transponder near the engine start/stop button, and the PESS authentication will start. When authentication is completed normally, the engine can be started by pressing the engine start/stop button.</p>
+          <p class="explanation">Engine start/stop button</p>
+                <p class="illust"><img src="image/RTWFASMF000401.png" class="MF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN NO.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN NO.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">8</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Immobilizer coil (-)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Start switch 2 signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">9</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Immobilizer coil (+)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">10</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="190" colspan="1" rowspan="1" align="left" valign="bottom">Start switch 2 GND</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">11</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Start switch illumination</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Start switch 1 / LED GND</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">12</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">LED indicator (green)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">13</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">LED indicator (amber)</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Start switch 1 signal</td><td width="59" colspan="1" rowspan="1" align="center" valign="middle">14</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr></tbody></table>
+                <p class="explanation">Steering lock assembly</p>
+                <p class="illust"><img src="image/RTWFASSF000401.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">GND</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="190" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Steering lock operating permission switch</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Steering lock position</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">LIN communication</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Ignition power supply</td></tr><tr><td width="59" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="190" colspan="1" rowspan="1" align="left" valign="middle">Battery power supply</td></tr></tbody></table>
+                <p class="explanation">External buzzer<br/>The external buzzer is installed within the engine room. When locking the doors, the external buzzer (answerback buzzer) will sound once and the hazard warning lights will flash once. When unlocking the doors, the external buzzer (answerback buzzer) will sound twice and the hazard warning lights will flash twice. External buzzer (answerback buzzer) operation/non-operation, as well as volume settings, can be changed with a scan tool. The external buzzer also has the function of a warning buzzer and will generate a warning sound when the PESS issues a warning.</p>
+                <p class="illust"><img src="image/RTWCABSH000201.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">GND</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="160" colspan="1" rowspan="1" align="left" valign="bottom">Buzzer signal</td></tr></tbody></table>
+                <p class="explanation">PESS warning light<br/>If a malfunction occurs in the passive entry and start system (PESS), the PESS warning light will illuminate or blink, and informs the driver of malfunctions in the system.</p>
+                <p class="illust"><img src="image/RTWCABSF000701.png" class="SF" /></p>
+                <p class="explanation">Regarding warnings issued by the passive entry and start system (PESS)<br/>Under the following circumstances, the PESS control unit will generate a warning sound from the buzzer embedded in the IP cluster and from the external buzzer.</p>
+                <table cellspacing="0"><tbody><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">Multi-display<br/>Warning</td><td width="120" colspan="1" rowspan="1" align="center" valign="middle">Buzzer pattern</td><td width="238" colspan="1" rowspan="1" align="center" valign="middle">Condition</td></tr><tr><td width="130" colspan="1" rowspan="4" align="center" valign="middle">NO ELECTRONIC KEY</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Continuous beep<br/>(external buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If locking an unlocked vehicle is attempted with the electronic key not within operating range for locking and unlocking the vehicle.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Short repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="2" align="left" valign="middle">If the electronic key is carried outside the vehicle and then the doors or tailgate are closed with the power mode in &#034;ACC&#034; or &#034;IG&#034;.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Short repeated beeps<br/>(external and in-vehicle buzzer)</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If the engine start/stop button is pushed with the electronic key not within operating range for starting the engine.</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">PUSH START BUTTON WHILE TURNING STEERING WHEEL</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If the steering lock is not released even though the engine start/stop button is pushed.</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">DOOR OPEN</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Short repeated beeps<br/>(external buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If vehicle locking is attempted by pressing the lock button on the driver side door handle, tailgate, or electronic key when the doors or tailgate are open.</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">SHIFT TO P</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If engine starting is attempted by pushing the engine start/stop button with the selector lever in a position other than &#034;P&#034; or &#034;N&#034; (automatic transmission models).</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">SHIFT TO N</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If engine starting is attempted by pushing the engine start/stop button with the gearshift lever in a position other than &#034;N&#034; (manual transmission models).</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">TO POWER OFF SHIFT TO P THEN PUSH START BUTTON</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If an attempt to switch the power mode from &#034;IG&#034; to &#034;OFF&#034; is made with the selector lever in a position other than &#034;P&#034; (automatic transmission models).</td></tr><tr><td width="130" colspan="1" rowspan="3" align="center" valign="middle">SHIFT TO P</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Continuous beep<br/>(external buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If the electronic key is carried outside the vehicle and then the doors or tailgate are closed with the power mode in the &#034;OFF&#034; position and the selector lever in a position other than &#034;P&#034; (automatic transmission models).</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Continuous beep<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If the selector lever is moved to a position other than &#034;P&#034; with the driver side door open (automatic transmission models).</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Short beep<br/>(external buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If vehicle locking is attempted by pressing the lock buttons on the driver side door handle, tailgate, or electronic key with the selector lever in a position other than &#034;P&#034; (automatic transmission models).</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">ACCESSORY MODE</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Continuous beep<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If the driver side door is opened with the power mode in &#034;ACC&#034;.</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">TURN OFF THE POWER</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Short beep<br/>(external buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If vehicle locking is attempted by pressing the lock button on the driver side door handle, tailgate, or electronic key with the power mode in &#034;IG&#034; or &#034;ACC&#034;.</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">LOW BATTERY ELECRONIC KEY</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If the battery voltage of the electronic key is low when the power mode is switched from &#034;IG&#034; to &#034;OFF&#034; (or &#034;ACC&#034;).</td></tr><tr><td width="130" colspan="1" rowspan="2" align="center" valign="middle">CHECK SYSTEM</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)<br/>Continuous beep<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="2" align="left" valign="middle">If an error occurs to the PESS when vehicle locking is attempted by pressing the lock button on the driver side door handle or tailgate, or by pushing the engine start/stop button.</td></tr><tr><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Short beep<br/>(external buzzer)<br/>Continuous beep<br/>(external buzzer)</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">POWER MANAGEMENT SYSTEM ERROR</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If an error occurs in the power management system when the engine start/stop button is pushed.</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">STEERING LOCK ERROR</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Three repeated beeps<br/>(in-vehicle buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If an error occurs in the steering lock system when the engine start/stop button is pushed.</td></tr><tr><td width="130" colspan="1" rowspan="1" align="center" valign="middle">Lockout prevention<br/>(No multi-display warning)</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Short beep<br/>(external buzzer)</td><td width="238" colspan="1" rowspan="1" align="left" valign="middle">If door locking is attempted by pressing the lock button on the driver side door handle when the electronic key is inside the vehicle.</td></tr></tbody></table>
+                <p class="explanation">Customize function<br/>The following functions settings can be changed using a scan tool.</p>
+                <table cellspacing="0"><tbody><tr><td width="150" colspan="1" rowspan="1" align="center" valign="middle">Function</td><td width="348" colspan="1" rowspan="1" align="center" valign="middle">Description</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Inner Buzzer Volume Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="bottom">The buzzer volume output from the buzzer embedded in the IP cluster can be changed. The volume can be set to the 3 patterns of MAX, MIDDLE, and LOW. The default volume setting is MAX.</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Outer Buzzer Volume Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="bottom">The buzzer volume output from the external buzzer can be changed. The volume can be set to the 3 patterns of MAX, MIDDLE, and LOW. The default volume setting is MAX.</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Driver Out Side Door Knob Button Function</td><td width="348" colspan="1" rowspan="1" align="left" valign="bottom">The outside handle lock button and tail gate lock button that are usually used for locking can be also be used for unlocking. [Unlock with 2 second long press], [Unlock without regard to number of seconds], or [Only lock] can be set. The initial setting is [Unlock with 2 second long press].</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Tail Gate Unlock Mode Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The operation/non-operation of the answerback can be set for the tail gate along with each door when unlocking.</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Answer Back Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The operation/non-operation of the answerback buzzer when locking and unlocking can be set. <br/>The answerback buzzer volume can be changed using &#034;Outer Buzzer Volume setting&#034;.</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">ACC Auto Power OFF Timer Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The operation/non-operation of the ACC auto power off can be set.</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

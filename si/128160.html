@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Supplementary Information null (MUA)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Supplementary Information
+              (MUA)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757518">1. Component Views
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear oil seal, 2WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Rear propeller shaft assembly</li><li>Rear oil seal</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission, 2WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF5CLF000101.png" class="LF" /></p>
+                <div class="legend"><ol><li>Console cover</li><li>Shift lever knob</li><li>Console box</li><li>Grommet assembly</li><li>Shift lever</li><li>Transmission cross member</li><li>Rear propeller shaft assembly</li><li>Transmission rear section installation nut</li><li>Cushion rubber</li><li>Nut</li><li>Clutch slave cylinder</li><li>Exhaust pipe nut</li><li>Starter motor</li><li>Transmission</li><li>Transmission installation bolt</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission, 4WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF5CLF000201.png" class="LF" /></p>
+                <div class="legend"><ol><li>Console cover</li><li>Shift lever knob</li><li>Console box</li><li>Grommet assembly</li><li>Shift lever</li><li>Transmission cross member</li><li>Rear propeller shaft assembly</li><li>Nut</li><li>Clutch slave cylinder</li><li>Transmission installation bolt</li><li>Transmission</li><li>Exhaust pipe nut</li><li>Starter motor</li><li>Front propeller shaft assembly</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission case, 2WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CMF002601.png" class="MF" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>Filler plug</li><li>Control box and gasket</li><li>Vehicle speed sensor and speed meter driven gear, without ABS</li><li>Cap, with ABS</li><li>Rear cover</li><li>Rear oil seal</li><li>Dust cover</li><li>O-ring</li><li>Drain plug</li><li>Bolt</li><li>Bolt</li><li>Intermediate plate and gear assembly</li><li>Transmission case</li><li>Release bearing, with spring</li><li>Shift fork and boot</li><li>Counter front bearing snap ring</li><li>Top gear bearing snap ring</li><li>Front cover, with oil seal</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission case, 4WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CMF002701.png" class="MF" /></p>
+                <div class="legend"><ol><li>O-ring</li><li>Filler plug</li><li>Gear control box and gasket</li><li>Bolt</li><li>Rear cover</li><li>Bolt</li><li>O-ring</li><li>Drain plug</li><li>Bolt</li><li>Intermediate plate and gear assembly</li><li>Transmission case</li><li>Release bearing, with spring</li><li>Shift fork and boot</li><li>Counter front bearing snap ring</li><li>Top gear bearing snap ring</li><li>Front cover, with oil seal</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Intermediate plate</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE5CLF000301.png" class="LF" /></p>
+                <div class="legend"><ol><li>Bolt</li><li>Detent spring plate and gasket</li><li>Detent spring</li><li>Detent ball</li><li>Spring</li><li>Reverse - 5th shift rod</li><li>Reverse - 5th shift arm and inhibitor</li><li>1st - 2nd shift rod</li><li>3rd - 4th shift rod</li><li>3rd - 4th shift arm</li><li>1st - 2nd shift arm</li><li>Interlock pin</li><li>Intermediate plate and gear assembly</li><li>Inner spring, yellow</li><li>Outer spring, yellow</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Reverse gear and 5th gear, 2WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF002001.png" class="LF" /></p>
+                <div class="legend"><ol><li>Main shaft snap ring</li><li>Main shaft rear bearing</li><li>Snap ring</li><li>Speedometer drive gear</li><li>Clip</li><li>Retainer snap ring</li><li>Retainer</li><li>Thrust plate</li><li>Thrust washer and lock ball</li><li>Reverse idle gear snap ring</li><li>Reverse idle gear</li><li>Idle shaft pin</li><li>Thrust washer</li><li>Reverse idle gear</li><li>Reverse idle shaft</li><li>Counter bearing snap ring</li><li>Bearing</li><li>Counter 5th gear</li><li>Counter reverse gear</li><li>5th gear</li><li>5th block ring</li><li>Needle bearing</li><li>Main shaft nut</li><li>Reverse - 5th synchronizer assembly</li><li>Reverse block ring</li><li>Reverse gear</li><li>Reverse needle bearing</li><li>Bearing plate and screw</li><li>Snap ring</li><li>Intermediate shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Reverse gear and 5th gear, 4WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CMF000201.png" class="MF" /></p>
+                <div class="legend"><ol><li>Main shaft snap ring</li><li>Oil seal collar</li><li>Main shaft rear bearing</li><li>Retainer</li><li>Thrust plate</li><li>Thrust washer and lock ball</li><li>Reverse idle gear snap ring</li><li>Reverse idle gear</li><li>Idle shaft pin</li><li>Thrust washer</li><li>Reverse idle gear</li><li>Reverse idle shaft</li><li>Counter bearing snap ring</li><li>Bearing</li><li>Counter 5th gear</li><li>Counter reverse gear</li><li>5th gear</li><li>5th block ring</li><li>Needle bearing</li><li>Main shaft nut</li><li>Reverse - 5th synchronizer assembly</li><li>Reverse block ring</li><li>Reverse gear</li><li>Reverse needle bearing</li><li>Bearing plate and screw</li><li>Snap ring</li><li>Intermediate plate</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Top gear shaft</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSF000201.png" class="SF" /></p>
+                <div class="legend"><ol><li>Top gear shaft snap ring</li><li>Top gear shaft bearing</li><li>Top gear shaft</li><li>Needle bearing</li><li>Top block ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Main shaft</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF000301.png" class="LF" /></p>
+                <div class="legend"><ol><li>Main shaft snap ring</li><li>3rd - 4th synchronizer assembly</li><li>3rd block ring</li><li>3rd gear</li><li>Needle bearing</li><li>Needle bearing collar</li><li>Main shaft bearing</li><li>1st thrust bearing</li><li>1st gear</li><li>Needle bearing</li><li>1st inside ring</li><li>1st outside ring</li><li>1st block ring</li><li>Clutch hub snap ring</li><li>1st - 2nd synchronizer assembly</li><li>2nd block ring</li><li>2nd outside ring</li><li>2nd inside ring</li><li>2nd gear</li><li>Needle bearing</li><li>Main shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Counter shaft</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CMF001701.png" class="MF" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Front roller bearing</li><li>Counter shaft</li><li>Center roller bearing</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756682">2. Tightening Torque Views
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission, 2WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF5CLF000301.png" class="LF" /></p>
+                <p class="numeric">1： 7 N・m { 0.7 kgf・m / 62 lb・in }</p>
+          <p class="numeric">2： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+          <p class="numeric">3： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+          <p class="numeric">4： 19 N・m { 1.9 kgf・m / 14 lb・ft }</p>
+          <p class="numeric">5： 67 N・m { 6.8 kgf・m / 49 lb・ft }</p>
+          <p class="numeric">6： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+          <p class="numeric">7： 140 N・m { 14.3 kgf・m / 103 lb・ft }</p>
+          <p class="numeric">8： 51 N・m { 5.2 kgf・m / 38 lb・ft }</p>
+          <p class="numeric">9： 76 N・m { 7.7 kgf・m / 56 lb・ft }</p>
+          <p class="numeric">10： 67 N・m { 6.8 kgf・m / 49 lb・ft }</p>
+          <p class="numeric">11： 94 N・m { 9.6 kgf・m / 69 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission, 4WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF5CLF000401.png" class="LF" /></p>
+                <p class="numeric">1： 7 N・m { 0.7 kgf・m / 62 lb・in }</p>
+          <p class="numeric">2： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+          <p class="numeric">3： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+          <p class="numeric">4： 19 N・m { 1.9 kgf・m / 14 lb・ft }</p>
+          <p class="numeric">5： 67 N・m { 6.8 kgf・m / 49 lb・ft }</p>
+          <p class="numeric">6： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+          <p class="numeric">7： 140 N・m { 14.3 kgf・m / 103 lb・ft }</p>
+          <p class="numeric">8： 51 N・m { 5.2 kgf・m / 38 lb・ft }</p>
+          <p class="numeric">9： 76 N・m { 7.7 kgf・m / 56 lb・ft }</p>
+          <p class="numeric">10： 41 N・m { 4.2 kgf・m / 30 lb・ft }</p>
+          <p class="numeric">11： 67 N・m { 6.8 kgf・m / 49 lb・ft }</p>
+          <p class="numeric">12： 97 N・m { 9.9 kgf・m / 72 lb・ft }</p>
+          <p class="numeric">13： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+          <p class="numeric">14： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission case, 2WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF004001.png" class="LF" /></p>
+                <p class="numeric">1： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+          <p class="numeric">2： 20 N・m { 2.0 kgf・m / 15 lb・ft }</p>
+          <p class="numeric">3： 15 N・m { 1.5 kgf・m / 11 lb・ft } without ABS</p>
+          <p class="numeric">4： 27 N・m { 2.8 kgf・m / 20 lb・ft } without ABS</p>
+          <p class="numeric">5： 15 N・m { 1.5 kgf・m / 11 lb・ft } with ABS</p>
+          <p class="numeric">6： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+          <p class="numeric">7： 37 N・m { 3.8 kgf・m / 27 lb・ft }</p>
+          <p class="numeric">8： 37 N・m { 3.8 kgf・m / 27 lb・ft }</p>
+          <p class="numeric">9： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission case, 4WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE5CLF000401.png" class="LF" /></p>
+                <p class="numeric">1： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+          <p class="numeric">2： 20 N・m { 2.0 kgf・m / 15 lb・ft }</p>
+          <p class="numeric">3： 37 N・m { 3.8 kgf・m / 27 lb・ft }</p>
+          <p class="numeric">4： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+          <p class="numeric">5： 37 N・m { 3.8 kgf・m / 27 lb・ft }</p>
+          <p class="numeric">6： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Intermediate plate</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF000501.png" class="LF" /></p>
+                <p class="numeric">1： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+          <p class="numeric">2： 137 N・m { 14 kgf・m / 101 lb・ft }</p>
+          <p class="numeric">3： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

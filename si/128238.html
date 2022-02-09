@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Forward clutch assembly inspection (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Forward clutch assembly
+          inspection
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757297">1. Forward clutch return spring sub-assembly
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the forward clutch return spring sub-assembly using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the free length of the forward clutch return spring sub-assembly.</li>
+                    <li>If the free length is smaller than the minimum, replace the forward clutch return spring sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 26.74 mm { 1.0528 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH022201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757444">2. Direct clutch return spring sub-assembly
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the direct clutch return spring sub-assembly using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the free length of the direct clutch return spring sub-assembly.</li>
+                    <li>If the free length is smaller than the minimum, replace the direct clutch return spring sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 19.51 mm { 0.7681 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH022701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757172">3. Reverse clutch return spring sub-assembly
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the reverse clutch return spring sub-assembly using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Using vernier calipers, measure the free length of the reverse clutch return spring sub-assembly.</li>
+                    <li>If the free length is smaller than the minimum, replace the reverse clutch return spring sub-assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 21.04 mm { 0.8283 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH022801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756863">4. Clutch disc No.1
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the clutch disc No.1.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the lining of all discs</li>
+                    <li>If the lining is flaking or discolored, or if it is worn or the print mark is wearing away, replace the discs with a new one.</li>
+                    <li>When replacing, check the contact surfaces between the plate and the flange If they are scratched or discolored, replace the discs, plates and flanges with new ones.</li>
+                    <li>Before replacing with new plates, soak them in ATF at least 2 hours.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH022101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Print</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757298">5. Clutch disc No.2
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the clutch disc No.2.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the lining of all discs.</li>
+                    <li>If the lining is flaking or discolored, or if it is worn or the print mark is wearing away, replace the discs with a new one.</li>
+                    <li>When replacing, check the contact surfaces between the plate and the flange If they are scratched or discolored, replace the discs, plates and flanges with new ones.</li>
+                    <li>Before replacing with new plates, soak them in ATF at least 2 hours.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH022101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Print</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756592">6. Clutch disc No.3
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the clutch disc No.3.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the lining of all discs.</li>
+                    <li>If the lining is flaking or discolored, or if it is worn or the print mark is wearing away, replace the discs with a new one.</li>
+                    <li>When replacing, check the contact surfaces between the plate, flange and cushion plate If they are scratched or discolored, replace the discs, plates, flanges and cushion plate with new ones.</li>
+                    <li>Before replacing with new plates, soak them in ATF at least 2 hours.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH022301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Print</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757179">7. Forward clutch assembly
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the forward clutch assembly using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inside diameter of the input shaft sub-assembly bush.</li>
+                    <li>Measure the inside diameter at different places and take an average.</li>
+                    <li>If the measurement is greater than the maximum, replace the input shaft sub-assembly bush with a new one.</li>
+                    <li>When the input shaft sub-assembly bush is replaced, inspect the contact surface opposed to the intermediate shaft.</li>
+                    <li>If the surface is scratched or discolored, replace the intermediate shaft with a new one.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 20.000 to 20.025 mm { 0.7874 to 0.7884 in }</p>
+                <p class="illust"><img src="image/RTWC5BSH023001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757178">8. Direct clutch hub sub-assembly
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the direct clutch hub sub-assembly using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inside diameter of the direct clutch hub sub-assembly bush.</li>
+                    <li>Measure the inside diameter at different places and take an average.</li>
+                    <li>If the measurement is greater than the maximum, replace the direct clutch hub sub-assembly with a new one.</li>
+                    <li>When the direct clutch hub sub-assembly is replaced, inspect the contact surface opposed to the input shaft sub-assembly.</li>
+                    <li>If the surface is scratched or discolored, replace the input shaft sub-assembly with a new one.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 26.037 to 26.062 mm { 1.025 to 1.026 in } Front</p>
+          <p class="numeric">Standard： 26.037 to 26.062 mm { 1.025 to 1.026 in } Rear</p>
+                <p class="illust"><img src="image/RTWC5BSH023201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear</li><li>Front</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757023">9. Reverse clutch hub sub-assembly
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the reverse clutch hub sub-assembly using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inside diameter of the reverse clutch hub sub-assembly bush.</li>
+                    <li>Measure the inside diameter at different places and take an average.</li>
+                    <li>If the measurement is greater than the maximum, replace the reverse clutch hub sub-assembly with a new one.</li>
+                    <li>When the reverse clutch hub sub-assembly is replaced, inspect the contact surface opposed to the direct clutch hub sub-assembly.</li>
+                    <li>If the surface is scratched or discolored, replace the direct clutch hub sub-assembly with a new one.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 35.812 to 35.837 mm { 1.410 to 1.411 in } Front</p>
+          <p class="numeric">Standard： 35.812 to 35.837 mm { 1.410 to 1.411 in } Rear</p>
+                <p class="illust"><img src="image/RTWC5BSH023401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear</li><li>Front</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

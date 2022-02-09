@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Coolant inspection (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Coolant
+          inspection
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747801">1. Coolant
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspection of coolant level</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Inspect coolant.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the coolant level in the reserve tank, and when the level is between MAX and MIN, then the level is appropriate.</li>
+                    <li>Open the radiator cap and confirm that the radiator is filled with the coolant up to the filler portion inside the radiator.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Make sure to inspect the coolant level only when the engine is cool.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the coolant is insufficient, remove the cap of the reserve tank and refill the coolant to the level around the MAX line.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Radiator reserve tank</li><li>MAX</li><li>MIN</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspection of coolant leakage</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Inspect water leak using the radiator cap tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the pressure specified below, and inspect the locations described below for a leak.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Pressure： 196 kPa { 2.0 kgf/cm2 }</p>
+                <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Inspection points for coolant leakage</td></tr><tr><td width="110" colspan="1" rowspan="4" align="center" valign="middle">Parts</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Radiator</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Water pump</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Radiator hose</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Heater hose</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC1DSH000901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Engine coolant concentration</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Set concentration to a standard value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The concentration of the engine coolant affects its freezing temperature. Therefore, the concentration should be adjusted to the lowest atmospheric temperature.</li>
+                    <li>Use the Isuzu genuine engine coolant.</li>
+                    <li>When the mixing ratio of the engine coolant is 60 % or higher, it overheats easily, and when it is 30 % or lower, it cannot sufficiently prevent corrosion. Therefore, make sure to use the engine coolant with a specified concentration.</li>
+                    <li>If the engine coolant with concentrations other than a specified one is used, the anti-freezing performance may decrease, causing freezing to occur.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="156" colspan="1" rowspan="1" align="left" valign="middle">Long life coolant concentration</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">： 50 %</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>However, if the engine or vehicle is used at -30 ℃ {- 22 °F} or below, the coolant concentration of 55% is recommended.</li>
+                    <li>Measurements of engine coolant concentration</li>
+                    <li>Hydrometry</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Measure coolant using hydrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use an antifreeze hydrometer and thermometer to measure the specific gravity and coolant temperature.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be aware that the coolant bursts out when the cap is removed while the engine is still hot.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a container that has a depth larger than the length of the hydrometer.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH001001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Radiator</li><li>Hydrometer</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The temperature of the coolant should be within the specified range.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Specified temperature： 0 to 50 ℃ { 32 to 122 °F }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After measuring the temperature and specific gravity, find the concentration from the table below.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNWA6BSH000301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Coolant scope method</li>
+                    <li>Measure the concentration using a coolant scope.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

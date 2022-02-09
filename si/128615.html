@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Keyless entry system check null (BCM with PESS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Keyless entry system check
+              (BCM with PESS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758009">1. Keyless entry system check
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The keyless entry system functions as a vehicle entry device. The PESS control unit sends door lock and tailgate lock operation request signals to the BCM when the outside door handle is gripped, the outside door handle lock button is pressed, the tailgate unlock switch is pressed, the tailgate lock switch is pressed, or when the lock/unlock button on the electronic key is pressed. The BCM performs the requested function when signals are received from the PESS control unit with all the doors and the tailgate closed. System malfunctions may occur due to depleted electronic key or vehicle batteries, or due to electromagnetic disturbance from aftermarket devices such as power inverters or computers. Malfunctions may also occur due to electromagnetic disturbance in high-traffic areas. <br/>The keyless entry function has the following functions.</p>
+          <p class="explanation">Lock and unlock functions by lock and unlock requests from the PESS control unit<br/>Tailgate unlock function<br/>Answer-back function<br/>Interior light ON/OFF interlocking function</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758008">2. Keyless entry system check
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="128612.html">223.Description Body Control 36C.Functional Inspection(BCM with PESS) diagnostic system check-body controls</a>&quot;.</p>
+                    <p class="instructions">2. DTC verification</p>
+                <p class="explanation">If DTCs B0970, B2555, B3100, B3130, or B3135 are set, diagnose the applicable DTCs.</p>
+          <p class="explanation">If DTCs relating to the PESS control system are set, go to the applicable DTC diagnosis.</p>
+                <p class="instructions">3. Inspection of keyless entry system operation</p>
+                <p class="explanation">Lock and unlock the doors with the PESS function.</p>
+          <p class="explanation">If locking/unlocking is not possible, go to Electronic key programming verification.</p>
+          <p class="explanation">If there is no answer-back when locking and unlocking, go to Circuit diagnosis 3.</p>
+          <p class="explanation">If the dome light does not operate when unlocked, refer to Operation abnormality of the dome light function in the Description Body, Cab, Accessories section, and inspect.</p>
+                      <p class="reference">Refer to &quot;<a href="127611.html">210.Description Body, Cab, Accessories 23D.Symptom(All models) operation abnormality of the dome light function</a>&quot;.</p>
+                    <p class="instructions">4. Electronic key programming verification</p>
+                <p class="explanation">Check whether the electronic key has been programmed with a scan tool.</p>
+          <p class="explanation">If it has already been programmed, go to Inspection of PESS control unit signal circuit.</p>
+          <p class="explanation">If it has not been programmed, program the electronic key information into the PESS control unit. Go to Repair verification.</p>
+          <p class="explanation">Refer to "electronic key setting" in "PESS control unit setting".</p>
+          <p class="explanation">Refer to "PESS control unit setting".</p>
+                <p class="instructions">5. Inspection of PESS control unit signal circuit</p>
+                <p class="explanation">Inspect the PESS control unit signal circuit between the BCM and the PESS control unit for an open circuit, high resistance, a short to the power supply circuit, or a short to ground.  Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to Circuit diagnosis 1.</p>
+                <p class="instructions">6. Circuit diagnosis 1</p>
+                <p class="explanation">Close all doors and the tailgate.</p>
+          <p class="explanation">Observe the Door Switch display on the scan tool.</p>
+          <p class="explanation">If CLOSE is displayed, go to BCM harness connector inspection.</p>
+          <p class="explanation">If OPEN is displayed, go to Door switch and tailgate switch inspection.</p>
+                <p class="instructions">7. Door switch and tailgate switch inspection</p>
+                <p class="explanation">Inspect the door switch and the tailgate switch, and repair as necessary. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127382.html">9.Body, Cab, Accessories 9A.Lighting Systems(All models) door switch inspection</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127381.html">9.Body, Cab, Accessories 9A.Lighting Systems(All models) door switch removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127383.html">9.Body, Cab, Accessories 9A.Lighting Systems(All models) door switch installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127337.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) tail gate lock removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127338.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) tail gate lock installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127341.html">9.Body, Cab, Accessories 9J.Security and Locks(All models) tail gate lock inspection</a>&quot;.</p>
+                    <p class="explanation">If it is normal, go to Circuit diagnosis 2.</p>
+                <p class="instructions">8. Circuit diagnosis 2</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Install the door switch and the tailgate switch.</p>
+          <p class="explanation">Disconnect the BCM harness connector.</p>
+          <p class="explanation">Close all doors and the tailgate.</p>
+          <p class="explanation">Connect a test lamp between the door switch and tailgate switch signal circuit and the power supply circuit.</p>
+          <p class="explanation">If the test lamp does not illuminate, go to BCM replacement.</p>
+          <p class="explanation">If the test lamp illuminates, repair the short to ground in the door switch and tailgate switch signal circuit. Go to Repair verification.</p>
+                <p class="instructions">9. Circuit diagnosis 3</p>
+                <p class="explanation">Disconnect the BCM harness connector.</p>
+          <p class="explanation">Connect a fused jumper wire between the answer-back control circuit and the body ground.</p>
+          <p class="explanation">If the hazard lamp flashes, go to Inspection of BCM harness connector.</p>
+          <p class="explanation">If the hazard lamp does not flash, repair an open circuit or high resistance in the answer-back control circuit. Go to Repair verification.</p>
+                <p class="instructions">10. Inspection of BCM harness connector</p>
+                <p class="explanation">Inspect the connection status of the BCM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, go to BCM replacement.</p>
+                <p class="instructions">11. BCM replacement</p>
+                <p class="explanation">Replace the BCM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127509.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127508.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127510.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM setting</a>&quot;.</p>
+                    <p class="instructions">12. Repair verification</p>
+                <p class="explanation">Reconnect all of the disconnected fuses and harness connectors.</p>
+          <p class="explanation">Close all doors and the tailgate.</p>
+          <p class="explanation">Using a remote controller key, command the doors to lock and unlock.</p>
+          <p class="explanation">If it does not operate properly, go to Inspection of keyless entry system operation.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

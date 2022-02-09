@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Reverse gear and 5th gear disassembly (MUA)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Reverse gear and 5th gear
+          disassembly
+              (MUA)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757334">1. Main shaft snap ring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the main shaft snap ring from the main shaft using a snap ring pliers.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757630">2. Main shaft rear bearing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the main shaft rear bearing from the main shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+                    <li>Use an universal puller and main shaft end bearing remover.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884020270.png" class="ST" /><br/>SST: 5-8840-2027-0 - universal puller</p>
+          <p class="sst"><img src="image/ST5884021550.png" class="ST" /><br/>SST: 5-8840-2155-0 - main shaft end bearing remover</p>
+                <p class="illust"><img src="image/RTWC5CSH002201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Universal puller</li><li>Main shaft end bearing remover</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+                    <li>Use an universal puller and main shaft end bearing remover.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884020270.png" class="ST" /><br/>SST: 5-8840-2027-0 - universal puller</p>
+          <p class="sst"><img src="image/ST5884021580.png" class="ST" /><br/>SST: 5-8840-2158-0 - main shaft retainer remover</p>
+                <p class="illust"><img src="image/RTWC5CSH007501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Universal puller</li><li>Main shaft end bearing remover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756921">3. Speedometer drive gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the snap ring from the main shaft using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the clip.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the speedometer drive gear from the main shaft.</p>
+          <p class="instructions">3. Remove the retainer snap ring from the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756922">4. Retainer
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the retainer from the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+                    <li>Remove the oil seal collar at the same time.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757623">5. Thrust plate
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the thrust plate from the main shaft.</p>
+          <p class="instructions">2. Remove the thrust washer from the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the lock ball and the thrust washer.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756620">6. Reverse idle gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the snap ring from the idle shaft using a snap ring pliers.</p>
+                <p class="illust"><img src="image/RTWC5CSH002301.png" class="SH" /></p>
+                <p class="instructions">2. Remove the reverse idle gear from the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the idle shaft pin from the reverse idle shaft and remove the thrust washer and the reverse idle gear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH002401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756765">7. Counter bearing snap ring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the counter bearing snap ring from the counter shaft using a snap ring pliers.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757260">8. Counter 5th gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the counter 5th gear from the counter shaft using a puller.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the counter 5th gear and the bearing from the counter shaft.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884020270.png" class="ST" /><br/>SST: 5-8840-2027-0 - universal puller</p>
+                <p class="illust"><img src="image/RTWC5CSH002501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757139">9. Counter reverse gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the counter reverse gear from the counter shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756918">10. 5th gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 5th gear from the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756757">11. 5th block ring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 5th block ring from the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757071">12. Needle bearing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the needle bearing from the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the two-piece type needle bearings.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH002601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756618">13. Main shaft
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the main shaft from the intermediate plate using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the main shaft and the counter gear to the holding fixture.</li>
+                    <li>Install the holding fixture to the base.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021600.png" class="ST" /><br/>SST: 5-8840-2160-0 - holding fixture</p>
+          <p class="sst"><img src="image/ST5884000030.png" class="ST" /><br/>SST: 5-8840-0003-0 - base</p>
+                <p class="illust"><img src="image/RTWC5CSH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Holding fixture</li><li>Base</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the 3rd - 4th synchronizer assembly and the 3rd gear.</li>
+                    <li>Connect the 1st - 2nd synchronizer assembly and the 1st gear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH002801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Holding fixture</li></ol></div>
+                <p class="instructions">2. Remove the nut from the main shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the main shaft nut from the main shaft with the main shaft nut wrench.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021560.png" class="ST" /><br/>SST: 5-8840-2156-0 - main shaft nut wrench</p>
+                <p class="illust"><img src="image/RTWC5CSH002901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Main shaft nut wrench</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757626">14. Reverse gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the reverse gear from the main shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert a screwdriver between the reverse gear and bearing plate and remove the reverse - 5th synchronizer assembly, reverse block ring and reverse gear at the same time.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH003001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756622">15. Reverse needle bearing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the reverse needle bearing from the main shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757477">16. Bearing plate
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the bearing plate from the intermediate plate using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the bearing plate by using the TORX bit wrench.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884000470.png" class="ST" /><br/>SST: 5-8840-0047-0 - torx bit wrench</p>
+                <p class="illust"><img src="image/RTWC5CSH003101.png" class="SH" /></p>
+                <div class="legend"><ol><li>TORX bit wrench</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757075">17. Snap ring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the bearing snap ring from the main shaft using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hold the snap ring in a open condition with the snap ring pliers, and slide the intermediate plate backward to take out the intermediate plate and snap ring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH003201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring pliers</li><li>Snap ring</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

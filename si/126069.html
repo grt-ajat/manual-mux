@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>ECM removal (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    ECM
+          removal
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747684">1. ECM
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When replacing the ECM, the vehicle data must be written into the new ECM.</li>
+                    <li>When replacing the ECM, before removal upload the old ECM data to a scan tool.</li>
+                    <li>When communication with a scan tool is not possible, remove as-is.</li>
+                    <li>Use the same scan tool for the replacement procedure from beginning until end. If the scan tool is changed during the procedure, the correct information cannot be written.</li>
+                    <li>If the scan tool is changed during the procedure, the correct information cannot be written.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When replacing the ECM, this procedure is required.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Check the Injector ID Code of the cylinder head cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Record the injector ID codes from the cylinder head cover labels.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Only perform this procedure when the injectors have not been replaced in the past.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW76ESH002501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cylinder No. 1 injector ID code</li><li>Cylinder No. 2 injector ID code</li><li>Cylinder No. 3 injector ID code</li><li>Cylinder No. 4 injector ID code</li><li>Injector ID code label</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the injector ID codes have been recorded from the cylinder head cover labels, do not perform the following procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Disconnect the harness connector from the injector.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect all of the harness connectors from the injectors.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Check the Injector ID Code of the injector.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Record all of the harness connector housing numbers.</li>
+                    <li>The following diagram shows the proper order of the injector ID codes.</li>
+                    <li>72 04 F9 F8 F0 00 F0 E7 09 F6 F9 96</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWCZ0SH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Injector ID code</li><li>Injector</li></ol></div>
+                <p class="instructions">4. Connect the harness connector to the injector.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the harness connectors to all of the injectors.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747685">2. ECM
+                  upload
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When replacing the ECM, this procedure is required.</li>
+                    <li>When the ECM to be replaced cannot communicate with a scan tool, do not perform this procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Engine.</p>
+          <p class="instructions">5. Select the engine model.</p>
+          <p class="instructions">6. Select Programming.</p>
+          <p class="instructions">7. Select the Injector ID Code.</p>
+          <p class="instructions">8. Select the Injector ID Upload.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Follow the directions on the screen and upload the injector ID codes to a scan tool.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746994">3. ECM
+                  reset
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">ECM reset (PESS control unit)</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If equipped with a PESS, this procedure is required.</li>
+                    <li>If replacing the ECM, this procedure is required.</li>
+                    <li>If the ECM to be replaced cannot establish communication with the scan tool, do not perform this operation.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the PESS control unit and ECM are reset at the same time, the transponder key must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select the PESS.</p>
+          <p class="instructions">6. Select the Additional Function.</p>
+          <p class="instructions">7. Select Reset Engine Control Module.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Follow the on-screen instructions to reset the immobilizer security information in the ECM.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Entering an incorrect security code causes a security wait time.</li>
+                    <li>When turning the ignition switch ON or OFF, wait at least 5 seconds before turning it ON or OFF each time.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the ECM reset is completed, turn OFF the ignition switch for 1 minute.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Turn ON the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify that the engine does not start with all electronic keys.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">ECM reset (ICU)</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If an immobilizer is equipped, this procedure is required.</li>
+                    <li>When replacing the ECM, this procedure is required.</li>
+                    <li>When the ECM to be replaced cannot communicate with a scan tool, do not perform this procedure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When resetting the ICU and ECM at the same time, replacement of the transponder key is required.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">10. Connect a scan tool to the DLC.</p>
+          <p class="instructions">11. Turn ON the ignition switch.</p>
+          <p class="instructions">12. Select the Diagnostics.</p>
+          <p class="instructions">13. Select the Body.</p>
+          <p class="instructions">14. Select Immobilizer.</p>
+          <p class="instructions">15. Select the Additional Function.</p>
+          <p class="instructions">16. Select Reset Engine Control Module.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Follow the directions on the screen and reset the ECM immobilizer security information.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If an incorrect security code is input, the security wait time begins.</li>
+                    <li>When turning the ignition switch to ON or OFF, wait at least 5 seconds.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">17. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the ECM reset is completed, turn OFF the ignition switch for 1 minute.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">18. Turn ON the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify that the engine does not start with all transponder keys.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743074">4. Battery ground cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Open the engine hood assembly.</p>
+          <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748574">5. Glove box
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the glove box from the instrument panel.</p>
+                <p class="illust"><img src="image/RTWC9LSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Glove box</li><li>Instrument panel assist side lower cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748575">6. Instrument panel assist-side lower cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the instrument panel assist-side lower cover from the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 4 screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE7BSH000901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747189">7. ECM
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the ECM from the reinforcement.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove it together with the ECM bracket.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the ECM from the ECM bracket.</p>
+                <p class="illust"><img src="image/RTWCZ0SH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bolt</li><li>Nut</li><li>Bolt</li><li>ECM bracket</li><li>ECM</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

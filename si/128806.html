@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Brake pedal installation (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Brake pedal
+          installation
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759048">1. Brake pedal
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake pedal to the brake booster assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the snap pin to the brake pedal.</li>
+                    <li>Install the stoplight switch to the brake pedal.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH011501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Stoplight switch</li><li>Pedal stopper</li><li>Brake pedal</li><li>Pedal pad</li><li>Snap pin</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759037">2. Pedal stopper
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the pedal stopper to the brake pedal.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759039">3. Pedal pad
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the pedal pad to the brake pedal.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759038">4. Brake pedal
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The push rod functions as the pedal stopper when the pedal is fully depressed.</li>
+                    <li>Adjust the brake pedal height according to the following procedures.</li>
+                    <li>Measure the brake pedal height.</li>
+                    <li>Confirm that the brake pedal has returned completely by observing the condition of the brake return spring.</li>
+                    <li>Measure the pedal height after starting the engine and depressing the accelerator pedal several times.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">Pedal free play</td><td width="131" colspan="2" rowspan="1" align="left" valign="middle">： 6 to 10 mm { 0.24 to 0.39 in }</td></tr><tr><td width="50" colspan="1" rowspan="2" align="center" valign="middle">Pedal height</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">M/T</td><td width="91" colspan="1" rowspan="1" align="left" valign="middle">： 177 to 189 mm { 6.97 to 7.44 in }</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">A/T</td><td width="91" colspan="1" rowspan="1" align="left" valign="middle">： 180 to 192 mm { 7.09 to 7.56 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5CSH009601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lock nut</li><li>Pedal free play</li><li>Pedal height</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the pedal play after stopping the engine and depressing the brake pedal 5 times or more.</li>
+                    <li>Adjust the brake pedal if the measured value falls outside the previously mentioned range.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Adjust the brake pedal.</p>
+          <p class="instructions">2. Remove the stoplight switch from the brake pedal bracket.</p>
+          <p class="instructions">3. Loosen the lock nut using a wrench.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Loosen the push rod lock nut.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Turn the push rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn the push rod until the brake pedal reaches the specified height.</li>
+                    <li>Tighten the lock nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 15 to 25 N・m { 1.5 to 2.5 kgf・m / 11 to 18 lb・ft }</p>
+                <p class="instructions">5. Install the stoplight switch to the brake pedal bracket.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The pedal height should be 45 mm {1.77 in} or more when depressed with a force of 490 N {50.0 kg/110 lb}.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH011801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Procedures to connect the booster rod clevis attached with the pedal arm and to adjust the pedal switch</li>
+                    <li>Connect the booster rod clevis to the pedal arm, and adjust the pedal switch installed to the pedal bracket according to the following procedure.</li>
+                    <li>Set the clevis holes of the booster and master cylinder rod to the holes in the pedal arm.</li>
+                    <li>Insert the push rod pin from the left side of the pedal.</li>
+                    <li>Secure the push rod pin with the snap pin at the right side of the pedal.</li>
+                    <li>Turn the switch counterclockwise to release the lock.</li>
+                    <li>Pull the pedal arm toward the near side slightly to prevent the pedal arm from being pushed in.</li>
+                    <li>Hold the pedal arm with one hand and push the whole switch in with the other hand until the switch itself hits the pedal arm rubber after the switch plunger is pushed.</li>
+                    <li>Turn the switch clockwise until a click is heard to lock the switch.</li>
+                    <li>The switch gap is adjusted to 0.2 - 1.2 mm {0.008 - 0.048 in}.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>DTC P0088 (Flash Code 118) Fuel Rail/System Pressure - Too High null (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    DTC P0088 (Flash Code 118) Fuel Rail/System Pressure - Too High
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747170">1. DTC P0088
+                  diagnostics
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>An intermittently sticking suction control valve may have allowed the fuel pressure to become high enough to set this DTC.</li>
+                    <li>When the engine is running at idle in neutral, the Fuel Rail Pressure (FRP) should always be within 27 to 33 MPa {3900 to 4800 psi} after warm up.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="126448.html">202.Description Engine 15C.Functional Inspection(4JJ1) diagnostic system check-engine controls</a>&quot;.</p>
+                    <p class="instructions">2. Prioritized DTC</p>
+                <p class="explanation">If DTCs P0089, P0091, P0092, P0192, P0193, P0201 - P0204, P0219, P2146, or P2149 are set, go to the applicable DTC diagnosis.</p>
+                <p class="instructions">3. Inspection of fuel pressure</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Place the shift lever in the neutral position, and pull the parking brake lever.</p>
+          <p class="explanation">Start the engine.</p>
+          <p class="explanation">While observing the Fuel Rail Pressure (FRP) display on the scan tool, depress the accelerator pedal from idle to full throttle for several times.</p>
+                <p class="numeric">Standard： 190 MPa { 27550 psi }</p>
+                <p class="explanation">If the specified value is exceeded at least once, go to Circuit diagnosis.</p>
+          <p class="explanation">If the reading is less than the specified value, replace the fuel filter element. Go to Repair verification.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>An intermittent problem due to foreign object in the fuel can be suspected.</li>
+              <ul/>
+    </div>
+                        <p class="reference">Refer to &quot;<a href="125948.html">1.Engine 1C.Fuel System(4JJ1) fuel filter element removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="125949.html">1.Engine 1C.Fuel System(4JJ1) fuel filter element installation</a>&quot;.</p>
+                    <p class="instructions">4. Circuit diagnosis</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Wait for 30 seconds to reduce the fuel pressure from the fuel rail.</p>
+          <p class="explanation">Observe the Fuel Rail Pressure (FRP) Sensor display on the scan tool.</p>
+                <p class="numeric">Standard： 0.9 to 1.0 V</p>
+                <p class="explanation">If the reading is within the specified range, go to Inspection of injector.</p>
+          <p class="explanation">If the reading is outside the specified range, go to Inspection of fuel rail pressure sensor circuit.</p>
+                <p class="instructions">5. Inspection of injector</p>
+                <p class="explanation">Start the engine.</p>
+          <p class="explanation">Perform the Cylinder Balance Test with a scan tool.</p>
+          <p class="explanation">Command each injector OFF and verify the engine speed changes for each injector.</p>
+          <p class="explanation">If the engine speed changes for all the injectors, go to Inspection of fuel pipe.</p>
+          <p class="explanation">If the engine speed does not change, go to the applicable cylinder injector replacement.</p>
+                <p class="instructions">6. Inspection of fuel pipe</p>
+                <p class="explanation">Inspect for improper tightening in the fuel system between the fuel tank and the fuel supply pump, for cuts and cracks in the fuel hoses, and the clamps for damage, and repair as necessary. Go to Repair verification.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the fuel hose is not connected securely, air can enter. If the engine speed or the engine load increases while the air has entered the fuel system, fluctuation in the fuel rail pressure occurs, and DTC P0088 may be set.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect for a fuel leak in the high pressure side fuel system between the fuel supply pump and the fuel rail, and repair as necessary. Go to Repair verification.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The fuel may leak under the cylinder head cover from the inlet of the high pressure hose. If the fuel leaks under the cylinder head cover, the engine oil level increases. Inspect for a fuel leak into the engine oil.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If the fuel pipe is normal, go to Inspection 1 of suction side fuel line.</p>
+                <p class="instructions">7. Inspection 1 of suction side fuel line</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the fuel feed hose from the fuel supply pump.</p>
+          <p class="explanation">Install the vacuum pump to the fuel feed hose.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Because the fuel supply pump may be damaged due to foreign material in the vacuum pump, the vacuum pump must be cleaned before connecting to the fuel line.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884002790.png" class="ST" /><br/>SST: 5-8840-0279-0 - vacuum pump</p>
+                <p class="explanation">Operate the vacuum pump to verify that the fuel flows smoothly.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Note the fuel should not enter the vacuum pump.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If there is leakage or restriction in the suction side, which is most likely caused by fuel leakage, a clogged fuel filter, or a kinked or crushed fuel hose or pipe, the fuel from the hose will not flow sufficiently. Foreign material in the fuel tank may also enter the fuel line pickup.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If the fuel does not flow smoothly, repair the fuel line between the fuel tank and the fuel supply pump. Go to Repair verification.</p>
+          <p class="explanation">If the fuel flows smoothly, go to Inspection 2 of suction side fuel line.</p>
+                <p class="instructions">8. Inspection 2 of suction side fuel line</p>
+                <p class="explanation">Replace the fuel hose between the fuel supply pump and the fuel filter with a clear hose.</p>
+          <p class="explanation">Bleed the air from the fuel system.</p>
+          <p class="explanation">Start the engine.</p>
+          <p class="explanation">Allow the engine to idle for at least one minute.</p>
+          <p class="explanation">Observe the fuel in the clear hose for one minute with the engine speed at 3000 rpm or higher.</p>
+          <p class="explanation">If air bubbles are not present, go to Inspection of fuel supply pump.</p>
+          <p class="explanation">If air bubbles are present, repair the fuel system between the fuel tank and the fuel supply pump. Go to Repair verification.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect for improper tightening in the fuel system between the fuel tank and the fuel supply pump, for cuts and cracks in the fuel hoses, and the clamps for damage, and repair as necessary.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Inspection of fuel supply pump</p>
+                <p class="explanation">Connect the fuel feed hose to the fuel supply pump.</p>
+          <p class="explanation">Disconnect all the injector harness connectors in order to disable the fuel injection.</p>
+          <p class="explanation">Disconnect the fuel feed hose from the fuel tank.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Use a pan to collect the fuel from the removed fuel line.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Install the vacuum pump to the fuel feed hose. Verify that the vacuum pump and the fuel line are securely connected.</p>
+                <p class="sst"><img src="image/ST5884002790.png" class="ST" /><br/>SST: 5-8840-0279-0 - vacuum pump</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The vacuum pump must be cleaned before connecting to the fuel line.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Crank the engine 3 times while monitoring the gauge on the vacuum pump.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Cranking should be performed within 5 seconds at a time, and should not exceed 15 seconds in total.</li>
+                    <li>If vacuum may exceed the specified value during the test, release the clamp or open the plug.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Specified value:  -27 kPa {-0.28 kg/cm2 / 8 inHg / -3.98 psi}</p>
+          <p class="explanation">If the vacuum of the specified value is drawn, repair the fuel line between the fuel supply pump and the fuel rail. Go to Repair verification.</p>
+          <p class="explanation">If the negative pressure of the specified value is not drawn, go to Inspection of suction control valve circuit.</p>
+                <p class="instructions">10. Inspection of fuel rail pressure sensor circuit</p>
+                <p class="explanation">Inspect the connection status of the fuel rail pressure sensor harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect the connection status of the fuel rail pressure sensor circuit at the ECM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect for high resistance in the fuel rail pressure sensor circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, replace the fuel rail pressure sensor. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="125958.html">1.Engine 1C.Fuel System(4JJ1) FRP sensor removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="125968.html">1.Engine 1C.Fuel System(4JJ1) FRP sensor installation</a>&quot;.</p>
+                    <p class="instructions">11. Inspection of suction control valve circuit</p>
+                <p class="explanation">Inspect the connection status of the suction control valve harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect the connection status of the suction control valve circuit at the ECM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect for high resistance in the suction control valve circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to Fuel supply pump replacement.</p>
+                <p class="instructions">12. Injector replacement</p>
+                <p class="explanation">Replace the injector. Go to Repair verification.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the injector has been replace, set the injector ID code on the ECM.</li>
+              <ul/>
+    </div>
+                        <p class="reference">Refer to &quot;<a href="125973.html">1.Engine 1C.Fuel System(4JJ1) injector removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="125972.html">1.Engine 1C.Fuel System(4JJ1) injector installation</a>&quot;.</p>
+                    <p class="instructions">13. Fuel supply pump replacement</p>
+                <p class="explanation">Replace the fuel supply pump. Go to Repair verification.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the fuel supply pump is replaced, the fuel filter element is also required to be replaced at the same time.</li>
+                    <li>When the fuel supply pump is replaced, perform the learning of the fuel supply pumps for the ECM.</li>
+              <ul/>
+    </div>
+                        <p class="reference">Refer to &quot;<a href="125974.html">1.Engine 1C.Fuel System(4JJ1) fuel supply pump removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="125975.html">1.Engine 1C.Fuel System(4JJ1) fuel supply pump installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="125948.html">1.Engine 1C.Fuel System(4JJ1) fuel filter element removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="125949.html">1.Engine 1C.Fuel System(4JJ1) fuel filter element installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747669">2. DTC P0088
+                  repair verification
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Clear the DTC with a scan tool.</p>
+          <p class="explanation">Turn OFF the ignition switch for at least 30 seconds.</p>
+          <p class="explanation">Operate the vehicle within the conditions for setting the DTC or within the parameters observed in the Freeze Frame.</p>
+          <p class="explanation">Observe the DTC information with a scan tool.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

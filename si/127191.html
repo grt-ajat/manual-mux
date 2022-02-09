@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Blower assembly installation (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Blower assembly
+          installation
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie752510">1. Blower assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the blower assembly to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 2 screws and 1 nut.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Nut</li><li>Blower assembly</li><li>Screw</li><li>Heater evaporator unit assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751445">2. Instrument panel
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the instrument panel assembly and reinforcement to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the bolts and nuts that secure the instrument panel and reinforcement assembly to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 19 N・m { 1.9 kgf・m / 14 lb・ft } Bolt</p>
+          <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 6 lb・ft } Nut</p>
+                <p class="illust"><img src="image/RTWC9LSF000101.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the 4 bolts that secure the steering column to the reinforcement to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 20 N・m { 2.0 kgf・m / 15 lb・ft } Steering column bolt</p>
+                <p class="illust"><img src="image/RTWC9LSH002601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the dash harness connector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the side cover to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the left and right side covers.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH004701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Right side cover</li><li>Instrument panel</li></ol></div>
+                <p class="instructions">3. Install the speaker grille to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the left and right speaker grilles.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750636">3. Control lever assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following does not apply to auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the control lever assembly to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the harness connector and the mode adjust cable.</li>
+                    <li>Install the clips at 4 corners and push them.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE7BSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Instrument panel</li><li>Control lever assembly</li><li>Glove box</li><li>Instrument panel assist-side lower cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750635">4. Control cable
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the control cable.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the air source control cable.</li>
+                    <li>Set the air source select lever to the "FRESH" position on the left side.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BMF001201.png" class="MF" /></p>
+                <p class="instructions">2. Install the control cable to the blower assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the control cable to the link section of the blower assembly.</li>
+                    <li>Connect the control cable to the lock clamp section.</li>
+                    <li>After installation, inspect the operation of the control lever assembly.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750598">5. Control panel assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the control panel assembly to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect 1 harness connector.</li>
+                    <li>Install the clips at 4 corners and push them.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH003601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Instrument panel</li><li>Control panel assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750574">6. Sun sensor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the sun sensor to the front cover.</p>
+          <p class="instructions">2. Connect the harness connector to the sun sensor.</p>
+          <p class="instructions">3. Install the sun sensor to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install it to the instrument panel together with the front cover.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sun sensor</li><li>Front cover</li><li>Instrument panel</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751449">7. Front cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following does not apply to auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the front cover to the instrument panel.</p>
+                <p class="illust"><img src="image/RTWC9LSH004301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front cover</li><li>Instrument panel</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751165">8. Dash side trim pad
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the dash side trim pad to the body.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the nut.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH000101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751070">9. Sill plate
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the sill plate to the floor.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the front sill plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9LSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front sill plate</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the rear sill plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9LSH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear sill plate</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751069">10. Front pillar trim cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the front pillar trim cover to the front pillar.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert the lower part of the front pillar trim cover.</li>
+                    <li>Install the assist grip.</li>
+                    <li>Install the 2 fixing screws and close the cover.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply excessive force to the upper portion of the front pillar trim cover. It causes the white-mark occurring at appearance surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9LSH001701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751166">11. Front door finisher
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the front door finisher to the body.</p>
+                <p class="illust"><img src="image/RUWE9LSH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front door finisher</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750769">12. Passenger air bag assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the passenger air bag assembly to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Press the portion indicated by the arrow in the illustration to install it to the instrument panel.</li>
+                    <li>Securely fit the claws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH001201.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC8BSH001001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Passenger airbag mounting bolts</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751439">13. Assist side lid cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the assist side lid cover to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2 screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH004501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Screw</li><li>Assist side lid cover</li><li>Instrument panel</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751447">14. Steering cowl
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the steering cowl to the steering column.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing the steering cowl, be careful not to pinch the harness by the cowl.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the steering cowl upper to the steering column.</li>
+                    <li>Install the steering cowl upper mounting screws to the steering cowl upper.</li>
+                    <li>Install the steering cowl lower to the steering column.</li>
+                    <li>Install the steering cowl lower mounting screw to the steering cowl lower.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH004101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Steering cowl upper</li><li>Steering cowl lower mounting screw</li><li>Steering cowl lower</li><li>Steering cowl upper mounting screw</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750742">15. Steering wheel
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the steering wheel to the steering shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Line up the setting applied during removal, and install the steering wheel.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001501.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Never apply an impact to the steering wheel with a hammer, etc. to install it.</li>
+                    <li>The steering shaft is designed to absorb shocks.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the nut to the steering shaft.</p>
+                <p class="numeric">Tightening torque： 35 N・m { 3.6 kgf・m / 26 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750741">16. Driver air bag assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the connector to the driver air bag assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the airbag connector.</li>
+                    <li>Connect the horn connector.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Airbag connector</li><li>Horn connector</li></ol></div>
+                <p class="instructions">2. Install the driver air bag assembly to the steering wheel.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750793">17. Battery ground cable
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the battery ground cable to the battery.</p>
+          <p class="instructions">2. Close the engine hood assembly.</p>
+          <p class="instructions">3. Lower vehicle.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750770">18. SRS control unit
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Reactivate the SRS function.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the SRS fuse to the fuse relay box or connect the battery ground cable to the battery.</li>
+                    <li>Turn the ignition switch on, and confirm that the SRS airbag warning light turns off after blinking 7 times.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751440">19. Instrument panel driver-side lower cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the instrument panel driver-side lower cover to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the switch connector.</li>
+                    <li>Install the DLC.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH002401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Instrument panel driver side lower cover</li><li>DLC</li></ol></div>
+                <p class="instructions">2. Install the fuel filler lid opener lever to the instrument panel driver-side lower cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2 fixing screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9GSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel filler rid opener lever</li><li>Fuel filler rid cable</li><li>Screw</li></ol></div>
+                <p class="instructions">3. Install the hood lock control lever to the instrument panel driver-side lower cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2 fixing screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9GSH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Hood lock control lever</li><li>Control cable</li><li>Screw</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751446">20. Meter cluster
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the meter cluster to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the switch connector.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clip</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751438">21. Instrument panel assist-side lower cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the instrument panel assist-side lower cover to the instrument panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 4 screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE7BSH000901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751448">22. Glove box
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the glove box to the instrument panel.</p>
+                <p class="illust"><img src="image/RTWC9LSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Glove box</li><li>Instrument panel assist side lower cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751182">23. Console box
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the console box to the floor.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2 clips and the 1 screw.</li>
+                    <li>Open the console box cover and install 2 screws.</li>
+                    <li>Install the parking brake cover to the console box.</li>
+                    <li>The following applies to the 2WD model.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the cover to the console box.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the 4WD model.</li>
+                    <li>Connect the 4WD switch connector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the 4WD switch to the console box.</p>
+                <p class="illust"><img src="image/RUWE9JSH000901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cover (2WD models)</li><li>4WD switch (4WD models)</li><li>Screw</li><li>Parking brake cover</li><li>Console box</li><li>Clip</li></ol></div>
+                <p class="instructions">4. Install the shift console cover to the console box.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the cigarette lighter connector.</li>
+                    <li>The following applies to the manual transmission.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Install the shift lever knob to the shift lever.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the manual transmission.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH003601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift lever knob</li><li>Shift console cover</li><li>Cover (2WD models)</li><li>4WD switch (4WD models)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the automatic transmission.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9LSH003701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift console cover</li><li>Cover (2WD models)</li><li>4WD switch (4WD models)</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

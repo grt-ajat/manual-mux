@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Fuel tube installation (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Fuel tube
+          installation
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747708">1. Fuel tube
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the fuel tube.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If there are flaws, dents, or cracks, replace the port and connector.</li>
+                    <li>When installing a connector, remove dust collected on the port.</li>
+                    <li>If there is rust, dents, or damage, replace the connector.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the fuel tube to the fuel tank unit.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert the connector straight until it clicks.</li>
+                    <li>After the connector clicks, pull it out with 49 N {5 kg / 11 lb} of force, and securely lock it so it won't be drawn in.</li>
+                    <li>Advice on assembly</li>
+                    <li>Applying engine oil or diesel oil to the pipe makes port installation easy.</li>
+                    <li>Install immediately after applying oil.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748450">2. Fuel tank
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the fuel tank to vehicle.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the hose or the tube by contacting with other parts.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Put the fuel tank on the lifter and install the fuel tank by elevating the lifter.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Connect the connector to the fuel tank unit.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Securely connect the connector to the stopper.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the fuel tank band to the frame.</p>
+                <p class="numeric">Tightening torque： 68 N・m { 6.9 kgf・m / 50 lb・ft }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Securely install the anchor of the tank band to the guide hole of the frame.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1CSH001601.png" class="SH" /></p>
+                <p class="instructions">4. Connect the evaporator hose to the filler neck.</p>
+          <p class="instructions">5. Connect the breather hose to the filler neck.</p>
+          <p class="instructions">6. Connect the fuel filler hose to the filler neck.</p>
+                <p class="illust"><img src="image/RTWD1CSH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel filler hose</li><li>Evaporator hose</li><li>Breather hose</li></ol></div>
+                <p class="instructions">7. Remove the lifter from the fuel tank.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748447">3. Fuel tube
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the fuel return tube to the fuel hose.</p>
+          <p class="instructions">2. Connect the fuel feed tube to the fuel hose.</p>
+                <p class="illust"><img src="image/RTWD1CSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel feed tube</li><li>Fuel return tube</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748446">4. Fuel filler cap
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the fuel filler cap to the filler neck.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the filler cap until it clicks at least 3 times.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741847">5. Fuel
+                  air bleed
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Press the priming pump.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Press the priming pump until it gets stiff.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Priming pump</li><li>Fuel filter with the sedimenter</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Insufficient air removal work may lead to malfunction of the engine.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745888">6. Battery ground cable
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the battery ground cable to the battery.</p>
+          <p class="instructions">2. Close the engine hood assembly.</p>
+          <p class="instructions">3. Lower vehicle.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748451">7. Fuel
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Start the engine.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check for loosening or fuel leakage at the connections of the fuel system.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747212">8. Fuel tube
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Start the engine.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Start the engine and observe the engine idle speed.</li>
+                    <li>Dust in the fuel system may affect the fuel injection system.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Inspect the fuel tube.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check for fuel leakage.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

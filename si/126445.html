@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of engine null (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of engine
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747164">1. Function, structure, operation of engine
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">ECM<br/>The ECM is designed to withstand normal current draws associated with vehicle operation. Avoid overloading any circuit. When testing for opens and shorts, do not ground or apply voltage to any of the ECM circuits unless instructed to do so. In some cases, these circuits should only be tested using a DMM. The ECM should remain connected to the ECM harness. The ECM mainly controls the following items.<br/>The fuel system control<br/>The EGR system control<br/>The glow system control<br/>The A/C compressor control<br/>The immobilizer system control<br/>On-board diagnostics for engine control<br/>The ECM constantly observes the information from various sensors. The ECM controls the systems that affect vehicle performance. The ECM performs the diagnostic function of the system. The ECM can recognize operational problems, alert the driver through the MIL, and store DTCs. DTCs identify the system faults to aid the technician in making repairs.</p>
+                <p class="illust"><img src="image/RTWEZ0SH001401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ECM input/output</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1AXF000101.png" class="XF" /></p>
+                <p class="explanation">ECM voltage description<br/>The ECM applies buffer voltage to various switches and sensors. The ECM can do this because the resistance in the ECM is so high that a test lamp may not illuminate at this value when connected to the circuit. An ordinary shop voltmeter may not give an accurate reading because the voltmeter input impedance is too low. Use a 10-megohm input impedance DMM to ensure accurate voltage readings. The input/output devices in the ECM include analog-to-digital converters, signal buffers, counters, and special drivers. The ECM controls most components with electronic switches that complete a ground circuit when turned ON.</p>
+          <p class="explanation">Operation of MIL<br/>The MIL is located in the instrument panel cluster. The MIL displays the engine symbol when commanded ON. <br/>The MIL indicates that vehicle maintenance is required due to a failure related to the engine. The following is a list of MIL operation modes. <br/>The MIL illuminates when the engine is turned OFF with the ignition switch ON. This is the lamp test for verifying that the MIL illuminates. <br/>If there is no diagnostic failure, the MIL turns OFF after the engine is started. <br/>If the ECM detects a failure, the MIL remains ON after the engine is started. When the ECM illuminates the MIL due to a failure related to emission, a DTC is stored.</p>
+                <p class="illust"><img src="image/RTWCZ0SH003601.png" class="SH" /></p>
+                <p class="explanation">SVS lamp operation<br/>The SVS lamp is installed inside the instrument panel cluster. The SVS lamp shows the vehicle with wrench symbol when commanded ON. <br/>The SVS lamp indicates that vehicle maintenance is required due to a non-emission related malfunction. <br/>The following is a list of SVS lamp operation modes. <br/>The SVS lamp illuminates when the engine is turned OFF with the ignition switch ON. This is the lamp test for verifying that the SVS lamp illuminates. <br/>If there are no failure diagnostics, the SVS lamp remains ON after the engine is started. When the ECM illuminates the SVS lamp due to a non-emission related malfunction, a DTC is stored.</p>
+                <p class="illust"><img src="image/RTWCZ0SH006101.png" class="SH" /></p>
+                <p class="explanation">Accelerator pedal position sensor<br/>The accelerator pedal position sensor is installed together with the accelerator pedal. The sensor is made up of two individual sensors within one housing. The ECM uses the accelerator pedal position sensor to determine the amount of acceleration or deceleration that is desired. The accelerator pedal position sensors are hall element type sensors. Each accelerator pedal position sensor provides a different signal to the ECM on each signal circuit, which is relative to the position changes of the accelerator pedal angle. The accelerator pedal position sensor 1 and 2 signal voltage are low at rest and increases as the pedal is depressed.</p>
+                <p class="illust"><img src="image/RTWCZ0SH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Accelerator pedal position sensor</li><li>Accelerator pedal</li></ol></div>
+                <p class="explanation">Barometric pressure sensor<br/>The barometric pressure sensor is installed to the air cleaner. The barometric pressure sensor is a transducer that varies voltage according to changes the barometric pressure. The barometric pressure sensor provides a signal to the ECM on the signal circuit, which is relative to the pressure changes of the barometric pressure. The ECM should detect a low signal voltage at a low barometric pressure, such as high altitude place. The ECM should detect high signal voltage at a high barometric pressure. The ECM uses this voltage signal to calibrate the fuel injection quantity and injection timing for altitude compensation.</p>
+                <p class="illust"><img src="image/RTW76ESH002401.png" class="SH" /></p>
+                <p class="explanation">Boost pressure sensor<br/>The boost pressure sensor is located in the air induction tubing. The boost pressure sensor is a transducer that varies voltage according to changes in the air pressure inside the air tubing. The boost pressure sensor provides a signal to the ECM on the signal circuit according to the pressure changes in the air tubing. The ECM detects a low signal voltage at low boost pressure, such as when the engine load is low. The ECM detects a high signal voltage at high boost pressure, such as when the engine load is high.</p>
+                <p class="illust"><img src="image/LNW76ESH002101.png" class="SH" /></p>
+                <p class="explanation">CMP sensor<br/>The CMP sensor is installed on the timing chain sprocket cover at the front of the camshaft idle gear. The CMP sensor detects five projections in total per engine cycle. Four projections arranged equally every 90° and one reference projection on the timing chain sprocket surface. The CMP sensor is a magnetic resistance element type sensor, which generates a square wave signal pulse.</p>
+                <p class="illust"><img src="image/RTW56ESH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Timing chain sprocket</li><li>CMP sensor</li><li>Rotational direction</li></ol></div>
+                <p class="explanation">CKP sensor<br/>The CKP sensor is located on the left-hand of the cylinder block rear section. The sensor rotor is fixed on the crankshaft. There are 56 notches spaced 6°apart and a 30°opening. This opening allows for detection of top dead center. The CKP sensor is a magnetic resistance element type sensor, which generates a square wave signal pulse. Detecting the opening from the CKP sensor and one reference projection from the CMP sensor, the ECM determines cylinder No.1 compression top dead center to ensure they correlate with each other.</p>
+                <p class="illust"><img src="image/RTW76ESH003301.png" class="SH" /></p>
+                <div class="legend"><ol><li>CKP sensor</li><li>Sensor rotor</li><li>Rotational direction</li></ol></div>
+                <p class="explanation">Engine coolant temperature sensor<br/>The engine coolant temperature sensor is installed to the thermostat housing. The engine coolant temperature sensor is a variable resistor and it measures the temperature of the engine coolant. When the engine coolant temperature sensor is cold, the sensor resistance is high. When the engine coolant temperature increases, the sensor resistance decreases. With high sensor resistance, the ECM detects a high voltage on the signal circuit. With lower sensor resistance, the ECM detects a lower voltage on the signal circuit.</p>
+                <p class="illust"><img src="image/LNW71ASH002101.png" class="SH" /></p>
+                <p class="explanation">Fuel temperature sensor<br/>The fuel temperature sensor is installed on the fuel supply pump.<br/>The fuel temperature sensor is a variable resistor and it measures the temperature of the fuel entering the fuel supply pump. When the fuel temperature sensor is cold, the sensor resistance is high. When the fuel temperature increases, the sensor resistance decreases. With high sensor resistance, the ECM detects a high voltage on the signal circuit. With lower sensor resistance, the ECM detects a lower voltage on the signal circuit.</p>
+                <p class="illust"><img src="image/LNW71ASH000601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel temperature sensor</li><li>FRP regulator</li></ol></div>
+                <p class="explanation">IAT sensor<br/>The IAT sensor is fitted between the air cleaner and turbocharger. The IAT sensor is inside the MAF sensor. The IAT sensor is a variable resistor and it measures the temperature of the air entering the engine. When the IAT sensor is cold, the sensor resistance is high. When the air temperature increases, the sensor resistance decreases. With high sensor resistance, the ECM detects a high voltage on the signal circuit. With lower sensor resistance, the ECM detects a lower voltage on the signal circuit.</p>
+                <p class="illust"><img src="image/RTWCZ0SH000901.png" class="SH" /></p>
+                <p class="explanation">MAF sensor<br/>The MAF sensor is an air flow meter that measures the amount of air that enters the engine. The MAF sensor is installed between the air cleaner and turbocharger. A small quantity of air that enters the engine indicates deceleration or idle speed. A large quantity of air that enters the engine indicates acceleration or a high load condition. The MAF sensor assembly consists of the MAF sensor element and the IAT sensor. Both components are exposed to the air flow to be measured. The MAF sensor element measures the inflow air volume through a measurement duct on the sensor housing.</p>
+                <p class="illust"><img src="image/RTWCZ0SH000901.png" class="SH" /></p>
+                <p class="explanation">Common rail type electronic control injection system<br/>For the common rail system, use an accumulator, which is also called common rail, to store pressurized fuel and also use injectors including the electric control solenoid valve to inject the pressurized fuel into the combustion chamber. Injection pressure, injection rate and injection timing are controlled by the ECM, and therefore the common rail system can be controlled independently, free from the influence of engine speed and load. This ensures stable injection pressure at all time, particularly in the low engine speed range, and therefore, black smoke specific to diesel engines generated during vehicle starting or acceleration can be significantly reduced. As a result, the cleanliness and volume of exhaust gas are improved and higher output can be achieved.</p>
+                <p class="illust"><img src="image/RTWCZ0MF000101.png" class="MF" /></p>
+                <p class="explanation">High pressure control<br/>Enables high pressure injection from low engine speed range.<br/>Optimizes control to minimize particulate matter and NOx emissions.</p>
+          <p class="explanation">Injection timing control<br/>Enables finely tuned optimized control in accordance with running conditions.</p>
+          <p class="explanation">Injection rate control<br/>Pre-injection control that performs a small amount of injection before main injection.</p>
+          <p class="explanation">The common rail system consists primarily of a fuel supply pump, fuel rail, injectors, and ECM.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fuel system diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1DMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Fuel rail</li><li>Pressure limiter</li><li>Fuel leak-off pipe</li><li>Injector</li><li>Fuel return pipe</li><li>Fuel tank</li><li>Fuel tank unit</li><li>Fuel filler cap</li><li>Fuel feed pipe</li><li>Fuel filter with sedimenter</li><li>Clogging monitoring switch</li><li>Fuel supply pump</li></ol></div>
+                <p class="explanation">Injector<br/>Electronic control type injectors controlled by the ECM are used. Compared with conventional injection nozzles, a command piston, solenoid valve, etc. are added. An ID code indicating various injector characteristic is laser marked on the connector housing. This system uses injector flow rate information indicated by the ID code to optimize the injection quantity control. When an injector is newly installed in the vehicle, it is necessary to input the ID code in the ECM. QR codes or injector flow rate information are used to enhance the injection quantity precision of the injectors. The use of codes enables injection quantity dispersion control throughout all pressure ranges, contributing to improvement in combustion efficiency and reduction in exhaust gas emissions.</p>
+                <p class="illust"><img src="image/RTW56EMH000101.png" class="MH" /></p>
+                <div class="legend"><ol><li>Injector ID code</li><li>Fuel leak-off pipe</li><li>2D barcode</li><li>Fuel inlet port</li><li>O-ring</li></ol></div>
+                <p class="explanation">Non-injection state<br/>The TWV closes the outlet orifice by means of a spring force, when no current is supplied from the ECM to the solenoid. At this point, the fuel pressure applied to the tip of the nozzle is equivalent to the fuel pressure applied through the inlet orifice to the control chamber. As for the force competition in this state, the sum of pressure on the command piston upper surface and nozzle spring force is greater than the pressure applied to the nozzle leading end, and therefore the nozzle is pressed down and the injection hole is closed.</p>
+          <p class="explanation">Injection start<br/>When current is supplied from the ECM to the solenoid, the TWV is raised to open the outlet orifice and the fuel flows into the return port. As a result, the nozzle is pressed up along with the command piston by the fuel pressure applied to the nozzle leading end and then the nozzle injection hole opens to inject the fuel.</p>
+          <p class="explanation">Injection end<br/>When the ECM finishes supplying power to the solenoid, the outlet orifice is closed. As a result, the fuel stops flowing into the return port from the control chamber and the fuel pressure within the control chamber sharply rises. Then, the nozzle is pressed down by the command piston and the nozzle injection hole is closed to stop fuel injection.</p>
+                <p class="illust"><img src="image/RTW76EMF000601.png" class="MF" /></p>
+                <p class="explanation">Fuel supply pump<br/>The fuel supply pump is the main part of the common rail type electronic fuel injection system. The fuel supply pump is installed in the same location as the conventional injection type pump, which rotates at a 1 to 1 ratio of fuel supply pump to crankshaft speed. The FRP regulator and fuel temperature sensor are one of the parts of the fuel supply pump assembly.<br/>Fuel is drawn from the fuel tank via the fuel supply pump by the use of a trochoid type internal feed pump. This feed pump feeds fuel into 2 plunger chambers that are located inside the fuel supply pump. Fuel that is fed into this plunger chamber is regulated by the FRP regulator that is solely controlled with current supplied from the ECM. No current to the solenoid results in maximum fuel flow, whereas full current to the solenoid produces no fuel flow. As the engine runs, these two plungers produce high pressure in the fuel rail. Since the ECM controls the flow of fuel into the 2 plunger chambers, it　therefore controls the quantity and pressure of the fuel supply to the fuel rail. This optimizes performance, improves fuel economy and reduces NOx emissions.</p>
+                <p class="illust"><img src="image/RTW86EMF000201.png" class="MF" /></p>
+                <p class="explanation">Fuel rail<br/>Along with the employment of a common rail type electronic control fuel injection system, the fuel rail is provided between the fuel supply pump and the injectors in order to store highly pressurized fuel. The FRP sensor and pressure limiter are installed on the fuel rail. The FRP sensor detects the fuel pressure inside the fuel rail and sends signals to the ECM. Based on this signal, the ECM controls the fuel pressure inside the fuel rail via the FRP regulator of the fuel supply pump. The pressure limiter mechanically opens the valve in order to relieve the pressure when the fuel pressure inside the fuel rail is excessive.</p>
+                <p class="illust"><img src="image/RTWCZ0SH005901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Pressure limiter valve</li><li>FRP sensor</li></ol></div>
+                <p class="explanation">FRP sensor<br/>The FRP sensor is installed on the fuel rail and it detects the fuel pressure in the fuel rail, converts the pressure into a voltage signal, and sends the signal to the ECM. The ECM monitors the FRP sensor signal voltage. The higher pressure inside the fuel rail provides the higher signal voltage, while the lower pressure provides the lower signal voltage. The ECM calculates the actual fuel pressure from the voltage signal and uses the result calculated for fuel injection control and other control tasks.</p>
+          <p class="explanation">Pressure limiter valve<br/>The pressure limiter relieves pressure by opening the valve if abnormally high pressure is generated. The valve opens when the pressure in the fuel rail reaches approximately 220 MPa (32,000 psi), and closes when the pressure falls to approximately 50 MPa (7,250 psi). Fuel that is relieved from the pressure limiter returns to the fuel tank.</p>
+                <p class="illust"><img src="image/LNW41ASH001301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Valve</li><li>Valve body</li><li>Valve guide</li><li>Spring</li><li>Housing</li><li>Fuel inlet</li><li>Fuel outlet</li></ol></div>
+                <p class="explanation">FRP regulator<br/>The FRP regulator is installed on the fuel supply pump. The ECM controls the duty ratio of the FRP regulator in order to control the quantity of fuel that is supplied to the high-pressure plungers. Since only the quantity of fuel that is required for achieving the target fuel rail pressure is drawn in, the drive load of the fuel supply pump is decreased. When current flows to the FRP regulator, variable electromotive force is created in accordance with the duty ratio, moving the solenoid plunger to the right side and changing the opening of the fuel passage, thus regulating the fuel quantity. With the FRP regulator is OFF, the return spring stretches, completely opening the fuel passage and supplying fuel to the plungers. When the FRP regulator is ON, the fuel path is closed by the return spring force. By turning the FRP regulator ON/OFF, fuel is supplied in an amount corresponding to the actuation duty ratio, and fuel is discharged by the plungers.</p>
+                <p class="illust"><img src="image/LNW71ASH000601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel temperature sensor</li><li>FRP regulator</li></ol></div>
+                <p class="explanation">Fuel injection quantity control<br/>This control determines the fuel injection quantity by adding coolant temperature, fuel temperature, intake air temperature, atmospheric pressure and some switch input information corrections to the basic injection quantity are calculated by the ECM based on the engine operating conditions. More fuel rate indicates if the engine load is increased as the accelerator pedal is stepped on at constant engine speed.<br/>Combined with high pressure injection of atomized fuel, this control improves exhaust gas and ensures proper fuel consumption. Compared with conventional mechanical governors, an electronic control system provides higher degree of freedom of fuel injection quantity control, thereby presenting high accelerator response.</p>
+          <p class="explanation">Starting injection quantity control<br/>At the engine starting, optimum fuel injection quantity is controlled based on the information on the engine speed and coolant temperature. At low temperature, the fuel injection quantity increases. When the engine started completely, this boosted quantity mode at the starting is cancelled and normal running mode is restored.</p>
+          <p class="explanation">Idle speed control<br/>A control is made so as to achieve stable idling speed at all time regardless of changes to the engine over time or engine condition variations. The ECM sets target idling speed and controls the fuel injection quantity according to the engine conditions so that the actual engine speed follows the target idling speed ensuring a stable idling speed.</p>
+          <p class="explanation">Idle vibration control<br/>Controls are performed to reduce the engine vibration caused by torque variations between cylinders due to variations in fuel injection quantity of each cylinder or injector performance. The ECM corrects the injection quantity between cylinders based on the revolution signals from the CKP sensor. Normal range of correction quantity between cylinders is within (-5) - 5 mm3.</p>
+          <p class="explanation">EGR system<br/>The EGR system recirculates a part of the exhaust gas to the intake manifold, and by mixing in inert gas to the intake air, the combustion temperature is lowered and the generation of NOx is suppressed. The EGR control system uses an electronic control system to ensure both drivability and low emission. The microprocessor in the EGR valve operates the motor based on the target opening angle information sent from the ECM via CAN and controls the lift amount of the EGR valve. In addition, it feeds back the actual valve lift amount to the ECM and achieves accurate control of the EGR amount.  <br/>The EGR control starts when the conditions for engine speed, coolant temperature, intake air temperature, and barometric pressure are satisfied. Then, the valve opening is calculated according to the engine speed and the target fuel injection quantity. Based on this valve opening, the drive duty of the solenoid is provided and the valve is driven accordingly.</p>
+                <p class="illust"><img src="image/RTW56EMF001701.png" class="MF" /></p>
+                <div class="legend"><ol><li>EGR cooler</li><li>Coolant outlet</li><li>Coolant inlet</li><li>EGR valve</li><li>ECM</li><li>MAF sensor</li><li>Intake throttle valve</li></ol></div>
+                <p class="explanation">EGR valve<br/>The EGR valve is installed on the inlet manifold. The ECM determines the target EGR valve opening angle based on the engine driving condition. The microprocessor in the EGR valve controls the EGR valve by converting the motor driving duty ratio from 0% to an appropriate ratio based on the target opening angle information received from the ECM via CAN. When the duty ratio increases, the valve opens. When the duty ratio decreases, the valve closes. <br/>The EGR valve position information is detected by the microprocessor in the EGR valve and sent to the ECM via CAN. The ECM calculates the actual EGR valve opening angle using the signal received from the EGR valve.</p>
+                <p class="illust"><img src="image/RTWCZ0SH001101.png" class="SH" /></p>
+                <p class="explanation">Intake throttle valve<br/>The intake throttle valve is located on the inlet manifold. The ECM controls the intake throttle valve opening based on the engine running condition. The ECM controls the intake throttle valve by controlling the motor. The motor is controlled based on pulse width modulation signal sent from the ECM. The intake throttle valve opening angle is controlled by changing the duty ratio from 0 % to the appropriate percentage. When the duty ratio increases, the valve closes. When the duty ratio decreases, the valve opens.<br/>The intake throttle valve position is detected by the position sensor, and relayed to the ECM. The position sensor provides a signal to the ECM on the signal circuit, which is relative to the position changes of the intake throttle valve. The ECM should detect a low signal voltage at a small opening amount or closed position. The ECM should detect high signal voltage at a large opening amount.</p>
+                <p class="illust"><img src="image/RTWCZ0SH001201.png" class="SH" /></p>
+                <p class="explanation">Turbocharger<br/>The turbocharger is used to increase the amount of air that enters the engine cylinders. This allows a proportional increase of fuel to be injected into the cylinders, resulting in increased power output, more complete combustion of fuel, and increased cooling of the cylinder heads, pistons, valves, and exhaust gas. This cooling effect helps extend engine life.<br/>Heat energy and pressures in the engine exhaust gas are utilized to drive the turbine.<br/>Exhaust gas is directed to the turbine housing. The turbine housing acts as a nozzle to direct the shaft wheel assembly.<br/>Since the compressor wheel is attached directly to the shaft, the compressor wheel rotates at the same speed as the turbine wheel. Clean air from the air cleaner is drawn into the compressor housing and wheel. The air is compressed and delivered through a crossover pipe to the engine air intake manifold, then into the cylinders.</p>
+                <p class="illust"><img src="image/LNWB1ASH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Exhaust gas</li><li>Turbine wheel</li><li>Compressor wheel</li><li>Air cleaner</li><li>Intercooler</li></ol></div>
+                <p class="explanation">The amount of air pressure increase and air volume delivered to the engine from the compressor outlet is indirectly regulated by the turbocharger control actuator. The position of the turbocharger nozzles is controlled by the ECM. The ECM utilizes the turbocharger control solenoid valve and the boost pressure sensor to control the turbocharger nozzles. When the engine is not under load, the turbocharger nozzles are in open position A, or the non-boost condition. When the engine is under load, the ECM commands the control solenoid valve to close the turbocharger nozzles as in B, which increases the boost. The ECM changes the boost according to the load requirements of the engine. The ECM uses pulse width modulation on the control circuit to open and control the solenoid valve. <br/>The intercooler also helps the performance of the diesel. Intake air is drawn through the air cleaner and into the turbocharger compressor housing. Pressurized air from the turbocharger then flows forward through the intercooler located in the front of the radiator. The air from the intercooler then flows into the intake manifold. <br/>The intercooler is a heat exchange device that uses ambient airflow to dissipate heat from the intake air. Compression by the turbocharger causes the intake air to heat up. Decreasing the intake air temperature provides a denser intake charge into the same space, resulting in increased engine efficiency and power.</p>
+                <p class="illust"><img src="image/RTW76EMH000201.png" class="MH" /></p>
+                <div class="legend"><ol><li>Turbocharger control actuator</li><li>Nozzle</li></ol></div>
+                <p class="explanation">Cylinder block<br/>The cylinder block is cast iron, and has a highly rigid structure with appropriate rib placement.</p>
+          <p class="explanation">Piston<br/>The pistons are cast autothermatic pistons cast with aluminum alloy struts, and the combustion chamber is a spherical re-entrant system.</p>
+          <p class="explanation">Cylinder head<br/>The cylinder heads are made of aluminum alloy, and there are 4 valves per cylinder. The head bolts should be tightened using the plastic region rotational angle tightening method. Tightening with the plastic region rotational angle tightening method further increases the reliability and the durability.</p>
+          <p class="explanation">Connecting rod cap bolt<br/>Tighten the mounting bolt of the connecting rod cap using the plastic region rotational angle tightening method.</p>
+          <p class="explanation">Fuel filter with sedimenter<br/>This is a fuel filter that has a sedimenter to remove moisture content by using the difference of the relative density of light diesel oil and water.</p>
+                <p class="illust"><img src="image/RTWC1CSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clogging monitoring switch</li><li>Fuel filter element</li><li>Sedimenter switch</li></ol></div>
+                <p class="explanation">Cooling system<br/>The cooling system is a force-circulation system, and its main components are the water pump, the thermostat, the cooling fan, and the radiator. <br/>To quickly increase cold engine coolant temperature for smooth engine operation, the coolant is circulated by the water pump and the thermostat through the bypass pipe and back to the cylinder body. At this time, the coolant does not circulate through the radiator. <br/>When the coolant temperature reaches the specified value, the thermostat begins to open to gradually increase the amount of coolant circulating through the radiator. <br/>When the coolant temperature reaches the specified value, the thermostat is fully opened. Then all of the coolant circulates through the radiator to cool the engine effectively.</p>
+                <p class="illust"><img src="image/LNW72CLF000601.png" class="LF" /></p>
+                <div class="legend"><ol><li>Thermostat</li><li>Turbocharger</li><li>EGR cooler</li><li>Cylinder head</li><li>Oil cooler</li><li>Heater</li><li>Cylinder block</li><li>Water pump</li><li>Cooling fan</li><li>Radiator</li><li>Reserve tank</li></ol></div>
+                <p class="explanation">Water pump<br/>A centrifugal type water pump forcefully circulates the coolant through the cooling system.<br/>The water pump is not a disassembled type.</p>
+                <p class="illust"><img src="image/RTWC1DSH002001.png" class="SH" /></p>
+                <p class="explanation">Thermostat<br/>A wax pellet type thermostat is used.</p>
+                <p class="illust"><img src="image/RTW56BSF000201.png" class="SF" /></p>
+                <p class="explanation">Radiator<br/>The radiator is a tube type with a corrugated fin. To raise the boiling point of the coolant, a pressurized radiator cap is attached. The open valve pressure of the radiator cap is 93.3 - 122.7 kPa {0.95 - 1.25 kg/cm2 / 13.5 - 17.8 psi}.<br/>Opening/closing mechanism of the radiator cap is double-action.<br/>The vehicle with a manual transmission is not equipped with the oil cooler.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When removing the radiator cap, do not pull it by force, but loosen it until it cannot rotate further.</li>
+                    <li>To install the cap, turn the radiator cap until it does not turn.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56BSH000301.png" class="SH" /></p>
+                <p class="explanation">Starting system.<br/>The starting system is composed of the batteries, starter, ignition switch, inhibitor switch (for A/T vehicles only) and starter relay, etc. Each of these main components are wired as shown in the starter circuit diagram.</p>
+                <p class="illust"><img src="image/LNW21EMF000601.png" class="MF" /></p>
+                <div class="legend"><ol><li>Pinion clutch</li><li>Ring gear</li><li>Shift lever</li><li>Magnetic switch</li><li>S-terminal</li><li>B-terminal</li><li>Inhibitor switch, for A/T only</li><li>Starter relay</li><li>Starter switch</li><li>Battery</li><li>Armature</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Starter circuit diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW46DSH005501.png" class="SH" /></p>
+                <p class="explanation">Starter<br/>The starter is a magnetic shift type, inner gearing mesh method reduction starter. <br/>The contact point of the magnetic switch closes and the armature rotates when the ignition switch is turned ON. At the same time, the plunger is drawn in and the pinion is pushed to the front via the shift lever to mesh with the ring gear, and when the ring gear rotates the engine starts. After the engine starts, the plunger returns, the pinion separates from the ring gear, and the armature stops rotating when the ignition switch is turned OFF. When the engine rotation increases faster than the pinion, the pinion will turn in reverse, but because the pinion is idling, it does not drive the armature.</p>
+                <p class="illust"><img src="image/RTW460LF000201.png" class="LF" /></p>
+                <div class="legend"><ol><li>Lead wire</li><li>Bolt</li><li>Magnetic switch assembly</li><li>Torsion spring</li><li>Plunger</li><li>Dust cover</li><li>Magnetic switch</li><li>Screw</li><li>Through bolt</li><li>Rear cover</li><li>Motor assembly</li><li>Brush holder</li><li>Yoke</li><li>Armature</li><li>Bolt</li><li>Bearing retainer</li><li>Pinion assembly</li><li>Pinion stopper clip</li><li>Pinion stopper</li><li>Return spring</li><li>Pinion shaft</li><li>Clutch</li><li>Dust cover</li><li>Shift lever</li><li>Gear case</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Ignition switch</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1JSF000201.png" class="SF" /></p>
+                <p class="explanation">Charging system<br/>The charging system is an IC integral regulator charging method. The main components are connected as shown in the circuit diagram. The regulator is an integrated solid-state type regulator. It is built into the generator, and installed onto the rear end cover together with the brush holder assembly. <br/>Generator maintenance such as adjusting the voltage is unnecessary. <br/>There are 12 diodes in the rectifier connected to the stator coil. They convert alternating current voltage into direct current voltage. The direct current voltage is connected to the generator output terminal. <br/>The generator cannot be disassembled.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Generator</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1JMF000101.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Circuit diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1JMF000201.png" class="MF" /></p>
+                <div class="legend"><ol><li>Stator coil</li><li>IC regulator</li><li>Battery</li><li>Rotor coil</li></ol></div>
+                <p class="explanation">Exhaust system<br/>The main components consist of the front exhaust pipe, exhaust silencer, and rear exhaust pipe.</p>
+                <p class="illust"><img src="image/RTWD1GLF000101.png" class="LF" /></p>
+                <div class="legend"><ol><li>Front hanger rubber</li><li>Front exhaust pipe</li><li>Silencer hanger rubber</li><li>Rear hanger rubber</li><li>Rear exhaust pipe</li><li>Rear hanger rubber</li><li>Exhaust silencer</li><li>Silencer hanger rubber</li></ol></div>
+                <p class="explanation">Lubrication system<br/>A full-flow bypass integrated filter element, water-cooling oil cooler, and piston coolant oil jet are adopted for the lubrication system.<br/>Oil flows through the water cooling oil cooler and around the sliding sections from the oil gallery for lubrication.</p>
+                <p class="illust"><img src="image/RTWE1BLF000101.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Engine control component location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWCZ0SH003201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Accelerator pedal position sensor</li></ol></div>
+                <p class="illust"><img src="image/RTWCZ0SH003301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Barometric pressure sensor</li></ol></div>
+                <p class="illust"><img src="image/RTWEZ0SH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>1st cylinder injector</li><li>2nd cylinder injector</li><li>3rd cylinder injector</li><li>4th cylinder injector</li></ol></div>
+                <p class="illust"><img src="image/RTWEZ0SH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>CMP sensor</li><li>Engine coolant temperature sensor</li></ol></div>
+                <p class="illust"><img src="image/RTWCZ0SH003801.png" class="SH" /></p>
+                <div class="legend"><ol><li>CKP sensor</li></ol></div>
+                <p class="illust"><img src="image/RTWEZ0SH001601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Boost sensor</li><li>Turbocharger control solenoid valve</li></ol></div>
+                <p class="illust"><img src="image/RTWEZ0SH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>EGR valve</li><li>Intake throttle valve</li></ol></div>
+                <p class="illust"><img src="image/RTWEZ0SH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Common rail</li><li>Pressure limiter valve</li><li>FRP sensor</li></ol></div>
+                <p class="illust"><img src="image/RTWCZ0SH002901.png" class="SH" /></p>
+                <div class="legend"><ol><li>FRP regulator</li><li>Fuel temperature sensor</li></ol></div>
+                <p class="illust"><img src="image/RTWEZ0SH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Swirl control solenoid valve</li><li>Swirl control actuator</li></ol></div>
+                <p class="illust"><img src="image/RTWCZ0SH003101.png" class="SH" /></p>
+                <div class="legend"><ol><li>MAF sensor</li></ol></div>
+                <p class="illust"><img src="image/RTWCZ0LH000101.png" class="LH" /></p>
+                <div class="legend"><ol><li>Vehicle speed sensor, M/T specification</li><li>Vehicle speed sensor, A/T specification 2WD</li><li>Vehicle speed sensor, 4WD</li></ol></div>
+                <p class="illust"><img src="image/RTWEZ0SH000601.png" class="SH" /></p>
+                <div class="legend"><ol><li>ECM</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Vacuum hose routing diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWCZ0SF001001.png" class="SF" /></p>
+                <div class="legend"><ol><li>Swirl control solenoid valve</li><li>Actuator control vacuum hose</li><li>Swirl control actuator</li><li>Brake booster</li><li>Vacuum pipe</li><li>Vacuum pump</li><li>Actuator control vacuum hose</li><li>Air cleaner</li><li>Turbocharger control actuator</li><li>Solenoid valve ventilation hose</li><li>Turbocharger control solenoid valve</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>General wiring diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1AXF000201.png" class="XF" /></p>
+          <p class="illust"><img src="image/RTWEZ0LF000101.png" class="LF" /></p>
+          <p class="illust"><img src="image/RTWEZ0MF000401.png" class="MF" /></p>
+                <p class="explanation">ECM pin layout (connector A)</p>
+                <table cellspacing="0"><tbody><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="450" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A1</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">ECM power ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A2</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A3</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">ECM power ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A4</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">ECM power ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A5</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A6</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">MIL control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A7</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A8</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A9</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A10</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Glow plug relay control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A11</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A12</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">A/C compressor relay control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A13</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A14</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Starter cut relay control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A15</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A16</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A17</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A18</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A19</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Vehicle speed sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A20</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Accelerator pedal position sensor 1 shield ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="bottom">A21</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">ECM main relay control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A22</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">MAF sensor low reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A23</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A24</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Ignition voltage</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A25</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Cruise main switch signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A26</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Clutch switch 1 signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A27</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Brake switch signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A28</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A29</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A30</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Clutch switch 2 signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A31</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A32</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A33</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A34</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Thermo relay signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A35</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A36</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A37</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A38</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A39</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Accelerator pedal position sensor 2 shield ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A40</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">ECM main relay control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A41</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Accelerator pedal position sensor 1 and cruise control switch low reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A42</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Accelerator pedal position sensor 1 5 volts reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A43</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">ECM signal ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A44</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A45</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Brake switch 1 signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A46</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Ignition switch signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A47</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A48</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A49</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A50</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">P or N range switch (A/T)<br/>Neutral switch (M/T)</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A51</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A52</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Diagnostic request switch</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A53</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A54</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A55</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A56</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A57</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A58</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CAN high signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A59</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">MAF sensor shield ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A60</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Accelerator pedal position sensor 2, barometric pressure sensor and IAT sensor low reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A61</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Accelerator pedal position sensor 2 and barometric pressure sensor 5 volts reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A62</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">ECM signal ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A63</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Accelerator pedal position sensor 1 signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A64</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Accelerator pedal position sensor 2 signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A65</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Cruise control switch signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A66</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A67</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A68</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A69</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">MAF sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A70</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A71</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Barometric pressure sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A72</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">IAT sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A73</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A74</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A75</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A76</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A77</td><td width="450" colspan="1" rowspan="1" align="left" valign="bottom">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A78</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CAN low signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A79</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A80</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">A81</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">ECM case ground</td></tr></tbody></table>
+                <p class="explanation">ECM pin layout (connector B)</p>
+                <table cellspacing="0"><tbody><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">PIN No.</td><td width="450" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B1</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">FRP sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B2</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Fuel temperature sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B3</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Engine coolant temperature sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B4</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Intake throttle position sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B5</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Turbocharger control solenoid valve low side</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B6</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CMP sensor and FRP sensor 5 volts reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B7</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Swirl control solenoid valve control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B8</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">FRP regulator low side</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B9</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">FRP sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B10</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Boost pressure sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B11</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B12</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B13</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B14</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CKP sensor, intake throttle position sensor and boost pressure<br/>sensor 5 volts reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B15</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Turbocharger control solenoid valve high side</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B16</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">FRP regulator low side</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B17</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CMP sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B18</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B19</td><td width="450" colspan="1" rowspan="1" align="left" valign="bottom">CMP sensor and FRP sensor shield ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B20</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CMP sensor and FRP sensor low reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B21</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B22</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B23</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Intake throttle control low side</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B24</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">FRP regulator control high side</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B25</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Fuel filter switch signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B26</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CKP sensor signal</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B27</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CKP sensor and boost pressure sensor shield ground</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B28</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">CKP sensor, intake throttle position sensor, boost pressure sensor, fuel temperature sensor and engine coolant temperature sensor low reference</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B29</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B30</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B31</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Intake throttle drive voltage</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B32</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">FRP regulator control high side</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B33</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B34</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B35</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Common 2 (Cylinder #2 and #3) fuel injector charge voltage</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B36</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Cylinder #4 fuel injector control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B37</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Cylinder #2 fuel injector control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B38</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Cylinder #1 fuel injector control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B39</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Cylinder #3 fuel injector control</td></tr><tr><td width="48" colspan="1" rowspan="1" align="center" valign="middle">B40</td><td width="450" colspan="1" rowspan="1" align="left" valign="middle">Common 1 (Cylinder #1 and #4) fuel injector charge voltage</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747270">2. Engine number 
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Engine number stamping position</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1BSH028701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine model</li><li>Engine number</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

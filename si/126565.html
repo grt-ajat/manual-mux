@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Primary specifications of engine null (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Primary specifications of engine
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie743967">1. Primary specifications of engine
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Engine mechanical primary specifications</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="190" colspan="3" rowspan="1" align="center" valign="middle">Item</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Specifications</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Engine model</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">4JK1</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Diesel, 4-cycle, water-cooled inline DOHC</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Combustion chamber type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Direct injection type</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Cylinder liner type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">No liner</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Number of cylinders - inner diameter × stroke</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">4 - 95.4 × 87.4 mm {3.76 × 3.44 in}</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Total piston displacement</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 2.499 L {152 in3}</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Compression ratio</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">18.1</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Compression pressure</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 3 MPa { 435 psi } /200 rpm</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Idling speed</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 675 to 725 r/min</td></tr><tr><td width="160" colspan="2" rowspan="2" align="left" valign="middle">Valve clearance (Between cam and roller)</td><td width="30" colspan="1" rowspan="1" align="left" valign="middle">Intake</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 0.15 mm { 0.0059 in } , when cool</td></tr><tr><td width="30" colspan="1" rowspan="1" align="left" valign="middle">Exhaust</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 0.15 mm { 0.0059 in } , when cool</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Ignition method</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Compressed ignition</td></tr><tr><td width="190" colspan="3" rowspan="1" align="left" valign="middle">Injection order</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">1, 3, 4, 2</td></tr><tr><td width="60" colspan="1" rowspan="9" align="left" valign="top">Lubrication device</td><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Lubricating method</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Force feed method</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Oil pump type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Gear type</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Lubricant total capacity</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 7.3 L { 1.93 US gal / 1.61 Imp.gal }</td></tr><tr><td width="100" colspan="1" rowspan="4" align="left" valign="middle">Oil amount when replacing</td><td width="30" colspan="1" rowspan="2" align="left" valign="middle">2WD</td><td width="298" colspan="1" rowspan="1" align="center" valign="bottom">： 5.4 L { 1.43 US gal / 1.19 Imp.gal } When replacing the engine oil and oil filter</td></tr><tr><td width="298" colspan="1" rowspan="1" align="center" valign="bottom">： 5.2 L { 1.37 US gal / 1.14 Imp.gal } Replacing only the engine oil</td></tr><tr><td width="30" colspan="1" rowspan="2" align="center" valign="middle">4WD</td><td width="298" colspan="1" rowspan="1" align="center" valign="bottom">： 5.8 L { 1.53 US gal / 1.28 Imp.gal } When replacing the engine oil and oil filter</td></tr><tr><td width="298" colspan="1" rowspan="1" align="center" valign="bottom">： 5.6 L { 1.48 US gal / 1.23 Imp.gal } Replacing only the engine oil</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Oil filter type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Full-flow filter, cartridge type</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Oil cooler type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Built-in type, water cooled</td></tr><tr><td width="60" colspan="1" rowspan="9" align="left" valign="top">Cooling device</td><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Cooling method</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Coolant forced-circulation system</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Radiator type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Corrugated fin type, force feed type</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Water pump type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Centrifugal impeller type, belt driven type</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Thermostat type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Wax type unit</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Coolant capacity<br/>Engine only</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 4.0 L { 0.88 Imp.gal }</td></tr><tr><td width="130" colspan="2" rowspan="4" align="left" valign="middle">Coolant capacity<br/>Radiator included</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 10.1 L { 2.22 Imp.gal } MT models, with heater</td></tr><tr><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 10.0 L { 2.20 Imp.gal } AT models, with heater</td></tr><tr><td width="298" colspan="1" rowspan="1" align="center" valign="bottom">： 9.4 L { 2.07 Imp.gal } MT models, excluding those with heater</td></tr><tr><td width="298" colspan="1" rowspan="1" align="center" valign="bottom">： 9.3 L { 2.05 Imp.gal } AT models, excluding those with heater</td></tr><tr><td width="60" colspan="1" rowspan="2" align="left" valign="top">Fuel device</td><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Injection pump type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Fuel supply pump, common rail (fuel rail) type</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Injection nozzle type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Electronically controlled injector, 8 holes</td></tr><tr><td width="60" colspan="1" rowspan="4" align="left" valign="top">Charging device</td><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Generator type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Alternating current type</td></tr><tr><td width="130" colspan="2" rowspan="2" align="left" valign="middle">Power output</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 12 V - 90 A</td></tr><tr><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 12 V - 120 A</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Regulator type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">IC type</td></tr><tr><td width="60" colspan="1" rowspan="3" align="left" valign="top">Starter device</td><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Starting method</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Engage magnet type</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Starter type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Reduction type</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Power output</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 12 V - 2.3 kW</td></tr><tr><td width="60" colspan="1" rowspan="2" align="left" valign="top">Preheat device</td><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Type</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">Glow plug</td></tr><tr><td width="130" colspan="2" rowspan="1" align="left" valign="middle">Glow plug standard - current</td><td width="298" colspan="1" rowspan="1" align="center" valign="middle">： 12 V - 3.5 A</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Primary specifications of the cooling system</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="273" colspan="3" rowspan="1" align="center" valign="middle">Item</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">Specifications</td></tr><tr><td width="123" colspan="1" rowspan="5" align="left" valign="top">Radiator</td><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Heat dissipation capacity</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 93 kW {80.2 kcal/h}</td></tr><tr><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Heat dissipation surface</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 11.63 m2 {125.2 ft2}</td></tr><tr><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Front surface area</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 0.28 m2 {3 ft2}</td></tr><tr><td width="110" colspan="1" rowspan="2" align="left" valign="top">Dry mass</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">MT models</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 5.2 kg { 11.5 lb }</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">AT models</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 5.4 kg { 11.9 lb }</td></tr><tr><td width="123" colspan="1" rowspan="1" align="left" valign="top">Radiator cap</td><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Open valve pressure</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 93.3 to 122.7 kPa { 0.95 to 1.25 kgf/cm2 / 13.5 to 17.8 psi }</td></tr><tr><td width="123" colspan="1" rowspan="3" align="left" valign="top">Water pump</td><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Pulley ratio</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">1.250</td></tr><tr><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Delivery amount<br/>Pump rotation speed 5600 rpm<br/>At water temperature 30 ℃ {86 °F}</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 240 L { 52.8 Imp.gal } /min</td></tr><tr><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Pump bearing type</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">Double row axle</td></tr><tr><td width="123" colspan="1" rowspan="3" align="left" valign="top">Thermostat</td><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Initial opening temperature</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 85 ℃ { 185 °F }</td></tr><tr><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Full-open temperature</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 100 ℃ { 212 °F }</td></tr><tr><td width="150" colspan="2" rowspan="1" align="left" valign="middle">Valve lift amount when fully opened</td><td width="225" colspan="1" rowspan="1" align="center" valign="middle">： 10 mm { 0.39 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Primary specifications of lubrication system</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="218" colspan="1" rowspan="1" align="center" valign="middle">Item</td><td width="280" colspan="1" rowspan="1" align="center" valign="middle">Specifications</td></tr><tr><td width="218" colspan="1" rowspan="1" align="left" valign="middle">Oil pump relief valve operating pressure</td><td width="280" colspan="1" rowspan="1" align="left" valign="middle">： 490 to 686 kPa { 5.0 to 7.0 kgf/cm2 / 71.1 to 99.5 psi }</td></tr><tr><td width="218" colspan="1" rowspan="1" align="left" valign="middle">Oil cooler relief valve operating pressure</td><td width="280" colspan="1" rowspan="1" align="left" valign="middle">： 176 to 216 kPa { 1.8 to 2.2 kgf/cm2 / 25.5 to 31.3 psi }</td></tr><tr><td width="218" colspan="1" rowspan="1" align="left" valign="middle">Oil filter relief valve operating pressure</td><td width="280" colspan="1" rowspan="1" align="left" valign="middle">： 80 to 120 kPa { 0.8 to 1.2 kgf/cm2 / 11.6 to 17.4 psi }</td></tr><tr><td width="218" colspan="1" rowspan="1" align="left" valign="middle">Oil pressure switch operating pressure</td><td width="280" colspan="1" rowspan="1" align="left" valign="middle">： 29.4 to 49.0 kPa { 0.3 to 0.5 kgf/cm2 / 4.3 to 7.1 psi }</td></tr><tr><td width="218" colspan="1" rowspan="1" align="left" valign="middle">Regulating valve</td><td width="280" colspan="1" rowspan="1" align="left" valign="middle">： 176 to 216 kPa { 1.8 to 2.2 kgf/cm2 / 25.5 to 31.3 psi }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Primary specifications of the electrical system</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="400" colspan="3" rowspan="1" align="left" valign="middle">Generator primary specifications</td></tr><tr><td width="200" colspan="1" rowspan="1" align="left" valign="middle">Battery power source</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 12 V</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 12 V</td></tr><tr><td width="200" colspan="1" rowspan="1" align="left" valign="middle">Generator output</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 90 A</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 120 A</td></tr><tr><td width="200" colspan="1" rowspan="1" align="left" valign="middle">Rotational direction , seen from the pulley side</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Clockwise</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Clockwise</td></tr><tr><td width="200" colspan="1" rowspan="1" align="left" valign="middle">Rated speed</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 5000 r/min</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 5000 r/min</td></tr><tr><td width="200" colspan="1" rowspan="1" align="left" valign="middle">Maximum speed</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 18000 r/min</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">： 18000 r/min</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Primary specifications of the exhaust system</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="left" valign="top">Silencer<br/>and tail pipe</td><td width="98" colspan="1" rowspan="1" align="center" valign="middle">Type</td><td width="290" colspan="1" rowspan="1" align="center" valign="middle">Round section shell structures of double-skin and end plate, baffle and perforated tube internal structures</td></tr><tr><td width="110" colspan="1" rowspan="2" align="left" valign="top">Installation</td><td width="98" colspan="1" rowspan="1" align="center" valign="middle">Suspension<br/>Number of points</td><td width="290" colspan="1" rowspan="1" align="center" valign="middle">5</td></tr><tr><td width="98" colspan="1" rowspan="1" align="center" valign="middle">Type</td><td width="290" colspan="1" rowspan="1" align="center" valign="middle">Rubber</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission disassembly (MUX)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission
+          disassembly
+              (MUX)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757638">1. Transmission
+                  cleaning
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the external portion of the unit with solvent.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757078">2. Drain plug
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the drain plug from the rear cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the drain plug and the gasket.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756853">3. Transmission oil
+                  drain
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Drain the transmission oil from the transmission.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757640">4. Front cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the front cover from the front case.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756896">5. Quadrant box
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the quadrant box from the rear case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the quadrant box and then remove 2 dowel pins.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756897">6. Control unit block
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the control unit block from the control rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Slide the control unit block forward, and remove the taper bolt. And then remove the control unit block.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the taper bolt.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757267">7. Reverse switch
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the reverse switch from the front case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The connector color of the reverse switch is brown.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757041">8. Neutral switch
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the neutral switch from the rear case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The connector color of the neutral switch is brown.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757320">9. Detent assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the detent assembly from the front case and the rear case.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the removed detent assembly.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757426">10. Bracket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the bracket from the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 harness brackets.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757262">11. End cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the end cover from the rear case.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756910">12. Output shaft rear bearing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the transmission assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BSH006001.png" class="SH" /></p>
+                <p class="instructions">1. Remove the snap ring from the output shaft.</p>
+          <p class="instructions">2. Remove the output shaft rear bearing from the output shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the output shaft rear bearing inner race.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BSH003901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Output shaft rear bearing inner race</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756695">13. Rear case
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the rear case from the front case.</p>
+          <p class="instructions">2. Remove the magnet from the intermediate plate.</p>
+                <p class="illust"><img src="image/RTWC5CSH040301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rear case</li><li>Magnet</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757634">14. Intermediate plate
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intermediate plate from the front case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Wrap the input shaft end with adhesive tape so as not to damage the lip section of the oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH040401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Intermediate plate</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the adhesive tape from the input shaft edge.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757478">15. Gutter
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the gutter from the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the front and rear gutters.</li>
+                    <li>Remove the 2nd and 5th counter gutters.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the front and rear gutters.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH040001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front gutter</li><li>5th counter gutter</li><li>Rear gutter</li><li>2nd counter gutter</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756608">16. Shift rod bracket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the shift rod bracket from the intermediate plate.</p>
+                <p class="illust"><img src="image/RTWC5CSH008301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift rod bracket</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756833">17. Shift and select rod assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the shift and select rod assembly from the intermediate plate.</p>
+                <p class="illust"><img src="image/RTWC5CSH014001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shift and select rod assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756834">18. Control rod assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the control rod assembly from the intermediate plate.</p>
+                <p class="illust"><img src="image/RTWC5CSH014101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Control rod assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756893">19. 1st - 2nd shift rod
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the spring pin from the 1st - 2nd shift rod using a spring pin remover.</p>
+          <p class="instructions">2. Remove the 1st - 2nd shift rod from the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 1st - 2nd shift rod together with the 1st - 2nd shift block as a unit.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH014201.png" class="SH" /></p>
+                <div class="legend"><ol><li>1st - 2nd shift arm</li><li>1st - 2nd shift rod</li><li>1st - 2nd shift block</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757328">20. 1st - 2nd shift arm
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 1st - 2nd shift arm from the sleeve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756844">21. Reverse shift rod
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the spring pin from the reverse shift arm using a spring pin remover.</p>
+          <p class="instructions">2. Remove the snap ring from the reverse shift rod.</p>
+                <p class="illust"><img src="image/RTWC5CSH014301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert the shift block lever into the shift rod grooves of the 3rd, 4th, and 5th shift rods.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH014401.png" class="SH" /></p>
+                <div class="legend"><ol><li>3rd - 4th - 5th shift rod</li><li>Shift rod groove</li><li>5th reverse shift block</li><li>Reverse shift rod</li><li>Shift block lever</li><li>123.5 mm {4.86 in}</li></ol></div>
+                <p class="instructions">3. Remove the reverse shift rod from the intermediate plate.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756752">22. Reverse shift arm
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the reverse shift arm from the sleeve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757031">23. 3rd - 4th and 5th shift rod
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the spring pin from the 3rd - 4th shift arm using a spring pin remover.</p>
+          <p class="instructions">2. Remove the spring pin from the 5th shift arm using a spring pin remover.</p>
+          <p class="instructions">3. Remove the snap ring from the 3rd - 4th and 5th shift rod.</p>
+                <p class="illust"><img src="image/RTWC5CSH014501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+                <p class="instructions">4. Remove the 3rd - 4th and 5th shift rod from the intermediate plate.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757039">24. 5th shift arm
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 5th shift arm from the 3rd - 4th and 5th shift rod.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756698">25. 5th - reverse shift block
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 5th reverse shift block from the 3rd - 4th and 5th shift rod.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756614">26. 3rd - 4th shift arm
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 3rd - 4th shift arm from the 3rd - 4th and 5th shift rod.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756759">27. Output shaft
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the output shaft from the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756565">28. Output counter gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the snap ring from the counter shaft assembly.</p>
+                <p class="illust"><img src="image/RTW77BSH003701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+                <p class="instructions">2. Remove the output counter gear from the counter shaft assembly.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756690">29. Pilot bearing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the pilot bearing from the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756905">30. Pilot bearing spacer
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the pilot bearing spacer from the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756691">31. 3rd - 4th block ring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 3rd - 4th block ring from the 3rd - 4th synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the block ring at the output shaft side.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757467">32. Plate spring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the plate spring from the 3rd - 4th synchronizer assembly.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757061">33. 3rd - 4th synchronizer assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the snap ring from the input shaft using a snap ring pliers.</p>
+                <p class="illust"><img src="image/RTW77BSH005001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+                <p class="instructions">2. Remove the 3rd - 4th synchronizer assembly from the input shaft.</p>
+          <p class="instructions">3. Remove the 3rd - 4th block ring from the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756760">34. 3rd gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 3rd gear from the input shaft.</p>
+          <p class="instructions">2. Remove the needle bearing from the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757406">35. 3rd counter gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 3rd counter gear from the counter shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757398">36. 5th counter gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 5th counter gear from the counter shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757418">37. Counter shaft assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the counter shaft assembly from the intermediate plate.</p>
+          <p class="instructions">2. Remove the counter middle roller bearing from the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the counter middle roller bearing outer race.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757204">38. 5th synchronizer assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the snap ring from the input shaft using a snap ring pliers.</p>
+                <p class="illust"><img src="image/RTW77BSH005101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Snap ring</li></ol></div>
+                <p class="instructions">2. Remove the 5th synchronizer assembly from the input shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757137">39. 5th block ring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 5th block ring from the 5th gear.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757614">40. 5th gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the 5th gear from the input shaft.</p>
+          <p class="instructions">2. Remove the needle bearing from the input shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the two-piece type needle bearings.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757076">41. Snap ring
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the snap ring from the intermediate plate using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hold the snap ring in an open condition with the snap ring pliers, and slide the input shaft case toward the front case side to take out the snap ring.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of heating, ventilation air conditioning null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of heating, ventilation air conditioning
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751746">1. Function, structure, operation of heating, ventilation air conditioning
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Heater<br/>After the engine warms up, the heater system uses the warm engine coolant to supply warm air to the vehicle cabin. <br/>Heater<br/>Outside air is supplied to the vehicle cabin through the heater core of the heater evaporator unit assembly. <br/>The vehicle cabin temperature is optimally adjusted by controlling the mixture of air between the outside air and the heater core. <br/>The opening/closing position of the air mix door of the heater evaporator unit assembly is adjusted by operating the temperature adjustment dial for the manual A/C and auto A/C together, controlling the amount of air that passes through the heater core. This in turn controls the temperature inside the vehicle cabin. The air outlet inside the vehicle cabin can be selected arbitrarily by changing the mode of the air outlet selector dial of the manual A/C or the air outlet selector switch of the auto A/C. The inside/outside air change lever of the manual A/C or the inside/outside air change switch of the auto A/C is used for selecting between outside air intake and inside air recirculation. When set to FRESH, the outside air is always taken inside. When it is set to RECIRC, it enables inside air recirculation without taking in outside air. Although it speeds up heating of the vehicle cabin, it is better to use FRESH in order to ventilate and prevent fogging of the windshield, etc.</p>
+          <p class="explanation">Control lever assembly  The control lever employs cables to select the air outlet and adjust the temperature for the heater evaporator unit assembly, and to switch between inside and outside air for the blower assembly. The fan control controls the outlet air volume in 4 levels from "LOW" to "HIGH" according to the blower resistor.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Models with manual A/C</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BLF001601.png" class="LF" /></p>
+                <div class="legend"><ol><li>Rear window defogger switch</li><li>Fan speed control dial</li><li>A/C switch</li><li>Temperature adjustment dial</li><li>Air selector lever</li><li>Outlet selector dial</li></ol></div>
+                <p class="explanation">Rear window defogger switch<br/>Use this switch for defogging or defrosting the rear window glass.</p>
+          <p class="explanation">Fan speed control dial (Manual)<br/>The fan speed control dial controls the speed of the blower motor in 4 levels via the blower motor assembly in the manual mode.</p>
+          <p class="explanation">Inside/outside air change lever (Manual)<br/>By sliding this lever to the left or right, either FRESH or RECIRC can be selected. <br/>The control lever employs cables to select the air outlet and adjust the temperature for the heater evaporator unit assembly, and to switch between inside and outside air for the blower assembly. The fan control controls the outlet air volume in 4 levels from "LOW" to "HIGH" according to the blower resistor.</p>
+          <p class="explanation">Outlet selector dial (Manual)<br/>The outlet from which to blow air can be selected using this switch.<br/>The air outlet from which to blow air is selected by adjusting the position of the rotary type mode door located inside the heater evaporator unit assembly. This mode door adjusts the opening range of each outlet of the heater evaporator unit assembly and blocks the opening sections, enabling selection of 3 blowing patterns.</p>
+          <p class="explanation">Control panel assembly<br/>The control panel assembly performs blow outlet selection, temperature adjustment of the heater evaporator unit assembly, and inside/outside air change of the blower assembly according to the actuator. The fan control regulates the outlet air volume in 4 levels according to the blower module assembly in the manual mode.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Models with auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BLF001801.png" class="LF" /></p>
+                <div class="legend"><ol><li>OFF switch</li><li>A/C switch</li><li>AUTO switch</li><li>Display panel indication</li><li>Fan speed control switch</li><li>Windshield defroster switch</li><li>Outside air intake switch</li><li>Inside air recirculation switch</li><li>Rear window defogger switch</li><li>Temperature adjustment dial</li><li>Outlet selector switch (MODE switch)</li></ol></div>
+                <p class="explanation">Fan speed control switch (Auto)<br/>The blower motor rotation is controlled by this switch via the blower module to adjust the amount of air blow from the air outlet.<br/>The switch can be set to the five following positions.<br/>LOW<br/>MEDIUM LOW<br/>MEDIUM<br/>MEDIUM HIGH<br/>HIGH</p>
+          <p class="explanation">Inside air recirculation switch (Auto)<br/>Pressing this switch will select RECIRC. <br/>When the inside air recirculation switch is pressed, inside air is recirculated without taking in the outside air.</p>
+          <p class="explanation">Outside air intake switch (Auto)<br/>Pressing this switch will select FRESH. <br/>When the outside air intake switch is pressed, air will continuously be brought in from the outside. <br/>The blower fan has a function to maintain proper ventilation by intake of the outside air into the vehicle cabin.</p>
+          <p class="explanation">Outlet selector switch (MODE switch) (Auto)<br/>The outlet from which to blow air can be selected using this switch.<br/>The air outlet from which to blow air is selected by adjusting the position of the rotary type mode door located inside the heater evaporator unit assembly. This mode door adjusts the opening range of each outlet of the heater evaporator unit assembly and blocks the opening sections, enabling selection of 5 blowing patterns.<br/>"DEFROST" can be selected by pressing the defroster switch. The A/C automatically turns ON when the defroster switch is pressed.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear cooler</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE7BMF000201.png" class="MF" /></p>
+                <div class="legend"><ol><li>Rear cooler fan speed control dial</li></ol></div>
+                <p class="explanation">Rear cooler fan speed control dial The fan speed control dial controls the speed of the blower motor in levels via the blower motor assembly in the manual mode.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Front blower</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BLF000801.png" class="LF" /></p>
+                <div class="legend"><ol><li>Intake door</li><li>Blower fan</li><li>Blower motor</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Front outlet (Manual A/C and auto A/C)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE7BSF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>Windshield outlet</li><li>Door windows outlet</li><li>Driver side outlet</li><li>Foot outlet</li><li>Passenger side outlet</li></ol></div>
+                <p class="explanation">FACE (Auto)<br/>At this position, the air is blown into the vehicle cabin through ventilation ducts 3 and 5. <br/>The amount of air is controlled by the fan switch knob.</p>
+          <p class="explanation">FACE (Manual)<br/>At this position, the air is blown into the vehicle cabin through ventilation ducts 3 and 5. The amount of air is controlled by the fan speed control dial.</p>
+          <p class="explanation">BI-LEVEL At this position, air is divided into two groups in the heater evaporator unit assembly and supplied to the vehicle cabin through ventilation ducts 3 and 5 and foot duct 4.</p>
+          <p class="explanation">FOOT<br/>Setting to this position supplies the entire amount of air to the feet through foot duct 5.</p>
+          <p class="explanation">DEF/FOOT At this position, air is divided into two groups in the heater evaporator unit assembly and blown in through defroster nozzles 1 and 2 and foot duct 4.</p>
+          <p class="explanation">DEFROST (Auto) At this position, a large portion of the air is blown to front window 4 and a small amount of air is blown to side window 3.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Mode door operation diagram (Manual A/C and auto A/C)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BLF001501.png" class="LF" /></p>
+                <div class="legend"><ol><li>Mode door (For DEF)</li><li>Evaporator core</li><li>Air mix door</li><li>Heater core</li><li>Mode door (For FOOT)</li><li>Mode door (For FACE)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Mode door structural diagram (BI-LEVEL mode) (Manual A/C and auto A/C)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BMF002601.png" class="MF" /></p>
+                <div class="legend"><ol><li>Mode door (For DEF)</li><li>Evaporator core</li><li>Air mix door</li><li>Heater core</li><li>Mode door (For FOOT)</li><li>Mode door (For FACE)</li></ol></div>
+                <p class="explanation">Temperature control dial (Manual)<br/>Cooling intensity adjustment from MAX COLD to MIN COLD is available by adjusting the temperature of the air blown from the air outlet with this dial.</p>
+          <p class="explanation">Temperature control dial (Auto)<br/>Cooling intensity adjustment from MAX COLD to MIN COLD is available by adjusting the temperature of the air blown from the air outlet using this dial.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When set to "MAX HOT", FACE mode</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7ASF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>Mode door (For DEF)</li><li>Air mix door</li><li>Evaporator core</li><li>Heater core</li><li>Mode door (For FOOT)</li><li>Mode door (For FACE)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Roof air outlet</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The fan direction can be adjusted using the lever.</p>
+                <p class="illust"><img src="image/RTWE7BMF000401.png" class="MF" /></p>
+                <div class="legend"><ol><li>3rd seat outlet</li><li>2nd seat air outlet</li><li>Rear cooler fan speed control dial</li></ol></div>
+                <p class="explanation">Manual A/C<br/>The manual A/C in this vehicle is comprised of a compressor, evaporator, condenser, fan switch, etc.<br/>The A/C is started when the fan switch is turned ON and the magnetic clutch is engaged at the engine startup. Also, it stops operating when the fan switch is turned OFF.<br/>Besides this switch, there are functions for temporarily cutting off the A/C using systems in the A/C cycle. Such functions include detection of abnormal refrigerant pressure by the pressure switch, detection of outlet air blow temperature by the thermo switch for preventing freezing of the evaporator core, and detection of engine water temperature by the thermo switch equipped in some vehicle types.</p>
+          <p class="explanation">A/C cycle<br/>The A/C cycle has 4 functions described below. The refrigerant is circulating while repeatedly changing its state from liquid to gas then to liquid.</p>
+                <p class="illust"><img src="image/RTWC7BLF001001.png" class="LF" /></p>
+                <div class="legend"><ol><li>Compressor</li><li>Magnetic clutch</li><li>Pressure switch</li><li>Condenser (Integrated with receiver dryer)</li><li>Evaporator assembly</li><li>Expansion valve</li><li>Evaporator core</li><li>Blower motor</li><li>Ventilation unit</li><li>Mode (DEF/FOOT) control door</li><li>Mode (VENT) control door</li><li>Electronic thermostat</li></ol></div>
+                <p class="explanation">Evaporation<br/>The refrigerant changes its state from liquid to gas inside the evaporator.<br/>The refrigerant in the mist form evaporates immediately after it enters the evaporator. When the refrigerant evaporates, it takes heat from the air around the evaporator core cooling fin. The air that has lost heat is cooled and sent into the vehicle by the blower fan to lower the vehicle room temperature. The refrigerant liquid sent from the expansion valve and the evaporated refrigerant gas coexist in the evaporator, and the refrigerant changes its state from liquid to gas. During this state change from liquid to gas, the pressure inside the evaporator has to be kept low for the refrigerant to evaporate at lower temperatures. To do so, the refrigerant gas is sucked into the compressor and discharged to the outside of the evaporator.</p>
+          <p class="explanation">Compression<br/>The refrigerant is compressed by the compressor to the state where it is easy to liquefy at room temperature.<br/>The vaporized refrigerant in the evaporator is sucked into the compressor. This function maintains the refrigerant in the evaporator at low pressure and keeps the liquid refrigerant to evaporate even at a low temperature close to 0 °C {32 °F}. The refrigerant that is sucked into the compressor is compressed inside the cylinder. Its pressure is raised so that it is easily liquefied by the outside air at room temperature.</p>
+          <p class="explanation">Condensation<br/>The refrigerant inside the condenser is cooled down by the outside air and changes its state from gas to liquid. The high temperature and high pressure gas from the compressor is cooled down and liquefied by the condenser and the outside air, and collected in the receiver dryer. The heat that is dissipated by the high temperature and high pressure refrigerant from the compressor to the outside air is known as condensing heat. This heat quantity is the sum of the heat taken by the refrigerant from inside the vehicle via the evaporator and the work performed during compression.</p>
+          <p class="explanation">Expansion<br/>The expansion valve lowers the pressure of the refrigerant liquid so that it evaporates easily.<br/>The process where the pressure is lowered to ease evaporation before the liquefied refrigerant is sent to the evaporator is known as expansion. The expansion valve also controls the flow amount of the refrigerant liquid while lowering its pressure. In other words, since the amount of the refrigerant liquid to be evaporated inside the evaporator is determined by the amount of the heat taken at a given evaporating temperature, it is important to control the amount of the refrigerant so that it is not less or more than the necessary amount.</p>
+          <p class="explanation">Compressor<br/>The compressor compresses the low pressure, low temperature refrigerant vapor from the evaporator into a high pressure, high temperature refrigerant vapor, and sends it to the condenser to ease dissipation of heat to the outside air. <br/>The vane rotary type fixed capacity compressors CR12Sb, manufactured by Calsonic Kansei, feature a simple structure, a lightweight, compact size, and superior mountability. <br/>Also, the number of components used is reduced, resulting in excellent cost performance. As for noise, 10 discharges are made per rotation, so the flow of the refrigerant is smooth, and it is quiet because the fluctuation in torque is small. <br/>Also, the specified oil amount is 150 cm3.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Compressor</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BMF000801.png" class="MF" /></p>
+                <div class="legend"><ol><li>Compressor</li></ol></div>
+                <p class="explanation">Magnetic clutch<br/>The compressor is driven by the drive belt from the engine crank pulley. It is, however, not desirable for the compressor to be driven each time the engine is started because it imposes a significant load on the engine. Therefore, the magnetic clutch transmits the power from the engine when the A/C is ON to activate the compressor. It stops the power transmission from the engine when the A/C is turned OFF.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Magnetic clutch</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BMF004301.png" class="MF" /></p>
+                <div class="legend"><ol><li>Magnetic clutch</li></ol></div>
+                <p class="explanation">Condenser<br/>The condenser forces the high temperature and high pressure refrigerant gas sent from the compressor to be cooled down by the outside air and liquefied. If the condenser is clogged or the air flow into the condenser cooling fin is blocked, it will cause an insufficient cooling capacity of the condenser and an increased load on the engine due to the raised pressure of the refrigerant cycle. When the condenser is operated normally, the refrigerant discharge line of the condenser is usually cooler than the intake line.<br/>An electric fan is also equipped to boost the cooling effect.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Condenser, receiver dryer</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Condenser assembly, integrated with receiver dryer</li></ol></div>
+                <p class="explanation">Receiver dryer<br/>The receiver dryer has the following functions.<br/>The amount of the circulating refrigerant varies depending on the conditions of the A/C cycle, so it stores the necessary amount of the refrigerant for the A/C cycle to operate smoothly in accordance with changes in the circulating amount.<br/>Bubbles of the refrigerant gas are included in the liquefied refrigerant from the condenser. If refrigerant including bubbles are sent to the expansion valve, the cooling capacity may become significantly deteriorated. Therefore, it separates the liquid from the bubbles and sends only the liquid to the expansion valve.<br/>The dust and water included in the circulating refrigerant are removed using the filter and the dryer inside the receiver dryer.<br/>Clogging in the receiver dryer may cause the A/C's performance to deteriorate. When clogging occurs at the inlet of the receiver dryer, the refrigerant pressure rises, while the pressure lowers when clogging occurs at the outlet. In both cases, cooling can barely take place. If the pipe at the outlet of the receiver dryer is unusually cold, this indicates that clogging has occurred.</p>
+          <p class="explanation">Pressure switch<br/>The pressure switch is installed in the high pressure pipe. The high pressure switch monitors the refrigerant for an abnormally high pressure. The low pressure switch monitors for refrigerant leakage to prevent compressor seizure, turning the magnetic clutch on or off at each preset pressure value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pressure switch</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH000801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Condenser assembly</li><li>Refrigerant piping</li><li>Pressure switch</li></ol></div>
+                <table cellspacing="0"><tbody><tr><td width="58" colspan="1" rowspan="1" align="center" valign="middle">Item</td><td width="440" colspan="2" rowspan="1" align="center" valign="middle">Pressure switch</td></tr><tr><td width="58" colspan="1" rowspan="1" align="left" valign="middle">Control pressure</td><td width="220" colspan="1" rowspan="1" align="center" valign="middle">Low pressure control, low pressure switch</td><td width="220" colspan="1" rowspan="1" align="center" valign="middle">High pressure control, high pressure switch</td></tr><tr><td width="58" colspan="1" rowspan="1" align="left" valign="middle">Operation</td><td width="220" colspan="1" rowspan="1" align="center" valign="bottom">Compressor</td><td width="220" colspan="1" rowspan="1" align="center" valign="middle">Compressor</td></tr><tr><td width="58" colspan="1" rowspan="1" align="left" valign="middle">ON</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 176 to 216 kPa { 1.8 to 2.2 kgf/cm2 / 26 to 31 psi }</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 2840 to 3040 kPa { 29.0 to 31.0 kgf/cm2 / 412 to 441 psi }</td></tr><tr><td width="58" colspan="1" rowspan="1" align="left" valign="middle">OFF</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">： 195 to 255 kPa { 2.0 to 2.6 kgf/cm2 / 28 to 37 psi }</td><td width="220" colspan="1" rowspan="1" align="left" valign="middle">100 - 200 kPa lower pressure than &#034;ON&#034; operation pressure</td></tr></tbody></table>
+                <p class="explanation">Evaporator<br/>The evaporator changes the low pressure, low temperature mist type liquid refrigerant sent from the expansion valve into gas through thermal exchange with air sent from the blower motor. The vaporization heat that is generated when the liquid refrigerant evaporates into gas cools the evaporator and evaporator core fin, and then cools the air sent from the blower motor. Any moisture in the air is cooled to form water droplets, and the vehicle is dehumidified by removal these droplets from the vehicle.</p>
+          <p class="explanation">Expansion valve<br/>The expansion valve is a uniform external pressure type and is installed to the inlet of the evaporator core.<br/>The high pressure liquid refrigerant sent from the receiver dryer is squeezed when it passes through the expansion valve, which changes it into a low pressure liquid refrigerant in mist form before it is sent to the evaporator core.<br/>This expansion valve is comprised of a thermosensor, diaphragm, ball valve, spring adjust screw, etc. The thermosensor makes contact with the evaporator outlet pipe and controls the amount of refrigerant flow by converting the temperature variation into pressure to operate the diaphragm.<br/>The expansion valve can also be used to adjust the amount of refrigerant flow as it ensures efficient capacity utilization of each device of the A/C cycle. Therefore, abnormalities in the expansion valve will cause both the outlet pressure and the inlet pressure values to drop, resulting in the evaporator achieving insufficient cooling performance.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Manual A/C and auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH003801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Evaporator core</li><li>Expansion valve</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear cooler</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE7BSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Expansion valve</li><li>Evaporator core</li></ol></div>
+                <p class="explanation">Thermo switch<br/>The thermo switch utilizes an amplifier and a thermistor to reduce operating noise, etc.<br/>The fin sensor is installed to the outlet of the evaporator core and detects the temperature of the air that passes the evaporator core.<br/>The OFF value is 2.7˚ C {36.9º F}, and the ON value is 6.2˚ C {43.2º F}.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Manual A/C and auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSH003901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Evaporator core</li><li>Fin sensor</li><li>Heater evaporator unit assembly</li></ol></div>
+                <p class="explanation">Refrigerant pipe<br/>The following phenomena are observed if clogging occurs in the refrigerant pipe.<br/>Low pressure hose<br/>When clogging occurs in the low pressure hose, the compressor's inlet pressure and the outlet pressure drop, and the cooling capacity is lost.<br/>High pressure hose<br/>When clogging occurs in the high pressure hose, a leakage from the outlet line usually occurs.<br/>High pressure pipe<br/>When clogging occurs in the high pressure pipe, the pressures at both of the outlet and the inlet sides drop, resulting in insufficient cooling.<br/>The high and low pressure flexible hoses are low leakage-type hoses that are equipped with a nylon coating at the innermost of the hoses.<br/>It is also designed to prevent refrigerant leakage to the air when connecting a service tool by enabling quick connection of the service tool.</p>
+                <p class="illust"><img src="image/LNW27BSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Polyester</li><li>Exterior rubber layer</li><li>Interior rubber layer</li><li>Nylon layer</li></ol></div>
+                <p class="explanation">Auto A/C<br/>This auto A/C uses various sensors to accurately detect the outside temperature, the amount of solar irradiation received, the temperature of the air coming out from the evaporator, the heater core water temperature, and the vehicle cabin temperature. That information is input to the auto A/C control unit to automatically control the temperature of air coming from the air outlets, to control the air flow volume, to turn the compressor ON and OFF, and to switch air outlets. Manual operations of each auto-control is possible by disengaging the auto function. <br/>The auto A/C control unit embedded in the micro-computer is equipped with a self-diagnosing function to make it easier to access and diagnose areas where there is trouble.</p>
+                <p class="illust"><img src="image/RTWC7BXF000301.png" class="XF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Control panel</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BLF001801.png" class="LF" /></p>
+                <div class="legend"><ol><li>OFF switch</li><li>A/C switch</li><li>AUTO switch</li><li>Display panel indication</li><li>Fan speed control switch</li><li>Windshield defroster switch</li><li>Outside air ventilation switch</li><li>Inside air recirculation switch</li><li>Rear window defogger switch</li><li>Temperature control dial</li><li>Outlet selector switch (MODE switch)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Control Panel Switch Operations and General Functions</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BXF000101.png" class="XF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Control Panel Switch Operations and General Functions</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BXF000901.png" class="XF" /></p>
+                <p class="explanation">Auto A/C control unit<br/>Using a large liquid crystal display panel, the control panel displays the operating status of the auto A/C and improves visibility. A digital display for the set temperature is employed in which settings can be made in 1°C {1.8°F} increments.</p>
+          <p class="explanation">Automatic room temperature control<br/>Maintains the in-vehicle temperature at a temperature set using the temperature control switch regardless of changes in the vehicle speed, outside air temperature, sunlight conditions, number of passengers, etc.</p>
+          <p class="explanation">Air amount auto control<br/>Automatically controls the air blow amount in a continuous and sensitive manner according to the changes in the in-vehicle setting temperature.</p>
+          <p class="explanation">Mode control<br/>The mode control automatically switches the mode to FACE, BI-LEVEL or FOOT according to changes in the blow outlet temperature etc. The blow outlet can be manually selected by operating the mode switch. However, only manual selection is available for DEF/FOOT.</p>
+          <p class="explanation">Cooling startup control<br/>When starting the vehicle in a high room temperature during summer, etc., it locks the air volume to "OFF" until the evaporator cools in order to prevent a large amount of hot air from blowing into the vehicle cabin.</p>
+          <p class="explanation">Sunlight condition correction control<br/>The sun sensor utilizes a photodiode to accurately detect the amount of sunlight and quickly correct the in-vehicle temperature.</p>
+          <p class="explanation">Memory when the ignition is OFF<br/>The switch status before the ignition is turned OFF is memorized, making it easier to set when restarted.</p>
+          <p class="explanation">Self-diagnosis function<br/>The self-diagnosing function is activated by turning on the self-diagnosing function on using the panel switch. This makes it easier to conduct trouble diagnosis.</p>
+          <p class="explanation">Outside air temperature display<br/>Through the panel switch operations, the outside air temperature detected by the outside air temperature sensor is indicated in digital format on the panel display section.</p>
+          <p class="explanation">Inside air temperature sensor<br/>Inside the air temperature sensor is a sensor that detects the temperature inside the vehicle cabin. The vehicle cabin temperature is converted into a resistance and is input to the auto A/C control unit. The air temperature sensor uses an aspirator to take in air while the blower motor is running and directs the inside air to the area around the sensor. <br/>This sensor is installed on the back of the knee bolster panel at the driver side.</p>
+                <p class="illust"><img src="image/RTWC7BSH001101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Inside air temperature sensor</li><li>Back side of the knee bolster panel</li></ol></div>
+                <p class="explanation">Outside air temperature sensor<br/>The outside air temperature sensor is a sensor that detects the temperature outside of the vehicle. The outside temperature is converted into a resistance and input to the auto A/C control unit. Also, an auto-amp determines any effects caused by the condenser or radiator that can occur after the vehicle has been running or idling, and makes any necessary corrections. However, the temperature displayed rises over time. <br/>This sensor is installed to the lower section of the front end engine hood stay on the backside of the radiator grille.</p>
+                <p class="illust"><img src="image/RUWE7BSH001701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Outside air temperature sensor</li><li>Front bumper assembly</li></ol></div>
+                <p class="explanation">Sun sensor<br/>The sun sensor uses a photodiode sensor to detect the amount of solar irradiation. It converts correction signals to changes in the in-vehicle temperature caused by sunlight into a photo-electric current which is input to the auto A/C control unit. <br/>This sensor is installed at the top of the instrument panel on the driver side.</p>
+                <p class="illust"><img src="image/RTWC7BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sun sensor</li><li>Instrument panel upper cover</li><li>Instrument panel</li></ol></div>
+                <p class="explanation">Blower module assembly<br/>The blower module assembly receives base current from the auto A/C control unit and changes the blower motor speed steplessly. The blower module assembly is installed to the blower assembly.</p>
+                <p class="illust"><img src="image/RTWC7BSH001201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Blower assembly</li><li>Blower module assembly</li></ol></div>
+                <p class="explanation">Actuator<br/>The actuator is an electromotive device which employs a small motor to drive the heater evaporator unit assembly and blower assembly mode doors based on output currents from the auto A/C control unit. There are three types of actuators including a mode actuator that switches the heater evaporator unit assembly mode, a mix actuator that changes the opening degree of the air mix door, and an intake actuator that switches the blower assembly intake.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Models with auto A/C</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BSF000701.png" class="SF" /></p>
+                <div class="legend"><ol><li>Mode actuator</li><li>Mix actuator</li><li>Intake actuator</li></ol></div>
+                <p class="explanation">Configuration chart of the auto A/C system<br/>The auto A/C control unit uses calculations based on signals from various units to automatically control fan speed and mode door opening degree. These signals are inputted from the inside air temperature sensor which detects the temperature of the air inside the vehicle, the fin sensor which detects refrigerant temperature, and the sun sensor which detects solar irradiation, as well as signals from control panel operation and potentiometer location detection signals.</p>
+                <p class="illust"><img src="image/RUWE70LF000101.png" class="LF" /></p>
+                <p class="explanation">Auto A/C automatic control summary<br/>The auto A/C automatically controls the following. <br/>Cabin temperature control<br/>Air volume control<br/>Cooler startup control<br/>Air outlet control</p>
+          <p class="explanation">Room temperature control<br/>The auto-air conditioner control unit calculates using the temperature setting signals and the signals from each sensor to find the total signal. Then, it compares that with a signal from the potentiometer to determine the direction of the mix actuator rotation. The mix actuator opens the air mix door and operates that at the predetermined angle for that total signal to control the temperature to the setting.</p>
+          <p class="explanation">Air volume control<br/>The auto A/C control unit makes calculations using the temperature setting signal and the signals from each sensor to determine the total signal. Then, in response to the total signal, it converts the blower module base potential to be the predetermined blower voltage for stepless speed variation of the blower motor. <br/>When operating in manual, the fan switch has 5 steps from LO to MAX HI to set the air flow volume.</p>
+          <p class="explanation">Cool startup control<br/>When starting the auto-air conditioner while the blow mode is FACE and BI-LEVEL and the air conditioner switch is at ON, and when the blow temperature calculated using the auto-air conditioner control unit is at a fixed condition, the auto-air conditioner control unit performs cool startup control.<br/>For two seconds after the cooler is started, this is locked at OFF, then for five seconds after that, it is locked at LO. For six seconds after that it increases linearly from LO to the target air amount.<br/>This control is only performed when the blower motor is started one time using the ignition switch from OFF to ON or using the AUTO switch.</p>
+                <p class="illust"><img src="image/LNW87CSH000701.png" class="SH" /></p>
+                <p class="explanation">Outlet control<br/>The auto A/C control unit makes calculations using the temperature setting signals and signals from each sensor to determine the total signal. Then, it compares that with a signal from the potentiometer to determine the operating degree of the mode actuator. In response to the total signal, the mode actuator opens the mode door and operates it at a predetermined angle to control the air outlet to either FACE, BI-LEVEL or FOOT.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Ventilator system components location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BLF000501.png" class="LF" /></p>
+                <div class="legend"><ol><li>Defroster nozzle</li><li>Side defroster nozzle (RH)</li><li>Ventilation duct side (RH)</li><li>Ventilation duct (CTR)</li><li>Control lever assembly</li><li>Heater evaporator unit assembly</li><li>Blower assembly</li><li>Ventilation duct side (LH)</li><li>Side defroster nozzle (LH)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear heater system components location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BMF002901.png" class="MF" /></p>
+                <div class="legend"><ol><li>Heater evaporator unit assembly</li><li>Rear heater duct</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear cooler system components location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE7BLF000501.png" class="LF" /></p>
+                <div class="legend"><ol><li>Rear cooler fan speed control dial</li><li>Roof outlet grille</li><li>Rear cooler duct</li><li>Quarter pillar duct (Installed during the vehicle assembly process)</li><li>Lower duct</li><li>Rear cooler unit</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Manual A/C components layout diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE7BLF000801.png" class="LF" /></p>
+                <div class="legend"><ol><li>A/C compressor bracket</li><li>A/C compressor assembly</li><li>Low pressure hose</li><li>Heater evaporator unit assembly</li><li>To the rear cooler unit</li><li>Pressure switch</li><li>High-pressure pipe</li><li>High-pressure hose</li><li>Condenser assembly (Integrated with receiver dryer)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Automatic A/C components location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE7BLF000701.png" class="LF" /></p>
+                <div class="legend"><ol><li>A/C compressor bracket</li><li>A/C compressor assembly</li><li>Low pressure hose</li><li>Heater evaporator unit assembly</li><li>To the rear cooler unit</li><li>High-pressure pipe</li><li>Pressure switch</li><li>High pressure hose</li><li>Condenser assembly (Integrated with receiver dryer)</li><li>Outside air temperature sensor</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear cooler components location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE7BLF000901.png" class="LF" /></p>
+                <div class="legend"><ol><li>A/C compressor bracket</li><li>A/C compressor assembly</li><li>Heater evaporator unit assembly</li><li>Lower duct</li><li>Rear cooler unit cover</li><li>Rear cooler unit</li><li>Low-pressure pipe</li><li>High-pressure pipe</li><li>High-pressure hose</li><li>Pressure switch</li><li>Condenser assembly (Integrated with receiver dryer)</li><li>Outside air temperature sensor</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Automatic A/C components location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC7BMF002701.png" class="MF" /></p>
+                <div class="legend"><ol><li>Control panel assembly, automatic A/C control unit</li><li>Sun sensor</li><li>Inside air temperature sensor</li><li>Heater evaporator unit assembly</li><li>Mix actuator</li><li>Mode actuator</li><li>Intake actuator</li><li>Blower module assembly</li><li>Blower assembly</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

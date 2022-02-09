@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Rear defogger system check null (BCM with Keyless Entry)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Rear defogger system check
+              (BCM with Keyless Entry)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758065">1. Rear defogger system check
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The rear defogger function is used to defog the rear window glass. When pressing the rear defogger switch while the ignition switch is in the ON position, the rear defogger relay is operated and the indicator light illuminates, and then the rear defogger operates. When the rear defogger switch is pressed again, the defogger is stopped. Even if the rear defogger switch is in the ON position, the defogger stops automatically after operating for 10 minutes.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758066">2. Rear defogger system check
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="128574.html">223.Description Body Control 36C.Functional Inspection(BCM with Keyless Entry) diagnostic system check-body controls</a>&quot;.</p>
+                    <p class="instructions">2. Inspection of fuse</p>
+                <p class="explanation">Inspect the ELEC IG2 10 A fuse and the RR DEF 20 A fuse, and repair as necessary. If the fuses blow out again, inspect for a short circuit in the circuit relating to the ELEC IG2 10 A fuse or the RR DEF 20 A fuse, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If it is normal, go to Circuit diagnosis 1.</p>
+                <p class="instructions">3. Circuit diagnosis 1</p>
+                <p class="explanation">Operate the rear defogger switch, and observe the Rear Defogger Switch display on the scan tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ON is displayed when the rear defogger switch is pressed, and OFF is displayed when the switch is released.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If ON or OFF is not displayed, go to Circuit diagnosis 2.</p>
+          <p class="explanation">If it is normal, go to Circuit diagnosis 3.</p>
+                <p class="instructions">4. Circuit diagnosis 2</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Remove the control lever assembly or the control panel assembly.</p>
+                      <p class="reference">Refer to &quot;<a href="127176.html">7.HVAC 7B.Heater, Ventilator, Airconditioner(All models) control lever assembly removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127148.html">7.HVAC 7B.Heater, Ventilator, Airconditioner(All models) control panel assembly removal</a>&quot;.</p>
+                    <p class="explanation">While connecting and disconnecting a fused jumper wire between the rear defogger switch control circuit and the ground circuit, observe the Rear Defogger Switch display on the scan tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ON is displayed when connected, and OFF is displayed when disconnected.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If ON or OFF is not displayed, go to Inspection for open circuit and short circuit in rear defogger switch circuit.</p>
+          <p class="explanation">If it is normal, go to Inspection of control lever assembly or control panel assembly harness connector.</p>
+                <p class="instructions">5. Circuit diagnosis 3</p>
+                <p class="explanation">Operate the rear defogger switch, and observe the Rear Defogger Relay display on the scan tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ON is displayed when the rear defogger switch is operated once, and OFF is displayed when the switch is operated again.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If ON and OFF do not change, go to BCM replacement.</p>
+          <p class="explanation">If it is normal, go to Circuit diagnosis 4.</p>
+                <p class="instructions">6. Circuit diagnosis 4</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the BCM harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Connect a test lamp between the rear defogger relay control circuit and the body ground.</p>
+          <p class="explanation">If the test lamp does not illuminate, go to Circuit diagnosis 5.</p>
+          <p class="explanation">If the test lamp illuminates, go to Circuit diagnosis 6.</p>
+                <p class="instructions">7. Circuit diagnosis 5</p>
+                <p class="explanation">Leave the test lamp connected.</p>
+          <p class="explanation">Remove the rear defogger relay.</p>
+          <p class="explanation">Connect a fused jumper wire between the rear defogger relay coil side terminals.</p>
+          <p class="explanation">If the test lamp illuminates, go to Inspection of rear defogger relay connector.</p>
+          <p class="explanation">If the test lamp does not illuminate, go to Inspection for open circuit and short circuit in rear defogger relay control circuit.</p>
+                <p class="instructions">8. Circuit diagnosis 6</p>
+                <p class="explanation">Leave the test lamp connected.</p>
+          <p class="explanation">Remove the rear defogger relay.</p>
+          <p class="explanation">If the test lamp does not illuminate, go to Circuit diagnosis 7.</p>
+          <p class="explanation">If the test lamp illuminates, repair a short to the power supply circuit in the rear defogger relay control circuit. Go to Repair verification.</p>
+                <p class="instructions">9. Circuit diagnosis 7</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Connect the BCM harness connector.</p>
+          <p class="explanation">Disconnect the rear defogger harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Connect a test lamp between the rear defogger power supply circuit and the ground circuit.</p>
+          <p class="explanation">Turn ON the rear defogger.</p>
+          <p class="explanation">If the test lamp does not illuminate, go to Inspection of rear defogger relay.</p>
+          <p class="explanation">If the test lamp illuminates, repair the rear defogger. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127359.html">9.Body, Cab, Accessories 9T.Glass, Windows, Mirrors(All models) tail gate glass inspection</a>&quot;.</p>
+                    <p class="instructions">10. Inspection for open circuit and short circuit in rear defogger switch circuit</p>
+                <p class="explanation">Inspect the rear defogger switch control circuit for an open circuit, high resistance, or a short to ground, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect for an open circuit or high resistance in the rear defogger switch ground circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to Inspection of BCM harness connector.</p>
+                <p class="instructions">11. Inspection for open circuit and short circuit in rear defogger relay control circuit</p>
+                <p class="explanation">Inspect the rear defogger relay control circuit for an open circuit, high resistance, or a short to ground, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to Inspection of BCM harness connector.</p>
+                <p class="instructions">12. Inspection of rear defogger relay</p>
+                <p class="explanation">Leave the test lamp connected.</p>
+          <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Replace the rear defogger relay with a known good relay.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Turn ON the rear defogger.</p>
+          <p class="explanation">If the test lamp does not illuminate, repair an open circuit or high resistance in the rear defogger power supply circuit and the ground circuit. Go to Repair verification.</p>
+          <p class="explanation">If the test lamp illuminates, go to Inspection of rear defogger relay connector.</p>
+                <p class="instructions">13. Inspection of control lever assembly or control panel assembly harness connector</p>
+                <p class="explanation">Inspect the connection status of the control lever assembly or the control panel assembly harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, replace the control lever assembly or control panel assembly. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127176.html">7.HVAC 7B.Heater, Ventilator, Airconditioner(All models) control lever assembly removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127177.html">7.HVAC 7B.Heater, Ventilator, Airconditioner(All models) control lever assembly installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127148.html">7.HVAC 7B.Heater, Ventilator, Airconditioner(All models) control panel assembly removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127149.html">7.HVAC 7B.Heater, Ventilator, Airconditioner(All models) control panel assembly installation</a>&quot;.</p>
+                    <p class="instructions">14. Inspection of rear defogger relay connector</p>
+                <p class="explanation">Inspect the connection status of the rear defogger relay connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, replace the rear defogger relay. Go to Repair verification.</p>
+                <p class="instructions">15. Inspection of BCM harness connector</p>
+                <p class="explanation">Inspect the connection status of the BCM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, go to BCM replacement.</p>
+                <p class="instructions">16. BCM replacement</p>
+                <p class="explanation">Replace the BCM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127509.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127508.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127510.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) BCM setting</a>&quot;.</p>
+                    <p class="instructions">17. Repair verification</p>
+                <p class="explanation">Reconnect all of the disconnected fuses and harness connectors.</p>
+          <p class="explanation">Turn OFF the ignition switch for at least 30 seconds.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Turn ON the rear defogger switch to verify that the rear defogger is activated.</p>
+          <p class="explanation">If it does not operate, go to Circuit diagnosis 1.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

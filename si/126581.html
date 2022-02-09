@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Hard start null (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Hard start
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747957">1. Hard start
+                  description of symptom
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The engine cranks but does not start for a long time. The engine does eventually run, or may start but immediately stops.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746540">2. Hard start
+                  diagnostics
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Preliminary inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Perform the inspection for the engine control system.<br/>Confirm if the driver is using the correct starting procedure.<br/>Confirm if the ground of the ECM is free of dirt, and is firmly secured in the correct position.<br/>Inspect whether the harness connector is properly connected.<br/>Inspect the fuel type, quality and level.<br/>Check the injector ID code of each cylinder.<br/>Check the scan tool data list.<br/>Check the Service Bulletin.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Sensor inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Compare each display of the Engine Coolant Temperature (ECT), Intake Air Temperature (IAT) and Fuel Temperature to the scan tool data list with the engine in a cold state.<br/>When the difference between the temperature values is 5 ℃ (9 ˚F) or larger, inspect for high resistance in each circuit and sensor failure while the engine is cold.<br/>{When the ignition switch is turned ON, the MAF sensor is heated, and as a result, the IAT shows a higher value than the normal intake air temperature.}<br/>Confirm the Fuel Rail Pressure (FRP) Sensor display on a scan tool. It is normal if the Fuel Rail Pressure (FRP) Sensor display shows 0.9 - 1.0 V when the ignition switch is turned ON without starting the engine after waiting at least 30 seconds after the stop of engine operation. If not, inspect for high resistance in each circuit and any sensor failure.<br/>The CKP sensor is securely installed, and the sensor rotor is not damaged.<br/>The CMP sensor is securely installed, and the camshaft gear is not damaged.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fuel system inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect for air intrusion in the fuel system.<br/>Inspect for water intrusion in the fuel.<br/>Inspect for external fuel leakage, or excessive engine oil.<br/>Inspect whether the fuel is becoming waxy or freezing.<br/>Inspect whether the fuel filter indicator light turns ON continuously or frequently when the engine is driven.<br/>Inspect the fuel filter element for clogging.<br/>Inspect for fuel leakage from the pressure limiter and injector.<br/>Inspect the fuel system for collapsing, twisting, improper tightening, cracking and clogging.<br/>Inspect the vent valve and hose of the fuel tank for clogging.<br/>{The piping may be clogged due to foreign matters from the fuel tank mixed into the fuel system.}<br/>Inspect the supply pump operation.<br/>{The supply pump must be timed with the engine, and the adjusted value should be written into the ECM.}<br/>Conduct the cylinder balance test with a scan tool.<br/>Perform the injector forced drive with a scan tool.<br/>Confirm the Fuel Rail Pressure (FRP) Regulator Valve Feedback Current display on a scan tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Air intake system inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the air cleaner and air intake duct for clogging, holes and leakage.<br/>Inspect for any condition that restricts the flow within the turbocharger inlet duct.<br/>Inspect the intake throttle valve to see if it is stuck closed.<br/>Inspect for clogging and leakage in the intake manifold.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Exhaust system inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect for any condition that restricts the flow of the exhaust system.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Engine mechanical inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the compression pressure of the engine.<br/>Inspect for improper idle gear timing.<br/>Inspect the valve clearance.<br/>Inspect the valve spring for damage and fatigue.<br/>Inspect the camshaft for worn.<br/>Inspect the ring gear for worn.<br/>Inspect the inside of the engine for seizure.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Electrical system inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the glow plug control system operation.<br/>Inspect the cranking speed.<br/>Inspect the battery for deterioration.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Checking the air conditioning system using the manifold gauge null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Checking the air conditioning system using the manifold gauge
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751738">1. Checking the air conditioning system using the manifold gauge
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Inspection conditions<br/>Ambient temperature of surroundings about 30 - 35ºC {86 - 95°F}<br/>Engine rpm about 1500 rpm<br/>Air conditioner switch ON<br/>Blower motor HIGH<br/>Temperature setting MAX COOL<br/>Close all doors RECIRC</p>
+          <p class="explanation">Normal pressure (reference)<br/>The low pressure side is at about 127 - 245 kPa (1.3 - 2.5 kgf/cm2)<br/>The high pressure side is at about 1373 - 1667 kPa (14.0 - 17.0 kgf/cm2)</p>
+          <p class="explanation">Manifold gauge connection<br/>Inlet side for low pressure hose<br/>Outlet side for high pressure hose</p>
+          <p class="explanation">AS HFC-134a is employed in the air conditioner system of this vehicle when checking the air conditioner system, make sure to use air conditioner servicing tools, such as manifold gauge and charging hose, that are intended for use with HFC-134a.</p>
+                <p class="illust"><img src="image/RTWC7BSF000601.png" class="SF" /></p>
+                <div class="legend"><ol><li>Low pressure side</li><li>High pressure side</li></ol></div>
+                <p class="explanation">Symptom<br/>Insufficient cooling<br/>Both the high- and low-pressure values are low<br/>Low pressure side about 49 - 98 kPa (0.5 - 1.0 kgf/cm2)<br/>High pressure side about 686 - 981 kPa (7.0 - 10 kgf/cm2)<br/>Gas bubbles are continuously observed through the sight glass<br/>The temperature of the air blown out does not decrease<br/>Possible cause<br/>Insufficient refrigerant level due to the refrigerant leakage<br/>Correction<br/>Inspect and repair the refrigerant leakage section<br/>Fill the refrigerant up to the specified level</p>
+          <p class="explanation">Symptom<br/>Insufficient cooling<br/>Both the high- and low-pressure values are high<br/>The low pressure side is at about 245 - 294 kPa (2.5 - 3.0 kgf/cm2)<br/>The high pressure side is at about 2256 - 2452 kPa (23 - 25 kgf/cm2)<br/>No gas bubbles are observed through the sight glass even after lowering the engine rpm<br/>The temperature of the air blown out does not decrease<br/>Possible cause<br/>Over-filled refrigerant<br/>Insufficient cooling of the condenser<br/>Correction<br/>Inspect the refrigerant level and fill it up to the specified level<br/>Clean the condenser<br/>Inspect and repair the condenser fan</p>
+          <p class="explanation">Symptom<br/>Insufficient cooling<br/>Both the high- and low-pressure values are high<br/>The low pressure side is at about 245 - 294 kPa (2.5 - 3.0 kgf/cm2)<br/>The high pressure side is at about 2256 - 2452 (23 - 25 kgf/cm2)<br/>The pipe at the low pressure side is not cold<br/>Gas bubbles passes through the sight glass<br/>Possible cause<br/>Air entry into the air conditioning cycle due to insufficient vacuuming<br/>Correction<br/>Perform vacuuming thoroughly and fill the refrigerant up to the specified level</p>
+          <p class="explanation">Symptom<br/>Insufficient cooling<br/>Both the high- and low-pressure values are high<br/>The low pressure side is at about 294 - 392 kPa (3.0 - 4.0 kgf/cm2)<br/>The high pressure side is at about 1961 - 2452 kPa (20 - 25 kgf/cm2)<br/>Frosting occurs at the low pressure side pipe<br/>Possible cause<br/>The expansion valve is malfunctioning<br/>Correction<br/>Inspect the mounting condition of the thermosensor, and then if no abnormality is found, replace the expansion valve</p>
+          <p class="explanation">Symptom<br/>Not cold<br/>The pressure at the low pressure side is too high while the pressure at the high pressure side is too low<br/>The low pressure side is at about 392 - 588 kPa (4.0 - 6.0 kgf/cm2)<br/>The high pressure side is at about 686 - 1079 kPa (7.0 - 11 kgf/cm2)<br/>The high and low pressures balance immediately after turning off the air conditioner<br/>Possible cause<br/>Malfunctioning during compression due to defective compressor<br/>Correction<br/>Replace the compressor</p>
+          <p class="explanation">Symptom<br/>Cold only during some time<br/>The pressure at the low pressure side becomes negative at times, or the pressure at the high pressure side also drops, but normal in other instances<br/>Functions properly immediately after the air conditioner starts operating, but the pressure at the low pressure side indicates a negative pressure after a while<br/>The pressure at the low pressure side is negative - approx. 127 kPa(1.3 kgf/cm2)<br/>The high pressure side about 588 - 1765 kPa (6.0 - 18 kgf/cm2)<br/>Possible cause<br/>The moisture freezes at the expansion valve as moisture entered the air conditioning cycle, thus blocking the cycle at times, but melts and returns to normal at other times<br/>Correction<br/>Replace the expansion valve<br/>Replace the receiver dryer and the compressor oil<br/>Perform vacuuming thoroughly and fill the refrigerant up to the specified level</p>
+          <p class="explanation">Symptom<br/>Cold only during some time<br/>The pressure at the low pressure side becomes negative and the pressure at the high pressure side is also low The pressure at the low pressure side is negative<br/>The high pressure side is at about 490 - 588 kPa (5.0 - 6.0 kgf/cm2)<br/>Frosting occurs at the receiver dryer or the front and rear piping joints of the expansion valve<br/>There is a large temperature difference between the IN and OUT sides of the defective section<br/>Possible cause<br/>The cycle is blocked due to freezing of moisture or presence of foreign substances<br/>The cycle is blocked due to defective thermosensor of the expansion valve<br/>If the cycle is completely clogged, a negative pressure value appears immediately, whereas the pressure drops gradually to a negative value if it is slightly clogged<br/>Action<br/>When moisture enters the cycle, replace the receiver dryer and the compressor oil, and fill the refrigerant up to the specified level Replace the expansion valve if the thermosensor is defective</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

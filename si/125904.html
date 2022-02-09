@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Crankshaft inspection (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Crankshaft
+          inspection
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747614">1. Thrust bearing
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the clearance using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the crankshaft thrust clearance at the center part of the crankshaft journal.</li>
+                    <li>Replace the thrust bearing if the measured value exceeds the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.040 to 0.201 mm { 0.0016 to 0.0079 in }</p>
+                <p class="illust"><img src="image/LNWE1BSH006901.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Measure the thrust clearance prior to disassembly.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748193">2. Crankshaft bearing
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the bearing cap from the cylinder block.</p>
+          <p class="instructions">2. Remove the lower crankshaft bearing from the bearing cap.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The removed crankshaft bearing should be lined in the order of the number.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Remove the crankshaft from the cylinder block.</p>
+          <p class="instructions">4. Remove the upper crankshaft bearing from the cylinder block.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The removed crankshaft bearing should be lined in the order of the number.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Inspect the crankshaft bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the crankshaft journal and upper and lower bearings.</li>
+                    <li>Inspect the bearing for damage or excessive wear.</li>
+                    <li>If damage or excessive wear is found, replace the bearings as a set.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Install the upper crankshaft bearing to the cylinder block.</p>
+          <p class="instructions">7. Install the crankshaft to the cylinder block.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the crankshaft to be level.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Put the PLASTIGAUGE on the crankshaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>As shown in the diagram, place the PLASTIGAUGE on the crankshaft journal.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH024201.png" class="SH" /></p>
+                <p class="instructions">9. Install the lower crankshaft bearing to the bearing cap.</p>
+          <p class="instructions">10. Apply the engine oil to the bolt.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply engine oil to the threaded portion of the bolt and the seat surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Install the bearing cap to the cylinder block.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the bolts to the specified torque in the order shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 166 N・m { 16.9 kgf・m / 122.4 lb・ft }</p>
+                <p class="illust"><img src="image/LNWA1BSH001801.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After tightening the bolts, do not turn the crankshaft.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">12. Remove the bearing cap bolt from the cylinder block.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove it gently.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">13. Measure the oil clearance using the PLASTIGAUGE.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the maximum width portion of the PLASTIGAUGEs crushed by the tightening of the bearing caps.</li>
+                    <li>Determine the oil clearance of the journal.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.030 to 0.054 mm { 0.0012 to 0.0021 in }</p>
+                <p class="illust"><img src="image/LNW21BSH024401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the oil clearance of the journal exceeds the specified value, replace all crankshaft bearings or the crankshaft.</li>
+                    <li>Remove the PLASTIGAUGE from the bearing and the crankshaft.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746986">3. Crankshaft
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the crankshaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the crankshaft journal and crank pin surface for wear and damage.</li>
+                    <li>Check the contact surface of the oil seal for excessive wear or damage.</li>
+                    <li>Check the oil port for clogging.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747118">4. Crankshaft
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Put the crankshaft on the V-block.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Carefully set the crankshaft.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure fluctuation using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Slowly rotate the crankshaft to measure the runout.</li>
+                    <li>Replace the crankshaft if the crankshaft fluctuation exceeds the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.05 mm or less { 0.0020 in or less }</p>
+                <p class="illust"><img src="image/LNW21BSH024501.png" class="SH" /></p>
+                <p class="instructions">3. Measure outer diameter using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the journal and the pin outer diameters to calculate the difference of the maximum and minimum.</li>
+                    <li>Measure in 4 sections on the journal and on the pin.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 69.917 to 69.932 mm { 2.7526 to 2.7532 in } Journal section</p>
+          <p class="numeric">Standard： 52.915 to 52.930 mm { 2.0833 to 2.0839 in } Pin</p>
+                <p class="illust"><img src="image/LNW21BSH024601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspection of the TUFFTRIDE layer of the crankshaft</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>TUFFTRIDE (soft nitriding treatment) is implemented to increase the strength of the crankshaft.</li>
+                    <li>Therefore, the crankshaft surface cannot be polished.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Clean the crankshaft using organic solvent.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Thoroughly clean the crankshaft to completely remove the oil from the test locations.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Prepare inspection solution.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Prepare a solution of copper chloride ammonium of 5 to 10 %.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Apply inspection solution to the crankshaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use an oil drop to apply the solution to the test locations.</li>
+                    <li>Maintain the inspection surface at a complete level so that the solution does not flow.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH038001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Drip prohibited area</li><li>Test liquid drop section</li><li>Pin or journal sliding surface</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not allow the solution to come into contact with the oil port.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Wait 30 to 40 seconds.</li>
+                    <li>If the color does not change after 30 or 40 seconds, it indicates a residual layer of TUFFTRIDE and the crankshaft can be used.</li>
+                    <li>If the test surface turns copper-colored, replace the crankshaft.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Copper chloride ammonium solution is highly corrosive.</li>
+                    <li>Therefore, it is important to immediately clean the test surface when the test is completed.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

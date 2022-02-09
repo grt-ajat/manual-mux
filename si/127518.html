@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>PLASTIGAUGE null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    PLASTIGAUGE
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751762">1. Using the PLASTIGAUGE
+                      </h2>
+      <div class="wi-contents">
+
+              <table cellspacing="0"><tbody><tr><td width="400" colspan="2" rowspan="1" align="center" valign="middle">PLASTIGAUGE type and measurable range</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Type</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">Measurable range</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">PG-1 (Green)</td><td width="300" colspan="1" rowspan="1" align="left" valign="bottom">： 0.025 to 0.076 mm { 0.00098 to 0.00299 in }</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">PR-1 (Red)</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">： 0.051 to 0.152 mm { 0.00201 to 0.00598 in }</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">PB-1 (Blue)</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">： 0.102 to 0.229 mm { 0.00402 to 0.00902 in }</td></tr></tbody></table>
+                <p class="explanation">Method for measuring clearance between connecting rod bearing and crank pin<br/>Clean the connecting rod and bearing, and assemble the bearing to the connecting rod. <br/>Cut the PLASTIGAUGE to the width of the crank pin and lay it parallel while avoiding the crank pin oil hole. <br/>Align the marking on the connecting rod with the marking on the cap, and assemble the connecting rod and cap to the crank pin. Apply molybdenum disulfide to the threaded portion and bearing surface of the tightening bolt. Tighten alternately so the cap is tightened to the specified torque. <br/>Gently remove the cap and the connecting rod, and measure the width of the flattened PLASTIGAUGE using the scale printed on the packaging.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not move the connecting rod when using PLASTIGAUGE.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW30ASH002001.png" class="SH" /></p>
+          <p class="illust"><img src="image/HCW30ASH002101.png" class="SH" /></p>
+                <p class="explanation">Method for measuring clearance between crank bearing and crank journal<br/>Clean the bearing, as well as the cylinder block and crankcase bearing mounting surfaces, and assemble to the cylinder block and crankcase. <br/>Gently place the crankshaft on the cylinder block, and settle it by turning it approximately 30 degrees. <br/>Cut the PLASTIGAUGE to the width of the crank journal and lay it parallel while avoiding the journal oil hole. <br/>Gently place the crankcase on the cylinder block, and apply molybdenum disulfide to the threaded portion and bearing surface of the tightening bolt. Tighten the bolts in order to the specified torque. <br/>Gently remove the crankcase, and measure the width of the flattened PLASTIGAUGE using the scale printed on the packaging.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not rotate the crankshaft when using PLASTIGAUGE.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW30ASH002201.png" class="SH" /></p>
+          <p class="illust"><img src="image/HCW30ASH002301.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

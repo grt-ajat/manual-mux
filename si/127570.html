@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Maintenance precautions of restraint null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Maintenance precautions of restraint
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751711">1. Maintenance precautions of restraint
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When conducting maintenance of parts and harnesses including their peripherals, temporarily stop the SRS function according to "Procedure to deactivate the SRS" to prevent injury due to deployment of the SRS airbag or an unnecessary repair of the SRS airbag.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>SRS control unit</li>
+                    <li>Driver airbag and passenger airbag</li>
+                    <li>Side airbag and curtain airbag</li>
+                    <li>Seat belt with pretensioner</li>
+                    <li>Lap pretensioner (For Australia)</li>
+                    <li>Front airbag sensor</li>
+                    <li>Side airbag sensor</li>
+                    <li>Door side airbag sensor</li>
+              <ul/>
+    </div>
+                  <p class="explanation">First, set the ignition switch to the LOCK position. Next, disconnect the battery or remove the SRS fuse. Do not perform any operations for at least 15 seconds after that because of a possibility that the SRS airbag may be deployed. In the maintenance procedure, it is necessary to remove the SRS fuse and disconnect the SRS airbag from the deployment circuit in order to prevent SRS parts from unnecessarily deploying.</p>
+          <p class="explanation">When measuring the voltage and resistance, make sure to use the tools correctly, such as the scan tool, alternative load, adapter harness kit, connector test adapter kit, and digital multimeter.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When performing maintenance of the SRS, do not use electrical testers other than those specified in this manual in order to prevent injury due to deployment of the SRS airbag.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Necessary repairs and inspections after a collision<br/>If the SRS system components are damaged, they must be replaced. If the installation location for SRS components is damaged, it must also be replaced. Never use system components from other vehicles. No SRS system component should be disassembled or repaired. Replace these components with new parts.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm the part numbers for the SRS parts to be used as replacements to confirm they are legitimate products.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Make sure to check the part numbers and use the SRS components intended for the target vehicle, do not use SRS components from other vehicles or models.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After repairing or replacing parts damaged in the collision, it is necessary to inspect the SRS airbag and steering column in order for the SRS airbag to operate properly.</li>
+                    <li>If the SRS control unit mounting bracket is visibly damaged, replace it with a new one.</li>
+                    <li>It is necessary to inspect the dimensions of the steering column regardless of whether the SRS airbag has been deployed in the collision.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Replacement and inspection of parts after a collision accompanied by deployment<br/>It is necessary to replace the deployed airbag, seatbelt with pretensioner, lap pretensioner, SRS control unit, and each sensor after a collision accompanied by airbag deployment. It is necessary to inspect the SRS coil assembly for damage. Inspect the SRS coil assembly harness and connector for burns, melting, or damage caused by excessive heat. If the SRS coil assembly is damaged, replace the SRS coil assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Because the side airbag cannot be replaced as a separate unit, replace the seat assembly. Each of the other airbags can be replaced as a separate unit.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspection of parts after a collision not accompanied by deployment<br/>After the collision, it is necessary to inspect the SRS system and related parts even if the airbag has not been deployed. The related parts include the steering column, steering support bracket, instrument panel bracket, seat belt installation locations, each sensor, seat, etc. For each part, inspect for installation status, distortion, bent, cracks, or other damages.</p>
+          <p class="explanation">Replacement guideline for SRS control unit and airbag sensor<br/>After a collision accompanied by airbag deployment, the SRS control unit and the airbag sensor must be replaced. Conduct Diagnostic system check-SRS controls in case of SRS airbag warning light failure.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the SRS function is normal, the SRS airbag warning light flashes 7 times before turning OFF.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Damaged harness<br/>If the SRS harness is damaged, it is necessary to replace the SRS harness.</p>
+          <p class="explanation">SRS component lead wire damage<br/>If the lead wire for parts such as the SRS airbag, combination switch assembly (including the SRS coil assembly), seat belt with pretensioner, lap pretensioner, etc., is damaged, replace all of the components.</p>
+          <p class="explanation">Procedure to deactivate the SRS<br/>Removal<br/>Set the ignition switch to "LOCK" and remove the key.<br/>Remove the SRS fuse from the fuse relay box or disconnect the connection to the negative terminal of the battery.<br/>Let stand as is for approximately 15 seconds or longer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The fuse relay box is installed within the pocket of the instrument panel driver side lower cover.</li>
+                    <li>The illustration shows an RHD model.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BMH000601.png" class="MH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the SRS fuse is removed and the ignition switch is turned ON, the SRS airbag warning light will remain turned on without turning off, but this indicates that the SRS airbag is in a normal condition.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Procedure to restore the SRS<br/>Installation<br/>Set the ignition switch to "LOCK" and remove the key.<br/>Confirm that the removed parts related to the SRS are securely connected.<br/>Install the SRS fuse or connect the negative terminal of the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn ON the ignition switch and verify that the SRS airbag warning light turns OFF after flashing 7 times. Perform the Diagnostic system check - SRS controls if the SRS airbag warning light does not operate properly.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not expose the SRS airbag to a temperature exceeding 85 °C.</li>
+                    <li>Do not use an SRS airbag, SRS control unit, or airbag sensor if it was dropped for some reason.</li>
+                    <li>When the connectors for parts related to the SRS airbag, SRS control unit, or airbag sensor have been removed for repair, etc., verify that they fully fit upon reassembly.</li>
+                    <li>When replacing the SRS control unit, make sure to check that there is no dust or other foreign materials on the installation surface of the SRS control unit, and install the SRS control unit onto the installation surface properly.</li>
+                    <li>When installing the SRS airbag parts, make sure to tighten them to the specified torque.</li>
+                    <li>If the system is accidentally energized, an unnecessary DTC will be set to the SRS control unit. Therefore, do not energize the system unless all system parts are connected or there is a request from the diagnosis chart.</li>
+                    <li>Never conduct a circuit diagnosis using an unspecified tester.</li>
+                    <li>The diagnostic system check-SRS controls checks whether the SRS air bag warning light is working properly and gives guidance to the appropriate chart used for diagnosing functional failures in the system. Skipping these procedures result in a long diagnosis time, incorrect diagnosis, or replacement of incorrect parts. Therefore, perform the diagnostic system check-SRS controls first.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Caution label<br/>Caution labels describing precautions specific to the SRS airbag are attached to the vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Sun visor at the passenger side</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8BMF000101.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Passenger door side</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSF000201.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear side of the driver airbag</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSF000301.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear side of the passenger airbag</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSF000401.png" class="SF" /></p>
+                <p class="explanation">Caution label (Models with side airbags and curtain airbags)<br/>A caution label is attached describing the special precautions for the models with side airbags and curtain airbags.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Driver door side</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSF001201.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Passenger door side</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BMF000601.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>curtain airbag</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8BSF000201.png" class="SF" /></p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Do not take apart, crush or puncture.</li>
+                    <li>Do not check a circuit by electric tester.</li>
+                    <li>Do not service, dispose or apply electric power to this unit.</li>
+                    <li>Do not heat in excess of 93℃</li>
+                    <li>Follow all instructions in the workshop manual.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>SRS control unit</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH002801.png" class="SH" /></p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>During the maintenance procedure, be careful not to hit or shake the SRS control unit when handing it.</li>
+                    <li>If the SRS control unit is not properly installed to the vehicle, the SRS control unit does not operate properly when the ignition switch is turned ON, which may result in injury due to deployment of the SRS airbag.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Procedure to transport an undeployed airbag assembly<br/>Take extra care when handling and storing an undeployed SRS airbag assembly. Should the SRS airbag happen to be deployed, materials on the surface of the SRS airbag may fly away due to sudden generation of gas.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When transporting an undeployed airbag assembly, make sure to face the trim cover of the airbag outward to minimize the possibility of injury in case the SRS airbag is deployed.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Driver airbag</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH002301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Passenger airbag</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH002401.png" class="SH" /></p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Never carry the SRS airbag by hanging the harness or the connector leading from the SRS airbag on your hand.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW28BMH000101.png" class="MH" /></p>
+                <div class="legend"><ol><li>When transporting an undeployed airbag, face the trim cover outward.</li><li>When putting down an undeployed airbag, make sure to face the trim cover upward.</li></ol></div>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When storing an undeployed SRS airbag assembly or leaving an undeployed SRS airbag assembly on a working table or other locations, make sure that the trim cover of the SRS airbag assembly is facing upward to minimize the possibility of injury in case the airbag is deployed.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">When handling a deployed SRS airbag assembly, safety precautions must be followed.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Since the metal surface of the SRS airbag assembly becomes extremely hot after deployment, do not touch the metal section for approximately 30 minutes after deployment. In addition, do not place a deployed SRS airbag assembly close to any flammable items.</li>
+                    <li>When it is necessary to move a deployed SRS airbag assembly before it cools down, wear gloves and handle it by placing hands on the SRS airbag or the trim cover.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If activation occurs, also replace the SRS coil assembly.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Handling of undeployed seat belts with pretensioners and lap pretensioners<br/>Take extra care when handling and storing undeployed seat belts with pretensioners and lap pretensioners. In the unlikely event that a seat belt with pretensioner or a lap pretensioner has deployed, the sudden expansion of gas may cause items in the vicinity of the seat belt with pretensioner or lap pretensioner to be blown about.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When transporting undeployed seat belts with pretensioners or lap pretensioners, make sure to face the gas generator section outwards to minimize the possibility of injury in case they deploy.</li>
+                    <li>Seat belts with pretensioners or lap pretensioners must never be carried by holding the harness or connectors that stick out from the seat belts with pretensioners or lap pretensioners.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Seat belt with pretensioner (Except for Australia)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH002501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Seat belt with pretensioner and lap pretensioner (For Australia)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8CMH000301.png" class="MH" /></p>
+                <div class="legend"><ol><li>Seat belt with pretensioner</li><li>Lap pretensioner</li></ol></div>
+                <p class="explanation">Handling of a deployed seat belt with pretensioner or lap pretensioner<br/>When handling a deployed seat belt with pretensioner or lap pretensioner, wear work gloves and protective goggles in order to protect your hands and eyes from irritants and heat that may be generated.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If activation occurs, also replace the SRS coil assembly.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Handling of airbag sensor</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When removing the sensors, turn the ignition switch OFF and wait for at least 15 seconds.</li>
+                    <li>Do not apply impacts, such as dropping the unit, to the sensors.</li>
+                    <li>If an impact, such as dropping the unit, is applied to the sensor, replace the applicable airbag sensor.</li>
+                    <li>If an airbag is deployed, make sure to replace the airbag sensor.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Front airbag sensor and side airbag sensor</p>
+                <p class="illust"><img src="image/RTWC8BSH002901.png" class="SH" /></p>
+                <p class="explanation">Door side airbag sensor</p>
+                <p class="illust"><img src="image/RTWC8BSH005801.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

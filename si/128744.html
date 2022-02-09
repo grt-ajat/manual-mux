@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Limited slip differential reassembly (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Limited slip differential
+          reassembly
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759241">1. Differential cage assembly
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the differential cage using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the depth of the differential cage.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 80.58 mm { 3.172 in } A - B in the diagram</p>
+          <p class="numeric">Standard： 10.58 mm { 0.417 in } C in the diagram</p>
+                <p class="illust"><img src="image/RTWC4BSH002201.png" class="SH" /></p>
+                <p class="instructions">2. Measure the pressure ring using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the full length of the pressure ring, friction disc and plate.</li>
+                    <li>Assemble the pinion shaft with pressure plate and then assemble the friction disc and plate.</li>
+                    <li>Measure the length between the plates on both ends of the V-groove.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4BSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Length between the plates on both ends of the V-groove</li></ol></div>
+                <p class="instructions">3. Adjust the clearance.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the clearance between the friction disc and friction plate.</li>
+                    <li>After you measure the dimensions of A, B, C and D, make adjustment in accordance with the procedure below.</li>
+                    <li>Measure the spring plate.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.75 mm { 0.069 in } ×4 pcs., E</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the thickness of the plate spring.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.75 mm { 0.069 in } ×2 pcs., F</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Select friction discs and plates to achieve the following dimensions. <br/>(A - B + C) - (D + E) = 0.06 to 0.20 mm {0.002 to 0.008 in}</li>
+                    <li>The difference between the total dimensions of the right and left friction discs, friction plates, and spring plates must not be larger than 0.05 mm {0.002 in}.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="222" colspan="1" rowspan="1" align="center" valign="middle">Friction disc and plate thickness</td></tr><tr><td width="222" colspan="1" rowspan="1" align="center" valign="middle">： 1.65 mm { 0.065 in }</td></tr><tr><td width="222" colspan="1" rowspan="1" align="center" valign="middle">： 1.75 mm { 0.069 in }</td></tr><tr><td width="222" colspan="1" rowspan="1" align="center" valign="middle">： 1.85 mm { 0.073 in }</td></tr></tbody></table>
+                <p class="instructions">4. Adjust the backlash.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the backlash of side gear in axial direction.</li>
+                    <li>Measure the depth of the differential cage.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 82.03 mm { 3.230 in } F - B in the diagram</p>
+          <p class="numeric">Standard： 12.03 mm { 0.474 in } G in the diagram</p>
+                <p class="illust"><img src="image/RTWC4BSH002401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Assemble the side gear, pinion, pinion shaft, pressure ring and thrust washer.</li>
+                    <li>Press the pressure ring in the axial direction against the pinion shaft to eliminate the clearance.</li>
+                    <li>Install the side gear to the pinion to eliminate the backlash.</li>
+                    <li>Measure the dimension between the thrust washers at both ends.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4BSH002501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Dimension between the thrust washers at both ends</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After measuring of the dimension between the thrust washers at both ends, make an adjustment to achieve the following dimensions. <br/>((F - B) + G - H) = 0.05 to 0.2 mm {0.002 to 0.008 in}</li>
+                    <li>Select an appropriate thrust washer so that the dimensional difference between the pressure ring backside and the thrust washers on both sides does not exceed the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.05 mm { 0.002 in } Left and right side</p>
+                <table cellspacing="0"><tbody><tr><td width="222" colspan="1" rowspan="1" align="center" valign="middle">Thrust washer thickness</td></tr><tr><td width="222" colspan="1" rowspan="1" align="center" valign="middle">： 1.5 mm { 0.059 in }</td></tr><tr><td width="222" colspan="1" rowspan="1" align="center" valign="middle">： 1.6 mm { 0.063 in }</td></tr><tr><td width="222" colspan="1" rowspan="1" align="center" valign="middle">： 1.7 mm { 0.067 in }</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759252">2. Differential cage assembly
+                  reassembly
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When assembling each part, apply the recommended gear oil to the friction sliding surfaces.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Recommended oil: GL5LSD or equivalent</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the thrust washer to the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the thrust washer to the differential cage B.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the spring plate to the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install to differential cage B in the order of [2 spring plates] -&gt;[friction plate] -&gt;[friction disc] -&gt;[friction plate] -&gt;[friction disc].</li>
+                    <li>As shown in the diagram below, the spring plate is installed with the inside facing the differential cage side.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4BSH002601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Friction plate</li><li>Spring plate</li><li>Friction disc</li></ol></div>
+                <p class="instructions">3. Install the pressure ring to the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the pressure ring to the differential cage B.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the side gear to the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the side gear to the differential cage B.</li>
+                    <li>Assemble the pinion and the pinion shaft to differential cage B.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Install the pressure ring to the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the pressure ring to the differential cage B.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Install the spring plate to the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install to differential cage B in the order of [friction disc] -&gt;[friction plate] -&gt;[friction disc] -&gt;[friction plate] -&gt;[2 spring plates].</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Install the thrust washer to the differential cage.</p>
+          <p class="instructions">8. Assemble the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Assemble differential cages A and B.</li>
+                    <li>Align the alignment marks and evenly tighten screws in a diagonal order.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Check the starting torque of the side gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the starting torque of the side gear using a special tool.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884026820.png" class="ST" /><br/>SST: 5-8840-2682-0 - side gear holder</p>
+                <p class="numeric">Starting torque： 29 to 45 N・m { 3.0 to 4.6 kgf・m / 21 to 33 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC4BSH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Side gear holder</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

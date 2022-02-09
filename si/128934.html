@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Maintenance precautions of driveline, axle null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Maintenance precautions of driveline, axle
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758780">1. Maintenance precautions of driveline, axle
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Differential</p>
+          <p class="explanation">Whenever disassembly is performed, the packing, gasket, oil seal, O-ring, lock nut, lock washer, etc. should be replaced with new ones.</p>
+          <p class="explanation">Loctite 242, moderate strength, blue color liquid</p>
+          <p class="explanation">Application area<br/>Various bolts, connectors, plugs, oil seal fixing sections</p>
+          <p class="explanation">Instructions for use<br/>Wipe both of the joint sections with a shop cloth or something similar to remove any oil and grease. Apply Loctite to threaded portions of the bolts, connectors, or plugs.<br/>Tighten the bolts, connectors, or plugs at the specified torque.</p>
+          <p class="explanation">Loctite 271, high strength, red color liquid</p>
+          <p class="explanation">Application area<br/>Ring gear installation bolts</p>
+          <p class="explanation">Instructions for use<br/>Wipe the joint sections sufficiently using a cleaning agent such as trichloroethane, acetone, or ether. Let the cleaning agent dry naturally. <br/>Apply Loctite to the threaded portion of the bolt. Tighten the bolt to the specified torque. A strong force should not be applied for at least 1 hour.</p>
+          <p class="explanation">Loctite FMD127, seal, blue color liquid</p>
+          <p class="explanation">Instructions for use<br/>Wipe the joint sections sufficiently using a cleaning agent such as trichloroethane, acetone or ether.<br/>Let the cleaning agent dry naturally.<br/>Apply Loctite thoroughly to the entire circumference with bead width of 2.0 - 2.5 mm. At that time, it should be pushed out in the bead form directly from the tube.<br/>Tighten the bolt at the specified torque. Let it dry naturally for at least 30 minutes.</p>
+          <p class="explanation">Characteristics of the liquid gasket</p>
+          <p class="explanation">Loctite 518 (red) and FMD-127 (blue) are liquids in paste form, and are liquid anaerobic sealants that harden at room temperature.<br/>These sealants begin to harden when the flange is bonded. After the sealants are completely hardened,<br/>they have a flexibility that follows the displacement of the flange bonding surface generated due to vibrations, internal pressure, changes in temperature, etc.</p>
+          <p class="explanation">Procedure for applying liquid gasket</p>
+          <p class="explanation">Pretreatment<br/>Remove any dust, filth, moisture, oil, etc. that has adhered to the bonding surfaces, and dry the surfaces completely.<br/>When reassembling, remove any residual sealing agent on the bonding surfaces using the Loctite gasket remover, etc.<br/>Be careful when using only a spatula, etc. for removal, as this may cause flaws on the seal surface.</p>
+          <p class="explanation">Application method and assembly</p>
+          <p class="explanation">As the liquid gasket is an anaerobic sealant, it hardens only when there is an absence of air. However, since it begins to harden gradually from the contact surface with a metal, it should be applied right before assembly. Press the tip of the nozzle against the cover installation surface of the gear case and apply it in the form of bead with a diameter of approximately 1 to 3 mm thoroughly to the entire circumference as shown in the diagram. <br/>After the bead application, thoroughly spread the liquid gasket across the entire circumference of the seal surface with a spatula, etc., and then tighten it to the specified torque.</p>
+          <p class="explanation">Starting operation</p>
+          <p class="explanation">After assembly, wait for at least 20 minutes before conducting the air check and motoring.<br/>It takes 1 to 3 hours until practical hardness is attained.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to let foreign matters such as dust and chips adhere to the tip of the nozzle.</li>
+                    <li>Be careful not to let foreign matters adhere to the seal surface.</li>
+                    <li>If the nozzle is clogged, unclog it using a wire, etc.</li>
+                    <li>When applying, do not use a hardening accelerator at the same time, as this may cause clogging of the nozzle.</li>
+                    <li>Loctite 518 and FMD-127 harden by using metal as a catalyst, so use a container made of polyethylene when storing those that have been squeezed out of the tubes.</li>
+                    <li>Loctite 518 and FMD-127 should not be refilled back into their tubes.</li>
+                    <li>When applying the gasket to the transfer, wipe off the liquid gasket that protrudes from the gasket surface, as a paint cannot be applied until the gasket gets hardened.</li>
+                    <li>When washing cases, a water-soluble alkaline detergent may be used occasionally. This may form a coating of water-soluble alkaline detergent on the seal surface, resulting in interference with hardening of the anaerobic sealant. Therefore, use a degreasing agent, etc. for complete removal of the coating.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Use of circuit testing tools<br/>Unless instructed in the diagnostic procedures, do not use a test light. When a probe connector is required in the diagnostic procedures, use connector test adapter kit 5-8840-2835-0.</p>
+          <p class="explanation">Commercial electronic equipment<br/>"Commercial electronic equipment" refers to commercially available electronic equipment attached to the vehicle after it has been shipped from the factory. Be careful, as such equipment is not taken into particular consideration at the vehicle design stage.<br/>Commercial electronic equipment may cause malfunctions in the electronic control system, even if the equipment is properly attached. Commercial electronic equipment includes devices not connected to the electronic system of the vehicle, such as mobile telephones or radios.<br/>Therefore when diagnosing an electronic system problem, first confirm if such commercial electronic equipment is attached, and remove it from the vehicle if it is.<br/>If the problem has not been resolved after removing the equipment, perform the diagnosis using the regular procedure.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Make sure that commercial electronic equipment is attached to a circuit that is not involved with the circuits for the power source, ground, and electronic control system.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Damage caused by electrostatic discharge<br/>As the electronic components used in the electronic control system are designed to operate at extremely low voltages, they can be easily damaged by electrostatic discharge, and some types of electronic components can be damaged by static electricity of 100 V or less, which cannot be felt by a person. For a person to be able to detect the flow of electrostatic discharge, a voltage as much as 4000 V is required.<br/>There are various ways a person can build up an electrostatic charge. The most common way to build up an electrostatic charge is through methods based on friction or induction.<br/>An example of building an electrostatic charge by friction is when a person slides across the seat of the vehicle.<br/>A person wearing insulated shoes can build an electrostatic charge by induction when the person momentarily touches the ground while standing near a highly charged object. A charge of the same polarity flows out, and that person becomes electrostatically charged with the high opposite polarity. As static electricity causes damage, be careful when handling and testing electronic components.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>To prevent damages caused by electrostatic discharge, do not touch the connector pins of the control unit, or the electronic components soldered onto the circuit board of the control unit.</li>
+                    <li>Do not open the packaging of a replacement part until the preparations for installation of the replacement part are completed to prevent damage by static electrical discharge.</li>
+                    <li>To prevent damage caused by electrostatic discharge, connect the packaging to a properly working ground connection of the vehicle before removing a part from the packaging.</li>
+                    <li>To prevent damage caused by electrostatic discharge, touch a properly working ground before attaching a part when handling the part while sliding across the seat, sitting down from a standing position, or walking a certain distance.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Control unit maintenance precaution<br/>The control unit has been designed to withstand the regular current load associated with vehicle operation. Make sure the circuit is not overloaded. When performing open circuit or short circuit tests, do not ground or apply voltage to the circuit of the control unit, unless otherwise instructed. When performing these circuit tests, make sure to use a DMM with a high input impedance.<br/>When it is clear that there is a failure in the control unit, make sure to confirm that there are no problems outside of the control unit before replacing it. If you neglect to do this, in cases where the control unit was damaged due to a short circuit in the output circuit, for example, the replaced control unit will also be damaged.</p>
+          <p class="explanation">Description of diagnosis<br/>Failure symptoms of the transfer control are divided into those that can be detected as DTCs by illuminating the check 4WD warning light, and those that the driver can detect as abnormal symptoms of the vehicle.<br/>Continue the diagnosis in accordance with the diagnostic system check-transfer case controls.</p>
+          <p class="explanation">About self-diagnosis<br/>The TCCM has a self-diagnosing function, which performs the check operations when the system is started, to determine whether there are any system malfunctions and which areas are defective. If a malfunction is detected, the check 4WD warning light illuminates and a DTC is stored.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The illuminated warning light is turned off each time the ignition switch is turned OFF, but the DTC continues to be stored until the clearing operation is performed. For intermittent problems or problems occurring when the vehicle is driven, the control unit determines that the system is normal when the ignition switch is turned from OFF to ON, and a normal illumination pattern may be indicated. Perform an inspection/repair according to the trouble diagnosis flow.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

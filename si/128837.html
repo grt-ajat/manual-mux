@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>EHCU removal (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    EHCU
+          removal
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758954">1. EHCU
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When welding the vehicle using an electrical arc welder, remove the EHCU from the vehicle.</li>
+                    <li>When removing the EHCU from the vehicle, disconnect the battery cable and connectors.</li>
+                    <li>Installation is the reverse order of the removal procedure.</li>
+                    <li>Do not install devices that emit powerful radio waves such as wireless devices near the EHCU.</li>
+                    <li>Keep water away from the EHCU.</li>
+                    <li>Never loosen the screws of the EHCU.</li>
+                    <li>Do not paint it.</li>
+                    <li>Do not allow metal objects such as screwdrivers or tester probes directly contact the connector pins terminals.</li>
+                    <li>Handle with due attention to static electricity.</li>
+                    <li>Do not directly apply external voltage to the terminals.</li>
+                    <li>Do not hold the pipe on the top of the EHCU when handling it.</li>
+                    <li>Never loosen the EHCU bolts and nuts.</li>
+                    <li>Should they be loosened, do not reuse the EHCU.</li>
+                    <li>When replacing the EHCU, it is needed to write the vehicle information to a new EHCU.</li>
+                    <li>When replacing the EHCU, upload the data in the EHCU before replacement to a scan tool, and then remove the EHCU.</li>
+                    <li>If communication cannot be made with a scan tool, remove it with no change.</li>
+                    <li>Use the same scan tool from the beginning to the completion of a work for replacement. If a scan tool is replaced during a work, correct information cannot be written.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758964">2. EHCU
+                  upload
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to the models with the ESC.</li>
+                    <li>If the EHCU to be replaced is not able to communicate with a scan tool, do not perform this operation.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select diagnosis.</p>
+          <p class="instructions">4. Select the chassis.</p>
+          <p class="instructions">5. Select ABS/ESC.</p>
+          <p class="instructions">6. Select the programming.</p>
+          <p class="instructions">7. Select Module Information.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Record the 8 digits of ESC Data File Partnumber.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Select Upload Vehicle Configuration Data.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Upload the vehicle data to a scan tool by following the on-screen instructions.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758953">3. EHCU
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness connector from the EHCU.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758963">4. Brake pipe
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the brake pipe from the EHCU.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After removing the brake pipe, cover the opening with a plug or tape to prevent foreign objects from entering.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Models without ESC</li>
+                    <li>Loosen the 5 flare nuts to disconnect the brake pipe.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH034801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models with ESC.</li>
+                    <li>Loosen the 6 flare nuts to disconnect the brake pipe.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH034901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758962">5. EHCU
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the EHCU from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 3 bracket-fixing bolts.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

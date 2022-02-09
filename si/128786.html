@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transfer assembly inspection (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transfer assembly
+          inspection
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759091">1. Transfer assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If any wear, damage, or other abnormalities are found, repair or replace the defective parts.</li>
+                    <li>Wash all parts with clean detergent, and confirm that old oil, metallic grain, dirt, and foreign materials are completely removed.</li>
+                    <li>Blow compressed air into each oil feed port and channel in each case half to remove off foreign materials and residual detergent.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Inspect the chain.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the surface that makes contact with the sprocket for excessive wear or damage.</li>
+                    <li>Replace if wear or damage is excessive.</li>
+                    <li>If there is evidence indicating that the chain interferes the inner wall of transfer cover, replace the chain.</li>
+                    <li>If the chain and the sprocket do not engage due to chain stretch, replace the chain.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Inspect the drive sprocket.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the sprocket tooth surfaces for excessive wear or damage.</li>
+                    <li>Inspect the gear splines for burrs, chipping, wear, or any evidence of damage.</li>
+                    <li>Repair small cracks or scratches by using an oil stone.</li>
+                    <li>If excessive wear or damage is found, replace the defective parts.</li>
+                    <li>If excessive wear or damage is found on the sprocket inside sliding surface, replace the defective parts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Inspect the gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the gear tooth surfaces for excessive wear or damage.</li>
+                    <li>Inspect the gear splines for burrs, chipping, wear, or any evidence of damage.</li>
+                    <li>Repair small cracks or scratches by using an oil stone.</li>
+                    <li>If excessive wear or damage is found, replace the defective parts.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Inspect the switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the 2-4 and neutral switches for continuity.</li>
+                    <li>If any abnormality is found, replace the 4H and 4L switches.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3DSH003901.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTWC3DSH004001.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="73" colspan="1" rowspan="2" align="center" valign="middle">Switch stroke</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">2-4 switch signal</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Neutral switch signal</td></tr><tr><td width="73" colspan="1" rowspan="1" align="left" valign="bottom">Terminal 1-2</td><td width="73" colspan="1" rowspan="1" align="left" valign="bottom">Terminal 1-2</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Open</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Close</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Close</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Open</td></tr></tbody></table>
+                <p class="instructions">5. Inspect the oil pump.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove foreign matters from the strainer, and if it is damaged, replace the strainer.</li>
+                    <li>If the shaft insertion section is excessively worn or damaged, replace the oil pump assembly.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Inspect the clutch hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the clutch hub spline for play.</li>
+                    <li>Set the dial gauge to the clutch hub, and then move the clutch hub right-to-left to read the fluctuation.</li>
+                    <li>If the measured value exceeds the limit, replace the clutch hub.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.0 to 0.1 mm { 0.000 to 0.004 in }</p>
+          <p class="numeric">Limit： 0.2 mm { 0.008 in }</p>
+                <p class="illust"><img src="image/RTWC3DSH004101.png" class="SH" /></p>
+                <p class="instructions">7. Inspect the bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the status of all needle bearings and ball bearings.</li>
+                    <li>Completely wash the bearings with cleaning fluid and blow compressed air.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Slowly turn the bearing by hand; do not rotate it quickly.</li>
+                    <li>If the bearing rotates quickly, it may damage the roller.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply diesel oil to the bearing, and inspect the condition of the bearing while slowly rotating the race.</li>
+                    <li>Inspect play of the ball bearing by using the dial indicator.</li>
+                    <li>If the measured value exceeds the limit, replace the ball bearing.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Limit： 0.2 mm { 0.008 in }</p>
+                <p class="illust"><img src="image/RTWC3DSH004201.png" class="SH" /></p>
+                <p class="instructions">8. Inspect the transfer synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The synchronizer hub and the sliding sleeve have been selected for the optimal combination, and therefore, do not change the original combination.</li>
+                    <li>Clean the synchronizer components with clean cleaning fluid and dry.</li>
+                    <li>Inspect components for the followings.</li>
+                    <li>Gear wear, damage, chipping, burrs, breakage</li>
+                    <li>Replace the key or spring if wear, cracking, or deformation is found.</li>
+                    <li>If wear, chipping, or burrs cannot be repaired using a grindstone or crocus cloth, replace the component.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Inspect the block ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the block ring and its clearance.</li>
+                    <li>Measure the clearance between the block ring and the insert by using a vernier caliper.</li>
+                    <li>Replace the block ring and the insert if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 2.46 to 2.74 mm { 0.097 to 0.108 in }</p>
+          <p class="numeric">Limit： 3.0 mm { 0.118 in }</p>
+                <p class="illust"><img src="image/RTWC3DSH004301.png" class="SH" /></p>
+                <p class="instructions">10. Inspect the synchronizer cone.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the 2WD-4WD synchronizer and 3 cones.</li>
+                    <li>Measure the clearance between the block ring and the dog-teeth with a feeler gauge.</li>
+                    <li>Replace the 2WD-4WD synchronizer assembly if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.5 mm { 0.059 in }</p>
+          <p class="numeric">Limit： 0.8 mm { 0.031 in }</p>
+                <p class="illust"><img src="image/RTWC3DSH004401.png" class="SH" /></p>
+                <p class="instructions">11. Inspect the clutch hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a feeler gauge to measure the clearance between the clutch hub and the insert.</li>
+                    <li>Replace the clutch hub and the insert if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.01 to 0.19 mm { 0.0004 to 0.0075 in }</p>
+          <p class="numeric">Limit： 0.3 mm { 0.012 in }</p>
+                <p class="illust"><img src="image/RTWC3DSH004501.png" class="SH" /></p>
+                <p class="instructions">12. Inspect the detent spring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the detent spring for deformation, cracking, or wear, and replace if any abnormalities are found.</li>
+                    <li>Measure the free length of the detent spring using a vernier caliper.</li>
+                    <li>If the measured value is smaller than the limit, replace the detent spring.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 23.4 mm { 0.921 in }</p>
+          <p class="numeric">Limit： 22.8 mm { 0.898 in }</p>
+                <p class="illust"><img src="image/RTWC3DSH004601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the tension of the detent spring using the spring tester.</li>
+                    <li>If the measured value is smaller than the limit, replace the detent spring.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Compressed height： 18.7 mm { 0.736 in }</p>
+          <p class="numeric">Standard： 68.6 to 88.2 N { 7.0 to 9.0 kg / 15.4 to 19.8 lb }</p>
+                <p class="illust"><img src="image/RTWC3DSH004701.png" class="SH" /></p>
+                <p class="instructions">13. Inspect the shift arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the shift arm for wear, deformation, or scratching, and replace if any abnormalities are found.</li>
+                    <li>Measure the thickness of the shift arm using a micrometer.</li>
+                    <li>If the measured value is smaller than the limit, replace the shift arm.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 7.60 to 7.85 mm { 0.299 to 0.309 in } H-L shift arm</p>
+          <p class="numeric">Limit： 7.0 mm { 0.276 in } H-L shift arm</p>
+          <p class="numeric">Standard： 9.60 to 9.85 mm { 0.378 to 0.388 in } 2-4 shift arm</p>
+          <p class="numeric">Limit： 9.0 mm { 0.354 in } 2-4 shift arm</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

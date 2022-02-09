@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Curtain airbag scrapping (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Curtain airbag
+          scrapping
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie752365">1. Undeployed curtain airbag
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Take extra care when handling and storing an undeployed airbag.</li>
+                    <li>If the airbag deploys, material on the surface of the airbag may be thrown outwards with great force due to the sudden generation of gas.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When carrying an undeployed airbag, make sure that the bag opening is facing away from your body.</li>
+                    <li>This is in order to minimize injury in case the airbag deploys.</li>
+                    <li>Never carry the airbag assembly by holding the wiring or connector.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Procedure for transporting an undeployed airbag</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Service personnel should refer to the latest Service Bulletins for proper airbag transport procedures.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Precautions regarding the airbag assembly scrapping procedure</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>During the course of a vehicle's service life, certain situations may arise which will necessitate the disposal of an undeployed airbag.</li>
+                    <li>This information covers the proper procedures for disposing of an undeployed airbag.</li>
+                    <li>An undeployed airbag must not be disposed of through normal refuse channels.</li>
+                    <li>Before an airbag can be disposed of, it must be deployed.</li>
+                    <li>Failure to follow the proper disposal procedure can result in injury due to airbag deployment.</li>
+                    <li>The airbag may be deployed either inside or outside the vehicle.</li>
+                    <li>The airbag may be deployed either inside or outside the vehicle.</li>
+                    <li>Failure to dispose of in accordance with the proper disposal procedure may be a violation of federal, state, or local laws.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752354">2. Deployed curtain airbag
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be sure to wear gloves and safety glasses when handling an airbag after deployment.</li>
+                    <li>When handling the airbag, the safety precautions must be observed.</li>
+                    <li>The surface of the deployed airbag may contain a small amount of sodium hydroxide.</li>
+                    <li>This is a byproduct of the deployment reaction, and may cause irritation if it comes in contact with the skin or eyes.</li>
+                    <li>Wash hands with soap after handling.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752355">3. Curtain airbag (deployment outside vehicle) (method of securing to tire)
+                  scrapping
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When deploying an undeployed airbag outside the vehicle, the deployment procedure must be strictly followed.</li>
+                    <li>Continue to wear safety glasses until the deployed airbag is disposed of.</li>
+                    <li>Before performing the disposal procedure, you should be fully familiar with SRS repairs and with proper handling of the airbag.</li>
+                    <li>Go over the procedure carefully before beginning work.</li>
+                    <li>Use SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0 for this procedure.</li>
+                    <li>The procedure must not be performed when SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0 are not available.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Failure to follow the proper disposal procedure can result in injury.</li>
+                    <li>Never connect the SRS deployment harness to any power source before connecting to the curtain airbag.</li>
+                    <li>Keep the deployment harness shorted until the moment when the airbag is to be deployed.</li>
+                    <li>The airbag will deploy immediately when connected to a power source.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The following is the curtain airbag deployment procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the key.</li>
+                    <li>Wear safety glasses.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+          <p class="instructions">3. Remove the curtain airbag from vehicle.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When carrying an undeployed airbag, make sure that the bag opening is facing away from your body.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Inspect the SRS deployment harness.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0 for damage.</li>
+                    <li>If the harness is damaged, discard it and obtain a new one.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST1852810020.png" class="ST" /><br/>SST: 1-8528-1002-0 - SRS deployment harness</p>
+          <p class="sst"><img src="image/ST5884031420.png" class="ST" /><br/>SST: 5-8840-3142-0 - SRS deployment harness</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Short the 2 SRS deployment harnesses together by securely inserting one banana plug into the other.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The SRS deployment harness should remain shorted, and absolutely must not be connected to a power source until the moment when the airbag is to be deployed.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Connecting the deployment harness to the power source should always be the last step in the airbag deployment procedure.</li>
+                    <li>If this procedure is not followed correctly, there is a risk of injury.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW68BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFW88BSH001401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clear a space on the ground about 2 m (6.6 feet) in diameter where the airbag is to be deployed.</li>
+                    <li>An outdoor location on a paved road where people do not pass is preferred.</li>
+                    <li>If an outdoor location is not available, select a space on the shop floor where people do not pass and where there is sufficient ventilation.</li>
+                    <li>Ensure that no loose or flammable objects are within the deployment area.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8CSH001901.png" class="SH" /></p>
+                <p class="instructions">5. Prepare the tire.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Prepare 3 tires (15 inch or larger) without wheels, and 2 tires of the same size with wheels.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Connect the SRS deployment harness to the curtain airbag.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Verify that the SRS deployment harness is securely installed to the airbag connector.</li>
+                    <li>Keep the deployment harness shorted until the moment when the airbag is to be deployed.</li>
+                    <li>The airbag will deploy immediately when connected to a power source.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Fasten the curtain airbag to the tire.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>In 2 locations, wind the automotive wire harness (with a cross-section of 1.25 mm2 or more) or fix with wire.</li>
+                    <li>Do not wrap around the deployment surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH006301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pile up the tires as shown in the illustration.</li>
+                    <li>Secure firmly using ropes at 4 locations to prevent the tires from tumbling down.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH006401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Tire for securing airbag</li><li>Tire without wheel</li><li>Tire with wheel</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Stretch the SRS deployment harness from the airbag to its maximum length.</li>
+                    <li>Place a power source near the shorted end of the SRS deployment harness.</li>
+                    <li>A vehicle battery of minimum 12 V and minimum 2 A is recommended as the power source.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Confirm that no people or loose or flammable objects are present in the area around the airbag.</li>
+                    <li>Notify all persons in the nearby area that an airbag will be deployed.</li>
+                    <li>The deployment will be accompanied by a very loud noise which may startle persons who are not expecting it.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Separate the 2 banana plugs on the SRS deployment harness.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When the airbag deploys, the gas inside the airbag expands violently.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>The airbag will immediately deploy when connected to a power source.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Connect the SRS deployment harness to power source.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Again notify all persons in the nearby area that an airbag will be deployed.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the SRS deployment harness to the power source to immediately deploy the airbag.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH006901.png" class="SH" /></p>
+                <p class="instructions">9. Disconnect the SRS deployment harness from power source.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Short the 2 SRS deployment harnesses together by securely inserting one banana plug into the other.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW68BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>In the event that the airbag is not deployed after following this procedure, immediately proceed to step 11.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When handling the deployed airbag, wear a pair of work gloves and safety goggles to protect your hands and eyes from possible irritation and heat.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When handling the deployed airbag, the safety precautions must be observed.</li>
+                    <li>The metal parts of the airbag after deployment will be extremely hot.</li>
+                    <li>Do not touch the metal parts of the airbag for about 30 minutes after deployment.</li>
+                    <li>Wait for the inflator module to cool.</li>
+                    <li>Do not place the deployed airbag close to any flammable object.</li>
+                    <li>If this procedure is not followed correctly, there is a risk of injury.</li>
+                    <li>If the deployed airbag must be moved before it has cool cooled, be sure to wear gloves and avoid touching any metal surfaces.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">10. Disconnect the SRS deployment harness from the curtain airbag.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the SRS deployment harness from the airbag as soon as possible after deployment in order to avoid damaging the SRS deployment harness.</li>
+                    <li>Inspect the SRS deployment harness for damage, and replace if necessary.</li>
+                    <li>Dispose of the deployed airbag through normal refuse channels.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW88BSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sturdy vinyl bag</li><li>Deployed airbag</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Wash hands with soap after handling.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The following is the procedure to be taken in case the airbag is not deployed during the above procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Disconnect the SRS deployment harness from the curtain airbag.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When carrying an undeployed airbag, make sure that the bag opening is facing away from your body.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">12. Inspect the SRS deployment harness.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752364">4. Curtain airbag (deployment inside vehicle)
+                  scrapping
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Deploying inside the vehicle is effective when the vehicle is being scrapped or when recovering parts that can be reused.</li>
+                    <li>This includes, but is not limited to, the following situations.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="19" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="200" colspan="1" rowspan="1" align="left" valign="middle">The vehicle has completed its useful life.</td></tr><tr><td width="19" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="200" colspan="1" rowspan="1" align="left" valign="middle">The vehicle has been damaged beyond repair in a nondeployment type accident.</td></tr><tr><td width="19" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="200" colspan="1" rowspan="1" align="left" valign="middle">The vehicle has been stripped or damaged beyond repair in a theft.</td></tr><tr><td width="19" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="200" colspan="1" rowspan="1" align="left" valign="middle">Collect reusable components.</td></tr></tbody></table>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Never use SRS components from one vehicle in another vehicle.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When deploying an undeployed airbag inside the vehicle, the deployment procedure must be strictly followed.</li>
+                    <li>Continue to wear safety glasses until the deployed airbag is disposed of.</li>
+                    <li>Before performing the disposal procedure, you should be fully familiar with SRS repairs and with proper handling of the airbag.</li>
+                    <li>Go over the procedure carefully before beginning work.</li>
+                    <li>Use SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0 for this procedure.</li>
+                    <li>The procedure must not be performed when SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0 are not available.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Failure to follow the proper disposal procedure can result in injury.</li>
+                    <li>Never connect the SRS deployment harness to any power source before connecting to the curtain airbag.</li>
+                    <li>Keep the deployment harness shorted until the moment when the airbag is to be deployed.</li>
+                    <li>The airbag will deploy immediately when connected to a power source.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The following is the curtain airbag deployment procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the key.</li>
+                    <li>Remove all loose objects from inside the vehicle.</li>
+                    <li>To reduce the risk of personal injury from the vehicle glass or the interior pieces, cover the windshield area, the rear window area, and the door window opening completely with a drop cloth, blanket, or similar item.</li>
+                    <li>Wear safety glasses.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+          <p class="instructions">3. Inspect the SRS deployment harness.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0 for damage.</li>
+                    <li>If the harness is damaged, discard it and obtain a new one.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST1852810020.png" class="ST" /><br/>SST: 1-8528-1002-0 - SRS deployment harness</p>
+          <p class="sst"><img src="image/ST5884031420.png" class="ST" /><br/>SST: 5-8840-3142-0 - SRS deployment harness</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Short the 2 SRS deployment harnesses together by securely inserting one banana plug into the other.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The SRS deployment harness should remain shorted, and absolutely must not be connected to a power source until the moment when the airbag is to be deployed.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Connecting the deployment harness to the power source should always be the last step in the airbag deployment procedure.</li>
+                    <li>If this procedure is not followed correctly, there is a risk of injury.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW68BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect SRS deployment harnesses 1-8528-1002-0 and 5-8840-3142-0.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFW88BSH001401.png" class="SH" /></p>
+                <p class="instructions">4. Disconnect the connector from the curtain airbag.</p>
+          <p class="instructions">5. Connect the SRS deployment harness to the curtain airbag.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Verify that the SRS deployment harness is securely seated in the curtain airbag connector.</li>
+                    <li>The SRS deployment harness should remain shorted, and absolutely must not be connected to a power source until the moment when the airbag is to be deployed.</li>
+                    <li>The airbag will deploy immediately when connected to a power source.</li>
+                    <li>Verify that the inside of the vehicle and area around the vehicle are clear of all people and loose or flammable objects.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Stretch the SRS deployment harness from the airbag to its maximum length.</li>
+                    <li>Place a power source near the shorted end of the SRS deployment harness.</li>
+                    <li>A vehicle battery of minimum 12 V and minimum 2 A is recommended as the power source.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Notify all persons in the nearby area that an airbag will be deployed.</li>
+                    <li>The deployment will be accompanied by a very loud noise which may startle persons who are not expecting it.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Separate the 2 banana plugs on the SRS deployment harness.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>The airbag will immediately deploy when connected to a power source.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Connect the SRS deployment harness to power source.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Again notify all persons in the nearby area that an airbag will be deployed.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the SRS deployment harness to the power source to immediately deploy the airbag.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Disconnect the SRS deployment harness from power source.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Short the 2 SRS deployment harnesses together by securely inserting one banana plug into the other.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW68BSH001601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the cover fitted to the windshield, the rear window, and the front door window.</li>
+                    <li>In the event that the airbag is not deployed after following this procedure, immediately proceed to step 10.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When handling the deployed airbag, wear a pair of work gloves and safety goggles to protect your hands and eyes from possible irritation and heat.</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When handling the deployed airbag, the safety precautions must be observed.</li>
+                    <li>The metal parts of the airbag after deployment will be extremely hot.</li>
+                    <li>Do not touch the metal parts of the airbag for about 30 minutes after deployment.</li>
+                    <li>Wait for the inflator module to cool.</li>
+                    <li>If this procedure is not followed correctly, there is a risk of injury.</li>
+                    <li>If the deployed airbag must be moved before it has cool cooled, be sure to wear gloves and avoid touching any metal surfaces.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Remove the curtain airbag from the roof.</p>
+          <p class="instructions">9. Disconnect the SRS deployment harness from the curtain airbag.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the SRS deployment harness from the airbag as soon as possible after deployment in order to avoid damaging the SRS deployment harness.</li>
+                    <li>Inspect the SRS deployment harness for damage, and replace if necessary.</li>
+                    <li>Dispose of the deployed airbag through normal refuse channels.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW88BSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Sturdy vinyl bag</li><li>Deployed airbag</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Wash hands with soap after handling.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The following is the procedure to be taken in case the curtain airbag is not deployed during the above procedure.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">10. Disconnect the SRS deployment harness from the curtain airbag.</p>
+          <p class="instructions">11. Remove the curtain airbag from the roof.</p>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When carrying an undeployed airbag, make sure that the bag opening is facing away from your body.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">12. Inspect the SRS deployment harness.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

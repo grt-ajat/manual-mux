@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Cruise control steering wheel switch removal (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Cruise control steering wheel switch
+          removal
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751630">1. Air bag assembly
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Handling of a deployed airbag assembly</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When handling the airbag, the safety precautions must be observed.</li>
+                    <li>A small amount of sodium hydroxide may be contained on the surface of a deployed airbag.</li>
+                    <li>This is a by-product of the deployment reaction and may cause irritation if contact is made with skin or eyes.</li>
+                    <li>To handle activated airbag, wear gloves and safety glasses.</li>
+                    <li>After handling, wash your hands with soap.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Handling of an undeployed airbag assembly</li>
+              <ul/>
+    </div>
+                        <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>When carrying an undeployed airbag, make sure that the trim cover faces the opposite direction of your body.</li>
+                    <li>When carrying the airbag, never hang the connector or harness on your hand.</li>
+                    <li>When putting down an undeployed airbag, make sure to face the trim cover upward.</li>
+                    <li>Do not place any other item on the steering wheel with the airbag surface facing downward.</li>
+                    <li>Not following this procedure will result in a fire or injuries.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After the airbag is deployed, inspect for burning due to overheating, melting or other problems.</li>
+                    <li>If the SRS coil assembly is damaged, replace it.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750816">2. Driver air bag assembly
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Set the steering wheel so the vehicle tires are pointing straight forward before removing the steering wheel.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Rotate the steering wheel so that the vehicle wheels are straight, then lock the steering wheel.</li>
+                    <li>Failure to follow the previously mentioned precautions may make the center position of the SRS coil assembly uncertain, which may result in damage on the SRS coil assembly.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750805">3. SRS control unit
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Deactivate the SRS function.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn the ignition switch to LOCK and remove the key.</li>
+                    <li>Remove the SRS fuse from the fuse relay box or disconnect the battery ground cable from the battery.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750806">4. Driver air bag assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify the holes located on the both sides of the steering cover.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH000101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify the lever position in the hole with the illustration below.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert a bar of diameter 6 mm {0.24 in} to remove the driver airbag assembly from the lever.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001101.png" class="SH" /></p>
+                <p class="instructions">1. Remove the driver air bag assembly from the steering wheel.</p>
+          <p class="instructions">2. Disconnect the connector from the driver air bag assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the airbag connector.</li>
+                    <li>Disconnect the horn connector.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Airbag connector</li><li>Horn connector</li></ol></div>
+                      <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Keep the airbag assembly away from your body when carrying it.</li>
+                    <li>When putting down an undeployed airbag assembly, make sure to face the trim cover upward.</li>
+                    <li>Place the trim cover upward on a flat surface.</li>
+                    <li>Failure to follow this procedure may result in personal injury.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH000501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750807">5. Steering wheel
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Reconfirm that the steering wheel is set to the position for advancing straight forward.</li>
+                    <li>Make setting marks on the steering wheel and shaft.</li>
+                    <li>They are used for reassembly of parts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001501.png" class="SH" /></p>
+                <p class="instructions">1. Remove the nut from the steering shaft.</p>
+          <p class="instructions">2. Remove the steering wheel from the steering shaft using special tool.</p>
+                <p class="sst"><img src="image/ST5852100160.png" class="ST" /><br/>SST: 5-8521-0016-0 - steering wheel remover</p>
+                <p class="illust"><img src="image/RUWE9CSH001601.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Never apply an impact to the steering wheel with a hammer, etc. to remove it.</li>
+                    <li>The steering shaft is designed to absorb shocks.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751799">6. Steering wheel cover lower
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the steering wheel cover lower from the steering wheel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 2 screws.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Steering wheel cover lower</li><li>Screw</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751798">7. Cruise control steering wheel switch
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the cruise control steering wheel switch from the steering wheel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the cruise control steering wheel switch harness connector.</li>
+                    <li>Remove the 2 screws and remove the cruise control steering wheel switch.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9CSH001301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cruise control steering wheel switch</li><li>Screw</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

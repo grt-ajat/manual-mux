@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Piston and connecting rod inspection (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Piston and connecting rod
+          inspection
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747102">1. Piston
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the piston.</li>
+                    <li>Carefully remove the carbon from the piston head and piston ring grooves.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not use a wire brush to clean the piston, because it causes flaws on the piston.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Inspect the piston.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Visually inspect for piston cracking, burning, or other excessive wear.</li>
+                    <li>Replace the piston if there are abnormalities.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744009">2. Piston
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the cylinder block using a cylinder gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter in the thrust direction and the radial direction at the specified position.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Measurement position： 20 mm { 0.79 in } From the top surface of the cylinder block</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Calculate the average of measured value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 95.421 to 95.450 mm { 3.7567 to 3.7579 in }</p>
+          <p class="numeric">Limit： 95.48 mm { 3.7590 in }</p>
+                <p class="illust"><img src="image/LNW61ASH006401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Measurement position</li><li>Measurement direction</li><li>Measurement direction</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If it exceeds the limit, replace the cylinder block.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the piston using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the outer diameter of the piston pin at the measurement position.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Measurement position： 11.00 mm { 0.43 in } From the bottom surface of the piston</p>
+                <p class="illust"><img src="image/RTW56ASH023101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Measurement position</li></ol></div>
+                <p class="instructions">3. Calculate the clearance from measured value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Calculate the clearance according to the inner diameter of the cylinder block and the outer diameter of the piston.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.042 to 0.080 mm { 0.0017 to 0.0031 in }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Replace the piston if the clearance exceeds the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Select the piston.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Grades A, B, and C are marked on the top of the piston.</li>
+                    <li>Select a piston so that the clearance is the specified value.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">Grade</td><td width="158" colspan="1" rowspan="1" align="left" valign="middle">Outer diameter</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="158" colspan="1" rowspan="1" align="center" valign="middle">： 95.350 to 95.379 mm { 3.7539 to 3.7551 in }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="158" colspan="1" rowspan="1" align="center" valign="middle">： 95.360 to 95.389 mm { 3.7543 to 3.7555 in }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">C</td><td width="158" colspan="1" rowspan="1" align="center" valign="middle">： 95.370 to 95.399 mm { 3.7547 to 3.7559 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWF1BSH002601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Grade</li><li>Front mark</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748027">3. Piston ring
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the piston ring to the cylinder block.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert it horizontally at the position where it is supposed to be installed to the piston.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH009301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Push the piston ring into the cylinder until the cylinder bore is at the minimum position.</li>
+                    <li>Do not decline the piston ring in either direction.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the clearance using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the piston ring joint clearance.</li>
+                    <li>If the measured value exceeds the specified value, replace the piston ring.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.32 to 0.46 mm { 0.0126 to 0.0181 in } 1st piston ring</p>
+          <p class="numeric">Standard： 0.42 to 0.66 mm { 0.0165 to 0.0260 in } 2nd piston ring</p>
+          <p class="numeric">Standard： 0.27 to 0.56 mm { 0.0106 to 0.0220 in } Oil ring</p>
+                <p class="instructions">3. Measure the clearance using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the clearance between the piston ring grooves and the piston ring.</li>
+                    <li>Remove all carbon in the piston ring grooves.</li>
+                    <li>Insert the piston ring into the piston ring groove, and measure the clearance.</li>
+                    <li>If the clearance between the piston ring groove and the piston ring exceeds the limit, replace the piston or piston ring.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.07 to 0.11 mm { 0.0028 to 0.0043 in } 2nd piston ring</p>
+          <p class="numeric">Limit： 0.15 mm { 0.0059 in } 2nd piston ring</p>
+          <p class="numeric">Standard： 0.03 to 0.07 mm { 0.0012 to 0.0028 in } Oil ring</p>
+          <p class="numeric">Limit： 0.15 mm { 0.0059 in } Oil ring</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The 1st piston ring cannot be measured.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH009501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746680">4. Piston pin
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the piston pin.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Visually inspect for cracks, scratches, or other damage, and replace the piston pin as necessary.</li>
+                    <li>Inspect for a certain degree of resistance when the piston pin is lightly pushed at room temperature.</li>
+                    <li>Replace the piston or the piston pin if there is significant looseness or slackening at normal temperature.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH009701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746556">5. Piston pin
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure outer diameter using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace the piston pin if the measured value exceeds the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 33.995 to 34.000 mm { 1.3384 to 1.3386 in }</p>
+                <p class="illust"><img src="image/LNW21BSH009601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746555">6. Connecting rod assembly
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure inner diameter using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the connecting rod small end bushing.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Calculate the clearance from measured value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Calculate the clearance of the connecting rod small end and the piston pin outer diameter.</li>
+                    <li>If the clearance between the bush inner diameter and the pin outer diameter exceeds the limit, replace the connecting rod assembly and the pin.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.008 to 0.020 mm { 0.0003 to 0.0008 in }</p>
+          <p class="numeric">Limit： 0.05 mm { 0.0020 in }</p>
+                <p class="illust"><img src="image/LNW21BSH009801.png" class="SH" /></p>
+                <p class="instructions">3. Apply the engine oil to the piston pin.</p>
+          <p class="instructions">4. Install the piston pin to the piston.</p>
+          <p class="instructions">5. Turn the piston pin.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the pin rotates stably and smoothly, the clearance is normal.</li>
+                    <li>If there is unstableness, measure the clearance.</li>
+                    <li>Replace the piston or piston pin if the clearance exceeds the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.006 to 0.019 mm { 0.0002 to 0.0007 in }</p>
+                <p class="instructions">6. Measure the connecting rod assembly using the connecting rod aligner.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>For connecting rod alignment 100 mm {3.94 in}, measure the twisting and degree of parallelization of the large end hole and small end hole.</li>
+                    <li>Replace if the measured value exceeds the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.05 mm { 0.002 in } Twisting</p>
+          <p class="numeric">Standard： 0.05 mm { 0.002 in } Degree of parallelization</p>
+                <p class="illust"><img src="image/LNW21BSH010401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746681">7. Connecting rod bearing
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the connecting rod bearing cap from the connecting rod.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The removed caps should be lined up in the order of the cylinder number.</li>
+                    <li>Clean the bearing and the crankshaft pin.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Inspect the connecting rod bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace the bearings in sets if there is damage or excessive wear.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Put the PLASTIGAUGE on the crankshaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place the PLASTIGAUGE on the crankshaft pin.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the connecting rod bearing cap to the connecting rod.</p>
+          <p class="instructions">5. Apply the engine oil to the bolt.</p>
+          <p class="instructions">6. Tighten the bolt using a torque wrench.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten in numbered order as shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNWA1BSH003401.png" class="SH" /></p>
+                <p class="numeric">Tightening torque： 29.4 N・m { 3.0 kgf・m }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the bolts using a special tool.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884002660.png" class="ST" /><br/>SST: 5-8840-0266-0 - angle gauge</p>
+                <p class="numeric">Specified angle： 45 to 60 °</p>
+                <p class="instructions">7. Remove the connecting rod bearing cap from the connecting rod.</p>
+          <p class="instructions">8. Measure the clearance using the PLASTIGAUGE.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the widest point of the PLASTIGAUGE to find the pin oil clearance.</li>
+                    <li>Replace the bearings in sets if the clearance exceeds the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.033 to 0.075 mm { 0.0013 to 0.0030 in }</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

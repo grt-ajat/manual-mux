@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>ATF inspection null (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    ATF inspection
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756975">1. ATF inspection
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When filling the ATF, be sure to use only specified ATF.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Specified ATF<br/>EXXON MOBIL ATF-3309 or equivalent</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not use an ATF checking gauge for adjusting the oil level even if the vehicle is equipped with it because the ATF checking gauge is prepared for the purpose of checking water intrusion and does not have the oil level adjustment function.</li>
+                    <li>If activating the oil level adjustment control, the automatic transmission fluid warning light will turn OFF when select lever is moved in D rang or R range. Therefore lighting condition should be checked in N range or P range.</li>
+                    <li>When warming up the ATF in D range, so that the ATF temperature does not go over the oil level adjustment temperature due to rapid heating, do not raise the engine speed over 1,000 rpm. Also do not perform this operation for more than 5 seconds continuously.</li>
+                    <li>Perform the oil level adjustment in N range with the engine at idle so that the ATF temperature and oil level are stable condition.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Rotational speed： 700 r/min</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The oil level is not stable at engine stopping or high engine speed.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If adjustment is performed at below the oil level adjustment temperature, the ATF will be overfilled. This will cause to blow out the ATF. If adjustment is performed at above the oil level adjustment temperature, the ATF will be insufficient. This will cause abnormal noise (bleep and others), poor acceleration and gear shifting problem.</li>
+                    <li>Always apply the parking brake so that the vehicle does not begin to move unexpectedly.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ATF adjustment</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Park the vehicle on a level place, move the select lever in P range and apply the parking brake firmly.</p>
+          <p class="explanation">Put blocks at the front and rear of the tire.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Start the operation after the transmission cools down completely.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Remove the filler plug with O-ring.</p>
+                <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">O-ring</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 15.41 mm { 0.61 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.20 mm { 0.09 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH038101.png" class="SH" /></p>
+                <div class="legend"><ol><li>2WD</li><li>4WD</li></ol></div>
+                <p class="explanation">Replenish the ATF.</p>
+                <p class="numeric">： about 0.5 L { about 0.13 US gal / about 0.11 Imp.gal } Replenishing amount</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When replacing the transmission and changing the ATF, fill new ATF that is same amount of the recovered ATF.</li>
+                    <li>When overhauling the transmission, fill the specified amount of fluid listed below.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="498" colspan="4" rowspan="1" align="center" valign="middle">Fluid capacity [Reference value]</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Engine</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">Specification</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Oil pan type</td><td width="285" colspan="1" rowspan="1" align="center" valign="middle">ATF</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">4JJ1</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">High ride</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Deep</td><td width="285" colspan="1" rowspan="1" align="left" valign="middle">： 10.55 to 10.85 L { 2.79 to 2.87 US gal / 2.32 to 2.39 Imp.gal }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">4JK1</td><td width="83" colspan="1" rowspan="1" align="center" valign="middle">High ride</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Deep</td><td width="285" colspan="1" rowspan="1" align="left" valign="middle">： 10.05 to 10.35 L { 2.65 to 2.73 US gal / 2.21 to 2.28 Imp.gal }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The volume of oil cooler on the vehicle side is contained.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Temporally tighten the filler plug with O-ring.</p>
+          <p class="explanation">Connect a jumper between the terminals No.12 and No.4 (or No.5) of the DLC to short the TCM.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify that the check trans warning light turns ON when shorting the DLC terminals.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Start the engine.</p>
+          <p class="explanation">Move the select lever through each gear range, pausing for more than 2 seconds in each range to fill the hydraulic circuit. Repeat the same manner 2 times, and then move the select lever in P range.</p>
+          <p class="explanation">Activate the oil level adjustment control to change the lighting temperature of the automatic transmission fluid warning light.</p>
+          <p class="explanation">Move the select lever back and forth between N range and D range within 1.5 seconds. Repeat it for at least 6 seconds until the automatic transmission fluid warning light turns ON in N range.</p>
+          <p class="explanation">When the oil level adjustment control is activated, the automatic transmission fluid warning light will be illuminated for 2 seconds in N range. Keep the select lever in N range.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Perform the temperature up from low temperature condition to assure the steady oil temperature and oil level in the transmission.</li>
+                    <li>Verify that the automatic transmission fluid warning light turns OFF.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">After activating the oil level adjustment control, the automatic transmission fluid warning light will operate according to the ATF temperature condition.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Operating temperature of the automatic transmission fluid warning light at activating the oil level adjustment control</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">4JJ1</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Turn OFF</td><td width="180" colspan="1" rowspan="1" align="left" valign="middle">： 44 ℃ or less { 111 °F or less }</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Turn ON</td><td width="180" colspan="1" rowspan="1" align="left" valign="middle">： 45 to 53 ℃ { 113 to 127 °F }</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Flashing</td><td width="180" colspan="1" rowspan="1" align="left" valign="bottom">： 54 ℃ or more { 129 °F or more }</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">4JK1</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Turn OFF</td><td width="180" colspan="1" rowspan="1" align="left" valign="middle">： 45 ℃ or less { 113 °F or less }</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Turn ON</td><td width="180" colspan="1" rowspan="1" align="left" valign="middle">： 46 to 51 ℃ { 115 to 124 °F }</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Flashing</td><td width="180" colspan="1" rowspan="1" align="left" valign="bottom">： 52 ℃ or more { 126 °F or more }</td></tr></tbody></table>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the automatic transmission fluid warning light is flashed, the ATF temperature is above the oil temperature adjustment temperature. After cooling down the ATF, repeat the procedures from step 1.</li>
+                    <li>If the automatic transmission fluid warning light turns ON for 2 seconds and stays ON, you cannot adjust the oil level due to the oil level is not stabilize. After cooling down the ATF, repeat the procedures from step 1.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Perform the temperature up until the automatic transmission fluid warning light turns ON so that the ATF temperature reaches the oil level adjustment temperature.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Move the select lever in D range and depress the accelerator pedal to raise the engine speed to 1,000 rpm. Keep the engine speed for 5 seconds so that the ATF temperature reaches the oil level adjustment temperature. After that immediately release the accelerator pedal to allow the engine speed back to idle and move the select lever in N range. Verify the automatic transmission fluid warning light.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">After the automatic transmission fluid warning light turns ON, keep the select lever in N range with the engine at idle. Verify that the automatic transmission fluid warning light stays ON for at least 1 minute.</p>
+                <p class="numeric">Rotational speed： 700 r/min</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the automatic transmission fluid warning light does not turn ON or turns OFF within 1 minute, heating is insufficient. Repeat the heating procedure.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If moving the select lever with removing the overflow plug, the ATF will overflow due to unstable oil level. Perform this operation with installing the overflow plug.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Remove the overflow plug and verify that the ATF overflow through the overflow hole.</p>
+                <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">Gasket (Overflow plug)</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Inner diameter</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Thickness</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 11.90 mm { 0.47 in }</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 2.00 mm { 0.08 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH038001.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTWC5BSH034201.png" class="SH" /></p>
+                <p class="explanation">If the ATF overflow</p>
+          <p class="explanation">Wait until the overflow becomes to a trickle with illuminating the automatic transmission fluid warning light.</p>
+                <p class="illust"><img src="image/RTWC5BMH000901.png" class="MH" /></p>
+                <p class="explanation">If the ATF does not overflow</p>
+          <p class="explanation">Fill the ATF through the filler hole until the ATF overflow with illuminating the automatic transmission fluid warning light, and then wait until the overflow becomes to a trickle.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The engine speed should be 700 rpm steady while checking.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Using new gasket, tighten the overflow plug to the specified torque.</p>
+                <p class="numeric">Tightening torque： 20 N・m { 2.0 kgf・m / 15 lb・ft }</p>
+                <p class="explanation">Coat a new O-ring with ATF, and install it to the filler plug.</p>
+          <p class="explanation">Tighten the filler plug to the specified torque.</p>
+                <p class="numeric">Tightening torque： 40 N・m { 4.1 kgf・m / 30 lb・ft }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be sure to install the gasket in the correct direction as shown in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH034301.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTWC5BMH001101.png" class="MH" /></p>
+                <div class="legend"><ol><li>Filler plug (2WD)</li><li>Filler plug (4WD)</li><li>Overflow plug</li></ol></div>
+                <p class="explanation">Move the select lever in P range and stop the engine.</p>
+          <p class="explanation">Remove the jumper from DLC to cancel the short circuit and restart the engine.</p>
+          <p class="explanation">Verify that the automatic transmission fluid warning light and check trans warning light turn OFF, and then stop the engine.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After tightening the overflow plug, thoroughly wipe the dribbled ATF with a clean rag.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ATF inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the ATF condition no mixing of metal particles and disc lining powder too much, smell burnt, black and no white colored contamination.</p>
+          <p class="explanation">Inside A/T failure<br/>If a problem is found, replace A/T or Torque converter.</p>
+          <p class="explanation">Especially white-colored contamination is caused by mixing of water.</p>
+          <p class="explanation">Therefore inspect damage or brake of oil cooler system.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

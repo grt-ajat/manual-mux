@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of restraint null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of restraint
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751712">1. Function, structure, operation of restraint
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">SRS airbag system (Driver airbag and passenger airbag)<br/>The SRS airbag system consists of the following parts to form a deployment circuit. Front airbag sensors are installed in the vehicle. Also, a G sensor is also built into the SRS control unit. When both the front airbag sensors and the G sensor in the ECU detect a frontal collision, the SRS airbag and the pretensioner are activated to protect the passenger. Also, the SRS deployment signal is sent to the BCM to release all the door locks. <br/>When the SRS control unit detects a malfunction in the SRS system, it illuminates the SRS airbag warning light in the instrument panel cluster.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The illustration shows an RHD model.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8AMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Front airbag sensor</li><li>Driver airbag</li><li>Seat belt with pretensioner</li><li>SRS control unit</li><li>Passenger airbag</li></ol></div>
+                <p class="explanation">SRS airbag system (Model with side airbag and curtain airbag)<br/>Models with side airbags and curtain airbags in addition to the above system provide safety in side collisions. The vehicle consists of the following components that form the deployment circuit.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The illustration shows an RHD model.</li>
+                    <li>The lap pretensioners are only equipped on models for Australia.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8AMF000201.png" class="MF" /></p>
+                <div class="legend"><ol><li>Front airbag sensor</li><li>Driver airbag</li><li>Seat belt with pretensioner, lap pretensioner</li><li>SRS control unit</li><li>Passenger airbag</li><li>Door side airbag sensor</li><li>Side airbag sensor</li><li>Curtain airbag</li><li>Side airbag</li></ol></div>
+                <p class="explanation">SRS airbag deployment (Driver airbag and passenger airbag)<br/>In case of a frontal collision, the driver airbag and the passenger airbag are deployed, and the driver side and passenger side seat belts with pretensioner and lap pretensioners are activated.</p>
+          <p class="explanation">SRS airbag deployment (Side airbag and curtain airbag)<br/>In the event of a side collision, the curtain airbag and side airbag on the collision side are deployed, and the driver side and passenger side seat belts with pretensioner are activated. The lap pretensioner is also activated in models for Australia.</p>
+          <p class="explanation">SRS control unit<br/>The SRS control unit has the following features.</p>
+          <p class="explanation">Energy backup<br/>The SRS control unit stores the energy required for deploying the airbag when the ignition voltage is lost by a collision. <br/>C‎‎‏‏ollision detection<br/>The SRS control unit monitors impacts and detects collisions that require deployment of the airbag. <br/>SRS airbag deployment<br/>Upon detecting a collision greater than a certain level, the SRS control unit sends to the SRS airbag assembly the current enough to deploy the SRS airbag. <br/>Functional failure detection<br/>The SRS control unit diagnoses electrical parts in this system and sets a DTC when it detects a functional failure. <br/>Functional failure diagnosis<br/>The SRS control unit displays the DTC and system operation status using the scan tool. <br/>Warning to the driver<br/>The SRS control unit warns the driver of the functional failure in this system by illuminating the SRS airbag warning light.</p>
+                <p class="illust"><img src="image/RTWC8BSH002801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>SRS control unit schematic circuit diagram (Vehicles only equipped with a driver airbag and passenger airbag)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8ALF000101.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pin layout (Vehicles only equipped with driver airbag and passenger airbag)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSF001101.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-1</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver side seat belt with pretensioner High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-2</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver side seat belt with pretensioner Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-3</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger side seat belt with pretensioner Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-4</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger side seat belt with pretensioner High</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-1</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Left) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-2</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Left) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-3</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Right) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-4</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Right) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-5</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver airbag Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-6</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver airbag High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-7</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger airbag High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-8</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger airbag Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-9</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">SRS airbag warning light</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-10</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-11</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Vehicle model identification terminal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-12</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-13</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-14</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver seat belt switch</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-15</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-16</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Diagnostic switch</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-17</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Ignition voltage</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-18</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-19</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Deployment signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-20</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">CAN high</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-21</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">CAN low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-22</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-23</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">GND</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>SRS control unit schematic circuit diagram (Models with side airbags and curtain airbags)</li>
+                    <li>Except for Australia</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8ALF000201.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pin layout (Models with side airbag and curtain airbag)</li>
+                    <li>Except for Australia</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSF001401.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-1</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Left side seat belt with pretensioner High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-2</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Left side seat belt with pretensioner Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-3</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Right side seat belt with pretensioner Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-4</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Right side seat belt with pretensioner High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-5</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Side airbag (Left) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-6</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Side airbag (Left) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-7</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Side airbag sensor (Right) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-8</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Side airbag sensor (Right) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-9</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Side airbag sensor (Left) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-10</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Side airbag sensor (Left) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-11</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger seat belt switch</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-12</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-13</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Side airbag (Right) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-14</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Side airbag (Right) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-15</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-16</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-1</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-2</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-3</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-4</td><td width="398" colspan="1" rowspan="1" align="center" valign="bottom">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-5</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver airbag Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-6</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver airbag High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-7</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger airbag High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-8</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger airbag Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-9</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">SRS airbag warning light</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-10</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-11</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Vehicle model identification terminal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-12</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Vehicle model identification terminal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-13</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-14</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver seat belt switch</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-15</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-16</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Diagnostic switch</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-17</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Ignition voltage</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-18</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-19</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Deployment signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-20</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">CAN high</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-21</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">CAN low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-22</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-23</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">GND</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-1</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag (Right) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-2</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag (Right) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-3</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag (Left) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-4</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag (Left) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-5</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-6</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-7</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Right) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-8</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Right) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-9</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Left) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-10</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Left) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-11</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Door side airbag sensor (Right) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-12</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Door side airbag sensor (Right) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-13</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-14</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-15</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Door side airbag sensor (Left) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-16</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Door side airbag sensor (Left) +</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>SRS control unit schematic circuit diagram (For Australia)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8AXF000101.png" class="XF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pin layout (Models for Australia)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSF001401.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-1</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Left side seat belt with pretensioner High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-2</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Left side seat belt with pretensioner Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-3</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Right side seat belt with pretensioner Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-4</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Right side seat belt with pretensioner High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-5</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Side airbag (Left) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-6</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Side airbag (Left) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-7</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Side airbag sensor (Right) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-8</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Side airbag sensor (Right) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-9</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Side airbag sensor (Left) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-10</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Side airbag sensor (Left) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-11</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Passenger seat belt switch</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-12</td><td width="398" colspan="1" rowspan="1" align="center" valign="bottom">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-13</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Side airbag (Right) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-14</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">Side airbag (Right) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-15</td><td width="398" colspan="1" rowspan="1" align="center" valign="bottom">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-16</td><td width="398" colspan="1" rowspan="1" align="center" valign="bottom">－</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-1</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-2</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-3</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-4</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-5</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver airbag Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-6</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver airbag High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-7</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger airbag High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-8</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Passenger airbag Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-9</td><td width="398" colspan="1" rowspan="1" align="left" valign="bottom">SRS airbag warning light</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-10</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-11</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-12</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Vehicle model identification terminal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-13</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Vehicle model identification terminal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-14</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Driver seat belt switch</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-15</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-16</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Diagnostic switch</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-17</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Ignition voltage</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-18</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-19</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Deployment signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-20</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">CAN high</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-21</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">CAN low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-22</td><td width="398" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-23</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">GND</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-1</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag (Right) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-2</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag (Right) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-3</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag (Left) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-4</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Curtain airbag (Left) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-5</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Lap pretensioner (Left) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-6</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Lap pretensioner (Left) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-7</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Right) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-8</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Right) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-9</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Left) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-10</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Front airbag sensor (Left) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-11</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Door side airbag sensor (Right) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-12</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Door side airbag sensor (Right) +</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-13</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Lap pretensioner (Right) High</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-14</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Lap pretensioner (Right) Low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-15</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Door side airbag sensor (Left) -</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-16</td><td width="398" colspan="1" rowspan="1" align="left" valign="middle">Door side airbag sensor (Left) +</td></tr></tbody></table>
+                <p class="explanation">SRS airbag warning light<br/>When the ignition switch is set to the ON or START position, the SRS airbag warning light is controlled by the SRS control unit in the following manner.</p>
+          <p class="explanation">When the ignition switch is turned ON for the first time, the SRS airbag warning light flashes 7 times to verify the operation of the SRS airbag warning light and the SRS control unit. <br/>The driver is warned of functional failures in the electrical system of this system. Such functional failures may cause undeployment of the airbag or unnecessary deployment of the airbag during a collision. <br/>The SRS airbag warning light warns the driver of functional failures in this system. Refer to the diagnostic system check-SRS controls for information on proper operation of the warning light.</p>
+                <p class="illust"><img src="image/LNW28CSH000201.png" class="SH" /></p>
+                <p class="explanation">SRS coil assembly<br/>The SRS coil assembly is installed to the steering column and makes the steering wheel rotate while maintaining continuous conductivity between the activation circuit and SRS airbag.<br/>There is a shorting clip located at the connection of the SRS harness connector for the combination switch.<br/>When the yellow connector is removed, the shorting clip shorts the SRS airbag. Shorting the SRS airbag circuit prevents unnecessary activation of the SRS airbag when performing maintenance of the steering column or other SRS parts.</p>
+                <p class="illust"><img src="image/RTWC8BSH003001.png" class="SH" /></p>
+                <div class="legend"><ol><li>SRS coil assembly</li><li>Steering angle sensor</li><li>Combination switch</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The steering angle sensor is available only for vehicles with ESC.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">SRS airbag assembly<br/>The SRS airbag assembly consists of an airbag and an inflator. The SRS control unit sends a current to the deployment circuit when a frontal collision with an impact larger than a certain level occurs. The current flowing in the inflator ignites the gas generating agent in the airbag.<br/>The gas generated from this reaction rapidly expands the airbag. The airbag connector is equipped with a shorting clip. When the airbag connector is removed, the shorting clip shorts the airbag circuit.<br/>The circuit to the airbag is shorted in such a way that unnecessary deployment of the airbag is prevented when conducting maintenance of the airbag assembly, steering column, or other system parts.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Airbag assembly (Driver side)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH002301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Airbag assembly (Passenger side)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH002401.png" class="SH" /></p>
+                <p class="explanation">SRS airbag assembly (Model with side airbag and curtain airbag)<br/>Models with side airbags and curtain airbags in addition to the above system provide safety in side collisions. The SRS control unit sends a current to the deployment circuit when a side collision with an impact larger than a certain level occurs.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Side airbag</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8CSH002201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Side airbag</li></ol></div>
+                <p class="explanation">The side airbag cannot be replaced as a separate unit. The seat assembly must be replaced.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Curtain airbag</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE80SH000101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Curtain airbag mounting position</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH006101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Curtain airbag</li></ol></div>
+                <p class="explanation">Seat belt with pretensioner (Except for Australia)<br/>The seat belt with pretensioner consists of the seat belt and the gas generator section. <br/>The SRS control unit drives the deployment circuit when the vehicle receives an impact larger than a predetermined level in a collision. The gas generator section of the seat belt with pretensioner is then ignited. Gas generated by this ignition retracts loose areas of the seat belt with pretensioner and firmly restrains the driver's upper body.</p>
+                <p class="illust"><img src="image/RTWC8BSH002501.png" class="SH" /></p>
+                <p class="explanation">Seat belt with pretensioner and lap pretensioner (For Australia)<br/>The seat belt with pretensioner and lap pretensioner consists of the seat belt and the gas generator section. <br/>The SRS control unit drives the deployment circuit when the vehicle receives an impact larger than a predetermined level in a collision. The gas generator section of the seat belt with pretensioner and lap pretensioner is then ignited. Gas generated by this ignition retracts loose areas of the seat belt with pretensioner and lap pretensioner and firmly restrains the driver's upper body.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Seat belt with pretensioner and lap pretensioner</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE8CMH000301.png" class="MH" /></p>
+                <div class="legend"><ol><li>Seat belt with pretensioner</li><li>Lap pretensioner</li></ol></div>
+                <p class="explanation">Front airbag sensor<br/>The front airbag sensors are installed inside the front bumper. The sensors are installed in the positions indicated in the illustration, each one on the right and left sides. They detect frontal collisions and send signals to the SRS control unit.</p>
+                <p class="illust"><img src="image/RTWC8BSH002701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Front airbag sensor mounting position</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8BSH006001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Front airbag sensor (Right side)</li></ol></div>
+                <p class="explanation">Side airbag sensor<br/>The side airbag sensors are installed inside the rear pillar trim. The sensors are installed in the positions indicated in the illustration, one each on the right and left sides. They detect side collisions and send signals to the SRS control unit.</p>
+                <p class="illust"><img src="image/RTWC8BSH002701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Side airbag sensor mounting position</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD8BSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Side airbag sensor</li></ol></div>
+                <p class="explanation">Door side airbag sensor<br/>The door side airbag sensors are installed inside the front doors. The sensors are installed in the positions indicated in the illustration, one each on the right and left sides. They detect side collisions near the door and send signals to the SRS control unit.</p>
+                <p class="illust"><img src="image/RTWC8BSH005801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Door side airbag sensor mounting position</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC8CSH001801.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

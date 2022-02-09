@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Handling electronic parts null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Handling electronic parts
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751763">1. Disconnecting the battery cables procedure
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Turn off all the switches.</p>
+          <p class="instructions">2. Disconnect the battery ground cable from the battery terminal.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Disconnect the battery positive cable from the battery terminal.</p>
+                <p class="illust"><img src="image/RTWE00SH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Battery positive terminal</li><li>Battery negative terminal</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Because disconnecting the positive cable first may cause a short circuit, always disconnect the battery ground cable first.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Installation should be performed in the reverse order of the removal.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNWE0ASH000301.png" class="SH" /></p>
+                <p class="numeric">Tightening torque： 3 to 6 N・m { 0.3 to 0.6 kgf・m }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Clean the area surrounding the battery terminal, and apply a thin layer of grease to the terminal to prevent corrosion.</li>
+                    <li>Clean any foreign materials, oil, or grease that has adhered to the bolt and nut tightening sections of the battery sensor.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751764">2. Connector circuit inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Insert the probe of the circuit tester from the harness side of the connector as indicated in the diagram below and check the continuity.</p>
+                <p class="illust"><img src="image/LNW20ASH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Probe</li></ol></div>
+                <p class="explanation">Never insert the metal rod from the connection opening area of the connector, as this will cause the connector terminals to break.</p>
+                <p class="illust"><img src="image/LNW20ASH001601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Probe</li></ol></div>
+                <p class="explanation">For waterproof connectors, the probes of the tester cannot be inserted from the wiring side due to the structure of the connectors. Therefore, perform the continuity inspection as indicated in the diagram by connecting a testing connector prepared in advance to the connector to check, and connect the probes of the tester to the harness of the testing connector.</p>
+                <p class="illust"><img src="image/LNW20ASH001701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Testing connector</li><li>Connector to check</li><li>Probe</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751765">3. Disconnecting connector terminals of built-in lock type
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Unlock any double-locks.</p>
+          <p class="instructions">2. As indicated in the diagram below, insert a thin screwdriver-shaped metal rod from the connector opening area.</p>
+          <p class="instructions">3. Push the lock in the direction of the arrow using the metal rod to release the lock, and pull out the harness together with the terminal.</p>
+                <p class="illust"><img src="image/LNW20ASH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Metal rod</li><li>Lock</li><li>Harness</li><li>Terminal</li><li>Connector opening</li></ol></div>
+                <p class="illust"><img src="image/LNW20ASH001901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Metal rod</li><li>Lock</li><li>Harness</li><li>Terminal</li><li>Connector opening</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

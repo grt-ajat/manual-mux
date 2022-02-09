@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>DTC P0976 (Flash code 32) Shift Solenoid B (S2) Control Circuit Low null (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    DTC P0976 (Flash code 32) Shift Solenoid B (S2) Control Circuit Low
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756951">1. DTC P0976
+                  diagnostics
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="128352.html">206.Description Transmission, Transaxle 19C.Functional Inspection(TB-50LS) diagnostic system check-transmission controls</a>&quot;.</p>
+                    <p class="instructions">2. Circuit diagnosis</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the transmission internal harness connector.</p>
+          <p class="explanation">Connect a DMM between the shift solenoid B (S2) control circuit and the body ground.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Check the DMM voltage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the ignition switch is turned ON, measure the voltage within 2 seconds.</li>
+                    <li>Do not perform diagnosis with a test lamp.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 10 V</p>
+                <p class="explanation">If the reading is less than the specified value, go to Inspection for short circuit in control circuit.</p>
+          <p class="explanation">If the reading is more than or equal to the specified value, go to Inspection of transmission internal harness.</p>
+                <p class="instructions">3. Inspection for short circuit in control circuit</p>
+                <p class="explanation">Inspect for a short to ground in the shift solenoid B (S2) control circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to TCM replacement.</p>
+                <p class="instructions">4. Inspection of transmission internal harness</p>
+                <p class="explanation">Inspect for a short to ground in the shift solenoid B (S2) control circuit of the transmission internal harness, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, replace shift solenoid B (S2). Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="128226.html">5.Transmission, Transaxle 5B.Automatic(TB-50LS) valve body assembly disassembly</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128227.html">5.Transmission, Transaxle 5B.Automatic(TB-50LS) valve body assembly reassembly</a>&quot;.</p>
+                    <p class="instructions">5. TCM replacement</p>
+                <p class="explanation">Replace the TCM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="128248.html">5.Transmission, Transaxle 5B.Automatic(TB-50LS) TCM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128240.html">5.Transmission, Transaxle 5B.Automatic(TB-50LS) TCM installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128249.html">5.Transmission, Transaxle 5B.Automatic(TB-50LS) TCM setting</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757510">2. DTC P0976
+                  repair verification
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Clear the DTC with a scan tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The ECM sets DTC P0700 when the TCM sets emission related DTC(s). Clean the ECM DTC after TCM DTC(s) is cleared.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Turn OFF the ignition switch for at least 30 seconds.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Set it to the 2nd gear of the manual mode.</p>
+          <p class="explanation">Observe the DTC information with a scan tool.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

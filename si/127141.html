@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Introduction safety information (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Introduction
+          safety information
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751642">1. Repair work
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Repair manuals are created for qualified service technicians that have acquired the specialized training. If vehicle maintenance is performed by a person without the necessary qualifications or that has not received the appropriate training, damage may be caused to the vehicle, or harm may come to the service technician and people in the vicinity.</li>
+                    <li>If vehicle maintenance is performed without using the appropriate tools and devices, damage may be caused to the vehicle, or harm may come to the service technician and people in the vicinity.</li>
+                    <li>If vehicle maintenance is performed using a procedure other than indicated in the repair manual, damage may be caused to the vehicle, or harm may come to the service technician and people in the vicinity.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When replacing parts, make sure to use only genuine parts because the appropriate maintenance and repair procedures are essential to maintain the safety of the service technician and the safety and reliability of the vehicle.</li>
+                    <li>Make sure to read the repair manual thoroughly before work because it contains procedures and information that must be followed when performing vehicle maintenance and repairs.</li>
+                    <li>When performing maintenance and repair works, use the special tools specially designed for each purpose in the correct manner.</li>
+                    <li>Never perform procedures or use tools other than those recommended in the repair manual, in order to ensure the safety of the service technician, and the safety and reliability of the vehicle.</li>
+                    <li>To ensure accidents do not occur during the maintenance and repair procedures, prevent damage to the vehicle due to inappropriate procedures, and ensure the safety and reliability of the vehicle, the repair manuals indicate information that must be followed particularly closely using the terms "Warning", "Caution", and " Note". Therefore, make sure to read the repair manuals thoroughly before work.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE00MF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Clean and safe costume</li><li>Installation of chock blocks</li><li>Support by a stand after jacking up.</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Prepare the tools, instruments, and special tools in advance.</li>
+                    <li>Prepare the parts that require replacement and parts that cannot be re-used in advance.</li>
+                    <li>The service technician must wear a clean service technician uniform, hat, and safety footwear.</li>
+                    <li>Make sure to use a seat cover, etc.</li>
+                    <li>Disconnect the negative terminal of the battery cable in advance.</li>
+                    <li>Always focus on safety.</li>
+                    <li>Make sure to use chock block when the vehicle is jacked up.</li>
+                    <li>After jacking up, make sure to support the specified position using a stand.</li>
+                    <li>When lifting up the vehicle using a lift, make sure to set the safety device.</li>
+                    <li>When performing a work with two or more people, make sure to ensure each other's safety before making an action.</li>
+                    <li>Do not leave the engine running for an extended period of time or perform painting in a poorly ventilated working environment.</li>
+                    <li>Make sure to use the special tools when the procedure requires them for the work.</li>
+                    <li>Do not use tools such as an open-end wrench that has lost its edges, a hammer with frayed edges, or a chipped chisel.</li>
+                    <li>When performing work using a device such as a grinder, crane, or welder, make sure that a qualified technician performs the procedure while paying sufficient attention to the handling precautions.</li>
+                    <li>After performing maintenance on the fuel system, make sure to confirm that there is no fuel leakage.</li>
+                    <li>When handling volatile materials, take care that they do not catch fire.</li>
+                    <li>Make sure to wipe away any oil that sticks to rubber parts, as it can cause deterioration.</li>
+                    <li>Arrange removed parts in the correct order and ensure they do not get mixed up with parts that cannot be re-used.</li>
+                    <li>Perform sufficient cleaning and washing when performing assembly / installation.</li>
+                    <li>Perform sufficient grease removal for areas to apply liquid gasket, etc.</li>
+                    <li>After completing the procedure, perform a final check to confirm that the problem has been solved.</li>
+                    <li>Confirm that there is no fuel, oil, or engine coolant leakage.</li>
+                    <li>Disconnect the battery cable before conducting welding.</li>
+                    <li>Disconnect all control cables before conducting welding.</li>
+                    <li>Turn all the switches off before conducting welding.</li>
+                    <li>Make sure the ground connection for the welder is as close to the welding area as possible.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751643">2. Vehicles with supplemental restraint system
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>Do not use any of SRS parts from other vehicles or models.</li>
+                    <li>Make sure to confirm the part numbers and use the SRS parts intended for the target vehicle.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When performing inspection work, make sure to turn the ignition switch to the "LOCK" position.</li>
+                    <li>Take care not to give a strong impact to the SRS airbag, front airbag sensor and surrounding areas.</li>
+                    <li>When performing maintenance for the SRS parts and the SRS harness and other works indicated below, make sure to follow the procedure in the repair manual because the SRS functionality needs to be temporarily deactivated.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="1" rowspan="1" align="center" valign="middle">Works which require deactivation of the SRS airbag functionality</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Repairs around the steering wheel</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Repairs around the instrument panel</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Repairs around the glove box</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Repairs around the fuse box</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Repairs around the dash board</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Repairs around the center console</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Repairs around the seat belt</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Installing products such as a car stereo</td></tr><tr><td width="220" colspan="1" rowspan="1" align="left" valign="middle">Painting the cab plates</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751640">3. Replacement parts and parts number
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Whenever disassembly is performed, make sure to replace the packing, oil seals, O-rings, crimping lock nuts, bending lock plates, cotter pins, etc. with new ones.</li>
+                    <li>Make sure to confirm the supply system and part numbers in the parts catalog because the part numbers indicated in this manual may differ from the supply system or are subject to change.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752582">4. Connector handling
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnecting the connectors</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Many connectors have a lock to ensure secure connections.</li>
+                    <li>The two types of locks generally used are those that open by lifting the release area of the lock, and those that open by pressing the release area.</li>
+                    <li>Before disconnecting the connector, determine in advance which type the connector belongs.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW90ASH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lock</li><li>Release area</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When disconnecting the connector, first securely grasp the male side and female side of the connector. Release the lock, and carefully disconnect the connector.</li>
+                    <li>When removing the waterproof connector, remove dust or moisture that adheres to the connector by blowing air, etc. If dust or moisture enters the connector, remove it before connecting the connector. As for moisture, dry well to prevent rust.</li>
+                    <li>Do not pull the harness when disconnecting the connector, as this may cause the wiring to come out or break.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW20ASH001301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connecting the connector</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Securely grasp the female side and male side of the connector, and align them correctly.</li>
+                    <li>Firmly push them together until both sides click into place.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW20ASH001401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751644">5. Electrical parts handling
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="warning">
+        <p>Warning</p>
+        <ul>
+                      <li>If the fuse melts down, make sure to replace it with a non-defective fuse of the same capacity, after identifying the cause of the melt down.</li>
+                    <li>If a fuse with high capacity is used, it does not perform its function when an excess current flows.</li>
+                    <li>This may cause parts, wiring, etc. to burn, and can result in a vehicle fire.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW20ASH002101.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>As for electric parts including those that are installed outside the cab and are waterproofed, try to avoid exposing them directly to the high pressure water when washing the vehicle (cover them with plastic sheets, etc.) as much as possible.</li>
+                    <li>Handle electronic parts with sufficient care, and do not damage the parts by dropping or throwing them.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW20ASH002201.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing electronic parts, take care to ensure the harness does not get stuck and do not forcibly push the harness in.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW20ASH002301.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Make sure that all connections are clean and secure.</li>
+                    <li>When the harness is contacting sharp edges or surfaces of other parts, protect the harness using a grommet or tube to prevent damage due to the contact.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW20ASH002401.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When wiring the harness by diverting it around other parts, give the harness a sufficient amount of free length, and use a protective tube and clip to ensure it does not contact surrounding parts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/AAW0Z0SH021101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clip</li><li>Protective tube</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>For wiring between the engine and chassis, give the wiring sufficient free length to prevent wear and damage caused by vibrations.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW20ASH002601.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When securing additional wires along the existing harnesses, install the band clips on the protective materials (corrugated tube, vinyl chloride tube, rigid tube, protector, etc.) installed on the existing harnesses.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/AAW000SH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Existing harness (with protective material)</li><li>Additional harness</li><li>Band clip for securing harness</li><li>Prohibited area for securing band clip</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751645">6. Commercial electronic products 
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If commercial electronic products such as lights, audio systems, or wireless devices are installed to the vehicle, turn the power of such devices off in advance.</li>
+                    <li>Otherwise, remove the commercial electronic products before inspection or maintenance.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751641">7. Failure by electrostatic discharge
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>As a high voltage applied to the related parts due to electrostatic discharge may cause a failure, touch a known good ground before inspecting or replacing the related parts.</li>
+                    <li>Do not directly touch the connector pins of related parts or rub them with parts or covers, etc.</li>
+                    <li>Connect the replacement parts to a known good ground while they are still in their packaging, and then take them out without touching the packaging with the connector pins.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

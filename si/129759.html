@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>PESS control unit setting (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    PESS control unit
+          setting
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie762181">1. PESS control unit
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the PESS control unit, ECM, or steering lock assembly has been replaced, or if electronic keys have been replaced or added, make sure to perform security information programming.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Vehicle security information card (if issued)<br/>When resetting or programming the PESS control unit, ECM, steering lock assembly, or electronic keys using a scan tool, you will be requested to enter the 4-digit security code. This code is shown on the vehicle security information card issued with new vehicles. If the card is unavailable, the service department of the Isuzu distributor must be contacted in order to obtain the security code.</p>
+                <p class="illust"><img src="image/RTW7BASH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Security code</li></ol></div>
+                <p class="explanation">For new owners, distributors or dealerships must provide a vehicle security information card that shows the identification number of the owner's vehicle immobilizer system. This information is extremely important for repairs or when an electronic key is lost. Dealers are responsible for providing the following three items.</p>
+          <p class="explanation">Vehicle security information card for new owners<br/>Blank vehicle security information card for reissuance<br/>Instructions on how to use the card for the dealership</p>
+          <p class="explanation">Save all the vehicle security codes as confidential data. If the vehicle security information card is lost, the data must be requested from the service department of the Isuzu distributor. This request will only be processed if accompanied by the specified form and proof of ownership. Once the data is received, it will be entered onto a blank card and given to the customer. Any unused cards should be destroyed. Instructions on filling out the Data Request Vehicle Security Information Card are as follows.</p>
+          <p class="explanation">The data requested under items 1 to 10 must be provided in full, including the authorized dealership number, the vehicle identification number (VIN) and engine type/number.</p>
+          <p class="explanation">The form must be completed by entering the data and signature/authorized dealership stamp, and then sent along with proof of ownership to the address provided in the form.</p>
+          <p class="explanation">After confirming that the information is correct, the requested data should be sent by fax to the dealership that made the request.</p>
+                <p class="illust"><img src="image/RTW7BAMH000101.png" class="MH" /></p>
+                <p class="explanation">Security code<br/>The security code is necessary to reset or program the PESS control unit, ECM, steering lock assembly, and electronic keys. If an incorrect code is entered when the scan tool requests the security code to be entered, the PESS control unit or ECM will go into a security wait status. This wait status will prevent any further attempts to enter the security code until the wait time has elapsed. If an incorrect security code is entered again after the initial wait time has elapsed, the PESS control unit or ECM will go into a second wait status. The wait time will increase each time an incorrect code is entered. If the correct code is entered, the wait time will reset back to its original value of 10 seconds.</p>
+          <p class="explanation">Stage 1: 10 seconds<br/>Stage 2: 10 seconds<br/>Stage 3: 10 minutes<br/>Stage 4: 20 minutes<br/>Stage 5: 40 minutes<br/>Stage 6: 80 minutes (1 hour 20 minutes)<br/>Stage 7: 160 minutes (2 hours 40 minutes)<br/>Stage 8: 320 minutes (5 hours 20 minutes)<br/>Stage 9: 640 minutes (10 hours 40 minutes)<br/>Stage 10: 1280 minutes (21 hours 20 minutes)</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>During the wait time, it is necessary to keep the ignition switch in the ON position.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Electronic key<br/>Usually, 2 or 3 electronic keys are provided with each new vehicle. Owners requiring additional keys can receive up to a total of 5 electronic keys.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The authentication code is programmed to the electronic key during programming of the new electronic keys. A new vehicle authentication code is written if it has been reprogrammed to another vehicle. If this programming is performed, this electronic key will not be able to be used with the previous vehicle.</li>
+                    <li>Keep the electronic keys to be programmed away from other electronic keys or other metal objects. Not doing so may result in an electronic key programming failure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWEZ0SH001201.png" class="SH" /></p>
+                <p class="explanation">Erase Electronic-Keys<br/>The [Erase Electronic-Keys] procedure must be performed with a scan tool if the following conditions are met.</p>
+          <p class="explanation">The owner has lost an electronic key.<br/>Broken electronic key replacement.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the owner has lost an electronic key, make sure to erase the existing electronic key information from the PESS control unit memory in order to prevent possible vehicle theft. Because all electronic key information will be lost using this procedure, perform the reprogramming of the remaining electronic keys or the programming of new electronic keys.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Program Electronic KEY<br/>The [Electronic KEY Registration] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">The diagnostic chart instructs you to replace the electronic keys. <br/>The diagnostic chart instructs you to program the electronic keys. <br/>Reprogramming is necessary as the electronic key information has been erased. <br/>The owner has requested additional electronic keys.</p>
+          <p class="explanation">Reset Steering Lock ECU<br/>The [Reset Steering Lock ECU] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">If the diagnostic chart instructs you to replace the steering lock assembly, and the steering lock assembly with the registered security code is used. <br/>The steering lock assembly was replaced without using spare parts.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing the steering lock assembly to the vehicle, it must be security linked to the PESS control unit using the programming procedure. Once this linking has been performed, the steering lock assembly cannot be installed in any other vehicle. Before transferring (switching) the ECM to the vehicle in which the complaint originated, the resetting procedure must be performed in the original vehicle and the security linkages between each module must be reset.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Reset PESS Control Unit<br/>The [Reset PESS Control Unit] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">If the diagnostic chart instructs you to replace the PESS control unit, and the PESS control unit with the registered security code is used. <br/>The PESS control unit was replaced without using spare parts.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing the PESS control unit to the vehicle, it must be security linked to the steering lock assembly and ECM using the programming procedure. Once this linking has been performed, the PESS control unit cannot be installed in any other vehicle. Before transferring (switching) the ECM to the vehicle in which the complaint originated, the resetting procedure must be performed in the original vehicle and the security linkages between all modules must be reset.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Reset Engine Control Module<br/>The [Reset Engine Control Module] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">If the diagnostic chart instructs you to replace the ECM, and if the ECM with the registered security code is used. <br/>The ECM was replaced without using spare parts.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing the ECM to the vehicle, it must be security linked to the PESS control unit using the programming procedure. Once this linking has been performed, the ECM cannot be installed in any other vehicle. Before transferring (switching) the ECM to the vehicle in which the complaint originated, the resetting procedure must be performed in the original vehicle and the security linkages between each module must be reset.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Program PESS Function<br/>The [Program PESS Function] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">The diagnostic chart instructs you to program the PESS control unit. <br/>A new or reused PESS control unit was installed. <br/>The diagnostic chart instructs you to program the steering lock assembly. <br/>A new steering lock assembly has been installed. <br/>The steering lock assembly is a reused part that was reset in the original vehicle. <br/>The diagnostic chart instructs you to program the ECM. <br/>A new ECM is installed. <br/>The ECM is a reused part that was reset in the original vehicle. <br/>A new or reused PESS control unit and steering lock assembly were installed at the same time. <br/>A new or reused PESS control unit and ECM were installed at the same time. <br/>A new or reused steering lock assembly and ECM were installed at the same time. <br/>A new or reused PESS control unit, steering lock assembly, and ECM were installed at the same time.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762179">2. Electronic key
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Erase Electronic KEY</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Because all electronic key information will be lost using this procedure, it is necessary to perform the reprogramming of the remaining electronic keys or the programming of new electronic keys.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select the PESS.</p>
+          <p class="instructions">6. Select the Additional Function.</p>
+          <p class="instructions">7. Select Erase Electronic KEY.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Erase any electronic key information on the PESS control unit by following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Entering an incorrect security code causes a security wait time.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine does not start with all electronic keys.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Program Electronic KEY</p>
+                <p class="instructions">9. Connect a scan tool to the DLC.</p>
+          <p class="instructions">10. Press the engine start/stop button.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The PESS control unit power supply is kept ON for 3 minutes.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Select the Diagnostics.</p>
+          <p class="instructions">12. Select the Body.</p>
+          <p class="instructions">13. Select the PESS.</p>
+          <p class="instructions">14. Select the Programming.</p>
+          <p class="instructions">15. Select Electronic KEY Registration.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Program the electronic key information into the PESS control unit by following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Entering an incorrect security code causes a security wait time.</li>
+                    <li>Keep the electronic keys to be programmed away from other keys, other electronic keys, or other metal objects.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">16. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine starts with all electronic keys.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762178">3. Steering lock assembly
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Reset Steering Lock ECU</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Perform this operation when installing the steering lock assembly to be reused.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select the PESS.</p>
+          <p class="instructions">6. Select the Additional Function.</p>
+          <p class="instructions">7. Select Reset Steering Lock ECU.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Erase the immobilizer information in the steering lock ECU by following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Entering an incorrect security code causes a security wait time.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762177">4. ECM
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Reset Engine Control Module</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Perform this operation when installing the ECM to be reused.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select the PESS.</p>
+          <p class="instructions">6. Select the Additional Function.</p>
+          <p class="instructions">7. Select Reset Engine Control Module.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Erase the immobilizer information of the ECM by following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Entering an incorrect security code causes a security wait time.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine does not start with all electronic keys.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762183">5. PESS control unit
+                  download
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When replacing the PESS control unit, make sure to write vehicle information into the new PESS control unit.</li>
+                    <li>When replacing the PESS control unit, refer to the following before removal and upload the PESS control unit internal data to the scan tool before replacement.</li>
+                    <li>During replacement operations, the same scan tool must be used from start to finish. If the scan tool is changed midway, information cannot be written correctly.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the PESS control unit to be replaced can communicate with the scan tool, download the vehicle data.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Make sure to check the vehicle specification before performing the download.</li>
+                    <li>Perform the download after installing the new PESS control unit to the vehicle.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select the PESS.</p>
+          <p class="instructions">6. Select the Programming.</p>
+          <p class="instructions">7. Select Download Vehicle Configuration Data.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Operate by following the on-screen instructions.</li>
+                    <li>Turn OFF the ignition switch.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Initial Controller Setting</p>
+                <p class="instructions">8. Connect a scan tool to the DLC.</p>
+          <p class="instructions">9. Turn ON the ignition switch.</p>
+          <p class="instructions">10. Select the Diagnostics.</p>
+          <p class="instructions">11. Select the Body.</p>
+          <p class="instructions">12. Select the PESS.</p>
+          <p class="instructions">13. Select the Special Function.</p>
+          <p class="instructions">14. Select Initial Controller Setting.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the following antenna settings according to vehicle model by following the on-screen instructions.</li>
+                    <li>Change the setting if incorrect download information is used.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="498" colspan="2" rowspan="1" align="center" valign="middle">Scan tool parameter</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="middle">Center LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Rear LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Rear LF Auxiliary Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Driver Door LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="bottom">ON</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Assist Door LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">OFF</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Tail Gate LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762182">6. PESS control unit
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Reset PESS Control Unit</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If communication with the scan tool cannot be established, do not perform the following operations.</li>
+                    <li>Perform this operation when installing the PESS control unit to be reused.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select the PESS.</p>
+          <p class="instructions">6. Select the Additional Function.</p>
+          <p class="instructions">7. Select Reset PESS Control Unit.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Operate by following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Entering an incorrect security code causes a security wait time.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine does not start with all electronic keys.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Transmission learning</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When install a new or reset PESS control unit, first perform transmission learning.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Connect a scan tool to the DLC.</p>
+          <p class="instructions">10. Press the engine start/stop button twice.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Change the power mode to ON (turn ON the ignition switch). Check if the PESS warning light is flashing at this time.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">11. Perform transmission learning.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Depress the clutch pedal. (Manual transmission models)</li>
+                    <li>Place the shift lever in the P position. After that, shift into any position other than P. (Automatic transmission models)</li>
+              <ul/>
+    </div>
+                  <p class="instructions">12. Check the PESS warning light.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Once transmission learning is completed, the PESS warning light will change from flashing to illuminated.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Program PESS Function</p>
+                <p class="instructions">13. Select the Diagnostics.</p>
+          <p class="instructions">14. Select the Body.</p>
+          <p class="instructions">15. Select the PESS.</p>
+          <p class="instructions">16. Select the Programming.</p>
+          <p class="instructions">17. Select Program PESS Function.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Operate by following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Entering an incorrect security code causes a security wait time.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">18. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine starts with all electronic keys.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Initial Controller Setting</p>
+                <p class="instructions">19. Connect a scan tool to the DLC.</p>
+          <p class="instructions">20. Turn ON the ignition switch.</p>
+          <p class="instructions">21. Select the Diagnostics.</p>
+          <p class="instructions">22. Select the Body.</p>
+          <p class="instructions">23. Select the PESS.</p>
+          <p class="instructions">24. Select the Special Function.</p>
+          <p class="instructions">25. Select Initial Controller Setting.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Change the following antenna settings according to vehicle model by following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="498" colspan="2" rowspan="1" align="center" valign="middle">Scan tool parameter</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Center LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Rear LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Rear LF Auxiliary Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Driver Door LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="bottom">Assist Door LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">OFF</td></tr><tr><td width="298" colspan="1" rowspan="1" align="left" valign="middle">Tail Gate LF Antenna Diagnosis</td><td width="200" colspan="1" rowspan="1" align="center" valign="middle">ON</td></tr></tbody></table>
+                <p class="explanation">Vehicle Configuration Setting</p>
+                <p class="instructions">26. Connect a scan tool to the DLC.</p>
+          <p class="instructions">27. Turn ON the ignition switch.</p>
+          <p class="instructions">28. Select the Diagnostics.</p>
+          <p class="instructions">29. Select the Body.</p>
+          <p class="instructions">30. Select the PESS.</p>
+          <p class="instructions">31. Select the Special Function.</p>
+          <p class="instructions">32. Select Vehicle Configuration Setting.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following function settings can be changed in accordance with the on-screen instructions.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Inner Buzzer Volume Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The buzzer volume output from the buzzer embedded in the IP cluster can be changed. The volume can be set to the 3 patterns of MAX, MIDDLE, and LOW. The default volume setting is MAX.</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Outer Buzzer Volume Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The buzzer volume output from the external buzzer can be changed. The volume can be set to the 3 patterns of MAX, MIDDLE, and LOW. The default volume setting is MAX.</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Driver Outside Door Knob Button Function</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The lock button on the outside handle that is usually used for locking can be changed to an unlock button. [Unlock with 2 second long press], [Unlock without regard to number of seconds], or [Only lock] can be set. The initial setting is [Unlock with 2 second long press].</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Tail Gate Unlock Mode Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The operation/non-operation of the answerback can be set for the tail gate along with each door when unlocking.</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">Answer Back Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The operation/non-operation of the answerback buzzer when locking and unlocking can be set. <br/>The answerback buzzer volume can be changed using &#034;Outer Buzzer Volume setting&#034;.</td></tr><tr><td width="150" colspan="1" rowspan="1" align="left" valign="middle">ACC Auto Power OFF Timer Setting</td><td width="348" colspan="1" rowspan="1" align="left" valign="middle">The operation/non-operation of the ACC auto power off can be set.</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

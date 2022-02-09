@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Front differential assembly disassembly (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Front differential assembly
+          disassembly
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759321">1. Front differential cage
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the bearing cap from the differential carrier.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place alignment marks to the bearing cap and the differential carrier.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH006301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the bearing cap.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the differential cage from the differential carrier.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759319">2. Side bearing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the side bearing from the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the side bearing outer race.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When removing the bearings do not mix up the left and right installation positions and the combinations with the bearing races.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH006401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the side bearing inner race using a special tool.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884000130.png" class="ST" /><br/>SST: 5-8840-0013-0 - bearing puller</p>
+          <p class="sst"><img src="image/ST9852117430.png" class="ST" /><br/>SST: 9-8521-1743-0 - adapter</p>
+                <p class="illust"><img src="image/RTWC4CSH006501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing puller</li><li>Adapter</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759322">3. Shim
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the shim from the differential cage.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Organize removed shims according to the installation position and thickness.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759328">4. Flange
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the flange from the drive pinion.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fully raise the crimped section of the flange nut, and remove the flange nut using a flange holder.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884001330.png" class="ST" /><br/>SST: 5-8840-0133-0（J-8614-11） - flange holder</p>
+                <p class="illust"><img src="image/RTWC4CSH006601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Flange holder</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the flange.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759330">5. Drive pinion gear
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the drive pinion gear from the differential carrier using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the drive pinion gear using a spindle and hammer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST9852150320.png" class="ST" /><br/>SST: 9-8521-5032-0 - spindle</p>
+                <p class="illust"><img src="image/RTWC4CSH006701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Spindle</li></ol></div>
+                <p class="instructions">2. Remove the collapsible spacer from the drive pinion.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759320">6. Inner bearing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the inner bearing from the drive pinion gear using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the inner bearing from the drive pinion gear using a bearing remover and press.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884000150.png" class="ST" /><br/>SST: 5-8840-0015-0 - bearing installer &amp; remover</p>
+                <p class="illust"><img src="image/RTWC4CSH006801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing remover</li></ol></div>
+                <p class="instructions">2. Remove the shim from the drive pinion gear.</p>
+          <p class="instructions">3. Remove the oil seal from the differential carrier.</p>
+          <p class="instructions">4. Remove the bearing outer race from the differential carrier.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the inner bearing outer race using a brass rod and hammer.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH006901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759329">7. Outer bearing
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the outer bearing from the differential carrier.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the outer bearing from the differential carrier.</li>
+                    <li>Remove the outer bearing outer race using a brass rod and hammer.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH007001.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

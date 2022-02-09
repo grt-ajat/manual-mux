@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Rear differential assembly installation (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Rear differential assembly
+          installation
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759305">1. Rear differential assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the rear differential assembly to the rear axle case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the aligning surfaces of the axle case and the differential carrier, and then apply ThreeBond 1215 or equivalent as shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC3BSH002901.png" class="SH" /></p>
+                <div class="legend"><ol><li>3 mm {0.12 in}</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the final drive assembly to the axle case, and tighten the bolts and the nuts to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4BSH000101.png" class="SH" /></p>
+                <p class="numeric">Tightening torque： 64 N・m { 6.5 kgf・m / 47 lb・ft } Bolt</p>
+          <p class="numeric">Tightening torque： 44 N・m { 4.5 kgf・m / 32 lb・ft } Nut</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758247">2. Rear axle shaft
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the rear axle shaft to the axle case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the aligning surface of the axle case and bearing holder.</li>
+                    <li>Apply liquid gasket, ThreeBond TB1215 or equivalent to the installation surface of the axle case.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Insert the axle shaft into the axle case so as not to damage the oil seal.</li>
+                    <li>If the bearing holder installation bolt has been removed from the brake assembly, be sure to use a new bolt.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the bearing holder fixing nut, and then tighten at the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 122 N・m { 12.4 kgf・m / 90 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758412">3. Parking brake cable
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the parking brake cable to the back plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place the inner cable into the hole of the back plate, install the outer cable case and cap to the backplate, and then tighten the nuts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in }</p>
+                <p class="illust"><img src="image/RUWD4BSH000401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the parking brake cable to the lower link.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 10 N・m { 1.0 kgf・m / 89 lb・in } Nut</p>
+                <p class="instructions">2. Install the parking brake cable bracket to the frame.</p>
+                <p class="numeric">Tightening torque： 6.5 N・m { 0.7 kgf・m / 58 lb・in } Bolt</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758409">4. Brake shoe assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the shoe holding cup to the brake shoe pin.</p>
+          <p class="instructions">2. Install the shoe holding spring to the brake shoe pin.</p>
+          <p class="instructions">3. Install the brake shoe assembly to the support plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply SOLVEST 113 grease to the brake shoe fittings and sliding section of the back plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD4BSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Back plate sliding section</li><li>Fitting section</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Secure the brake shoe with the shoe holder pin.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD4CSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Shoe holding spring</li><li>Shoe holding cup</li><li>Brake shoe pin</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Securely assemble the shoe holding spring and shoe holder pin.</li>
+                    <li>Install with the shoe holder pin groove facing sideways.</li>
+                    <li>Use a new shoe holder pin and spring.</li>
+                    <li>Be careful not to damage the dust cover</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the adjuster to the brake shoe.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Pay attention to the mounting direction of the adjuster.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Install the strut to the brake shoe.</p>
+          <p class="instructions">6. Connect the parking brake cable to the lever.</p>
+          <p class="instructions">7. Install the adjuster spring to the brake shoe.</p>
+          <p class="instructions">8. Install the return spring to the brake shoe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758410">5. Brake support
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake support to the rear axle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the brake caliper and brake support as a set to the rear axle.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not depress the brake pedal before installing the brake caliper and brake support.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 120 N・m { 12.2 kgf・m / 89 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758373">6. Disc brake pad
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the clip to the brake support.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not mix up the upper and lower sides of the clip.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH010701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lower side clip</li><li>Upper side clip</li><li>Clamp</li></ol></div>
+                <p class="instructions">2. Install the disc brake pad to the brake support.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the pad assembly attached with the shim to the brake support.</li>
+                    <li>Align the inner pad indicator with the lower side.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD4BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Seven layered shim</li><li>Outer pad</li><li>Inner pad</li><li>Indicator</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Lower the brake caliper to the original position.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the brake hose by twisting or pulling it.</li>
+                    <li>Confirm that the dust boot does not protrude from the piston end, and then lower the caliper.</li>
+                    <li>Take care to prevent the dust boot from becoming caught between the piston and pad.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the lock bolt to the brake caliper assembly.</p>
+                <p class="numeric">Tightening torque： 32 to 42 N・m { 3.3 to 4.3 kgf・m / 24 to 31 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758385">7. Rear rotor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the rear rotor to the axle shaft.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758446">8. Rear wheel speed sensor
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the wheel speed sensor before installation.</li>
+                    <li>Before installing the sensor, clean the inside of the sensor installation hole and installation surface of the sensor bracket, and the installation surface of the sensor bracket for the knuckle and confirm that there is no foreign material such as rust and pieces of the sensor.</li>
+                    <li>Remove any foreign material such as pieces of the sensor from the inside of the mounting hole or the installation surface.</li>
+                    <li>Remove any rust on it with wire brush or the like.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When rust penetrant is used to remove the wheel speed sensor, clean up the part with part cleaner or the like.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758444">9. Rear wheel speed sensor
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing the sensor, use your hand to push the sensor installation flange until it is firmly attached to the installation surface, and then tighten the bolt.</li>
+                    <li>When inserting the sensor, do not pry or strike it with a tool.</li>
+                    <li>Do not tighten the fixing bolts for the sensor body with an air tool, but temporarily tighten by hand and then fully tighten them.</li>
+                    <li>After tightening the bolts, confirm that there is no gap between the installation flange and the installation surface again.</li>
+                    <li>Install the sensor harness using the twist prevention line as a reference to avoid twisting.</li>
+                    <li>Be careful not to pull the harness forcibly, which may result in disconnection.</li>
+                    <li>Confirm that there is no harness interference.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758447">10. Rear wheel speed sensor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the wheel speed sensor to the rear axle case.</p>
+                <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+                <p class="illust"><img src="image/RUWD4BSH000801.png" class="SH" /></p>
+                <p class="instructions">2. Connect the harness clip to the harness.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the harness fixing bolt, and tighten it to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758445">11. Rear wheel speed sensor
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the harness connector to the wheel speed sensor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758259">12. Rear propeller shaft assembly
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Pay attention to prevent damage to the oil seal contact surface of the slip yoke during installation.</li>
+                    <li>Completely remove dust and foreign objects on the flange coupling mounting surfaces of the propeller shaft and final drive.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4ASH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758260">13. Rear propeller shaft assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the rear propeller shaft assembly to the transmission.</p>
+          <p class="instructions">2. Install the rear propeller shaft assembly to the flange.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the alignment marks of each joint made during removal, and then tighten the bolt to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758258">14. Center bearing assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following is the 2WD model.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the center bearing assembly to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the center bearing and tighten the bolt to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 69 N・m { 7.0 kgf・m / 51 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759304">15. Rear axle differential oil
+                  filling
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Replenish the rear axle case with the rear axle differential oil.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new gasket to the drain plug and install to the axle case.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 78 N・m { 8.0 kgf・m / 58 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pour in the specified amount of differential oil GL5.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Capacity： 2.2 L { 0.58 US gal / 0.48 Imp.gal } Ring gear size 220mm {8.66in}</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new gasket to the filler plug and install to the axle case.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 78 N・m { 8.0 kgf・m / 58 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to limited slip differential models.</li>
+                    <li>Pour in the specified amount of differential oil GL5LSD.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Capacity： 2.2 L { 0.58 US gal / 0.48 Imp.gal }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758223">16. Disc wheel
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the disc wheel to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the wheel nuts in the numbered order.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Tightening torque: 120 N⋅m {12.0 kgf⋅m/87 lb⋅ft}</p>
+                <p class="illust"><img src="image/RTWC2DSH000401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758411">17. Parking brake lever assembly
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the parking brake.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the adjust cover, and turn the adjuster until the rear disc rotor no longer rotates.</li>
+                    <li>Turn the parking brake drum so it faces downward.</li>
+                    <li>Turn back the adjuster by the specified number of notches.</li>
+                    <li>Number of notches to turn back the adjuster: 8 notches</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Adjust the parking brake lever.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn to adjust the adjust nut so that the parking brake lever is pulled up 6 to 9 notches when the lever is pulled up with a force of 294 N {30 kg/66 lb}.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Take care not to allow brake drag.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH009501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Adjust bolt</li><li>Adjust nut</li><li>Spacer</li><li>Parking brake cable</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the ashtray and adjust.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH009401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Ashtray</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758448">18. Rear wheel speed sensor
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the following after installation of the wheel speed sensor.</li>
+                    <li>Turn the ignition switch ON, and confirm that the ABS warning light turns off after it illuminates for approximately 3 seconds.</li>
+                    <li>Start the engine and drive the vehicle straight forward from the stopped state. Slowly accelerate to 15 km/h (9 mph) and then slowly apply the brake until the vehicle stops. Confirm that no abnormal noise or problem in braking force during this procedure.</li>
+                    <li>Confirm whether the following symptom occurs during verification actions above.</li>
+                    <li>The ABS warning light turns on, or does not turn off.</li>
+                    <li>ABS operation noise or motor rotation noise is caused.</li>
+                    <li>Brake pedal kickbacks are felt.</li>
+                    <li>The target braking force is not produced.</li>
+                    <li>When the above symptom occurs, take the following action.</li>
+                    <li>Check the installation status of the wheel speed sensor and connection status of the connector.</li>
+                    <li>Check the DTCs, and perform inspection and take remedies for the ABS system in accordance with the diagnostic procedure for each DTC.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Since the ABS rotates the motor for a moment right immediately after the vehicle is started, sound of rotating motor may be heard.</li>
+                    <li>This is the operation for initial check task and not at fault.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

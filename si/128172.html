@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission case reassembly (MUA)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission case
+          reassembly
+              (MUA)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757631">1. Rear oil seal
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the oil to the rear oil seal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the outer circumference of the new oil seal. </li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Apply the grease to the oil seal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply BESCO L2 GREASE or equivalent to the lip of the oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install rear oil seal to rear cover using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a new rear oil seal.</li>
+                    <li>The following applies to 2WD.</li>
+                    <li>Use the oil seal installer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5852200500.png" class="ST" /><br/>SST: 5-8522-0050-0 - rear cover oil seal installer</p>
+                <p class="illust"><img src="image/RTWC5CSH000101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+                    <li>Use the oil seal installer and grip.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884027970.png" class="ST" /><br/>SST: 5-8840-2797-0 - oil seal installer</p>
+          <p class="sst"><img src="image/ST5884000070.png" class="ST" /><br/>SST: 5-8840-0007-0 - grip</p>
+                <p class="illust"><img src="image/RTWC5CSH007401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li><li>Grip</li><li>2.4 - 3.0 mm （0.094 - 0.118 in）</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756845">2. Intermediate plate
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the intermediate plate to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ThreeBond 1215 or equivalent to the aligning surface of the transmission case and intermediate plate.</li>
+                    <li>Install the intermediate plate together with the gear assembly as a unit.</li>
+                    <li>Pull the top gear shaft in such a way that the ball bearing snap ring groove protrudes from the transmission front case cover installation surface.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply any abrupt impact or pressure to the main shaft.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756777">3. Rear cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the rear cover to the intermediate plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD, with ABS.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the O-ring to the cap.</p>
+          <p class="instructions">3. Install the cap to the rear cover.</p>
+                <p class="numeric">Tightening torque： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5CSH013601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cap</li><li>O-ring</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply ThreeBond 1215 or equivalent to the aligning surface of the intermediate plate and rear cover.</li>
+                    <li>Protect the shaft spline with a tape so that the lip section of the rear oil seal is not damaged.</li>
+                    <li>Clean the transmission case bolt hole and the threaded portion of the bolt.</li>
+                    <li>Dry the transmission case bolt hole and the threaded surface of the bolt.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 37 N・m { 3.8 kgf・m / 27 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5CMH000401.png" class="MH" /></p>
+                <div class="legend"><ol><li>Rear cover, 15 mm {0.59 in}</li><li>Intermediate plate, 20 mm {0.79 in}</li><li>Transmission case, 20 mm {0.79 in}</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757319">4. Control box
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the control box to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the control box and a new gasket.</li>
+                    <li>After installing the harness clip and bracket, tighten the four new bolts to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 20 N・m { 2.0 kgf・m / 15 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5CSH000901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756778">5. Speedometer driven gear
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD, without ABS.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the O-ring to the speedometer bushing.</p>
+          <p class="instructions">2. Install the speedometer driven gear to the speedometer bushing.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757479">6. Retainer plate
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD, without ABS.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the speedometer driven gear to the rear cover.</p>
+          <p class="instructions">2. Install the retainer plate to the rear cover.</p>
+                <p class="numeric">Tightening torque： 15 N・m { 1.5 kgf・m / 11 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5CSH013801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Retainer plate</li><li>Speedometer bushing</li><li>O-ring</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757271">7. Vehicle speed sensor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD, without ABS.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the vehicle speed sensor to the speedometer bushing.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757070">8. Top gear bearing snap ring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install top gear bearing snap ring to the top gear shaft using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the snap ring is securely installed.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756702">9. Counter front bearing snap ring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the counter front bearing snap ring to the counter shaft using a snap ring pliers.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that the snap ring is securely installed.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756774">10. Front cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Replace the front oil seal with a new one.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the recommended lubricating oil to the outer circumference of the new oil seal. </li>
+                    <li>Apply BESCO L-2 grease or equivalent to the lip section of the oil seal.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the front oil seal to the front cover using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Firmly fit the front oil seal using the oil seal installer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884000260.png" class="ST" /><br/>SST: 5-8840-0026-0 - oil seal installer</p>
+                <p class="illust"><img src="image/RTWC5CSH001001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil seal installer</li></ol></div>
+                <p class="instructions">3. Install the front cover to the transmission case.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a new gasket and the front cover.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the oil seal.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the transmission case bolt hole and dry it.</li>
+                    <li>Tighten the six new front cover bolts to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756781">11. Shift fork
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the grease to the shift fork.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply EXXON MOBILE RONEX MP grease or equivalent to the position shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Back</li><li>Grease application</li></ol></div>
+                <p class="illust"><img src="image/RTWC5ESH002801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Grease application</li></ol></div>
+                <p class="instructions">2. Install the shift fork to the transmission case.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757212">12. Release bearing
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the grease to the release bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply EXXON MOBILE RONEX MP grease or equivalent to the contact surface with the shift folk.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply grease to the inner surface of the sleeve.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESH002601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Grease application</li></ol></div>
+                <p class="instructions">2. Install the release bearing to the front cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After installation, connect it to the shift fork.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Counter shaft inspection (MUX)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Counter shaft
+          inspection
+              (MUX)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757613">1. Reverse block ring
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the reverse block ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the reverse block ring using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the block ring and the dog gear.</li>
+                    <li>Replace the reverse block ring if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.5 mm { 0.059 in }</p>
+          <p class="numeric">Limit： 0.8 mm { 0.031 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756919">2. 1st - 2nd synchronizer assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 1st - 2nd synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 1st - 2nd synchronizer assembly using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace the 1st - 2nd synchronizer assembly if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.5 mm { 0.059 in }</p>
+          <p class="numeric">Limit： 0.8 mm { 0.031 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756916">3. Insert
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the insert.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the insert using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the insert and block ring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BSH006501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace the insert and block ring if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">Standard value</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">Limit</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">1st - 2nd</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 3.86 to 4.16 mm { 0.152 to 0.164 in }</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 4.4 mm { 0.173 in }</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">Reverse</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 2.16 to 2.46 mm { 0.085 to 0.097 in }</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 2.7 mm { 0.106 in }</td></tr></tbody></table>
+                <p class="instructions">3. Measure the insert using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the insert and the clutch hub.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW25CSH028701.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">Standard value</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">Limit</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">1st - 2nd, reverse</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 0.01 to 0.21 mm { 0.0004 to 0.0083 in }</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 0.3 mm { 0.0118 in }</td></tr></tbody></table>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757203">4. Counter shaft
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the counter shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Put the counter shaft on the V-block.</p>
+          <p class="instructions">3. Measure fluctuation using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace the counter shaft if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Limit： 0.05 mm { 0.002 in }</p>
+                <p class="illust"><img src="image/RTW77BSH002401.png" class="SH" /></p>
+                <p class="instructions">4. Install the 1st counter gear collar to the counter shaft using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install using a press and bearing installer.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST9852211820.png" class="ST" /><br/>SST: 9-8522-1182-0 - bearing installer</p>
+                <p class="illust"><img src="image/RTW97BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Bearing installer</li></ol></div>
+                <p class="instructions">5. Measure outer diameter using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace the counter shaft and the 1st counter gear collar if the measured value exceeds the limit value.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">Standard value</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">Limit</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">1st</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 46.954 to 46.965 mm { 1.8486 to 1.8490 in }</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 46.954 mm { 1.8486 in }</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">2nd</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 46.975 to 46.991 mm { 1.8494 to 1.8500 in }</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 46.975 mm { 1.8494 in }</td></tr><tr><td width="50" colspan="1" rowspan="1" align="left" valign="middle">Reverse</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 36.975 to 36.991 mm { 1.4557 to 1.4563 in }</td><td width="85" colspan="1" rowspan="1" align="left" valign="middle">： 36.975 mm { 1.4557 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTW97BSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Counter reverse gear installation position</li><li>1st counter gear installation position</li><li>2nd counter gear installation position</li></ol></div>
+                <p class="instructions">6. Remove the 1st counter gear collar from the counter shaft using the press.</p>
+                <p class="illust"><img src="image/RTW97BSH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756980">5. 1st counter gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 1st counter gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 1st counter gear using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the 1st counter gear using an inside dial gauge.</li>
+                    <li>Replace the 1st counter gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 53.000 to 53.019 mm { 2.0866 to 2.0874 in }</p>
+          <p class="numeric">Limit： 53.019 mm { 2.0874 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757136">6. 2nd counter gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 2nd counter gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 2nd counter gear using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the 2nd counter gear using an inside dial gauge.</li>
+                    <li>Replace the 2nd counter gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 53.000 to 53.019 mm { 2.0866 to 2.0874 in }</p>
+          <p class="numeric">Limit： 53.019 mm { 2.0874 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757545">7. Counter reverse gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the counter reverse gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the counter reverse gear using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the counter reverse gear using an inside dial gauge.</li>
+                    <li>Replace the counter reverse gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 42.000 to 42.016 mm { 1.6535 to 1.6542 in }</p>
+          <p class="numeric">Limit： 42.016 mm { 1.6542 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756985">8. 1st - 2nd clutch hub
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 1st - 2nd clutch hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure play using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the play on the outer regions of the 1st - 2nd clutch hub in the rotational direction of the spline.</li>
+                    <li>Replace the 1st - 2nd clutch hub if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.00 to 0.04 mm { 0.0000 to 0.0016 in }</p>
+          <p class="numeric">Limit： 0.10 mm { 0.0039 in }</p>
+                <p class="illust"><img src="image/LNW25CSH029101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757616">9. Reverse synchronizer assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the reverse synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure play using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the play on the outer regions of the reverse synchronizer in the rotational direction of the spline.</li>
+                    <li>Replace the reverse synchronizer assembly if the measured value exceeds the limit value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.000 to 0.107 mm { 0.0000 to 0.0042 in }</p>
+          <p class="numeric">Limit： 0.15 mm { 0.0059 in }</p>
+                <p class="illust"><img src="image/LNW25CSH029101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756613">10. 3rd gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 3rd gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure play using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the play of the spline.</li>
+                    <li>Move the gear left and right to settle it.</li>
+                    <li>Replace the 3rd counter gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.013 to 0.121 mm { 0.0005 to 0.0048 in }</p>
+          <p class="numeric">Limit： 0.15 mm { 0.0059 in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757038">11. 5th gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 5th gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure play using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the play of the spline.</li>
+                    <li>Move the gear left and right to settle it.</li>
+                    <li>Replace the 5th gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.013 to 0.121 mm { 0.0005 to 0.0048 in }</p>
+          <p class="numeric">Limit： 0.15 mm { 0.0059 in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757043">12. Counter shaft
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the output counter gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure play using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the play of the spline.</li>
+                    <li>Move the gear left and right to settle it.</li>
+                    <li>Replace the output counter gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.013 to 0.121 mm { 0.0005 to 0.0048 in }</p>
+          <p class="numeric">Limit： 0.15 mm { 0.0059 in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756763">13. Counter shaft front bearing
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the counter shaft front bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure play using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace the counter shaft front bearing if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Limit： 0.098 mm { 0.0039 in }</p>
+                <p class="illust"><img src="image/LNW25CSH029201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757535">14. Counter shaft rear bearing
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the counter shaft rear bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure play using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace the counter shaft rear bearing if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Limit： 0.123 mm { 0.0048 in }</p>
+                <p class="illust"><img src="image/LNW25CSH029201.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

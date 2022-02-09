@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Abnormal combustion noise null (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Abnormal combustion noise
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747761">1. Abnormal combustion noise
+                  description of symptom
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Engine knocking occurs many times. Usually, it becomes particularly notable when accelerating. A sharp metallic sound is produced when the throttle opening angle is changed.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747428">2. Abnormal combustion noise
+                  diagnostics
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Preliminary inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the engine control system. <br/>Check if any problem exists in the vehicle. <br/>Inspect whether smoke is present with combustion noise. <br/>Inspect the fuel quality. <br/>Verify the injector ID code of each cylinder. <br/>Check the scan tool data list. <br/>Check for related Service Bulletins.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Sensor inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Compare each display for Engine Coolant Temperature (ECT), Intake Air Temperature (IAT), and Fuel Temperature with the scan tool data list when the engine is stopped and cold. If the difference between the temperature values is 5 °C (9 °F) or more when the engine has cooled, inspect for high resistance in each circuit and for sensor failure. <br/>{When the ignition switch is turned ON, the MAF sensor is heated, and as a result, the IAT shows a higher value than the normal intake air temperature.}<br/>Observe the Fuel Rail Pressure (FRP) Sensor display on the scan tool. It is normal if the Fuel Rail Pressure (FRP) Sensor display shows 0.9 - 1.0 V when the engine is not started with the ignition switch turned ON after at least 1 minute from the stop of engine operation. If not, inspect for high resistance in each circuit and for any sensor failure. <br/>Fully depress the accelerator pedal while idling in neutral, and verify the Fuel Rail Pressure (FRP) and Desired Fuel Rail Pressure (FRP) displays. It is normal if the Fuel Rail Pressure (FRP) display and the Desired Fuel Rail Pressure (FRP) display follow each other within a difference of 5 MPa {725 psi}. <br/>The CKP sensor is securely installed, and the sensor rotor is not damaged.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fuel system inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If excessive smoke is present, inspect the injector for stuck open. Inspect the combustion chamber for fuel intrusion.<br/>Remove the injector, and visually inspect it.<br/>Perform the cylinder balance test with the scan tool.<br/>Perform the injector forced drive with the scan tool.<br/>Confirm the fuel compensation display of each cylinder with the scan tool while idling.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Air intake system inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the air cleaner element for clogging.<br/>Inspect the intake air duct for clogging.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Engine mechanical inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect the compression pressure of the engine.<br/>Inspect the basic components of the engine including the camshaft, cylinder head, piston, etc.<br/>Inspect the combustion chamber for excessive oil intrusion.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Other inspections</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Inspect for any other cause that generates similar sound, such as loose components, bracket, mount, deteriorated clutch damper spring.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

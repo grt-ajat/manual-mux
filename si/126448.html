@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Diagnostic system check-engine controls null (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Diagnostic system check-engine controls
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747267">1. Diagnostic system check-engine controls
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The diagnostic system check-engine controls are a sequenced method for checking problems caused by the functional failures in the engine control system, and are also the starting point for all diagnostics for drivability complaints. By correctly using these diagnostic steps, it is possible to reduce the time for diagnostics and prevent replacing parts that are not defective.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747163">2. Diagnostic system check-engine controls
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If there are no complaints regarding drivability, do not perform these diagnostic steps unless otherwise instructed to do so.</li>
+                    <li>Check the Service Bulletin before starting the diagnosis.</li>
+                    <li>Do not clear the DTCs unless it is instructed in a diagnostic step.</li>
+                    <li>If a malfunction is found in the engine starting system, inspect the starting system.</li>
+                    <li>The battery should be fully charged.</li>
+                    <li>The battery cable should be normal and securely connected.</li>
+                    <li>The ECM ground should be securely connected to the correct position.</li>
+                    <li>The ECM harness connector should be clean and correctly connected.</li>
+                    <li>The ECM terminals should be clean and correctly connected.</li>
+                    <li>The injector ID code should be programmed correctly.</li>
+                    <li>The immobilizer information should be programmed correctly.</li>
+                    <li>If fuel system DTCs (P0087, P0088, P0089, P0093, or P1093) or other DTCs are set, diagnose sensor DTCs, solenoid DTCs, actuator DTCs and relay DTCs first.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Inspection of scan tool power up</p>
+                <p class="explanation">Install a scan tool.</p>
+          <p class="explanation">If the scan tool powers up, go to Inspection of scan tool communication.</p>
+          <p class="explanation">If the scan tool does not power up, refer to Scan tool does not power up, and repair as necessary.</p>
+                <p class="instructions">2. Inspection of scan tool communication</p>
+                <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Verify the vehicle specifications and the status of communication with the following control units using a scan tool.</p>
+          <p class="explanation">ECM<br/>TCM (A/T TB-50LS only)<br/>TCCM (4WD model)<br/>EHCU (if so equipped)<br/>ICU (if so equipped)<br/>SRS control unit (if so equipped)<br/>BCM (if so equipped)<br/>Instrument panel cluster<br/>PESS control unit (if so equipped)</p>
+          <p class="explanation">If communication with all the control modules can be established, go to Engine cranking verification.</p>
+          <p class="explanation">If communication cannot be established with any of the control modules, refer to Scan tool does not communicate with CAN device, and repair as necessary.</p>
+                <p class="instructions">3. Engine cranking verification</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the immobilizer system is activated, the ECM deactivates the fuel injection and performs starter cut to cancel cranking.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Crank the engine.</p>
+          <p class="explanation">If the engine does not crank, go to DTC verification 1.</p>
+          <p class="explanation">If the engine cranks, go to Engine start verification.</p>
+                <p class="instructions">4. Engine start verification</p>
+                <p class="explanation">Start the engine.</p>
+          <p class="explanation">If the engine does not start, refer to Starting system check, and repair as necessary.</p>
+          <p class="explanation">If the engine starts, go to DTC verification 2.</p>
+                <p class="instructions">5. DTC verification 1</p>
+                <p class="explanation">Observe the ECM DTC information with a scan tool.</p>
+          <p class="explanation">If DTCs P0633, P161B, or U0167 are set, diagnose the applicable DTCs.</p>
+          <p class="explanation">If the above DTCs are not set, inspect starting system parts and circuits, and repair as necessary.</p>
+                <p class="instructions">6. DTC verification 2</p>
+                <p class="explanation">Verify the following control module DTCs with a scan tool.</p>
+          <p class="explanation">ECM<br/>PESS control unit (if so equipped)<br/>ICU (if so equipped)<br/>TCM (A/T TB-50LS only)</p>
+          <p class="explanation">If DTCs beginning with U or DTCs related to communication with other control modules are set, diagnose the applicable DTCs.</p>
+          <p class="explanation">If ECM DTCs P0601, P0602, P0604, P0606, P060B, or P1621 are set, diagnose the applicable DTCs.</p>
+          <p class="explanation">If ECM DTC P0563 is set, diagnose the applicable DTC.</p>
+          <p class="explanation">If any DTCs are set, other than the above DTC, go to the applicable DTC diagnosis.</p>
+                <p class="instructions">7. Confirmation 1 of symptom</p>
+                <p class="explanation">Verify the customer's concern is related with the following systems.</p>
+          <p class="explanation">Automatic transmission<br/>Immobilizer</p>
+          <p class="explanation">If it is applicable, refer to Diagnostic system check for the relevant system, and inspect it.</p>
+                <p class="instructions">8. Confirmation 2 of symptom</p>
+                <p class="explanation">Ensure the following symptoms are met.</p>
+          <p class="explanation">Hard start<br/>Rough, unstable<br/>High idle speed<br/>Cuts out<br/>Surges<br/>Lack of power, sluggishness, or sponginess<br/>Hesitation, sag, or stumble<br/>Abnormal combustion noise<br/>Poor fuel economy<br/>Black smoke<br/>White smoke</p>
+          <p class="explanation">If a problem is found, repair the applicable symptom.</p>
+          <p class="explanation">If any of the symptoms are not met, refer to Intermittent conditions of engine, and inspect.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

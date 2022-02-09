@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>ESC OFF switch circuit system check null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    ESC OFF switch circuit system check
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758695">1. ESC OFF switch circuit system check
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The TCS and ESC can be deactivated by operating the ESC OFF switch. When operating the ESC OFF switch and the ground circuit is established, the EHCU detects the ESC OFF switch signal and switches the operations of the TCS and the ESC. <br/>The EHCU recognizes the status of the ESC OFF switch by detecting the voltage changes and change time caused by the ON/OFF status of the ESC OFF switch.</p>
+          <p class="explanation">TCS OFF operating conditions<br/>Press the ESC OFF switch once.</p>
+          <p class="explanation">ESC OFF operating conditions<br/>Press the ESC OFF switch for at least 5 seconds.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758706">2. ESC OFF switch circuit system check
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Circuit diagnosis 1</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the ESC OFF switch harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Connect a fused jumper wire between the ESC OFF switch harness connector circuits, and then disconnect.</p>
+          <p class="explanation">Observe the TCS Driver Intent display on the scan tool.</p>
+          <p class="explanation">If ON is displayed, go to Circuit diagnosis 2.</p>
+          <p class="explanation">If OFF is displayed, replace the ESC OFF switch. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127473.html">9.Body, Cab, Accessories 9C.Electrical Control, Entertainment(All models) ESC off switch removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127475.html">9.Body, Cab, Accessories 9C.Electrical Control, Entertainment(All models) ESC off switch installation</a>&quot;.</p>
+                    <p class="instructions">2. Circuit diagnosis 2</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Connect a fused jumper wire between the ESC OFF switch signal circuit and the body ground, and then disconnect.</p>
+          <p class="explanation">Observe the TCS Driver Intent display on the scan tool.</p>
+          <p class="explanation">If ON is displayed, go to Inspection for open circuit in signal circuit.</p>
+          <p class="explanation">If OFF is displayed, repair an open circuit or high resistance in the ESC OFF switch ground circuit. Go to Repair verification.</p>
+                <p class="instructions">3. Inspection for open circuit in signal circuit</p>
+                <p class="explanation">Inspect for an open circuit or high resistance in the ESC OFF switch signal circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to Inspection of EHCU harness connector.</p>
+                <p class="instructions">4. Inspection of EHCU harness connector</p>
+                <p class="explanation">Inspect the connection status of the EHCU harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, go to EHCU replacement.</p>
+                <p class="instructions">5. EHCU replacement</p>
+                <p class="explanation">Replace the EHCU. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="128837.html">4.Brakes 4D.ABS(All models) EHCU removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128831.html">4.Brakes 4D.ABS(All models) EHCU installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="128838.html">4.Brakes 4D.ABS(All models) EHCU setting</a>&quot;.</p>
+                    <p class="instructions">6. Repair verification</p>
+                <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Press the ESC OFF switch once and verify that the TCS OFF indicator light illuminates and the TCS Driver Intent display shows OFF on the scan tool.</p>
+          <p class="explanation">Press the ESC OFF switch for at least 5 seconds and verify that the ECS OFF indicator light illuminates and the ESC Driver Intent display shows OFF on the scan tool.</p>
+          <p class="explanation">Press the ESC OFF switch once and verify that the TCS OFF indicator light and ESC OFF indicator light turn OFF and the TCS Driver Intent display and ESC Driver Intent display show ON on the scan tool.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

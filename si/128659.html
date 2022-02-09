@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of security and locks control null (Immobilizer)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of security and locks control
+              (Immobilizer)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758132">1. Function, structure, operation of security and locks control
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The immobilizer control system starts together with the ECM. The main system components are the ICU, the ECM, and the transponder key. The immobilizer system is activated (immobilized) by an incorrectly programmed or non-programmed transponder key, the ICU or the ECM. While this system is activated, the ECM controls the fuel injection system and the starter cut relay to prevent the engine from starting.</p>
+                <p class="illust"><img src="image/RTWBBASF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>Transponder key</li><li>ICU</li><li>Controller area network (CAN) communication bus line</li><li>ECM</li></ol></div>
+                <p class="explanation">A typical engine starting sequence</p>
+                <p class="instructions">1. When the ignition switch is ON, the ICU begins authentication of the transponder key in the steering lock. The ICU transmits a specific request signal to the transponder key and the transponder key sends back a response signal to the ICU. Both communication signals are carried out via antenna coil.</p>
+          <p class="instructions">2. Because the anti-theft system alarms if a key or other methods unlock the door, when the transponder key is correctly authenticated the ICU transmits an alarm cancel signal to the BCM.</p>
+          <p class="instructions">3. After the transponder key authentication is completed, the ICU begins authentication of the ECM. The ECM transmits a specific request signal to the ICU and the ICU sends back a response signal to the ECM. Both communication signals are carried out via a controller area network (CAN) communication bus.</p>
+          <p class="instructions">4. After the ECM authentication is completed, the ECM enables engine running.</p>
+                <p class="explanation">ICU<br/>The ICU is installed to the steering lock. The ICU controls the immobilizer system through authentication of the transponder key with the ECM. The antenna coil is a part of the ICU and it is located around the steering key lock cylinder. The antenna coil is energized when the ICU is performing an authentication of the transponder key.</p>
+                <p class="illust"><img src="image/RTW7BASH000101.png" class="SH" /></p>
+                <p class="explanation">ECM<br/>The ECM is installed next to the blower assembly. The ECM mainly controls the engine control and also communicates specific request signals and response signals with the ICU. If an immobilizer system problem occurs, the ECM sets a DTC and illuminates the SVS lamp or MIL.</p>
+                <p class="illust"><img src="image/RTWCBASH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>ECM</li></ol></div>
+                <p class="explanation">Transponder key<br/>The transponder key accommodates a transponder chip in the grip portion. The transponder keys have no conventional power source. The transponder chip is energized via a radio wave supplied from an antenna coil fitted around the steering lock cylinder. Only the transponder key that is correctly programmed key is possible to start the engine. Maximum five transponder keys can be provided by additional programming.</p>
+                <p class="illust"><img src="image/RTWCZ0SH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Transponder chip</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Immobilizer control unit circuit diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWCZ0MF003201.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ICU terminal layout</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW7BASH000501.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="170" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Ground</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">CAN high</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">CAN low</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">8</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">9</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Ignition voltage</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">10</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">11</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="50" colspan="1" rowspan="1" align="center" valign="middle">12</td><td width="170" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr></tbody></table>
+                <p class="explanation">Power door lock system<br/>The power door lock system consists of a door lock switch, door lock key switch, door lock motor, and BCM. Battery voltage is consistently applied to the BCM. The BCM operates the door lock motor approximately 1 second after a door lock switch or door lock key switch signal input status change, and locks or unlocks the doors.</p>
+          <p class="explanation">Locking<br/>All doors will lock when the lock side of the door lock switch is pressed, or when the doors are locked using the key cylinder on the driver side.</p>
+          <p class="explanation">Unlocking<br/>All doors will unlock when the unlock side of the door lock switch is pressed, or when the doors are unlocked using the key cylinder on the driver side. If the key is used for unlocking when the anti-theft system is operating, the anti-theft alarm will sound until the remote controller key is used to unlock or the ignition switch is turned to the ON position.</p>
+          <p class="explanation">Keyless entry<br/>The keyless entry function performs the following functions. <br/>Power door lock system<br/>Lock and unlock functions by the remote controller key operation<br/>Remote controller key registration function<br/>Answer-back function<br/>Interior light ON/OFF interlocking function<br/>Ajar warning lamp function</p>
+          <p class="explanation">The keyless entry system consists mainly of the following items.<br/>Remote controller key<br/>BCM<br/>Receiver unit<br/>The BCM transmits lock and unlock signals received from the remote controller key to the door lock actuator through the receiver unit for each door.</p>
+          <p class="explanation">Lock and unlock<br/>The following functions will operate when the lock button on the remote controller key is pressed.<br/>Locking of all doors<br/>Answer back, 1 blink<br/>Interior light turns off<br/>The following functions will operate when the unlock button on the remote controller key is pressed.<br/>Unlocking of all doors<br/>Answer back, 2 blinks<br/>Interior light lighting<br/>If doors are unlocked for approximately 30 seconds, they will be locked automatically.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When performing door lock operations continuously using the remote controller key, wait for at least 1 second before performing the next locking or unlocking operation.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Remote controller key<br/>The door can be locked or unlocked by operating the button within 10 meters {33 feet} around the vehicle. Only 1 remote controller can be used at a time. If 2 or more remote controllers are operated at the same time, their operation will be unstable due to radiowave interference.</p>
+                <p class="illust"><img src="image/RTUBZ0SH000401.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTUBZ0SH000501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Overview of the input/output of keyless entry</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWBA0MF000101.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Installation position of the BCM</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWCABSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>BCM</li></ol></div>
+                <p class="explanation">Registration method of the remote controller key<br/>Turn OFF the ignition switch and close all doors.<br/>Open the door at the driver side.<br/>Push the unlock button on the remote controller within 10 seconds.<br/>Insert the key into the key cylinder within 10 seconds, turn ON the ignition switch, and then turn OFF the ignition switch within 10 seconds. Then, pull out the key.<br/>Within 30 seconds, open and close the door in order to turn the door switch at the driver side ON more than 6 times. The door will be locked automatically at the sixth closing operation.<br/>Push the unlock button more than 5 seconds on the remote controller within 5 seconds.<br/>When registration is successful, 2 answer-backs are given.<br/>If registration fails, no answer-back is given.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the ignition switch is turned ON or the door at the passenger side is opened, the registration will be canceled.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Anti-theft system<br/>The anti-theft system consists of a BCM, anti-theft horn, anti-theft indicator light, receiver unit, and remote controller key. This system operates when the engine hood and all doors are closed and the doors are locked using a correctly programmed remote controller key. The system turns OFF when the doors are unlocked with the remote controller key or the ignition switch is turned ON. <br/>The anti-theft system is designed to protect the vehicle and valuables from theft when the door and the engine hood of the vehicle are locked. <br/>If anyone tries to open the door or the engine hood forcibly without using the remote controller key, the hazard lights flash and the horn sounds intermittently. The horn sounds for 30 seconds until the system stops automatically, and the hazard lights flash for 5 minutes.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>In order to operate the anti-theft function, use the remote controller key to lock the doors after closing all the doors.</li>
+                    <li>When the door at the passenger side is opened in locked status and then the door is closed, an error alert is detected.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The first 10 seconds<br/>LED Lighting, Test, Switch delay ON<br/>LED blinking rapidly (2 Hz), Door, Bonnet opening or system failure</li>
+                    <li>Approximately 10 seconds later<br/>LED blinking slow, System ON (0.5 Hz)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTUBZ0SH001501.png" class="SH" /></p>
+                <p class="explanation">Activating the anti-theft system<br/>Turn OFF the ignition switch. <br/>Check that all the doors and engine hood are closed, and lock the doors with the remote controller key. <br/>The anti-theft indicator light will illuminate for approximately 10 seconds, and the anti-theft system will be operated after the light changes to a slow flash.</p>
+          <p class="explanation">Anti-theft system alarm operation conditions<br/>The doors or engine hood is forcibly opened without the use of the remote controller key. <br/>The doors are unlocked with the door lock knob. <br/>The engine hood release handle is operated.</p>
+          <p class="explanation">Anti-theft system stopping conditions<br/>The doors are unlocked with the remote controller key or the ignition switch is turned ON. <br/>If the alarm has sounded, it will stop once the ignition switch is turned ON.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

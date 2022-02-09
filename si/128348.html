@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Automatic transmission fluid temperature warning light inoperative null (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Automatic transmission fluid temperature warning light inoperative
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757396">1. Automatic transmission fluid temperature warning light inoperative
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The automatic transmission fluid temperature warning light comes on when the ignition switch is turned ON, and then it turns off when the ATF temperature is 150 ˚C  (302 ˚ F) or below. When the TCM detects the "ON" signal of the ignition switch, it lights the warning light for approximately 3 seconds for a valve check.</p>
+          <p class="explanation">Function of automatic transmission fluid temperature warning light<br/>The automatic transmission fluid temperature warning light is installed inside the instrument panel cluster and illuminates when the ATF temperature becomes high to notify the driver that the vehicle needs to be stopped to prevent the transmission from being damaged. <br/>If the warning light illuminates responding to an instruction from the TCM, the ATF temperature has become high.</p>
+          <p class="explanation">Lighting conditions of automatic transmission fluid temperature warning light<br/>The automatic transmission fluid temperature warning light illuminates for approx. 3 seconds after the ignition switch is turned ON. <br/>When the ATF temperature is 150˚C (302˚F) or higher, it remains on.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756827">2. Automatic transmission fluid temperature warning light inoperative
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="128352.html">206.Description Transmission, Transaxle 19C.Functional Inspection(TB-50LS) diagnostic system check-transmission controls</a>&quot;.</p>
+                    <p class="instructions">2. Inspection for open circuit in power supply circuit</p>
+                <p class="explanation">Inspect the METER 10 A fuse, and repair as necessary. If the fuse blows out again, repair the short to ground in the circuit relating to the METER 10 A fuse. Go to Repair verification.</p>
+          <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the instrument panel cluster harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Connect a test lamp between the ignition power supply circuit of the instrument panel cluster harness connector and the body ground.</p>
+          <p class="explanation">If the test lamp illuminates, go to Inspection for open circuit in ground circuit.</p>
+          <p class="explanation">If the test lamp does not illuminate, repair an open circuit or high resistance in the instrument panel cluster ignition power supply circuit. Go to Repair verification.</p>
+                <p class="instructions">3. Inspection for open circuit in ground circuit</p>
+                <p class="explanation">Connect a test lamp between the battery power supply circuit of the instrument panel cluster harness connector and the ground circuit.</p>
+          <p class="explanation">If the test lamp illuminates, go to Inspection of instrument panel cluster harness connector.</p>
+          <p class="explanation">If the test lamp does not illuminate, repair an open circuit or high resistance in the instrument panel cluster ground circuit. Go to Repair verification.</p>
+                <p class="instructions">4. Inspection of instrument panel cluster harness connector</p>
+                <p class="explanation">Inspect the connection status of the instrument panel cluster harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, replace the instrument panel cluster. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127511.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127512.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127513.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster setting</a>&quot;.</p>
+                    <p class="instructions">5. Repair verification</p>
+                <p class="explanation">Reconnect all of the fuses and harness connectors that have been disconnected.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Confirm that the automatic transmission fluid temperature warning light lights up for 3 seconds.</p>
+          <p class="explanation">If it does not illuminate, go to Circuit diagnosis 1.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

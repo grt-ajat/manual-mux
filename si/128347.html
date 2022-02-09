@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Introduction to the trouble diagnosis of transmission, transaxle null (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Introduction to the trouble diagnosis of transmission, transaxle
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756836">1. Introduction to the trouble diagnosis of transmission, transaxle
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Non-OEM parts<br/>In all failure diagnoses, the system is adjusted to operate with genuine parts installed. Accordingly, if a commercially available, general sensor or switch, etc. is installed, it makes a wrong diagnosis, and the check trans warning light blinks.<br/>Commercial electronics, such as cellular phones, stereos, and anti-theft devices, may emit electromagnetic interference (EMI) into the control system if they are improperly installed. This may cause a false sensor reading, resulting in blinking of the check trans warning light. When conducting a failure diagnoses, turn OFF the power source of all commercially available parts, or remove them.</p>
+          <p class="explanation">Improper vehicle maintenance<br/>Since the sensitivity of the system check is extremely high, the check trans warning light may blink when the vehicle is not properly maintained.<br/>Clogging of the oil strainer or deposits on the oil pan due to lack of transmission fluid changes or use of improper transmission fluid may cause a vehicle problem.<br/>Poor vehicle maintenance is not classified as a non-vehicle failure, but since the sensitivity of system check is high, vehicle maintenance schedules must be more strictly observed.</p>
+          <p class="explanation">Basic knowledge of the required tools<br/>When performing diagnostic procedures, lack of basic knowledge could result in incorrect diagnosis or damage to components. Do not attempt to diagnose a related problem without this basic knowledge.<br/>Basic understanding of hand tools is necessary to make the most of the service manual.</p>
+          <p class="explanation">Check trans warning light<br/>Basically, the check trans warning light blinks when a failure affecting the vehicle performance occurs and a DTC is detected.<br/>If the check trans warning light blinks, and it is suspected that the blinking is caused by a failure due to driving performance degradation of the vehicle, the transmission control system check must be conducted.</p>
+          <p class="explanation">Transmission control system check<br/>The transmission control system check provides the following information.<br/>ECU identification<br/>ECU function to communicate via the serial data circuit<br/>Status and identification of the stored DTCs<br/>Confirmation of appropriate diagnosis procedures by using the transmission control system check.</p>
+          <p class="explanation">Check sheet<br/>Check sheet is used to verify customer complaints. It is required to understand the normal operating behavior of the system and verify that a customer complaint is a valid failure of the system.</p>
+                <p class="illust"><img src="image/RTWC5AXF000201.png" class="XF" /></p>
+                <p class="explanation">Reading DTCs by flash codes<br/>The TCM is the Data Link Connector (DLC) is a device for communication with the TCM. The DTCs stored in the TCM memory can be read either through a hand-held diagnostic scanner such as a scan tool that can be connected to the DLC or by counting the number of flashes of the check trans warning light when the diagnostic test terminal of the DLC is grounded. Reading is enabled by short-circuiting DLC terminal 12, which is the diagnosis request terminal, and DLC terminals 4 or 5, which is the ground wire. Once terminals 12 and 4 or 5 have been connected, the ignition switch must be turned to the ON position, with the engine not running. The check trans warning light indicates DTCs for present and past failures. The check trans warning light repeats the indication 3 times for 1 DTC. When multiple failures are present, indications are made in ascending order of the DTC numbers. If there is no DTC stored in the TCM memory, the check trans warning light shows code 12. The blinking DTC display continues as long as the DLC is shorted.</p>
+                <p class="illust"><img src="image/RTWC5ASF000401.png" class="SF" /></p>
+                <p class="explanation">DTC type definitions<br/>There are 5 types of A, B, C, D, and E for DTCs. Among these DTCs, Type A and B DTCs are related to emission whereas Type C, D, and E DTCs are related to items other than emission.</p>
+          <p class="explanation">Actions taken when a DTC is set, Type A<br/>When the diagnostic runs and fails, the TCM flashes the check trans warning light. <br/>The TCM requests the MIL to be illuminated when the diagnostic runs and fails. <br/>The TCM records the operating conditions at the time the diagnostic fails. The TCM stores this information in the Failure Records. <br/>The ECM records the operating conditions at the time the diagnostic fails. The ECM stores this information in the Freeze Frame/Failure Records. <br/>The ECM stores DTC P0700 in ECM history at the time the diagnostic fails.</p>
+          <p class="explanation">Actions taken when a DTC is set, Type B<br/>When the diagnostic runs and fails, the TCM flashes the check trans warning light on the second consecutive driving cycle. <br/>When the diagnostic runs and fails, the TCM requests to illuminate the MIL on the second consecutive driving cycle. <br/>When the diagnostic reports a failure on the second consecutive driving cycle, the TCM stores this information in the Failure Records. <br/>The ECM records the operating conditions at the time the diagnostic fails. The ECM stores this information in the Freeze Frame/Failure Records. <br/>The ECM stores DTC P0700 in ECM history during the second consecutive driving cycle in which the diagnostic fails.</p>
+          <p class="explanation">Conditions for clearing the MIL, check trans warning light and the DTC, Type A and B<br/>When the diagnostic runs and does not fail, the TCM turns OFF the check trans warning light after the first driving cycle. <br/>When the diagnostic runs and does not fail, cancel the MIL request after third driving cycle. <br/>A history DTC clears after 40 consecutive warm-up cycles, if no failures are reported. <br/>Use a scan tool to clear the MIL, check trans warning light and the DTC. <br/>When clearing the DTC without a scan tool, jumper pins No. 12 and No. 4 (or No. 5) of DLC when at least 1 second has passed after turning ON the ignition switch, and remove the jumper wire within 1 to 6 seconds after jumpering.</p>
+          <p class="explanation">Actions taken when a DTC is set, Type C<br/>When the diagnostic runs and fails, the TCM flashes the check trans warning light. <br/>The TCM records the operating conditions at the time the diagnostic fails. The TCM stores this information in the Failure Records.</p>
+          <p class="explanation">Actions taken when a DTC is set, Type D<br/>When the diagnostic runs and fails, the TCM flashes the check trans warning light on the second consecutive driving cycle. <br/>If the diagnostic reports a failure on the second consecutive driving cycle, the TCM stores this information in the Failure Records.</p>
+          <p class="explanation">Conditions for clearing the check trans warning light and the DTC, Type C and D.<br/>When the diagnostic runs and does not fail, the TCM turns OFF the check trans warning light after one driving cycle. <br/>A current DTC clears after three consecutive driving cycles that the diagnostic runs and passes. <br/>A history DTC clears after 40 consecutive warm-up cycles, if no failures are reported. <br/>Use a scan tool to clear the check trans warning light and the DTC. <br/>When clearing the DTC without a scan tool, jumper pins No. 12 and No. 4 (or No. 5) of DLC when at least 1 second has passed after turning ON the ignition switch, and remove the jumper wire within 1 to 6 seconds after jumpering.</p>
+          <p class="explanation">Actions taken when a DTC is set, Type E<br/>The TCM does not flash the check trans warning light. <br/>The TCM records the operating conditions at the time the diagnostic fails. The TCM stores this information in the Failure Records.</p>
+          <p class="explanation">Conditions for clearing the check trans warning light and the DTC, Type E<br/>The current DTC is cleared after one driving cycle that the diagnostic runs and passes. <br/>A history DTC clears after 40 consecutive warm-up cycles, if no failures are reported. <br/>Use a scan tool to clear the DTC. <br/>When clearing the DTC without a scan tool, jumper pins No. 12 and No. 4 (or No. 5) of DLC when at least 1 second has passed after turning ON the ignition switch, and remove the jumper wire within 1 to 6 seconds after jumpering.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

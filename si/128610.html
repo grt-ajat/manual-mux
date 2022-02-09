@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of body control null (BCM with PESS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of body control
+              (BCM with PESS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758013">1. Function, structure, operation of body control
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">BCM<br/>BCM is an integrated control module with the following functions. <br/>Keyless entry system<br/>Power door lock (Central door lock)<br/>Anti-theft system<br/>Speed linked door locking (if so equipped)<br/>SRS airbag linked door unlocking (if so equipped)<br/>Tailgate unlock function<br/>Rear wiper and washer function<br/>Interior light activation function<br/>Rear defogger timer function<br/>Power window timer function<br/>Self-diagnosis function</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>BCM input/output schematic diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWFABLF000101.png" class="LF" /></p>
+                <p class="explanation">Keyless entry<br/>The keyless entry function performs the following functions. <br/>Power door lock function<br/>Locking/unlocking function based on lock/unlock commands from the PESS control unit<br/>Tailgate unlock function<br/>Answer-back function<br/>Interior light ON/OFF interlocking function<br/>Door ajar warning buzzer / warning light function<br/>The keyless entry function serves the function of a vehicle entry device. The PESS control unit sends door lock and tailgate lock operation request signals to the BCM when the outside door handle is gripped, the outside door handle lock button is pressed, the tailgate unlock switch is pressed, the tailgate lock switch is pressed, or when the lock/unlock button on the electronic key is pressed. The BCM performs the requested function when signals are received from the PESS control unit with all the doors and the tailgate closed. <br/>Also, operation control of the flasher unit and illumination control of the interior light are performed in response to the received signals.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>System malfunctions may occur due to depleted electronic key or vehicle batteries, or due to radio wave disturbance from aftermarket devices such as power inverters or computers. Malfunctions may also occur due to radio wave disturbance in high-traffic areas.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Overview of the input/output of keyless entry</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWDABMF000101.png" class="MF" /></p>
+                <p class="explanation">The keyless entry system consists mainly of the following. <br/>Electronic key<br/>BCM<br/>PESS receiver<br/>PESS control unit<br/>The PESS control unit sends door lock and tailgate lock operation request signals to the BCM when the outside door handle is gripped, the outside door handle lock button is pressed, the tailgate unlock switch is pressed, the tailgate lock switch is pressed, or when the lock/unlock button on the electronic key is pressed. The BCM transmits lock or unlock signals sent from the PESS control unit to the door lock actuator of each door.</p>
+                <p class="illust"><img src="image/RTWDABSF000101.png" class="SF" /></p>
+                <p class="explanation">When lock requests from the PESS control unit are received, the following functions are activated. <br/>Locking of all doors<br/>Answer back, 1 blink<br/>Turning off the interior light</p>
+          <p class="explanation">When unlock requests from the PESS control unit are received, the following functions are activated. <br/>Unlocking of all doors<br/>Answer back, 2 blinks<br/>Interior light lighting<br/>If doors are unlocked for approximately 30 seconds, they will be locked automatically.</p>
+          <p class="explanation">Power door lock system<br/>The power door lock system consists of a door lock switch, door lock motor, and BCM. The battery voltage is always applied to the BCM. Based on changes in door lock switch signal input conditions, the BCM operates the unlock motor for approximately 1 second and locks/unlocks the doors.</p>
+          <p class="explanation">Locking<br/>All doors will lock when all the doors are closed and the lock side of the door lock switch is pressed.</p>
+          <p class="explanation">Unlocking<br/>All doors will unlock when the unlock side of the door lock switch is pressed. If the key is used for unlocking when the anti-theft system is operating, the anti-theft alarm will sound until PESS function or keyless entry function is used to unlock or the ignition switch is turned to the ON position.</p>
+          <p class="explanation">Speed linked door locking (if so equipped)<br/>When the vehicle is running, in order to ensure safety, the doors are automatically locked if the vehicle exceeds 20 km/h and the doors have not been locked by the driver. If the doors are locked by the speed linked door locking, the doors will be automatically unlocked if the ignition switch is turned OFF after the vehicle has stopped. However, it is also possible to disable this function by using a scan tool.</p>
+          <p class="explanation">When using a scan tool to change settings, follow the procedure shown below. <br/>1. Connect a scan tool to the DLC. <br/>2. Turn ON the ignition switch. <br/>3. Select Diagnostics. <br/>4. Select Body. <br/>5. Select BCM. <br/>6. Select Programming &amp; Resetting. <br/>7. Select BCM Data Setting/Change.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>To change the speed linked door locking function settings, select Speed linked door locking, and change the settings.</li>
+                    <li>To change the settings for door unlocking using the key after the stopping the vehicle, select Door Unlocking Timing, and change the settings.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Tailgate unlock function<br/>With the vehicle lock released, press the tailgate unlock switch so that the BCM drives the tailgate latch motor and unlocks all the doors and the tailgate.</p>
+          <p class="explanation">Anti-theft system<br/>The anti-theft system consists of a BCM, anti-theft horn, anti-theft indication light, and PESS control unit. This system operates when the engine hood and all doors are closed and the doors are locked using the PESS function or keyless entry function. Also, the doors are unlocked with the PESS function or keyless entry function, or the ignition switch is turned ON. <br/>The anti-theft system is designed to protect the vehicle and valuables from theft when the door and the engine hood of the vehicle are locked. <br/>If anyone tries to open the door or the engine hood forcibly without using the PESS function or keyless entry function, the hazard lamps flash and the horn sounds intermittently. The horn sounds for 30 seconds until the system stops automatically, and the hazard lights flash for 5 minutes.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>In order to activate the anti-theft function, close all the doors and use the PESS function or keyless entry function to lock the doors.</li>
+                    <li>When the door at the passenger side is opened in locked status and then the door is closed, an error alert is detected.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>First 10 seconds<br/>LED light up, test switch delay on<br/>LED rapid blinking （2 Hz）, door or bonnet opened or system failure</li>
+                    <li>After about 10 seconds<br/>LED slow blinking, system on (0.5 Hz)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTUBZ0SH001501.png" class="SH" /></p>
+                <p class="explanation">Activating the anti-theft system<br/>Turn the ignition switch OFF. <br/>Check that all doors and the engine hood are closed and lock the doors using the PESS functions or keyless entry function. <br/>The anti-theft indicator light will illuminate for approximately 10 seconds. The light will then start to flash slowly, indicating that the anti-theft system is activated.</p>
+          <p class="explanation">Conditions for anti-theft buzzer operation<br/>When the doors or engine hood are forcibly opened without the use of the PESS function or keyless entry function. <br/>When the doors are unlocked using the door lock knob. <br/>When the engine hood release handle is operated.</p>
+          <p class="explanation">Turning off the anti-theft system<br/>The doors are unlocked with the PESS function or keyless entry function, or the ignition switch is turned ON. <br/>If the alarm has sounded, it will stop once the ignition switch is turned ON.</p>
+          <p class="explanation">SRS airbag linked door unlocking (if so equipped)<br/>If a collision occurs while the vehicle is running, the SRS operating signals are read and the doors are automatically unlocked. At this time, the hazard light will flash in order to notify the surrounding area about the abnormality. To stop the hazard light from flashing, turn OFF the ignition switch, then turn it ON again.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The function may not activate due to the way that the collision occurs.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Interior light activation<br/>The BCM activates the interior light. The interior light goes on when the Dome light is at DOOR position, any door is opened, or requested from the keyless entry system.<br/>Or, when each room light is turned OFF, the afterglow function operates.</p>
+          <p class="explanation">Afterglow light function operating conditions<br/>When the ignition switch is turned OFF and the door is opened and then closed. <br/>When the ignition switch is turned OFF while the door is closed.</p>
+          <p class="explanation">Rear defogger timer<br/>The Rear defogger function is used to defog the rear window glass. When pressing the Rear defogger switch while the ignition switch is at ON position, the Rear defogger relay is operated and the indication light turns on, and then the Rear defogger operates. When the Rear defogger switch is pressed again, the defogger is stopped. Or, while the Rear defogger switch is ON position, the defogger stops automatically after operating for 10 minutes.</p>
+          <p class="explanation">Power window timer<br/>The power window timer function enables to open or close power windows within 45 seconds after the ignition switch is turned OFF. The BCM measures 45 seconds, and instructs the power window control unit to stop the power window motor operation. When any door is opened within 45 seconds, the BCM also instructs the power window control unit to stop the power window motor operation.</p>
+          <p class="explanation">Rear wiper and washer function<br/>When the rear window wiper and washer switch is turned from the OFF position to one position forward in the direction of the vehicle front with the ignition switch in the ON position, the relay wiper will turn ON, the rear wiper motor will be driven, and the rear wiper function will operate continuously. Turning the switch further will drive the rear washer motor, and the rear washer will operate together with the rear wiper. If the rear window wiper and washer switch is turned toward the vehicle rear from the OFF position, the rear washer will operate at the same time.</p>
+          <p class="explanation">Self-diagnosis function<br/>The self-diagnosis function of the BCM is set to the main body of the BCM. If each function of the BCM does not operate correctly, it performs trouble diagnosis and sets DTCs.</p>
+          <p class="explanation">BCM location<br/>The BCM is installed within the trim cover at the driver seat side.</p>
+                <p class="illust"><img src="image/RTWCABSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>BCM</li></ol></div>
+                <p class="explanation">Receiver unit location<br/>The receiver unit is installed within the instrument panel.</p>
+                <p class="illust"><img src="image/RTWB9ESH001601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Harness connector</li><li>Receiver unit</li><li>Screw</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>BCM system circuit diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWDABXF000101.png" class="XF" /></p>
+          <p class="illust"><img src="image/RTWFABLF000101.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>BCM terminal layout</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWCABLF000701.png" class="LF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Terminal No.</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">Signal name</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-1</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Ground (BCM)</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-2</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-3</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-4</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-5</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-6</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-7</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">PESS control unit output signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-8</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">CAN high</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-9</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-10</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Ignition switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-11</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Engine hood switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-12</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-13</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-14</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-15</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-16</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-17</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">PESS control unit input signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-18</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">CAN low</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-19</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Accessory switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">A-20</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage (BCM)</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Terminal No.</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">Signal name</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-1</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-2</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-3</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door unlock key switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-4</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Tailgate unlock switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-5</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Tailgate switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-6</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door unlock switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-7</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-8</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-9</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Ground (Power 1)</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-10</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door unlock motor control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-11</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door lock motor control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-12</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door lock key switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-13</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-14</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-15</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door lock switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-16</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Interior light control low side</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-17</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">B-18</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Ground (Power 2)</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">Terminal No.</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">Signal name</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-1</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-2</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-3</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-4</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Anti-theft indicator light control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-5</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-6</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door open warning light control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-7</td><td width="300" colspan="1" rowspan="1" align="center" valign="bottom">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-8</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-9</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Rear defogger relay control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-10</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Rear wiper relay control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="bottom">C-11</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Rear defogger switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-12</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Rear wiper switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-13</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Anti-theft horn control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-14</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage (Power 2)</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-15</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage (power 1)</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-16</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Tailgate latch motor control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-17</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Power window timer signal output</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-18</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="bottom">C-19</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Answer back control</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-20</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-21</td><td width="300" colspan="1" rowspan="1" align="center" valign="middle">－</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-22</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">SRS airbag active PWM signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-23</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Rear washer switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-24</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Door position switch signal</td></tr><tr><td width="100" colspan="1" rowspan="1" align="center" valign="middle">C-25</td><td width="300" colspan="1" rowspan="1" align="left" valign="middle">Interior light control high side</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

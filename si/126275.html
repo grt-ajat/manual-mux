@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Generator installation (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Generator
+          installation
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie746954">1. Generator
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the generator to the lower bracket.</p>
+                <p class="illust"><img src="image/RTWD1JSH000201.png" class="SH" /></p>
+                <p class="instructions">2. Install the upper bracket to the generator and the timing gear case.</p>
+                <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+                <p class="illust"><img src="image/RTWD1JSH000101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743355">2. Cooling fan belt
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the cooling fan belt to the pulley.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742967">3. Cooling fan belt
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust tension to the specified value using a tension meter.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn the adjust bolt to adjust the tension.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Check tension of the cooling fan belt.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When adjusting the amount of flex to the original value</li>
+                    <li>Apply a load to measurement point 1 of the cooling fan belt and adjust the amount of flex.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Load： 98 N { 10 kg / 22 lb }</p>
+                <table cellspacing="0"><tbody><tr><td width="226" colspan="2" rowspan="1" align="left" valign="middle">Position of belt tension</td></tr><tr><td width="76" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="150" colspan="1" rowspan="1" align="center" valign="middle">Amount of flex</td></tr><tr><td width="76" colspan="1" rowspan="1" align="left" valign="middle">New product</td><td width="150" colspan="1" rowspan="1" align="left" valign="bottom">： 5.0 to 6.0 mm { 0.197 to 0.236 in }</td></tr><tr><td width="76" colspan="1" rowspan="1" align="left" valign="middle">Reuse</td><td width="150" colspan="1" rowspan="1" align="left" valign="middle">： 7.0 to 7.8 mm { 0.276 to 0.307 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When adjusting the tension by using a sonic tension meter</li>
+                    <li>Measure the frequency at measurement point 1 with a sonic tension meter.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="226" colspan="2" rowspan="1" align="left" valign="middle">Position of the belt tension</td></tr><tr><td width="76" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="150" colspan="1" rowspan="1" align="center" valign="middle">Frequency</td></tr><tr><td width="76" colspan="1" rowspan="1" align="left" valign="middle">New</td><td width="150" colspan="1" rowspan="1" align="left" valign="middle">： 207 to 231 Hz</td></tr><tr><td width="76" colspan="1" rowspan="1" align="left" valign="middle">Reuse</td><td width="150" colspan="1" rowspan="1" align="left" valign="middle">： 176 to 190 Hz</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWD1DSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Measurement point 1</li><li>Measurement point 2</li><li>Measurement point 3</li><li>Measurement point 4</li><li>Adjust bolt, A/C compressor</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After adjusting the tension, tighten the tensioner fixing nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 41 N・m { 4.2 kgf・m / 30 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the cooling fan belt is replaced with a new one, make the new cooling fan belt fit in to cope with initial elongation.</li>
+                    <li>After making the cooling fan belt fit in, adjust its tension once again.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742465">4. A/C compressor drive belt
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the A/C compressor drive belt to the pulley.</p>
+                <p class="illust"><img src="image/RTWD1BSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor drive belt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743347">5. A/C compressor drive belt
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust tension to the specified value using a tension meter.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When adjusting the amount of flex to the original value</li>
+                    <li>Apply a load to measurement points 2, 3, and 4 of the A/C compressor drive belt and adjust the amount of flex.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Load： 98 N { 10 kg / 22 lb }</p>
+                <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 2</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Amount of flex</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 12.4 to 16.4 mm { 0.488 to 0.646 in }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 16.5 to 19.1 mm { 0.650 to 0.752 in }</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 3</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Amount of flex</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 12.5 to 16.5 mm { 0.492 to 0.650 in }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 16.5 to 19.1 mm { 0.650 to 0.752 in }</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 4</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Amount of flex</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 15.9 to 20.7 mm { 0.626 to 0.815 in }</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 20.7 to 23.7 mm { 0.815 to 0.933 in }</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When adjusting the tension by using a sonic tension meter</li>
+                    <li>Measure the frequency at measurement points 2, 3, and 4 with a sonic tension meter.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 2</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Frequency</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 92 to 112 Hz</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 80 to 92 Hz</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 3</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Frequency</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 92 to 112 Hz</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 79 to 91 Hz</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measurement point 4</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="160" colspan="1" rowspan="1" align="center" valign="middle">Frequency</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">For a new product</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 70 to 86 Hz</td></tr><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">When reused</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： 62 to 70 Hz</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWD1DSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Measurement point 1</li><li>Measurement point 2</li><li>Measurement point 3</li><li>Measurement point 4</li><li>Adjust bolt (A/C compressor drive belt)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After adjusting the tension, tighten the tensioner fixing nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 41 N・m { 4.2 kgf・m / 30 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746818">6. Generator
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the harness to the generator.</p>
+                <p class="numeric">Tightening torque： 12 N・m { 1.2 kgf・m / 106 lb・in } Terminal nut</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742947">7. Air cleaner assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the air cleaner assembly to vehicle.</p>
+                <p class="numeric">Tightening torque： 20 N・m { 2.0 kgf・m / 15 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC1BSH017101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Air cleaner assembly</li><li>MAF sensor</li><li>Vacuum hose</li><li>Blow-by hose</li><li>Intake pipe</li><li>Barometric pressure sensor</li></ol></div>
+                <p class="instructions">2. Connect the intake pipe to the turbocharger assembly.</p>
+                <p class="numeric">Tightening torque： 4 N・m { 0.4 kgf・m / 35 lb・in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install by aligning the alignment mark position as shown in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1BSH010301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Alignment mark</li></ol></div>
+                <p class="instructions">3. Connect the vacuum hose to the air cleaner assembly.</p>
+          <p class="instructions">4. Connect the harness connector to the barometric pressure sensor.</p>
+          <p class="instructions">5. Connect the harness connector to the MAF sensor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742200">8. Blow-by hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the blow-by hose to the cylinder head cover.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742296">9. Intake air duct
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the intake air duct to the turbocharger and the intercooler.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Referring to the diagram, face the threaded portion of the clamp toward the engine front.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft } Nut, bolt</p>
+          <p class="numeric">Tightening torque： 4 N・m { 0.4 kgf・m / 35 lb・in } Clamp (Turbocharger side)</p>
+          <p class="numeric">Tightening torque： 5 N・m { 0.5 kgf・m / 44 lb・in } Clamp (Intercooler side)</p>
+                <p class="illust"><img src="image/RTWF1BSH003601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742317">10. Engine cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the engine cover to the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742875">11. Battery ground cable
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the battery ground cable to the battery.</p>
+          <p class="instructions">2. Close the engine hood assembly.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

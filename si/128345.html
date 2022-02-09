@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of transmission, transaxle null (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of transmission, transaxle
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756684">1. Function, structure, operation of transmission, transaxle
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Cross section<br/>The automatic transmission TB-50LS is an electronically controlled 5-speed automatic transmission with Lock-up mechanism.<br/>The automatic transmission is mainly composed of the torque converter with lock-up clutch, newly developed 5-speed planetary gear unit, the hydraulic control system and the electric control system.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4WD model</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BXF000101.png" class="XF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>2WD model, High-ride</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BXF000201.png" class="XF" /></p>
+                <p class="explanation">The TB-50LS automatic transmission is a 5-speed electronic control automatic transmission with manual mode. The automatic transmission is controlled by the TCM to perform the following control operations.<br/>The shift timing control<br/>Lock-up timing control<br/>Slip lock-up control<br/>Line pressure control<br/>Clutch-to-clutch pressure control<br/>Clutch pressure optimal control<br/>Squat control<br/>Reverse lock-out control<br/>Running mode switching control<br/>Engine torque control<br/>Starter inhibitor control<br/>The TCM determines the driving condition of the vehicle or the intention of the driver based on the inputs from the sensors, switches, etc., and performs the optimal control. Gearshifts in the automatic transmission are performed by the TCM through electrically controlling the solenoids, and the feedbacks on the operation status are given to the TCM by each sensor and switch.</p>
+                <p class="illust"><img src="image/RTWC5AMF000201.png" class="MF" /></p>
+                <p class="explanation">Shift timing control<br/>The TCM selects the optimal shift map in accordance with each input signal, and performs the gearshift control based on the shift map. When shifting, the TCM appropriately controls each solenoid to reduce the shift shock at the time of accelerating or decelerating. Also, when an abnormality is detected in the automatic transmission system based on the information from the solenoids and sensors, the TCM performs the control that prohibits gearshifting.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range normal shift pattern (4JK1 engine model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ALF000701.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range normal shift pattern (4JJ1 engine model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ALF000101.png" class="LF" /></p>
+                <p class="explanation">Lock-up timing control<br/>The TCM performs the lock-up control in accordance with the selected shift map. When the TCM determines the lock-up point based on each input signal, it controls the torque converter clutch pressure control solenoid (SLU) to engage the lock-up clutch. Lock-up is activated when the gear is placed in the 3rd or higher gear position under the normal mode, and when the gear is placed in the 2nd or higher gear position under the hot mode. Also, under the manual mode, it is activated at each gear position to obtain the engine brake.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range normal and manual mode lock-up timing (4JK1 engine model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE5ALF000401.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range normal and manual mode lock-up timing (4JJ1 engine model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE5ALF000301.png" class="LF" /></p>
+                <p class="explanation">Slip lock-up control<br/>The TCM can achieve improvement of fuel economy by slightly sliding the lock-up clutch in the lock-up OFF area at acceleration to expand the lock-up area to the lower speed area and suppressing the increase in engine rotation. While coasting with the gear placed in the 4th or higher gear position, the lock-up clutch is activated to encourage the engine brake and to suppress the idle fuel injection.<br/>Also, by sliding the lock-up clutch, the engine vibrations can be now absorbed by the torque converter.</p>
+                <p class="illust"><img src="image/RTWC5ASH001101.png" class="SH" /></p>
+                <p class="explanation">Line pressure control<br/>In order to improve the shift feeling, the TCM determines the necessary line pressure in accordance with the operation condition, each input signal, and the engine torque information during gearshifting, and controls the pressure control solenoid C (SLT) according to the oil pressure.</p>
+          <p class="explanation">Clutch-to-clutch pressure control<br/>The TCM monitors the operation condition, each input signal, and the engine torque information during gearshifting from the 4th to the 5th gear and from the 5th to the 4th gear, and then in order to reduce the shock during the gearshifting, it directly controls the oil pressure of the clutch C1 and the brake B1 by activating the pressure control solenoid A (SL1) and B (SL2). It also optimizes the gearshift characteristics by self-learning the oil pressure at the previous gearshift and reflecting it.</p>
+          <p class="explanation">Clutch pressure optimal control<br/>The TCM calculates the optimal turbine torque based on signal from each sensor and then reduces the shock during the gearshift by activating the pressure control solenoid A (SL1) and C (SLT) to precisely control the line pressure. It also optimizes the gearshift characteristics by using the self-learning control to keep the change rate of the turbine speed constant.</p>
+          <p class="explanation">Squat control<br/>The squat control reduces the garage shock by controlling each solenoid, based on information obtained when the shift lever is operated from the N position to the R or D position or is operated from the R position to the D position while the vehicle is stopped.</p>
+          <p class="explanation">Reverse lock-out control<br/>While running forward at a certain speed or higher, when the TCM detects an operation to the R position due to a malfunction, it controls the shift solenoid A (S1), B (S2), and C (SR), to shift to the neutral position for risk prevention and transmission protection.</p>
+          <p class="explanation">Driving mode switching control<br/>To accommodate various driving conditions, the TCM makes a selection from 10 different driving modes depending on the driving condition.<br/>Normal mode<br/>Manual mode<br/>Hot mode<br/>Hot manual mode<br/>L4 mode<br/>Upslope 1 mode<br/>Upslope 2 mode<br/>Downslope mode<br/>Cruise control mode<br/>Warm up mode<br/>Priorities of the driving modes are set in the order of hot manual mode, hot mode, manual mode, L4 mode, cruise control mode, warm up mode, downslope mode, upslope 2 mode, upslope 1 mode, normal mode, and the TCM selects a mode best suit for the driving condition from the driving modes.</p>
+          <p class="explanation">Warm up control<br/>The TCM switches the shift map to the warm up mode to improve operability and to facilitate transmission warm up when the engine coolant temperature is low.</p>
+          <p class="explanation">L4 mode control<br/>When the TCM detects 4WD-Low from the TCCM via CAN communication, it switches the mode to the L4 mode. With the L4 mode, shifting to the 5th gear position is prohibited, and the lock-up control is not performed.</p>
+          <p class="explanation">Sequential control<br/>The TCM switches the mode to the manual mode when the shift lever is operated from the D position to the right side. With the manual mode, the gear can be set to the position of driver's choice by operating the shift lever to the up shift position or the down shift position. However, when a vehicle speed of the set value or above/below is detected, the TCM performs automatic shifting without allowing any shift operation to protect the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Manual mode normal shift pattern (4JK1 engine model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ALF000801.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Manual mode normal shift pattern (4JJ1 engine model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ALF000201.png" class="LF" /></p>
+                <p class="explanation">2nd start control<br/>By selecting the 2nd gear position when starting or accelerating on a slippery road, the starting operation can be performed smoothly.<br/>The 2nd start control can be performed only when the shift position is set to the manual position.</p>
+          <p class="explanation">Cruise control<br/>If the TCM detects the cruise control status from the ECM via CAN communication, it switches the mode to the cruise control mode to maintain the vehicle speed.</p>
+          <p class="explanation">Hot mode control<br/>When the ATF temperature is at the set value or higher, the TCM switches the mode to the hot mode to prevent increase in the ATF temperature. With the hot mode, by driving with a low speed gear, a larger driving power can be obtained, and oil temperature increase due to torque converter slip can be prevented. Also, using the lock-up with earlier timing lowers the ATF temperature and water temperature.</p>
+          <p class="explanation">Slope control<br/>When driving uphill, the TCM performs driving using the uphill mode to prevent repeated shifting due to speed deceleration and to obtain sufficient torque. Also, when driving downhill, the downhill mode is used to prevent up-shifting due to acceleration with accelerator off.</p>
+                <p class="illust"><img src="image/RTWC5AMF001201.png" class="MF" /></p>
+                <p class="explanation">Engine torque control<br/>The TCM outputs the torque request signal to the ECM via CAN communication to reduce the shift shock mainly due to the engine torque when shifting. The ECM reduces the engine torque through controlling the fuel injection, etc. based on the signal from the TCM.<br/>In addition, by controlling the line pressure at the same time, the shift shock can be reduced.</p>
+          <p class="explanation">Emergency mode<br/>When the TCM detects a certain DTC, it changes the mode to the emergency mode to protect the automatic transmission. In the emergency mode, gear shifting is only available up to the forward 4th gear and to the reverse gear.</p>
+          <p class="explanation">Starter inhibitor control<br/>In an automatic transmission vehicle, there is a starter inhibitor circuit installed to prevent the starter from operating with the shift lever placed in a position other than the N or P position. When the shift lever is operated to the N or P position, the neutral switch on the starter relay circuit closes to ground the circuit, so the starter relay operates only when the shift lever is in the N or P position.</p>
+                <p class="illust"><img src="image/RTWC5AMF000901.png" class="MF" /></p>
+                <p class="explanation">Selector lever unit<br/>The selector lever unit converts the driver's shift operations into electric signals to transmit them to the TCM, and performs switching between forward and reverse positions, and between manual and normal modes.<br/>The selector lever unit is equipped with manual mode switches that detect longitudinal and horizontal movements, and the TCM recognizes the operation status of the lever based on the ON signal of each switch. When the selector lever is shifted from the N position to the D position, the TCM performs shift control in the normal mode. When the selector lever is shifted from the D position to the right side, the TCM switches the mode to the manual mode and carries out shift control in accordance with the driver's lever operation in the direction towards the up shift or the down shift position. When the shift lever is operated to the D position in the manual mode, the mode switches to the normal mode, and when the shift lever is operated from the D position to the right side in the normal mode, the mode switches to the manual mode while maintaining the current gear position.<br/>The selector lever unit is also equipped with the shift lock function, and when the selector lever is operated to the P position, the shift lock solenoid is activated, and the selector lever cannot be shifted to the R position unless the brake pedal is depressed.<br/>The interlock controller detects the P position when the selector lever is operated to the P position and the shift lock control switch closes. When the interlock controller detects the P position, the shift lock solenoid is energized. While starting the vehicle, when the ON signal of the stoplight switch is input to the interlock controller, energization of the shift lock solenoid is stopped, and the shift lock is released.</p>
+                <p class="illust"><img src="image/RTWC5AMF001401.png" class="MF" /></p>
+                <div class="legend"><ol><li>Shift lock solenoid</li><li>Shift lock control switch</li><li>Manual mode switch</li></ol></div>
+                <p class="explanation">Key interlock mechanism<br/>The key interlock mechanism is a mechanism installed on an automatic transmission vehicle, and the key cannot be pulled out when the shift position is other than the P position to prevent the vehicle from being parked with the selector lever placed in a position other than the P position.<br/>The key interlock mechanism consists of the interlock controller and the shift lock control switch that are installed to the selector lever and the key interlock solenoid that is installed to the steering lock assembly.<br/>When the selector lever is placed in a position other than the P position, the shift lock control switch opens, and the interlock controller does not energize the key interlock solenoid, so the key cannot be placed in the LOCK position.<br/>When the selector lever is operated to the P position, the shift lock control switch closes, and the interlock controller energizes the key interlock solenoid, so the key can be placed in the LOCK position.</p>
+                <p class="illust"><img src="image/RTWC5AMF001301.png" class="MF" /></p>
+                <div class="legend"><ol><li>Interlock controller assembly</li><li>Key interlock solenoid</li><li>Shift lock control switch</li></ol></div>
+                <p class="explanation">Power transmission<br/>The TB-50LS automatic transmission configures 5 speeds in forward and 1 speed in reverse by making combinations out of 3 pairs of planetary gears, 3 pairs of multidisc clutches, 4 pairs of multidisc brakes and 3 pairs of one-way clutches.</p>
+                <p class="illust"><img src="image/RTWC5AMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Input shaft</li><li>Clutch No. 1</li><li>Clutch No. 2</li><li>Clutch No. 3</li><li>One-way clutch No.2</li><li>Brake No. 3</li><li>Brake No. 1</li><li>One-way clutch No.1</li><li>Brake No.2</li><li>One-way clutch No.3</li><li>Brake No.4</li><li>Output shaft</li><li>Rear planetary ring gear</li><li>Middle planetary ring gear</li><li>Front planetary ring gear</li><li>Intermediate shaft</li></ol></div>
+                <table cellspacing="0"><tbody><tr><td width="498" colspan="12" rowspan="1" align="center" valign="middle">Engagement control of the clutch and brake</td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Selector lever position</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Gear position</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">C1</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">C2</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">C3</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">B1</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">B2</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">B3</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">B4</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">F1</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">F2</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">F3</td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">P</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">R</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Reverse</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">N</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="75" colspan="1" rowspan="5" align="center" valign="middle">D</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">1st</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">2nd</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">3rd</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">4th</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">5th</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="75" colspan="1" rowspan="5" align="center" valign="middle">M</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">1st</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">2nd</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">3rd</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">4th</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">5th</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="center" valign="middle">O</td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td><td width="35" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="498" colspan="12" rowspan="1" align="left" valign="bottom">O: Engaged</td></tr></tbody></table>
+          <table cellspacing="0"><tbody><tr><td width="498" colspan="3" rowspan="1" align="center" valign="middle">Functions of the clutch and brake</td></tr><tr><td width="140" colspan="1" rowspan="1" align="center" valign="middle">Part name</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Symbol</td><td width="318" colspan="1" rowspan="1" align="center" valign="middle">Function</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">Clutch No. 1</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">C1</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Connects the input shaft and the intermediate shaft.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">Clutch No. 2</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">C2</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Connects the input shaft and the middle planetary gear.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">Clutch No. 3</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">C3</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Connects the input shaft and the front sun gear.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">Brake No. 1</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">B1</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Fixes the front planetary carrier.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">Brake No. 2</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">B2</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Fixes the front and middle ring gears.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">Brake No. 3</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">B3</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Fixes the outer race of one-way clutch No. 2.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">Brake No. 4</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">B4</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Fixes the rear ring gear.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">One-way clutch No. 1</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">F1</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Fixes the left rotation of the front planetary carrier.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">One-way clutch No. 2</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">F2</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Fixes the left rotation of the front sun gear when the brake No. 3 operates.</td></tr><tr><td width="140" colspan="1" rowspan="1" align="left" valign="middle">One-way clutch No. 3</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">F3</td><td width="318" colspan="1" rowspan="1" align="left" valign="middle">Fixes the left rotation of the rear ring gear.</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range 1st gear</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AMF000301.png" class="MF" /></p>
+                <div class="legend"><ol><li>Input shaft</li><li>Clutch No. 1</li><li>One-way clutch No. 3</li><li>Output shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range 2nd gear</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AMF000401.png" class="MF" /></p>
+                <div class="legend"><ol><li>Input shaft</li><li>Clutch No. 1</li><li>One-way clutch No. 2</li><li>Brake No. 3</li><li>One-way clutch No. 1</li><li>Output shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range 3rd gear</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AMF000501.png" class="MF" /></p>
+                <div class="legend"><ol><li>Input shaft</li><li>Clutch No. 1</li><li>Clutch No. 3</li><li>Brake No. 3</li><li>One-way clutch No. 1</li><li>Output shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range 4th gear</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AMF000601.png" class="MF" /></p>
+                <div class="legend"><ol><li>Input shaft</li><li>Clutch No. 1</li><li>Clutch No. 2</li><li>Clutch No. 3</li><li>Brake No. 3</li><li>Output shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>D-range 5th gear</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AMF000701.png" class="MF" /></p>
+                <div class="legend"><ol><li>Input shaft</li><li>Clutch No. 2</li><li>Clutch No. 3</li><li>Brake No. 3</li><li>Brake No. 1</li><li>Output shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>R-range</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AMF000801.png" class="MF" /></p>
+                <div class="legend"><ol><li>Input shaft</li><li>Clutch No. 3</li><li>Brake No. 1</li><li>One-way clutch No. 1</li><li>Brake No. 4</li><li>Output shaft</li></ol></div>
+                <p class="explanation">Torque converter<br/>The torque converter transmits the engine power to the transmission. When the lock-up is not performed, the power is transmitted by the ATF, and when the lock-up is being performed, the power is transmitted by the lock-up piston. A torque converter which has 3 elements, 1 stage and 2 phases is used. 1 stage means that there is 1 turbine runner, and 2-phase means that the turbine runner operates as a torque converter when the turbine runner is rotating slowly according to the pump impeller, and the turbine runner operates as a fluid coupling when the turbine runner is rotating quickly according to the pump impeller.</p>
+                <p class="illust"><img src="image/RTWC5ALH000101.png" class="LH" /></p>
+                <div class="legend"><ol><li>Lock-up piston</li><li>Pump impeller</li><li>Stator</li><li>One-way clutch</li><li>Damper spring</li><li>Turbine runner</li></ol></div>
+                <p class="explanation">Oil pump<br/>In the TB-50LS automatic transmission, a high performance and a lightweight oil pump is used. The drive gear is coaxially installed with the extension sleeve of the torque converter, and it rotates in the direction of engine rotation. Due to this, the oil pump body rotates, and the ATF is pressurized and discharged.</p>
+                <p class="illust"><img src="image/RTWC5AMF001501.png" class="MF" /></p>
+                <div class="legend"><ol><li>Oil pump body</li><li>Drive gear</li><li>Driven gear</li><li>Pump cover</li><li>Stator shaft</li></ol></div>
+                <p class="explanation">Inhibitor switch<br/>The inhibitor switch is installed on the right side of the transmission, and detects the P, R, N and D positions of the selector lever. When the selector lever is shifted to any one of P, R, N, and D positions, the corresponding switch on the inhibitor switch is turned ON. A part of the inhibitor switch is connected to the starting circuit, and enables the engine to start only in the P or N range.</p>
+                <p class="illust"><img src="image/RTWC5ASH000201.png" class="SH" /></p>
+                <p class="explanation">Output speed sensor<br/>The output speed sensor detects the rotation of the parking lock gear that is installed on the rear planetary gear assembly. The output speed sensor is an electromagnetic pick type sensor, and generates pulse signals by the rotation of the gear. The output speed sensor signal is transmitted to the TCM, and the TCM calculates the vehicle speed based on this signal.</p>
+                <p class="illust"><img src="image/RTWC5ASH000101.png" class="SH" /></p>
+                <p class="explanation">Turbine speed sensor<br/>The turbine speed sensor detects the rotations of the forward clutch assembly and the direct clutch assembly. The turbine speed sensor is an electromagnetic pick type sensor, and generates pulse signals by the rotation of the gear. The turbine speed sensor signal is transmitted to the TCM, and the TCM calculates the input shaft speed based on this signal.</p>
+                <p class="illust"><img src="image/RTWC5ASH000101.png" class="SH" /></p>
+                <p class="explanation">Transmission fluid temperature sensor<br/>The transmission fluid temperature sensor 1 and 2 are installed on the valve body inside the transmission together with the internal harness, and detect the ATF temperature inside the valve body. The transmission fluid temperature sensors are thermistors, and the resistance value changes depending on the ATF temperature. The resistance value becomes smaller when the temperature rises, and the sensor output voltage decreases when the temperature rises. The transmission fluid temperature sensor 1 detects the temperature of oil pressure line, and the transmission fluid temperature sensor 2 detects the temperature of cooler line.</p>
+                <p class="illust"><img src="image/RTWC5ASH001001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Transmission fluid temperature sensor 1</li><li>Transmission fluid temperature sensor 2</li></ol></div>
+                <p class="explanation">Solenoid<br/>The TB-50LS automatic transmission uses the following 7 solenoids.<br/>Shift solenoids A (S1), B (S2), and C (SR)<br/>Pressure control solenoids A (SL1), B (SL2), and C (SLT)<br/>Torque converter clutch pressure control solenoid (SLU)<br/>The solenoid valves switch the oil pressure supply circuit to the clutch and the brake. The TCM controls each solenoid as follows in accordance with the target gear positions.</p>
+                <table cellspacing="0"><tbody><tr><td width="498" colspan="7" rowspan="1" align="center" valign="middle">Solenoids operation</td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Selector lever position</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Gear position</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Shift<br/>solenoid A (S1)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Shift<br/>solenoid B (S2)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Shift<br/>solenoid C (SR)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Pressure control solenoid A (SL1)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Pressure control solenoid B (SL2)</td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">P</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">R</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">Reverse</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">N</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td></tr><tr><td width="75" colspan="1" rowspan="5" align="center" valign="middle">D</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">1st</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">2nd</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">3rd</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">4th</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">5th</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td></tr><tr><td width="75" colspan="1" rowspan="5" align="center" valign="middle">M</td><td width="73" colspan="1" rowspan="1" align="center" valign="middle">1st</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">2nd</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">3rd</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">4th</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td></tr><tr><td width="73" colspan="1" rowspan="1" align="center" valign="middle">5th</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MAX</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">MIN</td></tr><tr><td width="498" colspan="7" rowspan="1" align="left" valign="bottom">ON: The control voltage is supplied<br/>OFF: The control voltage is not supplied<br/>MIN: The control current is lower<br/>MAX: The control current is higher</td></tr></tbody></table>
+                <p class="explanation">Shift solenoid A (S1) and B (S2)<br/>Shift solenoid A (S1) and B (S2) turn ON or OFF based on the control signal from the TCM to operate each shift valve. Each gear position is shifted based on the combination of shift valve operations.</p>
+          <p class="explanation">Shift solenoid C (SR)<br/>Shift solenoid C (SR) turns ON or OFF based on the control signal from the TCM to switch the C1 clutch. By activating the C1 clutch, it connects or disconnects the input shaft and the intermediate shaft.</p>
+          <p class="explanation">Pressure control solenoid A (SL1) and B (SL2)<br/>Pressure control solenoid A (SL1) and B (SL2) open or close the oil path based on the control current from the TCM to adjust the engaging pressures of the C1 clutch and he B1 brake at the time of 4th and 5th gears.</p>
+          <p class="explanation">Pressure control solenoid C (SLT)<br/>Pressure control solenoid C (SLT) opens or closes the oil path based on the control current from the TCM to adjust the pressure of the transmission fluid supplied from the oil pump.</p>
+          <p class="explanation">Torque converter clutch pressure control solenoid (SLU)<br/>The torque converter clutch pressure control solenoid (SLU) opens or closes the oil path based on the control current from the TCM to adjust the pressure of the ATF supplied to the lock-up clutch inside the torque converter.</p>
+                <p class="illust"><img src="image/RTWC5AMF001101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Pressure control solenoid B (SL2)</li><li>Torque converter clutch pressure control solenoid (SLU)</li><li>Shift solenoid C (SR)</li><li>Shift solenoid B (S2)</li><li>Shift solenoid A (S1)</li><li>Pressure control solenoid A (SL1)</li><li>Pressure control solenoid C (SLT)</li></ol></div>
+                <p class="explanation">Check trans warning light<br/>The check trans warning light informs the driver of an abnormality in the transmission control system. The check trans warning light normally comes on when the ignition switch is turned ON, and goes off after approx. 3 seconds, but if the TCM detects a DTC, it causes the check trans warning light to blink.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model without multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ASH000301.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model with multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ASH000401.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Warning light illumination pattern</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AMH000101.png" class="MH" /></p>
+                <p class="explanation">Automatic transmission fluid temperature warning light<br/>The automatic transmission fluid temperature warning light informs the driver that the temperature of the ATF is high. When the TCM determines that the ATF temperature is 150 ˚C (302 ˚F) or higher based on the signal from the transmission fluid temperature sensor installed on the transmission, the TCM turns on the automatic transmission fluid temperature warning light through CAN communication.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model without multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ASH000501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model with multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ASH000601.png" class="SH" /></p>
+                <p class="explanation">Shift indicator<br/>The shift indicator informs the driver of the shift lever position. On the shift indicator, the shift lever position that the instrument panel cluster received from the TCM through CAN communication is displayed. When the vehicle is running in the normal mode with the selector lever placed in the D position, the shift indicator displays D, and when the selector lever is operated to the right side from the D position and the vehicle is running in the manual mode, the selected gear position is displayed on the shift indicator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model without multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ASH000701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Model with multi-information display</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ASH000801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission components location diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSF000301.png" class="SF" /></p>
+                <div class="legend"><ol><li>Turbine speed sensor</li></ol></div>
+                <p class="illust"><img src="image/RTWC5BSF000401.png" class="SF" /></p>
+                <div class="legend"><ol><li>Output speed sensor</li><li>Inhibitor switch</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional structure diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AMF001001.png" class="MF" /></p>
+                <div class="legend"><ol><li>Torque converter</li><li>Oil pump</li><li>Clutch No. 2</li><li>Clutch No. 3</li><li>Clutch No. 1</li><li>Brake No. 3</li><li>One-way clutch No. 2</li><li>One-way clutch No. 1</li><li>Brake No. 1</li><li>Brake No. 2</li><li>One-way clutch No. 3</li><li>Brake No. 4</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>General circuit diagram</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5AXF000401.png" class="XF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>TCM terminal layout</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ASF000301.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Pin function</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Pin function</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A1</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Ground</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B1</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Up shift switch signal</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A2</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Pressure control solenoid C (SLT) low side control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B2</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A3</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Torque converter clutch pressure control solenoid (SLU) low side control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B3</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Check trans warning light control</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A4</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Pressure control solenoid C (SLT) high side control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B4</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A5</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Torque converter clutch pressure control solenoid (SLU) high side control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B5</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Output speed sensor high</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A6</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Ignition voltage</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B6</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Turbine speed sensor high</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A7</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">CAN low signal</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B7</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">D position switch signal</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A8</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B8</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">N position switch signal</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A9</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Pressure control solenoid A (SL1) low side control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B9</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Manual select switch signal</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A10</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">TFT sensor 2 low reference</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B10</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A11</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">TFT sensor 1 signal</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B11</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A12</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">TFT sensor 1 low reference</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B12</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Diagnostic request switch</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A13</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B13</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A14</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Shift solenoid C (SR) control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B14</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Output speed sensor low</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A15</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Shift solenoid B (S2) control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B15</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A16</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Shift solenoid A (S1) control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B16</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Turbine speed sensor low</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A17</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">CAN high signal</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B17</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A18</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B18</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Down shift switch signal</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A19</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Pressure control solenoid B (SL2) low side control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B19</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">R position switch signal</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A20</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">TFT sensor 2 signal</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B20</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">P position switch signal</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A21</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Pressure control solenoid B (SL2) high side control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B21</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A22</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Pressure control solenoid A (SL1) high side control</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B22</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Stop light switch signal</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A23</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Ground</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B23</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">A24</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B24</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="219" colspan="1" rowspan="1" align="center" valign="bottom">-</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B25</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="219" colspan="1" rowspan="1" align="center" valign="bottom">-</td><td width="30" colspan="1" rowspan="1" align="center" valign="middle">B26</td><td width="219" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr></tbody></table>
+                <p class="explanation">The ATF filling procedure has been changed in order to improve the accuracy of the ATF level when being repaired or replaced.</p>
+          <p class="explanation">This mechanism consists of filler plug, overflow plug, transmission fluid temperature sensor, and check trans warning light.</p>
+                <p class="illust"><img src="image/RTWC5AMF001601.png" class="MF" /></p>
+                <div class="legend"><ol><li>Overflow plug</li><li>Proper level</li><li>Filler plug (2WD model)</li><li>Filler plug (4WD model)</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ID plate, Serial Number of Transmission</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSF000501.png" class="SF" /></p>
+                <div class="legend"><ol><li>Serial Number</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>ID plate, Serial Number of TCM</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSF000201.png" class="SF" /></p>
+                <div class="legend"><ol><li>Serial Number</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

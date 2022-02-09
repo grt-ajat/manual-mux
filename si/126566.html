@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Introduction to the trouble diagnosis of engine null (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Introduction to the trouble diagnosis of engine
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie746785">1. Introduction to the trouble diagnosis of engine
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Begin the system diagnosis with Diagnostic System Check - Engine Controls. The Diagnostic System Check - Engine Controls provides the following information.<br/>Identification of the control modules which command the system.<br/>The functions of the control modules to communicate through the serial data circuit.<br/>Identification of stored DTCs and their statuses.<br/>The use of the Diagnostic System Check - Engine Controls will identify the correct procedure for diagnosing the system and where the procedure is located.</p>
+          <p class="explanation">Engine Control System Check Sheet must be used to verify the customer complaint. You need to know the correct operating behavior of the system and verify that the customer complaint is a valid failure of the system.</p>
+                <p class="illust"><img src="image/RTWCZ0XF000501.png" class="XF" /></p>
+                <p class="explanation">Reading blinking DTCs<br/>The system for communicating with the ECM is the Data Link Connector (DLC). The DTC(s) stored in the ECM memory can be read either by connecting a hand-held diagnostic scanner such as a scan tool with the DLC or by counting the number of blinking of the MIL when the diagnostic test terminal of the DLC is grounded.<br/>The DLC terminal 12 is grounded by shorting to the ground line DLC terminal 4. Once terminals 12 and 4 have been connected, turn the ignition switch on, without starting the engine. If the MIL blinks DTC three times, it indicates that there is a current failure DTC or DTC in the failure history. If more than one DTC has been stored in the ECM's memory, the DTCs will be output numerical order with each DTC being displayed three times. The blinking DTC display continues as long as the DLC is shorted.</p>
+                <p class="illust"><img src="image/RTW76ESF000301.png" class="SF" /></p>
+                <p class="explanation">DTC type definition<br/>There are 4 DTC types: Type A, B, C, and D. Among these DTCs, type A and B DTCs are related to emission whereas type C and D DTCs are related to items other than emission.</p>
+          <p class="explanation">Action Taken When the DTC Sets, Type A<br/>The ECM illuminates the MIL when the diagnostic runs and fails.<br/>The ECM records the operating conditions at the time the diagnostic fails. The ECM stores this information in the Freeze Frame/Failure Records.</p>
+          <p class="explanation">Actions taken when the DTC sets, Type B<br/>When the diagnostic runs and detects an abnormality, the ECM illuminates the MIL on the second consecutive driving cycle.<br/>The ECM records the operating conditions at the time the diagnostic fails. The first time the diagnostic fails, the ECM stores this information in the Failure Records. If the diagnostic reports a failure on the second consecutive driving cycle, the ECM records the operating conditions at the time of failure and stores this information in the Freeze Frame, and updates the Failure Records.</p>
+          <p class="explanation">Conditions for clearing the MIL/DTC</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Except Euro 4 specification</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The ECM turns OFF the MIL after one driving cycle that the diagnostic runs and does not fail. <br/>A current DTC clears after one driving cycle that the diagnostic runs and passes. <br/>A history DTC clears after 40 consecutive warm-up cycles if no failures are reported. <br/>Clear the MIL and the DTC with a scan tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Euro 4 specification</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The ECM turns OFF the MIL after 3 consecutive driving cycles that the diagnostic runs and does not fail. <br/>A current DTC clears after one driving cycle that the diagnostic runs and passes. <br/>A history DTC is cleared after 40 consecutive warm-up cycles if no failures are reported. <br/>Clear the MIL and DTC with a scan tool.</p>
+          <p class="explanation">Actions taken when the DTC sets, Type C<br/>When the diagnostic runs and fails, the ECM illuminates the SVS lamp. <br/>The ECM records the operating conditions at the time the diagnostic fails. <br/>The ECM stores this information in the Failure Records.</p>
+          <p class="explanation">Conditions for clearing the SVS lamp and the DTC, Type C<br/>The ECM turns OFF the SVS lamp after one driving cycle that the diagnostic runs and does not fail. <br/>A current DTC clears after one driving cycle that the diagnostic runs and passes. <br/>A history DTC is cleared after 40 consecutive warm-up cycles if no failures are reported. <br/>Clear the SVS lamp and the DTC with a scan tool.</p>
+          <p class="explanation">Actions taken when the DTC sets, Type D<br/>The ECM will not illuminate the MIL or SVS lamp. <br/>The ECM records the operating conditions at the time the diagnostic fails. The ECM stores this information in the Failure Records.</p>
+          <p class="explanation">Conditions for Clearing the DTC, Type D<br/>A current DTC clears after one driving cycle that the diagnostic runs and passes.<br/>A history DTC clears after 40 consecutive warm-up cycles, if no failures are reported.<br/>Clear the DTC with a scan tool.</p>
+          <p class="explanation">DTC List</p>
+                <table cellspacing="0"><tbody><tr><td width="328" colspan="1" rowspan="2" align="center" valign="middle">DTC</td><td width="150" colspan="2" rowspan="1" align="center" valign="middle">DTC Type</td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Euro 4 Specification</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Except Euro 4 Specification</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0016 (Flash code 16) Crankshaft Position - Camshaft Position Correlation</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0045 (Flash Code 33) Turbocharger Boost Control Solenoid Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0087 (Flash Code 225) Fuel Rail/System Pressure - Too Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0088 (Flash Code 118) Fuel Rail/System Pressure - Too High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0089 (Flash Code 151) Fuel Pressure Regulator Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0091 (Flash Code 247) Fuel Pressure Regulator Control Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0092 (Flash Code 247) Fuel Pressure Regulator Control Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0093 (Flash Code 227) Fuel System Leak Detected</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0101 (Flash Code 92) Mass Air Flow Circuit Range/Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0102 (Flash Code 91) Mass Air Flow Circuit Low Input</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0103 (Flash Code 91) Mass Air Flow Circuit High Input</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0112 (Flash Code 22) Intake Air Temperature Sensor Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0113 (Flash Code 22) Intake Air Temperature Sensor Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0116 (Flash Code 23) Engine Coolant Temperature Sensor Circuit Range/Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0117 (Flash Code 23) Engine Coolant Temperature Sensor Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0118 (Flash Code 23) Engine Coolant Temperature Sensor Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0122 (Flash Code 43) Throttle Position Sensor Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0123 (Flash Code 43) Throttle Position Sensor Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0182 (Flash Code 211) Fuel Temperature Sensor Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0183 (Flash Code 211) Fuel Temperature Sensor Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0192 (Flash Code 245) Fuel Rail Pressure Sensor Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0193 (Flash Code 245) Fuel Rail Pressure Sensor Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0201 (Flash Code 271) Injector Circuit - Cylinder 1</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0202 (Flash Code 272) Injector Circuit - Cylinder 2</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0203 (Flash Code 273) Injector Circuit - Cylinder 3</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0204 (Flash Code 274) Injector Circuit - Cylinder 4</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0217 (Flash Code 542) Engine Coolant Over Temperature Condition</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0219 (Flash Code 543) Engine Overspeed Condition</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0234 (Flash Code 42) Turbocharger Overboost Condition</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0237 (Flash Code 32) Turbocharger Boost Sensor Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0238 (Flash Code 32) Turbocharger Boost Sensor Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0299 (Flash Code 65) Turbocharger Underboost</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0335 (Flash Code 15) Crankshaft Position Sensor Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0336 (Flash Code 15) Crankshaft Position Sensor Circuit Range/Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0340 (Flash Code 14) Camshaft Position Sensor Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0380 (Flash Code 66) Glow Plug Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">C</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0401 (Flash Code 93) Exhaust Gas Recirculation (EGR) Flow Insufficient Detected</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P0403 (Flash Code 347) Exhaust Gas Recirculation (EGR) Control Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0404 (Flash Code 45) Exhaust Gas Recirculation (EGR) Control Circuit Range/Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0500 (Flash Code 25) Vehicle Speed Sensor</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0563 (Flash Code 35) System Voltage High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">C</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0565 (Flash Code 515) Cruise Control On Signal</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0566 (Flash Code 516) Cruise Control Off Signal</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0567 (Flash Code 517) Cruise Control Resume Signal</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0568 (Flash Code 518) Cruise Control Set Signal</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0571 (Flash Code 26) Brake Switch Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0601 (Flash Code 53) Internal Control Module Memory Check Sum Error</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0602 (Flash Code 154) Control Module Programming Error</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">C</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0604 (Flash Code 153) Internal Control Module Random Access Memory (RAM) Error</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0606 (Flash Code 51) ECM/PCM Processor</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P060B (Flash Code 36) Internal Control Module A/D Processing Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0633 (Flash Code 176) Immobilizer Key Not Programmed - ECM/PCM</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0638 (Flash Code 61) Throttle Actuator Control Range/Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0641 (Flash Code 55) Sensor Reference Voltage 1 Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0650 (Flash Code 77) Malfunction Indicator Lamp (MIL) Control Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0651 (Flash Code 56) Sensor Reference Voltage 2 Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0661 (Flash Code 58) Intake Manifold Tuning Valve Control Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">C</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0662 (Flash Code 58) Intake Manifold Tuning Valve Control Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">C</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0685 (Flash Code 416) ECM Power Relay Control Circuit/Open</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">C</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0687 (Flash Code 416) ECM Power Relay Control Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">C</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0697 (Flash Code 57) Sensor Reference Voltage 3 Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P0700 (Flash Code 185) Transmission Control System (MIL Request)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">-</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P1093 (Flash Code 227) Fuel Rail Pressure (FRP) Too Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P1261 (Flash Code 34) Injector Positive Voltage Control Circuit Group 1</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P1262 (Flash Code 34) Injector Positive Voltage Control Circuit Group 2</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="bottom">DTC P1404 (Flash Code 45) Exhaust Gas Recirculation (EGR) Closed Position Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">-</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P161B (Flash Code 179) Immobilizer Wrong Response</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P1621 (Flash Code 54, 254) Control Module Long Term Memory Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2122 (Flash Code 121) Pedal Position Sensor 1 Circuit Low Input</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2123 (Flash Code 121) Pedal Position Sensor 1 Circuit High Input</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2127 (Flash Code 122) Pedal Position Sensor 2 Circuit Low Input</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2128 (Flash Code 122) Pedal Position Sensor 2 Circuit High Input</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2138 (Flash Code 124) Pedal Position Sensor 1 - 2 Voltage Correlation</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2146 (Flash Code 158) Fuel Injector Group 1 Supply Voltage Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2149 (Flash Code 159) Fuel Injector Group 2 Supply Voltage Circuit</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2227 (Flash Code 71) Barometric Pressure Circuit Range/Performance</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">B</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2228 (Flash Code 71) Barometric Pressure Circuit Low</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC P2229 (Flash Code 71) Barometric Pressure Circuit High</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC U0001 (Flash Code 84) High Speed CAN Communication Bus</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC U0101 (Flash Code 85) Lost Communication With TCM</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC U010A (Flash Code 346) Lost Communication with Exhaust Gas Recirculation (EGR) Control Module</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">A</td></tr><tr><td width="328" colspan="1" rowspan="1" align="left" valign="top">DTC U0167 (Flash Code 177) Lost Communication With Vehicle Immobilizer Control Module</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">D</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

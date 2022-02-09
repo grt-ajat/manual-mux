@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Tail gate glass installation (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Tail gate glass
+          installation
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751994">1. Tail gate glass
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Clean the tail gate glass using the unleaded gasoline.</p>
+          <p class="instructions">2. Clean the body panel using the unleaded gasoline.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Clean the bonding surface of the tail gate glass. </li>
+                    <li>Wipe away any remaining caulking agent from the body using a clean cloth and unleaded gasoline. </li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Apply the primer to the body.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply Sunstar BP-901 or equivalent to the bonding surface on the body side.</li>
+                    <li>Primer application width: Top 20 mm {0.79 in} or more, Side 20 mm {0.79 in} or more, Bottom 28 mm {1.1 in} or more</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Install the spacer to the body.</p>
+          <p class="instructions">5. Install the retainer to the tail gate glass.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a new spacer and retainer. </li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Install the tail gate finisher to the panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a new tail gate finisher.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9TSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Retainer</li><li>Tail gate finisher</li><li>Spacer</li><li>0.3 mm {0.01 in}</li></ol></div>
+                <p class="instructions">7. Apply the primer to the tail gate glass.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply Sunstar GP-402 or equivalent to the bonding surface on the rear window side.</li>
+                    <li>Apply the primer as described in the figure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9TMH000101.png" class="MH" /></p>
+                <div class="legend"><ol><li>Sealing agent</li><li>Primer application location</li><li>10 mm {0.39 in}</li><li>8 mm {0.24 in}</li><li>10 mm {0.39 in}</li><li>4 mm {0.16 in}</li><li>47 mm {1.85 in}</li><li>41 mm {1.61 in}</li><li>15 mm {0.59 in}</li><li>9 mm {0.35 in}</li><li>28 mm {1.10 in}</li><li>21 mm {0.83 in}</li></ol></div>
+                <p class="instructions">8. Apply the sealing adhesive to the tail gate glass.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When using an air spray gun, air pressure must be kept lower than the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Specified air pressure： 147 to 294 kPa { 1.5 to 3.0 kgf/cm2 / 21 to 43 psi } Or less</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>After the primer completely dries, apply the sealing agent, Sunstar penguinseal #560 or equivalent, along the edge of the tail gate glass so that the sealing agent forms a bonding area of 20 mm {0.79 in} at the left lower section of the tail gate glass.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9TSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Spacer</li><li>Tail gate glass support</li><li>Sealing agent</li><li>Retainer</li><li>20 mm {0.79 in}</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After applying the primer, leave it for at least 1 minute for air drying.</li>
+                    <li>Bonding must be accomplished within 5 minutes after the sealing agent is applied.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Install the tail gate glass to the panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert the tail gate glass support into the panel and press in the panel side to fasten.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9TSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Mounting hole</li><li>Tail gate glass support</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that there is no water leakage from the tail gate window.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">10. Install the tail gate finisher to the tail gate.</p>
+          <p class="instructions">11. Connect the rear defogger connector to the tail gate glass.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750913">2. Tail gate garnish
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the tail gate garnish to the tail gate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the 2 nuts and the 4 clips.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 1.8 N・m { 0.18 kgf・m / 16 lb・in } Nut</p>
+                <p class="illust"><img src="image/RUWE9GSH002601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Nut</li><li>Stud bolt</li><li>Clip</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie751589">3. Rear wiper arm
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the wiper arm to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the blade to the position shown in the following illustration.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When tightening the nut, hold down the arm in order to prevent it from springing up.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Steady the wiper blade by moving it up and down on the glass surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9ASH003201.png" class="SH" /></p>
+                <div class="legend"><ol><li>13 mm (0.51 in)</li><li>8 mm (0.31 in)</li><li>Ceramic paint line</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie750914">4. Tail gate trim cover
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the tail gate trim cover to the tail gate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert the 13 clips for the tail gate trim cover.</li>
+                    <li>Install the screw for the assist grip to the cab.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE9GSH001901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clip position</li><li>Screw</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

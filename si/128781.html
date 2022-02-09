@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Front drive axle assembly removal (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Front drive axle assembly
+          removal
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759131">1. Disc wheel
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the disc wheel from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the stone guard from the vehicle.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759123">2. Brake caliper assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the brake caliper assembly from the knuckle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove 2 bolts from the knuckle arm rear side.</li>
+                    <li>Remove the brake caliper with the brake hose attached together with the brake support.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>By using a wire, etc., secure and hold the brake caliper to the frame, etc.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758469">3. Front wheel speed sensor
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the wheel speed sensor is damaged in the course of the maintenance works, that may cause the following symptoms.</li>
+                    <li>ABS abnormalities due to sensor damage</li>
+                    <li>In case of ABS failure or ABS malfunction due to improper sensor installation, installation/removal of the wheel speed sensor, or replacement of the wheel speed sensor, follow the precautions indicated in the procedure for the work.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758467">4. Front wheel speed sensor
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness connector from the wheel speed sensor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758468">5. Front wheel speed sensor
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the harness clip from the harness.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the harness clip lock indicated by the arrow.</li>
+                    <li>Remove the harness bracket.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the wheel speed sensor from the knuckle.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When the wheel speed sensor body does not come off easily due to the rust on the knuckle or support, use a rust penetrant, etc., and carefully remove the sensor body by shifting it little by little.</li>
+                    <li>Be careful not to hit or step on the removed sensor.</li>
+                    <li>Never perform following works.</li>
+                    <li>Remove the sensor body by hammering.</li>
+                    <li>Insert a flat-head screwdriver or the like into the gap to remove it forcibly.</li>
+                    <li>When removing the wheel speed sensor, do not pull the harness.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the sensor fixing bolt.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH034601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Connector position</li><li>Front speed sensor assembly</li><li>Harness bracket tightening nut</li><li>Harness bracket tightening bolt</li><li>Sensor tightening bolt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758282">6. Hub cap
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the hub cap from the front hub.</p>
+                <p class="illust"><img src="image/RTWC5CSH012201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758283">7. Flange
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the flange from the front hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the snap ring and shim, and then remove the flange from the front hub.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758284">8. Lock washer
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the lock washer from the bearing lock nut.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758281">9. Bearing lock nut
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the bearing lock nut from the knuckle using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove using a hub nut wrench.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021170.png" class="ST" /><br/>SST: 5-8840-2117-0 - hub nut wrench</p>
+                <p class="illust"><img src="image/RTWC4CSH003201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758383">10. Front hub rotor assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the front hub rotor assembly from the knuckle.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759122">11. Front propeller shaft assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="128758.html">3.Driveline, Axle 3C.Drive Shaft System(All models) front propeller shaft assembly removal</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759121">12. Stabilizer link
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the stabilizer link from the lower control arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the lower nut of the stabilizer link.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759128">13. Shock absorber
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the shock absorber from the lower control arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the lower bolt and nut of the shock absorber.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Stabilizer link lower nut</li><li>Shock absorber lower nut</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758230">14. Tie rod end
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the tie rod end from the knuckle.</p>
+                <p class="sst"><img src="image/ST5884020050.png" class="ST" /><br/>SST: 5-8840-2005-0 - ball joint remover</p>
+                <p class="illust"><img src="image/RTWC4CSH001901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Ball joint remover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759132">15. Breather hose
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the breather hose from the front axle assembly.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758337">16. Actuator
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the actuator from the housing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Loosen the mounting bolts to pull out the actuator from the housing.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759129">17. Lower control arm 
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the lower control arm from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the bolts and nuts at the frame side, and then remove the lower control arm.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759130">18. Upper control arm 
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the upper control arm from the knuckle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Separate the upper control arm and knuckle on the left side, and then remove the knuckle together with the lower control arm.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When removing the knuckle, be careful not to damage the oil seal in the knuckle.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH002001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759125">19. Suspension cross member
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the suspension cross member assembly from the frame.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759124">20. Front drive axle assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the front drive axle assembly from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Support the differential case with a jack.</li>
+                    <li>Remove the front axle installation bolt and nut and slowly lower the jack.</li>
+                    <li>Remove the end of the right side drive shaft from the knuckle and lower the axle assembly from the vehicle.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH000201.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>During work, confirm that the axle assembly is securely supported.</li>
+                    <li>Make sure interference does not cause damage to the bellows of the power steering unit by interference.</li>
+                    <li>Make sure interference does not cause damage to the shift-on-the-fly breather pipe and breather pipe bracket.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

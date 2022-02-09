@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of suspension null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of suspension
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758795">1. Function, structure, operation of suspension
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Front suspension</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC2BLF001001.png" class="LF" /></p>
+                <div class="legend"><ol><li>Stabilizer bar</li><li>Shock absorber</li><li>Upper control arm</li><li>Upper ball joint</li><li>Knuckle</li><li>Lower ball joint</li><li>Lower control arm</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear suspension</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD2CSF000101.png" class="SF" /></p>
+                <p class="explanation">Wheels and tires<br/>A road wheel is comprised of a tire and disc wheel and rotates as a unit. It supports the whole load of the vehicle with the tire air pressure and maintains proper cushioning. It is also a device to gain transmission of power and maneuverability during steering through the contact surface of the tire.<br/>The functions of tire include load supporting, cushioning, transmission of braking and driving force, handling stability, etc., all of which are indispensable.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Physical structure of the tire</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFW72DMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Bead wire</li><li>Carcass</li><li>Inner liner</li><li>Belt</li><li>Tread section</li><li>Shoulder section</li><li>Sidewall section</li><li>Bead section</li></ol></div>
+                <p class="explanation">Bead wire<br/>High-carbon steel wire used for reinforcing the rim section of a tire.</p>
+          <p class="explanation">Carcass<br/>Layers of rubber-coated cords bonded to each other to form the framework of a tire.</p>
+          <p class="explanation">Inner liner<br/>A highly airtight rubber layer attached to the inner side of a tire.</p>
+          <p class="explanation">Belt<br/>The belt is a cord layer between the tread portion of the tire and the carcass that keeps the carcass securely tightened and increases the rigidity of the tread.</p>
+          <p class="explanation">Tread section<br/>A thick rubber layer on a tire which comes in contact with the road surface. It protects the carcass inside from shocks and damages from the road surface, etc., and also has a role in extending the worn life of the tire. In addition, various kinds of tread patterns are engraved onto it.</p>
+          <p class="explanation">Shoulder section<br/>A rubber layer between the tread section and the sidewall section. It diffuses the heat generated while driving as well as protecting the carcass.</p>
+          <p class="explanation">Sidewall section<br/>A rubber layer between the shoulder section and the bead section. It protects the carcass. Information such as the tire dimensions and the manufacture's name is indicated here.</p>
+          <p class="explanation">Bead section<br/>A ring-shaped reinforcement section made of bead wires bundled together with rubber coating. It fixes the tire to the rim of the disc wheel when the air is inserted.</p>
+          <p class="explanation">Tire tread patterns<br/>Tread patterns are grooves that are engraved in the tread section and have the functions of discharging water, obtaining braking, driving and towing forces, improving maneuverability and stability, dissipating tire heat, etc.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tire indications</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/HCW32DSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Cross-section width</li><li>Cross-section height</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tire size indications</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFW72DSF000301.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="20" colspan="1" rowspan="1" align="center" valign="bottom">No.</td><td width="120" colspan="1" rowspan="1" align="center" valign="bottom">Meaning</td><td width="300" colspan="1" rowspan="1" align="center" valign="bottom">Explanation</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="middle">1</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Cross-section width: mm</td><td width="300" colspan="1" rowspan="1" align="left" valign="bottom">The width obtained by excluding the pattern, letters, etc., on the side surface of the tire from the entire tire width.</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="middle">2</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Oblateness</td><td width="300" colspan="1" rowspan="1" align="left" valign="bottom">A value that represents the ratio of the cross-section height in relation to the cross-section width.<br/>Oblateness (%) = (Cross-section height / Cross-section width) x 100</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="bottom">3</td><td width="120" colspan="1" rowspan="1" align="left" valign="bottom">Structure symbol</td><td width="300" colspan="1" rowspan="1" align="left" valign="bottom">R is the abbreviation for &#034;radial structure&#034;.</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="bottom">4</td><td width="120" colspan="1" rowspan="1" align="left" valign="bottom">Rim diameter</td><td width="300" colspan="1" rowspan="1" align="left" valign="bottom">Tire inner diameter</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="bottom">5</td><td width="120" colspan="1" rowspan="1" align="left" valign="bottom">Load index<br/>(single wheel)</td><td width="300" colspan="1" rowspan="2" align="left" valign="middle">A value that indicates the maximum loading capacity of a tire under specified conditions.</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="bottom">6</td><td width="120" colspan="1" rowspan="1" align="left" valign="bottom">Load index<br/>(multiple wheel)</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="bottom">7</td><td width="120" colspan="1" rowspan="1" align="left" valign="bottom">Speed symbol</td><td width="300" colspan="1" rowspan="1" align="left" valign="bottom">A symbol that indicates the speed (maximum speed = performance) at which a tire can run under specified conditions.</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="bottom">8</td><td width="120" colspan="1" rowspan="1" align="left" valign="bottom">Cross-section width: inch</td><td width="300" colspan="1" rowspan="1" align="left" valign="bottom">The width obtained by excluding the pattern, letters, etc., on the side surface of the tire from the entire tire width.</td></tr><tr><td width="20" colspan="1" rowspan="1" align="left" valign="middle">9</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">Tire strength</td><td width="300" colspan="1" rowspan="1" align="left" valign="bottom">The larger the number is, the higher the strength becomes. In other words, as the air pressure inside the tire becomes higher, the tire load capacity is higher as well.<br/>PR is the abbreviation for &#034;ply rating&#034;.</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

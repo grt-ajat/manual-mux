@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Shift on the fly system inspection (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Shift on the fly system
+          inspection
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie759185">1. Shift on the fly system
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the parts removed.</li>
+                    <li>Take a corrective action or replace it if there is worn or damage.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759192">2. Inner axle shaft
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the inner axle shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect and check the inner axle shaft for abnormal conditions such as worn and damage.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH004601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the spline section for twisting, worn and cracks.</li>
+                    <li>If there is any abnormality, replace the shaft with new one.</li>
+                    <li>If there is any abnormality in gears including the slide section of the sleeve, replace the shaft with new one.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH004701.png" class="SH" /></p>
+                <p class="instructions">2. Inspect the inner axle shaft using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Support the center of both ends of the inner axle shaft, and measure the fluctuation by slowly turning the shaft using a dial gauge.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Limit： 0.5 mm { 0.02 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Do not heat to repair any bent of the shaft.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH004801.png" class="SH" /></p>
+                <div class="legend"><ol><li>230 mm {9.06 in}</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759183">3. Inner shaft bearing
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the bearing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert the clutch gear into the axle shaft to inspect the inner shaft bearing conditions.</li>
+                    <li>If any abnormality such as nonsmooth bearing movement is observed, replace the bearing with new one.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH004901.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clutch gear</li><li>Inner shaft bearing</li><li>Inner axle shaft</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759182">4. Sleeve
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the sleeve.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Visually inspect the sleeve for run-out, damage or cracks.</li>
+                    <li>As they are important components, thoroughly inspect the groove and inner gear.</li>
+                    <li>Operate the sleeve coupled with the clutch gear attached to the inner shaft.</li>
+                    <li>If any abnormality such as nonsmooth movement is observed, replace the sleeve with new one.</li>
+                    <li>Apply gear oil to the gear contact surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH005001.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the width of the sleeve center groove.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Limit： 7.1 mm { 0.28 in }</p>
+                <p class="illust"><img src="image/RTWC4CSH005101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759184">5. Clutch gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the clatch gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Visually inspect the clutch gear for any worn, damage, crack or other abnormal conditions.</li>
+                    <li>If any abnormality such as nonsmooth movement is observed when it is operated together with the sleeve, replace the clutch gear.</li>
+                    <li>At the time of inspection, apply gear oil to the gear contact surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW440SH000201.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the outer diameter of the clutch gear.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Limit： 36.98 mm { 1.46 in }</p>
+                <p class="illust"><img src="image/RTW440SH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759181">6. Actuator
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the actuator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Visually inspect for any worn, damage, crack and other abnormal conditions.</li>
+                    <li>Functional inspection: Apply the voltage of 12 V to the terminals 3 and 4 and connect the tester with terminals 1 and 2 to inspect the operations of the actuator according to the table below.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW440SH000501.png" class="SH" /></p>
+          <p class="illust"><img src="image/RUWD3CSH000101.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTW440SH000601.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">State</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Port 3</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Port 4</td><td width="40" colspan="1" rowspan="1" align="left" valign="bottom">Port 1, 2 Conducting</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Function</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">A</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">+</td><td width="40" colspan="1" rowspan="1" align="center" valign="bottom">-</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="40" colspan="1" rowspan="1" align="center" valign="bottom">C</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="bottom">B</td><td width="40" colspan="1" rowspan="1" align="center" valign="bottom">-</td><td width="40" colspan="1" rowspan="1" align="center" valign="bottom">+</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="40" colspan="1" rowspan="1" align="center" valign="bottom">D</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When an abnormal condition is detected, replace the actuator assembly.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to let water or filth enter into the actuator's port.</li>
+                    <li>When reusing the actuator, do not open the cover.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the dimensions of 1, 2 and 3 in the diagram.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD3CSH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Limit: 64.3 mm {2.53 in}</li><li>Limit: 6.7 mm {0.26 in}</li><li>Limit: 6.7 mm {0.26 in}</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

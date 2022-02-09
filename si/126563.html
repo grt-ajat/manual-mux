@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Maintenance precautions of engine null (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Maintenance precautions of engine
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie743977">1. Maintenance precautions of engine
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">ECM maintenance precautions<br/>The exclamation mark warns you of an electric shock hazard. To avoid shock and possible serious injury, DO NOT touch the terminals. When disconnecting the harness connectors, always turn OFF the ignition switch or disconnect the battery ground cable.</p>
+                <p class="illust"><img src="image/RTWEZ0SF000401.png" class="SF" /></p>
+                <p class="explanation">Aftermarket electrical and vacuum equipment<br/>Aftermarket or add-on electrical and vacuum equipment is defined as any equipment which is connected to the electrical or vacuum systems that is installed on a vehicle after the vehicle is shipped from the factory. No allowances have been made in the vehicle design for this type of equipment. No add-on vacuum equipment should be added to this vehicle. Add-on electrical equipment must only be connected to the vehicle's electrical system at the battery power source and ground. Add-on electrical equipment, even when installed based on these guidelines, may still cause the powertrain system to malfunction. This may also include equipment not connected to the vehicle electrical system such as portable telephones and audio systems. Therefore, the first step in diagnosing any powertrain fault is to eliminate all aftermarket electrical equipment from the vehicle. After this is completed, if the fault still exists, the fault should be diagnosed in the normal manner.</p>
+          <p class="explanation">Electrostatic discharge damage<br/>Electronic components used in the ECM are often designed to carry very low voltage. Electronic components are susceptible to damage caused by electrostatic discharge. By comparison, as much as 4000 volts of voltage may be needed for a person to feel a static discharge. There are several ways for a person to become statically charged. The most common methods of charging are by friction and induction.<br/>An example of charging by friction is a person sliding across a vehicle seat.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>To prevent damage caused by electrostatic discharge, do not touch the ECM connector pins or solenoid components on the ECM circuit board.</li>
+                    <li>To prevent damage caused by electrostatic discharge, do not open the replacement part package until the part is ready to be installed.</li>
+                    <li>To prevent damage caused by electrostatic discharge, connect the packaging to a properly working ground connection of the vehicle before removing a part from the packaging.</li>
+                    <li>To prevent damage caused by electrostatic discharge, touch a properly working ground before attaching a part when handling the part while sliding across the seat, sitting down from a standing position, or walking a certain distance.</li>
+                    <li>Take note that charge by electrostatic induction occurs when a person with well insulated shoes stands near a highly charged object and momentarily touches a grounded object. The charge of the same polarity flows outward, leaving the person highly charged with opposite polarity.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>To prevent damaging the engine and to ensure the reliability of engine performance, be careful of the following points when performing engine maintenance.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Do not disconnect the battery cable and the wiring of the charging circuit while the engine is running. Do not also open or close the battery relay.</p>
+          <p class="explanation">When lifting or supporting the engine, do not directly attach the jack to the oil pan.<br/>When lowering the engine to the ground, do not let the oil pan directly contact the ground.<br/>Use a wooden frame, etc. to support it with the engine foot or flywheel housing.<br/>There is only a small gap between the oil pan and oil pump strainer, so be careful not to damage the oil pan and oil pump strainer.</p>
+          <p class="explanation">To perform maintenance on the engine, confirm that the ignition switch and lighting switch are OFF, and always disconnect the battery ground cable. If the battery ground terminals are not removed while performing work, there is the possibility of damaging the wire harness or electrical components. Take adequate precautions for safety, such as short circuits, when inspections require an energized state.</p>
+          <p class="explanation">When connecting the battery ground cable, pay attention to the battery poles.<br/>If the battery poles are reversely connected, the generator diode, etc. may be damaged.</p>
+          <p class="explanation">When disconnecting the harness, inspect the connectors and clips for damage and replace them as necessary.</p>
+          <p class="explanation">When connecting the harness, be sure to connect it in the same position and with the same routing as before.</p>
+          <p class="explanation">When steam cleaning or washing the engine, be careful not to allow steam or water to come in direct contact with the battery and other electrical system components.</p>
+          <p class="explanation">Whenever removing the gasket, oil seals, O-rings, etc., replace them with new ones.</p>
+          <p class="explanation">When assembling and installing, tighten to the specified torque.</p>
+          <p class="explanation">When reinstalling them, use the same part and install it in the same position as when it was removed.</p>
+          <p class="explanation">To protect and lubricate the sliding surfaces when running for the first time, apply an adequate amount of engine oil to the sliding surfaces.</p>
+          <p class="explanation">When disassembling, use a scraper to completely scrape off old liquid gasket from the locations where it is used. After cleaning any oil, moisture and filth using a shop cloth, etc., apply the specified liquid gasket.<br/>Apply the proper amount to avoid an excess or lack in application. If an excessive amount is applied, it leads to engine seizures. If an insufficient amount is applied, it causes oil and water leaks.<br/>Overlap the beginning and ending of the application.</p>
+          <p class="explanation">After applying the liquid gasket, install it within the specified amount of time. If the specified amount of time is exceeded, wipe away the liquid gasket and reapply it.</p>
+          <p class="explanation">When the valve related parts, injector, pistons, piston rings, connecting rod, connecting rod bearing, crankshaft journal bearing, etc., have been removed, organize them in order for storage.</p>
+          <p class="explanation">The eyebolts must be stored in a clean parts box with a lid to prevent adhesion of foreign matter.</p>
+          <p class="explanation">Including the inside of the injector, the holes and gaps that are the fuel paths for the fuel system have an extremely precise finish. Therefore, because there is the possibility of damage if foreign material becomes mixed in, cover the cap after removing parts, etc. to prevent the entry of foreign material.</p>
+          <p class="explanation">The QR plate attached to an injector is specific to that injector. Do not confuse the QR plate with the plates of other injectors. Also, when the injector assembly is replaced, learn the injector ID code to the ECM.</p>
+          <p class="explanation">The fuel moisture removal agent causes moisture to be absorbed into the diesel oil and is the cause of rust. Therefore, do not use moisture removal agents in the fuel tank.</p>
+          <p class="explanation">Leaking fuel may cause fires. Therefore, after completing the work, wipe away any leaked fuel, and confirm that no fuel leakage is present after starting the engine.</p>
+          <p class="explanation">Do not loosen or remove the radiator cap when the coolant is hot. Steam and boiling water can burst out from the radiator possibly causing burns or heat related injuries. When opening the radiator cap, place a thick cloth over the cap when the coolant is cooled, and turn it gradually to release the pressure before opening it.</p>
+          <p class="explanation">When the air duct or air cleaner is removed, cover the air intake opening to prevent foreign matter from getting into the cylinder. If the cylinder gets contaminated, it can considerably damage the cylinder and others while the engine is operating.</p>
+          <p class="explanation">The turbocharger has an extremely precise finish and rotates at high speeds, and therefore, it cannot be disassembled. Replace the turbocharger assembly, if even small abnormalities such as bent fins or bent housing or scratches are found.<br/>Take measures to prevent foreign material from entering the turbine housing, compressor housing, the oil filler and outlet while performing the maintenance work.</p>
+          <p class="explanation">After maintenance of the turbocharger, pour 0.5 cc {0.00011 Imp. gal} of clean engine oil into the oil feed port before installing the oil pipe.</p>
+          <p class="explanation">If you grip the actuator rod to lift the turbocharger, it will deform, causing improper operation. Always hold the turbocharger main unit without gripping the rod.</p>
+          <p class="explanation">Vibrations and looseness of the exhaust system are caused by mispositioning at the time of assembly. Temporarily install all bolts and nuts until all components are positioned. After positioning is completed, tighten them from the engine side to the rear side.</p>
+          <p class="explanation">When assembling the EGR system, temporarily tighten once, then firmly tighten in order not to apply unnecessary stress on the components.</p>
+          <p class="explanation">Be careful not to over-tighten the glow plug since as it can be damaged.</p>
+          <p class="explanation">Disconnect the battery ground cable when recharging the battery using an external device.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

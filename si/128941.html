@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Wheel alignment check null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Wheel alignment check
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758761">1. Wheel alignment check
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">"Front end alignment" covers the angular relationship among the front wheels, front suspension mounting parts and the ground.<br/>Ensure effective steering and good directional stability and maintain adequate front end alignment to prevent abnormal tire wear. The most important elements in the front end alignment are wheel toe-in, wheel camber and axle caster.</p>
+          <p class="explanation">Camber</p>
+          <p class="explanation">This illustration shows the vehicle viewed from the front.<br/>The camber is facing toward the inside or outside of the front wheel and tilted in up and down directions. If the wheel is tilted up and outward, the camber is positive (+). If the wheel is tilted down and inward, the camber is negative (-). The vertical angle of the tilting measured is the camber angle. If the camber angle is extreme or uneven between wheels, improper steering and excessive tire wear may result. While positive camber causes wear on the outer part of the tire, negative camber causes wear on the inner part of the tire.</p>
+                <p class="illust"><img src="image/RTWC3ASH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Camber</li></ol></div>
+                <p class="explanation">Caster</p>
+          <p class="explanation">This illustration shows the vehicle viewed from the side.<br/>The caster is tilted in up and down directions according to whether the wheel axis is forward or backward. The backward tilting is positive (+) and forward tilting is negative (-) (when the vehicle is viewed from the side). In case of short and long arm type suspension, the caster angle can be measured only by special equipment. However, when viewed straight from the top of the upper control arm toward the ground, the ball joint is not aligned (overall) when the caster angle is not 0°. If the angle is positive, the lower ball joint may be at a position slightly forward of the upper ball joint center line.</p>
+                <p class="illust"><img src="image/RTWC3ASH000201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Caster</li></ol></div>
+                <p class="explanation">Toe-in</p>
+          <p class="explanation">This illustration shows the vehicle viewed from above.<br/>Toe-in is the measurement of front wheel rotation. Actual toe-in amount is normally represented by angle rate. Toe-in is measured from the center of the tire tread or inside of the tire. The purpose of toe-in is to ensure parallel rolling of the front wheels and to offset any vibration of the wheel support system caused by forward rolling of the vehicle. Wrong toe-in may lead to excessive toe-in or unstable steering. Toe-in is the last alignment set in the front end alignment work.</p>
+                <p class="illust"><img src="image/RTWC3ASH000301.png" class="SH" /></p>
+                <p class="explanation">Inspection</p>
+          <p class="explanation">Before making adjustments affecting the caster, camber or toe-in, perform the following front end inspection.</p>
+          <p class="explanation">Inspect that the tire inflation pressure is adequate.</p>
+          <p class="explanation">Confirm that the vehicle is without load. (no passenger or loading)</p>
+          <p class="explanation">Confirm that the spare tire is installed in the right position.</p>
+          <p class="explanation">Inspect the front wheel bearing to see if the adjustment is adequate.</p>
+          <p class="explanation">Inspect the ball joint and tie rod end. If there is excessive looseness, correct it before making adjustment.</p>
+          <p class="explanation">Inspect the wheels and tires for worn.</p>
+          <p class="explanation">Inspect the trim height. If it is out of the specification range, correct it before making caster adjustment.</p>
+          <p class="explanation">Inspect the steering unit for looseness in the frame.</p>
+          <p class="explanation">Inspect the shock absorber for any leakage or prominent noise.</p>
+          <p class="explanation">Inspect the control arm or stabilizer bar device for looseness.</p>
+          <p class="explanation">Use the alignment device to inspect the front end alignment. Follow the instruction manual of the manufacturer.</p>
+          <p class="explanation">Park the vehicle on a level surface.</p>
+          <p class="explanation">Caster and camber adjustment</p>
+          <p class="explanation">An adjust cam is fitted to either front or back end of the front suspension lower link. This allows for simultaneous adjustment of camber and caster angles.</p>
+                <p class="illust"><img src="image/RTWC4CLF000601.png" class="LF" /></p>
+                <div class="legend"><ol><li>Lower link ASM RH</li><li>The lower link ASM moves outward in a positive (+) direction.</li><li>The lower link ASM moves inward in a negative (-) direction.</li><li>Lower link ASM LH</li><li>The lower link ASM moves outward in a positive (+) direction.</li><li>The lower link ASM moves inward in a negative (-) direction.</li></ol></div>
+                <p class="explanation">Alignment procedure is stated in the following illustration.</p>
+                <p class="illust"><img src="image/RTWC2BLF000101.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Example</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Measured value</td></tr><tr><td width="130" colspan="1" rowspan="1" align="left" valign="middle">Camber angle</td><td width="90" colspan="1" rowspan="1" align="center" valign="middle">1°10&#039;</td></tr><tr><td width="130" colspan="1" rowspan="1" align="left" valign="bottom">Caster angle</td><td width="90" colspan="1" rowspan="1" align="center" valign="bottom">3°10&#039;</td></tr><tr><td width="220" colspan="2" rowspan="1" align="left" valign="bottom">Standard value</td></tr><tr><td width="130" colspan="1" rowspan="1" align="left" valign="bottom">Camber angle</td><td width="90" colspan="1" rowspan="1" align="center" valign="bottom">0°±30&#039;</td></tr><tr><td width="130" colspan="1" rowspan="1" align="left" valign="bottom">Caster angle</td><td width="90" colspan="1" rowspan="1" align="center" valign="bottom">3°35&#039;±45&#039;</td></tr></tbody></table>
+                <p class="explanation">Mark "A" at the intersection of camber measured angle value (solid line) and caster measured angle value (dotted line).</p>
+                <p class="illust"><img src="image/RTW340SH001001.png" class="SH" /></p>
+                <p class="explanation">Mark "B" at the intersection of camber standard angle value (solid line) and caster standard angle value (dotted line).</p>
+                <p class="illust"><img src="image/RTW340SH001101.png" class="SH" /></p>
+                <p class="explanation">The vertical distance between points "A" and "B" represents the necessary adjustment for the front cam. The horizontal distance between points "A" and "B" represents the necessary adjustment for the rear cam. In this case, the front cam may move positively in 5 increments and the rear cam may move to positively in 8 increments.</p>
+                <p class="illust"><img src="image/RTW340SH001201.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="113" colspan="1" rowspan="1" align="left" valign="middle">Caster</td><td width="113" colspan="1" rowspan="1" align="left" valign="middle">3°20&#039;±45&#039;</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Equally in right and left sides in 30' range</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="113" colspan="1" rowspan="1" align="left" valign="middle">Camber</td><td width="113" colspan="1" rowspan="1" align="left" valign="middle">0°±30&#039;</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Equally in right and left sides in 30' range</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="113" colspan="1" rowspan="1" align="left" valign="middle">Kingpin inclination</td><td width="113" colspan="1" rowspan="1" align="left" valign="middle">12°30&#039;±30&#039;</td></tr></tbody></table>
+                <p class="explanation">Toe-in adjustment</p>
+          <p class="explanation">Measurement must be performed with the vehicle placed on a level surface plate.<br/>If a level surface plate is not available, park the vehicle on a level floor and check the toe-in.</p>
+          <p class="explanation">Set the front wheels to the position for traveling in a straight line.</p>
+          <p class="explanation">Align the toe-in gauge and the center height of each wheel at the top.</p>
+                <p class="illust"><img src="image/RTWC3ASH000401.png" class="SH" /></p>
+                <p class="explanation">Fit a center mark to each wheel to measure distance A between center marks on each wheel.</p>
+          <p class="explanation">Move the vehicle backward slowly until the center mark reaches the rear end position.</p>
+          <p class="explanation">Measure distance B between rear end center marks.</p>
+          <p class="explanation">Toe-in is calculated from the formula below.<br/>Toe-in = B - A</p>
+                <p class="illust"><img src="image/RTWC3ASH000501.png" class="SH" /></p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">Toe-in</td><td width="160" colspan="1" rowspan="1" align="left" valign="middle">： -2 to 2 mm { -0.08 to 0.08 in }</td></tr></tbody></table>
+                <p class="explanation">To adjust the toe-in angle, loosen the lock nut on the tie rod. Rotate both nuts by the same amount to maintain the steering wheel at the center.</p>
+                <p class="numeric">Tightening torque： 98 N・m { 10.0 kgf・m / 72 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC3ASH000601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Tie rod</li><li>Lock nut</li></ol></div>
+                <p class="explanation">FRT trim height and buffer clearance (reference data)</p>
+                <table cellspacing="0"><tbody><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Trim height</td><td width="120" colspan="1" rowspan="1" align="left" valign="bottom">： 140 mm { 5.51 in }</td></tr><tr><td width="100" colspan="1" rowspan="1" align="left" valign="middle">Buffer clearance</td><td width="120" colspan="1" rowspan="1" align="left" valign="middle">： 26.0 mm { 1.02 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC2BSH001301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lower control arm</li><li>Buffer clearance</li><li>Bumper rubber</li><li>Rear side cam bolt center</li><li>Trim height</li></ol></div>
+                <p class="explanation">RR buffer clearance (reference data)</p>
+                <table cellspacing="0"><tbody><tr><td width="60" colspan="1" rowspan="1" align="left" valign="middle">Standard</td><td width="166" colspan="1" rowspan="1" align="left" valign="middle">： 83 mm { 3.27 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RUWD2CSH001201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Buffer clearance</li></ol></div>
+                <p class="explanation">Maximum steering angle</p>
+                <table cellspacing="0"><tbody><tr><td width="113" colspan="1" rowspan="1" align="left" valign="middle">Wheel outside</td><td width="113" colspan="1" rowspan="1" align="center" valign="middle">： 33.2 °</td></tr><tr><td width="113" colspan="1" rowspan="1" align="left" valign="bottom">Wheel inside</td><td width="113" colspan="1" rowspan="1" align="center" valign="middle">： 36.6 °</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

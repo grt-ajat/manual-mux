@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Front drive axle assembly installation (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Front drive axle assembly
+          installation
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758268">1. Actuator
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the actuator to the housing.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the old sealing agent, and then clean the contact surfaces of the housing and actuator.</li>
+                    <li>Apply LOCTITE FMD-127 or equivalent to the contact surface on the actuator side.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH002101.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the shift arm with the sleeve groove and install the actuator.</li>
+                    <li>Remove the old sealing agent adhering to the bolt and remaining in the screw hole. Then apply LOCTITE FMD-127 or equivalent and tighten the bolt at the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+                <p class="illust"><img src="image/RTWC4CSH000301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759216">2. Front drive axle assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the front drive axle assembly to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Support the differential case with a jack.</li>
+                    <li>Jack up the front drive axle assembly and install the left side drive shaft to the knuckle.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Make sure interference does not cause damage to the bellows of the power steering unit by interference.</li>
+                    <li>Make sure interference does not cause damage to the shift-on-the-fly breather pipe and breather pipe bracket.</li>
+                    <li>When inserting the drive shaft to the knuckle, be careful not to damage the oil seal in the knuckle.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the mounting bolt at the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 169 N・m { 17.2 kgf・m / 125 lb・ft } Axle case bracket left and right side</p>
+                <p class="illust"><img src="image/RTWC4CSH000201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759205">3. Suspension cross member
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the suspension cross member assembly to the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the mounting nuts at the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 167 N・m { 17.0 kgf・m / 123 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC3BSH002201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Suspension cross member assembly</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759208">4. Knuckle
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the knuckle to the upper control arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the right side knuckle with the lower control arm to the upper control arm.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 98 N・m { 10.0 kgf・m / 72 lb・ft }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When inserting the drive shaft to the knuckle, be careful not to damage the oil seal in the knuckle.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759207">5. Lower control arm 
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the lower control arm to the suspension cross member assembly.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>An oil equivalent to ISO:VG46 should be applied to the threaded portion of the bolt.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the bolt hole position of the lower control arm to install the bolts and nuts.</li>
+                    <li>Before tightening the bolts and nuts of the lower control arm, adjust the buffer clearance.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Measure the front buffer clearance.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Buffer clearance： 26.0 mm { 1.02 in }</p>
+                <p class="illust"><img src="image/RTWC2BSH001301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lower control arm</li><li>Buffer clearance</li><li>Bumper rubber</li><li>Center of rear side cam bolt</li><li>Trim height</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759209">6. Breather hose
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the breather hose to the front axle assembly.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758231">7. Tie rod end
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the tie rod end to the knuckle.</p>
+                <p class="numeric">Tightening torque： 98 N・m { 10.0 kgf・m / 72 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759212">8. Shock absorber
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the shock absorber to the lower control arm.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Apply an oil equivalent to ISO:VG46 to the threaded portion of the lower bolt and nut for the shock absorber.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the lower bolt and nut for the shock absorber, and tighten to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 152 N・m { 15.5 kgf・m / 112 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759211">9. Stabilizer link
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the stabilizer link to the lower control arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the lower nut of the stabilizer link, and then tighten it to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 64 N・m { 6.5 kgf・m / 47 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759215">10. Front propeller shaft assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="128759.html">3.Driveline, Axle 3C.Drive Shaft System(All models) front propeller shaft assembly installation</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758365">11. Front hub rotor assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Fill the grease in the front hub rotor assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Fill the front hub and hub cap with grease.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Amount of filling： 35 g { 1.23 oz } Hub</p>
+          <p class="numeric">Application quantity： 15 g { 0.53 oz } Inner bearing</p>
+          <p class="numeric">Application quantity： 10 g { 0.35 oz } Outer bearing</p>
+                <p class="instructions">2. Install the front hub rotor assembly to the knuckle.</p>
+                <p class="illust"><img src="image/RTWC4BSH005801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Outer bearing</li><li>Inner bearing</li><li>Hub</li><li>Hub cap</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758323">12. Bearing lock nut
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the bearing lock nut to the knuckle using special tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>By using a hub nut wrench, install so that the truncated section in the screw hole faces the outside.</li>
+              <ul/>
+    </div>
+                  <p class="sst"><img src="image/ST5884021170.png" class="ST" /><br/>SST: 5-8840-2117-0 - hub nut wrench</p>
+                <p class="illust"><img src="image/RTWC4CSH003201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758312">13. Front hub rotor assembly
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Adjust the preload to a standard value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the preload for the front hub bearing.</li>
+                    <li>After tightening the bearing lock nut to the specified torque of the nut, fully loosen the nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 29 N・m { 3.0 kgf・m / 21 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Hook a spring scale to the wheel pin, and gently pull it in a tangent direction. Make adjustments by tightening the bearing lock nut until the preload reaches the specified value.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Preload： 20.0 to 25.0 N { 2.0 to 2.5 kg / 4.5 to 5.6 lb } New bearing, new oil seal</p>
+          <p class="numeric">Preload： 12.0 to 18.0 N { 1.2 to 1.8 kg / 2.7 to 4.0 lb } Reused bearing, new oil seal</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the preload of the front hub bearing is different from the specified value, adjust it by tightening or loosening the bearing lock nut.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH003301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758314">14. Lock washer
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the lock washer to the bearing lock nut.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install it in such a way that the side with the larger taper hole diameter faces the outside of the vehicle.</li>
+                    <li>If the lock washer screw hole does not align with the corresponding hole of the bearing lock nut, turn the lock washer over.</li>
+                    <li>If the hole positions still do not align, turn the bearing lock nut in the tightening direction to adjust the hole positions to best alignment.</li>
+                    <li>Tighten the lock washer installation screw securely so that the screw head is lower than the washer surface.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4CSH003401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758322">15. Flange
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the flange to the front hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply liquid gasket to the flange installation surface and install the flange to the hub.</li>
+                    <li>Liquid gasket: LOCTITE 515 or equivalent</li>
+                    <li>Install the snap ring and shim.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Adjust the shim.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the clearance between the flange and snap ring with the shim.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.0 to 0.2 mm { 0.000 to 0.008 in }</p>
+                <table cellspacing="0"><tbody><tr><td width="220" colspan="1" rowspan="1" align="center" valign="middle">Types of adjust shims</td></tr><tr><td width="220" colspan="1" rowspan="1" align="center" valign="middle">： 0.2 mm { 0.008 in }</td></tr><tr><td width="220" colspan="1" rowspan="1" align="center" valign="bottom">： 0.3 mm { 0.012 in }</td></tr><tr><td width="220" colspan="1" rowspan="1" align="center" valign="bottom">： 0.5 mm { 0.020 in }</td></tr><tr><td width="220" colspan="1" rowspan="1" align="center" valign="bottom">： 1.0 mm { 0.039 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC4CSH003501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758313">16. Hub cap
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the hub cap to the front hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the hub cap to the front hub with bolts.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 59 N・m { 6.0 kgf・m / 44 lb・ft }</p>
+                <p class="illust"><img src="image/RTWC5CSH012201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758427">17. Front wheel speed sensor
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the wheel speed sensor before installation.</li>
+                    <li>Before installing the sensor, clean the inside of the sensor installation hole and installation surface of the sensor bracket, and the installation surface of the sensor bracket for the knuckle and confirm that there is no foreign material such as rust and pieces of the sensor.</li>
+                    <li>Remove any foreign material such as pieces of the sensor from the inside of the mounting hole or the installation surface.</li>
+                    <li>Remove any rust on it with wire brush or the like.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When rust penetrant is used to remove the wheel speed sensor, clean up the part with part cleaner or the like.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758432">18. Front wheel speed sensor
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When assembling the hub, do not contact and break the sensor rotor/wheel speed sensor unit.</li>
+                    <li>The wheel speed sensor unit contains a magnet so that caution should be taken with metal objects.</li>
+                    <li>Remove the wheel speed sensor first before removing the hub rotor assembly.</li>
+                    <li>When hammering is performed to remove the knuckle, etc., remove the wheel speed sensor before starting the work.</li>
+                    <li>When installing the sensor, use your hand to push the sensor installation flange until it is firmly attached to the installation surface, and then tighten the bolt.</li>
+                    <li>When inserting the sensor, do not pry or hammer it with a tool.</li>
+                    <li>Do not tighten the sensor body fixing bolts with an air tool, but temporarily tighten by hand and then fully tighten them.</li>
+                    <li>After tightening the bolts, confirm that there is no clearance between the mounting flange and the mounting surface again.</li>
+                    <li>Install the sensor harness using the twist prevention line as a reference to avoid twisting.</li>
+                    <li>Be careful not to pull the harness forcibly, which may result in disconnection.</li>
+                    <li>Confirm that there is no harness interference.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758431">19. Front wheel speed sensor
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the wheel speed sensor to the knuckle.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installation, be careful for the wheel speed sensor not to hit against anything.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Tighten the sensor at the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+                <p class="instructions">2. Connect the harness clip to the harness.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the harness fixing bolt, and tighten it to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 8 N・m { 0.8 kgf・m / 71 lb・in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the harness fixing nut, and tighten it to the specified torque.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 20 N・m { 2.0 kgf・m / 15 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect the harness clip indicated by the arrow.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH034601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Connector position</li><li>Wheel speed sensor assembly</li><li>Harness tightening nut</li><li>Harness tightening bolt</li><li>Sensor tightening bolt</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing the harness, check the harness for a twist.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758430">20. Front wheel speed sensor
+                  connect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Connect the harness connector to the wheel speed sensor.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759213">21. Brake caliper assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake caliper assembly to the knuckle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>While making sure that the flexible hose is not twisted, install the brake caliper together with the brake support.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 206 to 246 N・m { 21.0 to 25.1 kgf・m / 152 to 181 lb・ft }</p>
+                <p class="illust"><img src="image/RTW74CSH000101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie758433">22. Front wheel speed sensor
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the following after installation of the wheel speed sensor.</li>
+                    <li>Turn the ignition switch ON, and confirm that the ABS warning light turns off after it illuminates for approximately 3 seconds.</li>
+                    <li>Start the engine and drive the vehicle straight forward from the stopped state. Slowly accelerate to 15 km/h (9 mph) and then slowly apply the brake until the vehicle stops. Confirm that no abnormal noise or problem in braking force during this procedure.</li>
+                    <li>Confirm whether the following symptom occurs during verification actions above.</li>
+                    <li>The ABS warning light turns on, or does not turn off.</li>
+                    <li>ABS operation noise or motor rotation noise is caused.</li>
+                    <li>Brake pedal kickbacks are felt.</li>
+                    <li>The target braking force is not produced.</li>
+                    <li>When the above symptom occurs, take the following action.</li>
+                    <li>Check the installation status of the wheel speed sensor and connection status of the connector.</li>
+                    <li>Check the DTCs, and perform inspection and take remedies for the ABS system in accordance with the diagnostic procedure for each DTC.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Since the ABS rotates the motor for a moment right immediately after the vehicle is started, sound of rotating motor may be heard. This is the operation for initial check task and not at fault.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759214">23. Disc wheel
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install a stone guard to the vehicle.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Install the disc wheel to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the wheel nuts in the numbered order.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 118 N・m { 12.0 kgf・m / 87 lb・ft }</p>
+                <p class="instructions">2. Lower vehicle.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie759206">24. Lower control arm 
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Adjust the trim height.</li>
+                    <li>Front trim height and buffer clearance (reference data)</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="200" colspan="2" rowspan="1" align="left" valign="middle">Trim height： 140 mm { 5.51 in }</td></tr><tr><td width="200" colspan="2" rowspan="1" align="left" valign="bottom">Buffer clearance： 26 mm { 1.02 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC2BSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Lower control arm</li><li>Buffer clearance</li><li>Bumper rubber</li><li>Center of rear side cam bolt</li><li>Trim height</li></ol></div>
+                <p class="instructions">1. Securely tighten the lower control arm to the suspension cross member assembly.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>An oil equivalent to ISO:VG46 should be applied to the threaded portion of the bolt.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 186 N・m { 19.0 kgf・m / 137 lb・ft }</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

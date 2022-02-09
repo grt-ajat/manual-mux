@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Turbocharger control system check null (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Turbocharger control system check
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747880">1. Turbocharger control system check
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The position of the turbocharger nozzles is controlled by the ECM. The ECM utilizes the turbocharger nozzle control solenoid valve and the boost pressure sensor to control the turbocharger nozzles. When the engine is not in a load condition, the turbocharger nozzle is in the open position or in the non-boost condition. When the engine is in a load condition, the ECM commands the control solenoid valve to close the turbocharger nozzle, which increases the boost. The ECM changes the boost according to the load requirements of the engine. The ECM uses pulse width modulation on the control circuit to open and control the solenoid valve.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747268">2. Turbocharger control system check
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="126448.html">202.Description Engine 15C.Functional Inspection(4JJ1) diagnostic system check-engine controls</a>&quot;.</p>
+                    <p class="instructions">2. Prioritized DTC</p>
+                <p class="explanation">If DTCs P0045, P0112, P0113, P0117, P0118, P0234, P0237, P0238, P0299, P0638, P0697, P2227, P2228, or P2229 are set, go to the applicable DTC diagnosis.</p>
+                <p class="instructions">3. Inspection of turbocharger control parts</p>
+                <p class="explanation">Inspect for the following conditions, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Air leakage around the boost pressure sensor or foreign material blocking the sensor hole.<br/>Air leakage around the air intake pipe between the turbocharger and intake manifold. Damaged components and loosened clamps.<br/>Misrouted, disconnected or kinked turbocharger nozzle control actuator vacuum hoses.<br/>Binding of the turbine shaft which causes a decrease in the rotation speed of the turbocharger shaft.<br/>Sticking or operation failure of the turbocharger nozzle control actuator.<br/>Stuck intake throttle valve. Perform the Intake Throttle Solenoid Control with a scan tool.<br/>Clogging of the air cleaner element, collapsing of the air intake pipe between the air cleaner and boost pressure sensor, or condition of restricted.<br/>Oil in the air intake pipe that may cause a boost pressure sensor signal error. If the oil is attached to inside the piping, the intercooler, or the turbocharger, it is necessary to wipe it off.</p>
+          <p class="explanation">If the turbocharger control parts are normal, go to Turbocharger control diagnosis.</p>
+                <p class="instructions">4. Turbocharger control diagnosis</p>
+                <p class="explanation">Put the transmission in the neutral position to apply the parking brake.</p>
+          <p class="explanation">Start the engine.</p>
+          <p class="explanation">Depress the accelerator pedal to W.O.T. several times while comparing the Boost Pressure display with the Desired Boost Pressure display on the scan tool.</p>
+          <p class="explanation">Drive the vehicle with at least 50% of the engine load for 10 seconds while comparing the Boost Pressure display with the Desired Boost Pressure display on the scan tool.</p>
+          <p class="explanation">Verify that the difference between the Boost Pressure display and the Desired Boost Pressure display is within the specified range.</p>
+                <p class="numeric">Standard： 20 kPa { 3 psi }</p>
+                <p class="explanation">If the reading is within the specified range, the system is normal.</p>
+          <p class="explanation">If the reading is outside the specified range, go to Inspection of turbocharger nozzle control solenoid valve.</p>
+                <p class="instructions">5. Inspection of turbocharger nozzle control solenoid valve operation</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the vacuum hose from the turbocharger nozzle control actuator diaphragm.</p>
+          <p class="explanation">Connect the vacuum pump to the removed vacuum hose.</p>
+                <p class="sst"><img src="image/ST5884002790.png" class="ST" /><br/>SST: 5-8840-0279-0 - vacuum pump</p>
+                <p class="explanation">Start and idle the engine.</p>
+          <p class="explanation">Perform the Turbocharger Solenoid Control with a scan tool.</p>
+          <p class="explanation">Command the turbocharger nozzle control solenoid valve INCREASE and DECREASE while observing the vacuum pump.</p>
+          <p class="explanation">Verify that the vacuum pump display shows 50 cm Hg (20 in. Hg) when an INCREASE command is executed to the maximum and the zero region when a DECREASE command is executed to the minimum.</p>
+          <p class="explanation">If it operates properly, go to Repair verification.</p>
+          <p class="explanation">If it does not operate properly, go to Inspection of vacuum hose.</p>
+                <p class="instructions">6. Inspection of vacuum hose</p>
+                <p class="explanation">Inspect for the following conditions, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Misrouted, disconnected, kinked, or plugged turbocharger nozzle control actuator vacuum hose. <br/>Misrouted, disconnected, kinked, or plugged solenoid valve ventilation hose. <br/>Misrouted, disconnected, kinked, or plugged vacuum source hose.</p>
+          <p class="explanation">If the vacuum hose is normal, replace the turbocharger nozzle control solenoid valve. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="126026.html">1.Engine 1F.Induction(4JJ1) turbocharger control solenoid removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126025.html">1.Engine 1F.Induction(4JJ1) turbocharger control solenoid installation</a>&quot;.</p>
+                    <p class="instructions">7. Repair verification</p>
+                <p class="explanation">Reconnect all of the disconnected parts and harness connectors.</p>
+          <p class="explanation">If a DTC is set, clear the DTC with a scan tool.</p>
+          <p class="explanation">Go to Prioritized DTC</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

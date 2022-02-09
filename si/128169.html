@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Reverse gear and 5th gear inspection (MUA)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Reverse gear and 5th gear
+          inspection
+              (MUA)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757325">1. 5th block ring
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 5th block ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 5th block ring using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the block ring and the dog gear. </li>
+                    <li>Replace the 5th block ring if the measured value exceeds the limit. </li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.5 mm { 0.059 in }</p>
+          <p class="numeric">Limit： 0.8 mm { 0.031 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756847">2. Reverse block ring
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the reverse block ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the reverse block ring using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the block ring and the dog gear. </li>
+                    <li>Replace the reverse block ring if the measured value exceeds the limit. </li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.5 mm { 0.059 in }</p>
+          <p class="numeric">Limit： 0.8 mm { 0.031 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756913">3. Insert
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the insert using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the insert key and block ring groove.</li>
+                    <li>Replace the insert key and block ring if the measured value exceeds the limit. </li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH015101.png" class="SH" /></p>
+                <p class="numeric">Standard： 3.59 to 3.91 mm { 0.141 to 0.154 in }</p>
+          <p class="numeric">Limit： 4.1 mm { 0.161 in }</p>
+                <p class="instructions">2. Measure the insert using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the insert key and clutch hub. </li>
+                    <li>Replace the insert key and clutch hub if the measured value exceeds the limit. </li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.09 to 0.31 mm { 0.0035 to 0.0122 in }</p>
+          <p class="numeric">Limit： 0.4 mm { 0.016 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757331">4. 5th gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the 5th gear using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the 5th gear using an inside dial gauge.</li>
+                    <li>Replace the 5th gear if the measured value exceeds the limit. </li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 32.000 to 32.013 mm { 1.2598 to 1.2604 in }</p>
+          <p class="numeric">Limit： 32.100 mm { 1.264 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757546">5. Counter reverse gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the reverse gear using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the counter reverse gear using an inside dial gauge. </li>
+                    <li>Replace the counter reverse gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 48.000 to 48.013 mm { 1.8898 to 1.8903 in }</p>
+          <p class="numeric">Limit： 48.100 mm { 1.894 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757629">6. Reverse idle gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the idle shaft using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the diameter of the reverse idle shaft.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the reverse idle gear using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the reverse idle gear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH005301.png" class="SH" /></p>
+                <p class="instructions">3. Calculate the clearance from measured value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the reverse idle gear and the reverse idle shaft, and calculate the clearance of the idle gear and idle gear shaft.</li>
+                    <li>Replace the idle gear and idle shaft if the measured value exceeds the limit. </li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.041 to 0.074 mm { 0.0016 to 0.0029 in }</p>
+          <p class="numeric">Limit： 0.150 mm { 0.0059 in }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757542">7. Revers - 5th clutch hub
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the reverse - 5th clutch hab.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Set the dial indicator to the reverse 5th clutch hub.</li>
+                    <li>Move the reverse 5th clutch hub left to right as far as possible.</li>
+                    <li>Record the reading numerical value from the dial indicator.</li>
+                    <li>Replace the reverse - 5th clutch hub if the measured value exceeds the limit. </li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.0 to 0.2 mm { 0.000 to 0.008 in }</p>
+          <p class="numeric">Limit： 0.3 mm { 0.012 in }</p>
+                <p class="illust"><img src="image/LNW25CSH029101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757049">8. Main shaft rear bearing
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the main shaft rear bearing using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the play of the main shaft rear bearing. </li>
+                    <li>Replace the main shaft rear bearing if the measured value exceeds the limit. </li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.2 mm { 0.008 in }</p>
+                <p class="illust"><img src="image/LNW25CSH029201.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

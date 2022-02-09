@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of transmission, transaxle null (MUA)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of transmission, transaxle
+              (MUA)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756685">1. Function, structure, operation of transmission, transaxle
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of MUA5H transmission (2WD model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF000101.png" class="LF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of MUA5H transmission (4WD model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF000601.png" class="LF" /></p>
+                <p class="explanation">The MUA transmission is a constant mesh type transmission and synchronized at all speeds. This transmission is designed to achieve lower operating force and quietness. <br/>The main components of this transmission consist of a transmission case integrated with the clutch housing, an intermediate plate, a rear cover, and the gears, and the transmission control box is located inside the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of the clutch</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESF000301.png" class="SF" /></p>
+                <p class="explanation">The clutch assembly consists of a clutch pressure plate, a clutch cover, a diaphragm spring drive pin and a clutch disc.<br/>The clutch pedal is connected to the release bearing assembly via the shift fork.<br/>The clutch disc is installed between the flywheel and the clutch pressure plate.<br/>A push-type clutch is utilized in this transmission.<br/>When the clutch pedal is depressed, the shift fork moves toward the release bearing assembly.<br/>By the release bearing assembly, diaphragm overcomes the force of the diaphragm spring and the clutch disc is released from the flywheel and clutch pressure plate to disengage the clutch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of the master cylinder</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESF000701.png" class="SF" /></p>
+                <p class="explanation">The master cylinder converts mechanical energy into oil pressure energy.<br/>When the clutch pedal is depressed, the push rod moves toward the piston to close the return port.<br/>The clutch fluid is forced to discharge from the master cylinder.<br/>When the clutch pedal is released, the return spring returns the piston to its original position.<br/>The return port opens and the clutch fluid returns to the fluid reservoir.<br/>When the clutch pedal is released quickly, the fluid pressure on the return spring side becomes lower than the fluid pressure on the push rod side.<br/>As a result, the fluid pressure on the push rod side rapidly flows into the return spring side through the port within the piston head.<br/>Then the pressure on both sides of the piston becomes equal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of the slave cylinder (2WD model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESF001201.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of the slave cylinder (4WD model)</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESF000101.png" class="SF" /></p>
+                <p class="explanation">The slave cylinder converts oil pressure energy into mechanical energy.<br/>The slave cylinder is moved by the oil pressure supplied from the master cylinder to operate the shift fork.<br/>The mechanical energy generated by the slave cylinder is directly proportional to the master cylinder and the slave cylinder diameters.<br/>An air bleeding screw is provided for air bleeding of the slave cylinder.<br/>The clutch damper valve slows the clutch fluid returning speed to reduce the shock torque transmitted to the drive train when the clutch is rapidly engaged at "Low" or "Reverse".</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of the oil pressure damper cylinder</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESF000501.png" class="SF" /></p>
+                <p class="explanation">The oil pressure damper cylinder is installed between the master cylinder and the slave cylinder to equalize variations in the clutch pedal feeling.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of the pressure plate</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESF000901.png" class="SF" /></p>
+                <p class="explanation">The pressure plate assembly consists of a pressure plate with a diaphragm spring.<br/>When the clutch pedal is operated, the pressure plate moves in an axial direction to engage/disengage with the clutch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Cross-sectional drawing of the clutch disc</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESF001001.png" class="SF" /></p>
+                <p class="explanation">The clutch disc consists of a plate and a facing.<br/>The plate consists of a clutch center, a cushioning plate and a torsion spring.<br/>The facing is secured with rivets to both sides of the cushioning plate.<br/>The cushioning plate minimizes wear and vibration of the clutch contact surface, which prolongs the service life.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

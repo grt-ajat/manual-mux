@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Supplementary Information null (MUX)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Supplementary Information
+              (MUX)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757519">1. Component Views
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE5CLF000201.png" class="LF" /></p>
+                <div class="legend"><ol><li>Clutch housing and the front case</li><li>Front cover</li><li>Reverse switch</li><li>Reverse detent assembly</li><li>Neutral switch</li><li>Intermediate plate assembly</li><li>5th detent assembly</li><li>Filler plug</li><li>Drain plug</li><li>Rear case</li><li>End cover</li><li>Snap ring</li><li>Output shaft rear bearing inner race</li><li>Straight plug</li><li>Dowel pin</li><li>Control rod detent assembly</li><li>Quadrant box</li></ol></div>
+                <p class="illust"><img src="image/RTWC5CLF004701.png" class="LF" /></p>
+                <div class="legend"><ol><li>Control unit block</li><li>Taper bolt</li><li>Control rod assembly</li><li>Rear gutter</li><li>5th counter gutter</li><li>Front gutter</li><li>2nd counter gutter</li><li>Spring pin</li><li>Reverse shift arm</li><li>Spring pin</li><li>1st - 2nd shift arm</li><li>Intermediate plate assembly</li><li>Magnet</li><li>Spring pin</li><li>1st - 2nd shift block</li><li>1st - 2nd shift rod</li><li>Reverse shift rod</li><li>Snap ring</li><li>3rd - 4th and 5th shift rod</li><li>Snap ring</li><li>3rd - 4th shift arm</li><li>5th - reverse shift block assembly</li><li>5th shift arm</li><li>Spring pin</li><li>Shift rod bracket</li><li>Shift and select rod assembly</li></ol></div>
+                <p class="illust"><img src="image/RTWC5CLF004201.png" class="LF" /></p>
+                <div class="legend"><ol><li>Output shaft assembly</li><li>Pilot bearing</li><li>Pilot bearing spacer</li><li>Snap ring</li><li>3rd - 4th block ring</li><li>Plate spring</li><li>3rd - 4th synchronizer assembly</li><li>Needle bearing</li><li>3rd gear</li><li>Snap ring</li><li>5th synchronizer assembly</li><li>5th block ring</li><li>Needle bearing (2-piece type)</li><li>5th gear</li><li>Input shaft assembly</li><li>Snap ring</li><li>Output counter gear</li><li>3rd counter gear</li><li>5th counter gear</li><li>Counter middle roller bearing outer race</li><li>Counter shaft assembly</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Front case</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BLF002301.png" class="LF" /></p>
+                <div class="legend"><ol><li>Front oil seal</li><li>Input shaft needle bearing</li><li>Clutch housing and front case</li><li>Reverse idle gear shaft</li><li>Reverse idle gear</li><li>Reverse shaft bracket</li><li>Reverse idle shaft bolt</li><li>Gasket</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear case</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BLF002401.png" class="LF" /></p>
+                <div class="legend"><ol><li>Linear ball bearing</li><li>Rear case</li><li>Output shaft rear bearing outer race</li><li>Main shaft oil nozzle</li><li>Counter end roller bearing</li><li>Snap ring</li><li>Output shaft front bearing outer race</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>End cover</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE5CSF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>Rear oil seal</li><li>End cover</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Input shaft</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BMF001401.png" class="MF" /></p>
+                <div class="legend"><ol><li>3rd gear collar</li><li>5th gear collar</li><li>Input shaft center bearing</li><li>Oil catch impeller</li><li>Input shaft</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Counter shaft</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF000401.png" class="LF" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Counter shaft front bearing outer race</li><li>Counter shaft front bearing inner race</li><li>Reverse synchronizer assembly</li><li>Reverse block ring</li><li>Counter reverse gear</li><li>Reverse needle bearing</li><li>Snap ring</li><li>1st counter gear collar</li><li>1st counter gear</li><li>1st needle bearing</li><li>1st - 2nd inside ring</li><li>1st - 2nd outside ring</li><li>1st - 2nd block ring</li><li>1st - 2nd synchronizer assembly</li><li>2nd counter gear</li><li>2nd needle bearing</li><li>Counter shaft</li><li>Counter middle roller bearing inner race</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Output shaft</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD5CSF000301.png" class="SF" /></p>
+                <div class="legend"><ol><li>Output shaft</li><li>Output shaft front bearing inner race</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Shift and select rod</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CMF001801.png" class="MF" /></p>
+                <div class="legend"><ol><li>Snap ring</li><li>Shift control sheet</li><li>Shift rod guide block</li><li>Bracket</li><li>Interlock upper block</li><li>Internal select upper lever</li><li>Interlock middle block</li><li>Interlock lower block</li><li>Internal select lower lever</li><li>Shift and select rod</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Intermediate plate assembly</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BMF001001.png" class="MF" /></p>
+                <div class="legend"><ol><li>Intermediate plate</li><li>Reverse inhibitor bolt</li><li>Dowel pin</li><li>Snap ring</li><li>Straight pin</li><li>Spring</li><li>Reverse inhibitor</li><li>Snap ring</li><li>Linear ball bearing</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Control rod assembly</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CMF001901.png" class="MF" /></p>
+                <div class="legend"><ol><li>Control rod</li><li>Control unit lever</li><li>Spring pin</li><li>Detent shift block</li><li>Spring pin</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Reverse 5th shift block assembly</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSF000301.png" class="SF" /></p>
+                <div class="legend"><ol><li>Shift block lever</li><li>5th reverse shift block</li><li>Straight pin</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>3rd - 4th shift arm assembly</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BMF001201.png" class="MF" /></p>
+                <div class="legend"><ol><li>Linear ball bearing</li><li>3rd - 4th shift arm</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756671">2. Tightening Torque Views
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Transmission</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF001901.png" class="LF" /></p>
+                <p class="numeric">1： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+          <p class="numeric">2： 19 N・m { 1.9 kgf・m / 14 lb・ft }</p>
+          <p class="numeric">3： 30 N・m { 3.1 kgf・m / 22 lb・ft }</p>
+          <p class="numeric">4： 83 N・m { 8.5 kgf・m / 61 lb・ft }</p>
+          <p class="numeric">5： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+          <p class="numeric">6： 30 N・m { 3.1 kgf・m / 22 lb・ft }</p>
+          <p class="numeric">7： 76 N・m { 7.7 kgf・m / 56 lb・ft }</p>
+          <p class="numeric">8： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+          <p class="numeric">9： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+          <p class="numeric">10： 30 N・m { 3.1 kgf・m / 22 lb・ft }</p>
+          <p class="numeric">11： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+          <p class="numeric">12： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+          <p class="numeric">13： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+          <p class="numeric">14： 39 N・m { 4.0 kgf・m / 29 lb・ft }</p>
+          <p class="numeric">15： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+          <p class="numeric">16： 34 N・m { 3.5 kgf・m / 25 lb・ft }</p>
+          <p class="numeric">17： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+          <p class="numeric">18： 23 N・m { 2.3 kgf・m / 17 lb・ft }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Intermediate plate</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CLF000901.png" class="LF" /></p>
+                <p class="numeric">1： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+          <p class="numeric">2： 47 N・m { 4.8 kgf・m / 35 lb・ft }</p>
+          <p class="numeric">3： 9 N・m { 0.9 kgf・m / 80 lb・in }</p>
+          <p class="numeric">4： 36 N・m { 3.7 kgf・m / 27 lb・ft }</p>
+          <p class="numeric">5： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+          <p class="numeric">6： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

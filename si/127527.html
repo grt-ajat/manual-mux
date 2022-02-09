@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Vehicle identification number null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Vehicle identification number
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie751749">1. Vehicle identification number
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">VIN<br/>The ID plate indicates the VIN. This single number includes multiple pieces of information including the vehicle and engine codes as shown below.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following does not apply to models for GCC.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUUE10SF000301.png" class="SF" /></p>
+                <div class="legend"><ol><li>World manufacturer identifier</li><li>Model code</li><li>Model year code</li><li>Plant code</li><li>Production sequential number</li></ol></div>
+                <table cellspacing="0"><tbody><tr><td width="30" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="154" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">Code</td><td width="262" colspan="1" rowspan="1" align="center" valign="middle">Meaning</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="154" colspan="1" rowspan="1" align="left" valign="middle">World manufacturer identifier (WMI)</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">MPA</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">Isuzu Motors Co., (Thailand) Ltd.<br/>&lt;For G/Export Model&gt;</td></tr><tr><td width="30" colspan="1" rowspan="2" align="center" valign="middle">2</td><td width="154" colspan="1" rowspan="2" align="left" valign="middle">Model code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">UCR85G</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">4x2, short wheel base, 4JJ1 engine</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">UCS85G</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">4x4, short wheel base, 4JJ1 engine</td></tr><tr><td width="30" colspan="1" rowspan="6" align="center" valign="middle">3</td><td width="154" colspan="1" rowspan="6" align="left" valign="middle">Model year code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">E</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2014MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">F</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2015MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">G</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2016MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">H</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2017MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">J</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2018MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">K</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2019MY</td></tr><tr><td width="30" colspan="1" rowspan="2" align="center" valign="middle">4</td><td width="154" colspan="1" rowspan="2" align="left" valign="middle">Plant code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">G</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">Isuzu Motors Co., (Thailand) Ltd. Gateway</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">T</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">Isuzu Motors Co., (Thailand) Ltd.</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to models for GCC.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWF0BSF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>World manufacturer identifier</li><li>Gross vehicle weight code</li><li>Chassis code</li><li>Series code</li><li>Body type code</li><li>Engine code</li><li>Check digit</li><li>Model year code</li><li>Plant code</li><li>Production sequential number</li></ol></div>
+                <table cellspacing="0"><tbody><tr><td width="30" colspan="1" rowspan="2" align="center" valign="middle">1</td><td width="154" colspan="1" rowspan="2" align="left" valign="middle">World manufacturer identifier (WMI)</td><td width="40" colspan="1" rowspan="2" align="left" valign="middle">MPA</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">Isuzu Motors Co., (Thailand) Ltd.</td></tr><tr><td width="262" colspan="1" rowspan="1" align="left" valign="middle">&lt;For G/Export Model&gt;</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="154" colspan="1" rowspan="1" align="left" valign="middle">Gross vehicle weight (GVW) code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">E</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2722 to 3175 kg {6001 to 7000 lb}</td></tr><tr><td width="30" colspan="1" rowspan="2" align="center" valign="middle">3</td><td width="154" colspan="1" rowspan="2" align="left" valign="middle">Chassis code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">L</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2WD</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="bottom">R</td><td width="262" colspan="1" rowspan="1" align="left" valign="bottom">4WD</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="154" colspan="1" rowspan="1" align="left" valign="middle">Series code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">8</td><td width="262" colspan="1" rowspan="1" align="left" valign="bottom">Capacity 6 to 9 passengers</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="154" colspan="1" rowspan="1" align="left" valign="middle">Body type code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">8</td><td width="262" colspan="1" rowspan="1" align="left" valign="bottom">Utility (Van), 4-door cab</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="154" colspan="1" rowspan="1" align="left" valign="middle">Engine code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">I</td><td width="262" colspan="1" rowspan="1" align="left" valign="bottom">4JK1 engine</td></tr><tr><td width="30" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="154" colspan="1" rowspan="1" align="left" valign="middle">Check digit</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle"><br/></td><td width="262" colspan="1" rowspan="1" align="left" valign="bottom"><br/></td></tr><tr><td width="30" colspan="1" rowspan="5" align="center" valign="middle">8</td><td width="154" colspan="1" rowspan="5" align="left" valign="middle">Model year code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">F</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2015MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">G</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2016MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">H</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2017MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">J</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2018MY</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">K</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">2019MY</td></tr><tr><td width="30" colspan="1" rowspan="2" align="center" valign="middle">9</td><td width="154" colspan="1" rowspan="2" align="left" valign="middle">Plant code</td><td width="40" colspan="1" rowspan="1" align="left" valign="middle">G</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">Isuzu Motors Co., (Thailand) Ltd. Gateway</td></tr><tr><td width="40" colspan="1" rowspan="1" align="left" valign="middle">T</td><td width="262" colspan="1" rowspan="1" align="left" valign="middle">Isuzu Motors Co., (Thailand) Ltd.</td></tr></tbody></table>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

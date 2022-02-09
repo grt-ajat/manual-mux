@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Starter motor inspection (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Starter motor
+          inspection
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie747564">1. Armature
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the commutator using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the fluctuation, and replace the armature if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.05 mm { 0.0020 in }</p>
+          <p class="numeric">Limit： 0.25 mm { 0.0098 in }</p>
+                <p class="illust"><img src="image/RTW46DSH003501.png" class="SH" /></p>
+                <p class="instructions">2. Inspect the commutator.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the mica segment for excessive worn.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Measure the commutator using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the mica segment depth.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.5 to 0.8 mm { 0.020 to 0.031 in }</p>
+          <p class="numeric">Limit： 0.2 mm { 0.008 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the mica segment depth is lower than the standard value but larger than the limit, the commutator can be re-ground.</li>
+                    <li>If the mica segment depth is less than the limit, the armature must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56DSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Mica</li><li>Measurement point (undercut)</li><li>Commutator segment</li><li>Correct</li><li>Incorrect</li></ol></div>
+                <p class="instructions">4. Measure the commutator using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the outer diameter.</li>
+                    <li>If the measured outer diameter is less than the specified limit, the armature must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 36.5 mm { 1.437 in }</p>
+          <p class="numeric">Limit： 35.5 mm { 1.398 in }</p>
+                <p class="illust"><img src="image/HCW51ESH000901.png" class="SH" /></p>
+                <p class="instructions">5. Measure the armature using the circuit tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check whether the armature is grounded.</li>
+                    <li>Hold one probe against the commutator segment.</li>
+                    <li>Hold the other probe against the armature core.</li>
+                    <li>If there is continuity, the armature is grounded, so replace the armature.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW46DSH003601.png" class="SH" /></p>
+                <p class="instructions">6. Measure the armature using the circuit tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the armature for continuity.</li>
+                    <li>Hold the probes against 2 locations of the commutator segment.</li>
+                    <li>Hold the probes also against other areas.</li>
+                    <li>There should be continuity between all segments of the commutator.</li>
+                    <li>Otherwise, the armature must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW46DSH003701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747292">2. Yoke
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the yoke using the circuit tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the field winding ground.</li>
+                    <li>Hold one probe against the field winding end or brush.</li>
+                    <li>Hold the other probe against the bare surface of the yoke body.</li>
+                    <li>If there is continuity, replace the yoke.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW46DSH003801.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm the continuity of the field winding.</li>
+                    <li>Hold one probe against the M-terminal lead wire.</li>
+                    <li>Hold the other probe against the field winding brush.</li>
+                    <li>If there is no continuity, replace the yoke.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW46DSH003901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748142">3. Brush holder
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure the brush using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace all the brushes if the measured brush length is less than the specified limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 15 mm { 0.59 in }</p>
+          <p class="numeric">Limit： 12 mm { 0.47 in }</p>
+                <p class="illust"><img src="image/RTW46DSH004001.png" class="SH" /></p>
+                <p class="instructions">2. Measure the brush holder using the circuit tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check the insulation.</li>
+                    <li>Hold one probe against the holder plate.</li>
+                    <li>Hold the other probe against the plus brush holder.</li>
+                    <li>There should be no continuity.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW46DSH004101.png" class="SH" /></p>
+                <p class="instructions">3. Inspect the brush.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect for excessive worn.</li>
+                    <li>When the negative brushes have excessive worn, the brush holder assembly must be replaced.</li>
+                    <li>When the positive brushes have excessive worn, the yoke must be replaced.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747563">4. Pinion assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the overrunning clutch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Inspect the gear teeth for excessive worn and damage.</li>
+                    <li>Replace the overrunning clutch if necessary.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Turn the pinion.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rotate it clockwise.</li>
+                    <li>It should turn smoothly.</li>
+                    <li>Rotate the pinion in the opposite direction.</li>
+                    <li>The pinion should lock.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW61DSH002701.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

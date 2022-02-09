@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Valve body assembly inspection (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Valve body assembly
+          inspection
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie757278">1. Engine harness
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the engine harness from the TCM.</p>
+          <p class="instructions">2. Measure a resistance using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between each connector terminal combinations listed in the table.</li>
+                    <li>Check that resistances are as specified in the table.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Terminal name</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Resistance</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">S1 - Body earth</td><td width="110" colspan="1" rowspan="3" align="left" valign="middle">： 11 to 15 Ω</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">S2 - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">SR - Body earth</td></tr><tr><td width="220" colspan="2" rowspan="1" align="right" valign="middle">at 20 ℃ {68 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH028901.png" class="SH" /></p>
+                <div class="legend"><ol><li>S1</li><li>S2</li><li>SR</li></ol></div>
+                <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Terminal name</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Resistance</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL1 - SL1G</td><td width="110" colspan="1" rowspan="4" align="left" valign="middle">： 5.0 to 5.6 Ω</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL2 - SL2G</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLT - SLTG</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLU - SLUG</td></tr><tr><td width="220" colspan="2" rowspan="1" align="right" valign="middle">at 20 ℃ {68 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH029001.png" class="SH" /></p>
+                <div class="legend"><ol><li>SLU</li><li>SLT</li><li>SLUG</li><li>SLTG</li><li>SL1G</li><li>SL2G</li><li>SL2</li><li>SL1</li></ol></div>
+                <p class="instructions">3. Inspect continuity using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check for continuity between each connector terminal combinations listed in the table.</li>
+                    <li>Check that continuity is as specified in the table.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Terminal name</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Continuity</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL1 - Body earth</td><td width="110" colspan="1" rowspan="8" align="center" valign="middle">No</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL1G - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL2 - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL2G - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLT - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLTG - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLU - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLUG - Body earth</td></tr><tr><td width="220" colspan="2" rowspan="1" align="right" valign="middle">at 20 ℃ {68 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH029101.png" class="SH" /></p>
+                <div class="legend"><ol><li>SLU</li><li>SLT</li><li>SLUG</li><li>SLTG</li><li>SL1G</li><li>SL2G</li><li>SL2</li><li>SL1</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757015">2. Transmission internal harness
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the transmission internal harness from the connector.</p>
+          <p class="instructions">2. Measure a resistance using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between each connector terminal combinations listed in the table.</li>
+                    <li>Check that resistances are as specified in the table.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Terminal name</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Resistance</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">S1 - Body earth</td><td width="110" colspan="1" rowspan="3" align="left" valign="middle">： 11 to 15 Ω</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">S2 - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="bottom">SR - Body earth</td></tr><tr><td width="220" colspan="2" rowspan="1" align="right" valign="middle">at 20 ℃ {68 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH029701.png" class="SH" /></p>
+                <div class="legend"><ol><li>S1</li><li>SR</li><li>S2</li></ol></div>
+                <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Terminal name</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Resistance</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL1 - SL1G</td><td width="110" colspan="1" rowspan="4" align="left" valign="middle">： 5.0 to 5.6 Ω</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL2 - SL2G</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLT - SLTG</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLU - SLUG</td></tr><tr><td width="220" colspan="2" rowspan="1" align="right" valign="middle">at 20 ℃ {68 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030001.png" class="SH" /></p>
+                <div class="legend"><ol><li>SL1</li><li>SL1G</li><li>SL2</li><li>SL2G</li><li>SLT</li><li>SLTG</li><li>SLU</li><li>SLUG</li></ol></div>
+                <p class="instructions">3. Inspect continuity using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check for continuity between each connector terminal combinations listed in the table.</li>
+                    <li>Check that continuity is as specified in the table.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Terminal name</td><td width="110" colspan="1" rowspan="1" align="center" valign="middle">Continuity</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL1 - Body earth</td><td width="110" colspan="1" rowspan="8" align="center" valign="middle">No</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL1G - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL2 - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SL2G - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLT - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLTG - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLU - Body earth</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">SLUG - Body earth</td></tr><tr><td width="220" colspan="2" rowspan="1" align="right" valign="middle">at 20 ℃ {68 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030101.png" class="SH" /></p>
+                <div class="legend"><ol><li>SL1</li><li>SL1G</li><li>SL2</li><li>SL2G</li><li>SLT</li><li>SLTG</li><li>SLU</li><li>SLUG</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756890">3. Shift solenoid A (S1)
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure a resistance using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between the shift solenoid A (S1) terminal and shift solenoid A (S1) body.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the shift solenoid A (S1).</li>
+                    <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spec</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 11 to 15 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 20 ℃ {68 °F}</td></tr><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Reference value</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 8.4 to 11.5 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at -40 ℃ {-40 °F}</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 16.6 to 22.6 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 150 ℃ {302 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030601.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTWC5BSH030401.png" class="SH" /></p>
+                <p class="instructions">2. Inspect air leakage using the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the shift solenoid A (S1) operates when connecting the battery positive terminal to the shift solenoid A (S1) terminal and the battery negative terminal to the shift solenoid A (S1) body.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the shift solenoid A (S1).</li>
+                    <li>Do not damage the terminals.</li>
+                    <li>Do not damage the strainer on the tip of the shift solenoid A (S1) while inspect operation.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">Normal open type : Shift solenoid A (S1)</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">No connect battery</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Leak air</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Connect battery</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">No leak air</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756988">4. Shift solenoid B (S2)
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure a resistance using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between the shift solenoid B (S2) terminal and shift solenoid B (S2) body.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the shift solenoid B (S2).</li>
+                    <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spec</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 11 to 15 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 20 ℃ {68 °F}</td></tr><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Reference value</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 8.4 to 11.5 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at -40 ℃ {-40 °F}</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 16.6 to 22.6 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 150 ℃ {302 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030601.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTWC5BSH030401.png" class="SH" /></p>
+                <p class="instructions">2. Inspect air leakage using the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the shift solenoid B (S2) operates when connecting the battery positive terminal to the shift solenoid B (S2) terminal and the battery negative terminal to the shift solenoid B (S2) body.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the shift solenoid B (S2).</li>
+                    <li>Do not damage the terminals.</li>
+                    <li>Do not damage the strainer on the tip of the shift solenoid B (S2) while inspect operation.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">Normal close type : Shift solenoid B (S2)</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">No connect battery</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">No leak air</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Connect battery</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Leak air</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756700">5. Shift solenoid C (SR)
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure a resistance using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>With a tester, measure the resistance between the shift solenoid C (SR) terminal and shift solenoid C (SR) body.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the shift solenoid C (SR).</li>
+                    <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spec</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 11 to 15 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 20 ℃ {68 °F}</td></tr><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Reference value</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 8.4 to 11.5 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at -40 ℃ {-40 °F}</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 16.6 to 22.6 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 150 ℃ {302 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030601.png" class="SH" /></p>
+          <p class="illust"><img src="image/RTWC5BSH030401.png" class="SH" /></p>
+                <p class="instructions">2. Inspect air leakage using the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the shift solenoid C (SR) operates when connecting the battery positive terminal to the shift solenoid C (SR) terminal and the battery negative terminal to the shift solenoid C (SR) body.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the shift solenoid C (SR).</li>
+                    <li>Do not damage the terminals.</li>
+                    <li>Do not damage the strainer on the tip of the shift solenoid C (SR) while inspect operation.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="center" valign="middle">Normal close type : Shift solenoid C (SR)</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">No connect battery</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Leak air</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">Connect battery</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">No leak air</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH030901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756881">6. Valve body assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the pressure control solenoid A (SL1) using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between the terminal 1 and the terminal 2 of the pressure control solenoid A (SL1).</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the pressure control solenoid A (SL1).</li>
+                    <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spec</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 5.0 to 5.6 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 20 ℃ {68 °F}</td></tr><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Reference value</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 3.8 to 4.3 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at -40 ℃ {-40 °F}</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 7.5 to 8.4 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 150 ℃ {302 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH031001.png" class="SH" /></p>
+                <div class="legend"><ol><li>＋</li><li>-</li></ol></div>
+                <p class="illust"><img src="image/RTWC5BSH030501.png" class="SH" /></p>
+                <p class="instructions">2. Inspect the pressure control solenoid B (SL2) using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between the terminal 1 and the terminal 2 of the pressure control solenoid B (SL2).</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the pressure control solenoid B (SL2).</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spec</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 5.0 to 5.6 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 20 ℃ {68 °F}</td></tr><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Reference value</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 3.8 to 4.3 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at -40 ℃ {-40 °F}</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 7.5 to 8.4 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 150 ℃ {302 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH031001.png" class="SH" /></p>
+                <div class="legend"><ol><li>+</li><li>-</li></ol></div>
+                <p class="illust"><img src="image/RTWC5BSH030501.png" class="SH" /></p>
+                <p class="instructions">3. Inspect the pressure control solenoid C (SLT) using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between the terminal 1 and the terminal 2 of the pressure control solenoid C (SLT).</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the pressure control solenoid C (SLT).</li>
+                    <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spec</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 5.0 to 5.6 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 20 ℃ {68 °F}</td></tr><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Reference value</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 3.8 to 4.3 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at -40 ℃ {-40 °F}</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 7.5 to 8.4 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 150 ℃ {302 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH031001.png" class="SH" /></p>
+                <div class="legend"><ol><li>+</li><li>-</li></ol></div>
+                <p class="illust"><img src="image/RTWC5BSH030501.png" class="SH" /></p>
+                <p class="instructions">4. Inspect the torque converter clutch pressure control solenoid (SLU) using tester.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the resistance between the terminal 1 and the terminal 2 of the torque converter clutch pressure control solenoid (SLU).</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the torque converter clutch pressure control solenoid (SLU).</li>
+                    <li>Do not damage the terminals.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Spec</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 5.0 to 5.6 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 20 ℃ {68 °F}</td></tr><tr><td width="220" colspan="2" rowspan="1" align="left" valign="middle">Reference value</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 3.8 to 4.3 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at -40 ℃ {-40 °F}</td></tr><tr><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 7.5 to 8.4 Ω</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">at 150 ℃ {302 °F}</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTWC5BSH031001.png" class="SH" /></p>
+                <div class="legend"><ol><li>+</li><li>-</li></ol></div>
+                <p class="illust"><img src="image/RTWC5BSH030501.png" class="SH" /></p>
+                <p class="instructions">5. Inspect the pressure control solenoid A (SL1) using the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the pressure control solenoid A (SL1) operates when connecting the battery positive terminal to the positive terminal of the pressure control solenoid A (SL1) via a bulb (12 - 21 W), and the battery negative terminal to the negative terminal.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the pressure control solenoid A (SL1).</li>
+                    <li>Do not damage the terminals.</li>
+                    <li>Do not keep on having been connected for a long time to give a pressure control solenoid A (SL1) an over current. (less than 1 min.)</li>
+              <ul/>
+    </div>
+                  <p class="instructions">6. Inspect the pressure control solenoid B (SL2) using the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the pressure control solenoid B (SL2) operates when connecting the battery positive terminal to the positive terminal of the pressure control solenoid B (SL2) via a bulb (12 - 21 W), and the battery negative terminal to the negative terminal.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the pressure control solenoid B (SL2).</li>
+                    <li>Do not damage the terminals.</li>
+                    <li>Do not keep on having been connected for a long time to give a pressure control solenoid B (SL2) an over current. (less than 1 min.)</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Inspect the pressure control solenoid C (SLT) using the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the pressure control solenoid C (SLT) operates when connecting the battery positive terminal to the positive terminal of the pressure control solenoid C (SLT) via a bulb (12 - 21 W), and the battery negative terminal to the negative terminal.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the pressure control solenoid C (SLT).</li>
+                    <li>Do not damage the terminals.</li>
+                    <li>Do not keep on having been connected for a long time to give a pressure control solenoid C (SLT) an over current. (less than 1 min.)</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Inspect the torque converter clutch pressure control solenoid (SLU) using the battery.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check that the torque converter clutch pressure control solenoid (SLU) operates when connecting the battery positive terminal to the positive terminal of the torque converter clutch pressure control solenoid (SLU) via a bulb (12 - 21 W), and the battery negative terminal to the negative terminal.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply impact to the torque converter clutch pressure control solenoid (SLU).</li>
+                    <li>Do not damage the terminals.</li>
+                    <li>Do not keep on having been connected for a long time to give a torque converter clutch pressure control solenoid  (SLU) an over current. (less than 1 min.)</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

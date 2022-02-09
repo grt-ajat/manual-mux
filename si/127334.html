@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>ICU （Immobilizer with Keyless Entry） setting (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    ICU （Immobilizer with Keyless Entry）
+          setting
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie752086">1. ICU
+                  safety information
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When replacing the ICU, ECM, or the transponder keys, or when adding transponder keys, it is necessary to perform security information programming.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Vehicle security information card (If issued)<br/>When resetting or reprogramming the ICU, ECM, or the transponder keys with a scan tool, you will be prompted to enter the 4-digit security code. This code is shown on the vehicle security information card issued with new vehicles. If the card is unavailable, the service department of the Isuzu distributor must be contacted in order to obtain the security code.</p>
+                <p class="illust"><img src="image/RTW7BASH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Security code</li></ol></div>
+                <p class="explanation">For new owners, distributors or dealerships must provide a vehicle security information card that shows the identification number of the owner's vehicle immobilizer system. This information is very important in case of repair or if the transponder key is lost. Dealers are responsible for providing the following three items.</p>
+          <p class="explanation">Vehicle security information card for new owners<br/>Blank vehicle security information card for reissuance<br/>Instructions on how to use the card for the dealership</p>
+          <p class="explanation">Save all the vehicle security codes as confidential data. If the vehicle security information card is lost, the data must be requested from the service department of the Isuzu distributor. This request will only be processed if accompanied by the specified form and proof of ownership. Once the data is received, it will be entered onto a blank card and given to the customer. Any unused cards should be destroyed. Instructions on filling out the Data Request Vehicle Security Information Card are as follows.</p>
+          <p class="explanation">The data requested under items 1 to 10 must be provided in full, including the authorized dealership number, the vehicle identification number (VIN) and engine type/number.</p>
+          <p class="explanation">The form must be completed by entering the data and signature/authorized dealership stamp and sent along with proof of ownership to the address provided in the form.</p>
+          <p class="explanation">After confirming that the information is correct, the requested data should be sent by fax to the dealership that made the request.</p>
+                <p class="illust"><img src="image/RTW7BAMH000101.png" class="MH" /></p>
+                <p class="explanation">Security code<br/>The security code is necessary to reset or program the ICU, ECM, or the transponder keys. When a scan tool requests the security code to be entered, the ICU or ECM will go into security wait time stage if an incorrect code is entered. This wait time stage will prevent any further attempts to enter the security code until the wait time has elapsed. Should a second incorrect security code be entered after the initial wait time has elapsed, the ICU or ECM will go into a second wait time stage. The wait time will increase each time an incorrect code is entered. If the correct code is entered, the wait time will reset back to its original value of 10 seconds.</p>
+          <p class="explanation">Stage 1: 10 seconds<br/>Stage 2: 10 seconds<br/>Stage 3: 10 minutes<br/>Stage 4: 20 minutes<br/>Stage 5: 40 minutes<br/>Stage 6: 80 minutes (1 hour 20 minutes)<br/>Stage 7: 160 minutes (2 hours 40 minutes)<br/>Stage 8: 320 minutes (5 hours 20 minutes)<br/>Stage 9: 640 minutes (10 hours 40 minutes)<br/>Stage 10: 1280 minutes (21 hours 20 minutes)</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>During the wait time, it is necessary to keep the ignition switch in the ON position.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Transponder key<br/>Usually, 2 or 3 transponder keys are provided with each new vehicle. Owners requiring additional keys can receive up to a total of 5 transponder keys.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Because the authentication code is programmed to the transponder chip during programming of the new transponder key, reprogramming is not possible. After the programming is performed, the transponder key will not be able to be used with other vehicles.</li>
+                    <li>Keep the transponder keys to be programmed away from other keys, transponders, key number plates, or other metal objects. Not doing so may result in a transponder key programming failure.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW7BBSH000101.png" class="SH" /></p>
+                <p class="explanation">Erase Transponder Keys<br/>The [Erase Transponder-keys] procedure must be performed with a scan tool if the following conditions are met.</p>
+          <p class="explanation">Loss of transponder key by owner<br/>Replacement of malfunctioning transponder keys</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the owner has lost a transponder key, it is necessary to erase existing programmed transponder key information from the ICU memory in order to prevent possible vehicle theft. Because all key information will be lost using this procedure, programming of remaining keys and new keys will be performed.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Program Transponder Keys<br/>The [Program Transponder Keys] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">The diagnostic chart instructs you to replace the transponder keys. <br/>The diagnostic chart instructs you to program the transponder keys. <br/>Reprogramming is necessary as the ICU transponder key information has been erased. <br/>The owner has requested additional transponder keys.</p>
+          <p class="explanation">Reset Immobilizer<br/>The [Reset Immobilizer] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">The diagnostic chart instructs you to replace the ICU. <br/>The ICU was replaced without using spare parts.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing the ICU to the vehicle, it must be security linked to the ECM using the programming procedure. Once this linking has been performed, the ICU cannot be installed in any other vehicle. Before transferring (switching) the ECM to the vehicle in which the complaint originated, the resetting procedure must be performed in the original vehicle and the security linkages between both modules must be reset.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Reset Engine Control Module<br/>The [Reset Engine Control Module] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">The diagnostic chart instructs you to replace the ECM. <br/>The ECM was replaced without using spare parts.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When installing the ECM to the vehicle, it must be security linked to the ICU using the programming procedure. Once this linking has been performed, the ECM cannot be installed in any other vehicle. Before transferring (switching) the ECM to the vehicle in which the complaint originated, the resetting procedure must be performed in the original vehicle and the security linkages between both modules must be reset.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Program Immobilizer Function<br/>The [Program Immobilizer Function] procedure must be performed if any of the following conditions are met.</p>
+          <p class="explanation">The diagnostic chart instructs you to program the ICU. <br/>A new or reused ICU is installed. <br/>The diagnostic chart instructs you to program the ECM. <br/>A new ECM is installed. <br/>The ECM is a reused part that was reset in the original vehicle. <br/>A new or reused ICU and ECM were installed at the same time. (The transponder keys were also replaced.)</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Because the authentication code is programmed to the transponder chip during programming of the new transponder key, reprogramming is not possible. If replacing the ICU and ECM at the same time, the new authentication code will be programmed into the newly installed ECM based on information from the newly installed ICU. However, because the transponder key cannot be reprogrammed, it must be replaced. In order to avoid needless simultaneous transponder key replacement, do not replace the ICU and ECM at the same time unless complete breakage has occurred (e.g. both modules cannot establish communication with a scan tool).</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752087">2. Transponder key
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Erase Transponder Keys</p>
+                <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select Immobilizer.</p>
+          <p class="instructions">6. Select the Additional Function.</p>
+          <p class="instructions">7. Select Erase Transponder-keys.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>In accordance with the on-screen instructions, erase the transponder key information from the ICU.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Security wait time will be entered into if an incorrect security code is entered.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine does not start with all transponder keys.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Program Transponder Keys</p>
+                <p class="instructions">9. Connect a scan tool to the DLC.</p>
+          <p class="instructions">10. Turn ON the ignition switch.</p>
+          <p class="instructions">11. Select the Diagnostics.</p>
+          <p class="instructions">12. Select the Body.</p>
+          <p class="instructions">13. Select Immobilizer.</p>
+          <p class="instructions">14. Select the Programming.</p>
+          <p class="instructions">15. Select Program Transponder-Keys.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>In accordance with the on-screen instructions, program the transponder key information to the ICU.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Security wait time will be entered into if an incorrect security code is entered.</li>
+                    <li>Keep the transponder keys to be programmed away from other keys, transponders, key number plates, or other metal objects.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">16. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine starts with all transponder keys.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752084">3. ECM
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Reset Engine Control Module</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the ICU and ECM are reset at the same time, the transponder keys must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select Immobilizer.</p>
+          <p class="instructions">6. Select the Additional Function.</p>
+          <p class="instructions">7. Select Reset Engine Control Module.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>In accordance with the on-screen instructions, erase the immobilizer information of the ECM.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Security wait time will be entered into if an incorrect security code is entered.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine does not start with all transponder keys.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie752085">4. ICU
+                  setting
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Reset Immobilizer</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the ICU and ECM are reset at the same time, the transponder keys must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Connect a scan tool to the DLC.</p>
+          <p class="instructions">2. Turn ON the ignition switch.</p>
+          <p class="instructions">3. Select the Diagnostics.</p>
+          <p class="instructions">4. Select the Body.</p>
+          <p class="instructions">5. Select Immobilizer.</p>
+          <p class="instructions">6. Select the Additional Function.</p>
+          <p class="instructions">7. Select Reset Immobilizer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>In accordance with the on-screen instructions, erase the immobilizer information of the ICU.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Security wait time will be entered into if an incorrect security code is entered.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">8. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine does not start with all transponder keys.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Program Immobilizer Function</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If the ICU and ECM are reset at the same time, the transponder keys must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">9. Connect a scan tool to the DLC.</p>
+          <p class="instructions">10. Turn ON the ignition switch.</p>
+          <p class="instructions">11. Select the Diagnostics.</p>
+          <p class="instructions">12. Select the Body.</p>
+          <p class="instructions">13. Select Immobilizer.</p>
+          <p class="instructions">14. Select the Additional Function.</p>
+          <p class="instructions">15. Select Program Immobilizer Function.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Operate following the on-screen instructions.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Security wait time will be entered into if an incorrect security code is entered.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">16. Turn OFF the ignition switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn OFF the ignition switch for 30 seconds.</li>
+                    <li>Verify that the engine starts with all transponder keys.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

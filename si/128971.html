@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Introduction to the trouble diagnosis of brake null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Introduction to the trouble diagnosis of brake
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758707">1. Introduction to the trouble diagnosis of brake
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Description of diagnosis<br/>The ABS, EBD, TCS, and ESC failure symptoms are divided into symptoms that can be detected with DTCs along with lighting of the ABS warning light, the brake system warning light, and the ESC warning light, and symptoms that the driver can detect as vehicle problems.<br/>Continue the diagnosis in accordance with the inspection of the ABS control system.<br/>Verify that the operation of the warning light is proper and observe the DTC information with a scan tool.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The DTC display of the scan tool shows digit structure (alphabet + 4 digits + 2 digits) like DTC C00350F.</li>
+                    <li>The final 2 digits of FTB show additional information on problems.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">About self-diagnosis<br/>The EHCU has a self-diagnosing function, which performs the check operations when the system is started, to determine whether there are any system malfunctions and which areas are defective. If a malfunction is detected, it illuminates the ABS warning light, the brake system warning light, and the ESC warning light to inform the driver of the malfunction, and records a DTC.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>The illuminated warning light is turned off each time the ignition switch is turned OFF, but the DTC continues to be stored until the clearing operation is performed. For intermittent problems or problems occurring when the vehicle is driven, the control unit determines that the system is normal when the ignition switch is turned from OFF to ON, and a normal illumination pattern may be indicated. Perform an inspection/repair according to the trouble diagnosis flow.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Reading blinking DTCs<br/>The vehicle must be stopped. Vehicle speed of 3 km/h (2 mph) or lower.<br/>The flash code is displayed with blinking of the ABS warning light when the pin No. 12 and pin No. 4 or pin No. 5 of the DLC are short-circuited and then the ignition switch is turned ON.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the status is normal, the display is shown as follows.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWCZ0SH003501.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When there is a problem, the flash code is repeatedly displayed. When there are multiple DTCs detected, they are displayed in ascending order of codes.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWCZ0SH002101.png" class="SH" /></p>
+                <p class="explanation">Method for clearing DTC<br/>Use the following method to clear the DTCs without using a scan tool.<br/>Short-circuit the pin No. 12 and pin No. 4 or pin No. 5 of the DLC and then turn the ignition switch ON. Turn the brake switch ON/OFF at least 8 times within 5 seconds after the ABS warning light starts blinking.</p>
+                <p class="illust"><img src="image/RTWCZ0SH002201.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

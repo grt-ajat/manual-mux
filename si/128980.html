@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Intermittent conditions of brake null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Intermittent conditions of brake
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758690">1. Intermittent conditions of brake
+                  description of symptom
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Required preliminary inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Before starting the intermittent inspections, perform ABS control system check to verify that all the following conditions are satisfied.<br/>Each light operate normally.<br/>Any DTC has not been detected.<br/>The scan tool data is within the normal range of operation values.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Visual inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Some of the symptom corrective procedures require careful visual and physical inspections. This step is extremely important. Problems may be corrected just by carrying out the visual and physical inspections without performing any further inspection, which leads to saving valuable time. Confirm the following points.<br/>The EHCU grounds are clean, tight, and in their proper location.<br/>The EHCU harness wiring and terminals are properly connected without any pinching or open circuits.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Intermittent</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If an intermittent condition exists, inspect for improper installation of electrical component. Inspect the aftermarket add-on electrical devices, lights, and cell phones. Verify that aftermarket equipments are not connected to CAN communication circuit. If an intermittent condition cannot be identified, communication signals of cell phones may cause the symptom.<br/>Even if a problem occurs, DTCs are not always stored by turning ON the ABS, ESC, and brake system warning lights. Most intermittent conditions are caused by faulty electrical connections or wiring. Carefully inspect a suspect connector visually and physically for the following conditions.</p>
+          <p class="explanation">Improper connection of connector.<br/>Loosening of terminal.<br/>Damaged or improperly formed terminal.</p>
+          <p class="explanation">Repair or replace the connector terminal in the problem circuit in order to ensure the proper contact tension. Remove the terminal from the connector body in order to inspect for a poor terminal-to-wire connection.<br/>Connect the DMM to the circuit suspected for an abnormality, and perform a road test for the vehicle. An abnormal reading that occurs when a malfunction happens indicates that there is an abnormality in the circuit being monitored.</p>
+          <p class="explanation">Test for improper installation of electronic equipment such as a light or mobile phone if an intermittent condition exists from the beginning and continues to exist.<br/>Any of the following may cause an intermittent lighting of  the ABS warning light with no stored DTC.</p>
+          <p class="explanation">The EHCU ground is improperly tightened or dirty. <br/>The ABS warning light circuit has an intermittent open circuit or short to ground.</p>
+          <p class="explanation">The following diagnosis shows possible causes for each problem. The order of these procedures is not important. If there are no abnormalities in the scan tool readings, proceed in a logical order, starting with items that are easiest to check, or those that are most likely.</p>
+          <p class="explanation">The problem is not currently present but is indicated in DTC History. Or, there is a customer complaint, but the symptom cannot currently be reproduced because the problem is not DTC related.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Preliminary inspection</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Before starting, perform the preliminary inspection and the visual inspection.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Harness and connector</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Many of the intermittent open circuits or short circuits are affected by movement of harnesses and connectors caused by vibration, engine torque, bumps, rough pavement, etc. It is recommended to test for this type of condition by performing the applicable procedure from the following list. <br/>Shake related connectors or wiring while monitoring the applicable scan tool data. <br/>Shake related connectors or wiring and monitor component operation while commanding the components ON and OFF using the scan tool. <br/>With the engine running, shake the related connectors and wiring while monitoring the engine operation. <br/>If moving the harness or connector affects the data displayed, component/system operation, or engine operation, inspect the harness or the connector, and repair as necessary.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Electrical connection or wiring</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Defective electrical connections, loose terminals or wiring problems cause most intermittent failures. Perform the following inspections: <br/>Inspect for improper mating of the connector halves, or terminals improperly seated in the connector body. <br/>Inspect for terminal deformation or damage. <br/>Test for poor terminal tension. <br/>Inspect for poor connections at the terminal and wire, as well as for terminal deformation. This requires the terminal to be removed from the connector body. <br/>Also inspect for corrosion or water intrusion. Coating wear or damage can allow moisture to enter the wiring. The conductor can corrode inside the coating, with little visible evidence. Look for swollen and stiff sections of wire in the suspect circuits. <br/>Inspect for wires that are damaged inside the coating. <br/>Inspect inside the harness for wiring that is cut, or for damage. <br/>Ensure that the wiring does not come in contact with hot exhaust components.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The power supply and GND of the control unit, the power supply and GND of the components</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Poor power supply or ground connections can cause widely varying symptoms. <br/>Test all control module power supply circuits. Many vehicles have multiple circuits supplying power to the control module. Other components in the system may have separate power supply circuits that also need to be tested. Inspect connections at the module, component connectors, fuses, and any other intermediate connections between the power supply, module and component. A test lamp or the DMM is capable of indicating whether or not any voltage is present, but neither of them has the ability to test whether sufficient current is flowing in the circuit. Ensure whether the circuit can carry the current necessary to operate the components. <br/>Test all control module and system ground circuits. The control module may have multiple ground circuits. Other components in the system may have separate grounds that may also need to be tested. Inspect the ground points for contamination or improper tightening. Inspect the connections at the component and in splice packs, where applicable. Ensure whether the circuit can carry the current necessary to operate the components.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Temperature sensitivity</li>
+              <ul/>
+    </div>
+                  <p class="explanation">An intermittent condition may occur when a component or connection reaches the normal operating temperature. The condition may occur only when the temperature of component or connection is low, or only when the temperature of component or connection is high.<br/>If the intermittent condition is related to heat, check the data relating to the following items.<br/>High ambient temperatures.<br/>Heat generated by the underhood and the engine.<br/>Heat generated in a circuit due to poor connections or a high electrical load.<br/>Conditions of loads, towing, etc. are higher than normal.<br/>If the intermittent is caused by low temperature, check the data relating to the following items.<br/>Low ambient temperature. If the temperature is extremely low, a connection or component may freeze. Test for water intrusion.<br/>The symptom occurs only on a cold start.<br/>The condition goes away when the vehicle warms up.<br/>Based on the information from the customer, determine if the failure is caused by temperature.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>EMI and electrical noise</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Some electrical components and circuits are sensitive to EMI or other types of electrical noises. Inspect for the following conditions.<br/>Whether the harnesses are placed too close to the high-voltage or high-current devices such as injection components, motors, generators, etc. These components may generate electrical noises which interfere with normal circuit operations.<br/>Electrical system interference caused by malfunctioning relays, and switches or solenoids controlled by the EHCU. This may cause a large electrical surge to be generated.<br/>Normally, the problem occurs when the malfunctioning component operates.<br/>Improper installation of non-factory or commercial electronic equipment such as lights, 2-way radios, amplifiers, electric motors, remote starters, alarm systems, mobile phones, etc. Electromagnetic disturbance may occur while these electronic equipment are in use, but not while they are not in use.<br/>Test the generator for a malfunctioning rectifier bridge that may be allowing A/C noises into the electrical system.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Duplicating failure conditions</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If none of the above tests is successful, try to duplicate and record the failure condition.<br/>As for the method, it is recommended to drive the vehicle with the DMM connected to the circuit suspected for an abnormality. If an abnormality is seen in the reading on the DMM when the problem occurs, the problem may possibly be identified.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Snapshot of the scan tool</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The scan tool can obtain snapshots of the parameters available via the serial data.<br/>The snapshot function records live data over a period of time. The recorded data can be replayed and analyzed.<br/>The scan tool also has the graphing function, and can graph a parameter alone or in combination with other parameters for comparison. The snapshot can be triggered manually at the time the symptom is noticed, or set up in advance to be triggered when a DTC sets. An abnormal value captured in the recorded data may point a system or component that needs to be investigated further.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

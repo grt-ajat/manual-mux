@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Rocker arm shaft assembly removal (4JJ1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Rocker arm shaft assembly
+          removal
+              (4JJ1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie743067">1. Battery ground cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Open the engine hood assembly.</p>
+          <p class="instructions">2. Disconnect the battery ground cable from the battery.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744159">2. Crankshaft
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Align the No.1 cylinder to compression top dead center.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn the crankshaft in the forward direction (clockwise) to align the 1st cylinder piston to compression top dead center.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1JSH001601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Top dead center alignment mark on the gear case cover</li><li>Top dead center alignment mark on the crank pulley</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743644">3. Engine cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the engine cover from the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745600">4. Intake air duct
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intake air duct from the turbocharger and the intercooler.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the part together with the intake hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWF1BSH003501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748497">5. Boost pressure sensor
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the connector from the boost pressure sensor.</p>
+                <p class="illust"><img src="image/RTWD1BSH006001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745614">6. Intake air duct
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the intake air duct from the intake throttle valve and the intercooler.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the part together with the intake hose.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1BSH005701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744230">7. A/C compressor drive belt
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the A/C compressor drive belt from the pulley.</p>
+                <p class="illust"><img src="image/RTWD1BSH001801.png" class="SH" /></p>
+                <div class="legend"><ol><li>A/C compressor drive belt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745584">8. Bracket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the vacuum hose from the turbocharger control solenoid.</p>
+          <p class="instructions">2. Disconnect the connector from the turbocharger control solenoid.</p>
+          <p class="instructions">3. Remove the bracket from the cylinder head cover.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove as a set with the turbocharger control solenoid.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWE1BSH001001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745570">9. Vacuum pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the vacuum pipe from the cylinder head cover.</p>
+                <p class="illust"><img src="image/RTWD1BSH004901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746164">10. Injector
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the connector from the injector.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745613">11. Fuel leak-off hose
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the fuel leak-off hose from the leak-off pipe.</p>
+                <p class="illust"><img src="image/RTW76ASH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Fuel leak-off hose</li><li>Injector connector</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the clip of the fuel leak-off hose.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the leak-off pipe from the injector.</p>
+                <p class="illust"><img src="image/RTW86ASH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Injector leak-off pipe</li><li>Clip</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the leak-off pipe and the clip.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745599">12. Blow-by hose
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the blow-by hose from the cylinder head cover.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744141">13. Cylinder head cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the harness clip from the cylinder head cover.</p>
+                <p class="illust"><img src="image/RTWD1BMH000101.png" class="MH" /></p>
+                <p class="instructions">2. Remove the cylinder head cover from the cylinder head.</p>
+                <p class="illust"><img src="image/RTWD1BSH007801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742847">14. Injection pipe
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the clip from the injection pipe.</p>
+          <p class="instructions">2. Remove the injection pipe from the injector and the common rail (fuel rail) assembly.</p>
+                <p class="illust"><img src="image/RTWD1CSH000201.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the injection pipe.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746163">15. Injector
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the injector from the cylinder head.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Loosen the injector clamp fixing bolt to remove the injector clamp.</li>
+                    <li>If it is difficult to remove the injector, use a remover.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the injector clamp from the injector.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Cover the exposed portion to prevent foreign material from getting into the fuel system.</li>
+                    <li>Store the removed injector with the cylinder number on it.</li>
+                    <li>Take sufficient care not to hit the injector hole.</li>
+                    <li>Absolutely never touch the injector solenoids because that can hinder their performance or cause damage.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Remove the gasket from the injector.</p>
+          <p class="instructions">4. Remove the O-ring from the injector.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745764">16. Timing chain tensioner
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the oil pipe from the timing chain tensioner.</p>
+          <p class="instructions">2. Remove the timing chain tensioner from the cylinder head.</p>
+                <p class="illust"><img src="image/LNWC1BSH019001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Oil pipe</li><li>Timing chain tensioner</li><li>Gasket</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745786">17. CMP sensor
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the connector from the CMP sensor.</p>
+                <p class="illust"><img src="image/RTWD1BSH002701.png" class="SH" /></p>
+                <div class="legend"><ol><li>CMP sensor</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742846">18. Timing chain upper cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the timing chain upper cover from the cylinder head.</p>
+                <p class="illust"><img src="image/LNWC1BSH019101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Timing chain upper cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745751">19. Noise cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the noise cover from the timing chain lower cover.</p>
+                <p class="illust"><img src="image/RTWF1BSH001901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie742775">20. Timing chain lower cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the timing chain lower cover from the gear case cover.</p>
+                <p class="illust"><img src="image/RTWF1BSH002001.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie743662">21. Timing chain lever pivot
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the timing chain lever pivot from the timing chain tension lever.</p>
+                <p class="illust"><img src="image/RTW56ASH019401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie741840">22. Timing chain
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the sprocket from the idle gear D.</p>
+                <p class="illust"><img src="image/LNWC1BSH025301.png" class="SH" /></p>
+                <p class="instructions">2. Remove the timing chain from the cylinder head.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the timing chain and sprocket as a set from the lower sprocket.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie745953">23. Baffle plate
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the baffle plate from the cylinder head.</p>
+                <p class="illust"><img src="image/RTWD1BSH008801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748035">24. Camshaft bracket
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the lock bolt to the camshaft gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use the M5 lock bolt to fix the camshaft gear.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1BSH007901.png" class="SH" /></p>
+                <p class="instructions">2. Remove the camshaft bracket from the cylinder head.</p>
+                <p class="illust"><img src="image/LNWE1BSH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Camshaft bracket</li><li>Cylinder head</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747939">25. Rocker arm shaft assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the camshaft bearing cap from the camshaft bracket.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Verify that there is a marking.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWD1BSH008001.png" class="SH" /></p>
+                <p class="instructions">2. Remove the inlet camshaft from the camshaft bracket.</p>
+          <p class="instructions">3. Remove the exhaust camshaft from the camshaft bracket.</p>
+                <p class="illust"><img src="image/RTWE1BSH005801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Camshaft bearing cap</li><li>Inlet camshaft</li><li>Exhaust camshaft</li></ol></div>
+                <p class="instructions">4. Remove the spacer from the rocker arm shaft.</p>
+          <p class="instructions">5. Remove the rocker arm shaft from the camshaft bracket and the rocker arm.</p>
+          <p class="instructions">6. Remove the plate from the camshaft bracket.</p>
+                <p class="illust"><img src="image/RTWE1BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Rocker arm</li><li>Spacer</li><li>Bolt</li><li>Rocker arm shaft</li><li>Camshaft bracket</li><li>Plate</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Store so it can be installed to its original position.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

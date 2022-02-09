@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission inspection (MUX)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission
+          inspection
+              (MUX)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756903">1. 1st - 2nd shift arm
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 1st - 2nd shift arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 1st - 2nd shift arm using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the thickness of the tip of the shift arm.</li>
+                    <li>Replace the 1st - 2nd shift arm if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 9.60 to 9.85 mm { 0.378 to 0.388 in }</p>
+          <p class="numeric">Limit： 8.85 mm { 0.348 in }</p>
+                <p class="illust"><img src="image/RTWC5CSH015201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756751">2. 3rd - 4th shift arm
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 3rd - 4th shift arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 3rd - 4th shift arm using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the thickness of the tip of the shift arm.</li>
+                    <li>Replace the 3rd - 4th shift arm if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 9.60 to 9.85 mm { 0.378 to 0.388 in }</p>
+          <p class="numeric">Limit： 8.85 mm { 0.348 in }</p>
+                <p class="illust"><img src="image/RTWC5CSH015501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757458">3. 5th shift arm
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 5th shift arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 5th shift arm using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the thickness of the tip of the shift arm.</li>
+                    <li>Replace the 5th shift arm if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 9.60 to 9.85 mm { 0.378 to 0.388 in }</p>
+          <p class="numeric">Limit： 9.35 mm { 0.368 in }</p>
+                <p class="illust"><img src="image/RTWC5CSH015301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756605">4. Reverse shift arm
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the reverse shift arm.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the reverse shift arm using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the thickness of the tip of the shift arm.</li>
+                    <li>Replace the reverse shift arm if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 7.85 to 8.10 mm { 0.309 to 0.319 in }</p>
+          <p class="numeric">Limit： 7.60 mm { 0.299 in }</p>
+                <p class="illust"><img src="image/RTW77BSH006401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756563">5. 3rd - 4th block ring
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 3rd - 4th block ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 3rd - 4th block ring using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the block ring and the dog gear.</li>
+                    <li>Replace the 3rd - 4th block ring if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.50 mm { 0.059 in }</p>
+          <p class="numeric">Limit： 0.8 mm { 0.031 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757536">6. 5th block ring
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 5th block ring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 5th block ring using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the block ring and the dog gear.</li>
+                    <li>Replace the 5th block ring if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 1.50 mm { 0.059 in }</p>
+          <p class="numeric">Limit： 0.8 mm { 0.031 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756915">7. Insert
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the insert.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the insert using a vernier caliper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the insert key and block ring groove.</li>
+                    <li>Replace the insert key and block ring if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW77BSH006501.png" class="SH" /></p>
+                <p class="numeric">Standard： 3.59 to 3.91 mm { 0.141 to 0.154 in }</p>
+          <p class="numeric">Limit： 4.10 mm { 0.161 in }</p>
+                <p class="instructions">3. Measure the insert key using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the gap between the insert key and clutch hub.</li>
+                    <li>Replace the insert key and the clutch hub if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.09 to 0.31 mm { 0.004 to 0.012 in }</p>
+          <p class="numeric">Limit： 0.40 mm { 0.016 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756612">8. 3rd gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 3rd gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 3rd gear using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the 3rd gear using an inside dial gauge.</li>
+                    <li>Replace the 3rd gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 45.000 to 45.016 mm { 1.7717 to 1.7723 in }</p>
+          <p class="numeric">Limit： 45.016 mm { 1.7723 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757037">9. 5th gear
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 5th gear.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the 5th gear using a dial gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the gear using an inside dial gauge.</li>
+                    <li>Replace the 5th gear if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 48.000 to 48.016 mm { 1.8898 to 1.8904 in }</p>
+          <p class="numeric">Limit： 48.016 mm { 1.8904 in }</p>
+                <p class="illust"><img src="image/LNW25CSH028901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757045">10. Input shaft
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the input shaft.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure the input shaft using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the outer diameter of the collar at the 3rd and 5th gear installation position.</li>
+                    <li>Replace the collar if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="220" colspan="3" rowspan="1" align="left" valign="middle">Input shaft collar outer diameter</td></tr><tr><td width="55" colspan="1" rowspan="2" align="left" valign="middle">3rd</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Standard value</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 39.980 to 39.991 mm { 1.5740 to 1.5744 in }</td></tr><tr><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Limit</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 39.980 mm { 1.5740 in }</td></tr><tr><td width="55" colspan="1" rowspan="2" align="left" valign="middle">5th</td><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Standard value</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 42.958 to 42.969 mm { 1.6913 to 1.6917 in }</td></tr><tr><td width="55" colspan="1" rowspan="1" align="left" valign="middle">Limit</td><td width="110" colspan="1" rowspan="1" align="left" valign="middle">： 42.958 mm { 1.6913 in }</td></tr></tbody></table>
+                <p class="illust"><img src="image/RTW97BSH000101.png" class="SH" /></p>
+                <div class="legend"><ol><li>5th gear installation position</li><li>3rd gear installation position</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756712">11. 3rd - 4th clutch hub
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 3rd - 4th clutch hub.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+                    <li>Set the dial indicator to the 3rd - 4th clutch hub.</li>
+                    <li>Move the clutch hub left to right as far as possible. </li>
+                    <li>Record the reading numerical value from the dial indicator.</li>
+                    <li>Replace the 3rd - 4th clutch hub if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.010 to 0.102 mm { 0.0004 to 0.0040 in }</p>
+          <p class="numeric">Limit： 0.15 mm { 0.0059 in }</p>
+                <p class="illust"><img src="image/LNW25CSH029101.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756909">12. 5th synchronizer assembly
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the 5th synchronizer assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace parts as needed if excessive worn or damage is discovered during inspection.</li>
+                    <li>Set the dial indicator to the 5th clutch hub.</li>
+                    <li>Move the clutch hub left to right as far as possible.</li>
+                    <li>Record the reading numerical value from the dial indicator.</li>
+                    <li>Replace the 5th clutch hub if the measured value exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.009 to 0.104 mm { 0.0004 to 0.0041 in }</p>
+          <p class="numeric">Limit： 0.15 mm { 0.0059 in }</p>
+                <p class="illust"><img src="image/LNW25CSH029101.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

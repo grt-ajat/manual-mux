@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Cylinder head assembly inspection (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Cylinder head assembly
+          inspection
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie746563">1. Cylinder head assembly
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Align a simple straight ruler to the cylinder head.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the simple straight ruler as shown in the diagram below.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Measure deformation using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>As shown in the diagram, measure the four sides and two diagonal lines with a feeler gauge. </li>
+                    <li>Replace the cylinder head if the deformation of the bottom surface of the cylinder head exceeds the limit.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56ASH008901.png" class="SH" /></p>
+          <p class="illust"><img src="image/LNWA1BSH000901.png" class="SH" /></p>
+                <p class="numeric">Standard： 0.05 mm or less { 0.002 in or less }</p>
+          <p class="numeric">Limit： 0.20 mm { 0.008 in }</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not allow to regrind the bottom surface of the cylinder head.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Align a simple straight ruler to the cylinder head.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Align the simple straight ruler as shown in the diagram below.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Measure deformation using a feeler gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the four sides and diagonal line of the exhaust manifold installation surface with a feeler gauge. </li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW56ASH017501.png" class="SH" /></p>
+                <p class="numeric">Standard： 0.05 mm or less { 0.002 in or less }</p>
+          <p class="numeric">Limit： 0.2 mm { 0.008 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value exceeds the specified limit and is less than the maximum polish allowance, regrind the installation surface of the manifold.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Maximum polish allowance： 0.4 mm { 0.016 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value exceeds the maximum polish allowance, the cylinder head must be replaced.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748052">2. Valve stem end cap
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect the valve stem end cap.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Replace if the worn or damage is excessive.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746832">3. Inlet valve
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure outer diameter using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the outer diameters at three points.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 6.955 to 6.970 mm { 0.2738 to 0.2744 in }</p>
+          <p class="numeric">Limit： 6.935 mm { 0.2730 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value is smaller than the specified limit, replace the valve and valve guide together.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH017301.png" class="SH" /></p>
+                <p class="instructions">2. Measure the valve guide using the gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the valve guide using a caliper calibrator or telescoping gauge.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Calculate the clearance from measured value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Calculate the clearance between the outer diameter of the inlet valve and the inner diameter of the valve guide.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.030 to 0.060 mm { 0.0012 to 0.0024 in }</p>
+          <p class="numeric">Limit： 0.200 mm { 0.008 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value exceeds the specified limit, replace the valve and valve guide together.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW61ASH004001.png" class="SH" /></p>
+                <p class="instructions">4. Measure thickness using the micrometer.</p>
+                <p class="numeric">Standard： 1.32 mm { 0.052 in }</p>
+          <p class="numeric">Limit： 1.1 mm { 0.043 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value is smaller than the specified limit, replace the valve and valve guide together.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH017801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie748053">4. Exhaust valve
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Measure outer diameter using the micrometer.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the outer diameters at three points.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 6.947 to 6.962 mm { 0.2735 to 0.2741 in }</p>
+          <p class="numeric">Limit： 6.920 mm { 0.2724 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value is smaller than the specified limit, replace the valve and valve guide together.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH017301.png" class="SH" /></p>
+                <p class="instructions">2. Measure the valve guide using the gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the inner diameter of the valve guide using a caliper calibrator or telescoping gauge.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Calculate the clearance from measured value.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Calculate the clearance between the outer diameter of the exhaust valve and the inner diameter of the valve guide.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.038 to 0.068 mm { 0.0015 to 0.0027 in }</p>
+          <p class="numeric">Limit： 0.250 mm { 0.0098 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value exceeds the specified limit, replace the valve and valve guide together.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW61ASH004001.png" class="SH" /></p>
+                <p class="instructions">4. Measure thickness using the micrometer.</p>
+                <p class="numeric">Standard： 1.32 mm { 0.052 in }</p>
+          <p class="numeric">Limit： 1.1 mm { 0.043 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value is smaller than the specified limit, replace the valve and valve guide together.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH017801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746438">5. Valve seat insert
+                  measurement
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the valve to the cylinder head.</p>
+          <p class="instructions">2. Measure the valve using a depth gauge.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a depth gauge or simple steel straight ruler to measure the sinking amount of the valve from the bottom surface of the cylinder head.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 0.5 mm { 0.02 in }</p>
+          <p class="numeric">Limit： 1.2 mm { 0.047 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value exceeds the limit, the valve seat insert must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFWA1BSH011101.png" class="SH" /></p>
+                <p class="instructions">3. Check the contact surface of the valve seat.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Check for chaps and unevenness.</li>
+                    <li>Smooth the contact surface of the valve.</li>
+                    <li>Measure the contact surface of the valve seat.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 2.2 mm { 0.087 in } Inlet side</p>
+          <p class="numeric">Limit： 3.0 mm { 0.118 in } Inlet side</p>
+          <p class="numeric">Standard： 2.2 mm { 0.087 in } Exhaust side</p>
+          <p class="numeric">Limit： 3.0 mm { 0.118 in } Exhaust side</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the measured value exceeds the limit, the valve seat insert must be replaced.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/MFWA1BSH011201.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746833">6. Valve seat insert
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the carbon from the valve seat insert top surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Adjust the valve seat to the specified value using the seat cutter.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Minimize the scratches and other uneven parts, and return the touching width to the standard value.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW71BSH013501.png" class="SH" /></p>
+                <div class="legend"><ol><li>90°</li><li>50°</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Remove scratches and uneven parts only, and do not cut the surface too much.</li>
+                    <li>Use an adjustable valve cutter pilot.</li>
+                    <li>The valve cutter pilot should not be allowed to scrape inside the valve guide.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH056101.png" class="SH" /></p>
+                <p class="instructions">2. Apply the compound to the valve seat insert.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply the compound to the valve seat surface.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the valve to the valve guide.</p>
+          <p class="instructions">4. Adjust the contact surface to the specified value using the valve lapper.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Gently tap the valve while turning it.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Check the contact surface of the valve seat insert.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Confirm that it is touching evenly around the entire circumference.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH031801.png" class="SH" /></p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>After fitting, remove all applied compound.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie747114">7. Valve seat insert
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Arc-weld the entire inner circumference of the valve seat insert.</li>
+                    <li>Cool the valve seat insert for 2 to 3 minutes.</li>
+                    <li>Cooling makes it easier to remove the valve seat insert due to the contraction.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the valve seat insert from the cylinder head using the driver.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Be careful not to damage the cylinder head.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH056001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Arc welding</li><li>Valve seat insert</li><li>Screwdriver</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie744017">8. Valve seat insert
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Put the washer on the valve seat insert.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place the washer which is smaller outer diameter than the valve seat insert with care over the valve seat insert.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the valve seat insert to the cylinder head using the press.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Gradually apply pressure to the washer and push in the valve seat insert.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not apply excessive pressure with the press.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/LNW21BSH018601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Washer</li><li>Valve seat insert</li><li>Press</li></ol></div>
+                <p class="instructions">3. Apply the compound to the valve seat insert.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Add compound to the valve seat surface and gently tap the valve while turning it.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Confirm that it is touching evenly around the entire circumference.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

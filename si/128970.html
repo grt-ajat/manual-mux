@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Function, structure, operation of brake null (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Function, structure, operation of brake
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie758717">1. Function, structure, operation of brake
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">Outline of ABS/EBD/TCS/ESC</p>
+          <p class="explanation">The ABS, TCS and EBD are systems that prevent wheel lock-up and slippage, and maintain stability and steerability when stopping or accelerating the vehicle. <br/>If a system malfunction occurs, the fail-safe function activates to return the vehicle to a condition without ABS, TCS and EBD operation, and the warning light illuminates. <br/>The ESC is a system that controls engine output and vehicle braking to stabilize the vehicle when sudden changes to the vehicle status are detected during operation, and also uses indication lights to draw the attention of the driver in such situations.</p>
+          <p class="explanation">Each function of the brake control</p>
+                <table cellspacing="0"><tbody><tr><td width="99" colspan="1" rowspan="2" align="center" valign="middle">Running mode</td><td width="399" colspan="4" rowspan="1" align="center" valign="middle">Operation of the brake control function</td></tr><tr><td width="99" colspan="1" rowspan="1" align="center" valign="middle">ABS</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">EBD</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">TCS</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">ESC</td></tr><tr><td width="99" colspan="1" rowspan="1" align="center" valign="middle">2H (2WD)</td><td width="99" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">○</td></tr><tr><td width="99" colspan="1" rowspan="1" align="center" valign="middle">4H (4WD High)</td><td width="99" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">○</td></tr><tr><td width="99" colspan="1" rowspan="1" align="center" valign="middle">4L (4WD Low)</td><td width="99" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="100" colspan="1" rowspan="1" align="center" valign="middle">×</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When 4L (4WD Low) is selected for the running mode, the ESC is deactivated, and the ESC OFF indication light turns on.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Components</p>
+                <p class="illust"><img src="image/RTWD4AMF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>EHCU</li><li>Front wheel speed sensor</li><li>Rear wheel speed sensor</li></ol></div>
+                <p class="explanation">EHCU<br/>Master cylinder pressure sensor (Models equipped with ESC)<br/>The EHCU detects brake fluid pressure from the master cylinder. <br/>Electronic control unit<br/>The electronic control unit processes signals from each sensor and outputs ABS control signals to the hydraulic unit. <br/>Hydraulic unit<br/>The hydraulic unit receives signals from the control unit and controls the brake fluid pressure for each of the 4 wheels.</p>
+          <p class="explanation">Wheel speed sensor<br/>The wheel speed sensor detects the vehicle speed for each of the 4 wheels.</p>
+                <p class="illust"><img src="image/RTWD4AMF000201.png" class="MF" /></p>
+                <div class="legend"><ol><li>Instrument panel cluster</li><li>ESC OFF switch (Models equipped with ESC)</li><li>Steering angle sensor (Models equipped with ESC)</li><li>Stoplight switch</li><li>Yaw rate sensor (Models equipped with ESC)</li><li>ECM</li><li>TCCM</li></ol></div>
+                <p class="explanation">Instrument panel cluster<br/>System operation status and malfunctions are displayed using the indication and warning lights in the instrument panel cluster.</p>
+          <p class="explanation">ESC OFF switch (Models equipped with ESC)<br/>Operation of the TCS and ESC are stopped by operating the ESC OFF switch.</p>
+          <p class="explanation">Steering angle sensor (Models equipped with ESC)<br/>The steering angle sensor detects the steering angle and steering direction of the vehicle steering.</p>
+          <p class="explanation">Stoplight switch<br/>The stoplight switch detects the operation status of the brakes.</p>
+          <p class="explanation">Yaw rate sensor (Models equipped with ESC)<br/>The yaw rate sensor detects the rotating angular speed and the front, rear, left and right accelerations of the vehicle.</p>
+          <p class="explanation">ECM (Models equipped with ESC)<br/>The ECM controls engine output control when the TCS and ESC are operating based on signals from the electronic control unit.</p>
+          <p class="explanation">TCCM<br/>The TCCM detects the status of the center differential Free-Lock.</p>
+          <p class="explanation">Functions of ABS/EBD/TCS/ESC</p>
+                <p class="illust"><img src="image/LNW75ASH003101.png" class="SH" /></p>
+                <p class="explanation">ABS<br/>The ABS appropriately controls the brake fluid pressure by retaining/reducing/increasing the brake fluid pressure while braking based on the signals from the wheel speed sensor using the EHCU. <br/>The EHCU calculates the wheel speed, wheel acceleration/deceleration, and vehicle speed using signals from the wheel speed sensor. When the brake has been applied while the vehicle is being driven, and if the wheel speed is excessively decreasing in comparison with the vehicle speed, the system will determine that the wheels are destined to lock. <br/>If it is determined that the wheels lock up in this condition, the brake fluid pressure will be decreased to prevent locking up. If the system determines that wheel locking has been avoided after this, it repeats retaining/increasing/decreasing the brake fluid pressure.</p>
+          <p class="explanation">EBD<br/>EBD is a system for appropriately controlling the front and rear braking force distribution according to the load movement due to deceleration and changes in the load state of the vehicle. The braking force distribution of the front wheels and rear wheels when braking is controlled by the EHCU. <br/>The EHCU detects the amount the brake pedal is applied using signals from the master cylinder pressure sensor, and starts EBD control. When EBD control starts, the EHCU calculates the most suitable braking force for each wheel based on signals from each wheel speed sensor, and controls the hydraulic unit.</p>
+          <p class="explanation">TCS function (Models equipped with ESC)<br/>Excessive opening of the throttle at startup or acceleration on a slippery road surface may cause slippage of the driving wheel due to excessive torque, leading to impaired startup acceleration and maneuverability. TCS is a system that suppresses the slippage of driving wheels by means of brake oil pressure control and driving force control of the driving wheels and generates driving force corresponding to the road surface to ensure vehicle's startup acceleration, ability to hold a straight line and turning stability.</p>
+          <p class="explanation">ESC (Models equipped with ESC)<br/>The ESC ensures the stability of vehicle's turning direction. <br/>Due to unexpected circumstances or external factors such as road conditions, vehicle speed, or sudden sharp turns in the case of an emergency, oversteering (strong side skidding of rear wheels) or understeer (side skidding of front wheels) may occur. When the ESC detects such conditions, it mitigates the strong side skid of the rear or front wheels by controlling the brake oil pressure  and driving force of each wheel to ensure stability.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When 4L (4WD Low) is selected as the running mode, the ESC does not operate.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">ESC control</p>
+          <p class="explanation">The ESC detects vehicle conditions based on signals from various sensors including the yaw rate sensor at vehicle speeds of 15 km/h (9 mph) or higher, and controls the brake oil pressure and engine output.</p>
+          <p class="explanation">ESC operation</p>
+                <p class="illust"><img src="image/RTWD4AMF000301.png" class="MF" /></p>
+                <p class="explanation">In case of oversteerWhen the electronic control unit detects oversteering, it applies braking force to the wheels at the outer side of the turn and to the rear wheel at the inner side in accordance with the degree of the oversteer to generate stabilization moment toward the outer side of turn and to repress the side skid of the rear wheels in order to return the vehicle to a neutral steering state.</p>
+          <p class="explanation">In case of understeer<br/>When the electronic control unit detects understeering, it represses the driving force and applies braking force to the front and rear wheels in accordance with the degree of the understeer to generate stabilization moment toward the turning direction and then represses the side skid of the front wheels to return the vehicle to neutral steering state.</p>
+          <p class="explanation">Rolling prevention function</p>
+                <p class="illust"><img src="image/LNWD40MF001301.png" class="MF" /></p>
+                <p class="explanation">When large lateral acceleration on the vehicle is generated and the vehicle becomes unstable as the gradient angle of the vehicle becomes large, this function alerts the driver and represses the engine output. It also determines whether or not to operate the brake depending on the magnitude of the detected lateral acceleration and applies the necessary braking force to each wheel.</p>
+          <p class="explanation">Wheel speed sensor</p>
+                <p class="illust"><img src="image/LNW24CSH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Wheel speed sensor</li><li>Sensor rotor</li></ol></div>
+                <p class="explanation">The wheel speed sensors are Hall-effect IC sensors that generate pulses based on the rotations of the sensor rotors that are press-fitted to the axle shaft. The frequency of these pulses change proportionately to the rotor speed, thereby enabling the wheel speed to be detected.</p>
+          <p class="explanation">Yaw rate sensor (Models equipped with ESC)</p>
+                <p class="illust"><img src="image/RTWCZ0SH002301.png" class="SH" /></p>
+                <div class="legend"><ol><li>G sensor</li><li>Yaw rate sensor</li><li>Yaw rate sensor assembly</li></ol></div>
+                <p class="explanation">The solid state yaw rate sensor and G sensor are integrated and placed beneath the center of the instrument panel to detect the rotating angular speed and deceleration speed. <br/>The yaw rate sensor detects capacitance changes at the sensor part caused by rotations in the vertical axis direction of the vehicle as vehicle's rotating angular speed (yaw rate). An exclusive IC is employed for vibrating the sensor unit and processing signals to ensure reliability together with miniaturization. <br/>As for the G sensors, the capacitance at the sensor part changes when the vehicle speed is decelerated and this change is measured and replaced with electric signals. The 2 G sensors are installed at an angle of 45° in the direction of the front and rear of the vehicle and detect any deceleration in the horizontal direction.</p>
+          <p class="explanation">Steering angle sensor (Models equipped with ESC)</p>
+                <p class="illust"><img src="image/RTWCZ0SH002001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Detection gear</li></ol></div>
+                <p class="explanation">The steering angle sensor is placed in the steering column part to detect the steering angle and steering direction. <br/>The sensor section is equipped with 2 sets of magnetic resistance elements that detect the rotations of the magnets embedded in the detection gears. Changes in magnetic resistance when the detection gears rotate are detected as steering rotations.</p>
+          <p class="explanation">Warning light/indicator light</p>
+                <p class="illust"><img src="image/RTSE4ASF000101.png" class="SF" /></p>
+                <div class="legend"><ol><li>ESC warning light (Models equipped with ESC)</li><li>ABS warning light</li><li>Brake system warning light</li></ol></div>
+                <p class="explanation">ESC warning light (Models equipped with ESC)<br/>The ESC warning light illuminates for 3 seconds after the ignition switch is turned ON. <br/>It flashes when the TCS and ESC operate. <br/>It illuminates when there is a malfunction in the ESC.</p>
+          <p class="explanation">ABS warning light<br/>The ABS warning light illuminates for 3 seconds after the ignition switch is turned ON. <br/>It illuminates when there is a malfunction in the ABS. <br/>It displays DTCs by flashing when in self-diagnosis mode.</p>
+          <p class="explanation">Brake system warning light<br/>Illuminates for 3 seconds when the ignition switch is turned ON. <br/>Illuminates when normal brake performance may be impaired due to a failure in the EHCU, etc. <br/>Illuminates when the brake fluid level is lowered. <br/>Illuminates in case of charging system failure. <br/>Illuminates in case of EBD function failure. <br/>Illuminates when the parking brake is not released.</p>
+          <p class="explanation">ESC OFF switch (Models equipped with ESC)</p>
+                <p class="illust"><img src="image/RTWCZ0SH001901.png" class="SH" /></p>
+                <div class="legend"><ol><li>TCS OFF indicator light</li><li>ESC OFF indicator light</li><li>ESC OFF switch</li></ol></div>
+                <p class="explanation">When attempting to remove the vehicle from mud, it may be difficult to remove the vehicle even by depressing the accelerator pedal due to driving force being limited by TCS or ESC operation. The TCS and ESC can be deactivated by operating the ESC OFF switch.</p>
+          <p class="explanation">When 2H (2WD) or 4H (4WD High) is selected for the driving mode</p>
+          <p class="explanation">･Pushing the ESC OFF switch will briefly switches the TCS to TCS OFF mode, deactivating the TCS. Also, the TCS OFF indication light in the instrument panel cluster illuminates at this time.</p>
+          <p class="explanation">･Pressing and holding the ESC OFF switch for about 5 seconds or more with the vehicle stopped switches the ESC to ESC OFF mode, deactivating the TCS and ESC. Also, the TCS OFF indicator light and ESC OFF indicator light in the instrument panel cluster illuminate at this time.</p>
+          <p class="explanation">･Each mode can be canceled by pushing the ESC OFF switch briefly or turning the ignition switch OFF.</p>
+          <p class="explanation">When 4L (4WD Low) is selected for the driving mode</p>
+          <p class="explanation">･Pressing and holding the ESC OFF switch for about 5 seconds or more with the vehicle stopped switches the TSC to TSC OFF mode, deactivating the TCS. Also, the TCS OFF indication light in the instrument panel cluster illuminates at this time.</p>
+          <p class="explanation">･The TCS OFF mode can be canceled by pushing the ESC OFF switch briefly or turning the ignition switch OFF.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the ESC OFF switch is pressed and held for 10 seconds or more, it returns to normal mode.</li>
+              <ul/>
+    </div>
+                  <table cellspacing="0"><tbody><tr><td width="78" colspan="1" rowspan="2" align="center" valign="middle">Running mode</td><td width="60" colspan="1" rowspan="2" align="center" valign="middle">Operation</td><td width="240" colspan="4" rowspan="1" align="center" valign="middle">Control allowed/prohibited</td><td width="120" colspan="2" rowspan="1" align="center" valign="middle">Indication light</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Engine<br/>TCS</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Brake<br/>TCS</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Engine<br/>ESC</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Brake<br/>ESC</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">TCS OFF</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">ESC OFF</td></tr><tr><td width="78" colspan="1" rowspan="3" align="center" valign="middle">2H (2WD), 4H (4WD High)</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">No</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Turning off</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Turning off</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Short press</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Lighting</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Turning off</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Long press<br/>(5 seconds or longer)</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Lighting</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Lighting</td></tr><tr><td width="78" colspan="1" rowspan="3" align="center" valign="middle">4L (4WD Low)</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">No</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Turning off</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Lighting</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Short press</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">○</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Turning off</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Lighting</td></tr><tr><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Long press<br/>(5 seconds or longer)</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">×</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Lighting</td><td width="60" colspan="1" rowspan="1" align="center" valign="middle">Lighting</td></tr></tbody></table>
+                <p class="explanation">EHCU</p>
+          <p class="explanation">The EHCU consists of the control unit section and the hydraulic unit section. The control unit is comprised of an ABS/EBD control part, ABS/EBD/TCS control part (with ESC), malfunction detection part, and failsafe part. It drives the hydraulic unit based on signals from the various sensors. The system has a function that stops each control by way of a fail-safe function that returns to regular braking when a malfunction occurs in the system. It also has a self-diagnosing function which displays the defective areas when performing trouble diagnosis. <br/>The hydraulic unit comprises the motor, the plunger pump, the gear pump (models with ESC), the master cylinder pressure sensor (models with ESC), and the solenoid valves.</p>
+          <p class="explanation">Except models equipped with ESC</p>
+                <p class="illust"><img src="image/RTWCZ0SH001601.png" class="SH" /></p>
+                <p class="explanation">Models equipped with ESC</p>
+                <p class="illust"><img src="image/RTWCZ0SH001701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Hydraulic unit section</li><li>Electronic control unit section</li></ol></div>
+                <p class="explanation">EHCU operation</p>
+          <p class="explanation">Hydraulic circuits diagram (Except models equipped with ESC)</p>
+                <p class="illust"><img src="image/RTWD40MF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Front left hold solenoid valve</li><li>Front right hold solenoid valve</li><li>Master cylinder pressure sensor</li><li>Motor</li><li>Rear release solenoid valve</li><li>Rear hold solenoid valve</li><li>Rear brake</li><li>Reservoir</li><li>Pump</li><li>Front right release solenoid valve</li><li>Front left release solenoid valve</li><li>Front right brake</li><li>Front left brake</li></ol></div>
+                <p class="explanation">Hold solenoid valve, Release solenoid valve<br/>Based on control signals from the electronic control unit, the hold solenoid valve and release solenoid valve are operated, and the brake hydraulic circuit is switched between Hold mode, Pressure reduction mode, and Pressure increase mode.</p>
+          <p class="explanation">ABS/EBD operation (Except models equipped with ESC)</p>
+          <p class="explanation">Normal braking</p>
+                <p class="illust"><img src="image/RTWD40MF000201.png" class="MF" /></p>
+                <p class="explanation">During normal braking, current does not flow through the solenoid valve, and the hold solenoid valve is opened, while the release solenoid valve is closed. Brake fluid pressure passes through the hold solenoid valve, and is then delivered to the brake piston and wheel cylinder.</p>
+          <p class="explanation">Hold mode</p>
+                <p class="illust"><img src="image/RTWD40MF000401.png" class="MF" /></p>
+                <p class="explanation">When a sudden deceleration is determined based on wheel speed, the hold solenoid valve and release solenoid valve will close, and the pressure of the brake piston and wheel cylinder will be held in preparation for the pressure reduction mode that will occur when the wheels lock.</p>
+          <p class="explanation">Pressure reduction mode</p>
+                <p class="illust"><img src="image/RTWD40MF000501.png" class="MF" /></p>
+                <p class="explanation">When wheel lock is detected, the hold solenoid valve closes, the release solenoid valve opens, and the brake fluid pressure of the brake piston or wheel cylinder that was being retained decreases by a part of the fluid being returned to the reservoir.</p>
+          <p class="explanation">Pressure increase mode</p>
+                <p class="illust"><img src="image/RTWD40MF000301.png" class="MF" /></p>
+                <p class="explanation">Once the wheel speed begins to increase again, pressure will also begin to increase again until the optimal hydraulic pressure is reached. The release solenoid valve closes, the hold solenoid valve opens, and the brake fluid pressure that is taken in and discharged by the pump motor, as well as the fluid pressure from the master cylinder, is sent to the brake piston or wheel cylinder. At this time, the driver may feel a slight pulsation in the pedal, but this is not a malfunction. If the wheel is likely to lock again with this pressure increase, the EHCU will again increase, hold, or decrease the brake fluid pressure. This cycle is extremely short and is repeated much faster, more often, and more accurately than pumping the pedal.</p>
+          <p class="explanation">Operation description</p>
+                <table cellspacing="0"><tbody><tr><td width="178" colspan="1" rowspan="2" align="left" valign="middle">Valve operation status</td><td width="80" colspan="1" rowspan="2" align="center" valign="middle">Non-control</td><td width="240" colspan="3" rowspan="1" align="center" valign="middle">ABS control</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Pressure increase mode</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Hold mode</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Pressure reduction mode</td></tr><tr><td width="178" colspan="1" rowspan="1" align="left" valign="middle">Hold solenoid valve</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (pressure adjustment)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="178" colspan="1" rowspan="1" align="left" valign="middle">Release solenoid valve</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td></tr></tbody></table>
+                <p class="explanation">Hydraulic circuits diagram (Models equipped with ESC)</p>
+                <p class="illust"><img src="image/LNWD40MF000101.png" class="MF" /></p>
+                <div class="legend"><ol><li>Front left hold solenoid valve</li><li>Master cylinder cut valve 1</li><li>Front right hold solenoid valve</li><li>Damper chamber</li><li>Master cylinder pressure sensor</li><li>Master cylinder</li><li>Motor</li><li>Rear left release solenoid valve</li><li>Rear left hold solenoid valve</li><li>Master cylinder cut valve 2</li><li>Rear right hold solenoid valve</li><li>Rear right release solenoid valve</li><li>Rear right brake</li><li>Rear left brake</li><li>Reservoir</li><li>Pump</li><li>Front right release solenoid valve</li><li>Front left release solenoid valve</li><li>Front right brake</li><li>Front left brake</li></ol></div>
+                <p class="explanation">Hold solenoid valve, Release solenoid valve<br/>Based on control signals from the electronic control unit, the hold solenoid valve and release solenoid valve are operated, and the brake hydraulic circuit is switched between Hold mode, Pressure reduction mode, and Pressure increase mode.</p>
+          <p class="explanation">Master cylinder cut valve<br/>The opening and closing of the master cylinder cut valve is controlled to adjust the hydraulic pressure generated in the pump in accordance with operational conditions.</p>
+          <p class="explanation">Master cylinder pressure sensor<br/>The master cylinder pressure sensor is integrated into the hydraulic unit section and outputs master cylinder pressure signals to the electronic control unit.</p>
+          <p class="explanation">ABS/EBD operation (Models equipped with ESC)</p>
+          <p class="explanation">Normal braking</p>
+                <p class="illust"><img src="image/LNWD40MF000301.png" class="MF" /></p>
+                <p class="explanation">During normal braking operations, the solenoid valves are not energized, and the master cylinder cut valve and the hold solenoid are open while the release solenoid valve is closed. Brake fluid pressure passes through the hold solenoid valve, and is then delivered to the brake piston and wheel cylinder.</p>
+          <p class="explanation">Hold mode</p>
+                <p class="illust"><img src="image/RTWD40MF000601.png" class="MF" /></p>
+                <p class="explanation">When a sudden deceleration is determined based on wheel speed, the hold solenoid valve and release solenoid valve will close, and the pressure of the brake piston and wheel cylinder will be held in preparation for the pressure reduction mode that will occur when the wheels lock.</p>
+          <p class="explanation">Pressure reduction mode</p>
+                <p class="illust"><img src="image/RTWD40MF000701.png" class="MF" /></p>
+                <p class="explanation">When wheel lock is detected, the hold solenoid valve closes, the release solenoid valve opens, and the brake fluid pressure of the brake piston and wheel cylinder that was being retained decreases by a part of the fluid being returned to the reservoir.</p>
+          <p class="explanation">Pressure increase mode</p>
+                <p class="illust"><img src="image/LNWD40MF000601.png" class="MF" /></p>
+                <p class="explanation">When the wheel speed increases again and an increase in brake fluid pressure is necessary, brake fluid pressure from the master cylinder is discharged from the pump motor to increase the fluid pressure. The amount of pressure is adjusted through the current control of the master cylinder cut valve.</p>
+          <p class="explanation">Operation description</p>
+                <table cellspacing="0"><tbody><tr><td width="178" colspan="1" rowspan="2" align="left" valign="middle">Valve operation status</td><td width="80" colspan="1" rowspan="2" align="center" valign="middle">Non-control</td><td width="240" colspan="3" rowspan="1" align="center" valign="middle">ABS control</td></tr><tr><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Pressure increase mode</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Hold mode</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Pressure reduction mode</td></tr><tr><td width="178" colspan="1" rowspan="1" align="left" valign="middle">Master cylinder<br/>cut valve 1</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td></tr><tr><td width="178" colspan="1" rowspan="1" align="left" valign="bottom">Master cylinder<br/>cut valve 2</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td></tr><tr><td width="178" colspan="1" rowspan="1" align="left" valign="middle">Hold solenoid valve</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">Off (pressure adjustment)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="178" colspan="1" rowspan="1" align="left" valign="middle">Release solenoid valve</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="80" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td></tr></tbody></table>
+                <p class="explanation">TCS operation (Models equipped with ESC)</p>
+          <p class="explanation">2WD</p>
+                <p class="illust"><img src="image/RTWD40MF000801.png" class="MF" /></p>
+                <p class="explanation">4WD</p>
+                <p class="illust"><img src="image/RTWD40MF000901.png" class="MF" /></p>
+                <p class="explanation">The TCS control applies the brake by leading hydraulic pressure generated in the pump in the hydraulic unit into the wheel cylinder of the driving wheel and prevents slippage of the vehicle wheel due to driving force.</p>
+                <table cellspacing="0"><tbody><tr><td width="218" colspan="2" rowspan="2" align="center" valign="middle">Valve operation status</td><td width="70" colspan="1" rowspan="2" align="center" valign="middle">Non-control</td><td width="210" colspan="3" rowspan="1" align="center" valign="middle">TCS control</td></tr><tr><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Pressure increase mode</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Hold mode</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Pressure reduction mode</td></tr><tr><td width="218" colspan="2" rowspan="1" align="center" valign="middle">Master cylinder<br/>cut valve 1</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (pressure adjustment)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (pressure adjustment)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (pressure adjustment)</td></tr><tr><td width="218" colspan="2" rowspan="1" align="center" valign="middle">Master cylinder<br/>cut valve 2</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (pressure adjustment)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (pressure adjustment)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (pressure adjustment)</td></tr><tr><td width="148" colspan="1" rowspan="2" align="left" valign="middle">MAX oil pressure wheel for 2-wheel control in the same system, or control wheel for 1-wheel control in the same system</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Hold solenoid valve</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td></tr><tr><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Release solenoid valve</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td></tr><tr><td width="148" colspan="1" rowspan="2" align="left" valign="middle">MIN oil pressure wheel for 2-wheel control in the same system</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Hold solenoid valve</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Release solenoid valve</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td></tr><tr><td width="148" colspan="1" rowspan="2" align="left" valign="middle">Non-control wheel</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Hold solenoid valve</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="70" colspan="1" rowspan="1" align="center" valign="middle">Release solenoid valve</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="70" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td></tr></tbody></table>
+                <p class="explanation">ESC operation</p>
+                <p class="illust"><img src="image/RTWCZ0MF001301.png" class="MF" /></p>
+                <p class="explanation">In case of oversteer<br/>The brakes are operated by the hydraulic pressure generated by the pump inside the hydraulic unit being guided into the wheel cylinder of each wheel, controlling the side skidding of the rear wheels. <br/>In case of the over steer, the brakes at the  front and rear wheels on the outside of the turn are activated.</p>
+          <p class="explanation">In case of understeer<br/>The brakes are operated by the hydraulic pressure generated by the pump inside the hydraulic unit being guided into the wheel cylinder of each wheel, controlling the side skidding of the front wheels. <br/>In the case of understeer, the brakes of both rear wheels, or if necessary, the brakes of the front wheel outside of the turn are activated. <br/>As an example, the illustration shows the front left/right brakes and the rear left brake as the controlled wheels, with the rear left brake as the uncontrolled wheel.</p>
+          <p class="explanation">Operation description</p>
+                <table cellspacing="0"><tbody><tr><td width="273" colspan="3" rowspan="2" align="center" valign="middle">Valve operation status</td><td width="225" colspan="3" rowspan="1" align="center" valign="middle">ESC control</td></tr><tr><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Pressure increase mode</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Hold mode</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Pressure reduction mode</td></tr><tr><td width="75" colspan="1" rowspan="5" align="center" valign="middle">Control system</td><td width="198" colspan="2" rowspan="1" align="center" valign="middle">Master cylinder cut valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="75" colspan="1" rowspan="2" align="center" valign="middle">Control wheel</td><td width="123" colspan="1" rowspan="1" align="center" valign="middle">Hold solenoid valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="123" colspan="1" rowspan="1" align="center" valign="middle">Release solenoid valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td></tr><tr><td width="75" colspan="1" rowspan="2" align="center" valign="middle">Control wheel</td><td width="123" colspan="1" rowspan="1" align="center" valign="middle">Hold solenoid valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="123" colspan="1" rowspan="1" align="center" valign="middle">Release solenoid valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td></tr><tr><td width="75" colspan="1" rowspan="5" align="center" valign="middle">Control system(diagonal wheels)</td><td width="198" colspan="2" rowspan="1" align="center" valign="middle">Master cylinder cut valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="75" colspan="1" rowspan="2" align="center" valign="middle">Control wheel</td><td width="123" colspan="1" rowspan="1" align="center" valign="middle">Hold solenoid valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">Off (open)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="123" colspan="1" rowspan="1" align="center" valign="middle">Release solenoid valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">OFF (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td></tr><tr><td width="75" colspan="1" rowspan="2" align="center" valign="middle">Non-control wheel</td><td width="123" colspan="1" rowspan="1" align="center" valign="middle">Hold solenoid valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">On (closed)</td></tr><tr><td width="123" colspan="1" rowspan="1" align="center" valign="middle">Release solenoid valve</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td><td width="75" colspan="1" rowspan="1" align="center" valign="middle">ON (open)</td></tr></tbody></table>
+                <p class="explanation">General circuit diagram</p>
+          <p class="explanation">Except models equipped with ESC</p>
+                <p class="illust"><img src="image/RTWD40MF001301.png" class="MF" /></p>
+          <p class="illust"><img src="image/RTWCZ0SF000701.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="209" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="209" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Ground (solenoid valve)</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">18</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor front left signal</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">19</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor front left 12 volts reference</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">20</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor rear left signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">21</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor rear left 12 volts reference</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">22</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Vehicle speed signal output</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor front right signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">23</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor front right 12 volts reference</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">24</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage (motor)</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">8</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">25</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">CAN high signal</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">9</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">26</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">10</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">27</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">11</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">28</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Brake switch signal</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">12</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage (solenoid valve)</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">29</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">13</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Ground (motor)</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">30</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">14</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">CAN low signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">31</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">15</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">32</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Diagnostic request switch</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">16</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor rear right signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">33</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">17</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor rear right 12 volts reference</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">34</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Ignition voltage</td></tr></tbody></table>
+                <p class="explanation">Models equipped with ESC</p>
+                <p class="illust"><img src="image/RTWD40MF001201.png" class="MF" /></p>
+          <p class="illust"><img src="image/RTWCZ0SF000701.png" class="SF" /></p>
+                <table cellspacing="0"><tbody><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="209" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">No.</td><td width="209" colspan="1" rowspan="1" align="center" valign="middle">Pin function</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">1</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Ground (solenoid valve)</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">18</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor front left signal</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">2</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Brake switch signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">19</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor front left 12 volts reference</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">3</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">CAN low 2 signal (local)</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">20</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">4</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor rear left signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">21</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">5</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor rear left 12 volts reference</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">22</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">6</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor front right signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">23</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">7</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor front right 12 volts reference</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">24</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage (motor)</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">8</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">25</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">CAN high signal</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">9</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">26</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">10</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">27</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">11</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Vehicle speed signal output</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">28</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">12</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Battery voltage (solenoid valve)</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">29</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">13</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Ground (motor)</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">30</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">ESC OFF switch signal</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">14</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">CAN low signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">31</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">15</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">CAN high 2 signal (local)</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">32</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Not used</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">16</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor rear right signal</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">33</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Diagnostic request switch</td></tr><tr><td width="40" colspan="1" rowspan="1" align="center" valign="middle">17</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Wheel speed sensor rear right 12 volts reference</td><td width="40" colspan="1" rowspan="1" align="center" valign="middle">34</td><td width="209" colspan="1" rowspan="1" align="left" valign="middle">Ignition voltage</td></tr></tbody></table>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Front disc brake</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4BSF000101.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear disc brake</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD4BSF000101.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear drum brake</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4BMF000701.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Rear wheel cylinder</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSF000101.png" class="SF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Blend proportioning valve</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTW45CMF000301.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Brake piping diagram</li>
+                    <li>With blend proportioning valve</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CMF000501.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>With ABS</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD4BMF000201.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>With ESC</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWD4BMF000301.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Vacuum servo with master cylinder</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BMF000401.png" class="MF" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Vacuum hose</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When attaching the vacuum hose, make sure the arrow painted on the hose is pointing to the engine side.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH008801.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine side</li><li>Check valve</li></ol></div>
+                <p class="illust"><img src="image/RFWE4BLF000101.png" class="LF" /></p>
+                <p class="explanation">Structure of the blend proportioning valve</p>
+          <p class="explanation">For bypass valve, seal the routes 1 and 2 and use a seal to the piston end. The spring is pressed against the piston and spring seal is pressed against the cylinder end surface in order to effectively seal the routes 1 and 2.</p>
+          <p class="explanation">Operation of the blend proportioning valve</p>
+          <p class="explanation">P-valve operation by the master cylinder pressure does not change up to the first and second brake points. When the master cylinder fluid pressure reaches to the second brake point, the fluid pressure compress the seal (which branches into the routes 1 and 2) and goes through the rout 1 on the master cylinder side. Then it overcomes spring operational force and fluid pressure, and affects the wheel cylinder seal. The piston is pressed to the right and it consequently opens up the routes 1 and 2 to cancel the P-valve operation. Next, the master cylinder fluid pressure and wheel cylinder fluid pressure affect the same surface of the seal up to the point C and therefore they are decreased at the same rate. However, due to the act of spring on the wheel cylinder side, the wheel cylinder fluid pressure maintains balance with the lower master cylinder fluid pressure with the pressure difference caused by this spring.</p>
+                <p class="illust"><img src="image/RTWC5CMF000701.png" class="MF" /></p>
+                <div class="legend"><ol><li>Route 1</li><li>From the master cylinder</li><li>Seal</li><li>Piston</li><li>To the wheel cylinder</li><li>Route 2</li><li>Bypass valve</li><li>Spring</li><li>P-valve</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Characteristic curves</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH008901.png" class="SH" /></p>
+                <div class="legend"><ol><li>The first brake point</li><li>The second brake point</li><li>Point C</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If there is any fluid leakage or other failure, replace the defective blend proportioning valve.<br/>The blend proportioning valve is installed in the engine room.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Blend proportioning valve cannot be repaired and must be replaced as a complete assembly.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH000101.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

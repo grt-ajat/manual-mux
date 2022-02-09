@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Parking brake cable (drum brake) installation (All models)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Parking brake cable (drum brake)
+          installation
+              (All models)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie762098">1. Parking brake cable
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the grease to the parking brake cable.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply multi-purpose grease to the connecting sections of the brake cable T-end and the equalizer.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Install the parking brake cable to the back plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Place the inner cable into the hole of the back plate, and then install the outer cable case and cap to the backplate.</li>
+                    <li>Install the end of the inner cable to the parking brake lever.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">3. Install the parking brake cable to the bracket.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD (except for high ride suspension).</li>
+                    <li>Install the parking brake cable to the leaf spring bracket.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft } Nut</p>
+                <p class="instructions">4. Install the parking brake cable to the bracket.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD (high ride suspension) and 4WD.</li>
+                    <li>Install the parking brake cable to the leaf spring bracket.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft } Bolt</p>
+                <p class="instructions">5. Install the parking brake cable bracket to the frame.</p>
+                <p class="numeric">Tightening torque： 6.5 N・m { 0.7 kgf・m / 58 lb・in } Bolt</p>
+                <p class="instructions">6. Install the parking brake cable to the parking brake lever.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the T-end of the parking brake cable to the front parking brake cable equalizer.</li>
+                    <li>Install the parking brake cable retainer using a nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 25 N・m { 2.5 kgf・m / 18 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762099">2. Adjust lever spring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the adjust lever spring to the parking lever.</p>
+          <p class="instructions">2. Install the adjust lever spring to the adjust lever.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762100">3. Brake shoe assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake shoe assembly to the back plate.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply grease to the brake shoe fittings and sliding section of the back plate.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH010001.png" class="SH" /></p>
+                <div class="legend"><ol><li>Back plate sliding section</li><li>Brake shoe fitting section</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Always use a new shoe holder pin and spring.</li>
+                    <li>Be careful not to damage the wheel cylinder dust cover.</li>
+                    <li>Be careful as the wheel cylinder piston may shoot out.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762101">4. Spring
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the spring to the brake shoe.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762102">5. Shoe holder pin
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the shoe holder pin to the brake shoe.</p>
+          <p class="instructions">2. Install the spring to the shoe holder pin.</p>
+                <p class="illust"><img src="image/RUW55CSH000501.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762103">6. Brake drum
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the brake drum to the brake assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>If the wheel cylinder is removed, bleeding air from the brake system is necessary.</li>
+                    <li>Depress the brake pedal 10 times to confirm that there is no stroke variation.</li>
+                    <li>Adjust the lining clearance.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762104">7. Disc wheel
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the disc wheel to vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Install the wheel nuts in the numbered order.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">Tightening torque: 120 N⋅m {12.0 kgf⋅m/87 lb⋅ft}</p>
+                <p class="illust"><img src="image/RTWC2DSH000401.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie762106">8. Parking brake lever assembly
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>All of the brakes are automatic adjustment types.</li>
+                    <li>Automatic adjustment is possible by repeatedly depressing the brake pedal.</li>
+                    <li>After the brake pedal has been depressed and released, a clicking sound can be heard from the rear brake auto adjuster.</li>
+                    <li>Adjust using the following procedure after overhauling the rear brake assembly or replacing the parking brake cable.</li>
+                    <li>Perform procedure 5 if only installing or removing but not replacing the parking brake cable.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Release the parking brake lever.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Move to the position where it is completely released.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Loosen the adjust nut using a wrench.</p>
+          <p class="instructions">3. Operate the brake pedal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Repeatedly depress and release the brake pedal until a clicking sound can no longer be heard from the auto adjuster.</li>
+                    <li>If the clearance between the brake drum inner diameter and brake shoe is adjusted to 0.5 mm {0.020 in}, the number of times depressing the brake pedal can be reduced.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the brake drum from the brake assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Measure the clearance between the brake drum and brake shoe.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Lining clearance： 0.4 mm { 0.016 in }</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Readjust if outside the specified range.</li>
+                    <li>After adjusting the lining clearance, adjust the parking brake lever.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Adjust the parking brake lever.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn to adjust the adjust nut so that the parking brake lever is pulled up 6 to 9 notches when the lever is pulled up with a force of 294 N {30 kg/66 lb}.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Take care not to allow brake drag.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH009501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Adjust bolt</li><li>Adjust nut</li><li>Spacer</li><li>Parking brake cable</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the ashtray and adjust.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5CSH009401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Ashtray</li></ol></div>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Transmission assembly removal (TB-50LS)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Transmission assembly
+          removal
+              (TB-50LS)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756501">1. Battery ground cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the battery ground cable from the battery.</p>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not disconnect within 1 minute after turning OFF the ignition switch.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Before removing the transfer assembly from the vehicle, change the transfer mode to 2WD using the 2-4 switch.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756505">2. Engine hood assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Open the engine hood.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Support the engine hood.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Remove the hinge bolt from the engine hood.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Before removing the hinge from the engine hood, put a marking of the hinge location for putting the hinge back in place.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW52BSH002601.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756509">3. Engine cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the engine cover from the engine.</p>
+                <p class="illust"><img src="image/RTWD1BSH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Engine cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756500">4. Wiper arm cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the wiper arm cover from the wiper arm.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756506">5. Wiper arm
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the wiper arm from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the nut to remove the wiper arm and the blade.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWB9BSH000501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Wiper arm cover</li><li>Nut</li><li>Wiper arm, blade</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756504">6. Side cowl cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the side cowl cover from the body.</p>
+                <p class="illust"><img src="image/RTWC9TSH001301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Side cowl cover</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757161">7. Cowl cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the washer hose from the clip.</p>
+          <p class="instructions">2. Remove the grommet from the cowl panel.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Push the grommet down inside the cowl panel.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC9BSH000701.png" class="SH" /></p>
+                <div class="legend"><ol><li>Grommet</li><li>Washer hose</li></ol></div>
+                <p class="instructions">3. Remove the cowl cover from the cowl panel.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756510">8. Wiper linkage
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the wiper linkage from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the bolt and nut from the wiper linkage.</li>
+                    <li>Remove the connector from the wiper motor.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWB9BSH000601.png" class="SH" /></p>
+                <div class="legend"><ol><li>Nut</li><li>Bolt</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756508">9. Cowl panel
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the cowl panel from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 8 bolts.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC1BSH009901.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756748">10. Transmission assembly
+                  preparation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Raise vehicle using the jack.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Use a suitable stand to support the vehicle.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757154">11. ATF
+                  drain
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>When the transmission is disassembled</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the drain plug from the oil pan.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Drain the ATF.</li>
+                    <li>Keep a record of the amount of fluid that is drained.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>If chips and particles are found on the oil cleaner magnet when examining it, damage on the gear is suspected.</li>
+                    <li>Examine the chips and particles on the oil cleaner magnet to determine what type of wear has occurred in the transmission.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH037801.png" class="SH" /></p>
+                <p class="instructions">2. Temporarily tighten the drain plug to the oil pan.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757168">12. Rear propeller shaft assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="128755.html">3.Driveline, Axle 3C.Drive Shaft System(All models) rear propeller shaft assembly removal</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756499">13. Front propeller shaft assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">1. Remove the front propeller shaft assembly from vehicle.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the exhaust and the transfer protector.</li>
+                    <li>Put alignment marks on the flanges on both the front and rear sides of the front propeller shaft.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC4ASH000901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the bolt, nut and washer on the front axle side.</li>
+                    <li>Remove the bolt, nut and washer on the transfer side.</li>
+                    <li>Remove the front propeller shaft assembly.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756709">14. Catalyst converter
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="126047.html">1.Engine 1G.Exhaust(4JJ1) catalyst converter removal</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757558">15. Engine harness
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the engine harness from the harness connector.</p>
+                <p class="illust"><img src="image/RTWC5BSH037201.png" class="SH" /></p>
+                <div class="legend"><ol><li>Turbine speed sensor connector</li><li>Transmission internal harness connector</li></ol></div>
+                <p class="illust"><img src="image/RTWC5BSH032101.png" class="SH" /></p>
+                <div class="legend"><ol><li>Output speed sensor connector</li><li>Inhibitor switch connector</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUWE5BSH000401.png" class="SH" /></p>
+                <div class="legend"><ol><li>2-4 switch connector</li><li>Neutral switch connector</li><li>Actuator connector</li></ol></div>
+                      <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>When disconnecting 2-4 switch connector while the battery is connected, do not turn the vehicle ignition switch to the ON position.</li>
+              <ul/>
+    </div>
+                        <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the clips.</li>
+                    <li>2WD</li>
+                    <li>With ABS</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH039601.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>2WD</li>
+                    <li>Without ABS</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH039701.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>4WD</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH039801.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756507">16. Transfer assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the transfer assembly from the transmission.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757156">17. Starter motor
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+                    <p class="reference">Refer to &quot;<a href="126270.html">1.Engine 1J.Electrical(4JK1) starter motor removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126062.html">1.Engine 1J.Electrical(4JJ1) starter motor removal</a>&quot;.</p>
+      </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757427">18. ATF cooler pipe
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the ATF cooler pipe from the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Disconnect the flare nut and remove the 3 clips.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756723">19. Automatic transmission control cable
+                  disconnect
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Disconnect the automatic transmission control cable from the select lever.</p>
+          <p class="instructions">2. Remove the auto mission control cable bracket from the transmission.</p>
+                <p class="illust"><img src="image/RTWC5BSH037401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Auto mission control cable bracket</li><li>Automatic transmission control cable</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757068">20. Lower cover
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the lower cover from the transmission.</p>
+                <p class="illust"><img src="image/RTWC5BSH037301.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757611">21. Flexible plate bolt
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the flexible plate bolt from the torque converter assembly.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the 6 flexible plate bolts.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Do not reuse the flexible plate bolt.</li>
+          </ul>
+      </div>
+   </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757004">22. Transmission crossmember
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the front engine hanger to the cylinder head.</p>
+          <p class="instructions">2. Install the rear engine hanger to the cylinder head.</p>
+                      <p class="reference">Refer to &quot;<a href="126127.html">1.Engine 1B.Mechanical(4JK1) engine mounting removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="125911.html">1.Engine 1B.Mechanical(4JJ1) engine mounting removal</a>&quot;.</p>
+                    <p class="instructions">3. Hold the transmission using the jack.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Support the transmission with a transmission jack.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">4. Remove the brace from the frame and the transmission crossmember.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the bolt from the braces.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH037501.png" class="SH" /></p>
+                <p class="instructions">5. Remove the nut from the transmission crossmember.</p>
+                <p class="illust"><img src="image/RTWC5BSH037601.png" class="SH" /></p>
+                <p class="instructions">6. Remove the transmission crossmember from the frame.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Remove the nuts and bolts from the transmission crossmember.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH037701.png" class="SH" /></p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757197">23. Transmission assembly
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the transmission from the engine.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756788">24. Cushion rubber
+                  removal
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Remove the cushion rubber from the transmission.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 2WD.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH032901.png" class="SH" /></p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The following applies to 4WD.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5BSH033001.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

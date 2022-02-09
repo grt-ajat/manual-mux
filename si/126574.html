@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Cruise control system check null (4JK1)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Cruise control system check
+              (4JK1)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie744077">1. Cruise control system check
+                  description of function
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="explanation">The cruise control system consists of the ECM, the cruise main switch, the cruise control switch, and the cancel switch. The cruise control maintains the vehicle speed at a speed set by a driver. If the cruise main switch is turned ON, a signal is transmitted to the ECM, and the cruise main indicator light on the instrument panel cluster illuminates. If the cruise control set switch is operated, the switch signal is sent to the ECM and the vehicle speed is set. If the cruise control resume switch or the cruise control set switch is operated while the cruise control system is running, the vehicle speed will be increased or decreased. If the cruise cancel switch is turned ON, the switch signal is sent to the ECM and the cruise control system is deactivated.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Conditions for running the cruise control</li>
+              <ul/>
+    </div>
+                  <p class="explanation">The vehicle speed is approximately 40 km/h (24 mph) or more. <br/>The engine speed is 4500 rpm or less. <br/>The cruise main switch is ON.</p>
+          <p class="explanation">Function of SET<br/>If the cruise control set switch is operated and released while the conditions for running the cruise control are met, the ECM memorizes and maintains the vehicle speed at that time.</p>
+          <p class="explanation">Function of COAST<br/>If the cruise control set switch is operated while the cruise control system is running, the vehicle speed will be decreased. Then, if the cruise control set switch is released, the vehicle will maintain the vehicle speed at that time.</p>
+          <p class="explanation">Function of RESUME<br/>If the cruise control resume switch is operated while the cruise control system is running, the ECM memorizes the vehicle speed, and the vehicle speed will be returned to the vehicle speed memorized by the ECM.</p>
+          <p class="explanation">Function of ACCEL<br/>If the cruise control resume switch is operated while the cruise control system is running, the vehicle speed will be increased. Then, if the cruise control resume switch is released, the vehicle will maintain the vehicle speed at that time.</p>
+          <p class="explanation">Function of temporary acceleration<br/>If the accelerator pedal is depressed while the cruise control system is running, the vehicle speed will be increased.</p>
+          <p class="explanation">Function of temporary cancellation<br/>The cruise control is canceled temporarily if any of the following conditions are met. <br/>The cruise cancel switch is ON. <br/>The brake pedal is depressed. <br/>The clutch pedal is depressed (for MT). <br/>The selector lever position is not D, 3, 2, or L (for AT). <br/>The actual vehicle speed becomes less than 35 km/h (22 mph). <br/>The actual vehicle speed exceeds the set speed by more than or equal to 40 km/h (24 mph), or exceeds the set speed by more than or equal to 10 km/h (6 mph) for 3 minutes or longer. <br/>The actual vehicle speed is less than the set speed by more than or equal to 70 km/h (42 mph), or is less than the set speed by more than or equal to 10 km/h (6 mph) for 3 minutes. <br/>If the cruise control resume switch is operated while the conditions for running the cruise control are met, the vehicle speed is returned to the vehicle speed memorized by the ECM.</p>
+          <p class="explanation">Function of complete cancellation<br/>The cruise control is canceled completely if any of the following conditions are met. <br/>The cruise main switch is OFF. <br/>The ignition switch is OFF. <br/>The vehicle is temporarily stopped. <br/>A related DTC that inhibits the cruise control system is set.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie746653">2. Cruise control system check
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Diagnostic system check</p>
+                      <p class="reference">Refer to &quot;<a href="126567.html">202.Description Engine 15C.Functional Inspection(4JK1) diagnostic system check-engine controls</a>&quot;.</p>
+                    <p class="instructions">2. Operation verification 1</p>
+                <p class="explanation">Drive the vehicle at a speed of 50 km/h (30 mph) on a flat road.</p>
+          <p class="explanation">Press and release the cruise control main switch.</p>
+          <p class="explanation">Verify that the vehicle speed is maintained when the cruise control set switch is operated and released.</p>
+          <p class="explanation">Verify that the vehicle speed decreases in increments of 1 km/h (0.6 mph) when the cruise control set switch is operated again.</p>
+          <p class="explanation">If the vehicle speed is maintained and decreased according to the switch operations, go to Operation verification 2.</p>
+          <p class="explanation">If the vehicle speed is not maintained and decreased according to the switch operations, go to DTC verification.</p>
+                <p class="instructions">3. Operation verification 2</p>
+                <p class="explanation">Operate the cruise control resume switch 10 times.</p>
+          <p class="explanation">Verify that the vehicle speed increases in increments of 1 km/h (0.6 mph) when the switch is operated.</p>
+          <p class="explanation">If the vehicle speed is increased, go to Operation verification 3.</p>
+          <p class="explanation">If the vehicle speed is not increased, go to Inspection of cruise control switch.</p>
+                <p class="instructions">4. Operation verification 3</p>
+                <p class="explanation">Verify that the cruise control main light or the cruise control set light illuminates during the cruise control.</p>
+          <p class="explanation">If the light illuminates, go to Operation verification 4.</p>
+          <p class="explanation">If the light does not illuminate, go to Instrument panel cluster setting verification.</p>
+                <p class="instructions">5. Operation verification 4</p>
+                <p class="explanation">Apply the cruise control cancel switch.</p>
+          <p class="explanation">Go to Operation verification 5 if the cruise control is canceled.</p>
+          <p class="explanation">If the cruise control is not canceled, go to Cruise control cancel switch circuit diagnosis.</p>
+                <p class="instructions">6. Operation verification 5</p>
+                <p class="explanation">Re-enter the cruise control.</p>
+          <p class="explanation">Depress and release the brake pedal.</p>
+          <p class="explanation">The system is normal if the cruise control is canceled.</p>
+          <p class="explanation">Go to DTC P0571 diagnosis if the cruise control is not canceled.</p>
+                <p class="instructions">7. DTC verification</p>
+                <p class="explanation">Park the vehicle.</p>
+          <p class="explanation">Install a scan tool.</p>
+          <p class="explanation">Observe the DTC information with a scan tool.</p>
+          <p class="explanation">When a DTC is set, if DTCs inhibiting the cruise control are set, go to the applicable DTC diagnosis.</p>
+          <p class="explanation">When a DTC is set, if DTCs inhibiting the cruise control are not set, go to Cruise control main switch circuit diagnosis 1.</p>
+                <p class="instructions">8. Cruise control main switch circuit diagnosis 1</p>
+                <p class="explanation">Observe the Cruise Main Switch display on the scan tool while operating the cruise control main switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The scan tool displays ON when the switch is pressed, and it displays OFF when the switch is released.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If the Cruise Main Switch display switches properly, go to Inspection of cruise control switch.</p>
+          <p class="explanation">If the Cruise Main Switch display does not switch properly, go to Cruise control main switch circuit diagnosis 2.</p>
+                <p class="instructions">9. Cruise control main switch circuit diagnosis 2</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the cruise control switch harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Connect a test lamp between the cruise control main switch circuits.</p>
+          <p class="explanation">If the test lamp illuminates, go to Cruise control main switch circuit diagnosis 3.</p>
+          <p class="explanation">If the test lamp does not illuminate, repair the open circuit or high resistance in the cruise control main switch power supply circuit between the ENGINE IG 10 A fuse and the cruise control switch. Go to Repair verification.</p>
+                <p class="instructions">10. Cruise control main switch circuit diagnosis 3</p>
+                <p class="explanation">Observe the Cruise Main Switch display on the scan tool while connecting a fused jumper wire between the cruise control main switch circuits of the cruise control switch harness connector.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The scan tool displays ON when the fused jumper wire is connected, and it displays OFF when it is disconnected.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If the Cruise Main Switch display switches properly, go to Inspection of cruise control switch harness connector.</p>
+          <p class="explanation">If the Cruise Main Switch display does not switch properly, go to Inspection for open circuit in cruise control main switch signal circuit.</p>
+                <p class="instructions">11. Inspection for open circuit in cruise control main switch signal circuit</p>
+                <p class="explanation">Inspect the cruise control main switch signal circuit for an open circuit or high resistance, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the circuit is normal, go to Inspection of ECM harness connector.</p>
+                <p class="instructions">12. Inspection of cruise control switch</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the cruise control switch harness connector.</p>
+          <p class="explanation">Inspect the cruise control switch, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the switch is normal, go to Inspection for open circuit or short circuit in cruise control switch circuit.</p>
+                <p class="instructions">13. Cruise control cancel switch circuit diagnosis</p>
+                <p class="explanation">Turn OFF the ignition switch.</p>
+          <p class="explanation">Disconnect the cruise control switch harness connector.</p>
+          <p class="explanation">Turn ON the ignition switch.</p>
+          <p class="explanation">Observe the Cruise Cancel Switch display on the scan tool.</p>
+          <p class="explanation">If OFF is displayed, replace the cruise control switch. Go to Repair verification.</p>
+          <p class="explanation">If ON is displayed, go to Inspection for open circuit or short circuit in cruise control switch circuit.</p>
+                <p class="instructions">14. Inspection for open circuit or short circuit in cruise control switch circuit</p>
+                <p class="explanation">Inspect the cruise control switch signal circuit for an open circuit, high resistance, a short to the power supply circuit, a short to ground, or a short to the low reference circuit, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">Inspect the cruise control switch low reference circuit for an open circuit or high resistance, and repair as necessary. Go to Repair verification.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The cruise control switch shares the low reference circuit with other sensors. A fault condition in the low reference circuit may set DTCs on sensors that share this circuit.</li>
+              <ul/>
+    </div>
+                  <p class="explanation">If the circuit is normal, go to Inspection of ECM harness connector.</p>
+                <p class="instructions">15. Inspection of cruise control switch harness connector</p>
+                <p class="explanation">Inspect the connection status of the cruise control switch harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the cruise control switch harness connector is normal, replace the cruise control switch. Go to Repair verification.</p>
+                <p class="instructions">16. Inspection of ECM harness connector</p>
+                <p class="explanation">Inspect the connection status of the ECM harness connector, and repair as necessary. Go to Repair verification.</p>
+          <p class="explanation">If the connection status is normal, go to ECM replacement.</p>
+                <p class="instructions">17. ECM replacement</p>
+                <p class="explanation">Replace the ECM. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="126277.html">1.Engine 1J.Electrical(4JK1) ECM removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126278.html">1.Engine 1J.Electrical(4JK1) ECM installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126280.html">1.Engine 1J.Electrical(4JK1) ECM setting</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="126279.html">1.Engine 1J.Electrical(4JK1) ECM writing</a>&quot;.</p>
+                    <p class="instructions">18. Instrument panel cluster setting verification</p>
+                <p class="explanation">Display the Module Information with a scan tool.</p>
+          <p class="explanation">Verify that the Cruise Control Indicator Light setting is Available.</p>
+          <p class="explanation">If Not Available is displayed, go to Instrument panel cluster writing.</p>
+          <p class="explanation">If Available is displayed, go to Instrument panel cluster replacement.</p>
+                <p class="instructions">19. Instrument panel cluster writing</p>
+                <p class="explanation">Write the vehicle information into the instrument panel cluster. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127513.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster setting</a>&quot;.</p>
+                    <p class="instructions">20. Instrument panel cluster replacement</p>
+                <p class="explanation">Replace the instrument panel cluster. After replacing the instrument panel cluster, perform the instrument panel cluster setting. Go to Repair verification.</p>
+                      <p class="reference">Refer to &quot;<a href="127511.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster removal</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127512.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster installation</a>&quot;.</p>
+                    <p class="reference">Refer to &quot;<a href="127513.html">9.Body, Cab, Accessories 9E.Instrumentation, Driver Info.(All models) instrument panel cluster setting</a>&quot;.</p>
+                    <p class="instructions">21. Vehicle repair check</p>
+                <p class="explanation">Connect all of the disconnected harness connectors.</p>
+          <p class="explanation">Turn OFF the ignition switch for 30 seconds.</p>
+          <p class="explanation">Go to Operation verification 1.</p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>

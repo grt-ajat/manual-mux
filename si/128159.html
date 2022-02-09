@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+      <title>Clutch control installation (MUA)</title>
+    
+  <style type="text/css">
+  <!--
+
+  * {
+    font-family: Arial, ＭＳ Ｐゴシック, sans-serif
+  }
+
+  body {
+    font-size:10pt;
+    background:#ffffff;
+    color:#000000;
+  }
+
+  h1 {
+    font-weight:normal;
+    font-size:14pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+  }
+
+  h2, h3 {
+    font-weight:normal;
+    font-size:12pt;
+    color:#000000;
+    background:#b0e0e6;
+    padding:4px 4px 4px 8px;
+    margin: 0em 0em 0em 0em;
+  }
+
+  div.si, div.wi {
+    margin:1.5em 0em 1.5em 0em;
+  }
+
+  div.si-contents {
+    padding:0em 0em 0em 1em;
+  }
+
+  div.si-contents div.si {
+    border:solid 3px #b0e0e6;
+  }
+
+  div.si-contents div.si-contents {
+    padding:0em 1em 0em 1em;
+    display:none;
+  }
+
+  .reference {
+    font-style:italic;
+  }
+
+  div.wi-contents {
+    padding:0em 1em 0em 1em;
+  }
+
+  p.instructions {
+    margin:1.5em 0em 1em 1em;
+    text-indent:-1em;
+  }
+
+  p.explanation {
+    margin:1em 0em 1em 0em;
+  }
+
+  div.warning {
+    margin:1em 0em 1em 1.5em;
+    color:#ff0000;
+    font-weight:bold;
+  }
+
+  div.warning p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.warning ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.notice {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.notice p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.notice ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  div.supplement {
+    margin:1em 0em 1em 1.5em;
+    font-weight:bold;
+  }
+
+  div.supplement p {
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul {
+    padding: 0em 0em 0em 2em;
+    margin:0em 0em 0em 0em;
+  }
+
+  div.supplement ul li {
+    margin:0.5em 0em 0em 0em;
+  }
+
+  p.illust {
+    margin:1em 0em 0.5em 1.5em;
+  }
+
+  table {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.reference {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  div.legend ol {
+    margin:0.5em 0em 1em 1.5em;
+    padding:0em 0em 0em 2em;
+  }
+
+  p.sst {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  p.numeric {
+    margin:1em 0em 1em 1.5em;
+  }
+
+  table, th, td {
+    border:solid 1px black;
+  }
+
+  img.SH {
+    border:solid 2px black;
+    width: 296px;
+    height: 281px;
+  }
+  img.SF {
+    border:solid 2px black;
+    width: 663px;
+    height: 281px;
+  }
+  img.MH {
+    border:solid 2px black;
+    width: 296px;
+    height: 436px;
+  }
+  img.MF {
+    border:solid 2px black;
+    width: 663px;
+    height: 436px;
+  }
+  img.LH {
+    border:solid 2px black;
+    width: 296px;
+    height: 588px;
+  }
+  img.LF {
+    border:solid 2px black;
+    width: 663px;
+    height: 588px;
+  }
+  img.XF {
+    border:solid 2px black;
+    width: 663px;
+    height: 871px;
+  }
+  img.ST {
+    border:solid 2px black;
+    width: 155px;
+    height: 116px;
+  }
+
+  -->
+  </style>
+  <script type="text/javascript">
+  <!--
+
+  function toggle(titleNode) {
+    var listNode = titleNode.parentNode.parentNode.getElementsByTagName('div')[0];
+    if (listNode.style.display && listNode.style.display == 'block') {
+      listNode.style.display = 'none';
+    } else {
+      listNode.style.display = 'block';
+    }
+  }
+
+  //-->
+  </script>
+</head>
+<body onload="if(parent){parent.init_sub_menu()}">
+
+<div class="si">
+  <h1>
+    Clutch control
+          installation
+              (MUA)
+      </h1>
+  <div class="si-contents">
+              <div class="wi">
+      <h2 id="sie756530">1. Damper cylinder assembly
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the damper cylinder assembly to the frame.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757087">2. Clutch slave cylinder
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the clutch slave cylinder to the transmission.</p>
+          <p class="instructions">2. Connect the oil pipe to the clutch slave cylinder.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Connect to the clutch slave cylinder and damper cylinder assembly.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Tightening torque： 34 N・m { 3.5 kgf・m / 25 lb・ft }</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756532">3. Clutch master cylinder
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Install the clutch master cylinder to the frame.</p>
+          <p class="instructions">2. Connect the oil pipe to the clutch master cylinder.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756533">4. Clutch pedal
+                  installation
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the grease to the spring.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply BESCO chassis grease or equivalent to the clutch pedal spring.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESH000101.png" class="SH" /></p>
+                <p class="instructions">2. Install the clutch pedal to the frame.</p>
+          <p class="instructions">3. Apply the grease to the clevis pin.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Apply BESCO chassis grease or equivalent.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESH000201.png" class="SH" /></p>
+                <p class="instructions">4. Install the clevis pin to the clutch pedal.</p>
+          <p class="instructions">5. Install the pin to the clevis pin.</p>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756531">5. Clutch pedal
+                  inspection
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Inspect play.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Lightly press the clutch pedal with a hand to inspect that the play is within the standard value range.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Standard： 5.0 to 15.0 mm { 0.2 to 0.6 in }</p>
+                <p class="illust"><img src="image/RTWC5ESH000301.png" class="SH" /></p>
+                <div class="legend"><ol><li>Play</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie757095">6. Clutch pedal
+                  adjustment
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Loosen the lock nut using a wrench.</p>
+          <p class="instructions">2. Turn the clutch switch.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Turn the clutch switch and adjust so that the clearance is within the standard value range.</li>
+                    <li>After adjustment, tighten the lock nut.</li>
+              <ul/>
+    </div>
+                  <p class="numeric">Clearance： 0.5 to 1.5 mm { 0.020 to 0.059 in }</p>
+                <p class="illust"><img src="image/RTWC5ESH001401.png" class="SH" /></p>
+                <div class="legend"><ol><li>Clutch switch</li><li>Lock nut</li><li>Clearance</li></ol></div>
+  </div>
+      </div>
+                <div class="wi">
+      <h2 id="sie756983">7. Clutch fluid
+                  air bleed
+                      </h2>
+      <div class="wi-contents">
+
+              <p class="instructions">1. Apply the parking brake.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Pull the parking brake lever to a full extent.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">2. Replenish the reservoir tank with the brake fluid.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>The reservoir tank of the clutch fluid is shared with the reservoir tank of the brake fluid.</li>
+                    <li>Clean the pathway of the clutch master cylinder, clutch slave cylinder, and piping, etc. using an air blower.</li>
+                    <li>Fill the brake fluid to MAX level, and wait for 1 minute or longer.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>As the amount of clutch fluid is reduced through the air removal process, check frequently to make sure the reservoir tank is not emptied.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESH001501.png" class="SH" /></p>
+                <div class="legend"><ol><li>Reservoir tank</li><li>Clutch master cylinder</li></ol></div>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>As the quantity of the fluid is different between the clutch fluid chamber and brake fluid chamber depending on the partition inside the reservoir tank, check the quantity of clutch fluid in the clutch fluid chamber.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESH004001.png" class="SH" /></p>
+                <div class="legend"><ol><li>MAX level</li><li>MIN level</li><li>Clutch fluid compartment</li></ol></div>
+                <p class="instructions">3. Install the plastic tube to the bleeder screw.</p>
+          <p class="instructions">4. Install the plastic tube to the container.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Insert the one edge of the plastic tube into the container filled with brake fluid.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">5. Press the clutch pedal.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Depress the clutch pedal 3 times and hold it down.</li>
+                    <li>Depress the clutch pedal at the rate of 60 mm/sec, and return the pedal at the rate of 40 mm/sec.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RTWC5ESH000601.png" class="SH" /></p>
+                <p class="instructions">6. Loosen the bleeder screw using a wrench.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Loosen the bleeder screw 1/3 rotation to drain the brake fluid.</li>
+              <ul/>
+    </div>
+                  <p class="instructions">7. Tighten the bleeder screw using a wrench.</p>
+                      <div class="supplement">
+        <p>Note</p>
+        <ul>
+                      <li>Loose the bleeder screw, and the return the clutch pedal.</li>
+                    <li>Repeat the process from depressing the clutch pedal to opening/closing the bleeder screw at intervals of 2 seconds.</li>
+              <ul/>
+    </div>
+                        <div class="notice">
+        <p>Caution</p>
+        <ul>
+                      <li>Repeat 30 times or more until the air has been completely bled out.</li>
+              <ul/>
+    </div>
+                  <p class="illust"><img src="image/RUW57CSH000201.png" class="SH" /></p>
+  </div>
+      </div>
+        </div>
+</div>
+
+<hr />
+<div class="copyright">Copyright ISUZU MOTORS LIMITED. All rights reserved.</div>
+
+</body>
+</html>
